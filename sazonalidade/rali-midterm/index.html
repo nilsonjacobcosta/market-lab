@@ -56,6 +56,7 @@ header.hero > *{min-width:0}
 .meta{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:18px;font-size:.86rem;color:var(--muted)}
 .chip{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;background:var(--surface-2);color:var(--ink-2);font-size:.8rem;font-weight:500}
 .chip.warn{background:var(--accent-soft);color:var(--accent)}
+.chip.ok{background:var(--pos-soft);color:var(--pos)}
 .verdict{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:10px}
 .verdict .big{font-family:var(--f-display);font-size:clamp(2.6rem,6vw,3.8rem);font-weight:700;line-height:1;color:var(--pos)}
 .verdict .sub{color:var(--ink-2);font-size:.95rem}
@@ -167,9 +168,10 @@ footer ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
   <div>
     <div class="eyebrow">Sazonalidade do S&amp;P 500 · ciclo presidencial dos EUA</div>
     <h1>O rali depois da eleição de meio de mandato</h1>
-    <p class="lede">O 2º ano de cada mandato presidencial americano costuma ser o mais fraco para a bolsa. O que vem depois da eleição, porém, tem um histórico bem diferente. Este painel organiza os números do estudo e explica cada um em linguagem simples.</p>
+    <p class="lede">O 2º ano de cada mandato presidencial americano costuma ser o mais fraco para a bolsa. O que vem depois da eleição, porém, tem um histórico bem diferente. Este painel organiza os números, recalculados a partir da série oficial do índice, e explica cada um em linguagem simples.</p>
     <div class="meta">
       <span class="chip">Amostra: 1950 a out/2026</span>
+      <span class="chip ok">Dados auditados e revisados</span>
       <span class="chip">19 anos de midterm</span>
       <span class="chip warn">Histórico, não previsão</span>
     </div>
@@ -183,10 +185,10 @@ footer ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
 </header>
 
 <div class="kpis">
-  <div class="kpi"><span class="l">Retorno médio do ano de midterm</span><span class="v num">+4,7%</span><span class="l">o mais fraco do ciclo de 4 anos</span></div>
+  <div class="kpi"><span class="l">Retorno médio do ano de midterm</span><span class="v num">+4,6%</span><span class="l">o mais fraco do ciclo de 4 anos</span></div>
   <div class="kpi"><span class="l">Retorno médio do ano seguinte (pré-eleitoral)</span><span class="v num pos">+17,2%</span><span class="l">o mais forte do ciclo, 89% de anos positivos</span></div>
   <div class="kpi"><span class="l">Pior resultado em 12 meses após outubro</span><span class="v num pos">+3,0%</span><span class="l">nenhum caso negativo na amostra</span></div>
-  <div class="kpi hl"><span class="l">2026 até o fim de outubro</span><span class="v num">+11,1%</span><span class="l">média histórica nesse ponto: +0,7%</span></div>
+  <div class="kpi hl"><span class="l">2026 até o fim de outubro</span><span class="v num">+10,7%</span><span class="l">média histórica nesse ponto: +0,7%</span></div>
 </div>
 
 <section aria-labelledby="h-steps">
@@ -215,7 +217,7 @@ footer ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
     <div class="explain">
       <p><b>Média</b> soma tudo e divide pelo número de anos. Um ano excepcional puxa a média para cima ou para baixo.</p>
       <p><b>Mediana</b> é o valor do meio da fila. Ela mostra o ano “típico” sem a distorção dos extremos.</p>
-      <p class="callout">No midterm a média é +4,7%, mas a mediana é só +1,1%: metade dos midterms fechou abaixo disso. É o ano mais fraco do ciclo, e 2026 é um midterm.</p>
+      <p class="callout">No midterm a média é +4,6%, mas a mediana é só +1,1%: metade dos midterms fechou abaixo disso. É o ano mais fraco do ciclo, e 2026 é um midterm.</p>
     </div>
   </div>
   <details class="panel">
@@ -239,7 +241,7 @@ footer ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
       <div id="c-fwd" style="margin-top:12px"></div>
     </div>
     <div class="explain">
-      <p><b>Midterm forte</b> são os anos que chegaram a outubro com alta acima de 5%, como 2026 (+11,1%). <b>Midterm fraco</b> são os que chegaram a outubro em queda.</p>
+      <p><b>Midterm forte</b> são os anos que chegaram a outubro com alta acima de 5%, como 2026 (+10,7%). <b>Midterm fraco</b> são os que chegaram a outubro em queda.</p>
       <p>Até dezembro, os midterms fortes subiram em média +5,9% e tiveram dezembro positivo em 89% dos casos. Esse é o chamado “rali de fim de ano”.</p>
       <p class="callout">Em 12 meses, fortes (+14,9%) e fracos (+18,3%) foram parecidos. A estação ajudou, mas 2026 parte de uma base mais esticada.</p>
     </div>
@@ -264,7 +266,7 @@ footer ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
   <details class="panel">
     <summary>Ver a tabela completa</summary>
     <div class="tbl"><table id="t-years"></table></div>
-    <p style="font-size:.84rem;color:var(--muted);margin-top:10px">Queda máxima: da base do ano anterior até a menor mínima mensal do ano. Mínima → +12m: da mínima mensal do ano até o fechamento do mesmo mês no ano seguinte.</p>
+    <p style="font-size:.84rem;color:var(--muted);margin-top:10px">Queda máxima: da base do ano anterior até a menor mínima intradiária mensal do ano; quando o índice nunca ficou abaixo da base, como em 1958, aparece 0%. Mínima → +12m: da mínima mensal do ano até o fechamento do mesmo mês no ano seguinte. Nos anos 1950 a mínima mensal é aproximada pelos fechamentos diários.</p>
   </details>
 </section>
 
@@ -272,7 +274,7 @@ footer ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
   <div class="sec-head">
     <div class="eyebrow">Outubro e novembro</div>
     <h2 id="h-months">Por que o mês atual importa</h2>
-    <p>Retorno médio mensal do S&amp;P 500, em estimativa preliminar.</p>
+    <p>Retorno médio do S&amp;P 500 em cada mês, nos anos de midterm (1950 a 2022) e nos demais anos.</p>
   </div>
   <div class="split">
     <div class="panel chart">
@@ -280,9 +282,9 @@ footer ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
       <div id="c-months"></div>
     </div>
     <div class="explain">
-      <p>Novembro de midterm subiu em média <b>+2,75%</b>, contra +1,86% nos demais anos. É um dos melhores meses de todo o calendário.</p>
-      <p>Outubro de 2026 fugiu do padrão: fechou em queda, enquanto a média histórica de outubro é positiva.</p>
-      <p class="callout">O valor exato de outubro de 2026 ainda tem duas estimativas preliminares, cerca de −0,6% e cerca de −0,93%. Ele será fechado na auditoria dos dados.</p>
+      <p>Outubro é o melhor mês do midterm: <b>+3,0%</b> em média e alta em 74% dos anos, contra +0,2% nos demais anos. Novembro vem logo atrás, com <b>+2,8%</b> e alta em 79% dos anos.</p>
+      <p>Outubro de 2026 fugiu do padrão: o S&amp;P 500 caiu <b>0,9%</b>.</p>
+      <p class="callout">A queda de outubro de 2026 foi concentrada em tecnologia. O S&amp;P com pesos iguais subiu cerca de 5% no mês. A análise completa está no painel Termômetro macro.</p>
     </div>
   </div>
 </section>
@@ -310,13 +312,13 @@ footer ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
   <div class="sec-head">
     <div class="eyebrow">Contexto</div>
     <h2 id="h-ctx">O que aconteceu no pregão de sexta-feira, 30/10/2026</h2>
-    <p>Variações aproximadas do pregão, a confirmar com dados oficiais. A queda é associada à correção das big techs e a vendas forçadas por chamada de margem.</p>
+    <p>Variações do pregão de 30/10/2026, conferidas com dados de mercado. A queda veio da correção das big techs; nos metais, o padrão é compatível com vendas forçadas por chamada de margem.</p>
   </div>
   <div class="tiles">
     <div class="tile"><span class="l">S&amp;P 500</span><span class="v neg">−1,8%</span></div>
-    <div class="tile"><span class="l">Nasdaq</span><span class="v neg">−3,5%</span></div>
+    <div class="tile"><span class="l">Nasdaq</span><span class="v neg">−2,9%</span></div>
     <div class="tile"><span class="l">Russell 2000</span><span class="v neg">−1,6%</span></div>
-    <div class="tile"><span class="l">Índice do dólar (DXY)</span><span class="v pos">+0,11%</span></div>
+    <div class="tile"><span class="l">Índice do dólar (DXY)</span><span class="v neg">−0,16%</span></div>
     <div class="tile"><span class="l">Ouro · mínima do ano</span><span class="v neg">−3,29%</span></div>
     <div class="tile"><span class="l">Prata · abaixo de US$ 50/oz</span><span class="v neg">≈ −6%</span></div>
     <div class="tile"><span class="l">Petróleo Brent</span><span class="v">&gt; US$ 113</span></div>
@@ -331,16 +333,45 @@ footer ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
   </div>
 </section>
 
+<section aria-labelledby="h-audit">
+  <div class="sec-head">
+    <div class="eyebrow">Auditoria</div>
+    <h2 id="h-audit">Os números foram conferidos</h2>
+    <p>Todas as tabelas deste painel foram recalculadas do zero a partir dos fechamentos mensais do S&amp;P 500, de dez/1949 a out/2026. Depois, um segundo revisor refez as contas com código próprio, sem ver o primeiro resultado.</p>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><span class="l">Valores comparados com o estudo-semente</span><span class="v num">156</span></div>
+    <div class="kpi"><span class="l">Valores corrigidos</span><span class="v num">5</span><span class="l">todos com diferença pequena</span></div>
+    <div class="kpi"><span class="l">Conclusão principal</span><span class="v num pos">Mantida</span><span class="l">19 de 19 midterms em alta em 12 meses</span></div>
+    <div class="kpi"><span class="l">Chance de ser só acaso</span><span class="v num">0,7%</span><span class="l">teste de permutação</span></div>
+  </div>
+  <div class="panel tbl">
+    <table>
+      <thead><tr><th>O que foi corrigido</th><th>Antes</th><th>Verificado</th></tr></thead>
+      <tbody>
+        <tr><td>2026, de janeiro até o fim de outubro</td><td>+11,1%</td><td>+10,7%</td></tr>
+        <tr><td>1994, retorno do ano</td><td>−1,1%</td><td>−1,5%</td></tr>
+        <tr><td>1994, de outubro a dezembro</td><td>−2,4%</td><td>−2,8%</td></tr>
+        <tr><td>Melhor ano pré-eleitoral (1995)</td><td>+33,6%</td><td>+34,1%</td></tr>
+        <tr><td>1958, queda máxima</td><td>+0,9%</td><td>0% (o índice nunca ficou abaixo da base)</td></tr>
+        <tr><td>Outubro em ano de midterm, retorno médio</td><td>≈ +1,0%</td><td>+3,0%</td></tr>
+        <tr><td>Nasdaq em 30/10/2026</td><td>−3,5%</td><td>−2,9%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="color:var(--ink-2)">O teste de permutação sorteia 19 anos quaisquer milhares de vezes: só 0,7% dos sorteios alcançam a média dos midterms. Isso não corrige o fato de o padrão ter sido escolhido depois de olhar os dados, então a evidência real é mais fraca do que esse número sugere. Para juros, petróleo, metais e outros índices, veja o painel <a href="../../macro/termometro-midterm/">Termômetro macro do midterm</a>.</p>
+</section>
+
 <section aria-labelledby="h-care">
   <div class="sec-head">
     <div class="eyebrow">Antes de usar</div>
     <h2 id="h-care">Cuidados na leitura</h2>
   </div>
   <div class="cautions">
-    <div class="caution"><span class="ic">1</span><p><b>Amostra pequena.</b> São 19 midterms. Um único ano ruim muda bastante a média, e “100% de acerto” em 19 casos não garante o 20º.</p></div>
+    <div class="caution"><span class="ic">1</span><p><b>Amostra pequena.</b> São 19 midterms. Os anos mais fracos (2014 com +3,0% e 1986 com +3,2%) ficaram perto de zero, e “100% de acerto” em 19 casos não garante o 20º. O padrão também foi encontrado olhando os próprios dados, o que exagera a força da evidência.</p></div>
     <div class="caution"><span class="ic">2</span><p><b>Sazonalidade não é previsão.</b> É a tendência média de décadas. Guerra, juros e inflação em 2026 podem sobrepor o padrão.</p></div>
-    <div class="caution"><span class="ic">3</span><p><b>Dados não auditados.</b> Os números são de um estudo preliminar e ainda não foram conferidos com séries oficiais. Confira antes de decidir.</p></div>
-    <div class="caution"><span class="ic">4</span><p><b>Grupos incompletos.</b> Fortes (9) e fracos (8) somam 17 anos. 1994 (+1,3%) e 2018 (+1,4%) ficaram entre 0% e 5% até outubro e não entram em nenhum grupo.</p></div>
+    <div class="caution"><span class="ic">3</span><p><b>Retorno de preço.</b> Os números não incluem dividendos (que somam cerca de 2% a 4% ao ano) nem descontam a inflação. Os resultados dependem dessas escolhas.</p></div>
+    <div class="caution"><span class="ic">4</span><p><b>Três grupos.</b> Fortes (9) e fracos (8) somam 17 anos. 1994 (+1,3%) e 2018 (+1,4%) ficaram entre 0% e 5% até outubro e formam o grupo moderado, mostrado à parte.</p></div>
   </div>
 </section>
 
@@ -364,7 +395,9 @@ footer ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
 <footer>
   <div class="eyebrow">Fontes e aviso</div>
   <ul>
-    <li>Séries de referência para validação: <a href="https://fred.stlouisfed.org/series/SP500" target="_blank" rel="noopener">FRED, Federal Reserve Bank of St. Louis, série SP500</a> e <a href="https://www.spglobal.com/spdji/en/indices/equity/sp-500/" target="_blank" rel="noopener">S&amp;P Dow Jones Indices, S&amp;P 500</a>.</li>
+    <li>Dados: S&amp;P 500 (^GSPC), fechamentos mensais de dez/1949 a out/2026, <a href="https://finance.yahoo.com/quote/%5EGSPC/history/" target="_blank" rel="noopener">Yahoo Finance</a>, coletados em 02/11/2026. Código e dados no <a href="https://github.com/nilsonjacobcosta/market-lab" target="_blank" rel="noopener">repositório market-lab</a>.</li>
+    <li>Booth, J.; Booth, L. <a href="https://ideas.repec.org/a/eee/revfin/v12y2003i2p131-159.html" target="_blank" rel="noopener">Is presidential cycle in security returns merely a reflection of business conditions?</a> Review of Financial Economics, v. 12, n. 2, 2003.</li>
+    <li>Séries de referência para conferência: <a href="https://fred.stlouisfed.org/series/SP500" target="_blank" rel="noopener">FRED, Federal Reserve Bank of St. Louis, série SP500</a> e <a href="https://www.spglobal.com/spdji/en/indices/equity/sp-500/" target="_blank" rel="noopener">S&amp;P Dow Jones Indices, S&amp;P 500</a>.</li>
   </ul>
   <p>Este painel é material educativo. Não é recomendação de investimento. Rentabilidade passada não garante resultado futuro.</p>
 </footer>
@@ -374,38 +407,39 @@ footer ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
 <script>
 (function(){
 const CYCLE=[
- {k:"Pós-eleitoral",avg:8.4,med:9.1,pos:63,worst:-17.4,best:31.0},
- {k:"Midterm (2026)",avg:4.7,med:1.1,pos:58,worst:-29.7,best:45.0,now:true},
- {k:"Pré-eleitoral",avg:17.2,med:18.9,pos:89,worst:-0.7,best:33.6},
+ {k:"Pós-eleitoral",avg:8.3,med:9.1,pos:63,worst:-17.4,best:31.0},
+ {k:"Midterm (2026)",avg:4.6,med:1.1,pos:58,worst:-29.7,best:45.0,now:true},
+ {k:"Pré-eleitoral",avg:17.2,med:18.9,pos:89,worst:-0.7,best:34.1},
  {k:"Eleitoral",avg:8.1,med:11.8,pos:84,worst:-38.5,best:25.8}];
 const FWD=[
- {k:"Todos os anos",n:75,dec:3.3,decPos:77,jun:null,y12:9.3,y12Pos:80,worst:-37.5},
+ {k:"Todos os anos (inclui midterms)",n:76,dec:3.3,decPos:78,jun:null,y12:9.4,y12Pos:80,worst:-37.5},
  {k:"Anos de midterm",n:19,dec:3.6,decPos:68,jun:16.5,y12:16.6,y12Pos:100,worst:3.0},
  {k:"Midterm forte (como 2026)",n:9,dec:5.9,decPos:89,jun:16.5,y12:14.9,y12Pos:100,worst:3.0,now:true},
- {k:"Midterm fraco",n:8,dec:3.2,decPos:63,jun:17.6,y12:18.3,y12Pos:100,worst:8.3}];
+ {k:"Midterm moderado (0% a 5%)",n:2,dec:-5.2,decPos:0,jun:11.9,y12:17.6,y12Pos:100,worst:12.0},
+ {k:"Midterm fraco",n:8,dec:3.2,decPos:62,jun:17.6,y12:18.3,y12Pos:100,worst:8.3}];
 const Y=[
- [2026,null,-7.7,"mar",11.1,null,null,null],
+ [2026,null,-7.7,"mar",10.7,null,null,null],
  [2022,-19.4,-26.7,"out",-18.8,-0.8,8.3,20.1],
  [2018,-6.2,-12.2,"dez",1.4,-7.6,12.0,37.7],
  [2014,11.4,-6.0,"fev",9.2,2.0,3.0,21.1],
  [2010,12.8,-9.3,"jul",6.1,6.3,5.9,27.8],
  [2006,13.6,-2.3,"jun",10.4,2.9,12.4,23.3],
- [2002,-23.4,-33.1,"out",-22.9,-0.7,18.6,36.7],
+ [2002,-23.4,-33.0,"out",-22.9,-0.7,18.6,36.7],
  [1998,26.7,-5.9,"jan",13.2,11.9,24.1,40.2],
- [1994,-1.1,-6.6,"abr",1.3,-2.4,23.1,18.1],
+ [1994,-1.5,-6.6,"abr",1.3,-2.8,23.1,18.1],
  [1990,-6.6,-16.7,"out",-14.0,8.6,29.1,33.3],
- [1986,14.6,-4.1,"jan",15.5,-0.8,3.2,35.3],
+ [1986,14.6,-4.1,"jan",15.5,-0.7,3.2,35.3],
  [1982,14.8,-16.6,"ago",9.1,5.2,22.3,60.9],
- [1978,1.1,-9.1,"mar",-2.1,3.2,9.3,17.5],
+ [1978,1.1,-9.1,"mar",-2.0,3.2,9.3,17.5],
  [1974,-29.7,-37.5,"out",-24.2,-7.2,20.5,46.1],
  [1970,0.1,-25.5,"mai",-9.6,10.7,13.2,45.2],
  [1966,-13.1,-21.8,"out",-13.2,0.2,16.3,29.1],
  [1962,-11.8,-28.2,"jun",-21.0,11.6,30.9,35.1],
- [1958,38.1,0.9,"jan",28.4,7.6,12.1,37.5],
- [1954,45.0,-0.0,"jan",27.7,13.6,33.7,47.7],
+ [1958,38.1,0.0,"jan",28.4,7.6,12.1,37.5],
+ [1954,45.0,-0.0,"jan",27.7,13.6,33.6,47.7],
  [1950,21.7,-0.8,"jan",16.3,4.6,17.5,30.0]
 ].map(r=>({y:r[0],ret:r[1],dd:r[2],minM:r[3],oct:r[4],dec:r[5],y12:r[6],fromMin:r[7]}));
-const AVG={ret:4.7,dd:-13.8,oct:0.7,dec:3.6,y12:16.6,fromMin:33.8};
+const AVG={ret:4.6,dd:-13.8,oct:0.7,dec:3.6,y12:16.6,fromMin:33.8};
 const METRICS=[
  {k:"y12",label:"Out → +12 meses",note:"Do fechamento de outubro do midterm até 12 meses depois. É a medida central do estudo: todos os anos ficaram positivos."},
  {k:"dec",label:"Out → Dez",note:"Do fechamento de outubro até o fim do ano: o rali de fim de ano."},
@@ -496,10 +530,10 @@ segY.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)retur
   segY.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));drawYears(b.dataset.k)});
 drawYears("y12");
 
-/* Meses (estimativas preliminares) */
+/* Meses: médias verificadas 1950-2025 */
 hbars(document.getElementById("c-months"),[
-  {label:"Outubro",vals:[{v:0.99,fill:"var(--s1)"},{v:0.98,fill:"var(--s2)"}],tip:"<b>Outubro</b><br>Midterm +0,99% (74% positivos)<br>Demais anos +0,98% (59% positivos)"},
-  {label:"Novembro",vals:[{v:2.75,fill:"var(--s1)"},{v:1.86,fill:"var(--s2)"}],tip:"<b>Novembro</b><br>Midterm +2,75%<br>Demais anos +1,86%<br>Positivo em quase 80% dos anos"}
+  {label:"Outubro",vals:[{v:3.0,fill:"var(--s1)"},{v:0.2,fill:"var(--s2)"}],tip:"<b>Outubro</b><br>Midterm +3,0% (74% positivos)<br>Demais anos +0,2% (54% positivos)<br>Outubro de 2026: −0,9%"},
+  {label:"Novembro",vals:[{v:2.75,fill:"var(--s1)"},{v:1.57,fill:"var(--s2)"}],tip:"<b>Novembro</b><br>Midterm +2,8% (79% positivos)<br>Demais anos +1,6% (67% positivos)"}
 ],{aria:"Retorno médio de outubro e novembro",labW:90,barH:16,step:1});
 
 /* Dots 19/19 */

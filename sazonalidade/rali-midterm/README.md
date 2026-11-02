@@ -22,8 +22,9 @@ Explicar, inclusive para iniciantes:
 | Gráfico 1 | Média e mediana por ano do ciclo |
 | Gráfico 2 | Retorno a partir de outubro, por grupo (até dezembro e em 12 meses) |
 | Gráfico 3 | Todos os midterms ano a ano, com 6 medidas selecionáveis |
-| Outubro e novembro | Retorno médio mensal (estimativa preliminar) |
+| Outubro e novembro | Retorno médio mensal, midterm x demais anos |
 | Simulador | Valor hipotético aplicado no fim de outubro, pior, médio e melhor caso |
+| Auditoria | O que foi conferido e corrigido |
 | Contexto | Pregão de 30/10/2026 e hipóteses em acompanhamento |
 | Cuidados e glossário | Limitações da análise e termos explicados |
 
@@ -45,17 +46,17 @@ Endereço publicado: https://nilsonjacobcosta.github.io/market-lab/sazonalidade/
 
 ## Limitações
 
-- Os números são de um estudo preliminar e ainda não foram auditados contra séries oficiais.
+- Números recalculados e revisados de forma independente em 02/11/2026 (ver [`dados/README.md`](../../dados/README.md)). Retorno de preço, sem dividendos.
 - A amostra tem 19 midterms. Padrões com poucos casos podem falhar.
-- Os grupos "forte" (9) e "fraco" (8) somam 17 anos: 1994 e 2018 ficaram entre 0% e 5% até outubro.
-- O valor de outubro de 2026 tem duas estimativas preliminares: cerca de −0,6% e cerca de −0,93%.
+- Os grupos "forte" (9) e "fraco" (8) somam 17 anos; 1994 e 2018 formam o grupo "moderado".
+- Outubro de 2026: −0,93% no S&P 500.
 
 ## Próximos passos
 
-- [ ] Recalcular todas as séries a partir de dados oficiais (FRED / S&P DJI) com um script versionado.
+- [x] Recalcular todas as séries com um script versionado (`scripts/fase1_auditoria.py`).
 - [ ] Incluir retorno total (com dividendos) além do retorno de preço.
 - [ ] Atualizar 2026 após o fechamento de novembro e dezembro.
-- [ ] Revisar a literatura acadêmica sobre o ciclo presidencial e citá-la no painel.
+- [x] Citar a literatura sobre o ciclo presidencial (Booth e Booth, 2003).
 
 ## Aviso
 

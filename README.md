@@ -8,7 +8,8 @@ Laboratório de painéis e estudos sobre mercado financeiro: sazonalidade, ciclo
 
 | Projeto | Pasta | Status | Descrição |
 |---|---|---|---|
-| Rali do Midterm | [`sazonalidade/rali-midterm`](sazonalidade/rali-midterm/) | Publicado | Sazonalidade do S&P 500 no ano de eleição de meio de mandato nos EUA e nos 12 meses seguintes |
+| Rali do Midterm | [`sazonalidade/rali-midterm`](sazonalidade/rali-midterm/) | Publicado, auditado | Sazonalidade do S&P 500 no ano de eleição de meio de mandato nos EUA e nos 12 meses seguintes |
+| Termômetro macro do midterm | [`macro/termometro-midterm`](macro/termometro-midterm/) | Publicado | Juros, petróleo, dólar, metais e índices no ciclo presidencial; o que explica outubro de 2026 |
 | Monitor multi-gráficos | [`monitor/`](monitor/) | Planejado | Vários gráficos de mercado na mesma tela (widgets do TradingView) |
 
 ## Estrutura
@@ -18,6 +19,10 @@ market-lab/
 ├── index.html          # página inicial com o índice dos painéis
 ├── sazonalidade/       # estudos de sazonalidade e ciclos
 │   └── rali-midterm/
+├── macro/              # juros, commodities, dólar e índices
+│   └── termometro-midterm/
+├── dados/              # dados brutos, processados e documentação (ver dados/README.md)
+├── scripts/            # código que recalcula todos os números
 ├── monitor/            # painéis de acompanhamento de mercado
 └── README.md
 ```
@@ -31,7 +36,7 @@ market-lab/
 ## Princípios
 
 - Cada número tem fonte citada e verificável.
-- Dados ainda não auditados contra séries oficiais são marcados como tal.
+- Os números são recalculados por scripts versionados a partir dos dados brutos (ver [`dados/README.md`](dados/README.md)).
 - Opiniões de terceiros aparecem separadas dos dados.
 
 ## Aviso
