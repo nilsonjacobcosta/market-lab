@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rali do Midterm</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: painel de leitura vertical — resumo no topo, depois "aprenda em 3 passos", gráficos com explicação ao lado, contexto, cuidados e glossário. */
+:root{
+  --bg:#f2f4f7; --surface:#ffffff; --surface-2:#e9edf2;
+  --ink:#152131; --ink-2:#465567; --muted:#6f7d8d; --line:#d9e0e8;
+  --accent:#b86e0c; --accent-soft:#fbefdc;
+  --s1:#2e66a3; --s2:#93b5da;
+  --pos:#1d7f55; --pos-soft:#dff2e8; --neg:#b9443a; --neg-soft:#f8e3e0;
+  --f-display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+  --f-body:"IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0d131a; --surface:#141c26; --surface-2:#1b2532;
+  --ink:#e5ecf3; --ink-2:#aab6c3; --muted:#7f8c9a; --line:#263241;
+  --accent:#e9a443; --accent-soft:#2c2213;
+  --s1:#6ea2dc; --s2:#34587f;
+  --pos:#45c08a; --pos-soft:#14291f; --neg:#ef7b6f; --neg-soft:#2e1816;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0d131a; --surface:#141c26; --surface-2:#1b2532;
+  --ink:#e5ecf3; --ink-2:#aab6c3; --muted:#7f8c9a; --line:#263241;
+  --accent:#e9a443; --accent-soft:#2c2213;
+  --s1:#6ea2dc; --s2:#34587f;
+  --pos:#45c08a; --pos-soft:#14291f; --neg:#ef7b6f; --neg-soft:#2e1816;
+  color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55}
+.wrap{max-width:1120px;margin:0 auto;padding-block:32px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:56px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.12}
+h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:700;letter-spacing:-.02em}
+h2{font-size:clamp(1.4rem,3vw,1.9rem);font-weight:700;letter-spacing:-.01em}
+h3{font-size:1.08rem;font-weight:700}
+p{margin:0;max-width:66ch}
+.eyebrow{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.pos{color:var(--pos)} .neg{color:var(--neg)}
+a{color:var(--s1)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+
+/* Hero */
+header.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:32px;align-items:end}
+header.hero > *{min-width:0}
+.hero .lede{font-size:1.12rem;color:var(--ink-2);margin-top:14px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:18px;font-size:.86rem;color:var(--muted)}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;background:var(--surface-2);color:var(--ink-2);font-size:.8rem;font-weight:500}
+.chip.warn{background:var(--accent-soft);color:var(--accent)}
+.verdict{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:10px}
+.verdict .big{font-family:var(--f-display);font-size:clamp(2.6rem,6vw,3.8rem);font-weight:700;line-height:1;color:var(--pos)}
+.verdict .sub{color:var(--ink-2);font-size:.95rem}
+.dots{display:flex;flex-wrap:wrap;gap:5px;margin-top:4px}
+.dots i{width:14px;height:14px;border-radius:50%;background:var(--pos);display:block}
+
+/* KPI row */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.kpi .v{font-family:var(--f-mono);font-size:1.7rem;font-weight:500;font-variant-numeric:tabular-nums}
+.kpi .l{font-size:.86rem;color:var(--ink-2)}
+.kpi.hl{border-color:var(--accent);background:linear-gradient(var(--accent-soft),var(--accent-soft)) padding-box}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.step{padding:18px;border-top:3px solid var(--ink);display:flex;flex-direction:column;gap:8px}
+.step .n{font-family:var(--f-mono);font-size:.8rem;color:var(--muted)}
+.step p{color:var(--ink-2);font-size:.95rem}
+
+/* Section blocks */
+section{display:flex;flex-direction:column;gap:18px}
+.sec-head{display:flex;flex-direction:column;gap:8px}
+.sec-head p{color:var(--ink-2)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.split{display:grid;grid-template-columns:1.6fr 1fr;gap:18px}
+.split > *{min-width:0}
+.explain{display:flex;flex-direction:column;gap:12px;font-size:.95rem;color:var(--ink-2)}
+.explain b{color:var(--ink)}
+.callout{border-left:3px solid var(--accent);padding:4px 0 4px 14px;color:var(--ink)}
+
+/* Charts */
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart text{font-family:var(--f-mono);font-size:12px;fill:var(--ink-2)}
+.chart .lbl{font-family:var(--f-body);font-size:13px;fill:var(--ink)}
+.chart .zero{stroke:var(--muted);stroke-width:1}
+.chart .grid{stroke:var(--line);stroke-width:1}
+.chart .hit{fill:transparent;cursor:default}
+.chart .row:hover .bar{opacity:.85}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:.84rem;color:var(--ink-2);margin-bottom:8px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+.tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);padding:8px 10px;border-radius:8px;font-size:.82rem;line-height:1.35;max-width:240px;z-index:20;opacity:0;transition:opacity .12s}
+.tip b{font-family:var(--f-mono)}
+
+/* Toggle */
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{font:inherit;font-size:.85rem;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.metric-note{font-size:.88rem;color:var(--ink-2);min-height:2.6em}
+
+/* Simulator */
+.sim{display:grid;grid-template-columns:1fr 1.4fr;gap:18px;align-items:start}
+.sim > *{min-width:0}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:.88rem;font-weight:600}
+.field input{font:inherit;font-family:var(--f-mono);font-size:1.2rem;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);width:100%}
+.out{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.out div{background:var(--surface-2);border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:4px}
+.out .v{font-family:var(--f-mono);font-size:1.25rem;font-variant-numeric:tabular-nums}
+.out .l{font-size:.8rem;color:var(--ink-2)}
+
+/* Tables */
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.9rem;min-width:640px}
+th,td{padding:9px 10px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500}
+th:first-child,td:first-child{text-align:left}
+td{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+tr.now td{background:var(--accent-soft)}
+tr.avg td{font-weight:600;border-top:2px solid var(--ink)}
+details summary{cursor:pointer;font-weight:600;padding:6px 0}
+
+/* Context tiles */
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.tile .v{font-family:var(--f-mono);font-size:1.25rem}
+.tile .l{font-size:.85rem;color:var(--ink-2)}
+.theses{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.thesis{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:6px}
+.thesis p{font-size:.93rem;color:var(--ink-2)}
+.tag{align-self:flex-start;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:4px;background:var(--surface-2);color:var(--muted)}
+
+/* Cautions & glossary */
+.cautions{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.caution{display:flex;gap:12px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+.caution .ic{flex:none;width:24px;height:24px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-family:var(--f-mono);font-weight:600;font-size:.85rem}
+.caution p{font-size:.92rem;color:var(--ink-2)}
+dl.gloss{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 28px;margin:0}
+dl.gloss div{border-top:1px solid var(--line);padding-top:10px}
+dt{font-weight:600}
+dd{margin:4px 0 0;color:var(--ink-2);font-size:.93rem}
+footer{font-size:.88rem;color:var(--ink-2);display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--line);padding-top:20px}
+footer ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
+
+@media (max-width:860px){
+  header.hero,.split,.sim{grid-template-columns:1fr}
+  .kpis,.tiles{grid-template-columns:repeat(2,1fr)}
+  .steps,.theses,.cautions,dl.gloss{grid-template-columns:1fr}
+}
+@media (max-width:420px){.out{grid-template-columns:1fr}.kpi .v{font-size:1.4rem}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header class="hero">
+  <div>
+    <div class="eyebrow">Sazonalidade do S&amp;P 500 · ciclo presidencial dos EUA</div>
+    <h1>O rali depois da eleição de meio de mandato</h1>
+    <p class="lede">O 2º ano de cada mandato presidencial americano costuma ser o mais fraco para a bolsa. O que vem depois da eleição, porém, tem um histórico bem diferente. Este painel organiza os números apresentados no vídeo de Igor Mundstock e explica cada um em linguagem simples.</p>
+    <div class="meta">
+      <span class="chip">Amostra: 1950 a out/2026</span>
+      <span class="chip">19 anos de midterm</span>
+      <span class="chip warn">Histórico, não previsão</span>
+    </div>
+  </div>
+  <div class="verdict" aria-label="Resumo principal">
+    <div class="eyebrow">12 meses após o fim de outubro do midterm</div>
+    <div class="big num">+16,6%</div>
+    <div class="sub">foi a alta média do S&amp;P 500. Em <b>19 de 19</b> midterms desde 1950 o índice terminou esse período em alta.</div>
+    <div class="dots" id="dots" aria-hidden="true"></div>
+  </div>
+</header>
+
+<div class="kpis">
+  <div class="kpi"><span class="l">Retorno médio do ano de midterm</span><span class="v num">+4,7%</span><span class="l">o mais fraco do ciclo de 4 anos</span></div>
+  <div class="kpi"><span class="l">Retorno médio do ano seguinte (pré-eleitoral)</span><span class="v num pos">+17,2%</span><span class="l">o mais forte do ciclo, 89% de anos positivos</span></div>
+  <div class="kpi"><span class="l">Pior resultado em 12 meses após outubro</span><span class="v num pos">+3,0%</span><span class="l">nenhum caso negativo na amostra</span></div>
+  <div class="kpi hl"><span class="l">2026 até o fim de outubro</span><span class="v num">+11,1%</span><span class="l">média histórica nesse ponto: +0,7%</span></div>
+</div>
+
+<section aria-labelledby="h-steps">
+  <div class="sec-head">
+    <div class="eyebrow">Para quem está começando</div>
+    <h2 id="h-steps">Entenda em três passos</h2>
+  </div>
+  <div class="steps">
+    <div class="step"><span class="n">Passo 1</span><h3>O mandato tem 4 anos</h3><p>O presidente dos EUA governa por 4 anos. No meio do caminho, no 2º ano, há eleições para o Congresso: é o <b>midterm</b>. Em 2026 estamos nesse 2º ano.</p></div>
+    <div class="step"><span class="n">Passo 2</span><h3>A incerteza pesa antes</h3><p>Antes da eleição, o mercado não sabe quem vai controlar o Congresso. Investidores ficam cautelosos e o índice costuma andar de lado ou cair entre abril e outubro.</p></div>
+    <div class="step"><span class="n">Passo 3</span><h3>O alívio vem depois</h3><p>Com o resultado definido, a dúvida some. Historicamente, o fim de outubro do midterm marcou o início de um dos trechos mais fortes do ciclo inteiro.</p></div>
+  </div>
+</section>
+
+<section aria-labelledby="h-cycle">
+  <div class="sec-head">
+    <div class="eyebrow">Gráfico 1</div>
+    <h2 id="h-cycle">Cada ano do mandato tem um comportamento típico</h2>
+    <p>Retorno anual do S&amp;P 500 por ano do ciclo presidencial, 19 ciclos desde 1950.</p>
+  </div>
+  <div class="split">
+    <div class="panel chart">
+      <div class="legend"><span><i style="background:var(--s1)"></i>Média</span><span><i style="background:var(--s2)"></i>Mediana</span></div>
+      <div id="c-cycle"></div>
+    </div>
+    <div class="explain">
+      <p><b>Média</b> soma tudo e divide pelo número de anos. Um ano excepcional puxa a média para cima ou para baixo.</p>
+      <p><b>Mediana</b> é o valor do meio da fila. Ela mostra o ano “típico” sem a distorção dos extremos.</p>
+      <p class="callout">No midterm a média é +4,7%, mas a mediana é só +1,1%: metade dos midterms fechou abaixo disso. É o ano mais fraco do ciclo, e 2026 é um midterm.</p>
+    </div>
+  </div>
+  <details class="panel">
+    <summary>Ver a tabela completa</summary>
+    <div class="tbl"><table id="t-cycle"></table></div>
+  </details>
+</section>
+
+<section aria-labelledby="h-fwd">
+  <div class="sec-head">
+    <div class="eyebrow">Gráfico 2</div>
+    <h2 id="h-fwd">Daqui para frente: o que veio depois do fim de outubro</h2>
+    <p>Retorno do S&amp;P 500 a partir do fechamento de outubro do ano de midterm, por grupo de anos.</p>
+  </div>
+  <div class="split">
+    <div class="panel chart">
+      <div class="seg" role="group" aria-label="Horizonte" id="seg-fwd">
+        <button type="button" aria-pressed="false" data-k="dec">Até dezembro</button>
+        <button type="button" aria-pressed="true" data-k="y12">Em 12 meses</button>
+      </div>
+      <div id="c-fwd" style="margin-top:12px"></div>
+    </div>
+    <div class="explain">
+      <p><b>Midterm forte</b> são os anos que chegaram a outubro com alta acima de 5%, como 2026 (+11,1%). <b>Midterm fraco</b> são os que chegaram a outubro em queda.</p>
+      <p>Até dezembro, os midterms fortes subiram em média +5,9% e tiveram dezembro positivo em 89% dos casos. Esse é o chamado “rali de fim de ano”.</p>
+      <p class="callout">Em 12 meses, fortes (+14,9%) e fracos (+18,3%) foram parecidos. A estação ajudou, mas 2026 parte de uma base mais esticada.</p>
+    </div>
+  </div>
+  <details class="panel">
+    <summary>Ver a tabela completa</summary>
+    <div class="tbl"><table id="t-fwd"></table></div>
+  </details>
+</section>
+
+<section aria-labelledby="h-years">
+  <div class="sec-head">
+    <div class="eyebrow">Gráfico 3</div>
+    <h2 id="h-years">Ano a ano: todos os midterms desde 1950</h2>
+    <p>Escolha a medida. Passe o mouse ou toque numa barra para ver o detalhe do ano.</p>
+  </div>
+  <div class="panel chart">
+    <div class="seg" role="group" aria-label="Medida" id="seg-years"></div>
+    <p class="metric-note" id="metric-note" style="margin-top:10px"></p>
+    <div id="c-years"></div>
+  </div>
+  <details class="panel">
+    <summary>Ver a tabela completa</summary>
+    <div class="tbl"><table id="t-years"></table></div>
+    <p style="font-size:.84rem;color:var(--muted);margin-top:10px">Queda máxima: da base do ano anterior até a menor mínima mensal do ano. Mínima → +12m: da mínima mensal do ano até o fechamento do mesmo mês no ano seguinte.</p>
+  </details>
+</section>
+
+<section aria-labelledby="h-months">
+  <div class="sec-head">
+    <div class="eyebrow">Outubro e novembro</div>
+    <h2 id="h-months">Por que o mês atual importa</h2>
+    <p>Números lidos pelo autor no gráfico de retorno médio por mês do estudo.</p>
+  </div>
+  <div class="split">
+    <div class="panel chart">
+      <div class="legend"><span><i style="background:var(--s1)"></i>Anos de midterm</span><span><i style="background:var(--s2)"></i>Demais anos</span></div>
+      <div id="c-months"></div>
+    </div>
+    <div class="explain">
+      <p>Novembro de midterm subiu em média <b>+2,75%</b>, contra +1,86% nos demais anos. É um dos melhores meses de todo o calendário.</p>
+      <p>Outubro de 2026 fugiu do padrão: fechou em queda, enquanto a média histórica de outubro é positiva.</p>
+      <p class="callout">O valor exato de outubro de 2026 aparece de dois jeitos na fonte: cerca de −0,6% no texto do estudo e cerca de −0,93% na fala do autor.</p>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="h-sim">
+  <div class="sec-head">
+    <div class="eyebrow">Simulador histórico</div>
+    <h2 id="h-sim">Quanto teria virado um investimento no S&amp;P 500?</h2>
+    <p>Aplicando os retornos de 12 meses após o fim de outubro dos midterms de 1950 a 2022. Não considera câmbio, impostos, taxas nem dividendos.</p>
+  </div>
+  <div class="panel sim">
+    <div class="field">
+      <label for="amt">Valor aplicado no fim de outubro (R$)</label>
+      <input id="amt" type="number" min="0" step="100" value="10000" inputmode="numeric">
+    </div>
+    <div class="out" aria-live="polite">
+      <div><span class="l">Pior caso (2014, +3,0%)</span><span class="v" id="o-min"></span></div>
+      <div><span class="l">Média (+16,6%)</span><span class="v pos" id="o-avg"></span></div>
+      <div><span class="l">Melhor caso (1954, +33,7%)</span><span class="v pos" id="o-max"></span></div>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="h-ctx">
+  <div class="sec-head">
+    <div class="eyebrow">Contexto do vídeo</div>
+    <h2 id="h-ctx">O que aconteceu no pregão de sexta-feira, 30/10/2026</h2>
+    <p>Variações citadas pelo autor no vídeo. Ele atribui a queda à correção das big techs e a vendas forçadas por chamada de margem.</p>
+  </div>
+  <div class="tiles">
+    <div class="tile"><span class="l">S&amp;P 500</span><span class="v neg">−1,8%</span></div>
+    <div class="tile"><span class="l">Nasdaq</span><span class="v neg">−3,5%</span></div>
+    <div class="tile"><span class="l">Russell 2000</span><span class="v neg">−1,6%</span></div>
+    <div class="tile"><span class="l">Índice do dólar (DXY)</span><span class="v pos">+0,11%</span></div>
+    <div class="tile"><span class="l">Ouro · mínima do ano</span><span class="v neg">−3,29%</span></div>
+    <div class="tile"><span class="l">Prata · abaixo de US$ 50/oz</span><span class="v neg">≈ −6%</span></div>
+    <div class="tile"><span class="l">Petróleo Brent</span><span class="v">&gt; US$ 113</span></div>
+    <div class="tile"><span class="l">Petróleo WTI</span><span class="v">&gt; US$ 102</span></div>
+  </div>
+  <h3 style="margin-top:10px">As teses do autor</h3>
+  <div class="theses">
+    <div class="thesis"><span class="tag">Opinião</span><h3>Rotação, não pânico</h3><p>O dinheiro está saindo das techs e indo para títulos do Tesouro americano, small caps e o S&amp;P de pesos iguais (RSP), que está perto da máxima histórica.</p></div>
+    <div class="thesis"><span class="tag">Opinião</span><h3>S&amp;P parado há 5 meses</h3><p>O índice anda de lado desde junho. O autor espera que ele saia dessa faixa para cima, puxado pela sazonalidade.</p></div>
+    <div class="thesis"><span class="tag">Opinião</span><h3>Metais caíram por motivo técnico</h3><p>Ouro e prata recuaram sem gatilho macro. O autor vê a queda como oportunidade e prefere mineradoras de cobre ao metal.</p></div>
+    <div class="thesis"><span class="tag">Opinião</span><h3>Petróleo pode fazer pico</h3><p>Passada a eleição, o Irã teria menos incentivo para pressionar o preço. Petróleo em queda puxaria os juros para baixo e ajudaria ações e metais.</p></div>
+  </div>
+</section>
+
+<section aria-labelledby="h-care">
+  <div class="sec-head">
+    <div class="eyebrow">Antes de usar</div>
+    <h2 id="h-care">Cuidados na leitura</h2>
+  </div>
+  <div class="cautions">
+    <div class="caution"><span class="ic">1</span><p><b>Amostra pequena.</b> São 19 midterms. Um único ano ruim muda bastante a média, e “100% de acerto” em 19 casos não garante o 20º.</p></div>
+    <div class="caution"><span class="ic">2</span><p><b>Sazonalidade não é previsão.</b> É a tendência média de décadas. Guerra, juros e inflação em 2026 podem sobrepor o padrão.</p></div>
+    <div class="caution"><span class="ic">3</span><p><b>Dados não auditados.</b> Os números vêm de um estudo gerado por IA e exibido no vídeo, sem fonte primária na tela. Confira com séries oficiais antes de decidir.</p></div>
+    <div class="caution"><span class="ic">4</span><p><b>Grupos incompletos.</b> Fortes (9) e fracos (8) somam 17 anos. 1994 (+1,3%) e 2018 (+1,4%) ficaram entre 0% e 5% até outubro e não entram em nenhum grupo.</p></div>
+  </div>
+</section>
+
+<section aria-labelledby="h-gloss">
+  <div class="sec-head">
+    <div class="eyebrow">Glossário</div>
+    <h2 id="h-gloss">Termos usados neste painel</h2>
+  </div>
+  <dl class="gloss">
+    <div><dt>S&amp;P 500</dt><dd>Índice com as 500 maiores empresas listadas nos EUA. É a principal referência da bolsa americana.</dd></div>
+    <div><dt>Midterm</dt><dd>Eleição legislativa no meio do mandato presidencial, no 2º ano. Renova a Câmara e parte do Senado.</dd></div>
+    <div><dt>Ano pré-eleitoral</dt><dd>O 3º ano do mandato, logo depois do midterm. Historicamente o melhor ano do ciclo.</dd></div>
+    <div><dt>Rali de fim de ano</dt><dd>Tendência de alta da bolsa entre novembro e dezembro, observada em boa parte dos anos.</dd></div>
+    <div><dt>Queda máxima</dt><dd>A maior perda do ano, medida do fechamento do ano anterior até a pior mínima mensal.</dd></div>
+    <div><dt>RSP</dt><dd>Fundo que replica o S&amp;P 500 com o mesmo peso para todas as empresas, sem o domínio das big techs.</dd></div>
+    <div><dt>Russell 2000</dt><dd>Índice de empresas menores (small caps). Costuma ser mais volátil que o S&amp;P 500.</dd></div>
+    <div><dt>Chamada de margem</dt><dd>Exigência de mais garantia em operações alavancadas. Quem não tem dinheiro precisa vender ativos às pressas.</dd></div>
+  </dl>
+</section>
+
+<footer>
+  <div class="eyebrow">Fontes e aviso</div>
+  <ul>
+    <li>Mundstock, Igor. <a href="https://youtu.be/-WnbOPAx5Hc" target="_blank" rel="noopener">“Estão prontos para o rally de Natal? Estudo de sazonalidade do mercado americano”</a>. YouTube, canal @igormundstock, out/nov 2026. Fonte dos números e das opiniões.</li>
+    <li>Para validar as séries: <a href="https://fred.stlouisfed.org/series/SP500" target="_blank" rel="noopener">FRED, Federal Reserve Bank of St. Louis, série SP500</a> e <a href="https://www.spglobal.com/spdji/en/indices/equity/sp-500/" target="_blank" rel="noopener">S&amp;P Dow Jones Indices, S&amp;P 500</a>.</li>
+  </ul>
+  <p>Este painel é material educativo. Não é recomendação de investimento. Rentabilidade passada não garante resultado futuro.</p>
+</footer>
+</div>
+<div class="tip" id="tip" role="tooltip"></div>
+
+<script>
+(function(){
+const CYCLE=[
+ {k:"Pós-eleitoral",avg:8.4,med:9.1,pos:63,worst:-17.4,best:31.0},
+ {k:"Midterm (2026)",avg:4.7,med:1.1,pos:58,worst:-29.7,best:45.0,now:true},
+ {k:"Pré-eleitoral",avg:17.2,med:18.9,pos:89,worst:-0.7,best:33.6},
+ {k:"Eleitoral",avg:8.1,med:11.8,pos:84,worst:-38.5,best:25.8}];
+const FWD=[
+ {k:"Todos os anos",n:75,dec:3.3,decPos:77,jun:null,y12:9.3,y12Pos:80,worst:-37.5},
+ {k:"Anos de midterm",n:19,dec:3.6,decPos:68,jun:16.5,y12:16.6,y12Pos:100,worst:3.0},
+ {k:"Midterm forte (como 2026)",n:9,dec:5.9,decPos:89,jun:16.5,y12:14.9,y12Pos:100,worst:3.0,now:true},
+ {k:"Midterm fraco",n:8,dec:3.2,decPos:63,jun:17.6,y12:18.3,y12Pos:100,worst:8.3}];
+const Y=[
+ [2026,null,-7.7,"mar",11.1,null,null,null],
+ [2022,-19.4,-26.7,"out",-18.8,-0.8,8.3,20.1],
+ [2018,-6.2,-12.2,"dez",1.4,-7.6,12.0,37.7],
+ [2014,11.4,-6.0,"fev",9.2,2.0,3.0,21.1],
+ [2010,12.8,-9.3,"jul",6.1,6.3,5.9,27.8],
+ [2006,13.6,-2.3,"jun",10.4,2.9,12.4,23.3],
+ [2002,-23.4,-33.1,"out",-22.9,-0.7,18.6,36.7],
+ [1998,26.7,-5.9,"jan",13.2,11.9,24.1,40.2],
+ [1994,-1.1,-6.6,"abr",1.3,-2.4,23.1,18.1],
+ [1990,-6.6,-16.7,"out",-14.0,8.6,29.1,33.3],
+ [1986,14.6,-4.1,"jan",15.5,-0.8,3.2,35.3],
+ [1982,14.8,-16.6,"ago",9.1,5.2,22.3,60.9],
+ [1978,1.1,-9.1,"mar",-2.1,3.2,9.3,17.5],
+ [1974,-29.7,-37.5,"out",-24.2,-7.2,20.5,46.1],
+ [1970,0.1,-25.5,"mai",-9.6,10.7,13.2,45.2],
+ [1966,-13.1,-21.8,"out",-13.2,0.2,16.3,29.1],
+ [1962,-11.8,-28.2,"jun",-21.0,11.6,30.9,35.1],
+ [1958,38.1,0.9,"jan",28.4,7.6,12.1,37.5],
+ [1954,45.0,-0.0,"jan",27.7,13.6,33.7,47.7],
+ [1950,21.7,-0.8,"jan",16.3,4.6,17.5,30.0]
+].map(r=>({y:r[0],ret:r[1],dd:r[2],minM:r[3],oct:r[4],dec:r[5],y12:r[6],fromMin:r[7]}));
+const AVG={ret:4.7,dd:-13.8,oct:0.7,dec:3.6,y12:16.6,fromMin:33.8};
+const METRICS=[
+ {k:"y12",label:"Out → +12 meses",note:"Do fechamento de outubro do midterm até 12 meses depois. É a medida central do vídeo: todos os anos ficaram positivos."},
+ {k:"dec",label:"Out → Dez",note:"Do fechamento de outubro até o fim do ano: o rali de fim de ano."},
+ {k:"oct",label:"Jan → Out",note:"Quanto o índice acumulava no ano até o fim de outubro. 2026 está bem acima da média de +0,7%."},
+ {k:"ret",label:"Ano inteiro",note:"Retorno do ano civil completo do midterm."},
+ {k:"dd",label:"Queda máxima",note:"A pior perda dentro do ano. Mostra o tamanho do susto, mesmo nos anos que terminaram bem."},
+ {k:"fromMin",label:"Mínima → +12m",note:"Quem comprou na pior mínima mensal do midterm e esperou 12 meses."}];
+
+const NS="http://www.w3.org/2000/svg";
+const fmt=v=>v==null?"–":(v>0?"+":v<0?"−":"")+Math.abs(v).toFixed(1).replace(".",",")+"%";
+const el=(t,a,p)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e};
+const tip=document.getElementById("tip");
+function showTip(ev,html){tip.innerHTML=html;tip.style.opacity=1;const x=Math.min(ev.clientX+14,innerWidth-tip.offsetWidth-8),y=Math.min(ev.clientY+14,innerHeight-tip.offsetHeight-8);tip.style.left=x+"px";tip.style.top=y+"px"}
+function hideTip(){tip.style.opacity=0}
+
+/* Horizontal bars. rows:[{label,vals:[{v,cls/fill}],tip,now}] */
+function hbars(host,rows,opt){
+  host.innerHTML="";
+  const W=640,labW=opt.labW||150,valW=58,barH=opt.barH||14,gap=opt.gap||4,rowGap=opt.rowGap||14;
+  const nV=rows[0].vals.length,rowH=nV*barH+(nV-1)*gap;
+  const H=rows.length*(rowH+rowGap)+24;
+  const all=rows.flatMap(r=>r.vals.map(v=>v.v)).filter(v=>v!=null);
+  let lo=Math.min(0,...all),hi=Math.max(0,...all);
+  const pad=(hi-lo)*.04;lo=lo<0?lo-pad:0;hi=hi>0?hi+pad:0;
+  const x0=labW+valW*(lo<0?1:0),x1=W-valW;
+  const sx=v=>x0+(v-lo)/(hi-lo)*(x1-x0);
+  const svg=el("svg",{viewBox:`0 0 ${W} ${H}`,role:"img","aria-label":opt.aria});
+  // grid ticks
+  const step=opt.step||10;
+  for(let t=Math.ceil(lo/step)*step;t<=hi;t+=step){
+    el("line",{x1:sx(t),x2:sx(t),y1:0,y2:H-22,class:t===0?"zero":"grid"},svg);
+    const tx=el("text",{x:sx(t),y:H-6,"text-anchor":"middle"},svg);tx.textContent=(t>0?"+":"")+t+"%";
+  }
+  rows.forEach((r,i)=>{
+    const y=i*(rowH+rowGap)+rowGap/2;
+    const g=el("g",{class:"row"},svg);
+    if(r.now)el("rect",{x:0,y:y-5,width:W,height:rowH+10,rx:6,fill:"var(--accent-soft)"},g);
+    const lb=el("text",{x:0,y:y+rowH/2+4,class:"lbl"},g);lb.textContent=r.label;
+    if(r.now)lb.setAttribute("font-weight","600");
+    r.vals.forEach((v,j)=>{
+      const by=y+j*(barH+gap);
+      if(v.v==null){const t=el("text",{x:sx(0)+6,y:by+barH-3},g);t.textContent="ainda sem dado";return}
+      const a=sx(Math.min(0,v.v)),b=sx(Math.max(0,v.v));
+      const w=Math.max(b-a,1.5),r4=Math.min(4,w/2);
+      // rounded only on data end
+      const pos=v.v>=0;
+      const d=pos?`M${a},${by}H${a+w-r4}Q${a+w},${by} ${a+w},${by+r4}V${by+barH-r4}Q${a+w},${by+barH} ${a+w-r4},${by+barH}H${a}Z`
+                 :`M${b},${by}H${b-w+r4}Q${b-w},${by} ${b-w},${by+r4}V${by+barH-r4}Q${b-w},${by+barH} ${b-w+r4},${by+barH}H${b}Z`;
+      el("path",{d,fill:v.fill||(pos?"var(--pos)":"var(--neg)"),class:"bar"},g);
+      const vt=el("text",{x:pos?b+6:a-6,y:by+barH-3,"text-anchor":pos?"start":"end"},g);vt.textContent=fmt(v.v);
+    });
+    const hit=el("rect",{x:0,y:y-rowGap/2,width:W,height:rowH+rowGap,class:"hit"},g);
+    if(r.tip){hit.addEventListener("mousemove",e=>showTip(e,r.tip));hit.addEventListener("mouseleave",hideTip);
+      hit.addEventListener("touchstart",e=>{showTip(e.touches[0],r.tip)},{passive:true})}
+  });
+  host.appendChild(svg);
+}
+document.addEventListener("scroll",hideTip,{passive:true});
+
+/* Gráfico 1 */
+hbars(document.getElementById("c-cycle"),CYCLE.map(c=>({label:c.k,now:c.now,
+  vals:[{v:c.avg,fill:"var(--s1)"},{v:c.med,fill:"var(--s2)"}],
+  tip:`<b>${c.k}</b><br>Média ${fmt(c.avg)} · Mediana ${fmt(c.med)}<br>Positivo em ${c.pos}% dos anos<br>Pior ${fmt(c.worst)} · Melhor ${fmt(c.best)}`})),
+  {aria:"Retorno médio e mediano por ano do ciclo",labW:130,step:5});
+
+/* Gráfico 2 */
+function drawFwd(k){
+  hbars(document.getElementById("c-fwd"),FWD.map(f=>({label:f.k,now:f.now,vals:[{v:f[k]}],
+    tip:`<b>${f.k}</b> (${f.n} anos)<br>Out → Dez ${fmt(f.dec)} · dez. positivo ${f.decPos}%<br>Out → +12m ${fmt(f.y12)} · positivo ${f.y12Pos}%<br>Pior +12m ${fmt(f.worst)}`})),
+    {aria:"Retorno a partir do fim de outubro",labW:190,barH:18,step:5});
+}
+const segF=document.getElementById("seg-fwd");
+segF.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;
+  segF.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));drawFwd(b.dataset.k)});
+drawFwd("y12");
+
+/* Gráfico 3 */
+const segY=document.getElementById("seg-years");
+METRICS.forEach((m,i)=>{const b=document.createElement("button");b.type="button";b.textContent=m.label;b.dataset.k=m.k;b.setAttribute("aria-pressed",i===0);segY.appendChild(b)});
+function drawYears(k){
+  const m=METRICS.find(x=>x.k===k);
+  document.getElementById("metric-note").textContent=m.note+" Média: "+fmt(AVG[k])+".";
+  hbars(document.getElementById("c-years"),Y.map(r=>({label:String(r.y),now:r.y===2026,vals:[{v:r[k]}],
+    tip:`<b>${r.y}</b><br>Ano ${fmt(r.ret)} · Queda máx. ${fmt(r.dd)} (mínima em ${r.minM})<br>Até out. ${fmt(r.oct)} · Out→Dez ${fmt(r.dec)}<br>Out→+12m ${fmt(r.y12)} · Mínima→+12m ${fmt(r.fromMin)}`})),
+    {aria:"Midterms ano a ano: "+m.label,labW:60,barH:13,rowGap:9,step:10});
+}
+segY.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;
+  segY.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));drawYears(b.dataset.k)});
+drawYears("y12");
+
+/* Meses (valores citados no vídeo) */
+hbars(document.getElementById("c-months"),[
+  {label:"Outubro",vals:[{v:0.99,fill:"var(--s1)"},{v:0.98,fill:"var(--s2)"}],tip:"<b>Outubro</b><br>Midterm +0,99% (74% positivos)<br>Demais anos +0,98% (59% positivos)"},
+  {label:"Novembro",vals:[{v:2.75,fill:"var(--s1)"},{v:1.86,fill:"var(--s2)"}],tip:"<b>Novembro</b><br>Midterm +2,75%<br>Demais anos +1,86%<br>Positivo em quase 80% dos anos"}
+],{aria:"Retorno médio de outubro e novembro",labW:90,barH:16,step:1});
+
+/* Dots 19/19 */
+const dots=document.getElementById("dots");for(let i=0;i<19;i++)dots.appendChild(document.createElement("i"));
+
+/* Tabelas */
+function table(id,head,rows,cls){const t=document.getElementById(id);
+  t.innerHTML="<thead><tr>"+head.map(h=>`<th>${h}</th>`).join("")+"</tr></thead><tbody>"+
+  rows.map((r,i)=>`<tr class="${cls?cls(i):""}">`+r.map((c,j)=>{const isN=typeof c==="number"||c===null;
+    return `<td class="${isN&&j>0&&c!=null?(c>0?"pos":c<0?"neg":""):""}">${isN&&j>0?fmt(c):c}</td>`}).join("")+"</tr>").join("")+"</tbody>"}
+const pct=v=>v+"%";
+table("t-cycle",["Ano do ciclo","Anos","Média","Mediana","Positivo","Pior","Melhor"],
+  CYCLE.map(c=>[c.k,"19",c.avg,c.med,pct(c.pos),c.worst,c.best]),i=>CYCLE[i].now?"now":"");
+table("t-fwd",["Grupo","Anos","Out → Dez","Dez. positivo","Out → Jun seg.","Out → +12m","+12m positivo","Pior +12m"],
+  FWD.map(f=>[f.k,String(f.n),f.dec,pct(f.decPos),f.jun,f.y12,pct(f.y12Pos),f.worst]),i=>FWD[i].now?"now":"");
+table("t-years",["Ano","Retorno do ano","Queda máx.","Mês da mínima","Até out.","Out → Dez","Out → +12m","Mínima → +12m"],
+  Y.map(r=>[String(r.y),r.ret,r.dd,r.minM,r.oct,r.dec,r.y12,r.fromMin]).concat([["Média",AVG.ret,AVG.dd,"–",AVG.oct,AVG.dec,AVG.y12,AVG.fromMin]]),
+  i=>i===0?"now":i===Y.length?"avg":"");
+
+/* Simulador */
+const amt=document.getElementById("amt");
+const brl=v=>v.toLocaleString("pt-BR",{style:"currency",currency:"BRL",maximumFractionDigits:0});
+function sim(){const a=Math.max(0,parseFloat(amt.value)||0);
+  document.getElementById("o-min").textContent=brl(a*1.030);
+  document.getElementById("o-avg").textContent=brl(a*1.166);
+  document.getElementById("o-max").textContent=brl(a*1.337);}
+amt.addEventListener("input",sim);sim();
+})();
+</script>
+</body>
+</html>

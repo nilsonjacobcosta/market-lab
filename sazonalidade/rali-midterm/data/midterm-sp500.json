@@ -1,0 +1,295 @@
+{
+  "fonte": "Mundstock, I. YouTube https://youtu.be/-WnbOPAx5Hc (estudo gerado por IA exibido no vídeo; não auditado)",
+  "unidade": "% (retorno de preço do S&P 500)",
+  "amostra": "1950 a out/2026",
+  "ciclo_presidencial": [
+    {
+      "ano_ciclo": "Pós-eleitoral",
+      "anos": 19,
+      "media": 8.4,
+      "mediana": 9.1,
+      "pct_positivo": 63,
+      "pior": -17.4,
+      "melhor": 31.0
+    },
+    {
+      "ano_ciclo": "Midterm",
+      "anos": 19,
+      "media": 4.7,
+      "mediana": 1.1,
+      "pct_positivo": 58,
+      "pior": -29.7,
+      "melhor": 45.0
+    },
+    {
+      "ano_ciclo": "Pré-eleitoral",
+      "anos": 19,
+      "media": 17.2,
+      "mediana": 18.9,
+      "pct_positivo": 89,
+      "pior": -0.7,
+      "melhor": 33.6
+    },
+    {
+      "ano_ciclo": "Eleitoral",
+      "anos": 19,
+      "media": 8.1,
+      "mediana": 11.8,
+      "pct_positivo": 84,
+      "pior": -38.5,
+      "melhor": 25.8
+    }
+  ],
+  "a_partir_de_outubro": [
+    {
+      "grupo": "Todos os anos",
+      "anos": 75,
+      "out_dez": 3.3,
+      "dez_positivo_pct": 77,
+      "out_jun_seguinte": null,
+      "out_12m": 9.3,
+      "pct_12m_positivo": 80,
+      "pior_12m": -37.5
+    },
+    {
+      "grupo": "Anos de midterm",
+      "anos": 19,
+      "out_dez": 3.6,
+      "dez_positivo_pct": 68,
+      "out_jun_seguinte": 16.5,
+      "out_12m": 16.6,
+      "pct_12m_positivo": 100,
+      "pior_12m": 3.0
+    },
+    {
+      "grupo": "Midterm forte (>5% até out.)",
+      "anos": 9,
+      "out_dez": 5.9,
+      "dez_positivo_pct": 89,
+      "out_jun_seguinte": 16.5,
+      "out_12m": 14.9,
+      "pct_12m_positivo": 100,
+      "pior_12m": 3.0
+    },
+    {
+      "grupo": "Midterm fraco (queda até out.)",
+      "anos": 8,
+      "out_dez": 3.2,
+      "dez_positivo_pct": 63,
+      "out_jun_seguinte": 17.6,
+      "out_12m": 18.3,
+      "pct_12m_positivo": 100,
+      "pior_12m": 8.3
+    }
+  ],
+  "midterms_ano_a_ano": [
+    {
+      "ano": 2026,
+      "retorno_ano": null,
+      "queda_max": -7.7,
+      "mes_minima": "mar",
+      "ate_outubro": 11.1,
+      "out_dez": null,
+      "out_12m": null,
+      "minima_12m": null
+    },
+    {
+      "ano": 2022,
+      "retorno_ano": -19.4,
+      "queda_max": -26.7,
+      "mes_minima": "out",
+      "ate_outubro": -18.8,
+      "out_dez": -0.8,
+      "out_12m": 8.3,
+      "minima_12m": 20.1
+    },
+    {
+      "ano": 2018,
+      "retorno_ano": -6.2,
+      "queda_max": -12.2,
+      "mes_minima": "dez",
+      "ate_outubro": 1.4,
+      "out_dez": -7.6,
+      "out_12m": 12.0,
+      "minima_12m": 37.7
+    },
+    {
+      "ano": 2014,
+      "retorno_ano": 11.4,
+      "queda_max": -6.0,
+      "mes_minima": "fev",
+      "ate_outubro": 9.2,
+      "out_dez": 2.0,
+      "out_12m": 3.0,
+      "minima_12m": 21.1
+    },
+    {
+      "ano": 2010,
+      "retorno_ano": 12.8,
+      "queda_max": -9.3,
+      "mes_minima": "jul",
+      "ate_outubro": 6.1,
+      "out_dez": 6.3,
+      "out_12m": 5.9,
+      "minima_12m": 27.8
+    },
+    {
+      "ano": 2006,
+      "retorno_ano": 13.6,
+      "queda_max": -2.3,
+      "mes_minima": "jun",
+      "ate_outubro": 10.4,
+      "out_dez": 2.9,
+      "out_12m": 12.4,
+      "minima_12m": 23.3
+    },
+    {
+      "ano": 2002,
+      "retorno_ano": -23.4,
+      "queda_max": -33.1,
+      "mes_minima": "out",
+      "ate_outubro": -22.9,
+      "out_dez": -0.7,
+      "out_12m": 18.6,
+      "minima_12m": 36.7
+    },
+    {
+      "ano": 1998,
+      "retorno_ano": 26.7,
+      "queda_max": -5.9,
+      "mes_minima": "jan",
+      "ate_outubro": 13.2,
+      "out_dez": 11.9,
+      "out_12m": 24.1,
+      "minima_12m": 40.2
+    },
+    {
+      "ano": 1994,
+      "retorno_ano": -1.1,
+      "queda_max": -6.6,
+      "mes_minima": "abr",
+      "ate_outubro": 1.3,
+      "out_dez": -2.4,
+      "out_12m": 23.1,
+      "minima_12m": 18.1
+    },
+    {
+      "ano": 1990,
+      "retorno_ano": -6.6,
+      "queda_max": -16.7,
+      "mes_minima": "out",
+      "ate_outubro": -14.0,
+      "out_dez": 8.6,
+      "out_12m": 29.1,
+      "minima_12m": 33.3
+    },
+    {
+      "ano": 1986,
+      "retorno_ano": 14.6,
+      "queda_max": -4.1,
+      "mes_minima": "jan",
+      "ate_outubro": 15.5,
+      "out_dez": -0.8,
+      "out_12m": 3.2,
+      "minima_12m": 35.3
+    },
+    {
+      "ano": 1982,
+      "retorno_ano": 14.8,
+      "queda_max": -16.6,
+      "mes_minima": "ago",
+      "ate_outubro": 9.1,
+      "out_dez": 5.2,
+      "out_12m": 22.3,
+      "minima_12m": 60.9
+    },
+    {
+      "ano": 1978,
+      "retorno_ano": 1.1,
+      "queda_max": -9.1,
+      "mes_minima": "mar",
+      "ate_outubro": -2.1,
+      "out_dez": 3.2,
+      "out_12m": 9.3,
+      "minima_12m": 17.5
+    },
+    {
+      "ano": 1974,
+      "retorno_ano": -29.7,
+      "queda_max": -37.5,
+      "mes_minima": "out",
+      "ate_outubro": -24.2,
+      "out_dez": -7.2,
+      "out_12m": 20.5,
+      "minima_12m": 46.1
+    },
+    {
+      "ano": 1970,
+      "retorno_ano": 0.1,
+      "queda_max": -25.5,
+      "mes_minima": "mai",
+      "ate_outubro": -9.6,
+      "out_dez": 10.7,
+      "out_12m": 13.2,
+      "minima_12m": 45.2
+    },
+    {
+      "ano": 1966,
+      "retorno_ano": -13.1,
+      "queda_max": -21.8,
+      "mes_minima": "out",
+      "ate_outubro": -13.2,
+      "out_dez": 0.2,
+      "out_12m": 16.3,
+      "minima_12m": 29.1
+    },
+    {
+      "ano": 1962,
+      "retorno_ano": -11.8,
+      "queda_max": -28.2,
+      "mes_minima": "jun",
+      "ate_outubro": -21.0,
+      "out_dez": 11.6,
+      "out_12m": 30.9,
+      "minima_12m": 35.1
+    },
+    {
+      "ano": 1958,
+      "retorno_ano": 38.1,
+      "queda_max": 0.9,
+      "mes_minima": "jan",
+      "ate_outubro": 28.4,
+      "out_dez": 7.6,
+      "out_12m": 12.1,
+      "minima_12m": 37.5
+    },
+    {
+      "ano": 1954,
+      "retorno_ano": 45.0,
+      "queda_max": -0.0,
+      "mes_minima": "jan",
+      "ate_outubro": 27.7,
+      "out_dez": 13.6,
+      "out_12m": 33.7,
+      "minima_12m": 47.7
+    },
+    {
+      "ano": 1950,
+      "retorno_ano": 21.7,
+      "queda_max": -0.8,
+      "mes_minima": "jan",
+      "ate_outubro": 16.3,
+      "out_dez": 4.6,
+      "out_12m": 17.5,
+      "minima_12m": 30.0
+    }
+  ],
+  "media_midterms": {
+    "retorno_ano": 4.7,
+    "queda_max": -13.8,
+    "ate_outubro": 0.7,
+    "out_dez": 3.6,
+    "out_12m": 16.6,
+    "minima_12m": 33.8
+  }
+}
