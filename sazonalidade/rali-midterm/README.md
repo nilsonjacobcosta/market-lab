@@ -22,9 +22,9 @@ Explicar, inclusive para iniciantes:
 | Gráfico 1 | Média e mediana por ano do ciclo |
 | Gráfico 2 | Retorno a partir de outubro, por grupo (até dezembro e em 12 meses) |
 | Gráfico 3 | Todos os midterms ano a ano, com 6 medidas selecionáveis |
-| Outubro e novembro | Retorno médio mensal citado no vídeo |
+| Outubro e novembro | Retorno médio mensal (estimativa preliminar) |
 | Simulador | Valor hipotético aplicado no fim de outubro, pior, médio e melhor caso |
-| Contexto | Pregão de 30/10/2026 e as teses do autor (marcadas como opinião) |
+| Contexto | Pregão de 30/10/2026 e hipóteses em acompanhamento |
 | Cuidados e glossário | Limitações da análise e termos explicados |
 
 ## Estrutura
@@ -41,15 +41,14 @@ Endereço publicado: https://nilsonjacobcosta.github.io/market-lab/sazonalidade/
 
 ## Fontes
 
-- Mundstock, Igor. *Estão prontos para o rally de Natal? Estudo de sazonalidade do mercado americano*. YouTube, canal @igormundstock, out/nov 2026. https://youtu.be/-WnbOPAx5Hc
-- Para validação: FRED, Federal Reserve Bank of St. Louis, série SP500 (https://fred.stlouisfed.org/series/SP500); S&P Dow Jones Indices (https://www.spglobal.com/spdji/en/indices/equity/sp-500/).
+- Séries de referência para validação: FRED, Federal Reserve Bank of St. Louis, série SP500 (https://fred.stlouisfed.org/series/SP500); S&P Dow Jones Indices (https://www.spglobal.com/spdji/en/indices/equity/sp-500/).
 
 ## Limitações
 
-- Os números vêm de um estudo gerado por IA e exibido no vídeo, sem fonte primária declarada. Ainda não foram auditados contra séries oficiais.
+- Os números são de um estudo preliminar e ainda não foram auditados contra séries oficiais.
 - A amostra tem 19 midterms. Padrões com poucos casos podem falhar.
 - Os grupos "forte" (9) e "fraco" (8) somam 17 anos: 1994 e 2018 ficaram entre 0% e 5% até outubro.
-- O valor de outubro de 2026 aparece como cerca de −0,6% no estudo e cerca de −0,93% na fala do autor.
+- O valor de outubro de 2026 tem duas estimativas preliminares: cerca de −0,6% e cerca de −0,93%.
 
 ## Próximos passos
 
