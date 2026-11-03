@@ -1,5 +1,10 @@
 {
  "BBAS3": {
+  "componentes_lucro": {
+   "exercicio_2025": 13698124000.0,
+   "acumulado_2026-06-30": 4794808000.0,
+   "acumulado_2025-06-30": 6220887000.0
+  },
   "ll": 12272045000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 6.7,
@@ -19,6 +24,11 @@
   "flags": []
  },
  "SANB4": {
+  "componentes_lucro": {
+   "exercicio_2025": 12766035000.0,
+   "acumulado_2026-09-30": 8896051000.0,
+   "acumulado_2025-09-30": 8501317000.0
+  },
   "ll": 13160769000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 10.4,
@@ -38,6 +48,11 @@
   "flags": []
  },
  "SANB11": {
+  "componentes_lucro": {
+   "exercicio_2025": 12766035000.0,
+   "acumulado_2026-09-30": 8896051000.0,
+   "acumulado_2025-09-30": 8501317000.0
+  },
   "ll": 13160769000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 10.4,
@@ -57,6 +72,11 @@
   "flags": []
  },
  "SANB3": {
+  "componentes_lucro": {
+   "exercicio_2025": 12766035000.0,
+   "acumulado_2026-09-30": 8896051000.0,
+   "acumulado_2025-09-30": 8501317000.0
+  },
   "ll": 13160769000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 10.4,
@@ -76,6 +96,11 @@
   "flags": []
  },
  "BRSR6": {
+  "componentes_lucro": {
+   "exercicio_2025": 1713913000.0,
+   "acumulado_2026-06-30": 557769000.0,
+   "acumulado_2025-06-30": 629877000.0
+  },
   "ll": 1641805000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 14.5,
@@ -95,6 +120,11 @@
   "flags": []
  },
  "BBDC4": {
+  "componentes_lucro": {
+   "exercicio_2025": 23672706000.0,
+   "acumulado_2026-09-30": 19647948000.0,
+   "acumulado_2025-09-30": 17172215000.0
+  },
   "ll": 26148439000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 14.1,
@@ -114,6 +144,11 @@
   "flags": []
  },
  "BBDC3": {
+  "componentes_lucro": {
+   "exercicio_2025": 23672706000.0,
+   "acumulado_2026-09-30": 19647948000.0,
+   "acumulado_2025-09-30": 17172215000.0
+  },
   "ll": 26148439000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 14.1,
@@ -133,6 +168,11 @@
   "flags": []
  },
  "ABCB4": {
+  "componentes_lucro": {
+   "exercicio_2025": 1002000000.0,
+   "acumulado_2026-06-30": 487534000.0,
+   "acumulado_2025-06-30": 469667000.0
+  },
   "ll": 1019867000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 14.7,
@@ -154,6 +194,11 @@
   ]
  },
  "BRSR5": {
+  "componentes_lucro": {
+   "exercicio_2025": 1713913000.0,
+   "acumulado_2026-06-30": 557769000.0,
+   "acumulado_2025-06-30": 629877000.0
+  },
   "ll": 1641805000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 14.5,
@@ -173,6 +218,11 @@
   "flags": []
  },
  "BRSR3": {
+  "componentes_lucro": {
+   "exercicio_2025": 1713913000.0,
+   "acumulado_2026-06-30": 557769000.0,
+   "acumulado_2025-06-30": 629877000.0
+  },
   "ll": 1641805000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 14.5,
@@ -192,6 +242,11 @@
   "flags": []
  },
  "ITUB4": {
+  "componentes_lucro": {
+   "exercicio_2025": 44857000000.0,
+   "acumulado_2026-06-30": 23615000000.0,
+   "acumulado_2025-06-30": 21644000000.0
+  },
   "ll": 46828000000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 22.0,
@@ -211,6 +266,11 @@
   "flags": []
  },
  "ITUB3": {
+  "componentes_lucro": {
+   "exercicio_2025": 44857000000.0,
+   "acumulado_2026-06-30": 23615000000.0,
+   "acumulado_2025-06-30": 21644000000.0
+  },
   "ll": 46828000000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 22.0,
@@ -257,6 +317,11 @@
   ]
  },
  "BMEB3": {
+  "componentes_lucro": {
+   "exercicio_2025": 619427000.0,
+   "acumulado_2026-06-30": 560871000.0,
+   "acumulado_2025-06-30": 347213000.0
+  },
   "ll": 833085000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 32.0,
@@ -276,6 +341,11 @@
   "flags": []
  },
  "BMEB4": {
+  "componentes_lucro": {
+   "exercicio_2025": 619427000.0,
+   "acumulado_2026-06-30": 560871000.0,
+   "acumulado_2025-06-30": 347213000.0
+  },
   "ll": 833085000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 32.0,
@@ -295,6 +365,11 @@
   "flags": []
  },
  "BPAC11": {
+  "componentes_lucro": {
+   "exercicio_2025": 16005964000.0,
+   "acumulado_2026-06-30": 9663323000.0,
+   "acumulado_2025-06-30": 7211161000.0
+  },
   "ll": 18458126000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 24.6,
@@ -314,6 +389,11 @@
   "flags": []
  },
  "BPAC5": {
+  "componentes_lucro": {
+   "exercicio_2025": 16005964000.0,
+   "acumulado_2026-06-30": 9663323000.0,
+   "acumulado_2025-06-30": 7211161000.0
+  },
   "ll": 18458126000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 24.6,
@@ -333,6 +413,11 @@
   "flags": []
  },
  "BPAC3": {
+  "componentes_lucro": {
+   "exercicio_2025": 16005964000.0,
+   "acumulado_2026-06-30": 9663323000.0,
+   "acumulado_2025-06-30": 7211161000.0
+  },
   "ll": 18458126000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 24.6,
@@ -433,6 +518,11 @@
   ]
  },
  "BAZA3": {
+  "componentes_lucro": {
+   "exercicio_2025": 1105418000.0,
+   "acumulado_2026-06-30": 353060000.0,
+   "acumulado_2025-06-30": 575159000.0
+  },
   "ll": 883319000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 12.4,
@@ -454,6 +544,11 @@
   ]
  },
  "RPAD5": {
+  "componentes_lucro": {
+   "exercicio_2025": 82199000.0,
+   "acumulado_2026-06-30": 26437000.0,
+   "acumulado_2025-06-30": 34097000.0
+  },
   "ll": 74539000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 7.3,
@@ -475,6 +570,11 @@
   ]
  },
  "BGIP4": {
+  "componentes_lucro": {
+   "exercicio_2025": 151470000.0,
+   "acumulado_2026-06-30": 62758000.0,
+   "acumulado_2025-06-30": 44872000.0
+  },
   "ll": 169356000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 18.6,
@@ -496,6 +596,11 @@
   ]
  },
  "BMIN4": {
+  "componentes_lucro": {
+   "exercicio_2025": 10396000.0,
+   "acumulado_2026-06-30": 7323000.0,
+   "acumulado_2025-06-30": 4918000.0
+  },
   "ll": 12801000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 8.8,
@@ -517,6 +622,11 @@
   ]
  },
  "BMGB4": {
+  "componentes_lucro": {
+   "exercicio_2025": 579466000.0,
+   "acumulado_2026-06-30": 310079000.0,
+   "acumulado_2025-06-30": 257232000.0
+  },
   "ll": 632313000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 13.3,
@@ -536,6 +646,11 @@
   "flags": []
  },
  "BPAR3": {
+  "componentes_lucro": {
+   "exercicio_2025": 200857000.0,
+   "acumulado_2026-06-30": 100805000.0,
+   "acumulado_2025-06-30": 125630000.0
+  },
   "ll": 176032000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 7.9,
@@ -557,6 +672,11 @@
   ]
  },
  "BEES4": {
+  "componentes_lucro": {
+   "exercicio_2025": 339919000.0,
+   "acumulado_2026-06-30": 221560000.0,
+   "acumulado_2025-06-30": 118793000.0
+  },
   "ll": 442686000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 18.2,
@@ -576,6 +696,11 @@
   "flags": []
  },
  "BEES3": {
+  "componentes_lucro": {
+   "exercicio_2025": 339919000.0,
+   "acumulado_2026-06-30": 221560000.0,
+   "acumulado_2025-06-30": 118793000.0
+  },
   "ll": 442686000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 18.2,
@@ -595,6 +720,11 @@
   "flags": []
  },
  "BNBR3": {
+  "componentes_lucro": {
+   "exercicio_2025": 3083510000.0,
+   "acumulado_2026-06-30": 1057412000.0,
+   "acumulado_2025-06-30": 1383679000.0
+  },
   "ll": 2757243000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 17.4,
@@ -616,6 +746,11 @@
   ]
  },
  "BGIP3": {
+  "componentes_lucro": {
+   "exercicio_2025": 151470000.0,
+   "acumulado_2026-06-30": 62758000.0,
+   "acumulado_2025-06-30": 44872000.0
+  },
   "ll": 169356000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 18.6,
@@ -637,6 +772,11 @@
   ]
  },
  "BMIN3": {
+  "componentes_lucro": {
+   "exercicio_2025": 10396000.0,
+   "acumulado_2026-06-30": 7323000.0,
+   "acumulado_2025-06-30": 4918000.0
+  },
   "ll": 12801000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 8.8,
@@ -658,6 +798,11 @@
   ]
  },
  "PINE4": {
+  "componentes_lucro": {
+   "exercicio_2025": 430515000.0,
+   "acumulado_2026-06-30": 316214000.0,
+   "acumulado_2025-06-30": 143644000.0
+  },
   "ll": 603085000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 40.7,
@@ -701,6 +846,11 @@
   ]
  },
  "RPAD6": {
+  "componentes_lucro": {
+   "exercicio_2025": 82199000.0,
+   "acumulado_2026-06-30": 26437000.0,
+   "acumulado_2025-06-30": 34097000.0
+  },
   "ll": 74539000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 7.3,
@@ -722,6 +872,11 @@
   ]
  },
  "RPAD3": {
+  "componentes_lucro": {
+   "exercicio_2025": 82199000.0,
+   "acumulado_2026-06-30": 26437000.0,
+   "acumulado_2025-06-30": 34097000.0
+  },
   "ll": 74539000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 7.3,
@@ -743,6 +898,11 @@
   ]
  },
  "BRBI11": {
+  "componentes_lucro": {
+   "exercicio_2025": 175073000.0,
+   "acumulado_2026-06-30": 72801000.0,
+   "acumulado_2025-06-30": 88315000.0
+  },
   "ll": 159559000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 19.7,
@@ -762,6 +922,11 @@
   "flags": []
  },
  "PINE3": {
+  "componentes_lucro": {
+   "exercicio_2025": 430515000.0,
+   "acumulado_2026-06-30": 316214000.0,
+   "acumulado_2025-06-30": 143644000.0
+  },
   "ll": 603085000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 40.7,
@@ -781,6 +946,11 @@
   "flags": []
  },
  "PINE11": {
+  "componentes_lucro": {
+   "exercicio_2025": 430515000.0,
+   "acumulado_2026-06-30": 316214000.0,
+   "acumulado_2025-06-30": 143644000.0
+  },
   "ll": 603085000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 40.7,
@@ -802,6 +972,11 @@
   ]
  },
  "CMIG4": {
+  "componentes_lucro": {
+   "exercicio_2025": 4897409000.0,
+   "acumulado_2026-06-30": 1923577000.0,
+   "acumulado_2025-06-30": 2225881000.0
+  },
   "ll": 4595105000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 15.9,
@@ -824,6 +999,11 @@
   "flags": []
  },
  "TAEE3": {
+  "componentes_lucro": {
+   "exercicio_2025": 1579863000.0,
+   "acumulado_2026-06-30": 920790000.0,
+   "acumulado_2025-06-30": 875180000.0
+  },
   "ll": 1625473000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 20.7,
@@ -831,10 +1011,6 @@
   "base_payout": "declarado (DVA) 2025",
   "div_liq_ebitda": 3.48,
   "div_liq_pl": 1.29,
-  "fcf_yield": 12395.0,
-  "descartados": [
-   "fcf_yield"
-  ],
   "semaforo": {
    "roe": "verde",
    "div_liq_ebitda": "amarelo",
@@ -847,11 +1023,14 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (TAEE3)",
-  "flags": [
-   "descartado:fcf_yield=12395.0"
-  ]
+  "flags": []
  },
  "TAEE11": {
+  "componentes_lucro": {
+   "exercicio_2025": 1579863000.0,
+   "acumulado_2026-06-30": 920790000.0,
+   "acumulado_2025-06-30": 875180000.0
+  },
   "ll": 1625473000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 20.7,
@@ -859,10 +1038,6 @@
   "base_payout": "declarado (DVA) 2025",
   "div_liq_ebitda": 3.48,
   "div_liq_pl": 1.29,
-  "fcf_yield": 4038.8,
-  "descartados": [
-   "fcf_yield"
-  ],
   "semaforo": {
    "roe": "verde",
    "div_liq_ebitda": "amarelo",
@@ -875,11 +1050,14 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (TAEE3)",
-  "flags": [
-   "descartado:fcf_yield=4038.8"
-  ]
+  "flags": []
  },
  "TAEE4": {
+  "componentes_lucro": {
+   "exercicio_2025": 1579863000.0,
+   "acumulado_2026-06-30": 920790000.0,
+   "acumulado_2025-06-30": 875180000.0
+  },
   "ll": 1625473000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 20.7,
@@ -887,10 +1065,6 @@
   "base_payout": "declarado (DVA) 2025",
   "div_liq_ebitda": 3.48,
   "div_liq_pl": 1.29,
-  "fcf_yield": 12022.2,
-  "descartados": [
-   "fcf_yield"
-  ],
   "semaforo": {
    "roe": "verde",
    "div_liq_ebitda": "amarelo",
@@ -903,11 +1077,14 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (TAEE3)",
-  "flags": [
-   "descartado:fcf_yield=12022.2"
-  ]
+  "flags": []
  },
  "ISAE4": {
+  "componentes_lucro": {
+   "exercicio_2025": 2447899000.0,
+   "acumulado_2026-06-30": 1297678000.0,
+   "acumulado_2025-06-30": 928408000.0
+  },
   "ll": 2817169000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 13.2,
@@ -930,6 +1107,11 @@
   "flags": []
  },
  "CPFE3": {
+  "componentes_lucro": {
+   "exercicio_2025": 5484324000.0,
+   "acumulado_2026-06-30": 3196195000.0,
+   "acumulado_2025-06-30": 2675638000.0
+  },
   "ll": 6004881000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 27.2,
@@ -937,7 +1119,6 @@
   "base_payout": "declarado (DVA) 2025",
   "div_liq_ebitda": 1.97,
   "div_liq_pl": 1.21,
-  "fcf_yield": 12.4,
   "semaforo": {
    "roe": "verde",
    "div_liq_ebitda": "verde",
@@ -953,6 +1134,11 @@
   "flags": []
  },
  "EGIE3": {
+  "componentes_lucro": {
+   "exercicio_2025": 2582841000.0,
+   "acumulado_2026-06-30": 2661488000.0,
+   "acumulado_2025-06-30": 1284984000.0
+  },
   "ll": 3959345000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 29.0,
@@ -975,6 +1161,11 @@
   "flags": []
  },
  "CMIG3": {
+  "componentes_lucro": {
+   "exercicio_2025": 4897409000.0,
+   "acumulado_2026-06-30": 1923577000.0,
+   "acumulado_2025-06-30": 2225881000.0
+  },
   "ll": 4595105000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 15.9,
@@ -997,6 +1188,11 @@
   "flags": []
  },
  "ISAE3": {
+  "componentes_lucro": {
+   "exercicio_2025": 2447899000.0,
+   "acumulado_2026-06-30": 1297678000.0,
+   "acumulado_2025-06-30": 928408000.0
+  },
   "ll": 2817169000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 13.2,
@@ -1019,6 +1215,11 @@
   "flags": []
  },
  "CPLE3": {
+  "componentes_lucro": {
+   "exercicio_2025": 2688614000.0,
+   "acumulado_2026-06-30": 1683166000.0,
+   "acumulado_2025-06-30": 1237648000.0
+  },
   "ll": 3134132000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 12.6,
@@ -1026,7 +1227,6 @@
   "base_payout": "declarado (DVA) 2025",
   "div_liq_ebitda": 2.81,
   "div_liq_pl": 0.83,
-  "fcf_yield": 3.3,
   "semaforo": {
    "roe": "verde",
    "div_liq_ebitda": "verde",
@@ -1042,6 +1242,11 @@
   "flags": []
  },
  "ENGI4": {
+  "componentes_lucro": {
+   "exercicio_2025": 2214439000.0,
+   "acumulado_2026-06-30": 335424000.0,
+   "acumulado_2025-06-30": 1033028000.0
+  },
   "ll": 1516835000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 8.0,
@@ -1064,6 +1269,11 @@
   "flags": []
  },
  "ENGI11": {
+  "componentes_lucro": {
+   "exercicio_2025": 2214439000.0,
+   "acumulado_2026-06-30": 335424000.0,
+   "acumulado_2025-06-30": 1033028000.0
+  },
   "ll": 1516835000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 8.0,
@@ -1086,6 +1296,11 @@
   "flags": []
  },
  "VBBR3": {
+  "componentes_lucro": {
+   "exercicio_2025": 2004000000.0,
+   "acumulado_2026-06-30": 3968000000.0,
+   "acumulado_2025-06-30": 916000000.0
+  },
   "ll": 5056000000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 22.8,
@@ -1093,10 +1308,6 @@
   "base_payout": "declarado (DVA) 2025",
   "div_liq_ebitda": 1.62,
   "div_liq_pl": 0.69,
-  "fcf_yield": 26800.9,
-  "descartados": [
-   "fcf_yield"
-  ],
   "semaforo": {
    "roe": "verde",
    "div_liq_ebitda": "verde",
@@ -1109,11 +1320,14 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (VBBR3)",
-  "flags": [
-   "descartado:fcf_yield=26800.9"
-  ]
+  "flags": []
  },
  "CLSC4": {
+  "componentes_lucro": {
+   "exercicio_2025": 729495000.0,
+   "acumulado_2026-06-30": 546766000.0,
+   "acumulado_2025-06-30": 401174000.0
+  },
   "ll": 875087000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 21.6,
@@ -1121,10 +1335,6 @@
   "base_payout": "declarado (DVA) 2025",
   "div_liq_ebitda": 2.74,
   "div_liq_pl": 1.22,
-  "fcf_yield": 4590.4,
-  "descartados": [
-   "fcf_yield"
-  ],
   "semaforo": {
    "roe": "verde",
    "div_liq_ebitda": "verde",
@@ -1137,11 +1347,14 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (CLSC3)",
-  "flags": [
-   "descartado:fcf_yield=4590.4"
-  ]
+  "flags": []
  },
  "CLSC3": {
+  "componentes_lucro": {
+   "exercicio_2025": 729495000.0,
+   "acumulado_2026-06-30": 546766000.0,
+   "acumulado_2025-06-30": 401174000.0
+  },
   "ll": 875087000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 21.6,
@@ -1149,10 +1362,6 @@
   "base_payout": "declarado (DVA) 2025",
   "div_liq_ebitda": 2.74,
   "div_liq_pl": 1.22,
-  "fcf_yield": 4920.5,
-  "descartados": [
-   "fcf_yield"
-  ],
   "semaforo": {
    "roe": "verde",
    "div_liq_ebitda": "verde",
@@ -1165,11 +1374,14 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (CLSC3)",
-  "flags": [
-   "descartado:fcf_yield=4920.5"
-  ]
+  "flags": []
  },
  "ALUP4": {
+  "componentes_lucro": {
+   "exercicio_2025": 1215559000.0,
+   "acumulado_2026-06-30": 614693000.0,
+   "acumulado_2025-06-30": 443644000.0
+  },
   "ll": 1386608000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 15.2,
@@ -1177,7 +1389,6 @@
   "base_payout": "declarado (DVA) 2025",
   "div_liq_ebitda": 2.62,
   "div_liq_pl": 0.99,
-  "fcf_yield": 15.6,
   "semaforo": {
    "roe": "verde",
    "div_liq_ebitda": "verde",
@@ -1193,6 +1404,11 @@
   "flags": []
  },
  "ENGI3": {
+  "componentes_lucro": {
+   "exercicio_2025": 2214439000.0,
+   "acumulado_2026-06-30": 335424000.0,
+   "acumulado_2025-06-30": 1033028000.0
+  },
   "ll": 1516835000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 8.0,
@@ -1215,6 +1431,11 @@
   "flags": []
  },
  "ALUP11": {
+  "componentes_lucro": {
+   "exercicio_2025": 1215559000.0,
+   "acumulado_2026-06-30": 614693000.0,
+   "acumulado_2025-06-30": 443644000.0
+  },
   "ll": 1386608000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 15.2,
@@ -1222,7 +1443,6 @@
   "base_payout": "declarado (DVA) 2025",
   "div_liq_ebitda": 2.62,
   "div_liq_pl": 0.99,
-  "fcf_yield": 5.1,
   "semaforo": {
    "roe": "verde",
    "div_liq_ebitda": "verde",
@@ -1238,6 +1458,11 @@
   "flags": []
  },
  "ALUP3": {
+  "componentes_lucro": {
+   "exercicio_2025": 1215559000.0,
+   "acumulado_2026-06-30": 614693000.0,
+   "acumulado_2025-06-30": 443644000.0
+  },
   "ll": 1386608000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 15.2,
@@ -1245,7 +1470,6 @@
   "base_payout": "declarado (DVA) 2025",
   "div_liq_ebitda": 2.62,
   "div_liq_pl": 0.99,
-  "fcf_yield": 14.7,
   "semaforo": {
    "roe": "verde",
    "div_liq_ebitda": "verde",
@@ -1261,6 +1485,11 @@
   "flags": []
  },
  "NEOE3": {
+  "componentes_lucro": {
+   "exercicio_2025": 5031000000.0,
+   "acumulado_2026-09-30": 3361000000.0,
+   "acumulado_2025-09-30": 3556000000.0
+  },
   "ll": 4836000000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 13.4,
@@ -1285,6 +1514,11 @@
   ]
  },
  "EQTL3": {
+  "componentes_lucro": {
+   "exercicio_2025": 1678352000.0,
+   "acumulado_2026-06-30": 909840000.0,
+   "acumulado_2025-06-30": 1629769000.0
+  },
   "ll": 958423000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 3.5,
@@ -1292,7 +1526,6 @@
   "base_payout": "declarado (DVA) 2025",
   "div_liq_ebitda": 4.97,
   "div_liq_pl": 2.07,
-  "fcf_yield": -12.6,
   "semaforo": {
    "roe": "vermelho",
    "div_liq_ebitda": "vermelho",
@@ -1308,6 +1541,11 @@
   "flags": []
  },
  "SRNA3": {
+  "componentes_lucro": {
+   "exercicio_2025": 11817000.0,
+   "acumulado_2026-06-30": -234992000.0,
+   "acumulado_2025-06-30": -191899000.0
+  },
   "ll": -31276000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": -0.6,
@@ -1330,15 +1568,16 @@
   ]
  },
  "AURE3": {
+  "componentes_lucro": {
+   "exercicio_2025": -664032000.0,
+   "acumulado_2026-06-30": -1032285000.0,
+   "acumulado_2025-06-30": -606894000.0
+  },
   "ll": -1089423000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": -9.0,
   "div_liq_ebitda": 5.75,
   "div_liq_pl": 1.74,
-  "fcf_yield": 1666.8,
-  "descartados": [
-   "fcf_yield"
-  ],
   "semaforo": {
    "roe": "vermelho",
    "div_liq_ebitda": "vermelho",
@@ -1351,9 +1590,7 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (AURE3)",
-  "flags": [
-   "descartado:fcf_yield=1666.8"
-  ]
+  "flags": []
  },
  "MEGA3": {
   "erro": "sem CD_CVM",
@@ -1361,6 +1598,11 @@
   "sem_cotacao": true
  },
  "CEBR5": {
+  "componentes_lucro": {
+   "exercicio_2025": 185575000.0,
+   "acumulado_2026-06-30": 71226000.0,
+   "acumulado_2025-06-30": 96927000.0
+  },
   "ll": 159874000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 15.8,
@@ -1368,7 +1610,6 @@
   "base_payout": "pago em caixa (DFC) 2025",
   "div_liq_ebitda": -1.33,
   "div_liq_pl": -0.3,
-  "fcf_yield": 4.1,
   "descartados": [
    "payout"
   ],
@@ -1389,6 +1630,11 @@
   ]
  },
  "CEBR3": {
+  "componentes_lucro": {
+   "exercicio_2025": 185575000.0,
+   "acumulado_2026-06-30": 71226000.0,
+   "acumulado_2025-06-30": 96927000.0
+  },
   "ll": 159874000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 15.8,
@@ -1396,7 +1642,6 @@
   "base_payout": "pago em caixa (DFC) 2025",
   "div_liq_ebitda": -1.33,
   "div_liq_pl": -0.3,
-  "fcf_yield": 4.1,
   "descartados": [
    "payout"
   ],
@@ -1417,6 +1662,11 @@
   ]
  },
  "CEBR6": {
+  "componentes_lucro": {
+   "exercicio_2025": 185575000.0,
+   "acumulado_2026-06-30": 71226000.0,
+   "acumulado_2025-06-30": 96927000.0
+  },
   "ll": 159874000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 15.8,
@@ -1424,7 +1674,6 @@
   "base_payout": "pago em caixa (DFC) 2025",
   "div_liq_ebitda": -1.33,
   "div_liq_pl": -0.3,
-  "fcf_yield": 3.6,
   "descartados": [
    "payout"
   ],
@@ -1460,6 +1709,11 @@
   "sem_cotacao": true
  },
  "EKTR4": {
+  "componentes_lucro": {
+   "exercicio_2025": 958000000.0,
+   "acumulado_2026-09-30": 507000000.0,
+   "acumulado_2025-09-30": 736000000.0
+  },
   "ll": 729000000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 33.6,
@@ -1484,6 +1738,11 @@
   ]
  },
  "GEPA4": {
+  "componentes_lucro": {
+   "exercicio_2025": 250847000.0,
+   "acumulado_2026-06-30": 135706000.0,
+   "acumulado_2025-06-30": 161900000.0
+  },
   "ll": 224653000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 14.3,
@@ -1491,7 +1750,6 @@
   "base_payout": "declarado (DVA) 2025",
   "div_liq_ebitda": 0.91,
   "div_liq_pl": 0.59,
-  "fcf_yield": -12.3,
   "semaforo": {
    "roe": "verde",
    "div_liq_ebitda": "verde",
@@ -1510,6 +1768,11 @@
   ]
  },
  "GEPA3": {
+  "componentes_lucro": {
+   "exercicio_2025": 250847000.0,
+   "acumulado_2026-06-30": 135706000.0,
+   "acumulado_2025-06-30": 161900000.0
+  },
   "ll": 224653000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 14.3,
@@ -1517,7 +1780,6 @@
   "base_payout": "declarado (DVA) 2025",
   "div_liq_ebitda": 0.91,
   "div_liq_pl": 0.59,
-  "fcf_yield": -11.4,
   "semaforo": {
    "roe": "verde",
    "div_liq_ebitda": "verde",
@@ -1536,6 +1798,11 @@
   ]
  },
  "GPAR3": {
+  "componentes_lucro": {
+   "exercicio_2025": null,
+   "acumulado_2026-06-30": null,
+   "acumulado_2025-06-30": 20906000.0
+  },
   "ll": null,
   "base_lucro": "lucro contábil, indisponível",
   "div_liq_ebitda": null,
@@ -1559,6 +1826,11 @@
   ]
  },
  "CEEB5": {
+  "componentes_lucro": {
+   "exercicio_2025": 1954000000.0,
+   "acumulado_2026-09-30": 948000000.0,
+   "acumulado_2025-09-30": 1456000000.0
+  },
   "ll": 1446000000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 17.1,
@@ -1583,6 +1855,11 @@
   ]
  },
  "REDE3": {
+  "componentes_lucro": {
+   "exercicio_2025": 1203331000.0,
+   "acumulado_2026-06-30": 509313000.0,
+   "acumulado_2025-06-30": 684810000.0
+  },
   "ll": 1027834000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 19.0,
@@ -1605,6 +1882,11 @@
   "flags": []
  },
  "ENMT3": {
+  "componentes_lucro": {
+   "exercicio_2025": 871279000.0,
+   "acumulado_2026-06-30": 212424000.0,
+   "acumulado_2025-06-30": 507913000.0
+  },
   "ll": 575790000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 14.1,
@@ -1629,6 +1911,11 @@
   ]
  },
  "EQPA3": {
+  "componentes_lucro": {
+   "exercicio_2025": 1552654000.0,
+   "acumulado_2026-06-30": 770813000.0,
+   "acumulado_2025-06-30": 753824000.0
+  },
   "ll": 1569643000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 31.6,
@@ -1653,6 +1940,11 @@
   ]
  },
  "ENMT4": {
+  "componentes_lucro": {
+   "exercicio_2025": 871279000.0,
+   "acumulado_2026-06-30": 212424000.0,
+   "acumulado_2025-06-30": 507913000.0
+  },
   "ll": 575790000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 14.1,
@@ -1677,6 +1969,11 @@
   ]
  },
  "CEEB3": {
+  "componentes_lucro": {
+   "exercicio_2025": 1954000000.0,
+   "acumulado_2026-09-30": 948000000.0,
+   "acumulado_2025-09-30": 1456000000.0
+  },
   "ll": 1446000000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 17.1,
@@ -1701,6 +1998,11 @@
   ]
  },
  "EKTR3": {
+  "componentes_lucro": {
+   "exercicio_2025": 958000000.0,
+   "acumulado_2026-09-30": 507000000.0,
+   "acumulado_2025-09-30": 736000000.0
+  },
   "ll": 729000000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 33.6,
@@ -1725,6 +2027,11 @@
   ]
  },
  "AFLT3": {
+  "componentes_lucro": {
+   "exercicio_2025": 23830000.0,
+   "acumulado_2026-09-30": 36895000.0,
+   "acumulado_2025-09-30": 23703000.0
+  },
   "ll": 37022000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 14.7,
@@ -1756,6 +2063,11 @@
   "sem_cotacao": true
  },
  "EQPA6": {
+  "componentes_lucro": {
+   "exercicio_2025": 1552654000.0,
+   "acumulado_2026-06-30": 770813000.0,
+   "acumulado_2025-06-30": 753824000.0
+  },
   "ll": 1569643000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 31.6,
@@ -1785,6 +2097,11 @@
   "sem_cotacao": true
  },
  "EQPA5": {
+  "componentes_lucro": {
+   "exercicio_2025": 1552654000.0,
+   "acumulado_2026-06-30": 770813000.0,
+   "acumulado_2025-06-30": 753824000.0
+  },
   "ll": 1569643000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 31.6,
@@ -1809,6 +2126,11 @@
   ]
  },
  "EQPA7": {
+  "componentes_lucro": {
+   "exercicio_2025": 1552654000.0,
+   "acumulado_2026-06-30": 770813000.0,
+   "acumulado_2025-06-30": 753824000.0
+  },
   "ll": 1569643000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 31.6,
@@ -1833,6 +2155,11 @@
   ]
  },
  "COCE5": {
+  "componentes_lucro": {
+   "exercicio_2025": 393974000.0,
+   "acumulado_2026-09-30": 372714000.0,
+   "acumulado_2025-09-30": 91870000.0
+  },
   "ll": 674818000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 12.2,
@@ -1858,15 +2185,16 @@
   ]
  },
  "EMAE4": {
+  "componentes_lucro": {
+   "exercicio_2025": -133356000.0,
+   "acumulado_2026-06-30": 76729000.0,
+   "acumulado_2025-06-30": 66047000.0
+  },
   "ll": -122674000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": -12.7,
   "div_liq_ebitda": null,
   "div_liq_pl": -0.68,
-  "fcf_yield": -7639.7,
-  "descartados": [
-   "fcf_yield"
-  ],
   "semaforo": {
    "roe": "vermelho",
    "div_liq_ebitda": "cinza",
@@ -1879,11 +2207,14 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (EMAE3)",
-  "flags": [
-   "descartado:fcf_yield=-7639.7"
-  ]
+  "flags": []
  },
  "COCE3": {
+  "componentes_lucro": {
+   "exercicio_2025": 393974000.0,
+   "acumulado_2026-09-30": 372714000.0,
+   "acumulado_2025-09-30": 91870000.0
+  },
   "ll": 674818000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 12.2,
@@ -1909,15 +2240,16 @@
   ]
  },
  "LIGT3": {
+  "componentes_lucro": {
+   "exercicio_2025": 213095000.0,
+   "acumulado_2026-06-30": 2569248000.0,
+   "acumulado_2025-06-30": 367804000.0
+  },
   "ll": 2414539000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 32.4,
   "div_liq_ebitda": 4.59,
   "div_liq_pl": 0.78,
-  "fcf_yield": -196.8,
-  "descartados": [
-   "fcf_yield"
-  ],
   "semaforo": {
    "roe": "verde",
    "div_liq_ebitda": "vermelho",
@@ -1930,9 +2262,7 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (LIGT3)",
-  "flags": [
-   "descartado:fcf_yield=-196.8"
-  ]
+  "flags": []
  },
  "CEPE5": {
   "erro": "sem CD_CVM",
@@ -1969,6 +2299,11 @@
   ]
  },
  "AXIA3": {
+  "componentes_lucro": {
+   "exercicio_2025": 6558475000.0,
+   "acumulado_2026-06-30": 3819749000.0,
+   "acumulado_2025-06-30": -1678722000.0
+  },
   "ll": 12056946000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 10.0,
@@ -1976,10 +2311,6 @@
   "base_payout": "declarado (DVA) 2025",
   "div_liq_ebitda": 2.74,
   "div_liq_pl": 0.37,
-  "fcf_yield": 10266.2,
-  "descartados": [
-   "fcf_yield"
-  ],
   "semaforo": {
    "roe": "amarelo",
    "div_liq_ebitda": "verde",
@@ -1992,20 +2323,19 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (AXIA3)",
-  "flags": [
-   "descartado:fcf_yield=10266.2"
-  ]
+  "flags": []
  },
  "CBEE3": {
+  "componentes_lucro": {
+   "exercicio_2025": -9034000.0,
+   "acumulado_2026-09-30": 114956000.0,
+   "acumulado_2025-09-30": -126361000.0
+  },
   "ll": 232283000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 2.5,
   "div_liq_ebitda": 3.19,
   "div_liq_pl": 0.56,
-  "fcf_yield": -11526.4,
-  "descartados": [
-   "fcf_yield"
-  ],
   "semaforo": {
    "roe": "vermelho",
    "div_liq_ebitda": "amarelo",
@@ -2019,7 +2349,6 @@
   "base": "12 meses até 2026-09-30",
   "mapeamento": "FCA 2026 (CBEE3)",
   "flags": [
-   "descartado:fcf_yield=-11526.4",
    "demonstracao_individual"
   ]
  },
@@ -2029,12 +2358,16 @@
   "sem_cotacao": true
  },
  "RNEW3": {
+  "componentes_lucro": {
+   "exercicio_2025": -162231000.0,
+   "acumulado_2026-06-30": -39926000.0,
+   "acumulado_2025-06-30": -57760000.0
+  },
   "ll": -144397000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": -11.8,
   "div_liq_ebitda": 4.53,
   "div_liq_pl": 0.58,
-  "fcf_yield": 3.4,
   "semaforo": {
    "roe": "vermelho",
    "div_liq_ebitda": "vermelho",
@@ -2050,6 +2383,11 @@
   "flags": []
  },
  "CEED4": {
+  "componentes_lucro": {
+   "exercicio_2025": -704584000.0,
+   "acumulado_2026-06-30": 32581000.0,
+   "acumulado_2025-06-30": -238710000.0
+  },
   "ll": -433293000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": null,
@@ -2074,6 +2412,11 @@
   ]
  },
  "CEED3": {
+  "componentes_lucro": {
+   "exercicio_2025": -704584000.0,
+   "acumulado_2026-06-30": 32581000.0,
+   "acumulado_2025-06-30": -238710000.0
+  },
   "ll": -433293000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": null,
@@ -2098,15 +2441,16 @@
   ]
  },
  "EMAE3": {
+  "componentes_lucro": {
+   "exercicio_2025": -133356000.0,
+   "acumulado_2026-06-30": 76729000.0,
+   "acumulado_2025-06-30": 66047000.0
+  },
   "ll": -122674000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": -12.7,
   "div_liq_ebitda": null,
   "div_liq_pl": -0.68,
-  "fcf_yield": -2147.8,
-  "descartados": [
-   "fcf_yield"
-  ],
   "semaforo": {
    "roe": "vermelho",
    "div_liq_ebitda": "cinza",
@@ -2119,9 +2463,7 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (EMAE3)",
-  "flags": [
-   "descartado:fcf_yield=-2147.8"
-  ]
+  "flags": []
  },
  "ELPL4": {
   "erro": "sem CD_CVM",
@@ -2129,15 +2471,16 @@
   "sem_cotacao": true
  },
  "ENEV3": {
+  "componentes_lucro": {
+   "exercicio_2025": 1157575000.0,
+   "acumulado_2026-06-30": 553945000.0,
+   "acumulado_2025-06-30": 748860000.0
+  },
   "ll": 962660000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 4.8,
   "div_liq_ebitda": 3.18,
   "div_liq_pl": 0.97,
-  "fcf_yield": -1875.0,
-  "descartados": [
-   "fcf_yield"
-  ],
   "semaforo": {
    "roe": "vermelho",
    "div_liq_ebitda": "amarelo",
@@ -2150,9 +2493,7 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (ENEV3)",
-  "flags": [
-   "descartado:fcf_yield=-1875.0"
-  ]
+  "flags": []
  },
  "OMGE3": {
   "erro": "sem CD_CVM",
@@ -2160,6 +2501,11 @@
   "sem_cotacao": true
  },
  "RNEW11": {
+  "componentes_lucro": {
+   "exercicio_2025": -162231000.0,
+   "acumulado_2026-06-30": -39926000.0,
+   "acumulado_2025-06-30": -57760000.0
+  },
   "ll": -144397000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": -11.8,
@@ -2182,12 +2528,16 @@
   ]
  },
  "RNEW4": {
+  "componentes_lucro": {
+   "exercicio_2025": -162231000.0,
+   "acumulado_2026-06-30": -39926000.0,
+   "acumulado_2025-06-30": -57760000.0
+  },
   "ll": -144397000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": -11.8,
   "div_liq_ebitda": 4.53,
   "div_liq_pl": 0.58,
-  "fcf_yield": 3.6,
   "semaforo": {
    "roe": "vermelho",
    "div_liq_ebitda": "vermelho",
@@ -2203,6 +2553,11 @@
   "flags": []
  },
  "AESO3": {
+  "componentes_lucro": {
+   "exercicio_2025": -20582000.0,
+   "acumulado_2026-06-30": 38461000.0,
+   "acumulado_2025-06-30": -49023000.0
+  },
   "ll": 66902000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 1.9,
@@ -2226,6 +2581,11 @@
   ]
  },
  "CEEB6": {
+  "componentes_lucro": {
+   "exercicio_2025": 1954000000.0,
+   "acumulado_2026-09-30": 948000000.0,
+   "acumulado_2025-09-30": 1456000000.0
+  },
   "ll": 1446000000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 17.1,
@@ -2251,6 +2611,11 @@
   ]
  },
  "COCE6": {
+  "componentes_lucro": {
+   "exercicio_2025": 393974000.0,
+   "acumulado_2026-09-30": 372714000.0,
+   "acumulado_2025-09-30": 91870000.0
+  },
   "ll": 674818000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 12.2,
@@ -2309,6 +2674,11 @@
   ]
  },
  "RIOS3": {
+  "componentes_lucro": {
+   "exercicio_2025": -537416000.0,
+   "acumulado_2026-06-30": -193055000.0,
+   "acumulado_2025-06-30": -117053000.0
+  },
   "ll": -613418000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": null,
@@ -2332,6 +2702,11 @@
   ]
  },
  "AXIA7": {
+  "componentes_lucro": {
+   "exercicio_2025": 6558475000.0,
+   "acumulado_2026-06-30": 3819749000.0,
+   "acumulado_2025-06-30": -1678722000.0
+  },
   "ll": 12056946000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 10.0,
@@ -2339,10 +2714,6 @@
   "base_payout": "declarado (DVA) 2025",
   "div_liq_ebitda": 2.74,
   "div_liq_pl": 0.37,
-  "fcf_yield": 10165.5,
-  "descartados": [
-   "fcf_yield"
-  ],
   "semaforo": {
    "roe": "amarelo",
    "div_liq_ebitda": "verde",
@@ -2355,11 +2726,14 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (AXIA3)",
-  "flags": [
-   "descartado:fcf_yield=10165.5"
-  ]
+  "flags": []
  },
  "WIZC3": {
+  "componentes_lucro": {
+   "exercicio_2025": 201076000.0,
+   "acumulado_2026-06-30": 93414000.0,
+   "acumulado_2025-06-30": 96061000.0
+  },
   "ll": 198429000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 28.7,
@@ -2379,6 +2753,11 @@
   "flags": []
  },
  "BBSE3": {
+  "componentes_lucro": {
+   "exercicio_2025": 9017329000.0,
+   "acumulado_2026-06-30": 4552169000.0,
+   "acumulado_2025-06-30": 4380181000.0
+  },
   "ll": 9189317000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 85.9,
@@ -2400,6 +2779,11 @@
   ]
  },
  "PSSA3": {
+  "componentes_lucro": {
+   "exercicio_2025": 3380884000.0,
+   "acumulado_2026-06-30": 2013445000.0,
+   "acumulado_2025-06-30": 1710318000.0
+  },
   "ll": 3684011000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 24.1,
@@ -2419,6 +2803,11 @@
   "flags": []
  },
  "CXSE3": {
+  "componentes_lucro": {
+   "exercicio_2025": 4291560000.0,
+   "acumulado_2026-06-30": 2310228000.0,
+   "acumulado_2025-06-30": 2078827000.0
+  },
   "ll": 4522961000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 33.3,
@@ -2611,6 +3000,11 @@
   ]
  },
  "SAPR4": {
+  "componentes_lucro": {
+   "exercicio_2025": 2079568000.0,
+   "acumulado_2026-06-30": -152476000.0,
+   "acumulado_2025-06-30": 1471841000.0
+  },
   "ll": 455251000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 3.8,
@@ -2635,6 +3029,11 @@
   ]
  },
  "SAPR11": {
+  "componentes_lucro": {
+   "exercicio_2025": 2079568000.0,
+   "acumulado_2026-06-30": -152476000.0,
+   "acumulado_2025-06-30": 1471841000.0
+  },
   "ll": 455251000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 3.8,
@@ -2659,6 +3058,11 @@
   ]
  },
  "CSMG3": {
+  "componentes_lucro": {
+   "exercicio_2025": 1415744000.0,
+   "acumulado_2026-06-30": 595242000.0,
+   "acumulado_2025-06-30": 717950000.0
+  },
   "ll": 1293036000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 15.0,
@@ -2666,10 +3070,6 @@
   "base_payout": "declarado (DVA) 2025",
   "div_liq_ebitda": 2.67,
   "div_liq_pl": 0.89,
-  "fcf_yield": 11421.6,
-  "descartados": [
-   "fcf_yield"
-  ],
   "semaforo": {
    "roe": "verde",
    "div_liq_ebitda": "amarelo",
@@ -2682,11 +3082,14 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (CSMG3)",
-  "flags": [
-   "descartado:fcf_yield=11421.6"
-  ]
+  "flags": []
  },
  "SAPR3": {
+  "componentes_lucro": {
+   "exercicio_2025": 2079568000.0,
+   "acumulado_2026-06-30": -152476000.0,
+   "acumulado_2025-06-30": 1471841000.0
+  },
   "ll": 455251000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 3.8,
@@ -2711,6 +3114,11 @@
   ]
  },
  "SBSP3": {
+  "componentes_lucro": {
+   "exercicio_2025": 8462059000.0,
+   "acumulado_2026-06-30": 3196215000.0,
+   "acumulado_2025-06-30": 3618053000.0
+  },
   "ll": 8040221000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 18.8,
@@ -2718,7 +3126,6 @@
   "base_payout": "declarado (DVA) 2025",
   "div_liq_ebitda": 2.21,
   "div_liq_pl": 0.76,
-  "fcf_yield": -47.3,
   "semaforo": {
    "roe": "verde",
    "div_liq_ebitda": "verde",
@@ -2731,11 +3138,14 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (SBSP3)",
-  "flags": [
-   "verificar:fcf_yield=-47.3"
-  ]
+  "flags": []
  },
  "CASN4": {
+  "componentes_lucro": {
+   "exercicio_2025": 387059000.0,
+   "acumulado_2026-06-30": 239180000.0,
+   "acumulado_2025-06-30": 207549000.0
+  },
   "ll": 418690000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 15.4,
@@ -2743,7 +3153,6 @@
   "base_payout": "declarado (DVA) 2025",
   "div_liq_ebitda": 2.9,
   "div_liq_pl": 0.84,
-  "fcf_yield": -6.8,
   "semaforo": {
    "roe": "verde",
    "div_liq_ebitda": "amarelo",
@@ -2761,6 +3170,11 @@
   ]
  },
  "CASN3": {
+  "componentes_lucro": {
+   "exercicio_2025": 387059000.0,
+   "acumulado_2026-06-30": 239180000.0,
+   "acumulado_2025-06-30": 207549000.0
+  },
   "ll": 418690000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 15.4,
@@ -2768,7 +3182,6 @@
   "base_payout": "declarado (DVA) 2025",
   "div_liq_ebitda": 2.9,
   "div_liq_pl": 0.84,
-  "fcf_yield": -5.6,
   "semaforo": {
    "roe": "verde",
    "div_liq_ebitda": "amarelo",
@@ -2791,10 +3204,6 @@
   "roe": -3.3,
   "div_liq_ebitda": 3.21,
   "div_liq_pl": 2.43,
-  "fcf_yield": -1318.6,
-  "descartados": [
-   "fcf_yield"
-  ],
   "semaforo": {
    "roe": "vermelho",
    "div_liq_ebitda": "amarelo",
@@ -2810,20 +3219,20 @@
   "flags": [
    "sem ITR de 2024-06-30 (usado o exercício fechado)",
    "roe_sem_pl_inicial",
-   "descartado:fcf_yield=-1318.6",
    "dado_antigo:35_meses"
   ]
  },
  "ORVR3": {
+  "componentes_lucro": {
+   "exercicio_2025": 60142000.0,
+   "acumulado_2026-06-30": 7637000.0,
+   "acumulado_2025-06-30": 17524000.0
+  },
   "ll": 50255000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 1.6,
   "div_liq_ebitda": 3.9,
   "div_liq_pl": 0.46,
-  "fcf_yield": -71612.9,
-  "descartados": [
-   "fcf_yield"
-  ],
   "semaforo": {
    "roe": "vermelho",
    "div_liq_ebitda": "vermelho",
@@ -2836,9 +3245,7 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (ORVR3)",
-  "flags": [
-   "descartado:fcf_yield=-71612.9"
-  ]
+  "flags": []
  },
  "IGSN3": {
   "erro": "sem CD_CVM",
@@ -2846,6 +3253,11 @@
   "sem_cotacao": true
  },
  "TIMS3": {
+  "componentes_lucro": {
+   "exercicio_2025": 4311984000.0,
+   "acumulado_2026-06-30": 1786664000.0,
+   "acumulado_2025-06-30": 1773008000.0
+  },
   "ll": 4325640000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 17.3,
@@ -2853,9 +3265,8 @@
   "base_payout": "declarado (DVA) 2025",
   "div_liq_ebitda": -0.17,
   "div_liq_pl": -0.09,
-  "fcf_yield": 20.0,
   "semaforo": {
-   "fcf_yield": "verde",
+   "roe": "verde",
    "div_liq_ebitda": "verde",
    "payout": "verde"
   },
@@ -2871,6 +3282,11 @@
   ]
  },
  "VIVT3": {
+  "componentes_lucro": {
+   "exercicio_2025": 6167906000.0,
+   "acumulado_2026-06-30": 2833640000.0,
+   "acumulado_2025-06-30": 2402666000.0
+  },
   "ll": 6598880000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 9.9,
@@ -2878,13 +3294,12 @@
   "base_payout": "declarado (DVA) 2025",
   "div_liq_ebitda": 0.43,
   "div_liq_pl": 0.17,
-  "fcf_yield": 10.9,
   "semaforo": {
-   "fcf_yield": "verde",
+   "roe": "amarelo",
    "div_liq_ebitda": "verde",
    "payout": "verde"
   },
-  "nota": 3,
+  "nota": 2,
   "cd_cvm": "17671",
   "empresa_cvm": "TELEFÔNICA BRASIL S.A.",
   "demonstracao": "consolidada",
@@ -2894,6 +3309,11 @@
   "flags": []
  },
  "BRIT3": {
+  "componentes_lucro": {
+   "exercicio_2025": 40841000.0,
+   "acumulado_2026-06-30": 45144000.0,
+   "acumulado_2025-06-30": 26507000.0
+  },
   "ll": 59478000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 3.8,
@@ -2902,11 +3322,11 @@
   "div_liq_ebitda": 2.16,
   "div_liq_pl": 1.07,
   "semaforo": {
-   "fcf_yield": "cinza",
+   "roe": "vermelho",
    "div_liq_ebitda": "amarelo",
    "payout": "amarelo"
   },
-  "nota": 2,
+  "nota": 1,
   "cd_cvm": "27693",
   "empresa_cvm": "BRISANET SERVIÇOS DE TELECOMUNICAÇÕES S.A.",
   "demonstracao": "consolidada",
@@ -2923,12 +3343,8 @@
   "roe": null,
   "div_liq_ebitda": null,
   "div_liq_pl": null,
-  "fcf_yield": -335415.5,
-  "descartados": [
-   "fcf_yield"
-  ],
   "semaforo": {
-   "fcf_yield": "cinza",
+   "roe": "cinza",
    "div_liq_ebitda": "cinza",
    "payout": "cinza"
   },
@@ -2940,8 +3356,7 @@
   "base": "exercício 2025",
   "mapeamento": "FCA 2026 (OIBR3)",
   "flags": [
-   "patrimonio_negativo",
-   "descartado:fcf_yield=-335415.5"
+   "patrimonio_negativo"
   ]
  },
  "OIBR3": {
@@ -2950,12 +3365,8 @@
   "roe": null,
   "div_liq_ebitda": null,
   "div_liq_pl": null,
-  "fcf_yield": -1677077.7,
-  "descartados": [
-   "fcf_yield"
-  ],
   "semaforo": {
-   "fcf_yield": "cinza",
+   "roe": "cinza",
    "div_liq_ebitda": "cinza",
    "payout": "cinza"
   },
@@ -2967,23 +3378,26 @@
   "base": "exercício 2025",
   "mapeamento": "FCA 2026 (OIBR3)",
   "flags": [
-   "patrimonio_negativo",
-   "descartado:fcf_yield=-1677077.7"
+   "patrimonio_negativo"
   ]
  },
  "TELB4": {
+  "componentes_lucro": {
+   "exercicio_2025": 140504000.0,
+   "acumulado_2026-06-30": -60264000.0,
+   "acumulado_2025-06-30": -57347000.0
+  },
   "ll": 137587000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 8.5,
   "div_liq_ebitda": -3.28,
   "div_liq_pl": -0.96,
-  "fcf_yield": -19.9,
   "semaforo": {
-   "fcf_yield": "vermelho",
+   "roe": "amarelo",
    "div_liq_ebitda": "verde",
    "payout": "cinza"
   },
-  "nota": 1,
+  "nota": 2,
   "cd_cvm": "11258",
   "empresa_cvm": "TELEC. BRASILEIRAS S.A. - TELEBRÁS",
   "demonstracao": "individual",
@@ -2996,18 +3410,22 @@
   ]
  },
  "TELB3": {
+  "componentes_lucro": {
+   "exercicio_2025": 140504000.0,
+   "acumulado_2026-06-30": -60264000.0,
+   "acumulado_2025-06-30": -57347000.0
+  },
   "ll": 137587000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 8.5,
   "div_liq_ebitda": -3.28,
   "div_liq_pl": -0.96,
-  "fcf_yield": -12.3,
   "semaforo": {
-   "fcf_yield": "vermelho",
+   "roe": "amarelo",
    "div_liq_ebitda": "verde",
    "payout": "cinza"
   },
-  "nota": 1,
+  "nota": 2,
   "cd_cvm": "11258",
   "empresa_cvm": "TELEC. BRASILEIRAS S.A. - TELEBRÁS",
   "demonstracao": "individual",
@@ -3020,6 +3438,11 @@
   ]
  },
  "FIQE3": {
+  "componentes_lucro": {
+   "exercicio_2025": 209022000.0,
+   "acumulado_2026-06-30": 96867000.0,
+   "acumulado_2025-06-30": 82146000.0
+  },
   "ll": 223743000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 18.0,
@@ -3027,9 +3450,8 @@
   "base_payout": "declarado (DVA) 2025",
   "div_liq_ebitda": 0.55,
   "div_liq_pl": 0.3,
-  "fcf_yield": 10.8,
   "semaforo": {
-   "fcf_yield": "verde",
+   "roe": "verde",
    "div_liq_ebitda": "verde",
    "payout": "amarelo"
   },
@@ -3043,6 +3465,11 @@
   "flags": []
  },
  "DESK3": {
+  "componentes_lucro": {
+   "exercicio_2025": 71484000.0,
+   "acumulado_2026-06-30": 19317000.0,
+   "acumulado_2025-06-30": 34936000.0
+  },
   "ll": 55865000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 4.0,
@@ -3050,13 +3477,12 @@
   "base_payout": "pago em caixa (DFC) 2025",
   "div_liq_ebitda": 1.75,
   "div_liq_pl": 0.83,
-  "fcf_yield": 9.7,
   "semaforo": {
-   "fcf_yield": "verde",
+   "roe": "vermelho",
    "div_liq_ebitda": "verde",
    "payout": "amarelo"
   },
-  "nota": 2,
+  "nota": 1,
   "cd_cvm": "26026",
   "empresa_cvm": "DESKTOP S.A",
   "demonstracao": "consolidada",
@@ -3066,6 +3492,11 @@
   "flags": []
  },
  "BRST3": {
+  "componentes_lucro": {
+   "exercicio_2025": 40841000.0,
+   "acumulado_2026-06-30": 45144000.0,
+   "acumulado_2025-06-30": 26507000.0
+  },
   "ll": 59478000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 3.8,
@@ -3073,9 +3504,8 @@
   "base_payout": "declarado (DVA) 2025",
   "div_liq_ebitda": 2.16,
   "div_liq_pl": 1.07,
-  "fcf_yield": -0.1,
   "semaforo": {
-   "fcf_yield": "vermelho",
+   "roe": "vermelho",
    "div_liq_ebitda": "amarelo",
    "payout": "amarelo"
   },
