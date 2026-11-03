@@ -94,6 +94,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 table{border-collapse:collapse;width:100%;font-size:.88rem;min-width:1060px}
 table.simple{min-width:780px}
 th,td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+#t td .pill{white-space:normal;line-height:1.25;max-width:9.5em;text-align:center}
+#t th .sort{white-space:normal}
 th:nth-child(-n+2),td:nth-child(-n+2){text-align:left}
 th{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:500;background:var(--surface)}
 th .thw{display:inline-flex;align-items:center;gap:3px}
@@ -123,10 +125,10 @@ tr.detail td{background:var(--surface-2);white-space:normal;text-align:left;font
 .al-atencao{background:var(--warn-soft);color:var(--warn)}
 .al-ok{background:var(--surface-2);color:var(--ink-2)}
 .al-na{background:var(--surface-3);color:var(--ink-2)}
-.q{background:var(--surface-2);color:var(--ink);border:1px solid var(--line);white-space:nowrap}
+.q{background:var(--surface-2);color:var(--ink);border:1px solid var(--line)}
 .q i{font-style:normal;letter-spacing:1px;color:var(--ink-2);margin-left:4px}
 .q-sn{background:transparent;color:var(--muted);border:1px dashed var(--line)}
-.beta{display:inline-block;font-family:var(--f-body);font-size:.66rem;font-weight:700;letter-spacing:.06em;padding:1px 6px;border-radius:4px;background:var(--accent-soft);color:var(--accent);vertical-align:middle}
+.beta{display:inline-block;font-family:var(--f-body);font-size:.66rem;font-weight:700;letter-spacing:.06em;padding:1px 6px;border-radius:4px;background:var(--ink);color:var(--bg);vertical-align:middle}
 .box.qual{border-left:4px solid var(--ink-2)}
 .qgrid{display:grid;grid-template-columns:minmax(0,1.2fr) auto minmax(0,2fr);gap:4px 12px;margin:8px 0;font-size:.86rem;align-items:baseline}
 .qgrid>div{display:contents}.qgrid b{font-weight:600}.qgrid .n{font-family:var(--f-mono);white-space:nowrap}.qgrid .c{color:var(--ink-2)}
@@ -194,12 +196,12 @@ footer{font-size:.85rem;color:var(--ink-2);border-top:1px solid var(--line);padd
 <div class="notice" role="note"><p><b>Material educativo, não é recomendação.</b> “Abaixo do teto” só diz que o preço de hoje é menor que um cálculo feito com o que a empresa pagou no passado. Não significa que a ação está barata nem que vai pagar o mesmo daqui para frente. Confira sempre os alertas e a ficha antes de tirar conclusões.</p></div>
 
 <details class="guide" id="guide" open>
-  <summary>Como ler este painel em 4 passos</summary>
+  <summary>Como ler este painel em 5 passos</summary>
   <ol>
     <li><b>Pense na empresa, não no código</b><p>Uma empresa pode ter vários códigos (ON final 3, PN final 4/5/6, unit final 11). No modo Iniciante mostramos uma linha por empresa, com o código mais negociado.</p></li>
     <li><b>Veja quanto ela pagou</b><p><b>DY 12m</b> é o que pagou nos últimos 12 meses sobre o preço de hoje. <b>DY médio</b> é a média de 5 anos sobre os preços da época. Números muito diferentes pedem atenção.</p></li>
     <li><b>Compare preço e preço-teto</b><p>O preço-teto robusto é o preço em que os proventos típicos (sem anos fora da curva) renderiam 6% ao ano. Estar abaixo dele é um primeiro filtro, não um sinal de compra.</p></li>
-    <li><b>Confira a saúde financeira <span class="beta">BETA</span></b><p>A coluna <b>Qualidade</b> resume, com dados do balanço entregue à CVM, se a empresa lucra o suficiente, sem dever demais, para sustentar o que paga. Um preço baixo com indicadores fracos pede investigação. Toque em “?” e abra a ficha para ver a data-base e as ressalvas.</p></li>
+    <li><b>Confira a saúde financeira <span class="beta">BETA</span></b><p>A coluna <b>Qualidade</b> resume, com dados do balanço entregue à CVM, se a empresa lucra o suficiente, sem dever demais, para sustentar o que paga. Um preço baixo com indicadores fracos pede investigação, e indicadores fortes não garantem bom investimento. Toque em “?” e abra a ficha para ver a data-base e as ressalvas.</p></li>
     <li><b>Leia os alertas</b><p>“Grave” quer dizer que o teto não se aplica (empresa em crise, papel sem negócios ou dado implausível). “Atenção” aponta provento em queda, pouca negociação, ano fora da curva e outros pontos. Abra a ficha para ver os detalhes.</p></li>
   </ol>
 </details>
@@ -211,7 +213,7 @@ footer{font-size:.85rem;color:var(--ink-2);border-top:1px solid var(--line);padd
   <span><span class="pill al-grave">Grave: teto não se aplica</span> crise, papel sem negócios ou dado implausível</span>
   <span><span class="pill al-atencao">Atenção · n</span> n pontos a conferir na ficha</span>
   <span><span class="pill al-ok">Nenhum alerta automático</span> nenhuma regra disparou; não quer dizer que é seguro</span>
-  <span><span class="pill q">Indicadores fortes<i>▮▮▮</i></span> <span class="beta">BETA</span> qualidade financeira pelo balanço entregue à CVM (não é recomendação)</span>
+  <span><span class="pill q">Indicadores fortes<i>▮▮▮</i></span> <span class="beta">BETA</span> qualidade financeira pelo balanço entregue à CVM. Indicadores fortes, mesmo com preço abaixo do teto, não são sinal de compra</span>
   <span><span class="ct ct-estatal_federal">Federal</span></span>
   <span><span class="ct ct-estatal_estadual">Estadual</span></span>
   <span><span class="ct ct-estatal_estrangeira">Estatal estrangeira</span></span>
@@ -253,7 +255,7 @@ footer{font-size:.85rem;color:var(--ink-2);border-top:1px solid var(--line);padd
 <section class="method" aria-label="Método">
   <div class="card"><span class="eyebrow">Como calculamos</span><h3>DPA, DY e preço-teto</h3><p><b>DPA médio</b>: média dos proventos por ação (dividendos e JCP, pela data-ex) dos 5 últimos anos completos. <b>Bazin clássico (média simples)</b>: DPA médio ÷ 6%. <b>Teto robusto</b>: o mesmo cálculo com a média sem o maior e o menor ano (mediana com 3 ou 4 anos), sem o ano de estreia na bolsa e sem anos com provento zerado por provável falha da fonte. A situação e a cor da linha usam o teto robusto.</p></div>
   <div class="card"><span class="eyebrow">Regras de alerta</span><h3>Grave, Atenção ou nenhum alerta</h3><p>Os alertas vêm prontos do arquivo de dados, calculados por regras automáticas. <b>Grave</b> (teto não se aplica): situação especial (recuperação judicial, OPA, falência), papel quase sem negócios ou teto implausivelmente acima do preço. <b>Atenção</b>: provento extraordinário, provento caindo 25% ou mais, DY 12m abaixo da metade da média ou muito acima do normal, liquidez abaixo de R$ 500 mil/dia, histórico curto, anos sem provento, entre outros. As regras não captam tudo: “nenhum alerta automático” não quer dizer seguro.</p></div>
-  <div class="card"><span class="eyebrow">Qualidade financeira · BETA</span><h3>ROE, endividamento e payout</h3><p>Calculados com os balanços que as empresas entregam à CVM (Dados Abertos: DFP e ITR). <b>Lucro</b>: lucro contábil atribuído aos acionistas da empresa nos últimos 12 meses, no padrão em que o balanço foi entregue (IFRS consolidado; alguns bancos só têm o individual em Cosif). Pode diferir do lucro “recorrente” ou “ajustado” dos releases. <b>ROE</b>: lucro ÷ patrimônio médio da mesma janela. <b>Payout</b>: proventos declarados sobre o lucro do último exercício (DVA) ÷ lucro do mesmo exercício; o valor pago em caixa aparece na ficha. <b>Dívida líquida/EBITDA</b>: só para não financeiras. A nota (0 a 3) junta os indicadores do setor; as faixas são convenções do painel. Lucro que variou mais de 60% em um ano deixa a nota <b>provisória</b>. Sem dado confiável, mostramos “sem nota” com o motivo, nunca uma nota baixa.</p></div>
+  <div class="card"><span class="eyebrow">Qualidade financeira · BETA</span><h3>ROE, endividamento e payout</h3><p>Calculados com os balanços que as empresas entregam à CVM (Dados Abertos: DFP e ITR). <b>Lucro</b>: lucro contábil atribuído aos acionistas da empresa nos últimos 12 meses, no padrão em que o balanço foi entregue (IFRS consolidado; alguns bancos só têm o individual em Cosif). Pode diferir do lucro “recorrente” ou “ajustado” dos releases. <b>ROE</b>: lucro ÷ patrimônio médio da mesma janela. <b>Payout</b>: proventos declarados sobre o lucro do último exercício (DVA) ÷ lucro do mesmo exercício; o valor pago em caixa aparece na ficha. <b>Dívida líquida/EBITDA</b>: só para não financeiras. A nota (0 a 3) junta os indicadores do setor; as faixas são convenções do painel. A nota fica <b>provisória</b> (⚠) quando o lucro acumulado variou mais de 60% contra o mesmo período do ano anterior ou quando algum indicador está fora do intervalo usual. Sem dado confiável, mostramos “sem nota” com o motivo, nunca uma nota baixa.</p></div>
   <div class="card"><span class="eyebrow">Controle acionário</span><h3>Quem manda na empresa</h3><p>Classificação pesquisada em fontes públicas (RI, CVM, imprensa) em 02/11/2026. Estatais podem ter interferência política em tarifas e dividendos; privatizações recentes mudam o perfil. Abra a ficha para ver o controlador e a fonte.</p></div>
 </section>
 
@@ -389,8 +391,9 @@ function head(){
   const tr=$("thead-row");tr.innerHTML="";
   visCols().forEach(c=>{const th=document.createElement("th");th.scope="col";th.dataset.k=c.k;
     const lab=c.k==="ticker"&&mode==="simple"?"Empresa":DEF[c.k][0];
-    th.innerHTML=`<span class="thw"><button type="button" class="sort">${lab}</button><button type="button" class="qm" data-def="${c.k}" aria-label="O que é ${DEF[c.k][0]}?" aria-expanded="false">?</button></span>`;
-    th.querySelector(".sort").onclick=()=>{const k=c.k;if(sortK===k)sortDir*=-1;else{sortK=k;sortDir=["ticker","controle","_st","_nal"].includes(k)?1:-1}render()};
+    const nosort=c.k==="_q"; /* juízes: ordenar por qualidade viraria um "filtro de compra" pronto */
+    th.innerHTML=`<span class="thw">${nosort?`<span class="sort" style="cursor:default">${lab}</span>`:`<button type="button" class="sort">${lab}</button>`}<button type="button" class="qm" data-def="${c.k}" aria-label="O que é ${DEF[c.k][0]}?" aria-expanded="false">?</button></span>`;
+    if(!nosort)th.querySelector(".sort").onclick=()=>{const k=c.k;if(sortK===k)sortDir*=-1;else{sortK=k;sortDir=["ticker","controle","_st","_nal"].includes(k)?1:-1}render()};
     tr.appendChild(th)});
   $("t").classList.toggle("simple",mode==="simple");
 }
@@ -435,7 +438,7 @@ function estBox(p){
 }
 function sibBox(p){
   const o=(p._grp||[]).filter(x=>x!==p);if(!o.length)return "";
-  return `<div class="box"><h4>Outros códigos da mesma empresa</h4><p>São classes de ação da mesma empresa: o negócio é o mesmo, mudam direitos, preço e liquidez. ${mode==="simple"?"A linha principal usa o código mais negociado.":""}</p><div class="sib-scroll"><table class="sib-t"><thead><tr><th scope="col">Código</th><th scope="col">Classe</th><th scope="col">Preço</th><th scope="col">DY 12m</th><th scope="col">Liquidez/dia</th></tr></thead><tbody>${[p,...o].map(x=>`<tr><td>${esc(x.ticker)}${x===p?" (este)":""}</td><td style="font-family:var(--f-body)">${classe(x.ticker)}</span><span class="c">${brl(x.preco)}</td><td>${x.dy_12m!=null?fmt(x.dy_12m,1)+"%":"–"}</td><td>${liq(x.liquidez_mil)}</span></div>`).join("")}</tbody></table></div></div>`;
+  return `<div class="box"><h4>Outros códigos da mesma empresa</h4><p>São classes de ação da mesma empresa: o negócio é o mesmo, mudam direitos, preço e liquidez. ${mode==="simple"?"A linha principal usa o código mais negociado.":""}</p><div class="sib-scroll"><table class="sib-t"><thead><tr><th scope="col">Código</th><th scope="col">Classe</th><th scope="col">Preço</th><th scope="col">DY 12m</th><th scope="col">Liquidez/dia</th></tr></thead><tbody>${[p,...o].map(x=>`<tr><td>${esc(x.ticker)}${x===p?" (este)":""}</td><td style="font-family:var(--f-body)">${classe(x.ticker)}</td><td>${brl(x.preco)}</td><td>${x.dy_12m!=null?fmt(x.dy_12m,1)+"%":"–"}</td><td>${liq(x.liquidez_mil)}</td></tr>`).join("")}</tbody></table></div></div>`;
 }
 function alPill(p,inline){
   const st=inline?' style="vertical-align:middle"':"";
@@ -445,38 +448,43 @@ function alPill(p,inline){
   return inline?"":`<span class="pill al-na" aria-label="sem avaliação">–</span>`;
 }
 const QL=["Indicadores muito fracos","Indicadores fracos","Indicadores mistos","Indicadores fortes"];
+const QS=["Muito fracos","Fracos","Mistos","Fortes"];
 function qPill(p,inline){
   const f=p._f, st=inline?' style="vertical-align:middle"':"";
   if(!f)return inline?"":`<span class="pill q q-sn"${st}>–</span>`;
   if(f.nota==null)return `<span class="pill q q-sn"${st} title="${esc(f.motivo_sem_nota||f.erro||"")}">Sem nota</span>`;
   const bars="▮".repeat(f.nota)+"▯".repeat(3-f.nota);
-  return `<span class="pill q"${st}>${QL[f.nota]}<i aria-hidden="true">${bars}</i>${f.nota_provisoria?' <span aria-label="provisória">⚠</span>':""}</span>`;
+  const lab=inline?QL[f.nota]:QS[f.nota];
+  return `<span class="pill q"${st} aria-label="${QL[f.nota]}, nota ${f.nota} de 3${f.nota_provisoria?", provisória":""}">${lab}<i aria-hidden="true">${bars}</i>${f.nota_provisoria?' <span aria-hidden="true">⚠</span>':""}</span>`;
 }
 const SEM={verde:"forte",amarelo:"intermediário",vermelho:"fraco",cinza:"sem dado"};
+const SEMP={verde:"dentro da faixa",amarelo:"atenção",vermelho:"fora da faixa",cinza:"sem dado"};
+const payTxt=b=>{const y=(b.match(/\d{4}/)||[""])[0];return b.startsWith("declarado")?`proventos declarados sobre o lucro de ${y} (demonstração do valor adicionado); recompras e dividendos pagos de reservas não entram`:`proventos pagos em caixa em ${y} (sem declaração na DVA)`};
 const MET={roe:"ROE 12m",payout:"Payout",div_liq_ebitda:"Dívida líquida/EBITDA"};
-const NOTA_EMP={BBSE:"A BB Seguridade é uma holding: o patrimônio é pequeno perto do lucro que recebe das coligadas, por isso o ROE fica muito alto. Compare com cuidado.",
+const NOTA_EMP={BBSE:"A BB Seguridade é uma holding: o lucro vem de participações em seguradoras e o patrimônio é pequeno, por isso o ROE fica muito alto e não é comparável ao de uma seguradora operacional.",
+  CXSE:"A Caixa Seguridade é uma holding: o lucro vem de participações em seguradoras e o patrimônio é pequeno, por isso o ROE não é comparável ao de uma seguradora operacional.",
   BBAS:"No Banco do Brasil, o lucro do balanço em IFRS entregue à CVM fica bem abaixo do lucro em Cosif e do lucro ajustado que o banco destaca no release."};
 function qualBox(p){
   const f=p._f;if(!QUAL)return "";
   const head=`<h4>Qualidade financeira <span class="beta">BETA</span></h4>`;
   if(!f||f.erro)return `<div class="box qual">${head}<p>Sem dados da CVM para este código${f&&f.motivo?": "+esc(f.motivo):""}.</p></div>`;
   const pc=v=>v==null?"–":fmt(v,1)+"%", x=v=>v==null?"–":fmt(v,2)+"x";
-  const ref=dbr(f.referencia), fin=["Bancos","Seguros"].includes(p.setor);
-  let rows=`<div><b>Lucro (${esc((f.base||"").replace(/(\d{4})-(\d{2})-(\d{2})/,"$3/$2/$1"))})</b><span class="n">${f.ll!=null?brl(f.ll/1e9,2)+" bi":"–"}</span><span class="c">${esc(f.padrao||"")}</span></div>`;
-  rows+=`<div><b>ROE 12m</b><span class="n">${pc(f.roe)}</span><span class="c">${f.semaforo&&f.semaforo.roe?SEM[f.semaforo.roe]:""}${f.roe_medio_exercicios!=null?` · média de ${f.roe_medio_n} exercício(s): ${pc(f.roe_medio_exercicios)}`:""}</span></div>`;
-  rows+=`<div><b>Payout</b><span class="n">${pc(f.payout)}</span><span class="c">${f.semaforo&&f.semaforo.payout?SEM[f.semaforo.payout]:""}${f.base_payout?" · "+esc(f.base_payout):""}${f.payout_caixa!=null?` · pago em caixa no ano: ${pc(f.payout_caixa)}`:""}</span></div>`;
-  if(!fin)rows+=`<div><b>Dívida líquida/EBITDA</b><span class="n">${x(f.div_liq_ebitda)}</span><span class="c">${f.semaforo&&f.semaforo.div_liq_ebitda?SEM[f.semaforo.div_liq_ebitda]:"sem dado"}</span></div>`;
+  const ref=dbr(f.referencia), fin=["Bancos","Seguros"].includes(p.setor), stale=(f.flags||[]).some(g=>g.startsWith("dado_antigo"));
+  let rows=`<div><b>Lucro contábil (${esc((f.base||"").replace(/(\d{4})-(\d{2})-(\d{2})/,"$3/$2/$1"))})</b><span class="n">${f.ll!=null?brl(f.ll/1e9,2)+" bi":"–"}</span><span class="c">${esc(f.padrao||"")}, CVM</span></div>`;
+  rows+=`<div><b>ROE 12m</b><span class="n">${pc(f.roe)}</span><span class="c">${f.semaforo&&f.semaforo.roe&&!stale?SEM[f.semaforo.roe]:""}${f.roe_medio_exercicios!=null?` · média de ${f.roe_medio_n} exercício(s): ${pc(f.roe_medio_exercicios)}`:""}</span></div>`;
+  rows+=`<div><b>Payout</b><span class="n">${pc(f.payout)}</span><span class="c">${f.semaforo&&f.semaforo.payout&&!stale?SEMP[f.semaforo.payout]:""}${f.base_payout?" · "+payTxt(f.base_payout):""}${f.payout_caixa!=null?` · pago em caixa no ano: ${pc(f.payout_caixa)}`:""}</span></div>`;
+  if(!fin)rows+=`<div><b>Dívida líquida/EBITDA</b><span class="n">${x(f.div_liq_ebitda)}</span><span class="c">${f.semaforo&&f.semaforo.div_liq_ebitda&&!stale?SEM[f.semaforo.div_liq_ebitda]:""}</span></div>`;
   const avisos=[];
   (f.flags||[]).forEach(g=>{
     if(g.startsWith("verificar:variacao_lucro"))avisos.push(`O lucro acumulado mudou ${esc(g.split("=")[1])} contra o mesmo período do ano anterior: pode haver efeito não recorrente. A nota é provisória.`);
     else if(g.startsWith("verificar:payout_igual"))avisos.push("A empresa declarou praticamente todo o lucro como proventos.");
-    else if(g.startsWith("verificar:"))avisos.push(`Valor fora do usual, conferir: ${esc(g.slice(10).replace("_"," "))}.`);
+    else if(g.startsWith("verificar:")){const [k,v]=g.slice(10).split("=");const nm={roe:"ROE",payout:"payout",div_liq_ebitda:"dívida líquida/EBITDA"}[k]||k;avisos.push(`O ${nm} (${esc(v)}${k==="div_liq_ebitda"?"x":"%"}) está fora do intervalo usual; vale conferir no balanço da empresa.`)}
     else if(g.startsWith("ltm_recusado")||g.startsWith("sem ITR")||g.startsWith("ltm_incompleto"))avisos.push("Não foi possível montar 12 meses coerentes; usamos o último exercício fechado.");
     else if(g==="patrimonio_negativo")avisos.push("Patrimônio negativo: o ROE não tem significado e fica em branco.");
   });
   if(NOTA_EMP[p.ticker.slice(0,4)])avisos.push(NOTA_EMP[p.ticker.slice(0,4)]);
   const nota=f.nota==null?`<p><b>Sem nota:</b> ${esc(f.motivo_sem_nota||"indicadores insuficientes")}.</p>`:`<p>${qPill(p,true)} ${f.nota_provisoria?"(provisória)":""}</p>`;
-  return `<div class="box qual">${head}${nota}<div class="qgrid">${rows}</div>${avisos.length?`<ul>${[...new Set(avisos)].map(a=>`<li>${a}</li>`).join("")}</ul>`:""}<p style="font-size:.8rem">Dados até ${ref}, fonte CVM (Dados Abertos). Lucro contábil: pode diferir do lucro recorrente ou ajustado do release. Convenção do painel, não é recomendação.</p></div>`;
+  return `<div class="box qual">${head}${nota}<div class="qgrid">${rows}</div>${avisos.length?`<ul>${[...new Set(avisos)].map(a=>`<li>${a}</li>`).join("")}</ul>`:""}<p style="font-size:.8rem">Dados até ${ref}, fonte CVM (Dados Abertos). Lucro contábil: pode diferir do lucro recorrente, ajustado ou regulatório divulgado pela empresa. Convenção do painel, não é recomendação.</p></div>`;
 }
 function detail(p){
   const sid="sim-"+p.ticker;
