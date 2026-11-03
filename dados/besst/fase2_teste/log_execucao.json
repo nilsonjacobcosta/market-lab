@@ -1,6 +1,9 @@
 {
  "downloads_falhos": [],
  "mapa": {
+  "BPAC": "CSV manual",
+  "EQPA": "CSV manual",
+  "BRIT": "CSV manual",
   "BBAS": "FCA 2026 (BBAS3)",
   "BSLI": "FCA 2026 (BSLI3)",
   "AXIA": "FCA 2026 (AXIA3)",
@@ -74,15 +77,12 @@
   "APER": "FCA 2024 (APER3)",
   "CSAB": "FCA 2024 (CSAB3)",
   "BRGE": "FCA 2024 (BRGE3)",
-  "BRIT": "FCA 2024 (BRIT3)",
   "BRIV": "FCA 2024 (BRIV3)",
-  "BPAC": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)",
   "CEPE": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)",
   "COMR": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)",
   "CSRN": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)",
   "EEEL": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)",
   "ELPL": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)",
-  "EQPA": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)",
   "IGSN": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)",
   "MEGA": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)",
   "OMGE": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"

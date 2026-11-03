@@ -1,57 +1,63 @@
 {
- "emissores": 85,
- "emissores_mapeados_pct (meta >=95)": 88.2,
- "emissores_com_dado_ate_15m_pct (meta >=90)": 75.3,
- "papeis_com_nota_pct (meta >=75)": 74.3,
- "payout_calculado_nos_lucrativos_pct (meta >=90)": 92.5,
+ "papeis_no_universo": 144,
+ "papeis_sem_cotacao_excluidos_do_aceite": [
+  "AESO3",
+  "APER3",
+  "BPAN4",
+  "BRGE11",
+  "BRGE12",
+  "BRGE3",
+  "BRGE5",
+  "BRGE6",
+  "BRGE8",
+  "BRIT3",
+  "BRIV3",
+  "BRIV4",
+  "CEEB6",
+  "CEPE3",
+  "CEPE5",
+  "COCE6",
+  "COMR3",
+  "CSAB3",
+  "CSAB4",
+  "CSRN3",
+  "CSRN5",
+  "CSRN6",
+  "EEEL3",
+  "EEEL4",
+  "ELPL4",
+  "IGSN3",
+  "LIPR3",
+  "MEGA3",
+  "NEOE3",
+  "OMGE3",
+  "PINE11",
+  "RIOS3",
+  "RNEW11",
+  "SRNA3",
+  "UPKP3"
+ ],
+ "papeis_negociados": 109,
+ "emissores": 65,
+ "emissores_mapeados_pct (meta >=95)": 100.0,
+ "emissores_com_dado_ate_15m_pct (meta >=90)": 96.9,
+ "papeis_com_nota_pct (meta >=75)": 91.7,
+ "payout_calculado_nos_lucrativos_pct (meta >=90)": 93.9,
  "payout_acima_150_sem_flag (meta 0)": [],
  "lucro_zero_aceito (meta 0)": [],
  "roe_com_pl_negativo (meta 0)": [],
  "nota_com_lucro_ausente (meta 0)": [],
- "sem_mapeamento": [
+ "sem_mapeamento": [],
+ "dado_antigo": [
   [
-   "BPAC",
-   "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+   "AMBP",
+   "dado_antigo:23_meses"
   ],
   [
-   "CEPE",
-   "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
-  ],
-  [
-   "COMR",
-   "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
-  ],
-  [
-   "CSRN",
-   "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
-  ],
-  [
-   "EEEL",
-   "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
-  ],
-  [
-   "ELPL",
-   "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
-  ],
-  [
-   "EQPA",
-   "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
-  ],
-  [
-   "IGSN",
-   "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
-  ],
-  [
-   "MEGA",
-   "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
-  ],
-  [
-   "OMGE",
-   "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+   "BSLI",
+   "dado_antigo:23_meses"
   ]
  ],
- "sem_dfp": [
-  "CSAB"
- ],
- "execucao_com_download_forcado_a_falhar": "concluiu: 123 papéis com dados"
+ "sem_dfp": [],
+ "execucao_com_download_forcado_a_falhar": "concluiu: 130 papéis com dados"
 }

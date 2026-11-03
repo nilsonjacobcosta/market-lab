@@ -133,25 +133,24 @@
   "flags": []
  },
  "ABCB4": {
-  "ll": 800853000.0,
+  "ll": 1019867000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
-  "roe": 13.6,
-  "payout": 44.6,
-  "base_payout": "declarado (DVA) 2023",
+  "roe": 14.7,
+  "payout": 63.0,
+  "base_payout": "declarado (DVA) 2025",
   "semaforo": {
    "roe": "amarelo",
-   "payout": "verde"
+   "payout": "amarelo"
   },
   "nota": 2,
   "cd_cvm": "20958",
   "empresa_cvm": "BANCO ABC BRASIL S/A",
-  "demonstracao": "consolidada",
-  "referencia": "2023-12-31",
-  "base": "exercício 2023",
+  "demonstracao": "individual",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (ABCB4)",
   "flags": [
-   "roe_sem_pl_inicial",
-   "dado_antigo:35_meses"
+   "demonstracao_individual"
   ]
  },
  "BRSR5": {
@@ -253,7 +252,8 @@
   "flags": [
    "roe_sem_pl_inicial",
    "descartado:payout=784.2",
-   "dado_antigo:35_meses"
+   "dado_antigo:35_meses",
+   "sem_cotacao"
   ]
  },
  "BMEB3": {
@@ -295,16 +295,61 @@
   "flags": []
  },
  "BPAC11": {
-  "erro": "sem CD_CVM",
-  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+  "ll": 18458126000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 24.6,
+  "payout": 29.7,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "22616",
+  "empresa_cvm": "BANCO BTG PACTUAL S/A",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "CSV manual",
+  "flags": []
  },
  "BPAC5": {
-  "erro": "sem CD_CVM",
-  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+  "ll": 18458126000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 24.6,
+  "payout": 29.7,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "22616",
+  "empresa_cvm": "BANCO BTG PACTUAL S/A",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "CSV manual",
+  "flags": []
  },
  "BPAC3": {
-  "erro": "sem CD_CVM",
-  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+  "ll": 18458126000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 24.6,
+  "payout": 29.7,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "22616",
+  "empresa_cvm": "BANCO BTG PACTUAL S/A",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "CSV manual",
+  "flags": []
  },
  "BRIV3": {
   "ll": 2931000.0,
@@ -329,7 +374,8 @@
   "flags": [
    "roe_sem_pl_inicial",
    "descartado:payout=784.2",
-   "dado_antigo:35_meses"
+   "dado_antigo:35_meses",
+   "sem_cotacao"
   ]
  },
  "BSLI4": {
@@ -647,7 +693,8 @@
   "mapeamento": "FCA 2025 (BPAN4)",
   "flags": [
    "sem ITR de 2024-09-30 (usado o exercício fechado)",
-   "dado_antigo:23_meses"
+   "dado_antigo:23_meses",
+   "sem_cotacao"
   ]
  },
  "RPAD6": {
@@ -747,7 +794,9 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (PINE3)",
-  "flags": []
+  "flags": [
+   "sem_cotacao"
+  ]
  },
  "CMIG4": {
   "ll": 4595105000.0,
@@ -1228,7 +1277,9 @@
   "referencia": "2026-09-30",
   "base": "12 meses até 2026-09-30",
   "mapeamento": "FCA 2026 (NEOE3)",
-  "flags": []
+  "flags": [
+   "sem_cotacao"
+  ]
  },
  "EQTL3": {
   "ll": 958423000.0,
@@ -1271,7 +1322,9 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (SRNA3)",
-  "flags": []
+  "flags": [
+   "sem_cotacao"
+  ]
  },
  "AURE3": {
   "ll": -1089423000.0,
@@ -1301,7 +1354,8 @@
  },
  "MEGA3": {
   "erro": "sem CD_CVM",
-  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)",
+  "sem_cotacao": true
  },
  "CEBR5": {
   "ll": 159874000.0,
@@ -1389,15 +1443,18 @@
  },
  "CSRN3": {
   "erro": "sem CD_CVM",
-  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)",
+  "sem_cotacao": true
  },
  "CSRN5": {
   "erro": "sem CD_CVM",
-  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)",
+  "sem_cotacao": true
  },
  "CSRN6": {
   "erro": "sem CD_CVM",
-  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)",
+  "sem_cotacao": true
  },
  "EKTR4": {
   "ll": 729000000.0,
@@ -1424,56 +1481,62 @@
   ]
  },
  "GEPA4": {
-  "ll": null,
-  "base_lucro": "lucro contábil, indisponível",
-  "div_liq_ebitda": null,
-  "div_liq_pl": null,
+  "ll": 224653000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 14.3,
+  "payout": 122.4,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 0.91,
+  "div_liq_pl": 0.59,
+  "fcf_yield": -12.3,
   "semaforo": {
-   "roe": "cinza",
-   "div_liq_ebitda": "cinza",
-   "payout": "cinza"
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "vermelho"
   },
-  "nota": null,
+  "nota": 1,
   "cd_cvm": "18368",
   "empresa_cvm": "RIO PARANAPANEMA ENERGIA SA",
-  "demonstracao": "consolidada",
-  "referencia": "2025-12-31",
-  "base": "exercício 2025",
+  "demonstracao": "individual",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (GEPA3)",
   "flags": [
-   "lucro_indisponivel"
+   "verificar:payout=122.4",
+   "demonstracao_individual"
   ]
  },
  "GEPA3": {
-  "ll": null,
-  "base_lucro": "lucro contábil, indisponível",
-  "div_liq_ebitda": null,
-  "div_liq_pl": null,
+  "ll": 224653000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 14.3,
+  "payout": 122.4,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 0.91,
+  "div_liq_pl": 0.59,
+  "fcf_yield": -11.4,
   "semaforo": {
-   "roe": "cinza",
-   "div_liq_ebitda": "cinza",
-   "payout": "cinza"
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "vermelho"
   },
-  "nota": null,
+  "nota": 1,
   "cd_cvm": "18368",
   "empresa_cvm": "RIO PARANAPANEMA ENERGIA SA",
-  "demonstracao": "consolidada",
-  "referencia": "2025-12-31",
-  "base": "exercício 2025",
+  "demonstracao": "individual",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (GEPA3)",
   "flags": [
-   "lucro_indisponivel"
+   "verificar:payout=122.4",
+   "demonstracao_individual"
   ]
  },
  "GPAR3": {
-  "ll": 37449000.0,
-  "base_lucro": "lucro contábil, controladores",
-  "roe": null,
-  "div_liq_ebitda": -12.23,
-  "div_liq_pl": -0.25,
-  "descartados": [
-   "div_liq_ebitda"
-  ],
+  "ll": null,
+  "base_lucro": "lucro contábil, indisponível",
+  "div_liq_ebitda": null,
+  "div_liq_pl": -0.37,
   "semaforo": {
    "roe": "cinza",
    "div_liq_ebitda": "cinza",
@@ -1482,15 +1545,14 @@
   "nota": null,
   "cd_cvm": "21393",
   "empresa_cvm": "COMPANHIA CELG DE PARTICIPAÇÕES - CELGPAR",
-  "demonstracao": "consolidada",
-  "referencia": "2024-12-31",
-  "base": "exercício 2024",
+  "demonstracao": "individual",
+  "referencia": "2025-12-31",
+  "base": "exercício 2025",
   "mapeamento": "FCA 2026 (GPAR3)",
   "flags": [
-   "sem ITR de 2024-09-30 (usado o exercício fechado)",
-   "patrimonio_negativo",
-   "descartado:div_liq_ebitda=-12.23",
-   "dado_antigo:23_meses"
+   "ltm_incompleto:ll (usado o exercício fechado)",
+   "demonstracao_individual",
+   "lucro_indisponivel"
   ]
  },
  "CEEB5": {
@@ -1564,8 +1626,28 @@
   ]
  },
  "EQPA3": {
-  "erro": "sem CD_CVM",
-  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+  "ll": 1569643000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 31.6,
+  "payout": 19.1,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 2.08,
+  "div_liq_pl": 1.22,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "18309",
+  "empresa_cvm": "EQUATORIAL PARÁ DISTRIBUIDORA DE ENERGIA S.A.",
+  "demonstracao": "individual",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "CSV manual",
+  "flags": [
+   "demonstracao_individual"
+  ]
  },
  "ENMT4": {
   "ll": 575790000.0,
@@ -1667,23 +1749,85 @@
  },
  "EEEL4": {
   "erro": "sem CD_CVM",
-  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)",
+  "sem_cotacao": true
  },
  "EQPA6": {
-  "erro": "sem CD_CVM",
-  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+  "ll": 1569643000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 31.6,
+  "payout": 19.1,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 2.08,
+  "div_liq_pl": 1.22,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "18309",
+  "empresa_cvm": "EQUATORIAL PARÁ DISTRIBUIDORA DE ENERGIA S.A.",
+  "demonstracao": "individual",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "CSV manual",
+  "flags": [
+   "demonstracao_individual"
+  ]
  },
  "EEEL3": {
   "erro": "sem CD_CVM",
-  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)",
+  "sem_cotacao": true
  },
  "EQPA5": {
-  "erro": "sem CD_CVM",
-  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+  "ll": 1569643000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 31.6,
+  "payout": 19.1,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 2.08,
+  "div_liq_pl": 1.22,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "18309",
+  "empresa_cvm": "EQUATORIAL PARÁ DISTRIBUIDORA DE ENERGIA S.A.",
+  "demonstracao": "individual",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "CSV manual",
+  "flags": [
+   "demonstracao_individual"
+  ]
  },
  "EQPA7": {
-  "erro": "sem CD_CVM",
-  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+  "ll": 1569643000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 31.6,
+  "payout": 19.1,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 2.08,
+  "div_liq_pl": 1.22,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "18309",
+  "empresa_cvm": "EQUATORIAL PARÁ DISTRIBUIDORA DE ENERGIA S.A.",
+  "demonstracao": "individual",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "CSV manual",
+  "flags": [
+   "demonstracao_individual"
+  ]
  },
  "COCE5": {
   "ll": 674818000.0,
@@ -1789,7 +1933,8 @@
  },
  "CEPE5": {
   "erro": "sem CD_CVM",
-  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)",
+  "sem_cotacao": true
  },
  "LIPR3": {
   "ll": 26043000.0,
@@ -1815,7 +1960,8 @@
    "sem ITR de 2024-03-31 (usado o exercício fechado)",
    "verificar:div_liq_ebitda=-3.04",
    "dado_antigo:23_meses",
-   "demonstracao_individual"
+   "demonstracao_individual",
+   "sem_cotacao"
   ]
  },
  "AXIA3": {
@@ -1875,7 +2021,8 @@
  },
  "CEPE3": {
   "erro": "sem CD_CVM",
-  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)",
+  "sem_cotacao": true
  },
  "RNEW3": {
   "ll": -144397000.0,
@@ -1974,7 +2121,8 @@
  },
  "ELPL4": {
   "erro": "sem CD_CVM",
-  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)",
+  "sem_cotacao": true
  },
  "ENEV3": {
   "ll": 962660000.0,
@@ -2004,7 +2152,8 @@
  },
  "OMGE3": {
   "erro": "sem CD_CVM",
-  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)",
+  "sem_cotacao": true
  },
  "RNEW11": {
   "ll": -144397000.0,
@@ -2024,7 +2173,9 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (RNEW3)",
-  "flags": []
+  "flags": [
+   "sem_cotacao"
+  ]
  },
  "RNEW4": {
   "ll": -144397000.0,
@@ -2066,7 +2217,8 @@
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (AESO3)",
   "flags": [
-   "verificar:div_liq_ebitda=7.79"
+   "verificar:div_liq_ebitda=7.79",
+   "sem_cotacao"
   ]
  },
  "CEEB6": {
@@ -2090,7 +2242,8 @@
   "base": "12 meses até 2026-09-30",
   "mapeamento": "FCA 2026 (CEEB3)",
   "flags": [
-   "demonstracao_individual"
+   "demonstracao_individual",
+   "sem_cotacao"
   ]
  },
  "COCE6": {
@@ -2115,12 +2268,14 @@
   "mapeamento": "FCA 2026 (COCE3)",
   "flags": [
    "ltm_incompleto:capex",
-   "demonstracao_individual"
+   "demonstracao_individual",
+   "sem_cotacao"
   ]
  },
  "COMR3": {
   "erro": "sem CD_CVM",
-  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)",
+  "sem_cotacao": true
  },
  "UPKP3": {
   "ll": 33431000.0,
@@ -2145,7 +2300,8 @@
   "flags": [
    "roe_sem_pl_inicial",
    "dado_antigo:35_meses",
-   "demonstracao_individual"
+   "demonstracao_individual",
+   "sem_cotacao"
   ]
  },
  "RIOS3": {
@@ -2167,7 +2323,8 @@
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (RIOS3)",
   "flags": [
-   "patrimonio_negativo"
+   "patrimonio_negativo",
+   "sem_cotacao"
   ]
  },
  "AXIA7": {
@@ -2295,7 +2452,8 @@
   "mapeamento": "FCA 2024 (BRGE3)",
   "flags": [
    "roe_sem_pl_inicial",
-   "dado_antigo:35_meses"
+   "dado_antigo:35_meses",
+   "sem_cotacao"
   ]
  },
  "CSAB3": {
@@ -2327,7 +2485,8 @@
   "mapeamento": "FCA 2024 (BRGE3)",
   "flags": [
    "roe_sem_pl_inicial",
-   "dado_antigo:35_meses"
+   "dado_antigo:35_meses",
+   "sem_cotacao"
   ]
  },
  "BRGE8": {
@@ -2349,7 +2508,8 @@
   "mapeamento": "FCA 2024 (BRGE3)",
   "flags": [
    "roe_sem_pl_inicial",
-   "dado_antigo:35_meses"
+   "dado_antigo:35_meses",
+   "sem_cotacao"
   ]
  },
  "BRGE5": {
@@ -2371,7 +2531,8 @@
   "mapeamento": "FCA 2024 (BRGE3)",
   "flags": [
    "roe_sem_pl_inicial",
-   "dado_antigo:35_meses"
+   "dado_antigo:35_meses",
+   "sem_cotacao"
   ]
  },
  "APER3": {
@@ -2395,7 +2556,8 @@
   "base": "exercício 2025",
   "mapeamento": "FCA 2024 (APER3)",
   "flags": [
-   "descartado:payout=1541.4"
+   "descartado:payout=1541.4",
+   "sem_cotacao"
   ]
  },
  "BRGE12": {
@@ -2417,7 +2579,8 @@
   "mapeamento": "FCA 2024 (BRGE3)",
   "flags": [
    "roe_sem_pl_inicial",
-   "dado_antigo:35_meses"
+   "dado_antigo:35_meses",
+   "sem_cotacao"
   ]
  },
  "BRGE3": {
@@ -2439,7 +2602,8 @@
   "mapeamento": "FCA 2024 (BRGE3)",
   "flags": [
    "roe_sem_pl_inicial",
-   "dado_antigo:35_meses"
+   "dado_antigo:35_meses",
+   "sem_cotacao"
   ]
  },
  "SAPR4": {
@@ -2673,28 +2837,32 @@
  },
  "IGSN3": {
   "erro": "sem CD_CVM",
-  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)",
+  "sem_cotacao": true
  },
  "TIMS3": {
-  "ll": null,
-  "base_lucro": "lucro contábil, indisponível",
-  "div_liq_ebitda": null,
-  "div_liq_pl": null,
+  "ll": 4325640000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 17.3,
+  "payout": 71.9,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": -0.17,
+  "div_liq_pl": -0.09,
+  "fcf_yield": 20.0,
   "semaforo": {
-   "fcf_yield": "cinza",
-   "div_liq_ebitda": "cinza",
-   "payout": "cinza"
+   "fcf_yield": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "verde"
   },
-  "nota": null,
+  "nota": 3,
   "cd_cvm": "24929",
   "empresa_cvm": "TIM S.A.",
-  "demonstracao": "consolidada",
-  "referencia": "2025-12-31",
-  "base": "exercício 2025",
+  "demonstracao": "individual",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (TIMS3)",
   "flags": [
-   "sem ITR de 2025-06-30 (usado o exercício fechado)",
-   "lucro_indisponivel"
+   "demonstracao_individual"
   ]
  },
  "VIVT3": {
@@ -2721,28 +2889,27 @@
   "flags": []
  },
  "BRIT3": {
-  "ll": 163653000.0,
+  "ll": 59478000.0,
   "base_lucro": "lucro contábil, controladores",
-  "roe": 10.9,
-  "payout": 8.8,
-  "base_payout": "pago em caixa (DFC) 2023",
-  "div_liq_ebitda": 1.28,
-  "div_liq_pl": 0.49,
+  "roe": 3.8,
+  "payout": 20.1,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 2.16,
+  "div_liq_pl": 1.07,
   "semaforo": {
    "fcf_yield": "cinza",
-   "div_liq_ebitda": "verde",
+   "div_liq_ebitda": "amarelo",
    "payout": "amarelo"
   },
   "nota": 2,
-  "cd_cvm": "26085",
-  "empresa_cvm": "BRISANET PARTICIPAÇÕES S.A.",
+  "cd_cvm": "27693",
+  "empresa_cvm": "BRISANET SERVIÇOS DE TELECOMUNICAÇÕES S.A.",
   "demonstracao": "consolidada",
-  "referencia": "2023-12-31",
-  "base": "exercício 2023",
-  "mapeamento": "FCA 2024 (BRIT3)",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "CSV manual",
   "flags": [
-   "roe_sem_pl_inicial",
-   "dado_antigo:35_meses"
+   "sem_cotacao"
   ]
  },
  "OIBR4": {
