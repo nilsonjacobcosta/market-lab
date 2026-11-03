@@ -1,0 +1,57 @@
+{
+ "emissores": 85,
+ "emissores_mapeados_pct (meta >=95)": 88.2,
+ "emissores_com_dado_ate_15m_pct (meta >=90)": 75.3,
+ "papeis_com_nota_pct (meta >=75)": 74.3,
+ "payout_calculado_nos_lucrativos_pct (meta >=90)": 92.5,
+ "payout_acima_150_sem_flag (meta 0)": [],
+ "lucro_zero_aceito (meta 0)": [],
+ "roe_com_pl_negativo (meta 0)": [],
+ "nota_com_lucro_ausente (meta 0)": [],
+ "sem_mapeamento": [
+  [
+   "BPAC",
+   "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+  ],
+  [
+   "CEPE",
+   "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+  ],
+  [
+   "COMR",
+   "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+  ],
+  [
+   "CSRN",
+   "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+  ],
+  [
+   "EEEL",
+   "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+  ],
+  [
+   "ELPL",
+   "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+  ],
+  [
+   "EQPA",
+   "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+  ],
+  [
+   "IGSN",
+   "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+  ],
+  [
+   "MEGA",
+   "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+  ],
+  [
+   "OMGE",
+   "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+  ]
+ ],
+ "sem_dfp": [
+  "CSAB"
+ ],
+ "execucao_com_download_forcado_a_falhar": "concluiu: 123 papéis com dados"
+}

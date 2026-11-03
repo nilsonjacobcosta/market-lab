@@ -1,0 +1,2 @@
+download falhou: dfp_cia_aberta_2024.zip falha forçada para teste
+144 papéis; 123 com dados; 107 com nota; downloads falhos: 1

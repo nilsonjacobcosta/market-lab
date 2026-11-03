@@ -1,0 +1,2919 @@
+{
+ "BBAS3": {
+  "ll": 12272045000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 6.7,
+  "payout": 38.1,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "vermelho",
+   "payout": "verde"
+  },
+  "nota": 1,
+  "cd_cvm": "1023",
+  "empresa_cvm": "BANCO DO BRASIL S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (BBAS3)",
+  "flags": []
+ },
+ "SANB4": {
+  "ll": 13160769000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 10.4,
+  "payout": 100.0,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "amarelo",
+   "payout": "vermelho"
+  },
+  "nota": 1,
+  "cd_cvm": "20532",
+  "empresa_cvm": "BANCO SANTANDER (BRASIL) S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-09-30",
+  "base": "12 meses até 2026-09-30",
+  "mapeamento": "FCA 2026 (SANB11)",
+  "flags": []
+ },
+ "SANB11": {
+  "ll": 13160769000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 10.4,
+  "payout": 100.0,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "amarelo",
+   "payout": "vermelho"
+  },
+  "nota": 1,
+  "cd_cvm": "20532",
+  "empresa_cvm": "BANCO SANTANDER (BRASIL) S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-09-30",
+  "base": "12 meses até 2026-09-30",
+  "mapeamento": "FCA 2026 (SANB11)",
+  "flags": []
+ },
+ "SANB3": {
+  "ll": 13160769000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 10.4,
+  "payout": 100.0,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "amarelo",
+   "payout": "vermelho"
+  },
+  "nota": 1,
+  "cd_cvm": "20532",
+  "empresa_cvm": "BANCO SANTANDER (BRASIL) S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-09-30",
+  "base": "12 meses até 2026-09-30",
+  "mapeamento": "FCA 2026 (SANB11)",
+  "flags": []
+ },
+ "BRSR6": {
+  "ll": 1641805000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 14.5,
+  "payout": 37.9,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "1210",
+  "empresa_cvm": "BANCO DO ESTADO DO RIO GRANDE DO SUL SA",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (BRSR3)",
+  "flags": []
+ },
+ "BBDC4": {
+  "ll": 26148439000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 14.1,
+  "payout": 61.2,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "amarelo",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "906",
+  "empresa_cvm": "BANCO BRADESCO S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-09-30",
+  "base": "12 meses até 2026-09-30",
+  "mapeamento": "FCA 2026 (BBDC3)",
+  "flags": []
+ },
+ "BBDC3": {
+  "ll": 26148439000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 14.1,
+  "payout": 61.2,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "amarelo",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "906",
+  "empresa_cvm": "BANCO BRADESCO S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-09-30",
+  "base": "12 meses até 2026-09-30",
+  "mapeamento": "FCA 2026 (BBDC3)",
+  "flags": []
+ },
+ "ABCB4": {
+  "ll": 800853000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 13.6,
+  "payout": 44.6,
+  "base_payout": "declarado (DVA) 2023",
+  "semaforo": {
+   "roe": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "20958",
+  "empresa_cvm": "BANCO ABC BRASIL S/A",
+  "demonstracao": "consolidada",
+  "referencia": "2023-12-31",
+  "base": "exercício 2023",
+  "mapeamento": "FCA 2026 (ABCB4)",
+  "flags": [
+   "roe_sem_pl_inicial",
+   "dado_antigo:35_meses"
+  ]
+ },
+ "BRSR5": {
+  "ll": 1641805000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 14.5,
+  "payout": 37.9,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "1210",
+  "empresa_cvm": "BANCO DO ESTADO DO RIO GRANDE DO SUL SA",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (BRSR3)",
+  "flags": []
+ },
+ "BRSR3": {
+  "ll": 1641805000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 14.5,
+  "payout": 37.9,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "1210",
+  "empresa_cvm": "BANCO DO ESTADO DO RIO GRANDE DO SUL SA",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (BRSR3)",
+  "flags": []
+ },
+ "ITUB4": {
+  "ll": 46828000000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 22.0,
+  "payout": 75.1,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "verde",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "19348",
+  "empresa_cvm": "ITAÚ UNIBANCO HOLDING S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (ITUB3)",
+  "flags": []
+ },
+ "ITUB3": {
+  "ll": 46828000000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 22.0,
+  "payout": 75.1,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "verde",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "19348",
+  "empresa_cvm": "ITAÚ UNIBANCO HOLDING S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (ITUB3)",
+  "flags": []
+ },
+ "BRIV4": {
+  "ll": 2931000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 0.2,
+  "payout": 784.2,
+  "base_payout": "declarado (DVA) 2023",
+  "descartados": [
+   "payout"
+  ],
+  "semaforo": {
+   "roe": "vermelho",
+   "payout": "cinza"
+  },
+  "nota": null,
+  "cd_cvm": "1384",
+  "empresa_cvm": "BANCO ALFA DE INVESTIMENTO S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2023-12-31",
+  "base": "exercício 2023",
+  "mapeamento": "FCA 2024 (BRIV3)",
+  "flags": [
+   "roe_sem_pl_inicial",
+   "descartado:payout=784.2",
+   "dado_antigo:35_meses"
+  ]
+ },
+ "BMEB3": {
+  "ll": 833085000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 32.0,
+  "payout": 29.9,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "1325",
+  "empresa_cvm": "BANCO MERCANTIL BRASIL SA",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (BMEB3)",
+  "flags": []
+ },
+ "BMEB4": {
+  "ll": 833085000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 32.0,
+  "payout": 29.9,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "1325",
+  "empresa_cvm": "BANCO MERCANTIL BRASIL SA",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (BMEB3)",
+  "flags": []
+ },
+ "BPAC11": {
+  "erro": "sem CD_CVM",
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+ },
+ "BPAC5": {
+  "erro": "sem CD_CVM",
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+ },
+ "BPAC3": {
+  "erro": "sem CD_CVM",
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+ },
+ "BRIV3": {
+  "ll": 2931000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 0.2,
+  "payout": 784.2,
+  "base_payout": "declarado (DVA) 2023",
+  "descartados": [
+   "payout"
+  ],
+  "semaforo": {
+   "roe": "vermelho",
+   "payout": "cinza"
+  },
+  "nota": null,
+  "cd_cvm": "1384",
+  "empresa_cvm": "BANCO ALFA DE INVESTIMENTO S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2023-12-31",
+  "base": "exercício 2023",
+  "mapeamento": "FCA 2024 (BRIV3)",
+  "flags": [
+   "roe_sem_pl_inicial",
+   "descartado:payout=784.2",
+   "dado_antigo:35_meses"
+  ]
+ },
+ "BSLI4": {
+  "ll": 189539000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 8.2,
+  "payout": 158.7,
+  "base_payout": "declarado (DVA) 2023",
+  "descartados": [
+   "payout"
+  ],
+  "semaforo": {
+   "roe": "vermelho",
+   "payout": "cinza"
+  },
+  "nota": null,
+  "cd_cvm": "14206",
+  "empresa_cvm": "BRB BANCO DE BRASILIA SA",
+  "demonstracao": "consolidada",
+  "referencia": "2023-12-31",
+  "base": "exercício 2023",
+  "mapeamento": "FCA 2026 (BSLI3)",
+  "flags": [
+   "sem ITR de 2024-03-31 (usado o exercício fechado)",
+   "roe_sem_pl_inicial",
+   "descartado:payout=158.7",
+   "dado_antigo:35_meses"
+  ]
+ },
+ "BSLI3": {
+  "ll": 189539000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 8.2,
+  "payout": 158.7,
+  "base_payout": "declarado (DVA) 2023",
+  "descartados": [
+   "payout"
+  ],
+  "semaforo": {
+   "roe": "vermelho",
+   "payout": "cinza"
+  },
+  "nota": null,
+  "cd_cvm": "14206",
+  "empresa_cvm": "BRB BANCO DE BRASILIA SA",
+  "demonstracao": "consolidada",
+  "referencia": "2023-12-31",
+  "base": "exercício 2023",
+  "mapeamento": "FCA 2026 (BSLI3)",
+  "flags": [
+   "sem ITR de 2024-03-31 (usado o exercício fechado)",
+   "roe_sem_pl_inicial",
+   "descartado:payout=158.7",
+   "dado_antigo:35_meses"
+  ]
+ },
+ "BAZA3": {
+  "ll": 883319000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 12.4,
+  "payout": 38.0,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "922",
+  "empresa_cvm": "BANCO DA AMAZÔNIA S.A.",
+  "demonstracao": "individual",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (BAZA3)",
+  "flags": [
+   "demonstracao_individual"
+  ]
+ },
+ "RPAD5": {
+  "ll": 74539000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 7.3,
+  "payout": 10.0,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "vermelho",
+   "payout": "amarelo"
+  },
+  "nota": 1,
+  "cd_cvm": "9954",
+  "empresa_cvm": "ALFA HOLDINGS S.A.",
+  "demonstracao": "individual",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (RPAD3)",
+  "flags": [
+   "demonstracao_individual"
+  ]
+ },
+ "BGIP4": {
+  "ll": 169356000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 18.6,
+  "payout": 25.1,
+  "base_payout": "pago em caixa (DFC) 2025",
+  "semaforo": {
+   "roe": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "1120",
+  "empresa_cvm": "BANCO DO ESTADO DE SERGIPE SA",
+  "demonstracao": "individual",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (BGIP3)",
+  "flags": [
+   "demonstracao_individual"
+  ]
+ },
+ "BMIN4": {
+  "ll": 12801000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 8.8,
+  "payout": 29.8,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "vermelho",
+   "payout": "verde"
+  },
+  "nota": 1,
+  "cd_cvm": "1309",
+  "empresa_cvm": "BANCO MERCANTIL DE INVESTIMENTOS S.A.",
+  "demonstracao": "individual",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (BMIN3)",
+  "flags": [
+   "demonstracao_individual"
+  ]
+ },
+ "BMGB4": {
+  "ll": 632313000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 13.3,
+  "payout": 40.7,
+  "base_payout": "pago em caixa (DFC) 2025",
+  "semaforo": {
+   "roe": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "24600",
+  "empresa_cvm": "BANCO BMG S/A",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (BMGB4)",
+  "flags": []
+ },
+ "BPAR3": {
+  "ll": 176032000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 7.9,
+  "payout": 23.6,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "vermelho",
+   "payout": "amarelo"
+  },
+  "nota": 1,
+  "cd_cvm": "1171",
+  "empresa_cvm": "BANCO DO ESTADO DO PARÁ S/A.",
+  "demonstracao": "individual",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (BPAR3)",
+  "flags": [
+   "demonstracao_individual"
+  ]
+ },
+ "BEES4": {
+  "ll": 442686000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 18.2,
+  "payout": 69.7,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "verde",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "1155",
+  "empresa_cvm": "BANESTES SA BANCO DO ESTADO DO ESPIRITO SANTO",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (BEES3)",
+  "flags": []
+ },
+ "BEES3": {
+  "ll": 442686000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 18.2,
+  "payout": 69.7,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "verde",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "1155",
+  "empresa_cvm": "BANESTES SA BANCO DO ESTADO DO ESPIRITO SANTO",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (BEES3)",
+  "flags": []
+ },
+ "BNBR3": {
+  "ll": 2757243000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 17.4,
+  "payout": 22.0,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "verde",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "1228",
+  "empresa_cvm": "BANCO DO NORDESTE DO BRASIL SA",
+  "demonstracao": "individual",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (BNBR3)",
+  "flags": [
+   "demonstracao_individual"
+  ]
+ },
+ "BGIP3": {
+  "ll": 169356000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 18.6,
+  "payout": 25.1,
+  "base_payout": "pago em caixa (DFC) 2025",
+  "semaforo": {
+   "roe": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "1120",
+  "empresa_cvm": "BANCO DO ESTADO DE SERGIPE SA",
+  "demonstracao": "individual",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (BGIP3)",
+  "flags": [
+   "demonstracao_individual"
+  ]
+ },
+ "BMIN3": {
+  "ll": 12801000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 8.8,
+  "payout": 29.8,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "vermelho",
+   "payout": "verde"
+  },
+  "nota": 1,
+  "cd_cvm": "1309",
+  "empresa_cvm": "BANCO MERCANTIL DE INVESTIMENTOS S.A.",
+  "demonstracao": "individual",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (BMIN3)",
+  "flags": [
+   "demonstracao_individual"
+  ]
+ },
+ "PINE4": {
+  "ll": 603085000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 40.7,
+  "payout": 35.8,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "20567",
+  "empresa_cvm": "BANCO PINE S/A",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (PINE3)",
+  "flags": []
+ },
+ "BPAN4": {
+  "ll": 591676000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 8.0,
+  "payout": 46.1,
+  "base_payout": "declarado (DVA) 2023",
+  "semaforo": {
+   "roe": "vermelho",
+   "payout": "verde"
+  },
+  "nota": 1,
+  "cd_cvm": "21199",
+  "empresa_cvm": "BANCO PAN SA",
+  "demonstracao": "consolidada",
+  "referencia": "2023-12-31",
+  "base": "exercício 2023",
+  "mapeamento": "FCA 2025 (BPAN4)",
+  "flags": [
+   "sem ITR de 2024-09-30 (usado o exercício fechado)",
+   "roe_sem_pl_inicial",
+   "dado_antigo:35_meses"
+  ]
+ },
+ "RPAD6": {
+  "ll": 74539000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 7.3,
+  "payout": 10.0,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "vermelho",
+   "payout": "amarelo"
+  },
+  "nota": 1,
+  "cd_cvm": "9954",
+  "empresa_cvm": "ALFA HOLDINGS S.A.",
+  "demonstracao": "individual",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (RPAD3)",
+  "flags": [
+   "demonstracao_individual"
+  ]
+ },
+ "RPAD3": {
+  "ll": 74539000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 7.3,
+  "payout": 10.0,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "vermelho",
+   "payout": "amarelo"
+  },
+  "nota": 1,
+  "cd_cvm": "9954",
+  "empresa_cvm": "ALFA HOLDINGS S.A.",
+  "demonstracao": "individual",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (RPAD3)",
+  "flags": [
+   "demonstracao_individual"
+  ]
+ },
+ "BRBI11": {
+  "ll": 159559000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 19.7,
+  "payout": 21.6,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "verde",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "25860",
+  "empresa_cvm": "BRBI BR PARTNERS S.A",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (BRBI11)",
+  "flags": []
+ },
+ "PINE3": {
+  "ll": 603085000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 40.7,
+  "payout": 35.8,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "20567",
+  "empresa_cvm": "BANCO PINE S/A",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (PINE3)",
+  "flags": []
+ },
+ "PINE11": {
+  "ll": 603085000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 40.7,
+  "payout": 35.8,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "20567",
+  "empresa_cvm": "BANCO PINE S/A",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (PINE3)",
+  "flags": []
+ },
+ "CMIG4": {
+  "ll": 4595105000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 15.9,
+  "payout": 71.7,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 2.25,
+  "div_liq_pl": 0.66,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "2453",
+  "empresa_cvm": "CIA ENERG MINAS GERAIS - CEMIG",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (CMIG3)",
+  "flags": []
+ },
+ "TAEE3": {
+  "ll": 1625473000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 20.7,
+  "payout": 71.1,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 3.48,
+  "div_liq_pl": 1.29,
+  "fcf_yield": 12395.0,
+  "descartados": [
+   "fcf_yield"
+  ],
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "20257",
+  "empresa_cvm": "TRANSMISSORA ALIANÇA DE ENERGIA ELÉTRICA S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (TAEE3)",
+  "flags": [
+   "descartado:fcf_yield=12395.0"
+  ]
+ },
+ "TAEE11": {
+  "ll": 1625473000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 20.7,
+  "payout": 71.1,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 3.48,
+  "div_liq_pl": 1.29,
+  "fcf_yield": 4038.8,
+  "descartados": [
+   "fcf_yield"
+  ],
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "20257",
+  "empresa_cvm": "TRANSMISSORA ALIANÇA DE ENERGIA ELÉTRICA S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (TAEE3)",
+  "flags": [
+   "descartado:fcf_yield=4038.8"
+  ]
+ },
+ "TAEE4": {
+  "ll": 1625473000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 20.7,
+  "payout": 71.1,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 3.48,
+  "div_liq_pl": 1.29,
+  "fcf_yield": 12022.2,
+  "descartados": [
+   "fcf_yield"
+  ],
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "20257",
+  "empresa_cvm": "TRANSMISSORA ALIANÇA DE ENERGIA ELÉTRICA S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (TAEE3)",
+  "flags": [
+   "descartado:fcf_yield=12022.2"
+  ]
+ },
+ "ISAE4": {
+  "ll": 2817169000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 13.2,
+  "payout": 38.4,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 3.07,
+  "div_liq_pl": 0.72,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "18376",
+  "empresa_cvm": "ISA ENERGIA BRASIL S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (ISAE3)",
+  "flags": []
+ },
+ "CPFE3": {
+  "ll": 6004881000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 27.2,
+  "payout": 79.9,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 1.97,
+  "div_liq_pl": 1.21,
+  "fcf_yield": 12.4,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "18660",
+  "empresa_cvm": "CPFL ENERGIA SA",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (CPFE3)",
+  "flags": []
+ },
+ "EGIE3": {
+  "ll": 3959345000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 29.0,
+  "payout": 53.3,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 3.04,
+  "div_liq_pl": 1.65,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "17329",
+  "empresa_cvm": "ENGIE BRASIL ENERGIA S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (EGIE3)",
+  "flags": []
+ },
+ "CMIG3": {
+  "ll": 4595105000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 15.9,
+  "payout": 71.7,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 2.25,
+  "div_liq_pl": 0.66,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "2453",
+  "empresa_cvm": "CIA ENERG MINAS GERAIS - CEMIG",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (CMIG3)",
+  "flags": []
+ },
+ "ISAE3": {
+  "ll": 2817169000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 13.2,
+  "payout": 38.4,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 3.07,
+  "div_liq_pl": 0.72,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "18376",
+  "empresa_cvm": "ISA ENERGIA BRASIL S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (ISAE3)",
+  "flags": []
+ },
+ "CPLE3": {
+  "ll": 3134132000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 12.6,
+  "payout": 40.9,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 2.81,
+  "div_liq_pl": 0.83,
+  "fcf_yield": 3.3,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "14311",
+  "empresa_cvm": "COMPANHIA PARANAENSE DE ENERGIA COPEL",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (CPLE3)",
+  "flags": []
+ },
+ "ENGI4": {
+  "ll": 1516835000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 8.0,
+  "payout": 61.0,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 3.72,
+  "div_liq_pl": 1.7,
+  "semaforo": {
+   "roe": "amarelo",
+   "div_liq_ebitda": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "15253",
+  "empresa_cvm": "ENERGISA SA",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (ENGI3)",
+  "flags": []
+ },
+ "ENGI11": {
+  "ll": 1516835000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 8.0,
+  "payout": 61.0,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 3.72,
+  "div_liq_pl": 1.7,
+  "semaforo": {
+   "roe": "amarelo",
+   "div_liq_ebitda": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "15253",
+  "empresa_cvm": "ENERGISA SA",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (ENGI3)",
+  "flags": []
+ },
+ "VBBR3": {
+  "ll": 5056000000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 22.8,
+  "payout": 59.9,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 1.62,
+  "div_liq_pl": 0.69,
+  "fcf_yield": 26800.9,
+  "descartados": [
+   "fcf_yield"
+  ],
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "24295",
+  "empresa_cvm": "VIBRA ENERGIA S/A",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (VBBR3)",
+  "flags": [
+   "descartado:fcf_yield=26800.9"
+  ]
+ },
+ "CLSC4": {
+  "ll": 875087000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 21.6,
+  "payout": 38.9,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 2.74,
+  "div_liq_pl": 1.22,
+  "fcf_yield": 4590.4,
+  "descartados": [
+   "fcf_yield"
+  ],
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "2461",
+  "empresa_cvm": "CENTRAIS ELETRICAS DE SANTA CATARINA S.A",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (CLSC3)",
+  "flags": [
+   "descartado:fcf_yield=4590.4"
+  ]
+ },
+ "CLSC3": {
+  "ll": 875087000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 21.6,
+  "payout": 38.9,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 2.74,
+  "div_liq_pl": 1.22,
+  "fcf_yield": 4920.5,
+  "descartados": [
+   "fcf_yield"
+  ],
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "2461",
+  "empresa_cvm": "CENTRAIS ELETRICAS DE SANTA CATARINA S.A",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (CLSC3)",
+  "flags": [
+   "descartado:fcf_yield=4920.5"
+  ]
+ },
+ "ALUP4": {
+  "ll": 1386608000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 15.2,
+  "payout": 29.3,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 2.62,
+  "div_liq_pl": 0.99,
+  "fcf_yield": 15.6,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "21490",
+  "empresa_cvm": "ALUPAR INVESTIMENTO S/A",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (ALUP11)",
+  "flags": []
+ },
+ "ENGI3": {
+  "ll": 1516835000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 8.0,
+  "payout": 61.0,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 3.72,
+  "div_liq_pl": 1.7,
+  "semaforo": {
+   "roe": "amarelo",
+   "div_liq_ebitda": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "15253",
+  "empresa_cvm": "ENERGISA SA",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (ENGI3)",
+  "flags": []
+ },
+ "ALUP11": {
+  "ll": 1386608000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 15.2,
+  "payout": 29.3,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 2.62,
+  "div_liq_pl": 0.99,
+  "fcf_yield": 5.1,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "21490",
+  "empresa_cvm": "ALUPAR INVESTIMENTO S/A",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (ALUP11)",
+  "flags": []
+ },
+ "ALUP3": {
+  "ll": 1386608000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 15.2,
+  "payout": 29.3,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 2.62,
+  "div_liq_pl": 0.99,
+  "fcf_yield": 14.7,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "21490",
+  "empresa_cvm": "ALUPAR INVESTIMENTO S/A",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (ALUP11)",
+  "flags": []
+ },
+ "NEOE3": {
+  "ll": 4836000000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 13.4,
+  "payout": 26.8,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 3.38,
+  "div_liq_pl": 1.43,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "15539",
+  "empresa_cvm": "NEOENERGIA S.A",
+  "demonstracao": "consolidada",
+  "referencia": "2026-09-30",
+  "base": "12 meses até 2026-09-30",
+  "mapeamento": "FCA 2026 (NEOE3)",
+  "flags": []
+ },
+ "EQTL3": {
+  "ll": 958423000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 3.5,
+  "payout": 20.9,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 4.97,
+  "div_liq_pl": 2.07,
+  "fcf_yield": -12.6,
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "vermelho",
+   "payout": "amarelo"
+  },
+  "nota": 0,
+  "cd_cvm": "20010",
+  "empresa_cvm": "EQUATORIAL S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (EQTL3)",
+  "flags": []
+ },
+ "SRNA3": {
+  "ll": -31276000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": -0.6,
+  "div_liq_ebitda": 3.37,
+  "div_liq_pl": 1.97,
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "amarelo",
+   "payout": "cinza"
+  },
+  "nota": 0,
+  "cd_cvm": "26441",
+  "empresa_cvm": "SERENA ENERGIA S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (SRNA3)",
+  "flags": []
+ },
+ "AURE3": {
+  "ll": -1089423000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": -9.0,
+  "div_liq_ebitda": 5.75,
+  "div_liq_pl": 1.74,
+  "fcf_yield": 1666.8,
+  "descartados": [
+   "fcf_yield"
+  ],
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "vermelho",
+   "payout": "cinza"
+  },
+  "nota": 0,
+  "cd_cvm": "26620",
+  "empresa_cvm": "AUREN ENERGIA S.A",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (AURE3)",
+  "flags": [
+   "descartado:fcf_yield=1666.8"
+  ]
+ },
+ "MEGA3": {
+  "erro": "sem CD_CVM",
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+ },
+ "CEBR5": {
+  "ll": 159874000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 15.8,
+  "payout": 214.2,
+  "base_payout": "pago em caixa (DFC) 2025",
+  "div_liq_ebitda": -1.33,
+  "div_liq_pl": -0.3,
+  "fcf_yield": 4.1,
+  "descartados": [
+   "payout"
+  ],
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "cinza"
+  },
+  "nota": 3,
+  "cd_cvm": "14451",
+  "empresa_cvm": "COMPANHIA ENERGÉTICA DE BRASÍLIA - CEB",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (CEBR3)",
+  "flags": [
+   "descartado:payout=214.2"
+  ]
+ },
+ "CEBR3": {
+  "ll": 159874000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 15.8,
+  "payout": 214.2,
+  "base_payout": "pago em caixa (DFC) 2025",
+  "div_liq_ebitda": -1.33,
+  "div_liq_pl": -0.3,
+  "fcf_yield": 4.1,
+  "descartados": [
+   "payout"
+  ],
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "cinza"
+  },
+  "nota": 3,
+  "cd_cvm": "14451",
+  "empresa_cvm": "COMPANHIA ENERGÉTICA DE BRASÍLIA - CEB",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (CEBR3)",
+  "flags": [
+   "descartado:payout=214.2"
+  ]
+ },
+ "CEBR6": {
+  "ll": 159874000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 15.8,
+  "payout": 214.2,
+  "base_payout": "pago em caixa (DFC) 2025",
+  "div_liq_ebitda": -1.33,
+  "div_liq_pl": -0.3,
+  "fcf_yield": 3.6,
+  "descartados": [
+   "payout"
+  ],
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "cinza"
+  },
+  "nota": 3,
+  "cd_cvm": "14451",
+  "empresa_cvm": "COMPANHIA ENERGÉTICA DE BRASÍLIA - CEB",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (CEBR3)",
+  "flags": [
+   "descartado:payout=214.2"
+  ]
+ },
+ "CSRN3": {
+  "erro": "sem CD_CVM",
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+ },
+ "CSRN5": {
+  "erro": "sem CD_CVM",
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+ },
+ "CSRN6": {
+  "erro": "sem CD_CVM",
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+ },
+ "EKTR4": {
+  "ll": 729000000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 33.6,
+  "payout": 100.0,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 3.23,
+  "div_liq_pl": 3.68,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "amarelo",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "17485",
+  "empresa_cvm": "ELEKTRO REDES S.A.",
+  "demonstracao": "individual",
+  "referencia": "2026-09-30",
+  "base": "12 meses até 2026-09-30",
+  "mapeamento": "FCA 2026 (EKTR3)",
+  "flags": [
+   "demonstracao_individual"
+  ]
+ },
+ "GEPA4": {
+  "ll": null,
+  "base_lucro": "lucro contábil, indisponível",
+  "div_liq_ebitda": null,
+  "div_liq_pl": null,
+  "semaforo": {
+   "roe": "cinza",
+   "div_liq_ebitda": "cinza",
+   "payout": "cinza"
+  },
+  "nota": null,
+  "cd_cvm": "18368",
+  "empresa_cvm": "RIO PARANAPANEMA ENERGIA SA",
+  "demonstracao": "consolidada",
+  "referencia": "2025-12-31",
+  "base": "exercício 2025",
+  "mapeamento": "FCA 2026 (GEPA3)",
+  "flags": [
+   "lucro_indisponivel"
+  ]
+ },
+ "GEPA3": {
+  "ll": null,
+  "base_lucro": "lucro contábil, indisponível",
+  "div_liq_ebitda": null,
+  "div_liq_pl": null,
+  "semaforo": {
+   "roe": "cinza",
+   "div_liq_ebitda": "cinza",
+   "payout": "cinza"
+  },
+  "nota": null,
+  "cd_cvm": "18368",
+  "empresa_cvm": "RIO PARANAPANEMA ENERGIA SA",
+  "demonstracao": "consolidada",
+  "referencia": "2025-12-31",
+  "base": "exercício 2025",
+  "mapeamento": "FCA 2026 (GEPA3)",
+  "flags": [
+   "lucro_indisponivel"
+  ]
+ },
+ "GPAR3": {
+  "ll": null,
+  "base_lucro": "lucro contábil, indisponível",
+  "div_liq_ebitda": null,
+  "div_liq_pl": -0.37,
+  "semaforo": {
+   "roe": "cinza",
+   "div_liq_ebitda": "cinza",
+   "payout": "cinza"
+  },
+  "nota": null,
+  "cd_cvm": "21393",
+  "empresa_cvm": "COMPANHIA CELG DE PARTICIPAÇÕES - CELGPAR",
+  "demonstracao": "individual",
+  "referencia": "2025-12-31",
+  "base": "exercício 2025",
+  "mapeamento": "FCA 2026 (GPAR3)",
+  "flags": [
+   "ltm_incompleto:ll (usado o exercício fechado)",
+   "demonstracao_individual",
+   "lucro_indisponivel"
+  ]
+ },
+ "CEEB5": {
+  "ll": 1446000000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 17.1,
+  "payout": 78.7,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 3.63,
+  "div_liq_pl": 2.34,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "14524",
+  "empresa_cvm": "CIA DE ELETRICIDADE DO ESTADO DA BAHIA - COELBA",
+  "demonstracao": "individual",
+  "referencia": "2026-09-30",
+  "base": "12 meses até 2026-09-30",
+  "mapeamento": "FCA 2026 (CEEB3)",
+  "flags": [
+   "demonstracao_individual"
+  ]
+ },
+ "REDE3": {
+  "ll": 1027834000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 19.0,
+  "payout": 109.3,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 3.69,
+  "div_liq_pl": 2.71,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "amarelo",
+   "payout": "vermelho"
+  },
+  "nota": 1,
+  "cd_cvm": "3190",
+  "empresa_cvm": "REDE ENERGIA PARTICIPAÇÕES S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (REDE3)",
+  "flags": []
+ },
+ "ENMT3": {
+  "ll": 575790000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 14.1,
+  "payout": 87.6,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 4.29,
+  "div_liq_pl": 2.2,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "vermelho",
+   "payout": "amarelo"
+  },
+  "nota": 1,
+  "cd_cvm": "14605",
+  "empresa_cvm": "ENERGISA MATO GROSSO-DISTRIBUIDORA DE ENERGIA S/A",
+  "demonstracao": "individual",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (ENMT3)",
+  "flags": [
+   "demonstracao_individual"
+  ]
+ },
+ "EQPA3": {
+  "erro": "sem CD_CVM",
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+ },
+ "ENMT4": {
+  "ll": 575790000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 14.1,
+  "payout": 87.6,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 4.29,
+  "div_liq_pl": 2.2,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "vermelho",
+   "payout": "amarelo"
+  },
+  "nota": 1,
+  "cd_cvm": "14605",
+  "empresa_cvm": "ENERGISA MATO GROSSO-DISTRIBUIDORA DE ENERGIA S/A",
+  "demonstracao": "individual",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (ENMT3)",
+  "flags": [
+   "demonstracao_individual"
+  ]
+ },
+ "CEEB3": {
+  "ll": 1446000000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 17.1,
+  "payout": 78.7,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 3.63,
+  "div_liq_pl": 2.34,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "14524",
+  "empresa_cvm": "CIA DE ELETRICIDADE DO ESTADO DA BAHIA - COELBA",
+  "demonstracao": "individual",
+  "referencia": "2026-09-30",
+  "base": "12 meses até 2026-09-30",
+  "mapeamento": "FCA 2026 (CEEB3)",
+  "flags": [
+   "demonstracao_individual"
+  ]
+ },
+ "EKTR3": {
+  "ll": 729000000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 33.6,
+  "payout": 100.0,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 3.23,
+  "div_liq_pl": 3.68,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "amarelo",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "17485",
+  "empresa_cvm": "ELEKTRO REDES S.A.",
+  "demonstracao": "individual",
+  "referencia": "2026-09-30",
+  "base": "12 meses até 2026-09-30",
+  "mapeamento": "FCA 2026 (EKTR3)",
+  "flags": [
+   "demonstracao_individual"
+  ]
+ },
+ "AFLT3": {
+  "ll": 37022000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 14.7,
+  "payout": 37.7,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": -1.0,
+  "div_liq_pl": -0.18,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "22179",
+  "empresa_cvm": "AFLUENTE TRANSMISSÃO DE ENERGIA ELETRICA S/A",
+  "demonstracao": "individual",
+  "referencia": "2026-09-30",
+  "base": "12 meses até 2026-09-30",
+  "mapeamento": "FCA 2026 (AFLT3)",
+  "flags": [
+   "ltm_incompleto:da",
+   "ltm_incompleto:capex",
+   "demonstracao_individual"
+  ]
+ },
+ "EEEL4": {
+  "erro": "sem CD_CVM",
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+ },
+ "EQPA6": {
+  "erro": "sem CD_CVM",
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+ },
+ "EEEL3": {
+  "erro": "sem CD_CVM",
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+ },
+ "EQPA5": {
+  "erro": "sem CD_CVM",
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+ },
+ "EQPA7": {
+  "erro": "sem CD_CVM",
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+ },
+ "COCE5": {
+  "ll": 674818000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 12.2,
+  "payout": 16.0,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 2.78,
+  "div_liq_pl": 1.16,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "14869",
+  "empresa_cvm": "CIA ENERG CEARA - COELCE",
+  "demonstracao": "individual",
+  "referencia": "2026-09-30",
+  "base": "12 meses até 2026-09-30",
+  "mapeamento": "FCA 2026 (COCE3)",
+  "flags": [
+   "ltm_incompleto:capex",
+   "demonstracao_individual"
+  ]
+ },
+ "EMAE4": {
+  "ll": -122674000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": -12.7,
+  "div_liq_ebitda": null,
+  "div_liq_pl": -0.68,
+  "fcf_yield": -7639.7,
+  "descartados": [
+   "fcf_yield"
+  ],
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "cinza",
+   "payout": "cinza"
+  },
+  "nota": null,
+  "cd_cvm": "16993",
+  "empresa_cvm": "EMAE - EMPRESA METROP.AGUAS ENERGIA S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (EMAE3)",
+  "flags": [
+   "descartado:fcf_yield=-7639.7"
+  ]
+ },
+ "COCE3": {
+  "ll": 674818000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 12.2,
+  "payout": 16.0,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 2.78,
+  "div_liq_pl": 1.16,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "14869",
+  "empresa_cvm": "CIA ENERG CEARA - COELCE",
+  "demonstracao": "individual",
+  "referencia": "2026-09-30",
+  "base": "12 meses até 2026-09-30",
+  "mapeamento": "FCA 2026 (COCE3)",
+  "flags": [
+   "ltm_incompleto:capex",
+   "demonstracao_individual"
+  ]
+ },
+ "LIGT3": {
+  "ll": 2414539000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 32.4,
+  "div_liq_ebitda": 4.59,
+  "div_liq_pl": 0.78,
+  "fcf_yield": -196.8,
+  "descartados": [
+   "fcf_yield"
+  ],
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "vermelho",
+   "payout": "cinza"
+  },
+  "nota": 1,
+  "cd_cvm": "19879",
+  "empresa_cvm": "LIGHT S.A. - EM RECUPERAÇÃO JUDICIAL",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (LIGT3)",
+  "flags": [
+   "descartado:fcf_yield=-196.8"
+  ]
+ },
+ "CEPE5": {
+  "erro": "sem CD_CVM",
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+ },
+ "LIPR3": {
+  "ll": 19130000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 8.8,
+  "payout": 23.7,
+  "base_payout": "declarado (DVA) 2023",
+  "div_liq_ebitda": -3.26,
+  "div_liq_pl": -0.28,
+  "semaforo": {
+   "roe": "amarelo",
+   "div_liq_ebitda": "verde",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "15784",
+  "empresa_cvm": "ELETROBRÁS PARTICIPAÇÕES S.A. - ELETROPAR",
+  "demonstracao": "individual",
+  "referencia": "2023-12-31",
+  "base": "exercício 2023",
+  "mapeamento": "FCA 2024 (LIPR3)",
+  "flags": [
+   "sem ITR de 2024-03-31 (usado o exercício fechado)",
+   "roe_sem_pl_inicial",
+   "verificar:div_liq_ebitda=-3.26",
+   "dado_antigo:35_meses",
+   "demonstracao_individual"
+  ]
+ },
+ "AXIA3": {
+  "ll": 12056946000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 10.0,
+  "payout": 95.0,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 2.74,
+  "div_liq_pl": 0.37,
+  "fcf_yield": 10266.2,
+  "descartados": [
+   "fcf_yield"
+  ],
+  "semaforo": {
+   "roe": "amarelo",
+   "div_liq_ebitda": "verde",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "2437",
+  "empresa_cvm": "AXIA ENERGIA S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (AXIA3)",
+  "flags": [
+   "descartado:fcf_yield=10266.2"
+  ]
+ },
+ "CBEE3": {
+  "ll": 232283000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 2.5,
+  "div_liq_ebitda": 3.19,
+  "div_liq_pl": 0.56,
+  "fcf_yield": -11526.4,
+  "descartados": [
+   "fcf_yield"
+  ],
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "amarelo",
+   "payout": "cinza"
+  },
+  "nota": 1,
+  "cd_cvm": "3050",
+  "empresa_cvm": "AMPLA ENERGIA E SERVIÇOS S.A.",
+  "demonstracao": "individual",
+  "referencia": "2026-09-30",
+  "base": "12 meses até 2026-09-30",
+  "mapeamento": "FCA 2026 (CBEE3)",
+  "flags": [
+   "descartado:fcf_yield=-11526.4",
+   "demonstracao_individual"
+  ]
+ },
+ "CEPE3": {
+  "erro": "sem CD_CVM",
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+ },
+ "RNEW3": {
+  "ll": -144397000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": -11.8,
+  "div_liq_ebitda": 4.53,
+  "div_liq_pl": 0.58,
+  "fcf_yield": 3.4,
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "vermelho",
+   "payout": "cinza"
+  },
+  "nota": 0,
+  "cd_cvm": "21636",
+  "empresa_cvm": "RENOVA ENERGIA S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (RNEW3)",
+  "flags": []
+ },
+ "CEED4": {
+  "ll": -433293000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": null,
+  "div_liq_ebitda": 7.67,
+  "div_liq_pl": null,
+  "semaforo": {
+   "roe": "cinza",
+   "div_liq_ebitda": "vermelho",
+   "payout": "cinza"
+  },
+  "nota": null,
+  "cd_cvm": "20648",
+  "empresa_cvm": "CIA ESTADUAL DE DISTRIBUIÇÃO DE ENERGIA ELETRICA",
+  "demonstracao": "individual",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (CEED3)",
+  "flags": [
+   "patrimonio_negativo",
+   "verificar:div_liq_ebitda=7.67",
+   "demonstracao_individual"
+  ]
+ },
+ "CEED3": {
+  "ll": -433293000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": null,
+  "div_liq_ebitda": 7.67,
+  "div_liq_pl": null,
+  "semaforo": {
+   "roe": "cinza",
+   "div_liq_ebitda": "vermelho",
+   "payout": "cinza"
+  },
+  "nota": null,
+  "cd_cvm": "20648",
+  "empresa_cvm": "CIA ESTADUAL DE DISTRIBUIÇÃO DE ENERGIA ELETRICA",
+  "demonstracao": "individual",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (CEED3)",
+  "flags": [
+   "patrimonio_negativo",
+   "verificar:div_liq_ebitda=7.67",
+   "demonstracao_individual"
+  ]
+ },
+ "EMAE3": {
+  "ll": -122674000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": -12.7,
+  "div_liq_ebitda": null,
+  "div_liq_pl": -0.68,
+  "fcf_yield": -2147.8,
+  "descartados": [
+   "fcf_yield"
+  ],
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "cinza",
+   "payout": "cinza"
+  },
+  "nota": null,
+  "cd_cvm": "16993",
+  "empresa_cvm": "EMAE - EMPRESA METROP.AGUAS ENERGIA S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (EMAE3)",
+  "flags": [
+   "descartado:fcf_yield=-2147.8"
+  ]
+ },
+ "ELPL4": {
+  "erro": "sem CD_CVM",
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+ },
+ "ENEV3": {
+  "ll": 962660000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 4.8,
+  "div_liq_ebitda": 3.18,
+  "div_liq_pl": 0.97,
+  "fcf_yield": -1875.0,
+  "descartados": [
+   "fcf_yield"
+  ],
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "amarelo",
+   "payout": "cinza"
+  },
+  "nota": 1,
+  "cd_cvm": "21237",
+  "empresa_cvm": "ENEVA S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (ENEV3)",
+  "flags": [
+   "descartado:fcf_yield=-1875.0"
+  ]
+ },
+ "OMGE3": {
+  "erro": "sem CD_CVM",
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+ },
+ "RNEW11": {
+  "ll": -144397000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": -11.8,
+  "div_liq_ebitda": 4.53,
+  "div_liq_pl": 0.58,
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "vermelho",
+   "payout": "cinza"
+  },
+  "nota": 0,
+  "cd_cvm": "21636",
+  "empresa_cvm": "RENOVA ENERGIA S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (RNEW3)",
+  "flags": []
+ },
+ "RNEW4": {
+  "ll": -144397000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": -11.8,
+  "div_liq_ebitda": 4.53,
+  "div_liq_pl": 0.58,
+  "fcf_yield": 3.6,
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "vermelho",
+   "payout": "cinza"
+  },
+  "nota": 0,
+  "cd_cvm": "21636",
+  "empresa_cvm": "RENOVA ENERGIA S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (RNEW3)",
+  "flags": []
+ },
+ "AESO3": {
+  "ll": 66902000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 1.9,
+  "div_liq_ebitda": 7.79,
+  "div_liq_pl": 2.19,
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "vermelho",
+   "payout": "cinza"
+  },
+  "nota": 0,
+  "cd_cvm": "26174",
+  "empresa_cvm": "AUREN OPERAÇÕES S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (AESO3)",
+  "flags": [
+   "verificar:div_liq_ebitda=7.79"
+  ]
+ },
+ "CEEB6": {
+  "ll": 1446000000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 17.1,
+  "payout": 78.7,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 3.63,
+  "div_liq_pl": 2.34,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "14524",
+  "empresa_cvm": "CIA DE ELETRICIDADE DO ESTADO DA BAHIA - COELBA",
+  "demonstracao": "individual",
+  "referencia": "2026-09-30",
+  "base": "12 meses até 2026-09-30",
+  "mapeamento": "FCA 2026 (CEEB3)",
+  "flags": [
+   "demonstracao_individual"
+  ]
+ },
+ "COCE6": {
+  "ll": 674818000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 12.2,
+  "payout": 16.0,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 2.78,
+  "div_liq_pl": 1.16,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "14869",
+  "empresa_cvm": "CIA ENERG CEARA - COELCE",
+  "demonstracao": "individual",
+  "referencia": "2026-09-30",
+  "base": "12 meses até 2026-09-30",
+  "mapeamento": "FCA 2026 (COCE3)",
+  "flags": [
+   "ltm_incompleto:capex",
+   "demonstracao_individual"
+  ]
+ },
+ "COMR3": {
+  "erro": "sem CD_CVM",
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+ },
+ "UPKP3": {
+  "ll": 33431000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 29.3,
+  "payout": 73.5,
+  "base_payout": "declarado (DVA) 2023",
+  "div_liq_ebitda": -0.08,
+  "div_liq_pl": -0.02,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "16624",
+  "empresa_cvm": "UPTICK PARTICIPACOES S.A. - EM LIQUIDAÇÃO",
+  "demonstracao": "individual",
+  "referencia": "2023-12-31",
+  "base": "exercício 2023",
+  "mapeamento": "FCA 2024 (UPKP3)",
+  "flags": [
+   "roe_sem_pl_inicial",
+   "dado_antigo:35_meses",
+   "demonstracao_individual"
+  ]
+ },
+ "RIOS3": {
+  "ll": -613418000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": null,
+  "div_liq_ebitda": null,
+  "div_liq_pl": null,
+  "semaforo": {
+   "roe": "cinza",
+   "div_liq_ebitda": "cinza",
+   "payout": "cinza"
+  },
+  "nota": null,
+  "cd_cvm": "25720",
+  "empresa_cvm": "RIO ALTO ENERGIAS RENOVÁVEIS S.A. - EM RECUPERAÇÃO JUDICIAL",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (RIOS3)",
+  "flags": [
+   "patrimonio_negativo"
+  ]
+ },
+ "AXIA7": {
+  "ll": 12056946000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 10.0,
+  "payout": 95.0,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 2.74,
+  "div_liq_pl": 0.37,
+  "fcf_yield": 10165.5,
+  "descartados": [
+   "fcf_yield"
+  ],
+  "semaforo": {
+   "roe": "amarelo",
+   "div_liq_ebitda": "verde",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "2437",
+  "empresa_cvm": "AXIA ENERGIA S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (AXIA3)",
+  "flags": [
+   "descartado:fcf_yield=10165.5"
+  ]
+ },
+ "WIZC3": {
+  "ll": 198429000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 28.7,
+  "payout": 25.0,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "23590",
+  "empresa_cvm": "WIZ CO PARTICIPAÇÕES E CORRETAGEM DE SEGUROS S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (WIZC3)",
+  "flags": []
+ },
+ "BBSE3": {
+  "ll": 9189317000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 85.9,
+  "payout": 96.7,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "verde",
+   "payout": "vermelho"
+  },
+  "nota": 1,
+  "cd_cvm": "23159",
+  "empresa_cvm": "BB SEGURIDADE PARTICIPAÇÕES S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (BBSE3)",
+  "flags": [
+   "verificar:roe=85.9"
+  ]
+ },
+ "PSSA3": {
+  "ll": 3684011000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 24.1,
+  "payout": 50.0,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "16659",
+  "empresa_cvm": "PORTO SEGURO SA",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (PSSA3)",
+  "flags": []
+ },
+ "CXSE3": {
+  "ll": 4522961000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 33.3,
+  "payout": 68.5,
+  "base_payout": "declarado (DVA) 2025",
+  "semaforo": {
+   "roe": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "23795",
+  "empresa_cvm": "CAIXA SEGURIDADE PARTICIPAÇÕES S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (CXSE3)",
+  "flags": []
+ },
+ "BRGE6": {
+  "ll": 29317000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 2.2,
+  "payout": 19.0,
+  "base_payout": "declarado (DVA) 2023",
+  "semaforo": {
+   "roe": "vermelho",
+   "payout": "amarelo"
+  },
+  "nota": 1,
+  "cd_cvm": "4707",
+  "empresa_cvm": "CONSORCIO ALFA DE ADMINISTRACAO S.A",
+  "demonstracao": "consolidada",
+  "referencia": "2023-12-31",
+  "base": "exercício 2023",
+  "mapeamento": "FCA 2024 (BRGE3)",
+  "flags": [
+   "roe_sem_pl_inicial",
+   "dado_antigo:35_meses"
+  ]
+ },
+ "CSAB3": {
+  "erro": "sem DFP",
+  "cd_cvm": "3115",
+  "empresa_cvm": "CIA SEGUROS ALIANCA DA BAHIA"
+ },
+ "CSAB4": {
+  "erro": "sem DFP",
+  "cd_cvm": "3115",
+  "empresa_cvm": "CIA SEGUROS ALIANCA DA BAHIA"
+ },
+ "BRGE11": {
+  "ll": 29317000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 2.2,
+  "payout": 19.0,
+  "base_payout": "declarado (DVA) 2023",
+  "semaforo": {
+   "roe": "vermelho",
+   "payout": "amarelo"
+  },
+  "nota": 1,
+  "cd_cvm": "4707",
+  "empresa_cvm": "CONSORCIO ALFA DE ADMINISTRACAO S.A",
+  "demonstracao": "consolidada",
+  "referencia": "2023-12-31",
+  "base": "exercício 2023",
+  "mapeamento": "FCA 2024 (BRGE3)",
+  "flags": [
+   "roe_sem_pl_inicial",
+   "dado_antigo:35_meses"
+  ]
+ },
+ "BRGE8": {
+  "ll": 29317000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 2.2,
+  "payout": 19.0,
+  "base_payout": "declarado (DVA) 2023",
+  "semaforo": {
+   "roe": "vermelho",
+   "payout": "amarelo"
+  },
+  "nota": 1,
+  "cd_cvm": "4707",
+  "empresa_cvm": "CONSORCIO ALFA DE ADMINISTRACAO S.A",
+  "demonstracao": "consolidada",
+  "referencia": "2023-12-31",
+  "base": "exercício 2023",
+  "mapeamento": "FCA 2024 (BRGE3)",
+  "flags": [
+   "roe_sem_pl_inicial",
+   "dado_antigo:35_meses"
+  ]
+ },
+ "BRGE5": {
+  "ll": 29317000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 2.2,
+  "payout": 19.0,
+  "base_payout": "declarado (DVA) 2023",
+  "semaforo": {
+   "roe": "vermelho",
+   "payout": "amarelo"
+  },
+  "nota": 1,
+  "cd_cvm": "4707",
+  "empresa_cvm": "CONSORCIO ALFA DE ADMINISTRACAO S.A",
+  "demonstracao": "consolidada",
+  "referencia": "2023-12-31",
+  "base": "exercício 2023",
+  "mapeamento": "FCA 2024 (BRGE3)",
+  "flags": [
+   "roe_sem_pl_inicial",
+   "dado_antigo:35_meses"
+  ]
+ },
+ "APER3": {
+  "ll": 15479000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 2.7,
+  "payout": 1541.4,
+  "base_payout": "pago em caixa (DFC) 2025",
+  "descartados": [
+   "payout"
+  ],
+  "semaforo": {
+   "roe": "vermelho",
+   "payout": "cinza"
+  },
+  "nota": null,
+  "cd_cvm": "22217",
+  "empresa_cvm": "ALPER CONSULTORIA E CORRETORA DE SEGUROS S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2025-12-31",
+  "base": "exercício 2025",
+  "mapeamento": "FCA 2024 (APER3)",
+  "flags": [
+   "descartado:payout=1541.4"
+  ]
+ },
+ "BRGE12": {
+  "ll": 29317000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 2.2,
+  "payout": 19.0,
+  "base_payout": "declarado (DVA) 2023",
+  "semaforo": {
+   "roe": "vermelho",
+   "payout": "amarelo"
+  },
+  "nota": 1,
+  "cd_cvm": "4707",
+  "empresa_cvm": "CONSORCIO ALFA DE ADMINISTRACAO S.A",
+  "demonstracao": "consolidada",
+  "referencia": "2023-12-31",
+  "base": "exercício 2023",
+  "mapeamento": "FCA 2024 (BRGE3)",
+  "flags": [
+   "roe_sem_pl_inicial",
+   "dado_antigo:35_meses"
+  ]
+ },
+ "BRGE3": {
+  "ll": 29317000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 2.2,
+  "payout": 19.0,
+  "base_payout": "declarado (DVA) 2023",
+  "semaforo": {
+   "roe": "vermelho",
+   "payout": "amarelo"
+  },
+  "nota": 1,
+  "cd_cvm": "4707",
+  "empresa_cvm": "CONSORCIO ALFA DE ADMINISTRACAO S.A",
+  "demonstracao": "consolidada",
+  "referencia": "2023-12-31",
+  "base": "exercício 2023",
+  "mapeamento": "FCA 2024 (BRGE3)",
+  "flags": [
+   "roe_sem_pl_inicial",
+   "dado_antigo:35_meses"
+  ]
+ },
+ "SAPR4": {
+  "ll": 455251000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 3.8,
+  "payout": 28.1,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 0.96,
+  "div_liq_pl": 0.21,
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "verde",
+   "payout": "verde"
+  },
+  "nota": 1,
+  "cd_cvm": "18627",
+  "empresa_cvm": "CIA. DE SANEAMENTO DO PARANÁ - SANEPAR",
+  "demonstracao": "individual",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (SAPR3)",
+  "flags": [
+   "demonstracao_individual"
+  ]
+ },
+ "SAPR11": {
+  "ll": 455251000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 3.8,
+  "payout": 28.1,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 0.96,
+  "div_liq_pl": 0.21,
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "verde",
+   "payout": "verde"
+  },
+  "nota": 1,
+  "cd_cvm": "18627",
+  "empresa_cvm": "CIA. DE SANEAMENTO DO PARANÁ - SANEPAR",
+  "demonstracao": "individual",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (SAPR3)",
+  "flags": [
+   "demonstracao_individual"
+  ]
+ },
+ "CSMG3": {
+  "ll": 1293036000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 15.0,
+  "payout": 46.1,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 2.67,
+  "div_liq_pl": 0.89,
+  "fcf_yield": 11421.6,
+  "descartados": [
+   "fcf_yield"
+  ],
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "19445",
+  "empresa_cvm": "COMPANHIA DE SANEAMENTO DE MINAS GERAIS",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (CSMG3)",
+  "flags": [
+   "descartado:fcf_yield=11421.6"
+  ]
+ },
+ "SAPR3": {
+  "ll": 455251000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 3.8,
+  "payout": 28.1,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 0.96,
+  "div_liq_pl": 0.21,
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "verde",
+   "payout": "verde"
+  },
+  "nota": 1,
+  "cd_cvm": "18627",
+  "empresa_cvm": "CIA. DE SANEAMENTO DO PARANÁ - SANEPAR",
+  "demonstracao": "individual",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (SAPR3)",
+  "flags": [
+   "demonstracao_individual"
+  ]
+ },
+ "SBSP3": {
+  "ll": 8040221000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 18.8,
+  "payout": 28.1,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 2.21,
+  "div_liq_pl": 0.76,
+  "fcf_yield": -47.3,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "14443",
+  "empresa_cvm": "CIA SANEAMENTO BÁSICO ESTADO SÃO PAULO",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (SBSP3)",
+  "flags": [
+   "verificar:fcf_yield=-47.3"
+  ]
+ },
+ "CASN4": {
+  "ll": 418690000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 15.4,
+  "payout": 23.8,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 2.9,
+  "div_liq_pl": 0.84,
+  "fcf_yield": -6.8,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "amarelo",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "16861",
+  "empresa_cvm": "CIA CAT. DE ÁGUAS E SANEAMENTO - CASAN",
+  "demonstracao": "individual",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (CASN3)",
+  "flags": [
+   "demonstracao_individual"
+  ]
+ },
+ "CASN3": {
+  "ll": 418690000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 15.4,
+  "payout": 23.8,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 2.9,
+  "div_liq_pl": 0.84,
+  "fcf_yield": -5.6,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "amarelo",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "16861",
+  "empresa_cvm": "CIA CAT. DE ÁGUAS E SANEAMENTO - CASAN",
+  "demonstracao": "individual",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (CASN3)",
+  "flags": [
+   "demonstracao_individual"
+  ]
+ },
+ "AMBP3": {
+  "ll": -56801000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": -3.3,
+  "div_liq_ebitda": 3.21,
+  "div_liq_pl": 2.43,
+  "fcf_yield": -1318.6,
+  "descartados": [
+   "fcf_yield"
+  ],
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "amarelo",
+   "payout": "cinza"
+  },
+  "nota": 0,
+  "cd_cvm": "24961",
+  "empresa_cvm": "AMBIPAR PARTICIPAÇÕES E EMPREENDIMENTOS S.A. - EM RECUPERAÇÃO JUDICIAL",
+  "demonstracao": "consolidada",
+  "referencia": "2023-12-31",
+  "base": "exercício 2023",
+  "mapeamento": "FCA 2026 (AMBP3)",
+  "flags": [
+   "sem ITR de 2024-06-30 (usado o exercício fechado)",
+   "roe_sem_pl_inicial",
+   "descartado:fcf_yield=-1318.6",
+   "dado_antigo:35_meses"
+  ]
+ },
+ "ORVR3": {
+  "ll": 50255000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 1.6,
+  "div_liq_ebitda": 3.9,
+  "div_liq_pl": 0.46,
+  "fcf_yield": -71612.9,
+  "descartados": [
+   "fcf_yield"
+  ],
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "vermelho",
+   "payout": "cinza"
+  },
+  "nota": 0,
+  "cd_cvm": "25550",
+  "empresa_cvm": "ORIZON VALORIZAÇÃO DE RESÍDUOS S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (ORVR3)",
+  "flags": [
+   "descartado:fcf_yield=-71612.9"
+  ]
+ },
+ "IGSN3": {
+  "erro": "sem CD_CVM",
+  "motivo": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+ },
+ "TIMS3": {
+  "ll": null,
+  "base_lucro": "lucro contábil, indisponível",
+  "div_liq_ebitda": null,
+  "div_liq_pl": null,
+  "semaforo": {
+   "fcf_yield": "cinza",
+   "div_liq_ebitda": "cinza",
+   "payout": "cinza"
+  },
+  "nota": null,
+  "cd_cvm": "24929",
+  "empresa_cvm": "TIM S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2025-12-31",
+  "base": "exercício 2025",
+  "mapeamento": "FCA 2026 (TIMS3)",
+  "flags": [
+   "sem ITR de 2025-06-30 (usado o exercício fechado)",
+   "lucro_indisponivel"
+  ]
+ },
+ "VIVT3": {
+  "ll": 6598880000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 9.9,
+  "payout": 54.6,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 0.43,
+  "div_liq_pl": 0.17,
+  "fcf_yield": 10.9,
+  "semaforo": {
+   "fcf_yield": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "17671",
+  "empresa_cvm": "TELEFÔNICA BRASIL S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (VIVT3)",
+  "flags": []
+ },
+ "BRIT3": {
+  "ll": 163653000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 10.9,
+  "payout": 8.8,
+  "base_payout": "pago em caixa (DFC) 2023",
+  "div_liq_ebitda": 1.28,
+  "div_liq_pl": 0.49,
+  "semaforo": {
+   "fcf_yield": "cinza",
+   "div_liq_ebitda": "verde",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "26085",
+  "empresa_cvm": "BRISANET PARTICIPAÇÕES S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2023-12-31",
+  "base": "exercício 2023",
+  "mapeamento": "FCA 2024 (BRIT3)",
+  "flags": [
+   "roe_sem_pl_inicial",
+   "dado_antigo:35_meses"
+  ]
+ },
+ "OIBR4": {
+  "ll": -36373594000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": null,
+  "div_liq_ebitda": null,
+  "div_liq_pl": null,
+  "fcf_yield": -335415.5,
+  "descartados": [
+   "fcf_yield"
+  ],
+  "semaforo": {
+   "fcf_yield": "cinza",
+   "div_liq_ebitda": "cinza",
+   "payout": "cinza"
+  },
+  "nota": null,
+  "cd_cvm": "11312",
+  "empresa_cvm": "OI S.A. - EM RECUPERAÇÃO JUDICIAL",
+  "demonstracao": "consolidada",
+  "referencia": "2025-12-31",
+  "base": "exercício 2025",
+  "mapeamento": "FCA 2026 (OIBR3)",
+  "flags": [
+   "patrimonio_negativo",
+   "descartado:fcf_yield=-335415.5"
+  ]
+ },
+ "OIBR3": {
+  "ll": -36373594000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": null,
+  "div_liq_ebitda": null,
+  "div_liq_pl": null,
+  "fcf_yield": -1677077.7,
+  "descartados": [
+   "fcf_yield"
+  ],
+  "semaforo": {
+   "fcf_yield": "cinza",
+   "div_liq_ebitda": "cinza",
+   "payout": "cinza"
+  },
+  "nota": null,
+  "cd_cvm": "11312",
+  "empresa_cvm": "OI S.A. - EM RECUPERAÇÃO JUDICIAL",
+  "demonstracao": "consolidada",
+  "referencia": "2025-12-31",
+  "base": "exercício 2025",
+  "mapeamento": "FCA 2026 (OIBR3)",
+  "flags": [
+   "patrimonio_negativo",
+   "descartado:fcf_yield=-1677077.7"
+  ]
+ },
+ "TELB4": {
+  "ll": 137587000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 8.5,
+  "div_liq_ebitda": -3.28,
+  "div_liq_pl": -0.96,
+  "fcf_yield": -19.9,
+  "semaforo": {
+   "fcf_yield": "vermelho",
+   "div_liq_ebitda": "verde",
+   "payout": "cinza"
+  },
+  "nota": 1,
+  "cd_cvm": "11258",
+  "empresa_cvm": "TELEC. BRASILEIRAS S.A. - TELEBRÁS",
+  "demonstracao": "individual",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (TELB3)",
+  "flags": [
+   "verificar:div_liq_ebitda=-3.28",
+   "demonstracao_individual"
+  ]
+ },
+ "TELB3": {
+  "ll": 137587000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 8.5,
+  "div_liq_ebitda": -3.28,
+  "div_liq_pl": -0.96,
+  "fcf_yield": -12.3,
+  "semaforo": {
+   "fcf_yield": "vermelho",
+   "div_liq_ebitda": "verde",
+   "payout": "cinza"
+  },
+  "nota": 1,
+  "cd_cvm": "11258",
+  "empresa_cvm": "TELEC. BRASILEIRAS S.A. - TELEBRÁS",
+  "demonstracao": "individual",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (TELB3)",
+  "flags": [
+   "verificar:div_liq_ebitda=-3.28",
+   "demonstracao_individual"
+  ]
+ },
+ "FIQE3": {
+  "ll": 223743000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 18.0,
+  "payout": 14.4,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 0.55,
+  "div_liq_pl": 0.3,
+  "fcf_yield": 10.8,
+  "semaforo": {
+   "fcf_yield": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "26050",
+  "empresa_cvm": "UNIFIQUE TELECOMUNICAÇÕES S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (FIQE3)",
+  "flags": []
+ },
+ "DESK3": {
+  "ll": 55865000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 4.0,
+  "payout": 6.0,
+  "base_payout": "pago em caixa (DFC) 2025",
+  "div_liq_ebitda": 1.75,
+  "div_liq_pl": 0.83,
+  "fcf_yield": 9.7,
+  "semaforo": {
+   "fcf_yield": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "26026",
+  "empresa_cvm": "DESKTOP S.A",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (DESK3)",
+  "flags": []
+ },
+ "BRST3": {
+  "ll": 59478000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 3.8,
+  "payout": 20.1,
+  "base_payout": "declarado (DVA) 2025",
+  "div_liq_ebitda": 2.16,
+  "div_liq_pl": 1.07,
+  "fcf_yield": -0.1,
+  "semaforo": {
+   "fcf_yield": "vermelho",
+   "div_liq_ebitda": "amarelo",
+   "payout": "amarelo"
+  },
+  "nota": 1,
+  "cd_cvm": "27693",
+  "empresa_cvm": "BRISANET SERVIÇOS DE TELECOMUNICAÇÕES S.A.",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (BRST3)",
+  "flags": []
+ }
+}

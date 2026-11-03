@@ -1,2 +1,1 @@
-Sem CD_CVM (incluir no CSV manual): APER BPAC BPAN BRGE BRIT BRIV CEPE COMR CSAB CSRN EEEL ELPL EQPA IGSN LIPR MEGA OMGE UPKP
-144 papéis; 65 com nota
+144 papéis; 123 com dados; 107 com nota; downloads falhos: 0
