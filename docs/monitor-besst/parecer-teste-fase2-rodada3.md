@@ -82,4 +82,4 @@ Método: o valor usado no teste (`componentes_lucro`) foi comparado com a linha 
 ## 6. Divergências entre juízes
 - **J1** queria a nota limitada a 2 quando houver `verificar:variacao_lucro`. **J2** aceita "nota provisória + ⚠" para o beta. **J3** condiciona o beta ao bloqueio do workflow por aceite ≠ 0. *Prevalece (b), com as ressalvas da seção 4.*
 
-Fontes externas desta rodada: releases e DFs dos emissores (RI ou cópias integrais), mais uma reportagem (Times Brasil) para o total da EGIE. Não foram usados vídeos nem a AGF.
+Fontes externas desta rodada: releases e DFs dos emissores (RI ou cópias integrais), mais uma reportagem (Times Brasil) para o total da EGIE. Não foram usados vídeos nem serviços privados de recomendação.
