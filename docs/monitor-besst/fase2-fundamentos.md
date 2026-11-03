@@ -50,7 +50,7 @@ payout (fase 1, só CVM) e acrescentar as regulatórias depois (fase 2).
 | Saneamento | ROE | idem | ≥ 10% | 6–10% | < 6% |
 | Saneamento | Payout | idem | 25–60% | 60–90% | > 90% |
 | Telecom | Dív. líq./EBITDA | idem | ≤ 2,0x | 2–3x | > 3x |
-| Telecom | FCF yield | (FCO − capex) 12m ÷ valor de mercado | ≥ 6% | 3–6% | < 3% |
+| Telecom | ROE (FCF yield retirado em 03/11/2026) | lucro 12m ÷ PL médio | ≥ 12% | 8–12% | < 8% |
 | Telecom | Payout | idem | 25–100% | 100–120% | > 120% |
 
 Notas de calibragem: Basileia mínimo regulatório total = 8% + 2,5% de conservação (+ adicional sistêmico para D-SIBs),
@@ -124,7 +124,7 @@ Combinar também com a coluna "tendência" já existente: margem alta + tendênc
   BRGE (Alfa), RPAD (Alfa), Eletrobras (AXIA) — consolidado da holding ≠ caixa que sobe para o acionista; alavancagem pode
   estar na holding ou na controlada.
 - **Várias classes** (ON/PN/UNIT; ex. SANB3/4/11, TAEE3/4/11, EQPA3/5/6/7): fundamentos são do emissor — mesma nota para
-  todas as classes; FCF yield usa preço da classe × total de ações (aproximação).
+  todas as classes; (o FCF yield, que usava preço × total de ações, foi retirado).
 - **Estatais**: payout e ROE dependem de decisão política (BBAS3, CMIG, SAPR, CSMG, CASN); a coluna de controle já ajuda.
 - **Contábil setorial**: IFRS de concessão (transmissão), ativos financeiros indenizáveis e IFRS 17 (seguros, desde 2023)
   quebram comparabilidade histórica; bancos seguem Cosif + Res. CMN 4.966 (perda esperada, desde 2025).
