@@ -1,0 +1,1380 @@
+{
+ "BBAS3": {
+  "ll": 12272045000.0,
+  "roe": 6.7,
+  "payout": 45.0,
+  "semaforo": {
+   "roe": "vermelho",
+   "payout": "verde"
+  },
+  "nota": 1,
+  "cd_cvm": "1023",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "SANB4": {
+  "ll": 13160769000.0,
+  "roe": 10.6,
+  "payout": null,
+  "semaforo": {
+   "roe": "amarelo",
+   "payout": "cinza"
+  },
+  "nota": null,
+  "cd_cvm": "20532",
+  "referencia": "2026-09-30",
+  "base": "LTM"
+ },
+ "SANB11": {
+  "ll": 13160769000.0,
+  "roe": 10.6,
+  "payout": null,
+  "semaforo": {
+   "roe": "amarelo",
+   "payout": "cinza"
+  },
+  "nota": null,
+  "cd_cvm": "20532",
+  "referencia": "2026-09-30",
+  "base": "LTM"
+ },
+ "SANB3": {
+  "ll": 13160769000.0,
+  "roe": 10.6,
+  "payout": null,
+  "semaforo": {
+   "roe": "amarelo",
+   "payout": "cinza"
+  },
+  "nota": null,
+  "cd_cvm": "20532",
+  "referencia": "2026-09-30",
+  "base": "LTM"
+ },
+ "BRSR6": {
+  "ll": 1641805000.0,
+  "roe": 14.8,
+  "payout": 40.0,
+  "semaforo": {
+   "roe": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "1210",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "BBDC4": {
+  "ll": 26148439000.0,
+  "roe": 14.4,
+  "payout": 70.0,
+  "semaforo": {
+   "roe": "amarelo",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "906",
+  "referencia": "2026-09-30",
+  "base": "LTM"
+ },
+ "BBDC3": {
+  "ll": 26148439000.0,
+  "roe": 14.4,
+  "payout": 70.0,
+  "semaforo": {
+   "roe": "amarelo",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "906",
+  "referencia": "2026-09-30",
+  "base": "LTM"
+ },
+ "ABCB4": {
+  "ll": 0.0,
+  "roe": 0.0,
+  "payout": null,
+  "semaforo": {
+   "roe": "vermelho",
+   "payout": "cinza"
+  },
+  "nota": null,
+  "cd_cvm": "20958",
+  "referencia": "2023-12-31",
+  "base": "DFP"
+ },
+ "BRSR5": {
+  "ll": 1641805000.0,
+  "roe": 14.8,
+  "payout": 40.0,
+  "semaforo": {
+   "roe": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "1210",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "BRSR3": {
+  "ll": 1641805000.0,
+  "roe": 14.8,
+  "payout": 40.0,
+  "semaforo": {
+   "roe": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "1210",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "ITUB4": {
+  "ll": 46828000000.0,
+  "roe": 21.8,
+  "payout": 70.0,
+  "semaforo": {
+   "roe": "verde",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "19348",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "ITUB3": {
+  "ll": 46828000000.0,
+  "roe": 21.8,
+  "payout": 70.0,
+  "semaforo": {
+   "roe": "verde",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "19348",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "BRIV4": {
+  "erro": "sem dados CVM"
+ },
+ "BMEB3": {
+  "ll": 833085000.0,
+  "roe": 33.3,
+  "payout": 24.0,
+  "semaforo": {
+   "roe": "verde",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "1325",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "BMEB4": {
+  "ll": 833085000.0,
+  "roe": 33.3,
+  "payout": 24.0,
+  "semaforo": {
+   "roe": "verde",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "1325",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "BPAC11": {
+  "erro": "sem dados CVM"
+ },
+ "BPAC5": {
+  "erro": "sem dados CVM"
+ },
+ "BPAC3": {
+  "erro": "sem dados CVM"
+ },
+ "BRIV3": {
+  "erro": "sem dados CVM"
+ },
+ "BSLI4": {
+  "ll": 311023000.0,
+  "roe": 10.6,
+  "payout": null,
+  "semaforo": {
+   "roe": "amarelo",
+   "payout": "cinza"
+  },
+  "nota": null,
+  "cd_cvm": "14206",
+  "referencia": "2024-12-31",
+  "base": "DFP"
+ },
+ "BSLI3": {
+  "ll": 311023000.0,
+  "roe": 10.6,
+  "payout": null,
+  "semaforo": {
+   "roe": "amarelo",
+   "payout": "cinza"
+  },
+  "nota": null,
+  "cd_cvm": "14206",
+  "referencia": "2024-12-31",
+  "base": "DFP"
+ },
+ "BAZA3": {
+  "erro": "sem dados CVM"
+ },
+ "RPAD5": {
+  "erro": "sem dados CVM"
+ },
+ "BGIP4": {
+  "erro": "sem dados CVM"
+ },
+ "BMIN4": {
+  "erro": "sem dados CVM"
+ },
+ "BMGB4": {
+  "ll": 632313000.0,
+  "roe": 13.4,
+  "payout": 52.0,
+  "semaforo": {
+   "roe": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "24600",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "BPAR3": {
+  "erro": "sem dados CVM"
+ },
+ "BEES4": {
+  "ll": 442686000.0,
+  "roe": 18.3,
+  "payout": 61.0,
+  "semaforo": {
+   "roe": "verde",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "1155",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "BEES3": {
+  "ll": 442686000.0,
+  "roe": 18.3,
+  "payout": 61.0,
+  "semaforo": {
+   "roe": "verde",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "1155",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "BNBR3": {
+  "erro": "sem dados CVM"
+ },
+ "BGIP3": {
+  "erro": "sem dados CVM"
+ },
+ "BMIN3": {
+  "erro": "sem dados CVM"
+ },
+ "PINE4": {
+  "ll": 603085000.0,
+  "roe": 42.0,
+  "payout": 26.0,
+  "semaforo": {
+   "roe": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "20567",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "BPAN4": {
+  "erro": "sem dados CVM"
+ },
+ "RPAD6": {
+  "erro": "sem dados CVM"
+ },
+ "RPAD3": {
+  "erro": "sem dados CVM"
+ },
+ "BRBI11": {
+  "ll": 175073000.0,
+  "roe": 21.7,
+  "payout": 93.0,
+  "semaforo": {
+   "roe": "verde",
+   "payout": "vermelho"
+  },
+  "nota": 1,
+  "cd_cvm": "25860",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "PINE3": {
+  "ll": 603085000.0,
+  "roe": 42.0,
+  "payout": 26.0,
+  "semaforo": {
+   "roe": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "20567",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "PINE11": {
+  "ll": 603085000.0,
+  "roe": 42.0,
+  "payout": 26.0,
+  "semaforo": {
+   "roe": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "20567",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "CMIG4": {
+  "ll": 4595105000.0,
+  "roe": 16.2,
+  "payout": 79.0,
+  "div_liq_ebitda": 2.28,
+  "div_liq_pl": 0.66,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "2453",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "TAEE3": {
+  "ll": 1635717000.0,
+  "roe": 21.8,
+  "payout": 76.0,
+  "div_liq_ebitda": 3.48,
+  "div_liq_pl": 1.29,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "20257",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "TAEE11": {
+  "ll": 1635717000.0,
+  "roe": 21.8,
+  "payout": 76.0,
+  "div_liq_ebitda": 3.48,
+  "div_liq_pl": 1.29,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "20257",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "TAEE4": {
+  "ll": 1635717000.0,
+  "roe": 21.8,
+  "payout": 76.0,
+  "div_liq_ebitda": 3.48,
+  "div_liq_pl": 1.29,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "20257",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "ISAE4": {
+  "ll": 2817169000.0,
+  "roe": 13.5,
+  "payout": 37.0,
+  "div_liq_ebitda": 3.17,
+  "div_liq_pl": 0.72,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "18376",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "CPFE3": {
+  "ll": 6004881000.0,
+  "roe": 27.6,
+  "payout": 68.0,
+  "div_liq_ebitda": 1.97,
+  "div_liq_pl": 1.21,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "18660",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "EGIE3": {
+  "ll": 3959345000.0,
+  "roe": 30.1,
+  "payout": 61.0,
+  "div_liq_ebitda": 3.04,
+  "div_liq_pl": 1.65,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "17329",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "CMIG3": {
+  "ll": 4595105000.0,
+  "roe": 16.2,
+  "payout": 79.0,
+  "div_liq_ebitda": 2.28,
+  "div_liq_pl": 0.66,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "2453",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "ISAE3": {
+  "ll": 2817169000.0,
+  "roe": 13.5,
+  "payout": 37.0,
+  "div_liq_ebitda": 3.17,
+  "div_liq_pl": 0.72,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "18376",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "CPLE3": {
+  "ll": 3134132000.0,
+  "roe": 12.6,
+  "payout": 75.0,
+  "div_liq_ebitda": 2.81,
+  "div_liq_pl": 0.83,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "14311",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "ENGI4": {
+  "ll": 1516835000.0,
+  "roe": 8.2,
+  "payout": 106.0,
+  "div_liq_ebitda": 3.72,
+  "div_liq_pl": 1.7,
+  "semaforo": {
+   "roe": "amarelo",
+   "div_liq_ebitda": "amarelo",
+   "payout": "vermelho"
+  },
+  "nota": 1,
+  "cd_cvm": "15253",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "ENGI11": {
+  "ll": 1516835000.0,
+  "roe": 8.2,
+  "payout": 106.0,
+  "div_liq_ebitda": 3.72,
+  "div_liq_pl": 1.7,
+  "semaforo": {
+   "roe": "amarelo",
+   "div_liq_ebitda": "amarelo",
+   "payout": "vermelho"
+  },
+  "nota": 1,
+  "cd_cvm": "15253",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "VBBR3": {
+  "ll": 5056000000.0,
+  "roe": 23.0,
+  "payout": 23.0,
+  "div_liq_ebitda": 1.62,
+  "div_liq_pl": 0.69,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "24295",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "CLSC4": {
+  "ll": 875087000.0,
+  "roe": 22.2,
+  "payout": 34.0,
+  "div_liq_ebitda": 2.74,
+  "div_liq_pl": 1.22,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "2461",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "CLSC3": {
+  "ll": 875087000.0,
+  "roe": 22.2,
+  "payout": 34.0,
+  "div_liq_ebitda": 2.74,
+  "div_liq_pl": 1.22,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "2461",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "ALUP4": {
+  "ll": 1386608000.0,
+  "roe": 15.5,
+  "payout": 50.0,
+  "div_liq_ebitda": 2.62,
+  "div_liq_pl": 0.99,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "21490",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "ENGI3": {
+  "ll": 1516835000.0,
+  "roe": 8.2,
+  "payout": 106.0,
+  "div_liq_ebitda": 3.72,
+  "div_liq_pl": 1.7,
+  "semaforo": {
+   "roe": "amarelo",
+   "div_liq_ebitda": "amarelo",
+   "payout": "vermelho"
+  },
+  "nota": 1,
+  "cd_cvm": "15253",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "ALUP11": {
+  "ll": 1386608000.0,
+  "roe": 15.5,
+  "payout": 50.0,
+  "div_liq_ebitda": 2.62,
+  "div_liq_pl": 0.99,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "21490",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "ALUP3": {
+  "ll": 1386608000.0,
+  "roe": 15.5,
+  "payout": 50.0,
+  "div_liq_ebitda": 2.62,
+  "div_liq_pl": 0.99,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "21490",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "NEOE3": {
+  "ll": 4836000000.0,
+  "roe": 14.1,
+  "payout": null,
+  "div_liq_ebitda": 3.38,
+  "div_liq_pl": 1.43,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "amarelo",
+   "payout": "cinza"
+  },
+  "nota": 2,
+  "cd_cvm": "15539",
+  "referencia": "2026-09-30",
+  "base": "LTM"
+ },
+ "EQTL3": {
+  "ll": 958423000.0,
+  "roe": 3.7,
+  "payout": 516.0,
+  "div_liq_ebitda": 4.76,
+  "div_liq_pl": 2.07,
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "vermelho",
+   "payout": "vermelho"
+  },
+  "nota": 0,
+  "cd_cvm": "20010",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "SRNA3": {
+  "ll": -31276000.0,
+  "roe": -0.6,
+  "payout": null,
+  "div_liq_ebitda": 3.37,
+  "div_liq_pl": 1.97,
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "amarelo",
+   "payout": "cinza"
+  },
+  "nota": 0,
+  "cd_cvm": "26441",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "AURE3": {
+  "ll": -1089423000.0,
+  "roe": -8.8,
+  "payout": null,
+  "div_liq_ebitda": 5.75,
+  "div_liq_pl": 1.74,
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "vermelho",
+   "payout": "cinza"
+  },
+  "nota": 0,
+  "cd_cvm": "26620",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "MEGA3": {
+  "erro": "sem dados CVM"
+ },
+ "CEBR5": {
+  "ll": 159874000.0,
+  "roe": 15.9,
+  "payout": 225.0,
+  "div_liq_ebitda": -1.33,
+  "div_liq_pl": -0.3,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "vermelho"
+  },
+  "nota": 1,
+  "cd_cvm": "14451",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "CEBR3": {
+  "ll": 159874000.0,
+  "roe": 15.9,
+  "payout": 225.0,
+  "div_liq_ebitda": -1.33,
+  "div_liq_pl": -0.3,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "vermelho"
+  },
+  "nota": 1,
+  "cd_cvm": "14451",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "CEBR6": {
+  "ll": 159874000.0,
+  "roe": 15.9,
+  "payout": 225.0,
+  "div_liq_ebitda": -1.33,
+  "div_liq_pl": -0.3,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "verde",
+   "payout": "vermelho"
+  },
+  "nota": 1,
+  "cd_cvm": "14451",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "CSRN3": {
+  "erro": "sem dados CVM"
+ },
+ "CSRN5": {
+  "erro": "sem dados CVM"
+ },
+ "CSRN6": {
+  "erro": "sem dados CVM"
+ },
+ "EKTR4": {
+  "erro": "sem dados CVM"
+ },
+ "GEPA4": {
+  "ll": 0.0,
+  "roe": null,
+  "payout": null,
+  "div_liq_ebitda": null,
+  "div_liq_pl": null,
+  "semaforo": {
+   "roe": "cinza",
+   "div_liq_ebitda": "cinza",
+   "payout": "cinza"
+  },
+  "nota": null,
+  "cd_cvm": "18368",
+  "referencia": "2025-12-31",
+  "base": "DFP"
+ },
+ "GEPA3": {
+  "ll": 0.0,
+  "roe": null,
+  "payout": null,
+  "div_liq_ebitda": null,
+  "div_liq_pl": null,
+  "semaforo": {
+   "roe": "cinza",
+   "div_liq_ebitda": "cinza",
+   "payout": "cinza"
+  },
+  "nota": null,
+  "cd_cvm": "18368",
+  "referencia": "2025-12-31",
+  "base": "DFP"
+ },
+ "GPAR3": {
+  "ll": 37449000.0,
+  "roe": 4.8,
+  "payout": null,
+  "div_liq_ebitda": -12.23,
+  "div_liq_pl": -0.25,
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "verde",
+   "payout": "cinza"
+  },
+  "nota": 1,
+  "cd_cvm": "21393",
+  "referencia": "2024-12-31",
+  "base": "DFP"
+ },
+ "CEEB5": {
+  "erro": "sem dados CVM"
+ },
+ "REDE3": {
+  "ll": 1027834000.0,
+  "roe": 19.1,
+  "payout": 118.0,
+  "div_liq_ebitda": 3.69,
+  "div_liq_pl": 2.71,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "amarelo",
+   "payout": "vermelho"
+  },
+  "nota": 1,
+  "cd_cvm": "3190",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "ENMT3": {
+  "erro": "sem dados CVM"
+ },
+ "EQPA3": {
+  "erro": "sem dados CVM"
+ },
+ "ENMT4": {
+  "erro": "sem dados CVM"
+ },
+ "CEEB3": {
+  "erro": "sem dados CVM"
+ },
+ "EKTR3": {
+  "erro": "sem dados CVM"
+ },
+ "AFLT3": {
+  "erro": "sem dados CVM"
+ },
+ "EEEL4": {
+  "erro": "sem dados CVM"
+ },
+ "EQPA6": {
+  "erro": "sem dados CVM"
+ },
+ "EEEL3": {
+  "erro": "sem dados CVM"
+ },
+ "EQPA5": {
+  "erro": "sem dados CVM"
+ },
+ "EQPA7": {
+  "erro": "sem dados CVM"
+ },
+ "COCE5": {
+  "erro": "sem dados CVM"
+ },
+ "EMAE4": {
+  "ll": -96057000.0,
+  "roe": -10.3,
+  "payout": null,
+  "div_liq_ebitda": null,
+  "div_liq_pl": -0.68,
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "cinza",
+   "payout": "cinza"
+  },
+  "nota": null,
+  "cd_cvm": "16993",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "COCE3": {
+  "erro": "sem dados CVM"
+ },
+ "LIGT3": {
+  "ll": 0.0,
+  "roe": 0.0,
+  "payout": null,
+  "div_liq_ebitda": 4.59,
+  "div_liq_pl": 0.78,
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "vermelho",
+   "payout": "cinza"
+  },
+  "nota": 0,
+  "cd_cvm": "19879",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "CEPE5": {
+  "erro": "sem dados CVM"
+ },
+ "LIPR3": {
+  "erro": "sem dados CVM"
+ },
+ "AXIA3": {
+  "ll": 12055712000.0,
+  "roe": 9.9,
+  "payout": null,
+  "div_liq_ebitda": 2.74,
+  "div_liq_pl": 0.37,
+  "semaforo": {
+   "roe": "amarelo",
+   "div_liq_ebitda": "verde",
+   "payout": "cinza"
+  },
+  "nota": 2,
+  "cd_cvm": "2437",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "CBEE3": {
+  "erro": "sem dados CVM"
+ },
+ "CEPE3": {
+  "erro": "sem dados CVM"
+ },
+ "RNEW3": {
+  "ll": 0.0,
+  "roe": 0.0,
+  "payout": null,
+  "div_liq_ebitda": 4.53,
+  "div_liq_pl": 0.58,
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "vermelho",
+   "payout": "cinza"
+  },
+  "nota": 0,
+  "cd_cvm": "21636",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "CEED4": {
+  "erro": "sem dados CVM"
+ },
+ "CEED3": {
+  "erro": "sem dados CVM"
+ },
+ "EMAE3": {
+  "ll": -96057000.0,
+  "roe": -10.3,
+  "payout": null,
+  "div_liq_ebitda": null,
+  "div_liq_pl": -0.68,
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "cinza",
+   "payout": "cinza"
+  },
+  "nota": null,
+  "cd_cvm": "16993",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "ELPL4": {
+  "erro": "sem dados CVM"
+ },
+ "ENEV3": {
+  "ll": 962660000.0,
+  "roe": 4.9,
+  "payout": 55.0,
+  "div_liq_ebitda": 3.18,
+  "div_liq_pl": 0.97,
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 1,
+  "cd_cvm": "21237",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "OMGE3": {
+  "erro": "sem dados CVM"
+ },
+ "RNEW11": {
+  "ll": 0.0,
+  "roe": 0.0,
+  "payout": null,
+  "div_liq_ebitda": 4.53,
+  "div_liq_pl": 0.58,
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "vermelho",
+   "payout": "cinza"
+  },
+  "nota": 0,
+  "cd_cvm": "21636",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "RNEW4": {
+  "ll": 0.0,
+  "roe": 0.0,
+  "payout": null,
+  "div_liq_ebitda": 4.53,
+  "div_liq_pl": 0.58,
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "vermelho",
+   "payout": "cinza"
+  },
+  "nota": 0,
+  "cd_cvm": "21636",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "AESO3": {
+  "ll": 66902000.0,
+  "roe": 1.9,
+  "payout": 123.0,
+  "div_liq_ebitda": 7.79,
+  "div_liq_pl": 2.19,
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "vermelho",
+   "payout": "vermelho"
+  },
+  "nota": 0,
+  "cd_cvm": "26174",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "CEEB6": {
+  "erro": "sem dados CVM"
+ },
+ "COCE6": {
+  "erro": "sem dados CVM"
+ },
+ "COMR3": {
+  "erro": "sem dados CVM"
+ },
+ "UPKP3": {
+  "erro": "sem dados CVM"
+ },
+ "RIOS3": {
+  "ll": 0.0,
+  "roe": -0.0,
+  "payout": null,
+  "div_liq_ebitda": null,
+  "div_liq_pl": -0.96,
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "cinza",
+   "payout": "cinza"
+  },
+  "nota": null,
+  "cd_cvm": "25720",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "AXIA7": {
+  "ll": 12055712000.0,
+  "roe": 9.9,
+  "payout": null,
+  "div_liq_ebitda": 2.74,
+  "div_liq_pl": 0.37,
+  "semaforo": {
+   "roe": "amarelo",
+   "div_liq_ebitda": "verde",
+   "payout": "cinza"
+  },
+  "nota": 2,
+  "cd_cvm": "2437",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "WIZC3": {
+  "ll": 198429000.0,
+  "roe": 30.8,
+  "payout": 121.0,
+  "semaforo": {
+   "roe": "verde",
+   "payout": "vermelho"
+  },
+  "nota": 1,
+  "cd_cvm": "23590",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "BBSE3": {
+  "ll": 9189317000.0,
+  "roe": 89.3,
+  "payout": 96.0,
+  "semaforo": {
+   "roe": "verde",
+   "payout": "vermelho"
+  },
+  "nota": 1,
+  "cd_cvm": "23159",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "PSSA3": {
+  "ll": 3684011000.0,
+  "roe": 24.4,
+  "payout": 44.0,
+  "semaforo": {
+   "roe": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "16659",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "CXSE3": {
+  "ll": 4291560000.0,
+  "roe": 32.2,
+  "payout": 92.0,
+  "semaforo": {
+   "roe": "verde",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "23795",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "BRGE6": {
+  "erro": "sem dados CVM"
+ },
+ "CSAB3": {
+  "erro": "sem dados CVM"
+ },
+ "CSAB4": {
+  "erro": "sem dados CVM"
+ },
+ "BRGE11": {
+  "erro": "sem dados CVM"
+ },
+ "BRGE8": {
+  "erro": "sem dados CVM"
+ },
+ "BRGE5": {
+  "erro": "sem dados CVM"
+ },
+ "APER3": {
+  "erro": "sem dados CVM"
+ },
+ "BRGE12": {
+  "erro": "sem dados CVM"
+ },
+ "BRGE3": {
+  "erro": "sem dados CVM"
+ },
+ "SAPR4": {
+  "erro": "sem dados CVM"
+ },
+ "SAPR11": {
+  "erro": "sem dados CVM"
+ },
+ "CSMG3": {
+  "ll": 1293036000.0,
+  "roe": 15.3,
+  "payout": 63.0,
+  "div_liq_ebitda": 2.67,
+  "div_liq_pl": 0.89,
+  "semaforo": {
+   "roe": "verde",
+   "div_liq_ebitda": "amarelo",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "19445",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "SAPR3": {
+  "erro": "sem dados CVM"
+ },
+ "SBSP3": {
+  "ll": 3196215000.0,
+  "roe": 7.8,
+  "payout": 53.0,
+  "div_liq_ebitda": 2.21,
+  "div_liq_pl": 0.76,
+  "semaforo": {
+   "roe": "amarelo",
+   "div_liq_ebitda": "verde",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "14443",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "CASN4": {
+  "erro": "sem dados CVM"
+ },
+ "CASN3": {
+  "erro": "sem dados CVM"
+ },
+ "AMBP3": {
+  "ll": -287668000.0,
+  "roe": -17.1,
+  "payout": null,
+  "div_liq_ebitda": 2.46,
+  "div_liq_pl": 3.04,
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "verde",
+   "payout": "cinza"
+  },
+  "nota": 0,
+  "cd_cvm": "24961",
+  "referencia": "2024-12-31",
+  "base": "DFP"
+ },
+ "ORVR3": {
+  "ll": 50255000.0,
+  "roe": 1.8,
+  "payout": null,
+  "div_liq_ebitda": 3.9,
+  "div_liq_pl": 0.46,
+  "semaforo": {
+   "roe": "vermelho",
+   "div_liq_ebitda": "vermelho",
+   "payout": "cinza"
+  },
+  "nota": 0,
+  "cd_cvm": "25550",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "IGSN3": {
+  "erro": "sem dados CVM"
+ },
+ "TIMS3": {
+  "ll": 1786664000.0,
+  "roe": 7.1,
+  "payout": null,
+  "div_liq_ebitda": -0.58,
+  "div_liq_pl": -0.08,
+  "semaforo": {
+   "fcf_yield": "cinza",
+   "div_liq_ebitda": "verde",
+   "payout": "cinza"
+  },
+  "nota": null,
+  "cd_cvm": "24929",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "VIVT3": {
+  "ll": 6598880000.0,
+  "roe": 9.8,
+  "payout": 43.0,
+  "div_liq_ebitda": 0.43,
+  "div_liq_pl": 0.17,
+  "semaforo": {
+   "fcf_yield": "cinza",
+   "div_liq_ebitda": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "17671",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "BRIT3": {
+  "erro": "sem dados CVM"
+ },
+ "OIBR4": {
+  "ll": -36373594000.0,
+  "roe": 105.4,
+  "payout": null,
+  "div_liq_ebitda": null,
+  "div_liq_pl": -0.67,
+  "semaforo": {
+   "fcf_yield": "cinza",
+   "div_liq_ebitda": "cinza",
+   "payout": "cinza"
+  },
+  "nota": null,
+  "cd_cvm": "11312",
+  "referencia": "2025-12-31",
+  "base": "DFP"
+ },
+ "OIBR3": {
+  "ll": -36373594000.0,
+  "roe": 105.4,
+  "payout": null,
+  "div_liq_ebitda": null,
+  "div_liq_pl": -0.67,
+  "semaforo": {
+   "fcf_yield": "cinza",
+   "div_liq_ebitda": "cinza",
+   "payout": "cinza"
+  },
+  "nota": null,
+  "cd_cvm": "11312",
+  "referencia": "2025-12-31",
+  "base": "DFP"
+ },
+ "TELB4": {
+  "erro": "sem dados CVM"
+ },
+ "TELB3": {
+  "erro": "sem dados CVM"
+ },
+ "FIQE3": {
+  "ll": 223743000.0,
+  "roe": 18.5,
+  "payout": 46.0,
+  "div_liq_ebitda": 0.55,
+  "div_liq_pl": 0.3,
+  "semaforo": {
+   "fcf_yield": "cinza",
+   "div_liq_ebitda": "verde",
+   "payout": "verde"
+  },
+  "nota": 3,
+  "cd_cvm": "26050",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "DESK3": {
+  "ll": 55865000.0,
+  "roe": 4.0,
+  "payout": 21.0,
+  "div_liq_ebitda": 1.75,
+  "div_liq_pl": 0.83,
+  "semaforo": {
+   "fcf_yield": "cinza",
+   "div_liq_ebitda": "verde",
+   "payout": "amarelo"
+  },
+  "nota": 2,
+  "cd_cvm": "26026",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ },
+ "BRST3": {
+  "ll": 59478000.0,
+  "roe": 3.8,
+  "payout": 30.0,
+  "div_liq_ebitda": 2.16,
+  "div_liq_pl": 1.07,
+  "semaforo": {
+   "fcf_yield": "cinza",
+   "div_liq_ebitda": "amarelo",
+   "payout": "verde"
+  },
+  "nota": 2,
+  "cd_cvm": "27693",
+  "referencia": "2026-06-30",
+  "base": "LTM"
+ }
+}
