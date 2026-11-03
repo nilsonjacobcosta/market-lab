@@ -1,0 +1,97 @@
+# Monitor BESST · Fase 2 · Parecer dos juízes, 2ª rodada (03/11/2026)
+
+Juízes: **J1** finanças e contabilidade · **J2** proteção ao investidor (Res. CVM 20/2021) · **J3** engenharia de dados.
+Insumos: `scripts/fase2/{fundamentos_cvm.py, aceite.py}`, `dados/besst/mapa_ticker_cvm.csv`, `dados/besst/fase2_teste/*` (commit `ddc000b`), `docs/monitor-besst/fase2-fundamentos.md` e o parecer da 1ª rodada (`docs/monitor-besst/parecer-teste-fase2.md`). Nenhum arquivo do repositório foi alterado. O `aceite.py` foi rodado de novo sobre o `fundamentos.json` atual e reproduz o `aceite.json` publicado. O acesso direto a `dados.cvm.gov.br` foi bloqueado no ambiente dos juízes, por isso a conferência numérica usou releases e ITR nos sites de RI e imprensa.
+
+## 0. Veredito: **(c) REPROVADO para o painel público, por pouco**
+
+O salto desde a 1ª rodada é grande. A cobertura vai de 60% para 100% dos emissores negociados. O núcleo da extração (lucro, LTM, PL na mesma janela) bate **ao milhar** com o release em todos os casos que pudemos conferir: ABCB, SAPR, EQTL, CMIG, PINE e o 1S25 de BPAC e CPLE. Os dois "sustos" do enunciado são reais e **não são erro**: a Sanepar teve prejuízo de R$ 152,5 mi no 1S26 e a Equatorial teve lucro de R$ 909 mi aos controladores no 1S26. Mesmo assim, cinco pontos impedem publicar nota e cor hoje:
+
+1. **Bug da defasagem (correção 7 não funciona):** `nota()` testa `"dado_antigo" in flags`, mas a flag gravada é `"dado_antigo:23_meses"`. Com isso, dado de 2024 recebe nota: AMBP3 (negociado) leva nota 0, e UPKP3 3, LIPR3 2, BPAN4 1 e BRGE* 1. O `aceite.py` não mede esse caso, e por isso passou.
+2. **Critério A4 (lucro ≤ 2% em ≥ 10 de 12) não demonstrado.** Confirmados: 4 (CMIG, ABCB, SAPR, VIVT). Divergente sem explicação: EGIE (−9%). Não verificáveis em fonte pública: 7. Os bancos grandes divulgam só o BR GAAP recorrente, e o IFRS contábil está no ITR da CVM, que não conseguimos abrir.
+3. **Payout pela DVA com sinal de captura errada:** SANB11, SANB3 e SANB4 dão **100,0% exato**, e EKTR também. Os anúncios de JCP do Santander em 2025 (R$ 2 bi em jul/25, R$ 620 mi em dez/25) não sugerem distribuição de 100% do lucro.
+4. **"Descartado" melhora a nota:** CEBR3 tem payout de 214% descartado e fica com **nota 3** ("indicadores fortes") só com ROE e caixa líquido.
+5. **A9 incompleto:** não há testes unitários nem fixtures no CI, e a saída JSON não traz `erros[]`. A falha forçada só aparece no log de texto.
+
+Nota dos juízes: **J1 7 · J2 6 · J3 6 → 6,3** (antes 4,5). Com as correções P0 abaixo e uma 3ª rodada curta, a expectativa é **(b)**.
+
+## 1. As 11 correções, uma a uma (código)
+
+| # | Correção | Situação | Evidência e bug remanescente |
+|---|---|---|---|
+| 1 | Individual quando não há consolidada | **OK, com ressalva** | Escolha **por exercício**: a consolidada prevalece se a DRE tiver valores. Ressalvas: (a) a visão pode **mudar entre exercícios** do mesmo emissor (2025 con, 2024 ind) sem flag; (b) o ITR cai para a outra visão (`itr.get((cd,tipo)) or itr.get(outro)`) e mistura DFP consolidada com ITR individual sem aviso; (c) `base_ll` pode ser "controladores" no anual e "total" no acumulado. Exigir a mesma visão nas três peças do LTM; se não houver, LTM = None com motivo. |
+| 2 | Mapa ticker→CD_CVM | **OK** | CNPJ→CD pelo índice da DFP/ITR, FCA de 3 anos, CSV manual (BPAC→22616, EQPA→18309, BRIT→27693, com observação) e motivo por raiz. A BRIT tem o alerta "CONFERIR a reorganização": está certo deixar aberto. |
+| 3 | Lucro 0/ausente | **OK** | `nz()` trata 0 como ausente; o fallback vai para o total; `ll None` → sem nota. Lucro 0 aceito: zero. LIGT/RNEW agora têm lucro. |
+| 4 | Payout só de controladores | **Parcial** | DVA "remuneração de capitais próprios" (filhos de dividendos/JCP, sem "não controlador"). Ressalvas na seção 3: SANB/EKTR com 100,0%, base no exercício fechado (2025) contra o ROE no LTM 2026 e a DMPL ainda não usada. A DFC de reserva exclui não controladores (APER 1.541% e CEBR 214% vêm da DFC). |
+| 5 | PL médio na mesma janela; ROE None se PL ≤ 0 | **OK** | `b_ini` = BP do ITR da mesma data do ano anterior. OIBR e CEED saem com ROE None e flag. |
+| 6 | LTM sem fallback silencioso | **OK, com 1 bug latente** | Marca `ltm_incompleto` e usa o exercício com `referencia` correta. **Bug:** não exige `ano(atual) == ano(DFP)+1`. Se um emissor atrasar a DFP do ano N e entregar o ITR de N+1 (caso típico do BRB), o LTM soma exercício N−1 + acumulado N+1 − acumulado N, ou seja, uma janela errada. Hoje só não aparece porque o script baixa ITR de 2 anos. |
+| 7 | Defasagem > 15 meses sem nota | **FALHA** | `if "dado_antigo" in flags` nunca é verdadeiro (a flag tem sufixo). Corrigir para `any(f.startswith("dado_antigo") for f in flags)` e incluir no aceite a métrica "nota com dado_antigo = 0". |
+| 8 | Sanidade | **Parcial** | Faixas de verificar/descartar existem, mas: (a) a regra de **variação do lucro > ±60%** e a **média de 3 anos do ROE** não foram implementadas. Escapam sem aviso LIGT3 (LTM 11× o exercício, ganho da RJ, ROE 32%), AXIA3 (+84%), VBBR3 (+152%), SAPR (−78%), EQTL (−43%) e EGIE (+53%); (b) ROE só é "verificar" acima de 60% (o parecer pedia 40%); (c) métrica descartada some da nota e pode **subir** a nota (CEBR 3). |
+| 9 | FCF yield | **OK (removido)** | Aceito. Mas o doc ainda mostra a linha "Telecom · FCF yield" na tabela da seção 2. Remover. |
+| 10 | Robustez | **Parcial** | `baixar()` com try e falha forçada concluída (130 papéis). Faltam testes unitários e fixtures no CI, `erros[]` no JSON de saída e o arredondamento explícito da nota (ainda é o `round` bancário: 2,5 → 2). Com a falha forçada, BSLI/AMBP/BPAN/LIPR passam a mostrar 2023 sem aviso no JSON. |
+| 11 | Textos | **OK, com ajustes** | Art. 202 correto (50% com estatuto omisso, 25% de piso na alteração; falta citar as exceções dos §§ 3º–4º). A matriz agora é descritiva e há o rótulo "lucro contábil (IFRS/Cosif)". Pendências: a tabela do doc ainda define payout como "pagos 12m" (o código usa o declarado na DVA do exercício) e traz o FCF; "ROE < 10% destrói valor" deve virar "fica abaixo do custo de capital típico". |
+
+**Exclusão dos 35 papéis sem cotação:** é **legítima só para o aceite**, e só se a tela também não mostrar nota para eles. Hoje 17 deles recebem nota (UPKP3 3, PINE11 3, NEOE3 2…). "Sem cotação" vem do feed de preços (Yahoo), não da situação na B3. A BRIT3, por exemplo, segue listada. São dois grupos: (i) deslistados ou incorporados (AESO, BPAN, ELPL, OMGE e, a confirmar, NEOE/SRNA após OPA) **saem do universo**; (ii) classes ilíquidas ou falha de feed (BRIT3, PINE11, CEEB6, COCE6, RNEW11…) ficam **"sem nota · sem cotação"**. No universo inteiro (144 papéis, 85 emissores), o aceite seria: mapeados 90,6%, dado recente 81,2%, papéis com nota 81,2%. A diferença precisa estar documentada.
+
+## 2. Conferência numérica (teste × fontes)
+
+Lucro = lucro contábil atribuído aos controladores, 12 meses (componentes do `fundamentos.json`).
+
+| Papel | Teste | Oficial | Fonte (tipo) | Situação |
+|---|---|---|---|---|
+| SAPR11 | 1S26 −152,5 mi; 1S25 1.471,8 mi; LTM 455 mi; ROE 3,8% | 1S26 **−152,5 mi**; 1S25 **1.471,8 mi**. O prejuízo do 2T26 (−505 mi) vem do passivo regulatório do IRPJ/precatório (provisão a 100% após a decisão da Agepar de 23/06/26); DL/EBITDA 1,0x | [Release 2T26](https://ri.sanepar.com.br/docs/Release-Sanepar-2026-06-30-fhRTrJgf.pdf) e [ITR 2T26](https://ri.sanepar.com.br/docs/Sanepar-2026-06-30-LhNKMDPD.pdf) (RI) | **✔ 0%. Real, não erro.** DL/EBITDA 0,96 × 1,0 ✔. Pede aviso de não recorrente. |
+| EQTL3 | 1S26 909,8; 1S25 1.629,8; ROE 3,5% | 1T26 424 + 2T26 485 = **909** (controladores). 1S25: 556 + 1.074 (= 1.290 − 216 de minoritários) = **1.630**. O 2T25 tem PPA de R$ 561 mi, reversão de R$ 408 mi e ganho na venda da transmissão. O 4T25 teve prejuízo | [Release 2T26](https://api.mziq.com/mzfilemanager/v2/d/62b21cba-838c-49a4-aaef-e0fb2350c169/f1a2534a-b42c-2256-d107-47ac789a8f24?origin=2) e [release 1T26](https://api.mziq.com/mzfilemanager/v2/d/62b21cba-838c-49a4-aaef-e0fb2350c169/57bd6a8c-d6cb-ed35-daa7-649d8dba341e?origin=2) (RI) | **✔ ≤0,1%. Real.** O ROE de 3,5% é contábil e deprimido por não recorrentes. O release é internamente inconsistente no 2T25 (1.290 × 1.175). Alavancagem oficial 3,1x (covenant) × teste 4,97: definição, EBITDA ajustado. |
+| ABCB4 | 2025 1.002,0; 1S26 487,5; 1S25 469,7; payout 63,0%; ROE 14,7% | 2025 **1.002,0**; 1S26 **487,5**; 1S25 **469,7**; JCP 2025 630,8 (≈63%); ROAE 14,0% (1S26) e 15,2% (2025) | [Release 2T26](https://api.mziq.com/mzfilemanager/v2/d/6298ef6f-2b75-43f8-b2ab-99e3fe33e809/8db543c9-499b-8f37-ccd9-1a66c8a81343?origin=2) e [release 4T25](https://filemanager-cdn.mziq.com/published/6298ef6f-2b75-43f8-b2ab-99e3fe33e809/2a029639-5c1b-4305-9211-2ceac2c5db71_er_4t25_pt.pdf) (RI) | **✔ 0%.** O erro grosseiro da 1ª rodada está resolvido. |
+| CMIG4 | LTM 4.595; DL/EBITDA 2,25 | LTM **4.597** (soma trimestral); alavancagem 2,58x (EBITDA ajustado) | [Release 2T26](https://ri.cemig.com.br/docs/Cemig-2026-06-30-THtJzCB9.pdf) (RI) | **✔ 0%.** DL/EBITDA −0,33x: definição (não recorrente do 4T25). |
+| VIVT3 | 1S26 2.834; LTM 6.599; DL/EBITDA 0,43 | 2T26 1.573 (1S26 ≈ 2,8 bi); DL/EBITDA 0,45x | [O Povo/Estadão Conteúdo](https://www.opovo.com.br/noticias/economia/2026/07/27/telefonica-brasil-tem-lucro-liquido-de-rs-1573-bilhao-no-2-trimestre-alta-de-17.html) (imprensa); [investimentos.com.br](https://investimentos.com.br/artigos/analise-de-resultados-do-2t26-de-telefonica-brasil-vivt3/) (imprensa especializada) | **✔ ≈0%** (dentro do arredondamento da fonte); DL/EBITDA ✔ (−0,02x). |
+| CPLE3 | 1S26 1.683,2; 1S25 1.237,6; DL/EBITDA 2,81 | Consolidado (inclui minoritários): 1S26 **1.741,5**, 1S25 **1.238,2**; alavancagem **2,9x** | [Release 2T26](https://api.mziq.com/mzfilemanager/v2/d/16a31b1b-5ecd-4214-a2e0-308a2393e330/8a327785-31db-2172-47a1-4ad21f404eba?origin=2) (RI) | 1S25 ✔; 1S26 −3,4% contra o total consolidado: **provavelmente** minoritários, não confirmado. **Inconclusivo.** DL/EBITDA ✔ (−0,1x). |
+| EGIE3 | 2025 2.583; LTM 3.959; ROE 29,0%; DL/EBITDA 3,04 | 2025 **2.850** (−33,6% a/a); 2T26 contábil 1.960 (1,3 bi não recorrente de UBP); ajustado 694; "1,8x" | [Investidor10](https://investidor10.com.br/noticias/engie-brasil-egie3-faz-resultados-apagados-em-2025-e-lucra-bem-menos-118838/) e [EuQueroInvestir](https://euqueroinvestir.com/mercados/engie-2t26) (imprensa especializada, baixa confiança) | **✗ −9,4% em 2025 sem explicação.** Conferir na DFP (controladores × total, ou reapresentação). O "1,8x" é incompatível com DL de R$ 25,2 bi: tratar como não conferido. O ROE de 29% é inflado pelo UBP. |
+| BPAC11 | 1S26 9.663; 1S25 7.211; LTM 18.458; ROE 24,6% | Contábil 1S26 **9.472**, 1S25 **7.219**; ROAE contábil 2T26 25,4% | [Destaques 2T26 do BTG](https://static.poder360.com.br/uploads/2026/08/destaques-BTG-2trimestre-11ago2026.pdf) (release do emissor, cópia no Poder360) | 1S25 ✔ (−0,1%); 1S26 **+2,0%** (limite). No LTM, a diferença estimada é de cerca de +1% (depende do 2025 contábil). ROE ✔ (−0,8 p.p.). |
+| PINE4 | 1S26 316,2; ROE 40,7% | 1T26 149,9 + 2T26 165,7 = **315,6**; ROAE 2T26 37,5% (anualizado) | [Investidor10](https://investidor10.com.br/noticias/banco-pine-pine4-quase-dobra-lucro-e-alcanca-roae-de-37-5-no-2t26-122001/) (imprensa especializada) | **✔ +0,2%.** O ROE de 40,7% é real: o PL cresceu rápido e a média início-fim fica abaixo do PL atual. Rotular "ROE alto: conferir a sustentabilidade". |
+| ISAE4 | 1S26 1.297,7; 1S25 928,4; DL/EBITDA 3,07 | IFRS controladores 1T26 **609,1** (1T25 713,2); 357,7 é o lucro **regulatório**; alavancagem gerencial (BNDES) 3,72–3,78x | [Release 1T26](https://www.isaenergiabrasil.com.br/documents/90/Release_de_Resultados_1T2026_-_ISA_ENERGIA_BRASIL.pdf) (RI) | Parcial: o 1T26 IFRS bate com a composição; o 2T26 IFRS não foi localizado. A imprensa noticia "lucro de R$ 174 mi", que é **regulatório**: o iniciante vai estranhar o 1,3 bi. DL/EBITDA: definição. |
+| TAEE11 | LTM 1.625; ROE 20,7%; DL/EBITDA 3,48; payout 71% | 2T26 IFRS 567,1 (manchete); regulatório 207; proventos ≈ 100% do regulatório; DL/EBITDA regulatório **4,2x** | [Safra (research)](https://oespecialista.safra.com.br/analise/taesa-resultados-segundo-trimestre-2026/); [Visno](https://visnoinvest.com.br/news/14725/taesa-taee11-registra-lucro-de-r-5671-mi-no-2t26) (imprensa) | Inconclusivo no lucro (falta o 1T26 IFRS). DL/EBITDA −0,7x: definição (EBITDA IFRS × regulatório). |
+| BBSE3 | LTM 9.189; ROE 85,9%; payout 96,7% | Gerencial 2T26 2.151 (1S26 ≈ 4,37 bi gerencial); contábil não localizado | [Mercado&Consumo/Estadão](https://mercadoeconsumo.com.br/04/08/2026/mc-capital/bb-seguridade-tem-lucro-liquido-gerencial-de-r-2151-bi-no-2o-trimestre-queda-de-39/amp/) (imprensa) | Inconclusivo (+4% contra o gerencial). Um ROE de cerca de 86% é coerente com uma holding de equivalência com PL de cerca de R$ 10 bi; a flag "verificar" está correta. Explicar na tela. |
+| ITUB4 | LTM 46.828; ROE 22,0%; payout 75% | Recorrente BR GAAP 1S26 24.689, 1S25 22.636; ROE recorrente 24,3% | [Release 2T26](https://www.itau.com.br/media/dam/m/4a2ea1e7879ff197/original/itau-unibanco-registra-lucro-de-12-4-bilhoes-e-roe1-24-3-no-segundo-trimestre-de-2026-04-08-26.pdf) (RI) | Não verificável: o IFRS contábil não está no release. −4% contra o recorrente (definição). |
+| BBDC4 / SANB11 | LTM 26.148 / 13.161 | Recorrente: 3T26 7,1 bi / 2,885 bi; ROAE 11,9% (SANB) | [Poder360](https://www.poder360.com.br/poder-economia/bradesco-lucra-r-711-bilhoes-no-3o-tri-de-2026-alta-de-146/); [Money Times](https://www.moneytimes.com.br/santander-sanb11-lucro-3t26-acima-abaixo-do-esperado-roae-miql/) (imprensa) | Não verificável (só há o recorrente). |
+| BBAS3 | 1S26 4.795; 1S25 6.221; LTM 12.272; ROE 6,7% | Ajustado BR GAAP 1T26 3,4 + 2T26 3,9 bi | [Mercado&Consumo/Estadão](https://mercadoeconsumo.com.br/13/08/2026/mc-capital/banco-do-brasil-tem-lucro-liquido-ajustado-de-r-39-bi-no-2t-alta-de-33/) (imprensa) | Não verificável (IFRS × ajustado, cerca de −30%). **É o caso de maior risco de confusão para o iniciante.** |
+
+**Placar A4 (12 emissores do critério):** ✔ CMIG, ABCB, SAPR, VIVT (4) · ✗ EGIE (1) · inconclusivos CPLE, BPAC*, BBSE, TAEE, ITUB, BBDC, SANB, BBAS (7). *BPAC não é do A4, mas fica no limite. **Meta ≥ 10/12 não demonstrada.** Fora do critério, EQTL e PINE batem.
+**Placar A6 (DL/EBITDA ≤ 0,3x):** ✔ CPLE, VIVT · CMIG 0,33x (explicado: definição) · TAEE (explicado: regulatório) · EGIE não conferido. **Aceito com ressalva** (o critério admitia divergência explicada).
+
+**Como fechar o A4 na 3ª rodada:** conferir o IFRS dos bancos e da BBSE contra o **próprio ITR/DFP** no RI (BB e Itaú publicam DF consolidadas IFRS semestrais) ou no ENET/CVM. Releases BR GAAP não servem para isso. Na EGIE, abrir a DRE da DFP 2025 e conferir "atribuído aos controladores" × total.
+
+## 3. Payout via DVA
+
+- **Conceito, J1 e J2:** a DVA mostra o que foi **destinado do lucro do exercício** (competência), o que é melhor que o caixa da DFC. Tem três limitações. (i) O dividendo adicional proposto costuma ficar em "lucros retidos" até a AGO (ICPC 08), e o payout sai **subestimado**. (ii) Dividendos pagos de **reservas** de anos anteriores não aparecem (CEBR, Vivo com redução de capital e recompra). (iii) A base é o **exercício 2025**, enquanto o ROE é o LTM até jun/set-26. A tela precisa dizer "payout do exercício 2025".
+- **SANB 100,0% exato e EKTR 100,0%:** **suspeitos.** O mais provável é que a regex ou a hierarquia capture uma linha que agrega lucros retidos e proventos ("dividendos/JCP/lucros retidos") ou um filho que já é o total do grupo. Obrigatório: despejar as linhas 7.08.04.* da DVA de SANB, EKTR, BBAS e ITUB, conferir com a DMPL e marcar "verificar" em qualquer payout com |x − 100| < 0,05.
+- **BBAS 38,1%** (declarado ÷ IFRS) não é comparável ao payout oficial do BB, que é calculado sobre o lucro ajustado BR GAAP. Rotular a base. O critério A7 da 1ª rodada (≈ 49%) se referia ao caixa; com a mudança para declarado, a meta precisa ser refeita.
+- **ABCB 63,0%** bate com o JCP declarado de 2025 (630,8 ÷ 1.002,0). Isso valida a mecânica em pelo menos um caso.
+
+**ABCB4 e SAPR11 na visão individual:** **corretas na prática.** Os números individuais batem ao milhar com o release consolidado de ambos. A Sanepar não tem controladas relevantes que exijam consolidação (só coligadas por equivalência), e a visão individual é a única entregue. No ABC, a individual (Cosif) coincide com o release. Não achamos chave consolidada alternativa nos dados disponíveis. Para a CVM, a DFP sob CD 20958 não tem `_con` em 2024–2026, como já registrado na 1ª rodada. Recomendação: manter a visão individual, mostrar "demonstração individual" na ficha e, como teste de regressão, comparar com o release a cada rodada.
+
+## 4. Correções obrigatórias, por prioridade
+
+**P0 (bloqueiam a publicação)**
+1. Corrigir o teste de `dado_antigo` em `nota()` e acrescentar ao `aceite.py` "nota com dado_antigo = 0" e "nota em papel sem cotação = 0 (ou oculta)".
+2. Payout: despejar a DVA de SANB, EKTR, BBAS e ITUB; corrigir a captura; flag "verificar" para 100,0% exato; payout descartado → nota limitada a 1 ou "sem nota", **nunca subir**.
+3. A4 contra fonte primária: IFRS dos bancos e da BBSE pelo ITR/DFP no RI ou no ENET; resolver EGIE (−9%), CPLE 1S26 (−3,4%) e TAEE/ISAE (IFRS do 1T e do 2T).
+4. LTM: exigir `ano(ITR) == ano(DFP)+1` e a mesma visão (con/ind) e a mesma `base_ll` nas três peças. Senão, LTM = None com motivo.
+5. Testes unitários com fixtures reais (SAPR ind, ABCB ind, EQTL com minoritários, SANB DVA, BBSE leiaute de seguradora) rodando no CI; `erros[]` e `downloads_falhos` dentro do JSON de saída.
+
+**P1 (antes da 1ª publicação, podem ir na mesma rodada)**
+6. Regra de variação do lucro LTM contra o exercício anterior acima de ±60% → "verificar · possível não recorrente" (LIGT, AXIA, VBBR, SAPR, EGIE, EQTL) e ROE médio de 3 anos na ficha.
+7. Universo: retirar deslistados e incorporados; classes sem cotação → "sem nota".
+8. Arredondamento da nota explícito (`floor(x+0,5)`).
+9. Doc: remover o FCF da tabela; payout = "declarado no exercício (DVA)"; citar os §§ 3º–4º do art. 202; suavizar "destrói valor".
+
+## 5. O que a tela precisa dizer (J2, condição para o futuro "b")
+
+- Em cada linha: **"Lucro contábil (IFRS/Cosif) dos últimos 12 meses até dd/mm/aaaa · fonte: CVM"**. Em bancos e elétricas: "pode diferir do lucro recorrente/ajustado do release (ex.: BB, regulatório nas transmissoras)".
+- **Payout: "do exercício 2025, proventos declarados ÷ lucro contábil"**. Recompras, reduções de capital e dividendos de reservas não entram.
+- Ícone "⚠ verificar" com frase simples quando houver possível não recorrente (SAPR, EQTL, EGIE, LIGT), ROE fora da faixa (BBSE) ou payout fora da faixa. Cor cinza, não vermelha.
+- Holdings (BBSE, CXSE): "ROE de holding com patrimônio pequeno, não comparável ao de seguradora".
+- Rodapé fixo: **"Material educativo. Não é recomendação de investimento (Res. CVM 20/2021). Faixas de cor são convenções do painel, não normas."**
+- "Sem nota" com o motivo (dado desatualizado, sem cotação, lucro indisponível), nunca nota 0.
+
+## 6. Divergências entre juízes
+- **J1** aprovaria (b) para os emissores com conferência ✔ (CMIG, ABCB, SAPR, VIVT, EQTL, PINE), só com números e sem cor. **J2** veta qualquer cor antes da correção P0-1 e do texto da seção 5. **J3** veta antes dos testes no CI. *Prevalece (c), com a expectativa de (b) na 3ª rodada.*
