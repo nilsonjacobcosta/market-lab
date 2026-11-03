@@ -46,11 +46,12 @@ FAIXAS = {
     "Seguros":          {"roe": ("alto", 15, 10), "payout": ("faixa", (25, 75), 95)},
     "Energia":          {"roe": ("alto", 12, 8), "div_liq_ebitda": ("baixo", 3.0, 4.0), "payout": ("faixa", (25, 80), 100)},
     "Saneamento":       {"roe": ("alto", 10, 6), "div_liq_ebitda": ("baixo", 2.5, 3.5), "payout": ("faixa", (25, 60), 90)},
-    "Telecomunicações": {"fcf_yield": ("alto", 6, 3), "div_liq_ebitda": ("baixo", 2.0, 3.0), "payout": ("faixa", (25, 100), 120)},
+    # FCF yield retirado (correção 9): a contagem de ações do composicao_capital tem escala inconsistente entre emissores
+    "Telecomunicações": {"roe": ("alto", 12, 8), "div_liq_ebitda": ("baixo", 2.0, 3.0), "payout": ("faixa", (25, 100), 120)},
 }
 # (verificar se fora de [a, b]; descartar se fora de [c, d])
 SANIDADE = {"roe": (-30, 60, -100, 150), "payout": (0, 110, 0, 150),
-            "div_liq_ebitda": (-3, 6, -10, 15), "fcf_yield": (-20, 25, -60, 60)}
+            "div_liq_ebitda": (-3, 6, -10, 15), }
 LOG = {"downloads_falhos": [], "mapa": {}}
 
 
@@ -358,6 +359,8 @@ def main():
             x, y = trims[atual], trims.get(ant)
             if y:
                 fl, faltou = ltm(fa, fluxo(x.get("DRE", {}), x.get("DFC", {})), fluxo(y.get("DRE", {}), y.get("DFC", {})))
+                m["componentes_lucro"] = {"exercicio_" + anos[-1]: fa["ll"], "acumulado_" + atual: x and fluxo(x.get("DRE", {}), {}).get("ll"),
+                                          "acumulado_" + ant: fluxo(y.get("DRE", {}), {}).get("ll")}
                 if fl["ll"] is not None:
                     f12, ref, base = fl, atual, "12 meses até " + atual
                     b_fim, b_ini = balanco(x.get("BPA", {}), x.get("BPP", {})), balanco(y.get("BPA", {}), y.get("BPP", {}))
@@ -391,8 +394,6 @@ def main():
             ebitda = (f12["ebit"] or 0) + (f12["da"] or 0) if f12.get("ebit") is not None else None
             m["div_liq_ebitda"] = round(dl / ebitda, 2) if ebitda and ebitda > 0 else None
             m["div_liq_pl"] = round(dl / b_fim["pl"], 2) if b_fim["pl"] and b_fim["pl"] > 0 else None
-            if acoes.get(cd) and p.get("preco") and f12.get("fco") is not None and f12.get("capex") is not None:
-                m["fcf_yield"] = round(100 * (f12["fco"] - f12["capex"]) / (acoes[cd] * p["preco"]), 1)
         # sanidade (correção 8)
         m["descartados"] = []
         for k, (va, vb, da_, db) in SANIDADE.items():
