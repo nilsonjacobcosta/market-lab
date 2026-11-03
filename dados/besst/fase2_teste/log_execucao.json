@@ -86,5 +86,3351 @@
   "IGSN": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)",
   "MEGA": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)",
   "OMGE": "nenhum código de negociação no FCA dos últimos 3 anos (deslistado? incluir no CSV manual)"
+ },
+ "conferencia": {
+  "BBAS": {
+   "visao": "con",
+   "dre_2025": {
+    "3.01": [
+     "receitas de intermediacao financeira",
+     319462104000.0
+    ],
+    "3.01.01": [
+     "receita de juros",
+     319462104000.0
+    ],
+    "3.02": [
+     "despesas de intermediacao financeira",
+     -218451386000.0
+    ],
+    "3.02.01": [
+     "despesa de juros",
+     -218451386000.0
+    ],
+    "3.03": [
+     "resultado bruto de intermediacao financeira",
+     101010718000.0
+    ],
+    "3.04": [
+     "outras despesas e receitas operacionais",
+     -95397082000.0
+    ],
+    "3.04.01": [
+     "despesa de provisao para perda esperada para risco de credito",
+     -66633285000.0
+    ],
+    "3.04.02": [
+     "receitas de prestacao de servicos",
+     34714379000.0
+    ],
+    "3.04.03": [
+     "despesas com pessoal",
+     -29178666000.0
+    ],
+    "3.04.04": [
+     "outras despesas de administrativas",
+     -9455529000.0
+    ],
+    "3.04.05": [
+     "despesas tributarias",
+     -8919531000.0
+    ],
+    "3.04.06": [
+     "outras receitas operacionais",
+     11222487000.0
+    ],
+    "3.04.07": [
+     "outras despesas operacionais",
+     -34998114000.0
+    ],
+    "3.04.08": [
+     "resultado da equivalencia patrimonial",
+     7851177000.0
+    ],
+    "3.05": [
+     "resultado antes dos tributos sobre o lucro",
+     5613636000.0
+    ],
+    "3.06": [
+     "imposto de renda e contribuicao social sobre o lucro",
+     11168302000.0
+    ],
+    "3.06.01": [
+     "corrente",
+     -6107576000.0
+    ],
+    "3.06.02": [
+     "diferido",
+     17275878000.0
+    ],
+    "3.07": [
+     "lucro ou prejuizo das operacoes continuadas",
+     16781938000.0
+    ],
+    "3.08": [
+     "resultado liquido das operacoes descontinuadas",
+     0.0
+    ],
+    "3.09": [
+     "lucro ou prejuizo antes das participacoes e contribuicoes estatutarias",
+     16781938000.0
+    ],
+    "3.10": [
+     "participacoes nos lucros e contribuicoes estatutarias",
+     0.0
+    ],
+    "3.11": [
+     "lucro ou prejuizo liquido consolidado do periodo",
+     16781938000.0
+    ],
+    "3.11.01": [
+     "atribuido aos socios da empresa controladora",
+     13698124000.0
+    ],
+    "3.11.02": [
+     "atribuido aos socios nao controladores",
+     3083814000.0
+    ],
+    "3.99": [
+     "lucro por acao (r$/acao)",
+     2400.0
+    ],
+    "3.99.01": [
+     "lucro basico por acao",
+     0.0
+    ],
+    "3.99.02": [
+     "lucro diluido por acao",
+     0.0
+    ]
+   },
+   "dva_2025": {
+    "7.08": [
+     "valor adicionado total a distribuir",
+     44434231000.0
+    ]
+   },
+   "dre_2026-06-30": {
+    "3.01": [
+     "receitas de intermediacao financeira",
+     160747114000.0
+    ],
+    "3.01.01": [
+     "receita de juros",
+     160747114000.0
+    ],
+    "3.02": [
+     "despesas de intermediacao financeira",
+     -111283805000.0
+    ],
+    "3.02.01": [
+     "despesa de juros",
+     -111283805000.0
+    ],
+    "3.03": [
+     "resultado bruto de intermediacao financeira",
+     49463309000.0
+    ],
+    "3.04": [
+     "outras despesas e receitas operacionais",
+     -46738182000.0
+    ],
+    "3.04.01": [
+     "despesa de provisao para perda esperada para risco de credito",
+     -34397820000.0
+    ],
+    "3.04.02": [
+     "receitas de prestacao de servicos",
+     17934696000.0
+    ],
+    "3.04.03": [
+     "despesas com pessoal",
+     -14280659000.0
+    ],
+    "3.04.04": [
+     "outras despesas de administrativas",
+     -4580140000.0
+    ],
+    "3.04.05": [
+     "despesas tributarias",
+     -4644109000.0
+    ],
+    "3.04.06": [
+     "outras receitas operacionais",
+     6525644000.0
+    ],
+    "3.04.07": [
+     "outras despesas operacionais",
+     -17098912000.0
+    ],
+    "3.04.08": [
+     "resultado da equivalencia patrimonial",
+     3803118000.0
+    ],
+    "3.05": [
+     "resultado antes dos tributos sobre o lucro",
+     2725127000.0
+    ],
+    "3.06": [
+     "imposto de renda e contribuicao social sobre o lucro",
+     3637834000.0
+    ],
+    "3.06.01": [
+     "corrente",
+     -2848021000.0
+    ],
+    "3.06.02": [
+     "diferido",
+     6485855000.0
+    ],
+    "3.07": [
+     "lucro ou prejuizo das operacoes continuadas",
+     6362961000.0
+    ],
+    "3.08": [
+     "resultado liquido das operacoes descontinuadas",
+     0.0
+    ],
+    "3.09": [
+     "lucro ou prejuizo antes das participacoes e contribuicoes estatutarias",
+     6362961000.0
+    ],
+    "3.10": [
+     "participacoes nos lucros e contribuicoes estatutarias",
+     0.0
+    ],
+    "3.11": [
+     "lucro ou prejuizo liquido consolidado do periodo",
+     6362961000.0
+    ],
+    "3.11.01": [
+     "atribuido aos socios da empresa controladora",
+     4794808000.0
+    ],
+    "3.11.02": [
+     "atribuido aos socios nao controladores",
+     1568153000.0
+    ],
+    "3.99": [
+     "lucro por acao (r$/acao)",
+     840.0
+    ],
+    "3.99.01": [
+     "lucro basico por acao",
+     0.0
+    ],
+    "3.99.02": [
+     "lucro diluido por acao",
+     0.0
+    ]
+   }
+  },
+  "SANB": {
+   "visao": "con",
+   "dre_2025": {
+    "3.01": [
+     "receitas de intermediacao financeira",
+     162494639000.0
+    ],
+    "3.02": [
+     "despesas de intermediacao financeira",
+     -104860321000.0
+    ],
+    "3.03": [
+     "resultado bruto de intermediacao financeira",
+     57634318000.0
+    ],
+    "3.04": [
+     "outras despesas e receitas operacionais",
+     -40905324000.0
+    ],
+    "3.04.01": [
+     "despesa de provisao para perda esperada para risco de credito",
+     0.0
+    ],
+    "3.04.02": [
+     "receitas de prestacao de servicos",
+     0.0
+    ],
+    "3.04.03": [
+     "despesas com pessoal",
+     -11699346000.0
+    ],
+    "3.04.04": [
+     "outras despesas de administrativas",
+     -46568217000.0
+    ],
+    "3.04.05": [
+     "despesas tributarias",
+     0.0
+    ],
+    "3.04.06": [
+     "outras receitas operacionais",
+     36552694000.0
+    ],
+    "3.04.07": [
+     "outras despesas operacionais",
+     -19648768000.0
+    ],
+    "3.04.08": [
+     "resultado da equivalencia patrimonial",
+     458313000.0
+    ],
+    "3.05": [
+     "resultado antes dos tributos sobre o lucro",
+     16728994000.0
+    ],
+    "3.06": [
+     "imposto de renda e contribuicao social sobre o lucro",
+     -3763871000.0
+    ],
+    "3.06.01": [
+     "corrente",
+     0.0
+    ],
+    "3.06.02": [
+     "diferido",
+     0.0
+    ],
+    "3.07": [
+     "lucro ou prejuizo das operacoes continuadas",
+     12965123000.0
+    ],
+    "3.08": [
+     "resultado liquido das operacoes descontinuadas",
+     0.0
+    ],
+    "3.09": [
+     "lucro ou prejuizo antes das participacoes e contribuicoes estatutarias",
+     12965123000.0
+    ],
+    "3.10": [
+     "participacoes nos lucros e contribuicoes estatutarias",
+     0.0
+    ],
+    "3.11": [
+     "lucro ou prejuizo liquido consolidado do periodo",
+     12965123000.0
+    ],
+    "3.11.01": [
+     "atribuido aos socios da empresa controladora",
+     12766035000.0
+    ],
+    "3.11.02": [
+     "atribuido aos socios nao controladores",
+     199088000.0
+    ],
+    "3.99": [
+     "lucro por acao (r$/acao)",
+     0.0
+    ],
+    "3.99.01": [
+     "lucro basico por acao",
+     0.0
+    ],
+    "3.99.02": [
+     "lucro diluido por acao",
+     0.0
+    ]
+   },
+   "dva_2025": {
+    "7.08": [
+     "valor adicionado total a distribuir",
+     33063569000.0
+    ]
+   },
+   "dre_2026-09-30": {
+    "3.01": [
+     "receitas da intermediacao financeira",
+     123390448000.0
+    ],
+    "3.01.01": [
+     "receitas com juros e similares",
+     123390448000.0
+    ],
+    "3.02": [
+     "despesas da intermediacao financeira",
+     -80461192000.0
+    ],
+    "3.02.01": [
+     "despesas com juros e similares",
+     -80461192000.0
+    ],
+    "3.03": [
+     "resultado bruto intermediacao financeira",
+     42929256000.0
+    ],
+    "3.04": [
+     "outras despesas/receitas operacionais",
+     -31401630000.0
+    ],
+    "3.04.01": [
+     "receitas de prestacao de servicos",
+     19337858000.0
+    ],
+    "3.04.02": [
+     "despesas de pessoal",
+     -8341531000.0
+    ],
+    "3.04.03": [
+     "outras despesas administrativas",
+     -7248210000.0
+    ],
+    "3.04.04": [
+     "despesas tributarias",
+     0.0
+    ],
+    "3.04.05": [
+     "outras receitas operacionais",
+     -6582134000.0
+    ],
+    "3.04.06": [
+     "outras despesas operacionais",
+     -28900042000.0
+    ],
+    "3.04.07": [
+     "resultado da equivalencia patrimonial",
+     332429000.0
+    ],
+    "3.05": [
+     "resultado antes dos tributos sobre o lucro",
+     11527626000.0
+    ],
+    "3.06": [
+     "imposto de renda e contribuicao social sobre o lucro",
+     -2440998000.0
+    ],
+    "3.06.01": [
+     "corrente",
+     0.0
+    ],
+    "3.06.02": [
+     "diferido",
+     0.0
+    ],
+    "3.07": [
+     "resultado liquido das operacoes continuadas",
+     9086628000.0
+    ],
+    "3.08": [
+     "resultado liquido das operacoes descontinuadas",
+     0.0
+    ],
+    "3.08.01": [
+     "lucro/prejuizo liquido das operacoes descontinuadas",
+     0.0
+    ],
+    "3.08.02": [
+     "ganhos/perdas liquidas sobre ativos de operacoes descontinuadas",
+     0.0
+    ],
+    "3.09": [
+     "lucro/prejuizo consolidado do periodo",
+     9086628000.0
+    ],
+    "3.09.01": [
+     "atribuido a socios da empresa controladora",
+     8896051000.0
+    ],
+    "3.09.02": [
+     "atribuido a socios nao controladores",
+     190577000.0
+    ],
+    "3.99": [
+     "lucro por acao - (r$ / acao)",
+     0.0
+    ],
+    "3.99.01": [
+     "lucro basico por acao",
+     0.0
+    ],
+    "3.99.02": [
+     "lucro diluido por acao",
+     0.0
+    ]
+   }
+  },
+  "BBDC": {
+   "visao": "con",
+   "dre_2025": {
+    "3.01": [
+     "receitas de intermediacao financeira",
+     270183106000.0
+    ],
+    "3.01.01": [
+     "receita de juros e similares",
+     267113345000.0
+    ],
+    "3.01.02": [
+     "ganhos / (perdas) liquidos de operacoes de cambio",
+     3583000.0
+    ],
+    "3.01.03": [
+     "ganhos / (perdas) liquidos de ativos financeiros ao vjora",
+     -99338000.0
+    ],
+    "3.01.04": [
+     "ganhos / (perda) liquidos de ativos e passivos financeiros ao valor justo por meio do resultado",
+     3165516000.0
+    ],
+    "3.02": [
+     "despesas de intermediacao financeira",
+     -193843753000.0
+    ],
+    "3.02.01": [
+     "despesa de juros e similares",
+     -193843753000.0
+    ],
+    "3.03": [
+     "resultado bruto de intermediacao financeira",
+     76339353000.0
+    ],
+    "3.04": [
+     "outras despesas e receitas operacionais",
+     -55314769000.0
+    ],
+    "3.04.01": [
+     "despesa de provisao para perda esperada para risco de credito",
+     -29607960000.0
+    ],
+    "3.04.02": [
+     "receitas de prestacao de servicos",
+     31073646000.0
+    ],
+    "3.04.03": [
+     "despesas com pessoal",
+     -24442062000.0
+    ],
+    "3.04.04": [
+     "outras despesas de administrativas",
+     -16072374000.0
+    ],
+    "3.04.05": [
+     "despesas tributarias",
+     -8089531000.0
+    ],
+    "3.04.06": [
+     "outras receitas operacionais",
+     61111265000.0
+    ],
+    "3.04.07": [
+     "outras despesas operacionais",
+     -71450380000.0
+    ],
+    "3.04.08": [
+     "resultado da equivalencia patrimonial",
+     2162627000.0
+    ],
+    "3.05": [
+     "resultado antes dos tributos sobre o lucro",
+     21024584000.0
+    ],
+    "3.06": [
+     "imposto de renda e contribuicao social sobre o lucro",
+     2900052000.0
+    ],
+    "3.06.01": [
+     "corrente",
+     -7061716000.0
+    ],
+    "3.06.02": [
+     "diferido",
+     9961768000.0
+    ],
+    "3.07": [
+     "lucro ou prejuizo das operacoes continuadas",
+     23924636000.0
+    ],
+    "3.08": [
+     "resultado liquido das operacoes descontinuadas",
+     0.0
+    ],
+    "3.09": [
+     "lucro ou prejuizo antes das participacoes e contribuicoes estatutarias",
+     23924636000.0
+    ],
+    "3.10": [
+     "participacoes nos lucros e contribuicoes estatutarias",
+     0.0
+    ],
+    "3.11": [
+     "lucro ou prejuizo liquido consolidado do periodo",
+     23924636000.0
+    ],
+    "3.11.01": [
+     "atribuido aos socios da empresa controladora",
+     23672706000.0
+    ],
+    "3.11.02": [
+     "atribuido aos socios nao controladores",
+     251930000.0
+    ],
+    "3.99": [
+     "lucro por acao (r$/acao)",
+     0.0
+    ],
+    "3.99.01": [
+     "lucro basico por acao",
+     0.0
+    ],
+    "3.99.02": [
+     "lucro diluido por acao",
+     0.0
+    ]
+   },
+   "dva_2025": {
+    "7.08": [
+     "valor adicionado total a distribuir",
+     53655031000.0
+    ]
+   },
+   "dre_2026-09-30": {
+    "3.01": [
+     "receitas de intermediacao financeira",
+     233682083000.0
+    ],
+    "3.01.01": [
+     "receita de juros e similares",
+     225078032000.0
+    ],
+    "3.01.02": [
+     "ganhos / (perdas) liquidos de operacoes em moeda estrangeira",
+     5340159000.0
+    ],
+    "3.01.03": [
+     "ganhos / (perdas) liquidos de ativos financeiros ao vjora",
+     42930000.0
+    ],
+    "3.01.04": [
+     "ganhos / (perda) liquidos de ativos e passivos financeiros ao valor justo por meio do resultado",
+     3220962000.0
+    ],
+    "3.02": [
+     "despesas de intermediacao financeira",
+     -168494939000.0
+    ],
+    "3.02.01": [
+     "despesa de juros e similares",
+     -168494939000.0
+    ],
+    "3.03": [
+     "resultado bruto de intermediacao financeira",
+     65187144000.0
+    ],
+    "3.04": [
+     "outras despesas e receitas operacionais",
+     -42417756000.0
+    ],
+    "3.04.01": [
+     "despesa de provisao para perda esperada para risco de credito",
+     -25404260000.0
+    ],
+    "3.04.02": [
+     "receitas de prestacao de servicos",
+     23773236000.0
+    ],
+    "3.04.03": [
+     "despesas com pessoal",
+     -18652109000.0
+    ],
+    "3.04.04": [
+     "outras despesas de administrativas",
+     -12187746000.0
+    ],
+    "3.04.05": [
+     "despesas tributarias",
+     -6577402000.0
+    ],
+    "3.04.06": [
+     "outras receitas operacionais",
+     49218684000.0
+    ],
+    "3.04.07": [
+     "outras despesas operacionais",
+     -54033912000.0
+    ],
+    "3.04.08": [
+     "resultado da equivalencia patrimonial",
+     1445753000.0
+    ],
+    "3.05": [
+     "resultado antes dos tributos sobre o lucro",
+     22769388000.0
+    ],
+    "3.06": [
+     "imposto de renda e contribuicao social sobre o lucro",
+     -2857288000.0
+    ],
+    "3.06.01": [
+     "corrente",
+     6176224000.0
+    ],
+    "3.06.02": [
+     "diferido",
+     -9033512000.0
+    ],
+    "3.07": [
+     "lucro ou prejuizo das operacoes continuadas",
+     19912100000.0
+    ],
+    "3.08": [
+     "resultado liquido das operacoes descontinuadas",
+     0.0
+    ],
+    "3.09": [
+     "lucro ou prejuizo antes das participacoes e contribuicoes estatutarias",
+     19912100000.0
+    ],
+    "3.10": [
+     "participacoes nos lucros e contribuicoes estatutarias",
+     0.0
+    ],
+    "3.11": [
+     "lucro ou prejuizo liquido consolidado do periodo",
+     19912100000.0
+    ],
+    "3.11.01": [
+     "atribuido aos socios da empresa controladora",
+     19647948000.0
+    ],
+    "3.11.02": [
+     "atribuido aos socios nao controladores",
+     264152000.0
+    ],
+    "3.99": [
+     "lucro por acao (r$/acao)",
+     0.0
+    ],
+    "3.99.01": [
+     "lucro basico por acao",
+     0.0
+    ],
+    "3.99.02": [
+     "lucro diluido por acao",
+     0.0
+    ]
+   }
+  },
+  "ITUB": {
+   "visao": "con",
+   "dre_2025": {
+    "3.01": [
+     "receitas da intermediacao financeira",
+     387118000000.0
+    ],
+    "3.01.01": [
+     "receitas de juros e similares",
+     254790000000.0
+    ],
+    "3.01.02": [
+     "resultado de ativos e passivos financeiros ao valor justo por meio do resultado",
+     58054000000.0
+    ],
+    "3.01.03": [
+     "ajuste ao valor justo de ativos e passivos financeiros",
+     0.0
+    ],
+    "3.01.04": [
+     "resultado de operacoes de cambio e variacao cambial de transacoes no exterior",
+     19218000000.0
+    ],
+    "3.01.05": [
+     "receitas de prestacao de servicos e tarifas bancarias",
+     46997000000.0
+    ],
+    "3.01.06": [
+     "resultado de contratos de seguro e previdencia privada",
+     8731000000.0
+    ],
+    "3.01.07": [
+     "outras receitas / (despesas)",
+     -672000000.0
+    ],
+    "3.02": [
+     "despesas da intermediacao financeira",
+     -248171000000.0
+    ],
+    "3.02.01": [
+     "despesas de juros e similares",
+     -219338000000.0
+    ],
+    "3.02.02": [
+     "(perda) de credito esperada com operacoes de credito e arrendamento financeiro",
+     -32617000000.0
+    ],
+    "3.02.03": [
+     "(perda) de credito esperada com demais ativos financeiros, liquida",
+     3784000000.0
+    ],
+    "3.02.04": [
+     "(despesas) / recuperacao de sinistros",
+     0.0
+    ],
+    "3.03": [
+     "resultado bruto intermediacao financeira",
+     138947000000.0
+    ],
+    "3.04": [
+     "outras despesas/receitas operacionais",
+     -88697000000.0
+    ],
+    "3.04.01": [
+     "receitas de prestacao de servicos",
+     0.0
+    ],
+    "3.04.02": [
+     "despesas de pessoal",
+     0.0
+    ],
+    "3.04.03": [
+     "outras despesas administrativas",
+     -79176000000.0
+    ],
+    "3.04.04": [
+     "despesas tributarias",
+     -10938000000.0
+    ],
+    "3.04.05": [
+     "outras receitas operacionais",
+     0.0
+    ],
+    "3.04.06": [
+     "outras despesas operacionais",
+     0.0
+    ],
+    "3.04.07": [
+     "resultado da equivalencia patrimonial",
+     1417000000.0
+    ],
+    "3.05": [
+     "resultado antes dos tributos sobre o lucro",
+     50250000000.0
+    ],
+    "3.06": [
+     "imposto de renda e contribuicao social sobre o lucro",
+     -4401000000.0
+    ],
+    "3.06.01": [
+     "corrente",
+     -10695000000.0
+    ],
+    "3.06.02": [
+     "diferido",
+     6294000000.0
+    ],
+    "3.07": [
+     "resultado liquido das operacoes continuadas",
+     45849000000.0
+    ],
+    "3.08": [
+     "resultado liquido das operacoes descontinuadas",
+     0.0
+    ],
+    "3.08.01": [
+     "lucro/prejuizo liquido das operacoes descontinuadas",
+     0.0
+    ],
+    "3.08.02": [
+     "ganhos/perdas liquidas sobre ativos de operacoes descontinuadas",
+     0.0
+    ],
+    "3.09": [
+     "lucro/prejuizo consolidado do periodo",
+     45849000000.0
+    ],
+    "3.09.01": [
+     "atribuido a socios da empresa controladora",
+     44857000000.0
+    ],
+    "3.09.02": [
+     "atribuido a socios nao controladores",
+     992000000.0
+    ],
+    "3.99": [
+     "lucro por acao - (r$ / acao)",
+     16120.000000000002
+    ],
+    "3.99.01": [
+     "lucro basico por acao",
+     8100.0
+    ],
+    "3.99.02": [
+     "lucro diluido por acao",
+     8020.0
+    ]
+   },
+   "dva_2025": {
+    "7.08": [
+     "valor adicionado total a distribuir",
+     108407000000.0
+    ]
+   },
+   "dre_2026-06-30": {
+    "3.01": [
+     "receitas da intermediacao financeira",
+     199118000000.0
+    ],
+    "3.01.01": [
+     "receitas de juros e similares",
+     144898000000.0
+    ],
+    "3.01.02": [
+     "resultado de ativos e passivos financeiros ao valor justo por meio do resultado",
+     19619000000.0
+    ],
+    "3.01.03": [
+     "ajuste ao valor justo de ativos e passivos financeiros",
+     0.0
+    ],
+    "3.01.04": [
+     "resultado de operacoes de cambio e variacao cambial de transacoes no exterior",
+     4143000000.0
+    ],
+    "3.01.05": [
+     "receitas de prestacao de servicos e tarifas bancarias",
+     24012000000.0
+    ],
+    "3.01.06": [
+     "resultado de contratos de seguro e previdencia privada",
+     4790000000.0
+    ],
+    "3.01.07": [
+     "outras receitas / (despesas)",
+     1656000000.0
+    ],
+    "3.01.08": [
+     "outras receitas",
+     0.0
+    ],
+    "3.01.09": [
+     "despesas de juros e rendimentos",
+     0.0
+    ],
+    "3.02": [
+     "despesas da intermediacao financeira",
+     -127362000000.0
+    ],
+    "3.02.01": [
+     "despesas de juros e similares",
+     -108965000000.0
+    ],
+    "3.02.02": [
+     "(perda) de credito esperada com operacoes de credito e arrendamento financeiro",
+     -16889000000.0
+    ],
+    "3.02.03": [
+     "(perda) de credito esperada com demais ativos financeiros, liquida",
+     -1508000000.0
+    ],
+    "3.02.04": [
+     "(despesas) / recuperacao de sinistros",
+     0.0
+    ],
+    "3.03": [
+     "resultado bruto intermediacao financeira",
+     71756000000.0
+    ],
+    "3.04": [
+     "outras despesas/receitas operacionais",
+     -44774000000.0
+    ],
+    "3.04.01": [
+     "receitas de prestacao de servicos",
+     0.0
+    ],
+    "3.04.02": [
+     "despesas de pessoal",
+     0.0
+    ],
+    "3.04.03": [
+     "outras despesas administrativas",
+     -40906000000.0
+    ],
+    "3.04.04": [
+     "despesas tributarias",
+     -5807000000.0
+    ],
+    "3.04.05": [
+     "outras receitas operacionais",
+     0.0
+    ],
+    "3.04.06": [
+     "outras despesas operacionais",
+     0.0
+    ],
+    "3.04.07": [
+     "resultado da equivalencia patrimonial",
+     1939000000.0
+    ],
+    "3.05": [
+     "resultado antes dos tributos sobre o lucro",
+     26982000000.0
+    ],
+    "3.06": [
+     "imposto de renda e contribuicao social sobre o lucro",
+     -2783000000.0
+    ],
+    "3.06.01": [
+     "corrente",
+     -5895000000.0
+    ],
+    "3.06.02": [
+     "diferido",
+     3112000000.0
+    ],
+    "3.07": [
+     "resultado liquido das operacoes continuadas",
+     24199000000.0
+    ],
+    "3.08": [
+     "resultado liquido das operacoes descontinuadas",
+     0.0
+    ],
+    "3.08.01": [
+     "lucro/prejuizo liquido das operacoes descontinuadas",
+     0.0
+    ],
+    "3.08.02": [
+     "ganhos/perdas liquidas sobre ativos de operacoes descontinuadas",
+     0.0
+    ],
+    "3.09": [
+     "lucro/prejuizo consolidado do periodo",
+     24199000000.0
+    ],
+    "3.09.01": [
+     "atribuido a socios da empresa controladora",
+     23615000000.0
+    ],
+    "3.09.02": [
+     "atribuido a socios nao controladores",
+     584000000.0
+    ],
+    "3.99": [
+     "lucro por acao - (r$ / acao)",
+     8520.0
+    ],
+    "3.99.01": [
+     "lucro basico por acao",
+     4280.0
+    ],
+    "3.99.02": [
+     "lucro diluido por acao",
+     4240.0
+    ]
+   }
+  },
+  "BPAC": {
+   "visao": "con",
+   "dre_2025": {
+    "3.01": [
+     "receitas da intermediacao financeira",
+     28145817000.0
+    ],
+    "3.01.01": [
+     "resultado liquido com instrumentos financeiros",
+     34546920000.0
+    ],
+    "3.01.02": [
+     "perdas esperadas decorrentes de risco de credito",
+     -6401103000.0
+    ],
+    "3.01.03": [
+     "perdas esperadas decorrentes de titulos com caracteristicas de concessao de credito, garantias finan",
+     0.0
+    ],
+    "3.01.04": [
+     "variacoes cambiais liquidas",
+     0.0
+    ],
+    "3.02": [
+     "despesas da intermediacao financeira",
+     0.0
+    ],
+    "3.03": [
+     "resultado bruto intermediacao financeira",
+     28145817000.0
+    ],
+    "3.04": [
+     "outras despesas/receitas operacionais",
+     -8854137000.0
+    ],
+    "3.04.01": [
+     "receitas de prestacao de servicos",
+     13106423000.0
+    ],
+    "3.04.02": [
+     "despesas de pessoal",
+     -7907296000.0
+    ],
+    "3.04.03": [
+     "outras despesas administrativas",
+     -10851479000.0
+    ],
+    "3.04.04": [
+     "despesas tributarias",
+     -6315844000.0
+    ],
+    "3.04.05": [
+     "outras receitas operacionais",
+     2229945000.0
+    ],
+    "3.04.06": [
+     "outras despesas operacionais",
+     0.0
+    ],
+    "3.04.07": [
+     "resultado da equivalencia patrimonial",
+     884114000.0
+    ],
+    "3.05": [
+     "resultado antes dos tributos sobre o lucro",
+     19291680000.0
+    ],
+    "3.06": [
+     "imposto de renda e contribuicao social sobre o lucro",
+     -2627877000.0
+    ],
+    "3.06.01": [
+     "corrente",
+     -5177150000.0
+    ],
+    "3.06.02": [
+     "diferido",
+     2549273000.0
+    ],
+    "3.07": [
+     "resultado liquido das operacoes continuadas",
+     16663803000.0
+    ],
+    "3.08": [
+     "resultado liquido das operacoes descontinuadas",
+     0.0
+    ],
+    "3.08.01": [
+     "lucro/prejuizo liquido das operacoes descontinuadas",
+     0.0
+    ],
+    "3.08.02": [
+     "ganhos/perdas liquidas sobre ativos de operacoes descontinuadas",
+     0.0
+    ],
+    "3.09": [
+     "lucro/prejuizo consolidado do periodo",
+     16663803000.0
+    ],
+    "3.09.01": [
+     "atribuido a socios da empresa controladora",
+     16005964000.0
+    ],
+    "3.09.02": [
+     "atribuido a socios nao controladores",
+     657839000.0
+    ],
+    "3.99": [
+     "lucro por acao - (r$ / acao)",
+     0.0
+    ],
+    "3.99.01": [
+     "lucro basico por acao",
+     0.0
+    ],
+    "3.99.02": [
+     "lucro diluido por acao",
+     0.0
+    ]
+   },
+   "dva_2025": {
+    "7.08": [
+     "valor adicionado total a distribuir",
+     33704517000.0
+    ]
+   },
+   "dre_2026-06-30": {
+    "3.01": [
+     "receitas da intermediacao financeira",
+     18586176000.0
+    ],
+    "3.01.01": [
+     "resultado liquido com instrumentos financeiros",
+     18586176000.0
+    ],
+    "3.02": [
+     "despesas da intermediacao financeira",
+     -3831862000.0
+    ],
+    "3.02.01": [
+     "perdas esperadas decorrentes de risco de credito",
+     -3831862000.0
+    ],
+    "3.03": [
+     "resultado bruto intermediacao financeira",
+     14754314000.0
+    ],
+    "3.04": [
+     "outras despesas/receitas operacionais",
+     -2804190000.0
+    ],
+    "3.04.01": [
+     "receitas de prestacao de servicos",
+     7186725000.0
+    ],
+    "3.04.02": [
+     "despesas de pessoal",
+     -4195894000.0
+    ],
+    "3.04.03": [
+     "outras despesas administrativas",
+     -6215607000.0
+    ],
+    "3.04.04": [
+     "despesas tributarias",
+     -4237913000.0
+    ],
+    "3.04.05": [
+     "outras receitas operacionais",
+     4589739000.0
+    ],
+    "3.04.06": [
+     "outras despesas operacionais",
+     0.0
+    ],
+    "3.04.07": [
+     "resultado da equivalencia patrimonial",
+     68760000.0
+    ],
+    "3.05": [
+     "resultado antes dos tributos sobre o lucro",
+     11950124000.0
+    ],
+    "3.06": [
+     "imposto de renda e contribuicao social sobre o lucro",
+     -1877851000.0
+    ],
+    "3.06.01": [
+     "corrente",
+     -3150612000.0
+    ],
+    "3.06.02": [
+     "diferido",
+     1272761000.0
+    ],
+    "3.07": [
+     "resultado liquido das operacoes continuadas",
+     10072273000.0
+    ],
+    "3.08": [
+     "resultado liquido das operacoes descontinuadas",
+     0.0
+    ],
+    "3.08.01": [
+     "lucro/prejuizo liquido das operacoes descontinuadas",
+     0.0
+    ],
+    "3.08.02": [
+     "ganhos/perdas liquidas sobre ativos de operacoes descontinuadas",
+     0.0
+    ],
+    "3.09": [
+     "lucro/prejuizo consolidado do periodo",
+     10072273000.0
+    ],
+    "3.09.01": [
+     "atribuido a socios da empresa controladora",
+     9663323000.0
+    ],
+    "3.09.02": [
+     "atribuido a socios nao controladores",
+     408950000.0
+    ],
+    "3.99": [
+     "lucro por acao - (r$ / acao)",
+     0.0
+    ],
+    "3.99.01": [
+     "lucro basico por acao",
+     0.0
+    ],
+    "3.99.02": [
+     "lucro diluido por acao",
+     0.0
+    ]
+   }
+  },
+  "CMIG": {
+   "visao": "con",
+   "dre_2025": {
+    "3.01": [
+     "receita de venda de bens e/ou servicos",
+     42751283000.0
+    ],
+    "3.02": [
+     "custo dos bens e/ou servicos vendidos",
+     -35513967000.0
+    ],
+    "3.02.01": [
+     "custos com energia eletrica e gas",
+     -23680703000.0
+    ],
+    "3.02.02": [
+     "custos de construcao de infraestrutura",
+     -6102936000.0
+    ],
+    "3.02.03": [
+     "custos de operacao",
+     -5730328000.0
+    ],
+    "3.03": [
+     "resultado bruto",
+     7237316000.0
+    ],
+    "3.04": [
+     "despesas/receitas operacionais",
+     -487008000.0
+    ],
+    "3.04.01": [
+     "despesas com vendas",
+     -161421000.0
+    ],
+    "3.04.02": [
+     "despesas gerais e administrativas",
+     -826866000.0
+    ],
+    "3.04.03": [
+     "perdas pela nao recuperabilidade de ativos",
+     0.0
+    ],
+    "3.04.04": [
+     "outras receitas operacionais",
+     174008000.0
+    ],
+    "3.04.05": [
+     "outras despesas operacionais",
+     126339000.0
+    ],
+    "3.04.06": [
+     "resultado de equivalencia patrimonial",
+     200932000.0
+    ],
+    "3.05": [
+     "resultado antes do resultado financeiro e dos tributos",
+     6750308000.0
+    ],
+    "3.06": [
+     "resultado financeiro",
+     -1079084000.0
+    ],
+    "3.06.01": [
+     "receitas financeiras",
+     982104000.0
+    ],
+    "3.06.02": [
+     "despesas financeiras",
+     -2061188000.0
+    ],
+    "3.07": [
+     "resultado antes dos tributos sobre o lucro",
+     5671224000.0
+    ],
+    "3.08": [
+     "imposto de renda e contribuicao social sobre o lucro",
+     -771607000.0
+    ],
+    "3.08.01": [
+     "corrente",
+     -562122000.0
+    ],
+    "3.08.02": [
+     "diferido",
+     -209485000.0
+    ],
+    "3.09": [
+     "resultado liquido das operacoes continuadas",
+     4899617000.0
+    ],
+    "3.10": [
+     "resultado liquido de operacoes descontinuadas",
+     0.0
+    ],
+    "3.10.01": [
+     "lucro/prejuizo liquido das operacoes descontinuadas",
+     0.0
+    ],
+    "3.10.02": [
+     "ganhos/perdas liquidas sobre ativos de operacoes descontinuadas",
+     0.0
+    ],
+    "3.11": [
+     "lucro/prejuizo consolidado do periodo",
+     4899617000.0
+    ],
+    "3.11.01": [
+     "atribuido a socios da empresa controladora",
+     4897409000.0
+    ],
+    "3.11.02": [
+     "atribuido a socios nao controladores",
+     2208000.0
+    ],
+    "3.99": [
+     "lucro por acao - (reais / acao)",
+     0.0
+    ],
+    "3.99.01": [
+     "lucro basico por acao",
+     0.0
+    ],
+    "3.99.02": [
+     "lucro diluido por acao",
+     0.0
+    ]
+   },
+   "dva_2025": {
+    "7.08": [
+     "distribuicao do valor adicionado",
+     21680101000.0
+    ],
+    "7.08.01": [
+     "pessoal",
+     883645000.0
+    ],
+    "7.08.02": [
+     "impostos, taxas e contribuicoes",
+     13728868000.0
+    ],
+    "7.08.03": [
+     "remuneracao de capitais de terceiros",
+     2167971000.0
+    ],
+    "7.08.04": [
+     "remuneracao de capitais proprios",
+     4899617000.0
+    ],
+    "7.08.05": [
+     "outros",
+     0.0
+    ]
+   },
+   "dre_2026-06-30": {
+    "3.01": [
+     "receita de venda de bens e/ou servicos",
+     21618781000.0
+    ],
+    "3.02": [
+     "custo dos bens e/ou servicos vendidos",
+     -17898542000.0
+    ],
+    "3.02.01": [
+     "custos com energia eletrica e gas",
+     -11661194000.0
+    ],
+    "3.02.02": [
+     "custos de construcao de infraestrutura",
+     -3235526000.0
+    ],
+    "3.02.03": [
+     "custos de operacao",
+     -3001822000.0
+    ],
+    "3.03": [
+     "resultado bruto",
+     3720239000.0
+    ],
+    "3.04": [
+     "despesas/receitas operacionais",
+     -447988000.0
+    ],
+    "3.04.01": [
+     "despesas com vendas",
+     93650000.0
+    ],
+    "3.04.02": [
+     "despesas gerais e administrativas",
+     -431917000.0
+    ],
+    "3.04.03": [
+     "perdas pela nao recuperabilidade de ativos",
+     0.0
+    ],
+    "3.04.04": [
+     "outras receitas operacionais",
+     26191000.0
+    ],
+    "3.04.05": [
+     "outras despesas operacionais",
+     -279620000.0
+    ],
+    "3.04.06": [
+     "resultado de equivalencia patrimonial",
+     143708000.0
+    ],
+    "3.05": [
+     "resultado antes do resultado financeiro e dos tributos",
+     3272251000.0
+    ],
+    "3.06": [
+     "resultado financeiro",
+     -1189979000.0
+    ],
+    "3.06.01": [
+     "receitas financeiras",
+     543460000.0
+    ],
+    "3.06.02": [
+     "despesas financeiras",
+     -1733439000.0
+    ],
+    "3.07": [
+     "resultado antes dos tributos sobre o lucro",
+     2082272000.0
+    ],
+    "3.08": [
+     "imposto de renda e contribuicao social sobre o lucro",
+     -157849000.0
+    ],
+    "3.08.01": [
+     "corrente",
+     -213879000.0
+    ],
+    "3.08.02": [
+     "diferido",
+     56030000.0
+    ],
+    "3.09": [
+     "resultado liquido das operacoes continuadas",
+     1924423000.0
+    ],
+    "3.10": [
+     "resultado liquido de operacoes descontinuadas",
+     0.0
+    ],
+    "3.10.01": [
+     "lucro/prejuizo liquido das operacoes descontinuadas",
+     0.0
+    ],
+    "3.10.02": [
+     "ganhos/perdas liquidas sobre ativos de operacoes descontinuadas",
+     0.0
+    ],
+    "3.11": [
+     "lucro/prejuizo consolidado do periodo",
+     1924423000.0
+    ],
+    "3.11.01": [
+     "atribuido a socios da empresa controladora",
+     1923577000.0
+    ],
+    "3.11.02": [
+     "atribuido a socios nao controladores",
+     846000.0
+    ],
+    "3.99": [
+     "lucro por acao - (reais / acao)",
+     0.0
+    ],
+    "3.99.01": [
+     "lucro basico por acao",
+     0.0
+    ],
+    "3.99.02": [
+     "lucro diluido por acao",
+     0.0
+    ]
+   }
+  },
+  "TAEE": {
+   "visao": "con",
+   "dre_2025": {
+    "3.01": [
+     "receita de venda de bens e/ou servicos",
+     4624113000.0
+    ],
+    "3.01.01": [
+     "receita de infra, correcao monet, operacao e manutencao, e outras, liquidas",
+     3445360000.0
+    ],
+    "3.01.02": [
+     "remuneracao do ativo contrato de concessao",
+     1178753000.0
+    ],
+    "3.02": [
+     "custo dos bens e/ou servicos vendidos",
+     -2077823000.0
+    ],
+    "3.02.01": [
+     "pessoal",
+     -92362000.0
+    ],
+    "3.02.02": [
+     "material",
+     -1880069000.0
+    ],
+    "3.02.03": [
+     "servicos de terceiros",
+     -53840000.0
+    ],
+    "3.02.04": [
+     "depreciacao e amortizacao",
+     -6319000.0
+    ],
+    "3.02.05": [
+     "outros custos operacionais",
+     -45233000.0
+    ],
+    "3.03": [
+     "resultado bruto",
+     2546290000.0
+    ],
+    "3.04": [
+     "despesas/receitas operacionais",
+     189993000.0
+    ],
+    "3.04.01": [
+     "despesas com vendas",
+     0.0
+    ],
+    "3.04.02": [
+     "despesas gerais e administrativas",
+     -267197000.0
+    ],
+    "3.04.03": [
+     "perdas pela nao recuperabilidade de ativos",
+     0.0
+    ],
+    "3.04.04": [
+     "outras receitas operacionais",
+     0.0
+    ],
+    "3.04.05": [
+     "outras despesas operacionais",
+     0.0
+    ],
+    "3.04.06": [
+     "resultado de equivalencia patrimonial",
+     457190000.0
+    ],
+    "3.05": [
+     "resultado antes do resultado financeiro e dos tributos",
+     2736283000.0
+    ],
+    "3.06": [
+     "resultado financeiro",
+     -1037409000.0
+    ],
+    "3.06.01": [
+     "receitas financeiras",
+     134252000.0
+    ],
+    "3.06.02": [
+     "despesas financeiras",
+     -1171661000.0
+    ],
+    "3.07": [
+     "resultado antes dos tributos sobre o lucro",
+     1698874000.0
+    ],
+    "3.08": [
+     "imposto de renda e contribuicao social sobre o lucro",
+     -119011000.0
+    ],
+    "3.08.01": [
+     "corrente",
+     -27005000.0
+    ],
+    "3.08.02": [
+     "diferido",
+     -92006000.0
+    ],
+    "3.09": [
+     "resultado liquido das operacoes continuadas",
+     1579863000.0
+    ],
+    "3.10": [
+     "resultado liquido de operacoes descontinuadas",
+     0.0
+    ],
+    "3.10.01": [
+     "lucro/prejuizo liquido das operacoes descontinuadas",
+     0.0
+    ],
+    "3.10.02": [
+     "ganhos/perdas liquidas sobre ativos de operacoes descontinuadas",
+     0.0
+    ],
+    "3.11": [
+     "lucro/prejuizo consolidado do periodo",
+     1579863000.0
+    ],
+    "3.11.01": [
+     "atribuido a socios da empresa controladora",
+     1579863000.0
+    ],
+    "3.11.02": [
+     "atribuido a socios nao controladores",
+     0.0
+    ],
+    "3.99": [
+     "lucro por acao - (reais / acao)",
+     0.0
+    ],
+    "3.99.01": [
+     "lucro basico por acao",
+     0.0
+    ],
+    "3.99.02": [
+     "lucro diluido por acao",
+     0.0
+    ]
+   },
+   "dva_2025": {
+    "7.08": [
+     "distribuicao do valor adicionado",
+     3542440000.0
+    ],
+    "7.08.01": [
+     "pessoal",
+     219261000.0
+    ],
+    "7.08.02": [
+     "impostos, taxas e contribuicoes",
+     571655000.0
+    ],
+    "7.08.03": [
+     "remuneracao de capitais de terceiros",
+     1171661000.0
+    ],
+    "7.08.04": [
+     "remuneracao de capitais proprios",
+     1579863000.0
+    ],
+    "7.08.05": [
+     "outros",
+     0.0
+    ]
+   },
+   "dre_2026-06-30": {
+    "3.01": [
+     "receita de venda de bens e/ou servicos",
+     2105003000.0
+    ],
+    "3.01.01": [
+     "receita de infra, correcao monet, operacao e manutencao, e outras, liquidas",
+     1502901000.0
+    ],
+    "3.01.02": [
+     "remuneracao do ativo de contrato da concessao",
+     602102000.0
+    ],
+    "3.02": [
+     "custo dos bens e/ou servicos vendidos",
+     -551337000.0
+    ],
+    "3.02.01": [
+     "pessoal",
+     -48190000.0
+    ],
+    "3.02.02": [
+     "material",
+     -466128000.0
+    ],
+    "3.02.03": [
+     "servicos de terceiros",
+     -22955000.0
+    ],
+    "3.02.04": [
+     "depreciacao e amortizacao",
+     -13420000.0
+    ],
+    "3.02.05": [
+     "outros custos operacionais",
+     -644000.0
+    ],
+    "3.03": [
+     "resultado bruto",
+     1553666000.0
+    ],
+    "3.04": [
+     "despesas/receitas operacionais",
+     159992000.0
+    ],
+    "3.04.01": [
+     "despesas com vendas",
+     0.0
+    ],
+    "3.04.02": [
+     "despesas gerais e administrativas",
+     -143019000.0
+    ],
+    "3.04.03": [
+     "perdas pela nao recuperabilidade de ativos",
+     0.0
+    ],
+    "3.04.04": [
+     "outras receitas operacionais",
+     0.0
+    ],
+    "3.04.05": [
+     "outras despesas operacionais",
+     0.0
+    ],
+    "3.04.06": [
+     "resultado de equivalencia patrimonial",
+     303011000.0
+    ],
+    "3.05": [
+     "resultado antes do resultado financeiro e dos tributos",
+     1713658000.0
+    ],
+    "3.06": [
+     "resultado financeiro",
+     -674863000.0
+    ],
+    "3.06.01": [
+     "receitas financeiras",
+     71095000.0
+    ],
+    "3.06.02": [
+     "despesas financeiras",
+     -745958000.0
+    ],
+    "3.07": [
+     "resultado antes dos tributos sobre o lucro",
+     1038795000.0
+    ],
+    "3.08": [
+     "imposto de renda e contribuicao social sobre o lucro",
+     -118005000.0
+    ],
+    "3.08.01": [
+     "corrente",
+     -16512000.0
+    ],
+    "3.08.02": [
+     "diferido",
+     -101493000.0
+    ],
+    "3.09": [
+     "resultado liquido das operacoes continuadas",
+     920790000.0
+    ],
+    "3.10": [
+     "resultado liquido de operacoes descontinuadas",
+     0.0
+    ],
+    "3.10.01": [
+     "lucro/prejuizo liquido das operacoes descontinuadas",
+     0.0
+    ],
+    "3.10.02": [
+     "ganhos/perdas liquidas sobre ativos de operacoes descontinuadas",
+     0.0
+    ],
+    "3.11": [
+     "lucro/prejuizo consolidado do periodo",
+     920790000.0
+    ],
+    "3.11.01": [
+     "atribuido a socios da empresa controladora",
+     920790000.0
+    ],
+    "3.11.02": [
+     "atribuido a socios nao controladores",
+     0.0
+    ],
+    "3.99": [
+     "lucro por acao - (reais / acao)",
+     0.0
+    ],
+    "3.99.01": [
+     "lucro basico por acao",
+     0.0
+    ],
+    "3.99.02": [
+     "lucro diluido por acao",
+     0.0
+    ]
+   }
+  },
+  "ISAE": {
+   "visao": "con",
+   "dre_2025": {
+    "3.01": [
+     "receita de venda de bens e/ou servicos",
+     9411153000.0
+    ],
+    "3.01.01": [
+     "receita de infra, operacao e manutencao, ganho de eficiencia da implem da infra e outras, liquidas",
+     6734720000.0
+    ],
+    "3.01.02": [
+     "remuneracao dos ativos da concessao, liquidas",
+     2676433000.0
+    ],
+    "3.02": [
+     "custo dos bens e/ou servicos vendidos",
+     -5708038000.0
+    ],
+    "3.02.01": [
+     "custo dos servicos de implementacao da infraestrutura e operacao e manutencao",
+     -5704760000.0
+    ],
+    "3.02.02": [
+     "custo dos servicos prestados",
+     -3278000.0
+    ],
+    "3.03": [
+     "resultado bruto",
+     3703115000.0
+    ],
+    "3.04": [
+     "despesas/receitas operacionais",
+     428791000.0
+    ],
+    "3.04.01": [
+     "despesas com vendas",
+     159463000.0
+    ],
+    "3.04.02": [
+     "despesas gerais e administrativas",
+     -270484000.0
+    ],
+    "3.04.03": [
+     "perdas pela nao recuperabilidade de ativos",
+     0.0
+    ],
+    "3.04.04": [
+     "outras receitas operacionais",
+     105114000.0
+    ],
+    "3.04.05": [
+     "outras despesas operacionais",
+     -76351000.0
+    ],
+    "3.04.06": [
+     "resultado de equivalencia patrimonial",
+     511049000.0
+    ],
+    "3.05": [
+     "resultado antes do resultado financeiro e dos tributos",
+     4131906000.0
+    ],
+    "3.06": [
+     "resultado financeiro",
+     -1351597000.0
+    ],
+    "3.06.01": [
+     "receitas financeiras",
+     445858000.0
+    ],
+    "3.06.02": [
+     "despesas financeiras",
+     -1797455000.0
+    ],
+    "3.07": [
+     "resultado antes dos tributos sobre o lucro",
+     2780309000.0
+    ],
+    "3.08": [
+     "imposto de renda e contribuicao social sobre o lucro",
+     -269294000.0
+    ],
+    "3.08.01": [
+     "corrente",
+     -112015000.0
+    ],
+    "3.08.02": [
+     "diferido",
+     -157279000.0
+    ],
+    "3.09": [
+     "resultado liquido das operacoes continuadas",
+     2511015000.0
+    ],
+    "3.10": [
+     "resultado liquido de operacoes descontinuadas",
+     0.0
+    ],
+    "3.10.01": [
+     "lucro/prejuizo liquido das operacoes descontinuadas",
+     0.0
+    ],
+    "3.10.02": [
+     "ganhos/perdas liquidas sobre ativos de operacoes descontinuadas",
+     0.0
+    ],
+    "3.11": [
+     "lucro/prejuizo consolidado do periodo",
+     2511015000.0
+    ],
+    "3.11.01": [
+     "atribuido a socios da empresa controladora",
+     2447899000.0
+    ],
+    "3.11.02": [
+     "atribuido a socios nao controladores",
+     63116000.0
+    ],
+    "3.99": [
+     "lucro por acao - (reais / acao)",
+     0.0
+    ],
+    "3.99.01": [
+     "lucro basico por acao",
+     0.0
+    ],
+    "3.99.02": [
+     "lucro diluido por acao",
+     0.0
+    ]
+   },
+   "dva_2025": {
+    "7.08": [
+     "distribuicao do valor adicionado",
+     6222849000.0
+    ],
+    "7.08.01": [
+     "pessoal",
+     347095000.0
+    ],
+    "7.08.02": [
+     "impostos, taxas e contribuicoes",
+     1562271000.0
+    ],
+    "7.08.03": [
+     "remuneracao de capitais de terceiros",
+     1802468000.0
+    ],
+    "7.08.04": [
+     "remuneracao de capitais proprios",
+     2511015000.0
+    ],
+    "7.08.05": [
+     "outros",
+     0.0
+    ]
+   },
+   "dre_2026-06-30": {
+    "3.01": [
+     "receita de venda de bens e/ou servicos",
+     5108280000.0
+    ],
+    "3.01.01": [
+     "receita de infra, operacao e manutencao, ganho de eficiencia na implem da infra e outras liquidas",
+     3219762000.0
+    ],
+    "3.01.02": [
+     "remuneracao dos ativos da concessao, liquida",
+     1888518000.0
+    ],
+    "3.02": [
+     "custo dos bens e/ou servicos vendidos",
+     -2566499000.0
+    ],
+    "3.02.01": [
+     "custo dos servicos de implementacao da infraestrutura e operacao e manutencao",
+     -2566499000.0
+    ],
+    "3.03": [
+     "resultado bruto",
+     2541781000.0
+    ],
+    "3.04": [
+     "despesas/receitas operacionais",
+     171114000.0
+    ],
+    "3.04.01": [
+     "despesas com vendas",
+     0.0
+    ],
+    "3.04.02": [
+     "despesas gerais e administrativas",
+     -134171000.0
+    ],
+    "3.04.03": [
+     "perdas pela nao recuperabilidade de ativos",
+     0.0
+    ],
+    "3.04.04": [
+     "outras receitas operacionais",
+     26186000.0
+    ],
+    "3.04.05": [
+     "outras despesas operacionais",
+     -20182000.0
+    ],
+    "3.04.06": [
+     "resultado de equivalencia patrimonial",
+     299281000.0
+    ],
+    "3.05": [
+     "resultado antes do resultado financeiro e dos tributos",
+     2712895000.0
+    ],
+    "3.06": [
+     "resultado financeiro",
+     -1122257000.0
+    ],
+    "3.06.01": [
+     "receitas financeiras",
+     174465000.0
+    ],
+    "3.06.02": [
+     "despesas financeiras",
+     -1296722000.0
+    ],
+    "3.07": [
+     "resultado antes dos tributos sobre o lucro",
+     1590638000.0
+    ],
+    "3.08": [
+     "imposto de renda e contribuicao social sobre o lucro",
+     -268119000.0
+    ],
+    "3.08.01": [
+     "corrente",
+     -138192000.0
+    ],
+    "3.08.02": [
+     "diferido",
+     -129927000.0
+    ],
+    "3.09": [
+     "resultado liquido das operacoes continuadas",
+     1322519000.0
+    ],
+    "3.10": [
+     "resultado liquido de operacoes descontinuadas",
+     0.0
+    ],
+    "3.10.01": [
+     "lucro/prejuizo liquido das operacoes descontinuadas",
+     0.0
+    ],
+    "3.10.02": [
+     "ganhos/perdas liquidas sobre ativos de operacoes descontinuadas",
+     0.0
+    ],
+    "3.11": [
+     "lucro/prejuizo consolidado do periodo",
+     1322519000.0
+    ],
+    "3.11.01": [
+     "atribuido a socios da empresa controladora",
+     1297678000.0
+    ],
+    "3.11.02": [
+     "atribuido a socios nao controladores",
+     24841000.0
+    ],
+    "3.99": [
+     "lucro por acao - (reais / acao)",
+     0.0
+    ],
+    "3.99.01": [
+     "lucro basico por acao",
+     0.0
+    ],
+    "3.99.02": [
+     "lucro diluido por acao",
+     0.0
+    ]
+   }
+  },
+  "EGIE": {
+   "visao": "con",
+   "dre_2025": {
+    "3.01": [
+     "receita de venda de bens e/ou servicos",
+     12860075000.0
+    ],
+    "3.02": [
+     "custo dos bens e/ou servicos vendidos",
+     -6853514000.0
+    ],
+    "3.03": [
+     "resultado bruto",
+     6006561000.0
+    ],
+    "3.04": [
+     "despesas/receitas operacionais",
+     261764000.0
+    ],
+    "3.04.01": [
+     "despesas com vendas",
+     -68694000.0
+    ],
+    "3.04.02": [
+     "despesas gerais e administrativas",
+     -450687000.0
+    ],
+    "3.04.03": [
+     "perdas pela nao recuperabilidade de ativos",
+     0.0
+    ],
+    "3.04.04": [
+     "outras receitas operacionais",
+     93741000.0
+    ],
+    "3.04.05": [
+     "outras despesas operacionais",
+     0.0
+    ],
+    "3.04.06": [
+     "resultado de equivalencia patrimonial",
+     687404000.0
+    ],
+    "3.05": [
+     "resultado antes do resultado financeiro e dos tributos",
+     6268325000.0
+    ],
+    "3.06": [
+     "resultado financeiro",
+     -2641806000.0
+    ],
+    "3.06.01": [
+     "receitas financeiras",
+     729335000.0
+    ],
+    "3.06.02": [
+     "despesas financeiras",
+     -3371141000.0
+    ],
+    "3.07": [
+     "resultado antes dos tributos sobre o lucro",
+     3626519000.0
+    ],
+    "3.08": [
+     "imposto de renda e contribuicao social sobre o lucro",
+     -768600000.0
+    ],
+    "3.08.01": [
+     "corrente",
+     -525896000.0
+    ],
+    "3.08.02": [
+     "diferido",
+     -242704000.0
+    ],
+    "3.09": [
+     "resultado liquido das operacoes continuadas",
+     2857919000.0
+    ],
+    "3.10": [
+     "resultado liquido de operacoes descontinuadas",
+     0.0
+    ],
+    "3.10.01": [
+     "lucro/prejuizo liquido das operacoes descontinuadas",
+     0.0
+    ],
+    "3.10.02": [
+     "ganhos/perdas liquidas sobre ativos de operacoes descontinuadas",
+     0.0
+    ],
+    "3.11": [
+     "lucro/prejuizo consolidado do periodo",
+     2857919000.0
+    ],
+    "3.11.01": [
+     "atribuido a socios da empresa controladora",
+     2582841000.0
+    ],
+    "3.11.02": [
+     "atribuido a socios nao controladores",
+     275078000.0
+    ],
+    "3.99": [
+     "lucro por acao - (reais / acao)",
+     0.0
+    ],
+    "3.99.01": [
+     "lucro basico por acao",
+     0.0
+    ],
+    "3.99.02": [
+     "lucro diluido por acao",
+     0.0
+    ]
+   },
+   "dva_2025": {
+    "7.08": [
+     "distribuicao do valor adicionado",
+     9303396000.0
+    ],
+    "7.08.01": [
+     "pessoal",
+     448843000.0
+    ],
+    "7.08.02": [
+     "impostos, taxas e contribuicoes",
+     1824370000.0
+    ],
+    "7.08.03": [
+     "remuneracao de capitais de terceiros",
+     3276929000.0
+    ],
+    "7.08.04": [
+     "remuneracao de capitais proprios",
+     1376958000.0
+    ],
+    "7.08.05": [
+     "outros",
+     2376296000.0
+    ]
+   },
+   "dre_2026-06-30": {
+    "3.01": [
+     "receita de venda de bens e/ou servicos",
+     6920090000.0
+    ],
+    "3.02": [
+     "custo dos bens e/ou servicos vendidos",
+     -3366505000.0
+    ],
+    "3.03": [
+     "resultado bruto",
+     3553585000.0
+    ],
+    "3.04": [
+     "despesas/receitas operacionais",
+     72696000.0
+    ],
+    "3.04.01": [
+     "despesas com vendas",
+     -39395000.0
+    ],
+    "3.04.02": [
+     "despesas gerais e administrativas",
+     -204595000.0
+    ],
+    "3.04.03": [
+     "perdas pela nao recuperabilidade de ativos",
+     0.0
+    ],
+    "3.04.04": [
+     "outras receitas operacionais",
+     53250000.0
+    ],
+    "3.04.05": [
+     "outras despesas operacionais",
+     0.0
+    ],
+    "3.04.06": [
+     "resultado de equivalencia patrimonial",
+     263436000.0
+    ],
+    "3.05": [
+     "resultado antes do resultado financeiro e dos tributos",
+     3626281000.0
+    ],
+    "3.06": [
+     "resultado financeiro",
+     218432000.0
+    ],
+    "3.06.01": [
+     "receitas financeiras",
+     2425216000.0
+    ],
+    "3.06.02": [
+     "despesas financeiras",
+     -2206784000.0
+    ],
+    "3.07": [
+     "resultado antes dos tributos sobre o lucro",
+     3844713000.0
+    ],
+    "3.08": [
+     "imposto de renda e contribuicao social sobre o lucro",
+     -1090748000.0
+    ],
+    "3.08.01": [
+     "corrente",
+     -915994000.0
+    ],
+    "3.08.02": [
+     "diferido",
+     -174754000.0
+    ],
+    "3.09": [
+     "resultado liquido das operacoes continuadas",
+     2753965000.0
+    ],
+    "3.10": [
+     "resultado liquido de operacoes descontinuadas",
+     0.0
+    ],
+    "3.10.01": [
+     "lucro/prejuizo liquido das operacoes descontinuadas",
+     0.0
+    ],
+    "3.10.02": [
+     "ganhos/perdas liquidas sobre ativos de operacoes descontinuadas",
+     0.0
+    ],
+    "3.11": [
+     "lucro/prejuizo consolidado do periodo",
+     2753965000.0
+    ],
+    "3.11.01": [
+     "atribuido a socios da empresa controladora",
+     2661488000.0
+    ],
+    "3.11.02": [
+     "atribuido a socios nao controladores",
+     92477000.0
+    ],
+    "3.99": [
+     "lucro por acao - (reais / acao)",
+     0.0
+    ],
+    "3.99.01": [
+     "lucro basico por acao",
+     0.0
+    ],
+    "3.99.02": [
+     "lucro diluido por acao",
+     0.0
+    ]
+   }
+  },
+  "CPLE": {
+   "visao": "con",
+   "dre_2025": {
+    "3.01": [
+     "receita de venda de bens e/ou servicos",
+     26116856000.0
+    ],
+    "3.02": [
+     "custo dos bens e/ou servicos vendidos",
+     -20455357000.0
+    ],
+    "3.03": [
+     "resultado bruto",
+     5661499000.0
+    ],
+    "3.04": [
+     "despesas/receitas operacionais",
+     -616488000.0
+    ],
+    "3.04.01": [
+     "despesas com vendas",
+     -133601000.0
+    ],
+    "3.04.02": [
+     "despesas gerais e administrativas",
+     -876873000.0
+    ],
+    "3.04.03": [
+     "perdas pela nao recuperabilidade de ativos",
+     0.0
+    ],
+    "3.04.04": [
+     "outras receitas operacionais",
+     651911000.0
+    ],
+    "3.04.05": [
+     "outras despesas operacionais",
+     -497922000.0
+    ],
+    "3.04.06": [
+     "resultado de equivalencia patrimonial",
+     239997000.0
+    ],
+    "3.05": [
+     "resultado antes do resultado financeiro e dos tributos",
+     5045011000.0
+    ],
+    "3.06": [
+     "resultado financeiro",
+     -1798352000.0
+    ],
+    "3.06.01": [
+     "receitas financeiras",
+     1343658000.0
+    ],
+    "3.06.02": [
+     "despesas financeiras",
+     -3142010000.0
+    ],
+    "3.07": [
+     "resultado antes dos tributos sobre o lucro",
+     3246659000.0
+    ],
+    "3.08": [
+     "imposto de renda e contribuicao social sobre o lucro",
+     -577618000.0
+    ],
+    "3.08.01": [
+     "corrente",
+     -196186000.0
+    ],
+    "3.08.02": [
+     "diferido",
+     -381432000.0
+    ],
+    "3.09": [
+     "resultado liquido das operacoes continuadas",
+     2669041000.0
+    ],
+    "3.10": [
+     "resultado liquido de operacoes descontinuadas",
+     18898000.0
+    ],
+    "3.10.01": [
+     "lucro/prejuizo liquido das operacoes descontinuadas",
+     18898000.0
+    ],
+    "3.10.02": [
+     "ganhos/perdas liquidas sobre ativos de operacoes descontinuadas",
+     0.0
+    ],
+    "3.11": [
+     "lucro/prejuizo consolidado do periodo",
+     2687939000.0
+    ],
+    "3.11.01": [
+     "atribuido a socios da empresa controladora",
+     2688614000.0
+    ],
+    "3.11.02": [
+     "atribuido a socios nao controladores",
+     -675000.0
+    ],
+    "3.99": [
+     "lucro por acao - (reais / acao)",
+     0.0
+    ],
+    "3.99.01": [
+     "lucro basico por acao",
+     0.0
+    ],
+    "3.99.02": [
+     "lucro diluido por acao",
+     0.0
+    ]
+   },
+   "dva_2025": {
+    "7.08": [
+     "distribuicao do valor adicionado",
+     18081751000.0
+    ],
+    "7.08.01": [
+     "pessoal",
+     1245981000.0
+    ],
+    "7.08.02": [
+     "impostos, taxas e contribuicoes",
+     11092388000.0
+    ],
+    "7.08.03": [
+     "remuneracao de capitais de terceiros",
+     3055443000.0
+    ],
+    "7.08.04": [
+     "remuneracao de capitais proprios",
+     2669041000.0
+    ],
+    "7.08.05": [
+     "outros",
+     18898000.0
+    ]
+   },
+   "dre_2026-06-30": {
+    "3.01": [
+     "receita de venda de bens e/ou servicos",
+     13985762000.0
+    ],
+    "3.02": [
+     "custo dos bens e/ou servicos vendidos",
+     -10308873000.0
+    ],
+    "3.03": [
+     "resultado bruto",
+     3676889000.0
+    ],
+    "3.04": [
+     "despesas/receitas operacionais",
+     -584541000.0
+    ],
+    "3.04.01": [
+     "despesas com vendas",
+     -135340000.0
+    ],
+    "3.04.02": [
+     "despesas gerais e administrativas",
+     -474424000.0
+    ],
+    "3.04.03": [
+     "perdas pela nao recuperabilidade de ativos",
+     0.0
+    ],
+    "3.04.04": [
+     "outras receitas operacionais",
+     41523000.0
+    ],
+    "3.04.05": [
+     "outras despesas operacionais",
+     -141968000.0
+    ],
+    "3.04.06": [
+     "resultado de equivalencia patrimonial",
+     125668000.0
+    ],
+    "3.05": [
+     "resultado antes do resultado financeiro e dos tributos",
+     3092348000.0
+    ],
+    "3.06": [
+     "resultado financeiro",
+     -858446000.0
+    ],
+    "3.06.01": [
+     "receitas financeiras",
+     1122842000.0
+    ],
+    "3.06.02": [
+     "despesas financeiras",
+     -1981288000.0
+    ],
+    "3.07": [
+     "resultado antes dos tributos sobre o lucro",
+     2233902000.0
+    ],
+    "3.08": [
+     "imposto de renda e contribuicao social sobre o lucro",
+     -492399000.0
+    ],
+    "3.08.01": [
+     "corrente",
+     -255603000.0
+    ],
+    "3.08.02": [
+     "diferido",
+     -236796000.0
+    ],
+    "3.09": [
+     "resultado liquido das operacoes continuadas",
+     1741503000.0
+    ],
+    "3.10": [
+     "resultado liquido de operacoes descontinuadas",
+     0.0
+    ],
+    "3.10.01": [
+     "lucro/prejuizo liquido das operacoes descontinuadas",
+     0.0
+    ],
+    "3.10.02": [
+     "ganhos/perdas liquidas sobre ativos de operacoes descontinuadas",
+     0.0
+    ],
+    "3.11": [
+     "lucro/prejuizo consolidado do periodo",
+     1741503000.0
+    ],
+    "3.11.01": [
+     "atribuido a socios da empresa controladora",
+     1683166000.0
+    ],
+    "3.11.02": [
+     "atribuido a socios nao controladores",
+     58337000.0
+    ],
+    "3.99": [
+     "lucro por acao - (reais / acao)",
+     0.0
+    ],
+    "3.99.01": [
+     "lucro basico por acao",
+     0.0
+    ],
+    "3.99.02": [
+     "lucro diluido por acao",
+     0.0
+    ]
+   }
+  },
+  "EKTR": {
+   "visao": "ind",
+   "dre_2025": {
+    "3.01": [
+     "receita de venda de bens e/ou servicos",
+     9977000000.0
+    ],
+    "3.01.01": [
+     "receita bruta",
+     15093000000.0
+    ],
+    "3.01.02": [
+     "(-) deducoes da receita bruta",
+     -5116000000.0
+    ],
+    "3.02": [
+     "custo dos bens e/ou servicos vendidos",
+     -7208000000.0
+    ],
+    "3.02.01": [
+     "custos com energia eletrica",
+     -5193000000.0
+    ],
+    "3.02.02": [
+     "custos de construcao",
+     -1100000000.0
+    ],
+    "3.02.03": [
+     "custos de operacao",
+     -915000000.0
+    ],
+    "3.03": [
+     "resultado bruto",
+     2769000000.0
+    ],
+    "3.04": [
+     "despesas/receitas operacionais",
+     -498000000.0
+    ],
+    "3.04.01": [
+     "despesas com vendas",
+     -54000000.0
+    ],
+    "3.04.02": [
+     "despesas gerais e administrativas",
+     -347000000.0
+    ],
+    "3.04.03": [
+     "perdas pela nao recuperabilidade de ativos",
+     0.0
+    ],
+    "3.04.04": [
+     "outras receitas operacionais",
+     0.0
+    ],
+    "3.04.05": [
+     "outras despesas operacionais",
+     -97000000.0
+    ],
+    "3.04.06": [
+     "resultado de equivalencia patrimonial",
+     0.0
+    ],
+    "3.05": [
+     "resultado antes do resultado financeiro e dos tributos",
+     2271000000.0
+    ],
+    "3.06": [
+     "resultado financeiro",
+     -989000000.0
+    ],
+    "3.06.01": [
+     "receitas financeiras",
+     158000000.0
+    ],
+    "3.06.02": [
+     "despesas financeiras",
+     -1147000000.0
+    ],
+    "3.07": [
+     "resultado antes dos tributos sobre o lucro",
+     1282000000.0
+    ],
+    "3.08": [
+     "imposto de renda e contribuicao social sobre o lucro",
+     -324000000.0
+    ],
+    "3.08.01": [
+     "corrente",
+     -169000000.0
+    ],
+    "3.08.02": [
+     "diferido",
+     -155000000.0
+    ],
+    "3.09": [
+     "resultado liquido das operacoes continuadas",
+     958000000.0
+    ],
+    "3.10": [
+     "resultado liquido de operacoes descontinuadas",
+     0.0
+    ],
+    "3.10.01": [
+     "lucro/prejuizo liquido das operacoes descontinuadas",
+     0.0
+    ],
+    "3.10.02": [
+     "ganhos/perdas liquidas sobre ativos de operacoes descontinuadas",
+     0.0
+    ],
+    "3.11": [
+     "lucro/prejuizo do periodo",
+     958000000.0
+    ],
+    "3.99": [
+     "lucro por acao - (reais / acao)",
+     0.0
+    ],
+    "3.99.01": [
+     "lucro basico por acao",
+     0.0
+    ],
+    "3.99.02": [
+     "lucro diluido por acao",
+     0.0
+    ]
+   },
+   "dva_2025": {
+    "7.08": [
+     "distribuicao do valor adicionado",
+     8177000000.0
+    ],
+    "7.08.01": [
+     "pessoal",
+     633000000.0
+    ],
+    "7.08.02": [
+     "impostos, taxas e contribuicoes",
+     5022000000.0
+    ],
+    "7.08.03": [
+     "remuneracao de capitais de terceiros",
+     1564000000.0
+    ],
+    "7.08.04": [
+     "remuneracao de capitais proprios",
+     958000000.0
+    ],
+    "7.08.05": [
+     "outros",
+     0.0
+    ]
+   },
+   "dre_2026-09-30": {
+    "3.01": [
+     "receita de venda de bens e/ou servicos",
+     7577000000.0
+    ],
+    "3.01.01": [
+     "receita bruta",
+     11777000000.0
+    ],
+    "3.01.02": [
+     "(-) deducoes da receita bruta",
+     -4200000000.0
+    ],
+    "3.02": [
+     "custo dos bens e/ou servicos vendidos",
+     -5652000000.0
+    ],
+    "3.02.01": [
+     "custos com energia eletrica",
+     -4015000000.0
+    ],
+    "3.02.02": [
+     "custos de construcao",
+     -890000000.0
+    ],
+    "3.02.03": [
+     "custos de operacao",
+     -747000000.0
+    ],
+    "3.03": [
+     "resultado bruto",
+     1925000000.0
+    ],
+    "3.04": [
+     "despesas/receitas operacionais",
+     -348000000.0
+    ],
+    "3.04.01": [
+     "despesas com vendas",
+     -45000000.0
+    ],
+    "3.04.02": [
+     "despesas gerais e administrativas",
+     -242000000.0
+    ],
+    "3.04.03": [
+     "perdas pela nao recuperabilidade de ativos",
+     0.0
+    ],
+    "3.04.04": [
+     "outras receitas operacionais",
+     0.0
+    ],
+    "3.04.05": [
+     "outras despesas operacionais",
+     -61000000.0
+    ],
+    "3.04.06": [
+     "resultado de equivalencia patrimonial",
+     0.0
+    ],
+    "3.05": [
+     "resultado antes do resultado financeiro e dos tributos",
+     1577000000.0
+    ],
+    "3.06": [
+     "resultado financeiro",
+     -851000000.0
+    ],
+    "3.06.01": [
+     "receitas financeiras",
+     150000000.0
+    ],
+    "3.06.02": [
+     "despesas financeiras",
+     -1001000000.0
+    ],
+    "3.07": [
+     "resultado antes dos tributos sobre o lucro",
+     726000000.0
+    ],
+    "3.08": [
+     "imposto de renda e contribuicao social sobre o lucro",
+     -219000000.0
+    ],
+    "3.08.01": [
+     "corrente",
+     -92000000.0
+    ],
+    "3.08.02": [
+     "diferido",
+     -127000000.0
+    ],
+    "3.09": [
+     "resultado liquido das operacoes continuadas",
+     507000000.0
+    ],
+    "3.10": [
+     "resultado liquido de operacoes descontinuadas",
+     0.0
+    ],
+    "3.10.01": [
+     "lucro/prejuizo liquido das operacoes descontinuadas",
+     0.0
+    ],
+    "3.10.02": [
+     "ganhos/perdas liquidas sobre ativos de operacoes descontinuadas",
+     0.0
+    ],
+    "3.11": [
+     "lucro/prejuizo do periodo",
+     507000000.0
+    ],
+    "3.99": [
+     "lucro por acao - (reais / acao)",
+     0.0
+    ],
+    "3.99.01": [
+     "lucro basico por acao",
+     0.0
+    ],
+    "3.99.02": [
+     "lucro diluido por acao",
+     0.0
+    ]
+   }
+  },
+  "BBSE": {
+   "visao": "con",
+   "dre_2025": {
+    "3.01": [
+     "receitas das atividades seguradoras/resseguradoras",
+     0.0
+    ],
+    "3.01.01": [
+     "receitas com seguros",
+     0.0
+    ],
+    "3.01.02": [
+     "receitas com resseguros",
+     0.0
+    ],
+    "3.01.03": [
+     "operacoes de previdencia complementar",
+     0.0
+    ],
+    "3.01.04": [
+     "operacoes de capitalizacao",
+     0.0
+    ],
+    "3.02": [
+     "despesas da atividade seguradora/resseguradora",
+     0.0
+    ],
+    "3.02.01": [
+     "despesas com servicos de seguros",
+     0.0
+    ],
+    "3.02.02": [
+     "despesas liquidas com contratos de resseguros/retrocessoes",
+     0.0
+    ],
+    "3.02.03": [
+     "operacoes de previdencia complementar",
+     0.0
+    ],
+    "3.02.04": [
+     "operacoes de capitalizacao",
+     0.0
+    ],
+    "3.03": [
+     "resultado bruto",
+     0.0
+    ],
+    "3.04": [
+     "despesas administrativas",
+     -287185000.0
+    ],
+    "3.04.01": [
+     "despesas com pessoal proprio",
+     -99623000.0
+    ],
+    "3.04.02": [
+     "despesas com servicos de terceiros",
+     0.0
+    ],
+    "3.04.03": [
+     "despesas com localizacao e funcionamento",
+     0.0
+    ],
+    "3.04.04": [
+     "despesas com publicidade e propaganda",
+     0.0
+    ],
+    "3.04.05": [
+     "despesas com tributos",
+     -72780000.0
+    ],
+    "3.04.06": [
+     "despesas com publicacoes",
+     0.0
+    ],
+    "3.04.07": [
+     "despesas com donativos e contribuicoes",
+     0.0
+    ],
+    "3.04.08": [
+     "outras despesas administrativas",
+     -114782000.0
+    ],
+    "3.05": [
+     "outras receitas e despesas operacionais",
+     4812035000.0
+    ],
+    "3.05.01": [
+     "receitas de comissoes",
+     4994545000.0
+    ],
+    "3.05.02": [
+     "custo dos servicos prestados",
+     -182510000.0
+    ],
+    "3.06": [
+     "resultado de equivalencia patrimonial",
+     5340918000.0
+    ],
+    "3.06.01": [
+     "receitas de equivalencia patrimonial",
+     5340918000.0
+    ],
+    "3.06.02": [
+     "despesas de equivalencia patrimonial",
+     0.0
+    ],
+    "3.07": [
+     "resultado antes do resultado financeiro e dos tributos",
+     9865768000.0
+    ],
+    "3.08": [
+     "resultado financeiro",
+     1075600000.0
+    ],
+    "3.08.01": [
+     "receitas financeiras",
+     1174046000.0
+    ],
+    "3.08.02": [
+     "despesas financeiras",
+     -98446000.0
+    ],
+    "3.08.03": [
+     "resultado financeiro liquido de seguros/resseguros/retrocessoes",
+     0.0
+    ],
+    "3.09": [
+     "resultado antes dos tributos sobre o lucro",
+     10941368000.0
+    ],
+    "3.10": [
+     "imposto de renda e contribuicao social sobre o lucro",
+     -1924039000.0
+    ],
+    "3.10.01": [
+     "corrente",
+     -1924039000.0
+    ],
+    "3.10.02": [
+     "diferido",
+     0.0
+    ],
+    "3.11": [
+     "resultado liquido das operacoes continuadas",
+     9017329000.0
+    ],
+    "3.12": [
+     "resultado liquido de operacoes descontinuadas",
+     0.0
+    ],
+    "3.12.01": [
+     "lucro/prejuizo liquido das operacoes descontinuadas",
+     0.0
+    ],
+    "3.12.02": [
+     "ganhos/perdas liquidas sobre ativos de operacoes descontinuadas",
+     0.0
+    ],
+    "3.13": [
+     "lucro/prejuizo consolidado do periodo",
+     9017329000.0
+    ],
+    "3.13.01": [
+     "atribuido a socios da empresa controladora",
+     9017329000.0
+    ],
+    "3.13.02": [
+     "atribuido a socios nao controladores",
+     0.0
+    ],
+    "3.99": [
+     "lucro por acao - (r$ / acao)",
+     0.0
+    ],
+    "3.99.01": [
+     "lucro basico por acao",
+     0.0
+    ],
+    "3.99.02": [
+     "lucro diluido por acao",
+     0.0
+    ]
+   },
+   "dva_2025": {
+    "7.08": [
+     "valor adicionado liquido produzido",
+     5350063000.0
+    ]
+   },
+   "dre_2026-06-30": {
+    "3.01": [
+     "receitas das atividades seguradoras/resseguradoras",
+     0.0
+    ],
+    "3.01.01": [
+     "receitas com seguros",
+     0.0
+    ],
+    "3.01.02": [
+     "receitas com resseguros",
+     0.0
+    ],
+    "3.01.03": [
+     "operacoes de previdencia complementar",
+     0.0
+    ],
+    "3.01.04": [
+     "operacoes de capitalizacao",
+     0.0
+    ],
+    "3.02": [
+     "despesas da atividade seguradora/resseguradora",
+     0.0
+    ],
+    "3.02.01": [
+     "despesas com servicos de seguros",
+     0.0
+    ],
+    "3.02.02": [
+     "despesas liquidas com contratos de resseguros/retrocessoes",
+     0.0
+    ],
+    "3.02.03": [
+     "operacoes de previdencia complementar",
+     0.0
+    ],
+    "3.02.04": [
+     "operacoes de capitalizacao",
+     0.0
+    ],
+    "3.03": [
+     "resultado bruto",
+     0.0
+    ],
+    "3.04": [
+     "despesas administrativas",
+     0.0
+    ],
+    "3.04.01": [
+     "despesas com pessoal proprio",
+     0.0
+    ],
+    "3.04.02": [
+     "despesas com servicos de terceiros",
+     0.0
+    ],
+    "3.04.03": [
+     "despesas com localizacao e funcionamento",
+     0.0
+    ],
+    "3.04.04": [
+     "despesas com publicidade e propaganda",
+     0.0
+    ],
+    "3.04.05": [
+     "despesas com tributos",
+     0.0
+    ],
+    "3.04.06": [
+     "despesas com publicacoes",
+     0.0
+    ],
+    "3.04.07": [
+     "despesas com donativos e contribuicoes",
+     0.0
+    ],
+    "3.04.08": [
+     "outras despesas administrativas",
+     0.0
+    ],
+    "3.05": [
+     "outras receitas e despesas operacionais",
+     2270999000.0
+    ],
+    "3.05.01": [
+     "receitas de comissoes",
+     2471254000.0
+    ],
+    "3.05.02": [
+     "custo dos servicos prestados",
+     -87914000.0
+    ],
+    "3.05.03": [
+     "despesas com pessoal",
+     -49723000.0
+    ],
+    "3.05.04": [
+     "despesas administrativas",
+     -29846000.0
+    ],
+    "3.05.05": [
+     "outras receitas/(despesas)",
+     0.0
+    ],
+    "3.05.06": [
+     "despesas com tributos",
+     -33995000.0
+    ],
+    "3.05.07": [
+     "outras receitas operacionais",
+     16342000.0
+    ],
+    "3.05.08": [
+     "outras despesas operacionais",
+     -15119000.0
+    ],
+    "3.05.09": [
+     "provisao para corretagem a devolver",
+     0.0
+    ],
+    "3.06": [
+     "resultado de equivalencia patrimonial",
+     2718613000.0
+    ],
+    "3.06.01": [
+     "receitas de equivalencia patrimonial",
+     2718613000.0
+    ],
+    "3.06.02": [
+     "despesas de equivalencia patrimonial",
+     0.0
+    ],
+    "3.07": [
+     "resultado antes do resultado financeiro e dos tributos",
+     4989612000.0
+    ],
+    "3.08": [
+     "resultado financeiro",
+     498579000.0
+    ],
+    "3.08.01": [
+     "receitas financeiras",
+     632806000.0
+    ],
+    "3.08.02": [
+     "despesas financeiras",
+     -134227000.0
+    ],
+    "3.08.03": [
+     "resultado financeiro liquido de seguros/resseguros/retrocessoes",
+     0.0
+    ],
+    "3.09": [
+     "resultado antes dos tributos sobre o lucro",
+     5488191000.0
+    ],
+    "3.10": [
+     "imposto de renda e contribuicao social sobre o lucro",
+     -936022000.0
+    ],
+    "3.10.01": [
+     "corrente",
+     -936022000.0
+    ],
+    "3.10.02": [
+     "diferido",
+     0.0
+    ],
+    "3.11": [
+     "resultado liquido das operacoes continuadas",
+     4552169000.0
+    ],
+    "3.12": [
+     "resultado liquido de operacoes descontinuadas",
+     0.0
+    ],
+    "3.12.01": [
+     "lucro/prejuizo liquido das operacoes descontinuadas",
+     0.0
+    ],
+    "3.12.02": [
+     "ganhos/perdas liquidas sobre ativos de operacoes descontinuadas",
+     0.0
+    ],
+    "3.13": [
+     "lucro/prejuizo consolidado do periodo",
+     4552169000.0
+    ],
+    "3.13.01": [
+     "atribuido a socios da empresa controladora",
+     4552169000.0
+    ],
+    "3.13.02": [
+     "atribuido a socios nao controladores",
+     0.0
+    ],
+    "3.99": [
+     "lucro por acao - (r$ / acao)",
+     0.0
+    ],
+    "3.99.01": [
+     "lucro basico por acao",
+     0.0
+    ],
+    "3.99.02": [
+     "lucro diluido por acao",
+     0.0
+    ]
+   }
+  }
  }
 }

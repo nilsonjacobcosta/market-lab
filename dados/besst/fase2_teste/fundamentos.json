@@ -8,8 +8,11 @@
   "ll": 12272045000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 6.7,
+  "roe_medio_exercicios": 11.3,
+  "roe_medio_n": 2,
   "payout": 38.1,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 48.8,
   "semaforo": {
    "roe": "vermelho",
    "payout": "verde"
@@ -21,7 +24,8 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (BBAS3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "SANB4": {
   "componentes_lucro": {
@@ -32,6 +36,8 @@
   "ll": 13160769000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 10.4,
+  "roe_medio_exercicios": 10.9,
+  "roe_medio_n": 2,
   "payout": 100.0,
   "base_payout": "declarado (DVA) 2025",
   "semaforo": {
@@ -45,7 +51,10 @@
   "referencia": "2026-09-30",
   "base": "12 meses até 2026-09-30",
   "mapeamento": "FCA 2026 (SANB11)",
-  "flags": []
+  "flags": [
+   "verificar:payout_igual_ao_lucro (conferir DVA x DMPL)"
+  ],
+  "erros": []
  },
  "SANB11": {
   "componentes_lucro": {
@@ -56,6 +65,8 @@
   "ll": 13160769000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 10.4,
+  "roe_medio_exercicios": 10.9,
+  "roe_medio_n": 2,
   "payout": 100.0,
   "base_payout": "declarado (DVA) 2025",
   "semaforo": {
@@ -69,7 +80,10 @@
   "referencia": "2026-09-30",
   "base": "12 meses até 2026-09-30",
   "mapeamento": "FCA 2026 (SANB11)",
-  "flags": []
+  "flags": [
+   "verificar:payout_igual_ao_lucro (conferir DVA x DMPL)"
+  ],
+  "erros": []
  },
  "SANB3": {
   "componentes_lucro": {
@@ -80,6 +94,8 @@
   "ll": 13160769000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 10.4,
+  "roe_medio_exercicios": 10.9,
+  "roe_medio_n": 2,
   "payout": 100.0,
   "base_payout": "declarado (DVA) 2025",
   "semaforo": {
@@ -93,7 +109,10 @@
   "referencia": "2026-09-30",
   "base": "12 meses até 2026-09-30",
   "mapeamento": "FCA 2026 (SANB11)",
-  "flags": []
+  "flags": [
+   "verificar:payout_igual_ao_lucro (conferir DVA x DMPL)"
+  ],
+  "erros": []
  },
  "BRSR6": {
   "componentes_lucro": {
@@ -104,8 +123,11 @@
   "ll": 1641805000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 14.5,
+  "roe_medio_exercicios": 11.4,
+  "roe_medio_n": 2,
   "payout": 37.9,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 38.3,
   "semaforo": {
    "roe": "amarelo",
    "payout": "verde"
@@ -117,7 +139,8 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (BRSR3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "BBDC4": {
   "componentes_lucro": {
@@ -128,8 +151,11 @@
   "ll": 26148439000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 14.1,
+  "roe_medio_exercicios": 12.0,
+  "roe_medio_n": 2,
   "payout": 61.2,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 50.0,
   "semaforo": {
    "roe": "amarelo",
    "payout": "amarelo"
@@ -141,7 +167,8 @@
   "referencia": "2026-09-30",
   "base": "12 meses até 2026-09-30",
   "mapeamento": "FCA 2026 (BBDC3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "BBDC3": {
   "componentes_lucro": {
@@ -152,8 +179,11 @@
   "ll": 26148439000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 14.1,
+  "roe_medio_exercicios": 12.0,
+  "roe_medio_n": 2,
   "payout": 61.2,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 50.0,
   "semaforo": {
    "roe": "amarelo",
    "payout": "amarelo"
@@ -165,7 +195,8 @@
   "referencia": "2026-09-30",
   "base": "12 meses até 2026-09-30",
   "mapeamento": "FCA 2026 (BBDC3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "ABCB4": {
   "componentes_lucro": {
@@ -176,6 +207,8 @@
   "ll": 1019867000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 14.7,
+  "roe_medio_exercicios": 15.5,
+  "roe_medio_n": 2,
   "payout": 63.0,
   "base_payout": "declarado (DVA) 2025",
   "semaforo": {
@@ -191,7 +224,8 @@
   "mapeamento": "FCA 2026 (ABCB4)",
   "flags": [
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "BRSR5": {
   "componentes_lucro": {
@@ -202,8 +236,11 @@
   "ll": 1641805000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 14.5,
+  "roe_medio_exercicios": 11.4,
+  "roe_medio_n": 2,
   "payout": 37.9,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 38.3,
   "semaforo": {
    "roe": "amarelo",
    "payout": "verde"
@@ -215,7 +252,8 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (BRSR3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "BRSR3": {
   "componentes_lucro": {
@@ -226,8 +264,11 @@
   "ll": 1641805000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 14.5,
+  "roe_medio_exercicios": 11.4,
+  "roe_medio_n": 2,
   "payout": 37.9,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 38.3,
   "semaforo": {
    "roe": "amarelo",
    "payout": "verde"
@@ -239,7 +280,8 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (BRSR3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "ITUB4": {
   "componentes_lucro": {
@@ -250,8 +292,11 @@
   "ll": 46828000000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 22.0,
+  "roe_medio_exercicios": 21.0,
+  "roe_medio_n": 2,
   "payout": 75.1,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 107.7,
   "semaforo": {
    "roe": "verde",
    "payout": "amarelo"
@@ -263,7 +308,8 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (ITUB3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "ITUB3": {
   "componentes_lucro": {
@@ -274,8 +320,11 @@
   "ll": 46828000000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 22.0,
+  "roe_medio_exercicios": 21.0,
+  "roe_medio_n": 2,
   "payout": 75.1,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 107.7,
   "semaforo": {
    "roe": "verde",
    "payout": "amarelo"
@@ -287,7 +336,8 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (ITUB3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "BRIV4": {
   "ll": 2931000.0,
@@ -295,6 +345,7 @@
   "roe": 0.2,
   "payout": 784.2,
   "base_payout": "declarado (DVA) 2023",
+  "payout_caixa": 960.4,
   "descartados": [
    "payout"
   ],
@@ -314,7 +365,8 @@
    "descartado:payout=784.2",
    "dado_antigo:35_meses",
    "sem_cotacao"
-  ]
+  ],
+  "erros": []
  },
  "BMEB3": {
   "componentes_lucro": {
@@ -325,8 +377,11 @@
   "ll": 833085000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 32.0,
+  "roe_medio_exercicios": 29.7,
+  "roe_medio_n": 2,
   "payout": 29.9,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 21.7,
   "semaforo": {
    "roe": "verde",
    "payout": "verde"
@@ -338,7 +393,10 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (BMEB3)",
-  "flags": []
+  "flags": [
+   "verificar:variacao_lucro=62%"
+  ],
+  "erros": []
  },
  "BMEB4": {
   "componentes_lucro": {
@@ -349,8 +407,11 @@
   "ll": 833085000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 32.0,
+  "roe_medio_exercicios": 29.7,
+  "roe_medio_n": 2,
   "payout": 29.9,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 21.7,
   "semaforo": {
    "roe": "verde",
    "payout": "verde"
@@ -362,7 +423,10 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (BMEB3)",
-  "flags": []
+  "flags": [
+   "verificar:variacao_lucro=62%"
+  ],
+  "erros": []
  },
  "BPAC11": {
   "componentes_lucro": {
@@ -373,8 +437,11 @@
   "ll": 18458126000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 24.6,
+  "roe_medio_exercicios": 21.7,
+  "roe_medio_n": 2,
   "payout": 29.7,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 25.1,
   "semaforo": {
    "roe": "verde",
    "payout": "verde"
@@ -386,7 +453,8 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "CSV manual",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "BPAC5": {
   "componentes_lucro": {
@@ -397,8 +465,11 @@
   "ll": 18458126000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 24.6,
+  "roe_medio_exercicios": 21.7,
+  "roe_medio_n": 2,
   "payout": 29.7,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 25.1,
   "semaforo": {
    "roe": "verde",
    "payout": "verde"
@@ -410,7 +481,8 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "CSV manual",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "BPAC3": {
   "componentes_lucro": {
@@ -421,8 +493,11 @@
   "ll": 18458126000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 24.6,
+  "roe_medio_exercicios": 21.7,
+  "roe_medio_n": 2,
   "payout": 29.7,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 25.1,
   "semaforo": {
    "roe": "verde",
    "payout": "verde"
@@ -434,7 +509,8 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "CSV manual",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "BRIV3": {
   "ll": 2931000.0,
@@ -442,6 +518,7 @@
   "roe": 0.2,
   "payout": 784.2,
   "base_payout": "declarado (DVA) 2023",
+  "payout_caixa": 960.4,
   "descartados": [
    "payout"
   ],
@@ -461,12 +538,15 @@
    "descartado:payout=784.2",
    "dado_antigo:35_meses",
    "sem_cotacao"
-  ]
+  ],
+  "erros": []
  },
  "BSLI4": {
   "ll": 311023000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 10.6,
+  "roe_medio_exercicios": 10.6,
+  "roe_medio_n": 1,
   "payout": -14.9,
   "base_payout": "declarado (DVA) 2024",
   "descartados": [
@@ -487,12 +567,15 @@
    "sem ITR de 2024-03-31 (usado o exercício fechado)",
    "descartado:payout=-14.9",
    "dado_antigo:23_meses"
-  ]
+  ],
+  "erros": []
  },
  "BSLI3": {
   "ll": 311023000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 10.6,
+  "roe_medio_exercicios": 10.6,
+  "roe_medio_n": 1,
   "payout": -14.9,
   "base_payout": "declarado (DVA) 2024",
   "descartados": [
@@ -513,7 +596,8 @@
    "sem ITR de 2024-03-31 (usado o exercício fechado)",
    "descartado:payout=-14.9",
    "dado_antigo:23_meses"
-  ]
+  ],
+  "erros": []
  },
  "BAZA3": {
   "componentes_lucro": {
@@ -524,8 +608,11 @@
   "ll": 883319000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 12.4,
+  "roe_medio_exercicios": 17.2,
+  "roe_medio_n": 2,
   "payout": 38.0,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 40.6,
   "semaforo": {
    "roe": "amarelo",
    "payout": "verde"
@@ -539,7 +626,8 @@
   "mapeamento": "FCA 2026 (BAZA3)",
   "flags": [
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "RPAD5": {
   "componentes_lucro": {
@@ -550,8 +638,11 @@
   "ll": 74539000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 7.3,
+  "roe_medio_exercicios": -1.5,
+  "roe_medio_n": 2,
   "payout": 10.0,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 10.9,
   "semaforo": {
    "roe": "vermelho",
    "payout": "amarelo"
@@ -565,7 +656,8 @@
   "mapeamento": "FCA 2026 (RPAD3)",
   "flags": [
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "BGIP4": {
   "componentes_lucro": {
@@ -576,6 +668,8 @@
   "ll": 169356000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 18.6,
+  "roe_medio_exercicios": 18.7,
+  "roe_medio_n": 2,
   "payout": 25.1,
   "base_payout": "pago em caixa (DFC) 2025",
   "semaforo": {
@@ -591,7 +685,8 @@
   "mapeamento": "FCA 2026 (BGIP3)",
   "flags": [
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "BMIN4": {
   "componentes_lucro": {
@@ -602,8 +697,11 @@
   "ll": 12801000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 8.8,
+  "roe_medio_exercicios": 6.3,
+  "roe_medio_n": 2,
   "payout": 29.8,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 21.9,
   "semaforo": {
    "roe": "vermelho",
    "payout": "verde"
@@ -617,7 +715,8 @@
   "mapeamento": "FCA 2026 (BMIN3)",
   "flags": [
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "BMGB4": {
   "componentes_lucro": {
@@ -628,6 +727,8 @@
   "ll": 632313000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 13.3,
+  "roe_medio_exercicios": 9.4,
+  "roe_medio_n": 2,
   "payout": 40.7,
   "base_payout": "pago em caixa (DFC) 2025",
   "semaforo": {
@@ -641,7 +742,8 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (BMGB4)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "BPAR3": {
   "componentes_lucro": {
@@ -652,8 +754,11 @@
   "ll": 176032000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 7.9,
+  "roe_medio_exercicios": 13.8,
+  "roe_medio_n": 2,
   "payout": 23.6,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 20.9,
   "semaforo": {
    "roe": "vermelho",
    "payout": "amarelo"
@@ -667,7 +772,8 @@
   "mapeamento": "FCA 2026 (BPAR3)",
   "flags": [
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "BEES4": {
   "componentes_lucro": {
@@ -678,8 +784,11 @@
   "ll": 442686000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 18.2,
+  "roe_medio_exercicios": 16.8,
+  "roe_medio_n": 2,
   "payout": 69.7,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 69.4,
   "semaforo": {
    "roe": "verde",
    "payout": "amarelo"
@@ -691,7 +800,10 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (BEES3)",
-  "flags": []
+  "flags": [
+   "verificar:variacao_lucro=87%"
+  ],
+  "erros": []
  },
  "BEES3": {
   "componentes_lucro": {
@@ -702,8 +814,11 @@
   "ll": 442686000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 18.2,
+  "roe_medio_exercicios": 16.8,
+  "roe_medio_n": 2,
   "payout": 69.7,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 69.4,
   "semaforo": {
    "roe": "verde",
    "payout": "amarelo"
@@ -715,7 +830,10 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (BEES3)",
-  "flags": []
+  "flags": [
+   "verificar:variacao_lucro=87%"
+  ],
+  "erros": []
  },
  "BNBR3": {
   "componentes_lucro": {
@@ -726,8 +844,11 @@
   "ll": 2757243000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 17.4,
+  "roe_medio_exercicios": 19.8,
+  "roe_medio_n": 2,
   "payout": 22.0,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 19.1,
   "semaforo": {
    "roe": "verde",
    "payout": "amarelo"
@@ -741,7 +862,8 @@
   "mapeamento": "FCA 2026 (BNBR3)",
   "flags": [
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "BGIP3": {
   "componentes_lucro": {
@@ -752,6 +874,8 @@
   "ll": 169356000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 18.6,
+  "roe_medio_exercicios": 18.7,
+  "roe_medio_n": 2,
   "payout": 25.1,
   "base_payout": "pago em caixa (DFC) 2025",
   "semaforo": {
@@ -767,7 +891,8 @@
   "mapeamento": "FCA 2026 (BGIP3)",
   "flags": [
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "BMIN3": {
   "componentes_lucro": {
@@ -778,8 +903,11 @@
   "ll": 12801000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 8.8,
+  "roe_medio_exercicios": 6.3,
+  "roe_medio_n": 2,
   "payout": 29.8,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 21.9,
   "semaforo": {
    "roe": "vermelho",
    "payout": "verde"
@@ -793,7 +921,8 @@
   "mapeamento": "FCA 2026 (BMIN3)",
   "flags": [
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "PINE4": {
   "componentes_lucro": {
@@ -804,8 +933,11 @@
   "ll": 603085000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 40.7,
+  "roe_medio_exercicios": 22.4,
+  "roe_medio_n": 2,
   "payout": 35.8,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 28.8,
   "semaforo": {
    "roe": "verde",
    "payout": "verde"
@@ -817,19 +949,25 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (PINE3)",
-  "flags": []
+  "flags": [
+   "verificar:variacao_lucro=120%"
+  ],
+  "erros": []
  },
  "BPAN4": {
   "ll": 528229000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 7.1,
+  "roe_medio_exercicios": 7.1,
+  "roe_medio_n": 1,
   "payout": 57.2,
   "base_payout": "declarado (DVA) 2024",
+  "payout_caixa": 51.7,
   "semaforo": {
    "roe": "vermelho",
    "payout": "verde"
   },
-  "nota": 1,
+  "nota": null,
   "cd_cvm": "21199",
   "empresa_cvm": "BANCO PAN SA",
   "demonstracao": "consolidada",
@@ -840,7 +978,8 @@
    "sem ITR de 2024-09-30 (usado o exercício fechado)",
    "dado_antigo:23_meses",
    "sem_cotacao"
-  ]
+  ],
+  "erros": []
  },
  "RPAD6": {
   "componentes_lucro": {
@@ -851,8 +990,11 @@
   "ll": 74539000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 7.3,
+  "roe_medio_exercicios": -1.5,
+  "roe_medio_n": 2,
   "payout": 10.0,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 10.9,
   "semaforo": {
    "roe": "vermelho",
    "payout": "amarelo"
@@ -866,7 +1008,8 @@
   "mapeamento": "FCA 2026 (RPAD3)",
   "flags": [
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "RPAD3": {
   "componentes_lucro": {
@@ -877,8 +1020,11 @@
   "ll": 74539000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 7.3,
+  "roe_medio_exercicios": -1.5,
+  "roe_medio_n": 2,
   "payout": 10.0,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 10.9,
   "semaforo": {
    "roe": "vermelho",
    "payout": "amarelo"
@@ -892,19 +1038,18 @@
   "mapeamento": "FCA 2026 (RPAD3)",
   "flags": [
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "BRBI11": {
-  "componentes_lucro": {
-   "exercicio_2025": 175073000.0,
-   "acumulado_2026-06-30": 72801000.0,
-   "acumulado_2025-06-30": 88315000.0
-  },
-  "ll": 159559000.0,
-  "base_lucro": "lucro contábil, total (sem quebra controlador)",
-  "roe": 19.7,
+  "ll": 175073000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 22.1,
+  "roe_medio_exercicios": 22.9,
+  "roe_medio_n": 2,
   "payout": 21.6,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 111.5,
   "semaforo": {
    "roe": "verde",
    "payout": "amarelo"
@@ -913,10 +1058,13 @@
   "cd_cvm": "25860",
   "empresa_cvm": "BRBI BR PARTNERS S.A",
   "demonstracao": "consolidada",
-  "referencia": "2026-06-30",
-  "base": "12 meses até 2026-06-30",
+  "referencia": "2025-12-31",
+  "base": "exercício 2025",
   "mapeamento": "FCA 2026 (BRBI11)",
-  "flags": []
+  "flags": [
+   "ltm_recusado:base de lucro diferente entre as peças (usado o exercício fechado)"
+  ],
+  "erros": []
  },
  "PINE3": {
   "componentes_lucro": {
@@ -927,32 +1075,11 @@
   "ll": 603085000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 40.7,
+  "roe_medio_exercicios": 22.4,
+  "roe_medio_n": 2,
   "payout": 35.8,
   "base_payout": "declarado (DVA) 2025",
-  "semaforo": {
-   "roe": "verde",
-   "payout": "verde"
-  },
-  "nota": 3,
-  "cd_cvm": "20567",
-  "empresa_cvm": "BANCO PINE S/A",
-  "demonstracao": "consolidada",
-  "referencia": "2026-06-30",
-  "base": "12 meses até 2026-06-30",
-  "mapeamento": "FCA 2026 (PINE3)",
-  "flags": []
- },
- "PINE11": {
-  "componentes_lucro": {
-   "exercicio_2025": 430515000.0,
-   "acumulado_2026-06-30": 316214000.0,
-   "acumulado_2025-06-30": 143644000.0
-  },
-  "ll": 603085000.0,
-  "base_lucro": "lucro contábil, controladores",
-  "roe": 40.7,
-  "payout": 35.8,
-  "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 28.8,
   "semaforo": {
    "roe": "verde",
    "payout": "verde"
@@ -965,8 +1092,41 @@
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (PINE3)",
   "flags": [
-   "sem_cotacao"
-  ]
+   "verificar:variacao_lucro=120%"
+  ],
+  "erros": []
+ },
+ "PINE11": {
+  "componentes_lucro": {
+   "exercicio_2025": 430515000.0,
+   "acumulado_2026-06-30": 316214000.0,
+   "acumulado_2025-06-30": 143644000.0
+  },
+  "ll": 603085000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 40.7,
+  "roe_medio_exercicios": 22.4,
+  "roe_medio_n": 2,
+  "payout": 35.8,
+  "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 28.8,
+  "semaforo": {
+   "roe": "verde",
+   "payout": "verde"
+  },
+  "nota": null,
+  "cd_cvm": "20567",
+  "empresa_cvm": "BANCO PINE S/A",
+  "demonstracao": "consolidada",
+  "referencia": "2026-06-30",
+  "base": "12 meses até 2026-06-30",
+  "mapeamento": "FCA 2026 (PINE3)",
+  "flags": [
+   "verificar:variacao_lucro=120%",
+   "sem_cotacao",
+   "sem_nota:sem_cotacao"
+  ],
+  "erros": []
  },
  "CMIG4": {
   "componentes_lucro": {
@@ -977,8 +1137,11 @@
   "ll": 4595105000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 15.9,
+  "roe_medio_exercicios": 22.4,
+  "roe_medio_n": 2,
   "payout": 71.7,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 81.0,
   "div_liq_ebitda": 2.25,
   "div_liq_pl": 0.66,
   "semaforo": {
@@ -993,7 +1156,8 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (CMIG3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "TAEE3": {
   "componentes_lucro": {
@@ -1004,8 +1168,11 @@
   "ll": 1625473000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 20.7,
+  "roe_medio_exercicios": 23.3,
+  "roe_medio_n": 2,
   "payout": 71.1,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 64.6,
   "div_liq_ebitda": 3.48,
   "div_liq_pl": 1.29,
   "semaforo": {
@@ -1013,14 +1180,15 @@
    "div_liq_ebitda": "amarelo",
    "payout": "verde"
   },
-  "nota": 2,
+  "nota": 3,
   "cd_cvm": "20257",
   "empresa_cvm": "TRANSMISSORA ALIANÇA DE ENERGIA ELÉTRICA S.A.",
   "demonstracao": "consolidada",
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (TAEE3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "TAEE11": {
   "componentes_lucro": {
@@ -1031,8 +1199,11 @@
   "ll": 1625473000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 20.7,
+  "roe_medio_exercicios": 23.3,
+  "roe_medio_n": 2,
   "payout": 71.1,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 64.6,
   "div_liq_ebitda": 3.48,
   "div_liq_pl": 1.29,
   "semaforo": {
@@ -1040,14 +1211,15 @@
    "div_liq_ebitda": "amarelo",
    "payout": "verde"
   },
-  "nota": 2,
+  "nota": 3,
   "cd_cvm": "20257",
   "empresa_cvm": "TRANSMISSORA ALIANÇA DE ENERGIA ELÉTRICA S.A.",
   "demonstracao": "consolidada",
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (TAEE3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "TAEE4": {
   "componentes_lucro": {
@@ -1058,8 +1230,11 @@
   "ll": 1625473000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 20.7,
+  "roe_medio_exercicios": 23.3,
+  "roe_medio_n": 2,
   "payout": 71.1,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 64.6,
   "div_liq_ebitda": 3.48,
   "div_liq_pl": 1.29,
   "semaforo": {
@@ -1067,14 +1242,15 @@
    "div_liq_ebitda": "amarelo",
    "payout": "verde"
   },
-  "nota": 2,
+  "nota": 3,
   "cd_cvm": "20257",
   "empresa_cvm": "TRANSMISSORA ALIANÇA DE ENERGIA ELÉTRICA S.A.",
   "demonstracao": "consolidada",
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (TAEE3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "ISAE4": {
   "componentes_lucro": {
@@ -1085,8 +1261,11 @@
   "ll": 2817169000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 13.2,
+  "roe_medio_exercicios": 15.4,
+  "roe_medio_n": 2,
   "payout": 38.4,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 69.5,
   "div_liq_ebitda": 3.07,
   "div_liq_pl": 0.72,
   "semaforo": {
@@ -1094,14 +1273,15 @@
    "div_liq_ebitda": "amarelo",
    "payout": "verde"
   },
-  "nota": 2,
+  "nota": 3,
   "cd_cvm": "18376",
   "empresa_cvm": "ISA ENERGIA BRASIL S.A.",
   "demonstracao": "consolidada",
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (ISAE3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "CPFE3": {
   "componentes_lucro": {
@@ -1112,8 +1292,11 @@
   "ll": 6004881000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 27.2,
+  "roe_medio_exercicios": 26.5,
+  "roe_medio_n": 2,
   "payout": 79.9,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 64.2,
   "div_liq_ebitda": 1.97,
   "div_liq_pl": 1.21,
   "semaforo": {
@@ -1128,7 +1311,8 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (CPFE3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "EGIE3": {
   "componentes_lucro": {
@@ -1139,8 +1323,11 @@
   "ll": 3959345000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 29.0,
+  "roe_medio_exercicios": 32.0,
+  "roe_medio_n": 2,
   "payout": 53.3,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 106.1,
   "div_liq_ebitda": 3.04,
   "div_liq_pl": 1.65,
   "semaforo": {
@@ -1148,14 +1335,17 @@
    "div_liq_ebitda": "amarelo",
    "payout": "verde"
   },
-  "nota": 2,
+  "nota": 3,
   "cd_cvm": "17329",
   "empresa_cvm": "ENGIE BRASIL ENERGIA S.A.",
   "demonstracao": "consolidada",
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (EGIE3)",
-  "flags": []
+  "flags": [
+   "verificar:variacao_lucro=107%"
+  ],
+  "erros": []
  },
  "CMIG3": {
   "componentes_lucro": {
@@ -1166,8 +1356,11 @@
   "ll": 4595105000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 15.9,
+  "roe_medio_exercicios": 22.4,
+  "roe_medio_n": 2,
   "payout": 71.7,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 81.0,
   "div_liq_ebitda": 2.25,
   "div_liq_pl": 0.66,
   "semaforo": {
@@ -1182,7 +1375,8 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (CMIG3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "ISAE3": {
   "componentes_lucro": {
@@ -1193,8 +1387,11 @@
   "ll": 2817169000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 13.2,
+  "roe_medio_exercicios": 15.4,
+  "roe_medio_n": 2,
   "payout": 38.4,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 69.5,
   "div_liq_ebitda": 3.07,
   "div_liq_pl": 0.72,
   "semaforo": {
@@ -1202,14 +1399,15 @@
    "div_liq_ebitda": "amarelo",
    "payout": "verde"
   },
-  "nota": 2,
+  "nota": 3,
   "cd_cvm": "18376",
   "empresa_cvm": "ISA ENERGIA BRASIL S.A.",
   "demonstracao": "consolidada",
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (ISAE3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "CPLE3": {
   "componentes_lucro": {
@@ -1220,8 +1418,11 @@
   "ll": 3134132000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 12.6,
+  "roe_medio_exercicios": 11.2,
+  "roe_medio_n": 2,
   "payout": 40.9,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 46.5,
   "div_liq_ebitda": 2.81,
   "div_liq_pl": 0.83,
   "semaforo": {
@@ -1236,7 +1437,8 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (CPLE3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "ENGI4": {
   "componentes_lucro": {
@@ -1247,8 +1449,11 @@
   "ll": 1516835000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 8.0,
+  "roe_medio_exercicios": 19.1,
+  "roe_medio_n": 2,
   "payout": 61.0,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 123.0,
   "div_liq_ebitda": 3.72,
   "div_liq_pl": 1.7,
   "semaforo": {
@@ -1263,7 +1468,10 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (ENGI3)",
-  "flags": []
+  "flags": [
+   "verificar:variacao_lucro=-68%"
+  ],
+  "erros": []
  },
  "ENGI11": {
   "componentes_lucro": {
@@ -1274,8 +1482,11 @@
   "ll": 1516835000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 8.0,
+  "roe_medio_exercicios": 19.1,
+  "roe_medio_n": 2,
   "payout": 61.0,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 123.0,
   "div_liq_ebitda": 3.72,
   "div_liq_pl": 1.7,
   "semaforo": {
@@ -1290,7 +1501,10 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (ENGI3)",
-  "flags": []
+  "flags": [
+   "verificar:variacao_lucro=-68%"
+  ],
+  "erros": []
  },
  "VBBR3": {
   "componentes_lucro": {
@@ -1301,8 +1515,11 @@
   "ll": 5056000000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 22.8,
+  "roe_medio_exercicios": 22.5,
+  "roe_medio_n": 2,
   "payout": 59.9,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 77.2,
   "div_liq_ebitda": 1.62,
   "div_liq_pl": 0.69,
   "semaforo": {
@@ -1317,7 +1534,10 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (VBBR3)",
-  "flags": []
+  "flags": [
+   "verificar:variacao_lucro=333%"
+  ],
+  "erros": []
  },
  "CLSC4": {
   "componentes_lucro": {
@@ -1328,8 +1548,11 @@
   "ll": 875087000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 21.6,
+  "roe_medio_exercicios": 20.4,
+  "roe_medio_n": 2,
   "payout": 38.9,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 39.6,
   "div_liq_ebitda": 2.74,
   "div_liq_pl": 1.22,
   "semaforo": {
@@ -1344,7 +1567,8 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (CLSC3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "CLSC3": {
   "componentes_lucro": {
@@ -1355,8 +1579,11 @@
   "ll": 875087000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 21.6,
+  "roe_medio_exercicios": 20.4,
+  "roe_medio_n": 2,
   "payout": 38.9,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 39.6,
   "div_liq_ebitda": 2.74,
   "div_liq_pl": 1.22,
   "semaforo": {
@@ -1371,7 +1598,8 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (CLSC3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "ALUP4": {
   "componentes_lucro": {
@@ -1382,8 +1610,11 @@
   "ll": 1386608000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 15.2,
+  "roe_medio_exercicios": 13.9,
+  "roe_medio_n": 2,
   "payout": 29.3,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 72.0,
   "div_liq_ebitda": 2.62,
   "div_liq_pl": 0.99,
   "semaforo": {
@@ -1398,7 +1629,8 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (ALUP11)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "ENGI3": {
   "componentes_lucro": {
@@ -1409,8 +1641,11 @@
   "ll": 1516835000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 8.0,
+  "roe_medio_exercicios": 19.1,
+  "roe_medio_n": 2,
   "payout": 61.0,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 123.0,
   "div_liq_ebitda": 3.72,
   "div_liq_pl": 1.7,
   "semaforo": {
@@ -1425,7 +1660,10 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (ENGI3)",
-  "flags": []
+  "flags": [
+   "verificar:variacao_lucro=-68%"
+  ],
+  "erros": []
  },
  "ALUP11": {
   "componentes_lucro": {
@@ -1436,8 +1674,11 @@
   "ll": 1386608000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 15.2,
+  "roe_medio_exercicios": 13.9,
+  "roe_medio_n": 2,
   "payout": 29.3,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 72.0,
   "div_liq_ebitda": 2.62,
   "div_liq_pl": 0.99,
   "semaforo": {
@@ -1452,7 +1693,8 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (ALUP11)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "ALUP3": {
   "componentes_lucro": {
@@ -1463,8 +1705,11 @@
   "ll": 1386608000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 15.2,
+  "roe_medio_exercicios": 13.9,
+  "roe_medio_n": 2,
   "payout": 29.3,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 72.0,
   "div_liq_ebitda": 2.62,
   "div_liq_pl": 0.99,
   "semaforo": {
@@ -1479,7 +1724,8 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (ALUP11)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "NEOE3": {
   "componentes_lucro": {
@@ -1490,6 +1736,8 @@
   "ll": 4836000000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 13.4,
+  "roe_medio_exercicios": 13.1,
+  "roe_medio_n": 2,
   "payout": 26.8,
   "base_payout": "declarado (DVA) 2025",
   "div_liq_ebitda": 3.38,
@@ -1499,7 +1747,7 @@
    "div_liq_ebitda": "amarelo",
    "payout": "verde"
   },
-  "nota": 2,
+  "nota": null,
   "cd_cvm": "15539",
   "empresa_cvm": "NEOENERGIA S.A",
   "demonstracao": "consolidada",
@@ -1507,8 +1755,10 @@
   "base": "12 meses até 2026-09-30",
   "mapeamento": "FCA 2026 (NEOE3)",
   "flags": [
-   "sem_cotacao"
-  ]
+   "sem_cotacao",
+   "sem_nota:sem_cotacao"
+  ],
+  "erros": []
  },
  "EQTL3": {
   "componentes_lucro": {
@@ -1519,8 +1769,11 @@
   "ll": 958423000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 3.5,
+  "roe_medio_exercicios": 9.2,
+  "roe_medio_n": 2,
   "payout": 20.9,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 320.1,
   "div_liq_ebitda": 4.97,
   "div_liq_pl": 2.07,
   "semaforo": {
@@ -1528,14 +1781,15 @@
    "div_liq_ebitda": "vermelho",
    "payout": "amarelo"
   },
-  "nota": 0,
+  "nota": 1,
   "cd_cvm": "20010",
   "empresa_cvm": "EQUATORIAL S.A.",
   "demonstracao": "consolidada",
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (EQTL3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "SRNA3": {
   "componentes_lucro": {
@@ -1546,6 +1800,8 @@
   "ll": -31276000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": -0.6,
+  "roe_medio_exercicios": 2.8,
+  "roe_medio_n": 2,
   "div_liq_ebitda": 3.37,
   "div_liq_pl": 1.97,
   "semaforo": {
@@ -1553,7 +1809,7 @@
    "div_liq_ebitda": "amarelo",
    "payout": "cinza"
   },
-  "nota": 0,
+  "nota": null,
   "cd_cvm": "26441",
   "empresa_cvm": "SERENA ENERGIA S.A.",
   "demonstracao": "consolidada",
@@ -1561,8 +1817,10 @@
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (SRNA3)",
   "flags": [
-   "sem_cotacao"
-  ]
+   "sem_cotacao",
+   "sem_nota:sem_cotacao"
+  ],
+  "erros": []
  },
  "AURE3": {
   "componentes_lucro": {
@@ -1573,6 +1831,8 @@
   "ll": -1089423000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": -9.0,
+  "roe_medio_exercicios": -1.6,
+  "roe_medio_n": 2,
   "div_liq_ebitda": 5.75,
   "div_liq_pl": 1.74,
   "semaforo": {
@@ -1587,7 +1847,10 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (AURE3)",
-  "flags": []
+  "flags": [
+   "verificar:variacao_lucro=70%"
+  ],
+  "erros": []
  },
  "MEGA3": {
   "erro": "sem CD_CVM",
@@ -1603,6 +1866,8 @@
   "ll": 159874000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 15.8,
+  "roe_medio_exercicios": 17.8,
+  "roe_medio_n": 2,
   "payout": 214.2,
   "base_payout": "pago em caixa (DFC) 2025",
   "div_liq_ebitda": -1.33,
@@ -1615,7 +1880,7 @@
    "div_liq_ebitda": "verde",
    "payout": "cinza"
   },
-  "nota": 3,
+  "nota": null,
   "cd_cvm": "14451",
   "empresa_cvm": "COMPANHIA ENERGÉTICA DE BRASÍLIA - CEB",
   "demonstracao": "consolidada",
@@ -1623,8 +1888,10 @@
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (CEBR3)",
   "flags": [
-   "descartado:payout=214.2"
-  ]
+   "descartado:payout=214.2",
+   "sem_nota:metrica_fora_da_faixa_plausivel"
+  ],
+  "erros": []
  },
  "CEBR3": {
   "componentes_lucro": {
@@ -1635,6 +1902,8 @@
   "ll": 159874000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 15.8,
+  "roe_medio_exercicios": 17.8,
+  "roe_medio_n": 2,
   "payout": 214.2,
   "base_payout": "pago em caixa (DFC) 2025",
   "div_liq_ebitda": -1.33,
@@ -1647,7 +1916,7 @@
    "div_liq_ebitda": "verde",
    "payout": "cinza"
   },
-  "nota": 3,
+  "nota": null,
   "cd_cvm": "14451",
   "empresa_cvm": "COMPANHIA ENERGÉTICA DE BRASÍLIA - CEB",
   "demonstracao": "consolidada",
@@ -1655,8 +1924,10 @@
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (CEBR3)",
   "flags": [
-   "descartado:payout=214.2"
-  ]
+   "descartado:payout=214.2",
+   "sem_nota:metrica_fora_da_faixa_plausivel"
+  ],
+  "erros": []
  },
  "CEBR6": {
   "componentes_lucro": {
@@ -1667,6 +1938,8 @@
   "ll": 159874000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 15.8,
+  "roe_medio_exercicios": 17.8,
+  "roe_medio_n": 2,
   "payout": 214.2,
   "base_payout": "pago em caixa (DFC) 2025",
   "div_liq_ebitda": -1.33,
@@ -1679,7 +1952,7 @@
    "div_liq_ebitda": "verde",
    "payout": "cinza"
   },
-  "nota": 3,
+  "nota": null,
   "cd_cvm": "14451",
   "empresa_cvm": "COMPANHIA ENERGÉTICA DE BRASÍLIA - CEB",
   "demonstracao": "consolidada",
@@ -1687,8 +1960,10 @@
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (CEBR3)",
   "flags": [
-   "descartado:payout=214.2"
-  ]
+   "descartado:payout=214.2",
+   "sem_nota:metrica_fora_da_faixa_plausivel"
+  ],
+  "erros": []
  },
  "CSRN3": {
   "erro": "sem CD_CVM",
@@ -1714,8 +1989,11 @@
   "ll": 729000000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 33.6,
+  "roe_medio_exercicios": 41.9,
+  "roe_medio_n": 2,
   "payout": 100.0,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 95.6,
   "div_liq_ebitda": 3.23,
   "div_liq_pl": 3.68,
   "semaforo": {
@@ -1731,8 +2009,10 @@
   "base": "12 meses até 2026-09-30",
   "mapeamento": "FCA 2026 (EKTR3)",
   "flags": [
+   "verificar:payout_igual_ao_lucro (conferir DVA x DMPL)",
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "GEPA4": {
   "componentes_lucro": {
@@ -1743,8 +2023,11 @@
   "ll": 224653000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 14.3,
+  "roe_medio_exercicios": 17.7,
+  "roe_medio_n": 1,
   "payout": 122.4,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 188.3,
   "div_liq_ebitda": 0.91,
   "div_liq_pl": 0.59,
   "semaforo": {
@@ -1762,7 +2045,8 @@
   "flags": [
    "verificar:payout=122.4",
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "GEPA3": {
   "componentes_lucro": {
@@ -1773,8 +2057,11 @@
   "ll": 224653000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 14.3,
+  "roe_medio_exercicios": 17.7,
+  "roe_medio_n": 1,
   "payout": 122.4,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 188.3,
   "div_liq_ebitda": 0.91,
   "div_liq_pl": 0.59,
   "semaforo": {
@@ -1792,7 +2079,8 @@
   "flags": [
    "verificar:payout=122.4",
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "GPAR3": {
   "componentes_lucro": {
@@ -1802,6 +2090,8 @@
   },
   "ll": null,
   "base_lucro": "lucro contábil, indisponível",
+  "roe_medio_exercicios": 4.9,
+  "roe_medio_n": 1,
   "div_liq_ebitda": null,
   "div_liq_pl": -0.37,
   "semaforo": {
@@ -1820,7 +2110,8 @@
    "ltm_incompleto:ll (usado o exercício fechado)",
    "demonstracao_individual",
    "lucro_indisponivel"
-  ]
+  ],
+  "erros": []
  },
  "CEEB5": {
   "componentes_lucro": {
@@ -1831,8 +2122,11 @@
   "ll": 1446000000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 17.1,
+  "roe_medio_exercicios": 25.8,
+  "roe_medio_n": 2,
   "payout": 78.7,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 78.2,
   "div_liq_ebitda": 3.63,
   "div_liq_pl": 2.34,
   "semaforo": {
@@ -1840,7 +2134,7 @@
    "div_liq_ebitda": "amarelo",
    "payout": "verde"
   },
-  "nota": 2,
+  "nota": 3,
   "cd_cvm": "14524",
   "empresa_cvm": "CIA DE ELETRICIDADE DO ESTADO DA BAHIA - COELBA",
   "demonstracao": "individual",
@@ -1849,7 +2143,8 @@
   "mapeamento": "FCA 2026 (CEEB3)",
   "flags": [
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "REDE3": {
   "componentes_lucro": {
@@ -1860,8 +2155,11 @@
   "ll": 1027834000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 19.0,
+  "roe_medio_exercicios": 29.2,
+  "roe_medio_n": 2,
   "payout": 109.3,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 155.0,
   "div_liq_ebitda": 3.69,
   "div_liq_pl": 2.71,
   "semaforo": {
@@ -1876,7 +2174,8 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (REDE3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "ENMT3": {
   "componentes_lucro": {
@@ -1887,8 +2186,11 @@
   "ll": 575790000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 14.1,
+  "roe_medio_exercicios": 24.2,
+  "roe_medio_n": 2,
   "payout": 87.6,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 138.2,
   "div_liq_ebitda": 4.29,
   "div_liq_pl": 2.2,
   "semaforo": {
@@ -1905,7 +2207,8 @@
   "mapeamento": "FCA 2026 (ENMT3)",
   "flags": [
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "EQPA3": {
   "componentes_lucro": {
@@ -1916,8 +2219,11 @@
   "ll": 1569643000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 31.6,
+  "roe_medio_exercicios": 35.8,
+  "roe_medio_n": 2,
   "payout": 19.1,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 93.7,
   "div_liq_ebitda": 2.08,
   "div_liq_pl": 1.22,
   "semaforo": {
@@ -1925,7 +2231,7 @@
    "div_liq_ebitda": "verde",
    "payout": "amarelo"
   },
-  "nota": 2,
+  "nota": 3,
   "cd_cvm": "18309",
   "empresa_cvm": "EQUATORIAL PARÁ DISTRIBUIDORA DE ENERGIA S.A.",
   "demonstracao": "individual",
@@ -1934,7 +2240,8 @@
   "mapeamento": "CSV manual",
   "flags": [
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "ENMT4": {
   "componentes_lucro": {
@@ -1945,8 +2252,11 @@
   "ll": 575790000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 14.1,
+  "roe_medio_exercicios": 24.2,
+  "roe_medio_n": 2,
   "payout": 87.6,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 138.2,
   "div_liq_ebitda": 4.29,
   "div_liq_pl": 2.2,
   "semaforo": {
@@ -1963,7 +2273,8 @@
   "mapeamento": "FCA 2026 (ENMT3)",
   "flags": [
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "CEEB3": {
   "componentes_lucro": {
@@ -1974,8 +2285,11 @@
   "ll": 1446000000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 17.1,
+  "roe_medio_exercicios": 25.8,
+  "roe_medio_n": 2,
   "payout": 78.7,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 78.2,
   "div_liq_ebitda": 3.63,
   "div_liq_pl": 2.34,
   "semaforo": {
@@ -1983,7 +2297,7 @@
    "div_liq_ebitda": "amarelo",
    "payout": "verde"
   },
-  "nota": 2,
+  "nota": 3,
   "cd_cvm": "14524",
   "empresa_cvm": "CIA DE ELETRICIDADE DO ESTADO DA BAHIA - COELBA",
   "demonstracao": "individual",
@@ -1992,7 +2306,8 @@
   "mapeamento": "FCA 2026 (CEEB3)",
   "flags": [
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "EKTR3": {
   "componentes_lucro": {
@@ -2003,8 +2318,11 @@
   "ll": 729000000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 33.6,
+  "roe_medio_exercicios": 41.9,
+  "roe_medio_n": 2,
   "payout": 100.0,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 95.6,
   "div_liq_ebitda": 3.23,
   "div_liq_pl": 3.68,
   "semaforo": {
@@ -2020,8 +2338,10 @@
   "base": "12 meses até 2026-09-30",
   "mapeamento": "FCA 2026 (EKTR3)",
   "flags": [
+   "verificar:payout_igual_ao_lucro (conferir DVA x DMPL)",
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "AFLT3": {
   "componentes_lucro": {
@@ -2032,8 +2352,11 @@
   "ll": 37022000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 14.7,
+  "roe_medio_exercicios": 11.5,
+  "roe_medio_n": 2,
   "payout": 37.7,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 109.3,
   "div_liq_ebitda": -1.0,
   "div_liq_pl": -0.18,
   "semaforo": {
@@ -2052,7 +2375,8 @@
    "ltm_incompleto:da",
    "ltm_incompleto:capex",
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "EEEL4": {
   "erro": "sem CD_CVM",
@@ -2068,8 +2392,11 @@
   "ll": 1569643000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 31.6,
+  "roe_medio_exercicios": 35.8,
+  "roe_medio_n": 2,
   "payout": 19.1,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 93.7,
   "div_liq_ebitda": 2.08,
   "div_liq_pl": 1.22,
   "semaforo": {
@@ -2077,7 +2404,7 @@
    "div_liq_ebitda": "verde",
    "payout": "amarelo"
   },
-  "nota": 2,
+  "nota": 3,
   "cd_cvm": "18309",
   "empresa_cvm": "EQUATORIAL PARÁ DISTRIBUIDORA DE ENERGIA S.A.",
   "demonstracao": "individual",
@@ -2086,7 +2413,8 @@
   "mapeamento": "CSV manual",
   "flags": [
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "EEEL3": {
   "erro": "sem CD_CVM",
@@ -2102,8 +2430,11 @@
   "ll": 1569643000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 31.6,
+  "roe_medio_exercicios": 35.8,
+  "roe_medio_n": 2,
   "payout": 19.1,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 93.7,
   "div_liq_ebitda": 2.08,
   "div_liq_pl": 1.22,
   "semaforo": {
@@ -2111,7 +2442,7 @@
    "div_liq_ebitda": "verde",
    "payout": "amarelo"
   },
-  "nota": 2,
+  "nota": 3,
   "cd_cvm": "18309",
   "empresa_cvm": "EQUATORIAL PARÁ DISTRIBUIDORA DE ENERGIA S.A.",
   "demonstracao": "individual",
@@ -2120,7 +2451,8 @@
   "mapeamento": "CSV manual",
   "flags": [
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "EQPA7": {
   "componentes_lucro": {
@@ -2131,8 +2463,11 @@
   "ll": 1569643000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 31.6,
+  "roe_medio_exercicios": 35.8,
+  "roe_medio_n": 2,
   "payout": 19.1,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 93.7,
   "div_liq_ebitda": 2.08,
   "div_liq_pl": 1.22,
   "semaforo": {
@@ -2140,7 +2475,7 @@
    "div_liq_ebitda": "verde",
    "payout": "amarelo"
   },
-  "nota": 2,
+  "nota": 3,
   "cd_cvm": "18309",
   "empresa_cvm": "EQUATORIAL PARÁ DISTRIBUIDORA DE ENERGIA S.A.",
   "demonstracao": "individual",
@@ -2149,7 +2484,8 @@
   "mapeamento": "CSV manual",
   "flags": [
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "COCE5": {
   "componentes_lucro": {
@@ -2160,8 +2496,11 @@
   "ll": 674818000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 12.2,
+  "roe_medio_exercicios": 8.7,
+  "roe_medio_n": 2,
   "payout": 16.0,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 7.1,
   "div_liq_ebitda": 2.78,
   "div_liq_pl": 1.16,
   "semaforo": {
@@ -2169,7 +2508,7 @@
    "div_liq_ebitda": "verde",
    "payout": "amarelo"
   },
-  "nota": 2,
+  "nota": 3,
   "cd_cvm": "14869",
   "empresa_cvm": "CIA ENERG CEARA - COELCE",
   "demonstracao": "individual",
@@ -2177,9 +2516,11 @@
   "base": "12 meses até 2026-09-30",
   "mapeamento": "FCA 2026 (COCE3)",
   "flags": [
+   "verificar:variacao_lucro=306%",
    "ltm_incompleto:capex",
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "EMAE4": {
   "componentes_lucro": {
@@ -2190,6 +2531,8 @@
   "ll": -122674000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": -12.7,
+  "roe_medio_exercicios": -5.1,
+  "roe_medio_n": 2,
   "div_liq_ebitda": null,
   "div_liq_pl": -0.68,
   "semaforo": {
@@ -2204,7 +2547,8 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (EMAE3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "COCE3": {
   "componentes_lucro": {
@@ -2215,8 +2559,11 @@
   "ll": 674818000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 12.2,
+  "roe_medio_exercicios": 8.7,
+  "roe_medio_n": 2,
   "payout": 16.0,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 7.1,
   "div_liq_ebitda": 2.78,
   "div_liq_pl": 1.16,
   "semaforo": {
@@ -2224,7 +2571,7 @@
    "div_liq_ebitda": "verde",
    "payout": "amarelo"
   },
-  "nota": 2,
+  "nota": 3,
   "cd_cvm": "14869",
   "empresa_cvm": "CIA ENERG CEARA - COELCE",
   "demonstracao": "individual",
@@ -2232,9 +2579,11 @@
   "base": "12 meses até 2026-09-30",
   "mapeamento": "FCA 2026 (COCE3)",
   "flags": [
+   "verificar:variacao_lucro=306%",
    "ltm_incompleto:capex",
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "LIGT3": {
   "componentes_lucro": {
@@ -2245,6 +2594,8 @@
   "ll": 2414539000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 32.4,
+  "roe_medio_exercicios": 21.8,
+  "roe_medio_n": 2,
   "div_liq_ebitda": 4.59,
   "div_liq_pl": 0.78,
   "semaforo": {
@@ -2259,7 +2610,10 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (LIGT3)",
-  "flags": []
+  "flags": [
+   "verificar:variacao_lucro=599%"
+  ],
+  "erros": []
  },
  "CEPE5": {
   "erro": "sem CD_CVM",
@@ -2270,8 +2624,11 @@
   "ll": 26043000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 11.7,
+  "roe_medio_exercicios": 11.7,
+  "roe_medio_n": 1,
   "payout": 23.7,
   "base_payout": "declarado (DVA) 2024",
+  "payout_caixa": 63.5,
   "div_liq_ebitda": -3.04,
   "div_liq_pl": -0.3,
   "semaforo": {
@@ -2279,7 +2636,7 @@
    "div_liq_ebitda": "verde",
    "payout": "amarelo"
   },
-  "nota": 2,
+  "nota": null,
   "cd_cvm": "15784",
   "empresa_cvm": "ELETROBRÁS PARTICIPAÇÕES S.A. - ELETROPAR",
   "demonstracao": "individual",
@@ -2292,7 +2649,8 @@
    "dado_antigo:23_meses",
    "demonstracao_individual",
    "sem_cotacao"
-  ]
+  ],
+  "erros": []
  },
  "AXIA3": {
   "componentes_lucro": {
@@ -2303,6 +2661,8 @@
   "ll": 12056946000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 10.0,
+  "roe_medio_exercicios": 7.2,
+  "roe_medio_n": 2,
   "payout": 95.0,
   "base_payout": "declarado (DVA) 2025",
   "div_liq_ebitda": 2.74,
@@ -2319,7 +2679,10 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (AXIA3)",
-  "flags": []
+  "flags": [
+   "verificar:variacao_lucro=-328%"
+  ],
+  "erros": []
  },
  "CBEE3": {
   "componentes_lucro": {
@@ -2330,6 +2693,8 @@
   "ll": 232283000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 2.5,
+  "roe_medio_exercicios": 4.8,
+  "roe_medio_n": 2,
   "div_liq_ebitda": 3.19,
   "div_liq_pl": 0.56,
   "semaforo": {
@@ -2345,8 +2710,10 @@
   "base": "12 meses até 2026-09-30",
   "mapeamento": "FCA 2026 (CBEE3)",
   "flags": [
+   "verificar:variacao_lucro=-191%",
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "CEPE3": {
   "erro": "sem CD_CVM",
@@ -2362,6 +2729,8 @@
   "ll": -144397000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": -11.8,
+  "roe_medio_exercicios": -14.8,
+  "roe_medio_n": 2,
   "div_liq_ebitda": 4.53,
   "div_liq_pl": 0.58,
   "semaforo": {
@@ -2376,7 +2745,8 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (RNEW3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "CEED4": {
   "componentes_lucro": {
@@ -2402,10 +2772,12 @@
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (CEED3)",
   "flags": [
+   "verificar:variacao_lucro=-114%",
    "patrimonio_negativo",
    "verificar:div_liq_ebitda=7.67",
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "CEED3": {
   "componentes_lucro": {
@@ -2431,10 +2803,12 @@
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (CEED3)",
   "flags": [
+   "verificar:variacao_lucro=-114%",
    "patrimonio_negativo",
    "verificar:div_liq_ebitda=7.67",
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "EMAE3": {
   "componentes_lucro": {
@@ -2445,6 +2819,8 @@
   "ll": -122674000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": -12.7,
+  "roe_medio_exercicios": -5.1,
+  "roe_medio_n": 2,
   "div_liq_ebitda": null,
   "div_liq_pl": -0.68,
   "semaforo": {
@@ -2459,7 +2835,8 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (EMAE3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "ELPL4": {
   "erro": "sem CD_CVM",
@@ -2475,6 +2852,8 @@
   "ll": 962660000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 4.8,
+  "roe_medio_exercicios": 3.1,
+  "roe_medio_n": 2,
   "div_liq_ebitda": 3.18,
   "div_liq_pl": 0.97,
   "semaforo": {
@@ -2489,7 +2868,8 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (ENEV3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "OMGE3": {
   "erro": "sem CD_CVM",
@@ -2505,6 +2885,8 @@
   "ll": -144397000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": -11.8,
+  "roe_medio_exercicios": -14.8,
+  "roe_medio_n": 2,
   "div_liq_ebitda": 4.53,
   "div_liq_pl": 0.58,
   "semaforo": {
@@ -2512,7 +2894,7 @@
    "div_liq_ebitda": "vermelho",
    "payout": "cinza"
   },
-  "nota": 0,
+  "nota": null,
   "cd_cvm": "21636",
   "empresa_cvm": "RENOVA ENERGIA S.A.",
   "demonstracao": "consolidada",
@@ -2520,8 +2902,10 @@
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (RNEW3)",
   "flags": [
-   "sem_cotacao"
-  ]
+   "sem_cotacao",
+   "sem_nota:sem_cotacao"
+  ],
+  "erros": []
  },
  "RNEW4": {
   "componentes_lucro": {
@@ -2532,6 +2916,8 @@
   "ll": -144397000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": -11.8,
+  "roe_medio_exercicios": -14.8,
+  "roe_medio_n": 2,
   "div_liq_ebitda": 4.53,
   "div_liq_pl": 0.58,
   "semaforo": {
@@ -2546,7 +2932,8 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (RNEW3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "AESO3": {
   "componentes_lucro": {
@@ -2557,6 +2944,8 @@
   "ll": 66902000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 1.9,
+  "roe_medio_exercicios": -2.0,
+  "roe_medio_n": 2,
   "div_liq_ebitda": 7.79,
   "div_liq_pl": 2.19,
   "semaforo": {
@@ -2564,7 +2953,7 @@
    "div_liq_ebitda": "vermelho",
    "payout": "cinza"
   },
-  "nota": 0,
+  "nota": null,
   "cd_cvm": "26174",
   "empresa_cvm": "AUREN OPERAÇÕES S.A.",
   "demonstracao": "consolidada",
@@ -2572,9 +2961,12 @@
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (AESO3)",
   "flags": [
+   "verificar:variacao_lucro=-178%",
    "verificar:div_liq_ebitda=7.79",
-   "sem_cotacao"
-  ]
+   "sem_cotacao",
+   "sem_nota:sem_cotacao"
+  ],
+  "erros": []
  },
  "CEEB6": {
   "componentes_lucro": {
@@ -2585,8 +2977,11 @@
   "ll": 1446000000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 17.1,
+  "roe_medio_exercicios": 25.8,
+  "roe_medio_n": 2,
   "payout": 78.7,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 78.2,
   "div_liq_ebitda": 3.63,
   "div_liq_pl": 2.34,
   "semaforo": {
@@ -2594,7 +2989,7 @@
    "div_liq_ebitda": "amarelo",
    "payout": "verde"
   },
-  "nota": 2,
+  "nota": null,
   "cd_cvm": "14524",
   "empresa_cvm": "CIA DE ELETRICIDADE DO ESTADO DA BAHIA - COELBA",
   "demonstracao": "individual",
@@ -2603,8 +2998,10 @@
   "mapeamento": "FCA 2026 (CEEB3)",
   "flags": [
    "demonstracao_individual",
-   "sem_cotacao"
-  ]
+   "sem_cotacao",
+   "sem_nota:sem_cotacao"
+  ],
+  "erros": []
  },
  "COCE6": {
   "componentes_lucro": {
@@ -2615,8 +3012,11 @@
   "ll": 674818000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 12.2,
+  "roe_medio_exercicios": 8.7,
+  "roe_medio_n": 2,
   "payout": 16.0,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 7.1,
   "div_liq_ebitda": 2.78,
   "div_liq_pl": 1.16,
   "semaforo": {
@@ -2624,7 +3024,7 @@
    "div_liq_ebitda": "verde",
    "payout": "amarelo"
   },
-  "nota": 2,
+  "nota": null,
   "cd_cvm": "14869",
   "empresa_cvm": "CIA ENERG CEARA - COELCE",
   "demonstracao": "individual",
@@ -2632,10 +3032,13 @@
   "base": "12 meses até 2026-09-30",
   "mapeamento": "FCA 2026 (COCE3)",
   "flags": [
+   "verificar:variacao_lucro=306%",
    "ltm_incompleto:capex",
    "demonstracao_individual",
-   "sem_cotacao"
-  ]
+   "sem_cotacao",
+   "sem_nota:sem_cotacao"
+  ],
+  "erros": []
  },
  "COMR3": {
   "erro": "sem CD_CVM",
@@ -2648,6 +3051,7 @@
   "roe": 29.3,
   "payout": 73.5,
   "base_payout": "declarado (DVA) 2023",
+  "payout_caixa": 80.0,
   "div_liq_ebitda": -0.08,
   "div_liq_pl": -0.02,
   "semaforo": {
@@ -2655,7 +3059,7 @@
    "div_liq_ebitda": "verde",
    "payout": "verde"
   },
-  "nota": 3,
+  "nota": null,
   "cd_cvm": "16624",
   "empresa_cvm": "UPTICK PARTICIPACOES S.A. - EM LIQUIDAÇÃO",
   "demonstracao": "individual",
@@ -2667,7 +3071,8 @@
    "dado_antigo:35_meses",
    "demonstracao_individual",
    "sem_cotacao"
-  ]
+  ],
+  "erros": []
  },
  "RIOS3": {
   "componentes_lucro": {
@@ -2693,9 +3098,11 @@
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (RIOS3)",
   "flags": [
+   "verificar:variacao_lucro=65%",
    "patrimonio_negativo",
    "sem_cotacao"
-  ]
+  ],
+  "erros": []
  },
  "AXIA7": {
   "componentes_lucro": {
@@ -2706,6 +3113,8 @@
   "ll": 12056946000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 10.0,
+  "roe_medio_exercicios": 7.2,
+  "roe_medio_n": 2,
   "payout": 95.0,
   "base_payout": "declarado (DVA) 2025",
   "div_liq_ebitda": 2.74,
@@ -2722,7 +3131,10 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (AXIA3)",
-  "flags": []
+  "flags": [
+   "verificar:variacao_lucro=-328%"
+  ],
+  "erros": []
  },
  "WIZC3": {
   "componentes_lucro": {
@@ -2733,8 +3145,11 @@
   "ll": 198429000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 28.7,
+  "roe_medio_exercicios": 31.7,
+  "roe_medio_n": 2,
   "payout": 25.0,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 117.2,
   "semaforo": {
    "roe": "verde",
    "payout": "verde"
@@ -2746,7 +3161,8 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (WIZC3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "BBSE3": {
   "componentes_lucro": {
@@ -2757,8 +3173,11 @@
   "ll": 9189317000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 85.9,
+  "roe_medio_exercicios": 89.5,
+  "roe_medio_n": 2,
   "payout": 96.7,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 91.8,
   "semaforo": {
    "roe": "verde",
    "payout": "vermelho"
@@ -2772,7 +3191,8 @@
   "mapeamento": "FCA 2026 (BBSE3)",
   "flags": [
    "verificar:roe=85.9"
-  ]
+  ],
+  "erros": []
  },
  "PSSA3": {
   "componentes_lucro": {
@@ -2783,8 +3203,11 @@
   "ll": 3684011000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 24.1,
+  "roe_medio_exercicios": 21.3,
+  "roe_medio_n": 2,
   "payout": 50.0,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 35.2,
   "semaforo": {
    "roe": "verde",
    "payout": "verde"
@@ -2796,19 +3219,18 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (PSSA3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "CXSE3": {
-  "componentes_lucro": {
-   "exercicio_2025": 4291560000.0,
-   "acumulado_2026-06-30": 2310228000.0,
-   "acumulado_2025-06-30": 2078827000.0
-  },
-  "ll": 4522961000.0,
-  "base_lucro": "lucro contábil, total (sem quebra controlador)",
-  "roe": 33.3,
+  "ll": 4291560000.0,
+  "base_lucro": "lucro contábil, controladores",
+  "roe": 32.5,
+  "roe_medio_exercicios": 31.0,
+  "roe_medio_n": 2,
   "payout": 68.5,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 88.2,
   "semaforo": {
    "roe": "verde",
    "payout": "verde"
@@ -2817,10 +3239,13 @@
   "cd_cvm": "23795",
   "empresa_cvm": "CAIXA SEGURIDADE PARTICIPAÇÕES S.A.",
   "demonstracao": "consolidada",
-  "referencia": "2026-06-30",
-  "base": "12 meses até 2026-06-30",
+  "referencia": "2025-12-31",
+  "base": "exercício 2025",
   "mapeamento": "FCA 2026 (CXSE3)",
-  "flags": []
+  "flags": [
+   "ltm_recusado:base de lucro diferente entre as peças (usado o exercício fechado)"
+  ],
+  "erros": []
  },
  "BRGE6": {
   "ll": 29317000.0,
@@ -2828,11 +3253,12 @@
   "roe": 2.2,
   "payout": 19.0,
   "base_payout": "declarado (DVA) 2023",
+  "payout_caixa": 16.4,
   "semaforo": {
    "roe": "vermelho",
    "payout": "amarelo"
   },
-  "nota": 1,
+  "nota": null,
   "cd_cvm": "4707",
   "empresa_cvm": "CONSORCIO ALFA DE ADMINISTRACAO S.A",
   "demonstracao": "consolidada",
@@ -2843,7 +3269,8 @@
    "roe_sem_pl_inicial",
    "dado_antigo:35_meses",
    "sem_cotacao"
-  ]
+  ],
+  "erros": []
  },
  "CSAB3": {
   "erro": "sem DFP",
@@ -2861,11 +3288,12 @@
   "roe": 2.2,
   "payout": 19.0,
   "base_payout": "declarado (DVA) 2023",
+  "payout_caixa": 16.4,
   "semaforo": {
    "roe": "vermelho",
    "payout": "amarelo"
   },
-  "nota": 1,
+  "nota": null,
   "cd_cvm": "4707",
   "empresa_cvm": "CONSORCIO ALFA DE ADMINISTRACAO S.A",
   "demonstracao": "consolidada",
@@ -2876,7 +3304,8 @@
    "roe_sem_pl_inicial",
    "dado_antigo:35_meses",
    "sem_cotacao"
-  ]
+  ],
+  "erros": []
  },
  "BRGE8": {
   "ll": 29317000.0,
@@ -2884,11 +3313,12 @@
   "roe": 2.2,
   "payout": 19.0,
   "base_payout": "declarado (DVA) 2023",
+  "payout_caixa": 16.4,
   "semaforo": {
    "roe": "vermelho",
    "payout": "amarelo"
   },
-  "nota": 1,
+  "nota": null,
   "cd_cvm": "4707",
   "empresa_cvm": "CONSORCIO ALFA DE ADMINISTRACAO S.A",
   "demonstracao": "consolidada",
@@ -2899,7 +3329,8 @@
    "roe_sem_pl_inicial",
    "dado_antigo:35_meses",
    "sem_cotacao"
-  ]
+  ],
+  "erros": []
  },
  "BRGE5": {
   "ll": 29317000.0,
@@ -2907,11 +3338,12 @@
   "roe": 2.2,
   "payout": 19.0,
   "base_payout": "declarado (DVA) 2023",
+  "payout_caixa": 16.4,
   "semaforo": {
    "roe": "vermelho",
    "payout": "amarelo"
   },
-  "nota": 1,
+  "nota": null,
   "cd_cvm": "4707",
   "empresa_cvm": "CONSORCIO ALFA DE ADMINISTRACAO S.A",
   "demonstracao": "consolidada",
@@ -2922,12 +3354,15 @@
    "roe_sem_pl_inicial",
    "dado_antigo:35_meses",
    "sem_cotacao"
-  ]
+  ],
+  "erros": []
  },
  "APER3": {
   "ll": 15479000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 2.7,
+  "roe_medio_exercicios": 2.7,
+  "roe_medio_n": 1,
   "payout": 1541.4,
   "base_payout": "pago em caixa (DFC) 2025",
   "descartados": [
@@ -2946,8 +3381,10 @@
   "mapeamento": "FCA 2024 (APER3)",
   "flags": [
    "descartado:payout=1541.4",
-   "sem_cotacao"
-  ]
+   "sem_cotacao",
+   "sem_nota:metrica_fora_da_faixa_plausivel"
+  ],
+  "erros": []
  },
  "BRGE12": {
   "ll": 29317000.0,
@@ -2955,11 +3392,12 @@
   "roe": 2.2,
   "payout": 19.0,
   "base_payout": "declarado (DVA) 2023",
+  "payout_caixa": 16.4,
   "semaforo": {
    "roe": "vermelho",
    "payout": "amarelo"
   },
-  "nota": 1,
+  "nota": null,
   "cd_cvm": "4707",
   "empresa_cvm": "CONSORCIO ALFA DE ADMINISTRACAO S.A",
   "demonstracao": "consolidada",
@@ -2970,7 +3408,8 @@
    "roe_sem_pl_inicial",
    "dado_antigo:35_meses",
    "sem_cotacao"
-  ]
+  ],
+  "erros": []
  },
  "BRGE3": {
   "ll": 29317000.0,
@@ -2978,11 +3417,12 @@
   "roe": 2.2,
   "payout": 19.0,
   "base_payout": "declarado (DVA) 2023",
+  "payout_caixa": 16.4,
   "semaforo": {
    "roe": "vermelho",
    "payout": "amarelo"
   },
-  "nota": 1,
+  "nota": null,
   "cd_cvm": "4707",
   "empresa_cvm": "CONSORCIO ALFA DE ADMINISTRACAO S.A",
   "demonstracao": "consolidada",
@@ -2993,7 +3433,8 @@
    "roe_sem_pl_inicial",
    "dado_antigo:35_meses",
    "sem_cotacao"
-  ]
+  ],
+  "erros": []
  },
  "SAPR4": {
   "componentes_lucro": {
@@ -3004,8 +3445,11 @@
   "ll": 455251000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 3.8,
+  "roe_medio_exercicios": 16.5,
+  "roe_medio_n": 2,
   "payout": 28.1,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 19.8,
   "div_liq_ebitda": 0.96,
   "div_liq_pl": 0.21,
   "semaforo": {
@@ -3021,8 +3465,10 @@
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (SAPR3)",
   "flags": [
+   "verificar:variacao_lucro=-110%",
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "SAPR11": {
   "componentes_lucro": {
@@ -3033,8 +3479,11 @@
   "ll": 455251000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 3.8,
+  "roe_medio_exercicios": 16.5,
+  "roe_medio_n": 2,
   "payout": 28.1,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 19.8,
   "div_liq_ebitda": 0.96,
   "div_liq_pl": 0.21,
   "semaforo": {
@@ -3050,8 +3499,10 @@
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (SAPR3)",
   "flags": [
+   "verificar:variacao_lucro=-110%",
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "CSMG3": {
   "componentes_lucro": {
@@ -3062,8 +3513,11 @@
   "ll": 1293036000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 15.0,
+  "roe_medio_exercicios": 16.9,
+  "roe_medio_n": 2,
   "payout": 46.1,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 58.5,
   "div_liq_ebitda": 2.67,
   "div_liq_pl": 0.89,
   "semaforo": {
@@ -3071,14 +3525,15 @@
    "div_liq_ebitda": "amarelo",
    "payout": "verde"
   },
-  "nota": 2,
+  "nota": 3,
   "cd_cvm": "19445",
   "empresa_cvm": "COMPANHIA DE SANEAMENTO DE MINAS GERAIS",
   "demonstracao": "consolidada",
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (CSMG3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "SAPR3": {
   "componentes_lucro": {
@@ -3089,8 +3544,11 @@
   "ll": 455251000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 3.8,
+  "roe_medio_exercicios": 16.5,
+  "roe_medio_n": 2,
   "payout": 28.1,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 19.8,
   "div_liq_ebitda": 0.96,
   "div_liq_pl": 0.21,
   "semaforo": {
@@ -3106,22 +3564,22 @@
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (SAPR3)",
   "flags": [
+   "verificar:variacao_lucro=-110%",
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "SBSP3": {
-  "componentes_lucro": {
-   "exercicio_2025": 8462059000.0,
-   "acumulado_2026-06-30": 3196215000.0,
-   "acumulado_2025-06-30": 3618053000.0
-  },
-  "ll": 8040221000.0,
-  "base_lucro": "lucro contábil, controladores",
-  "roe": 18.8,
+  "ll": 8462059000.0,
+  "base_lucro": "lucro contábil, total (sem quebra controlador)",
+  "roe": 21.3,
+  "roe_medio_exercicios": 25.0,
+  "roe_medio_n": 2,
   "payout": 28.1,
   "base_payout": "declarado (DVA) 2025",
-  "div_liq_ebitda": 2.21,
-  "div_liq_pl": 0.76,
+  "payout_caixa": 27.9,
+  "div_liq_ebitda": 1.88,
+  "div_liq_pl": 0.65,
   "semaforo": {
    "roe": "verde",
    "div_liq_ebitda": "verde",
@@ -3131,10 +3589,13 @@
   "cd_cvm": "14443",
   "empresa_cvm": "CIA SANEAMENTO BÁSICO ESTADO SÃO PAULO",
   "demonstracao": "consolidada",
-  "referencia": "2026-06-30",
-  "base": "12 meses até 2026-06-30",
+  "referencia": "2025-12-31",
+  "base": "exercício 2025",
   "mapeamento": "FCA 2026 (SBSP3)",
-  "flags": []
+  "flags": [
+   "ltm_recusado:base de lucro diferente entre as peças (usado o exercício fechado)"
+  ],
+  "erros": []
  },
  "CASN4": {
   "componentes_lucro": {
@@ -3145,8 +3606,11 @@
   "ll": 418690000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 15.4,
+  "roe_medio_exercicios": 13.7,
+  "roe_medio_n": 2,
   "payout": 23.8,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 10.3,
   "div_liq_ebitda": 2.9,
   "div_liq_pl": 0.84,
   "semaforo": {
@@ -3163,7 +3627,8 @@
   "mapeamento": "FCA 2026 (CASN3)",
   "flags": [
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "CASN3": {
   "componentes_lucro": {
@@ -3174,8 +3639,11 @@
   "ll": 418690000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 15.4,
+  "roe_medio_exercicios": 13.7,
+  "roe_medio_n": 2,
   "payout": 23.8,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 10.3,
   "div_liq_ebitda": 2.9,
   "div_liq_pl": 0.84,
   "semaforo": {
@@ -3192,12 +3660,15 @@
   "mapeamento": "FCA 2026 (CASN3)",
   "flags": [
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "AMBP3": {
   "ll": -287668000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": -17.1,
+  "roe_medio_exercicios": -17.1,
+  "roe_medio_n": 1,
   "div_liq_ebitda": 2.46,
   "div_liq_pl": 3.04,
   "semaforo": {
@@ -3205,7 +3676,7 @@
    "div_liq_ebitda": "verde",
    "payout": "cinza"
   },
-  "nota": 0,
+  "nota": null,
   "cd_cvm": "24961",
   "empresa_cvm": "AMBIPAR PARTICIPAÇÕES E EMPREENDIMENTOS S.A. - EM RECUPERAÇÃO JUDICIAL",
   "demonstracao": "consolidada",
@@ -3215,7 +3686,8 @@
   "flags": [
    "sem ITR de 2024-06-30 (usado o exercício fechado)",
    "dado_antigo:23_meses"
-  ]
+  ],
+  "erros": []
  },
  "ORVR3": {
   "componentes_lucro": {
@@ -3226,6 +3698,8 @@
   "ll": 50255000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 1.6,
+  "roe_medio_exercicios": 6.8,
+  "roe_medio_n": 2,
   "div_liq_ebitda": 3.9,
   "div_liq_pl": 0.46,
   "semaforo": {
@@ -3240,7 +3714,8 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (ORVR3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "IGSN3": {
   "erro": "sem CD_CVM",
@@ -3256,8 +3731,11 @@
   "ll": 4325640000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 17.3,
+  "roe_medio_exercicios": 14.6,
+  "roe_medio_n": 2,
   "payout": 71.9,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 124.3,
   "div_liq_ebitda": -0.17,
   "div_liq_pl": -0.09,
   "semaforo": {
@@ -3274,7 +3752,8 @@
   "mapeamento": "FCA 2026 (TIMS3)",
   "flags": [
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "VIVT3": {
   "componentes_lucro": {
@@ -3285,8 +3764,11 @@
   "ll": 6598880000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 9.9,
+  "roe_medio_exercicios": 8.4,
+  "roe_medio_n": 2,
   "payout": 54.6,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 35.5,
   "div_liq_ebitda": 0.43,
   "div_liq_pl": 0.17,
   "semaforo": {
@@ -3294,14 +3776,15 @@
    "div_liq_ebitda": "verde",
    "payout": "verde"
   },
-  "nota": 2,
+  "nota": 3,
   "cd_cvm": "17671",
   "empresa_cvm": "TELEFÔNICA BRASIL S.A.",
   "demonstracao": "consolidada",
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (VIVT3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "BRIT3": {
   "componentes_lucro": {
@@ -3312,8 +3795,11 @@
   "ll": 59478000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 3.8,
+  "roe_medio_exercicios": 3.3,
+  "roe_medio_n": 2,
   "payout": 20.1,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 37.5,
   "div_liq_ebitda": 2.16,
   "div_liq_pl": 1.07,
   "semaforo": {
@@ -3321,7 +3807,7 @@
    "div_liq_ebitda": "amarelo",
    "payout": "amarelo"
   },
-  "nota": 1,
+  "nota": null,
   "cd_cvm": "27693",
   "empresa_cvm": "BRISANET SERVIÇOS DE TELECOMUNICAÇÕES S.A.",
   "demonstracao": "consolidada",
@@ -3329,8 +3815,11 @@
   "base": "12 meses até 2026-06-30",
   "mapeamento": "CSV manual",
   "flags": [
-   "sem_cotacao"
-  ]
+   "verificar:variacao_lucro=70%",
+   "sem_cotacao",
+   "sem_nota:sem_cotacao"
+  ],
+  "erros": []
  },
  "OIBR4": {
   "ll": -36373594000.0,
@@ -3352,7 +3841,8 @@
   "mapeamento": "FCA 2026 (OIBR3)",
   "flags": [
    "patrimonio_negativo"
-  ]
+  ],
+  "erros": []
  },
  "OIBR3": {
   "ll": -36373594000.0,
@@ -3374,7 +3864,8 @@
   "mapeamento": "FCA 2026 (OIBR3)",
   "flags": [
    "patrimonio_negativo"
-  ]
+  ],
+  "erros": []
  },
  "TELB4": {
   "componentes_lucro": {
@@ -3385,6 +3876,8 @@
   "ll": 137587000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 8.5,
+  "roe_medio_exercicios": 2.1,
+  "roe_medio_n": 2,
   "div_liq_ebitda": -3.28,
   "div_liq_pl": -0.96,
   "semaforo": {
@@ -3402,7 +3895,8 @@
   "flags": [
    "verificar:div_liq_ebitda=-3.28",
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "TELB3": {
   "componentes_lucro": {
@@ -3413,6 +3907,8 @@
   "ll": 137587000.0,
   "base_lucro": "lucro contábil, total (sem quebra controlador)",
   "roe": 8.5,
+  "roe_medio_exercicios": 2.1,
+  "roe_medio_n": 2,
   "div_liq_ebitda": -3.28,
   "div_liq_pl": -0.96,
   "semaforo": {
@@ -3430,7 +3926,8 @@
   "flags": [
    "verificar:div_liq_ebitda=-3.28",
    "demonstracao_individual"
-  ]
+  ],
+  "erros": []
  },
  "FIQE3": {
   "componentes_lucro": {
@@ -3441,8 +3938,11 @@
   "ll": 223743000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 18.0,
+  "roe_medio_exercicios": 16.6,
+  "roe_medio_n": 2,
   "payout": 14.4,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 52.6,
   "div_liq_ebitda": 0.55,
   "div_liq_pl": 0.3,
   "semaforo": {
@@ -3450,14 +3950,15 @@
    "div_liq_ebitda": "verde",
    "payout": "amarelo"
   },
-  "nota": 2,
+  "nota": 3,
   "cd_cvm": "26050",
   "empresa_cvm": "UNIFIQUE TELECOMUNICAÇÕES S.A.",
   "demonstracao": "consolidada",
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (FIQE3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "DESK3": {
   "componentes_lucro": {
@@ -3468,6 +3969,8 @@
   "ll": 55865000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 4.0,
+  "roe_medio_exercicios": 6.0,
+  "roe_medio_n": 2,
   "payout": 6.0,
   "base_payout": "pago em caixa (DFC) 2025",
   "div_liq_ebitda": 1.75,
@@ -3484,7 +3987,8 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (DESK3)",
-  "flags": []
+  "flags": [],
+  "erros": []
  },
  "BRST3": {
   "componentes_lucro": {
@@ -3495,8 +3999,11 @@
   "ll": 59478000.0,
   "base_lucro": "lucro contábil, controladores",
   "roe": 3.8,
+  "roe_medio_exercicios": 3.3,
+  "roe_medio_n": 2,
   "payout": 20.1,
   "base_payout": "declarado (DVA) 2025",
+  "payout_caixa": 37.5,
   "div_liq_ebitda": 2.16,
   "div_liq_pl": 1.07,
   "semaforo": {
@@ -3511,6 +4018,9 @@
   "referencia": "2026-06-30",
   "base": "12 meses até 2026-06-30",
   "mapeamento": "FCA 2026 (BRST3)",
-  "flags": []
+  "flags": [
+   "verificar:variacao_lucro=70%"
+  ],
+  "erros": []
  }
 }

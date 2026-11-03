@@ -41,12 +41,225 @@
  "emissores": 65,
  "emissores_mapeados_pct (meta >=95)": 100.0,
  "emissores_com_dado_ate_15m_pct (meta >=90)": 96.9,
- "papeis_com_nota_pct (meta >=75)": 91.7,
+ "papeis_com_nota_pct (meta >=75)": 88.1,
  "payout_calculado_nos_lucrativos_pct (meta >=90)": 93.9,
  "payout_acima_150_sem_flag (meta 0)": [],
  "lucro_zero_aceito (meta 0)": [],
  "roe_com_pl_negativo (meta 0)": [],
  "nota_com_lucro_ausente (meta 0)": [],
+ "nota_com_dado_antigo (meta 0)": [],
+ "nota_com_metrica_descartada (meta 0)": [],
+ "nota_sem_cotacao (meta 0)": [],
+ "papeis_com_excecao": [],
+ "universo_inteiro_com_nota_pct": 66.7,
+ "flags_verificar": [
+  [
+   "AURE3",
+   [
+    "verificar:variacao_lucro=70%"
+   ]
+  ],
+  [
+   "AXIA3",
+   [
+    "verificar:variacao_lucro=-328%"
+   ]
+  ],
+  [
+   "AXIA7",
+   [
+    "verificar:variacao_lucro=-328%"
+   ]
+  ],
+  [
+   "BBSE3",
+   [
+    "verificar:roe=85.9"
+   ]
+  ],
+  [
+   "BEES3",
+   [
+    "verificar:variacao_lucro=87%"
+   ]
+  ],
+  [
+   "BEES4",
+   [
+    "verificar:variacao_lucro=87%"
+   ]
+  ],
+  [
+   "BMEB3",
+   [
+    "verificar:variacao_lucro=62%"
+   ]
+  ],
+  [
+   "BMEB4",
+   [
+    "verificar:variacao_lucro=62%"
+   ]
+  ],
+  [
+   "BRST3",
+   [
+    "verificar:variacao_lucro=70%"
+   ]
+  ],
+  [
+   "CBEE3",
+   [
+    "verificar:variacao_lucro=-191%"
+   ]
+  ],
+  [
+   "CEED3",
+   [
+    "verificar:variacao_lucro=-114%",
+    "verificar:div_liq_ebitda=7.67"
+   ]
+  ],
+  [
+   "CEED4",
+   [
+    "verificar:variacao_lucro=-114%",
+    "verificar:div_liq_ebitda=7.67"
+   ]
+  ],
+  [
+   "COCE3",
+   [
+    "verificar:variacao_lucro=306%"
+   ]
+  ],
+  [
+   "COCE5",
+   [
+    "verificar:variacao_lucro=306%"
+   ]
+  ],
+  [
+   "EGIE3",
+   [
+    "verificar:variacao_lucro=107%"
+   ]
+  ],
+  [
+   "EKTR3",
+   [
+    "verificar:payout_igual_ao_lucro (conferir DVA x DMPL)"
+   ]
+  ],
+  [
+   "EKTR4",
+   [
+    "verificar:payout_igual_ao_lucro (conferir DVA x DMPL)"
+   ]
+  ],
+  [
+   "ENGI11",
+   [
+    "verificar:variacao_lucro=-68%"
+   ]
+  ],
+  [
+   "ENGI3",
+   [
+    "verificar:variacao_lucro=-68%"
+   ]
+  ],
+  [
+   "ENGI4",
+   [
+    "verificar:variacao_lucro=-68%"
+   ]
+  ],
+  [
+   "GEPA3",
+   [
+    "verificar:payout=122.4"
+   ]
+  ],
+  [
+   "GEPA4",
+   [
+    "verificar:payout=122.4"
+   ]
+  ],
+  [
+   "LIGT3",
+   [
+    "verificar:variacao_lucro=599%"
+   ]
+  ],
+  [
+   "PINE3",
+   [
+    "verificar:variacao_lucro=120%"
+   ]
+  ],
+  [
+   "PINE4",
+   [
+    "verificar:variacao_lucro=120%"
+   ]
+  ],
+  [
+   "SANB11",
+   [
+    "verificar:payout_igual_ao_lucro (conferir DVA x DMPL)"
+   ]
+  ],
+  [
+   "SANB3",
+   [
+    "verificar:payout_igual_ao_lucro (conferir DVA x DMPL)"
+   ]
+  ],
+  [
+   "SANB4",
+   [
+    "verificar:payout_igual_ao_lucro (conferir DVA x DMPL)"
+   ]
+  ],
+  [
+   "SAPR11",
+   [
+    "verificar:variacao_lucro=-110%"
+   ]
+  ],
+  [
+   "SAPR3",
+   [
+    "verificar:variacao_lucro=-110%"
+   ]
+  ],
+  [
+   "SAPR4",
+   [
+    "verificar:variacao_lucro=-110%"
+   ]
+  ],
+  [
+   "TELB3",
+   [
+    "verificar:div_liq_ebitda=-3.28"
+   ]
+  ],
+  [
+   "TELB4",
+   [
+    "verificar:div_liq_ebitda=-3.28"
+   ]
+  ],
+  [
+   "VBBR3",
+   [
+    "verificar:variacao_lucro=333%"
+   ]
+  ]
+ ],
  "sem_mapeamento": [],
  "dado_antigo": [
   [
