@@ -205,9 +205,29 @@
     ]
    },
    "dva_2025": {
-    "7.08": [
-     "valor adicionado total a distribuir",
-     44434231000.0
+    "7.09.03": [
+     "remuneracao de capitais de terceiros",
+     202886000.0
+    ],
+    "7.09.04": [
+     "remuneracao de capitais proprios",
+     16781938000.0
+    ],
+    "7.09.04.01": [
+     "juros sobre o capital proprio",
+     5219106000.0
+    ],
+    "7.09.04.02": [
+     "dividendos",
+     0.0
+    ],
+    "7.09.04.03": [
+     "lucros retidos / prejuizo do periodo",
+     8479018000.0
+    ],
+    "7.09.04.04": [
+     "participacao de nao controladores nos lucros retidos",
+     3083814000.0
     ]
    },
    "dre_2026-06-30": {
@@ -434,9 +454,29 @@
     ]
    },
    "dva_2025": {
-    "7.08": [
-     "valor adicionado total a distribuir",
-     33063569000.0
+    "7.09.03": [
+     "remuneracao de capitais de terceiros",
+     188336000.0
+    ],
+    "7.09.04": [
+     "remuneracao de capitais proprios",
+     12965123000.0
+    ],
+    "7.09.04.01": [
+     "juros sobre o capital proprio",
+     7620000000.0
+    ],
+    "7.09.04.02": [
+     "dividendos",
+     5146035000.0
+    ],
+    "7.09.04.03": [
+     "lucros retidos / prejuizo do periodo",
+     199088000.0
+    ],
+    "7.09.04.04": [
+     "participacao de nao controladores nos lucros retidos",
+     0.0
     ]
    },
    "dre_2026-09-30": {
@@ -679,9 +719,29 @@
     ]
    },
    "dva_2025": {
-    "7.08": [
-     "valor adicionado total a distribuir",
-     53655031000.0
+    "7.09.03": [
+     "remuneracao de capitais de terceiros",
+     98853000.0
+    ],
+    "7.09.04": [
+     "remuneracao de capitais proprios",
+     23924636000.0
+    ],
+    "7.09.04.01": [
+     "juros sobre o capital proprio",
+     14499273000.0
+    ],
+    "7.09.04.02": [
+     "dividendos",
+     0.0
+    ],
+    "7.09.04.03": [
+     "lucros retidos / prejuizo do periodo",
+     9173433000.0
+    ],
+    "7.09.04.04": [
+     "participacao de nao controladores nos lucros retidos",
+     251930000.0
     ]
    },
    "dre_2026-09-30": {
@@ -960,9 +1020,29 @@
     ]
    },
    "dva_2025": {
-    "7.08": [
-     "valor adicionado total a distribuir",
-     108407000000.0
+    "7.09.03": [
+     "remuneracao de capitais de terceiros",
+     1564000000.0
+    ],
+    "7.09.04": [
+     "remuneracao de capitais proprios",
+     45849000000.0
+    ],
+    "7.09.04.01": [
+     "juros sobre o capital proprio",
+     0.0
+    ],
+    "7.09.04.02": [
+     "dividendos",
+     33704000000.0
+    ],
+    "7.09.04.03": [
+     "lucros retidos / prejuizo do periodo",
+     11153000000.0
+    ],
+    "7.09.04.04": [
+     "part. nao controladores nos lucros retidos",
+     992000000.0
     ]
    },
    "dre_2026-06-30": {
@@ -1241,9 +1321,29 @@
     ]
    },
    "dva_2025": {
-    "7.08": [
-     "valor adicionado total a distribuir",
-     33704517000.0
+    "7.09.03": [
+     "remuneracao de capitais de terceiros",
+     189697000.0
+    ],
+    "7.09.04": [
+     "remuneracao de capitais proprios",
+     16663803000.0
+    ],
+    "7.09.04.01": [
+     "juros sobre o capital proprio",
+     4749999000.0
+    ],
+    "7.09.04.02": [
+     "dividendos",
+     0.0
+    ],
+    "7.09.04.03": [
+     "lucros retidos / prejuizo do periodo",
+     11255965000.0
+    ],
+    "7.09.04.04": [
+     "part. nao controladores nos lucros retidos",
+     657839000.0
     ]
    },
    "dre_2026-06-30": {
@@ -1486,18 +1586,6 @@
     ]
    },
    "dva_2025": {
-    "7.08": [
-     "distribuicao do valor adicionado",
-     21680101000.0
-    ],
-    "7.08.01": [
-     "pessoal",
-     883645000.0
-    ],
-    "7.08.02": [
-     "impostos, taxas e contribuicoes",
-     13728868000.0
-    ],
     "7.08.03": [
      "remuneracao de capitais de terceiros",
      2167971000.0
@@ -1506,9 +1594,21 @@
      "remuneracao de capitais proprios",
      4899617000.0
     ],
-    "7.08.05": [
-     "outros",
-     0.0
+    "7.08.04.01": [
+     "juros sobre o capital proprio",
+     2419918000.0
+    ],
+    "7.08.04.02": [
+     "dividendos",
+     1093440000.0
+    ],
+    "7.08.04.03": [
+     "lucros retidos / prejuizo do periodo",
+     1384051000.0
+    ],
+    "7.08.04.04": [
+     "part. nao controladores nos lucros retidos",
+     2208000.0
     ]
    },
    "dre_2026-06-30": {
@@ -1783,18 +1883,6 @@
     ]
    },
    "dva_2025": {
-    "7.08": [
-     "distribuicao do valor adicionado",
-     3542440000.0
-    ],
-    "7.08.01": [
-     "pessoal",
-     219261000.0
-    ],
-    "7.08.02": [
-     "impostos, taxas e contribuicoes",
-     571655000.0
-    ],
     "7.08.03": [
      "remuneracao de capitais de terceiros",
      1171661000.0
@@ -1803,8 +1891,20 @@
      "remuneracao de capitais proprios",
      1579863000.0
     ],
-    "7.08.05": [
-     "outros",
+    "7.08.04.01": [
+     "juros sobre o capital proprio",
+     552889000.0
+    ],
+    "7.08.04.02": [
+     "dividendos",
+     571182000.0
+    ],
+    "7.08.04.03": [
+     "lucros retidos / prejuizo do periodo",
+     455792000.0
+    ],
+    "7.08.04.04": [
+     "part. nao controladores nos lucros retidos",
      0.0
     ]
    },
@@ -2084,18 +2184,6 @@
     ]
    },
    "dva_2025": {
-    "7.08": [
-     "distribuicao do valor adicionado",
-     6222849000.0
-    ],
-    "7.08.01": [
-     "pessoal",
-     347095000.0
-    ],
-    "7.08.02": [
-     "impostos, taxas e contribuicoes",
-     1562271000.0
-    ],
     "7.08.03": [
      "remuneracao de capitais de terceiros",
      1802468000.0
@@ -2104,9 +2192,21 @@
      "remuneracao de capitais proprios",
      2511015000.0
     ],
-    "7.08.05": [
-     "outros",
+    "7.08.04.01": [
+     "juros sobre o capital proprio",
      0.0
+    ],
+    "7.08.04.02": [
+     "dividendos",
+     940000000.0
+    ],
+    "7.08.04.03": [
+     "lucros retidos / prejuizo do periodo",
+     1507899000.0
+    ],
+    "7.08.04.04": [
+     "part. nao controladores nos lucros retidos",
+     63116000.0
     ]
    },
    "dre_2026-06-30": {
@@ -2353,29 +2453,41 @@
     ]
    },
    "dva_2025": {
-    "7.08": [
-     "distribuicao do valor adicionado",
-     9303396000.0
-    ],
-    "7.08.01": [
-     "pessoal",
-     448843000.0
-    ],
-    "7.08.02": [
-     "impostos, taxas e contribuicoes",
-     1824370000.0
-    ],
     "7.08.03": [
      "remuneracao de capitais de terceiros",
      3276929000.0
+    ],
+    "7.08.03.03.01": [
+     "juros, v.m. e deprec. capitalizados",
+     518780000.0
     ],
     "7.08.04": [
      "remuneracao de capitais proprios",
      1376958000.0
     ],
-    "7.08.05": [
-     "outros",
-     2376296000.0
+    "7.08.04.01": [
+     "juros sobre o capital proprio",
+     100000000.0
+    ],
+    "7.08.04.02": [
+     "dividendos",
+     1276958000.0
+    ],
+    "7.08.04.03": [
+     "lucros retidos / prejuizo do periodo",
+     0.0
+    ],
+    "7.08.04.04": [
+     "part. nao controladores nos lucros retidos",
+     0.0
+    ],
+    "7.08.05.07": [
+     "dividendos e jcp prescritos",
+     -14380000.0
+    ],
+    "7.08.05.08": [
+     "acionista nao controlador",
+     275078000.0
     ]
    },
    "dre_2026-06-30": {
@@ -2610,18 +2722,6 @@
     ]
    },
    "dva_2025": {
-    "7.08": [
-     "distribuicao do valor adicionado",
-     18081751000.0
-    ],
-    "7.08.01": [
-     "pessoal",
-     1245981000.0
-    ],
-    "7.08.02": [
-     "impostos, taxas e contribuicoes",
-     11092388000.0
-    ],
     "7.08.03": [
      "remuneracao de capitais de terceiros",
      3055443000.0
@@ -2630,9 +2730,21 @@
      "remuneracao de capitais proprios",
      2669041000.0
     ],
-    "7.08.05": [
-     "outros",
-     18898000.0
+    "7.08.04.01": [
+     "juros sobre o capital proprio",
+     1100000000.0
+    ],
+    "7.08.04.02": [
+     "dividendos",
+     0.0
+    ],
+    "7.08.04.03": [
+     "lucros retidos / prejuizo do periodo",
+     1569716000.0
+    ],
+    "7.08.04.04": [
+     "part. nao controladores nos lucros retidos",
+     -675000.0
     ]
    },
    "dre_2026-06-30": {
@@ -2879,18 +2991,6 @@
     ]
    },
    "dva_2025": {
-    "7.08": [
-     "distribuicao do valor adicionado",
-     8177000000.0
-    ],
-    "7.08.01": [
-     "pessoal",
-     633000000.0
-    ],
-    "7.08.02": [
-     "impostos, taxas e contribuicoes",
-     5022000000.0
-    ],
     "7.08.03": [
      "remuneracao de capitais de terceiros",
      1564000000.0
@@ -2899,8 +2999,20 @@
      "remuneracao de capitais proprios",
      958000000.0
     ],
-    "7.08.05": [
-     "outros",
+    "7.08.04.01": [
+     "juros sobre o capital proprio",
+     111000000.0
+    ],
+    "7.08.04.02": [
+     "dividendos",
+     847000000.0
+    ],
+    "7.08.04.03": [
+     "lucros retidos / prejuizo do periodo",
+     0.0
+    ],
+    "7.08.05.01": [
+     "participacao dos nao controladores",
      0.0
     ]
    },
@@ -3216,9 +3328,29 @@
     ]
    },
    "dva_2025": {
-    "7.08": [
-     "valor adicionado liquido produzido",
-     5350063000.0
+    "7.11.03": [
+     "remuneracao de capitais de terceiros",
+     102106000.0
+    ],
+    "7.11.04": [
+     "remuneracao de capitais proprios",
+     9017329000.0
+    ],
+    "7.11.04.01": [
+     "juros sobre o capital proprio",
+     0.0
+    ],
+    "7.11.04.02": [
+     "dividendos",
+     8720000000.0
+    ],
+    "7.11.04.03": [
+     "lucros retidos / prejuizo do periodo",
+     297329000.0
+    ],
+    "7.11.04.04": [
+     "part. nao controladores nos lucros retidos",
+     0.0
     ]
    },
    "dre_2026-06-30": {
