@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: monitor-besst
+  group: monitor-besst-precos
   cancel-in-progress: false
 
 jobs:
@@ -31,4 +31,5 @@ jobs:
           git add dados/besst/painel.json dados/besst/brutos/ultimo.json
           if git diff --cached --quiet; then echo "Sem mudanças"; exit 0; fi
           git commit -m "Monitor BESST: atualização automática $(date -u +'%Y-%m-%d %H:%M') UTC"
+          git pull --rebase
           git push

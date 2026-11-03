@@ -3,13 +3,14 @@ name: Atualizar qualidade financeira (BETA)
 on:
   schedule:
     - cron: "43 10 * * *"   # diário, 07:43 em Brasília (ITR/DFP mudam poucas vezes por trimestre)
+    - cron: "13 22 * * *"   # reforço, 19:13 em Brasília (o GitHub pode atrasar ou descartar a primeira)
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: monitor-besst
+  group: monitor-besst-fundamentos
   cancel-in-progress: false
 
 jobs:
