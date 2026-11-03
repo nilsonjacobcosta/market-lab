@@ -21,7 +21,7 @@ Pareceres e documentação dos times em [`docs/monitor-besst/`](../../docs/monit
 
 ## Atualização
 
-A rotina `.github/workflows/monitor-besst.yml` roda de hora em hora nos dias úteis durante o pregão, executa `scripts/besst_painel.py --coletar` e publica `dados/besst/painel.json`. A página relê os dados a cada 5 minutos.
+A rotina `.github/workflows/monitor-besst.yml` roda uma vez por dia útil, depois do fechamento do pregão (tentativas às 18h22, 18h47, 19h23, 20h23 e 22h09, horário de Brasília, porque o GitHub pode atrasar ou descartar execuções agendadas). Ela executa `scripts/besst_painel.py --coletar` e publica `dados/besst/painel.json`. Se o fechamento do dia não estiver publicado até as 22h30, o selo da página mostra um aviso em texto. A qualidade financeira (beta) é atualizada por `.github/workflows/fundamentos-besst.yml`, que só publica se os testes e o aceite passarem.
 
 ## Arquivos
 

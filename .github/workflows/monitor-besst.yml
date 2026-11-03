@@ -2,12 +2,12 @@ name: Atualizar Monitor BESST
 
 on:
   schedule:
-    # O GitHub atrasa e descarta execuções agendadas em horário de pico; por isso há horários redundantes
-    # (todos em UTC; Brasília = UTC-3). Pregão B3 desde 03/11/2026: 10h-17h55, call de fechamento até 18h.
-    - cron: "7,37 13-20 * * 1-5"   # durante o pregão, a cada ~30 min
-    - cron: "22,47 21 * * 1-5"     # logo após o fechamento (18h22 e 18h47)
-    - cron: "23 22,23 * * 1-5"     # reforço pós-fechamento (19h23 e 20h23)
-    - cron: "9 1 * * 2-6"          # madrugada seguinte (22h09), garante o fechamento do dia
+    # Uma atualização por dia, depois do fechamento (pregão B3: 10h-17h55, call até 18h). O GitHub pode atrasar
+    # ou descartar execuções agendadas, por isso há várias tentativas; só a primeira que mudar algo publica.
+    # Horários em UTC (Brasília = UTC-3): 18h22, 18h47, 19h23, 20h23 e 22h09.
+    - cron: "22,47 21 * * 1-5"
+    - cron: "23 22,23 * * 1-5"
+    - cron: "9 1 * * 2-6"
   workflow_dispatch:
 
 permissions:

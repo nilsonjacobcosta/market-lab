@@ -197,7 +197,7 @@ footer{font-size:.85rem;color:var(--ink-2);border-top:1px solid var(--line);padd
   <span class="live" id="live" role="status" aria-live="polite"><i aria-hidden="true"></i><span id="live-t">Carregando dados…</span></span>
 </header>
 
-<div class="notice" role="note" style="border-left:4px solid var(--warn)"><p><b>Atenção:</b> a atualização automática está instável. Os preços podem ter horas ou dias de atraso e, durante o pregão, não são de fechamento. Confira data e hora no selo acima e confirme na B3 ou na sua corretora.</p></div>
+<div class="notice" role="note" style="border-left:4px solid var(--warn)"><p><b>Preços de fechamento, atualizados uma vez por dia após as 18h.</b> Durante o pregão você vê o fechamento do dia útil anterior. Se a atualização atrasar, o selo acima avisa. Confira sempre na B3 ou na sua corretora antes de decidir qualquer coisa.</p></div>
 
 <div class="notice" role="note"><p><b>Material educativo, não é recomendação.</b> “Abaixo do teto” só diz que o preço de hoje é menor que um cálculo feito com o que a empresa pagou no passado. Não significa que a ação está barata nem que vai pagar o mesmo daqui para frente. Confira sempre os alertas e a ficha antes de tirar conclusões.</p></div>
 
@@ -273,7 +273,7 @@ footer{font-size:.85rem;color:var(--ink-2);border-top:1px solid var(--line);padd
 </section>
 
 <footer>
-  <p>Preços e proventos: Yahoo Finance (cerca de 15 minutos de atraso), ajustados por desdobramentos e bonificações, atualizados automaticamente por rotina do GitHub Actions em dias de pregão: durante o pregão o preço é do meio do dia; após as 18h, é o de fechamento. Valores de proventos são brutos (JCP antes do IR). Material educativo; não é recomendação de investimento.</p>
+  <p>Preços e proventos: Yahoo Finance (cerca de 15 minutos de atraso), ajustados por desdobramentos e bonificações, atualizados automaticamente uma vez por dia, depois do fechamento do pregão (a rotina tenta às 18h22, 18h47, 19h23, 20h23 e 22h09). Valores de proventos são brutos (JCP antes do IR). Material educativo; não é recomendação de investimento.</p>
   <p>Qualidade financeira (<span class="beta">BETA</span>): CVM — Portal de Dados Abertos (DFP, ITR e FCA), atualizada diariamente por rotina que só publica se os testes automáticos e os critérios de aceite passarem. <span id="foot-q"></span></p>
   <p>Este painel é material educativo e não constitui recomendação de investimento nem relatório de análise nos termos da Resolução CVM 20/2021. As faixas e notas são convenções do painel.</p>
   <p class="num" id="foot-meta"></p>
@@ -292,7 +292,7 @@ const ST={abaixo_teto:"Abaixo do teto",abaixo_teto_conferir:"Abaixo do teto · c
 const DEF={
   ticker:["Papel","Código de negociação na B3. Final 3 = ordinária (ON, dá voto); 4, 5 ou 6 = preferencial (PN, prioridade nos dividendos); 11 = unit (pacote de ações). Vários códigos podem ser da mesma empresa."],
   controle:["Controle","Quem manda na empresa: governo federal, governo estadual, estatal de outro país, governo com fatia relevante sem controle, ou acionistas privados."],
-  preco:["Preço","Último preço disponível na fonte, com cerca de 15 minutos de atraso. Durante o pregão (10h às 17h55) é um preço do meio do dia e muda até o fechamento; depois das 18h, é o preço de fechamento. O selo no topo diz qual dos dois você está vendo."],
+  preco:["Preço","Preço de fechamento do último pregão, atualizado uma vez por dia depois das 18h. Durante o pregão de hoje, o valor ainda é o do dia útil anterior."],
   dpa_medio:["DPA médio","Dividendo por ação: quanto a empresa pagou, em média, por ação a cada ano (dividendos + JCP, brutos) nos últimos 5 anos completos."],
   dy_medio:["DY médio","Rendimento médio dos últimos 5 anos: proventos de cada ano ÷ preço médio daquele ano. Mostra o passado, não o que rende para quem compra hoje."],
   dy_12m:["DY 12m","Proventos pagos nos últimos 12 meses ÷ preço de hoje. Muda rápido e pode incluir pagamentos extraordinários que não se repetem."],
@@ -350,7 +350,8 @@ function liveLabel(){
   const el=$("live");if(!DATA){$("live-t").textContent="Sem dados";return}
   const g=DATA.gerado_em, ref=DATA.pregao_referencia, fase=DATA.fase||"fechamento";
   const b=brt(), hoje=iso(b), hm=b.getUTCHours()*60+b.getUTCMinutes();
-  const esperado=ehPregao(hoje)&&hm>=10*60+20?hoje:(ehPregao(hoje)&&hm<10*60+20?pregaoAnterior(hoje):(ehPregao(hoje)?hoje:pregaoAnterior(hoje)));
+  /* coleta só depois do fechamento (tentativas das 18h22 às 22h09): o fechamento de hoje é esperado a partir das 22h30 */
+  const esperado=ehPregao(hoje)&&hm>=22*60+30?hoje:pregaoAnterior(hoje);
   const hg=g.slice(11), dg=`${g.slice(8,10)}/${g.slice(5,7)}`;
   const idadeMin=(b.getTime()-new Date(g.replace(" ","T")+":00Z").getTime())/6e4;
   let txt, st=false, intra=false;
