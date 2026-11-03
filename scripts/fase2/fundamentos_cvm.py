@@ -462,8 +462,8 @@ def processar(p, mapa, anuais, itr, nomes, hoje, saida):
             pega = lambda c: {k: [ds, v] for k, (ds, v) in sorted(c.items()) if nivel(k) <= 3}
             LOG["conferencia"][tk[:4]] = {
                 "visao": tipo, "dre_" + anos[-1]: pega(d.get("DRE", {})),
-                "dva_" + anos[-1]: {k: v for k, v in pega(d.get("DVA", {})).items() if k.startswith("7.08")} or
-                                    {k: [ds, v] for k, (ds, v) in sorted(d.get("DVA", {}).items()) if re.search(r"dividend|juros sobre|capita", ds)},
+                "dva_" + anos[-1]: {k: [ds, v] for k, (ds, v) in sorted(d.get("DVA", {}).items())
+                                    if re.search(r"dividend|juros sobre|capita|retid|controlador", ds)},
                 "dre_" + str(atual): pega(trims[atual].get("DRE", {})) if atual else None}
         m.update(cd_cvm=cd, empresa_cvm=nomes.get(cd), demonstracao="consolidada" if tipo == "con" else "individual",
                  referencia=ref, base=base, mapeamento=LOG["mapa"].get(tk[:4]), flags=flags, erros=erros)
