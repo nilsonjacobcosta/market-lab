@@ -295,6 +295,9 @@ def qualidade(linhas, brutos, ano_ref, situacoes):
                 extra["anos_extraordinarios"] = ext
             if rob > 0 and d12 > FATOR_DY12M * rob:
                 add("dy12m_atipico")
+            # juízes do 1º pregão: teto calculado com anos-lacuna (provável falha da fonte) não entra no filtro
+            if lac and l["status_robusto"] == "abaixo_teto":
+                l["status_robusto"] = "abaixo_teto_conferir"
         else:
             l["status_robusto"] = l["status"]
 
@@ -415,7 +418,12 @@ def main():
     ref = max(datas) if datas else agora.strftime("%Y-%m-%d")
     linhas = calcular(univ, brutos, estatais, int(ref[:4]))
     linhas = qualidade(linhas, brutos, int(ref[:4]), situacoes)
-    painel = dict(gerado_em=agora.strftime("%Y-%m-%d %H:%M"), pregao_referencia=ref,
+    # fase do preço (juízes do 1º pregão): durante o pregão (10h-18h, mais 15 min de atraso da fonte) é intradiário
+    hm = agora.hour * 60 + agora.minute
+    fase = ("intradiario" if ref == agora.strftime("%Y-%m-%d") and agora.weekday() < 5 and 10 * 60 <= hm < 18 * 60 + 20
+            else "fechamento")
+    painel = dict(gerado_em=agora.strftime("%Y-%m-%d %H:%M"), pregao_referencia=ref, fase=fase,
+                  coletado_em_utc=datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%MZ"),
                   metodo=dict(anos=ANOS, taxa_bazin=TAXA_BAZIN, liquidez_minima_mil=LIQ_MIN,
                               dpa_robusto=("média aparada (sem maior e menor ano) com 5 anos válidos; mediana com 3-4; "
                                            "sem o ano parcial de listagem e sem anos-lacuna"),
@@ -424,7 +432,8 @@ def main():
                               nivel_grave=sorted(GRAVES),
                               status_nao_se_aplica="papel com alerta grave: preço-teto não se aplica",
                               situacoes_especiais_versao=situacoes.get("atualizado")),
-                  fonte_precos="Yahoo Finance (fechamento diário, ajustado por proventos em ações)",
+                  fonte_precos=("Yahoo Finance, com cerca de 15 min de atraso: durante o pregão o preço é intradiário; após o "
+                               "fechamento, é o de fechamento. Ajustado por proventos em ações"),
                   papeis=linhas)
     (BASE / "painel.json").write_text(json.dumps(painel, ensure_ascii=False, separators=(",", ":")))
     c = contagens(linhas)

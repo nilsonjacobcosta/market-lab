@@ -56,6 +56,10 @@ header.top > div{min-width:0}
 .live{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 12px}
 .live i{width:8px;height:8px;border-radius:50%;background:var(--pos);display:block;box-shadow:0 0 0 3px var(--pos-soft);flex:none}
 .live.stale i{background:var(--warn);box-shadow:0 0 0 3px var(--warn-soft)}
+.live.stale{border-color:var(--warn);background:var(--warn-soft);color:var(--ink)}
+.live.intra i{background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.live{max-width:100%;border-radius:14px}.live i{margin-top:0}
+.st-abaixo_teto_conferir{background:var(--warn-soft);color:var(--ink);box-shadow:inset 0 0 0 1px var(--warn)}
 
 .notice{background:var(--warn-soft);border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:var(--r);padding:12px 14px;font-size:.9rem}
 .notice p{max-width:none}
@@ -190,7 +194,7 @@ footer{font-size:.85rem;color:var(--ink-2);border-top:1px solid var(--line);padd
     <h1>Monitor BESST</h1>
     <p class="lede">Bancos, Energia, Seguros, Saneamento e Telecomunicações: as empresas dos cinco setores perenes da B3, com quanto pagaram de proventos e o preço-teto pelo método Bazin, calculados com dados públicos. Toque numa linha para ver a ficha da empresa.</p>
   </div>
-  <span class="live" id="live"><i></i><span id="live-t">Carregando dados…</span></span>
+  <span class="live" id="live" role="status" aria-live="polite"><i aria-hidden="true"></i><span id="live-t">Carregando dados…</span></span>
 </header>
 
 <div class="notice" role="note" style="border-left:4px solid var(--warn)"><p><b>Atenção:</b> a atualização automática está instável. Os preços podem ter horas ou dias de atraso e, durante o pregão, não são de fechamento. Confira data e hora no selo acima e confirme na B3 ou na sua corretora.</p></div>
@@ -212,6 +216,7 @@ footer{font-size:.85rem;color:var(--ink-2);border-top:1px solid var(--line);padd
 
 <div class="legend" aria-label="Legenda">
   <span><span class="pill st-abaixo_teto">Abaixo do teto</span> preço menor que o preço-teto robusto (não é sinal de compra)</span>
+  <span><span class="pill st-abaixo_teto_conferir">Abaixo do teto · conferir dados</span> o histórico de proventos tem anos zerados, provável falha da fonte; o teto pode estar errado</span>
   <span><span class="pill al-grave">Grave: teto não se aplica</span> crise, papel sem negócios ou dado implausível</span>
   <span><span class="pill al-atencao">Atenção · n</span> n pontos a conferir na ficha</span>
   <span><span class="pill al-ok">Nenhum alerta automático</span> nenhuma regra disparou; não quer dizer que é seguro</span>
@@ -241,6 +246,7 @@ footer{font-size:.85rem;color:var(--ink-2);border-top:1px solid var(--line);padd
     <option value="">Toda situação</option>
     <option value="abaixo_teto">Abaixo do teto</option>
     <option value="acima_teto">Acima do teto</option>
+    <option value="abaixo_teto_conferir">Abaixo do teto · conferir dados</option>
     <option value="nao_se_aplica">Teto não se aplica</option>
     <option value="outros">Sem métrica</option>
   </select>
@@ -267,7 +273,7 @@ footer{font-size:.85rem;color:var(--ink-2);border-top:1px solid var(--line);padd
 </section>
 
 <footer>
-  <p>Preços e proventos: Yahoo Finance, ajustados por desdobramentos e bonificações, atualizados automaticamente por rotina do GitHub Actions em dias de pregão. Valores de proventos são brutos (JCP antes do IR). Material educativo; não é recomendação de investimento.</p>
+  <p>Preços e proventos: Yahoo Finance (cerca de 15 minutos de atraso), ajustados por desdobramentos e bonificações, atualizados automaticamente por rotina do GitHub Actions em dias de pregão: durante o pregão o preço é do meio do dia; após as 18h, é o de fechamento. Valores de proventos são brutos (JCP antes do IR). Material educativo; não é recomendação de investimento.</p>
   <p>Qualidade financeira (<span class="beta">BETA</span>): CVM — Portal de Dados Abertos (DFP, ITR e FCA), atualizada diariamente por rotina que só publica se os testes automáticos e os critérios de aceite passarem. <span id="foot-q"></span></p>
   <p>Este painel é material educativo e não constitui recomendação de investimento nem relatório de análise nos termos da Resolução CVM 20/2021. As faixas e notas são convenções do painel.</p>
   <p class="num" id="foot-meta"></p>
@@ -282,11 +288,11 @@ const $=id=>document.getElementById(id);
 const SET=["Bancos","Energia","Seguros","Saneamento","Telecomunicações"];
 const LET={"Bancos":"B","Energia":"E","Seguros":"S","Saneamento":"S","Telecomunicações":"T"};
 const CT={estatal_federal:"Federal",estatal_estadual:"Estadual",estatal_estrangeira:"Estatal estrangeira",participacao_estatal_relevante:"Participação estatal",privada:"Privada"};
-const ST={abaixo_teto:"Abaixo do teto",acima_teto:"Acima do teto",sem_proventos:"Sem proventos",historico_curto:"Histórico curto",sem_cotacao:"Sem cotação",nao_se_aplica:"Teto não se aplica"};
+const ST={abaixo_teto:"Abaixo do teto",abaixo_teto_conferir:"Abaixo do teto · conferir dados",acima_teto:"Acima do teto",sem_proventos:"Sem proventos",historico_curto:"Histórico curto",sem_cotacao:"Sem cotação",nao_se_aplica:"Teto não se aplica"};
 const DEF={
   ticker:["Papel","Código de negociação na B3. Final 3 = ordinária (ON, dá voto); 4, 5 ou 6 = preferencial (PN, prioridade nos dividendos); 11 = unit (pacote de ações). Vários códigos podem ser da mesma empresa."],
   controle:["Controle","Quem manda na empresa: governo federal, governo estadual, estatal de outro país, governo com fatia relevante sem controle, ou acionistas privados."],
-  preco:["Preço","Último preço de fechamento da ação no pregão de referência."],
+  preco:["Preço","Último preço disponível na fonte, com cerca de 15 minutos de atraso. Durante o pregão (10h às 17h55) é um preço do meio do dia e muda até o fechamento; depois das 18h, é o preço de fechamento. O selo no topo diz qual dos dois você está vendo."],
   dpa_medio:["DPA médio","Dividendo por ação: quanto a empresa pagou, em média, por ação a cada ano (dividendos + JCP, brutos) nos últimos 5 anos completos."],
   dy_medio:["DY médio","Rendimento médio dos últimos 5 anos: proventos de cada ano ÷ preço médio daquele ano. Mostra o passado, não o que rende para quem compra hoje."],
   dy_12m:["DY 12m","Proventos pagos nos últimos 12 meses ÷ preço de hoje. Muda rápido e pode incluir pagamentos extraordinários que não se repetem."],
@@ -333,12 +339,28 @@ async function fetchData(){
   try{const r=await fetch("../../dados/besst/painel.json?t="+Date.now(),{cache:"no-store"});if(r.ok)return await r.json()}catch(e){}
   return window.__EMBED__;
 }
+/* calendário da B3: feriados sem pregão (2026: B3, Ofício Circular 054/2025-VNC; 2027: provisório, feriados nacionais) */
+const FERIADOS=new Set(["2026-01-01","2026-02-16","2026-02-17","2026-04-03","2026-04-21","2026-05-01","2026-06-04","2026-09-07","2026-10-12","2026-11-02","2026-11-20","2026-12-24","2026-12-25","2026-12-31",
+  "2027-01-01","2027-02-08","2027-02-09","2027-03-26","2027-04-21","2027-05-27","2027-09-07","2027-10-12","2027-11-02","2027-11-15","2027-12-24","2027-12-31"]);
+const brt=()=>new Date((window.__AGORA__||Date.now())-3*36e5); /* Brasília = UTC−3 (sem horário de verão desde 2019) */
+const iso=d=>d.toISOString().slice(0,10);
+const ehPregao=s=>{const d=new Date(s+"T12:00:00Z").getUTCDay();return d>0&&d<6&&!FERIADOS.has(s)};
+function pregaoAnterior(s){let d=new Date(s+"T12:00:00Z");do{d=new Date(d.getTime()-864e5)}while(!ehPregao(iso(d)));return iso(d)}
 function liveLabel(){
   const el=$("live");if(!DATA){$("live-t").textContent="Sem dados";return}
-  const g=DATA.gerado_em, ref=DATA.pregao_referencia;
-  const age=(Date.now()-new Date(g.replace(" ","T")+":00-03:00").getTime())/36e5;
-  el.classList.toggle("stale",age>26);
-  $("live-t").textContent=`Pregão de ${dbr(ref)} · atualizado ${g.slice(8,10)}/${g.slice(5,7)} às ${g.slice(11)}`;
+  const g=DATA.gerado_em, ref=DATA.pregao_referencia, fase=DATA.fase||"fechamento";
+  const b=brt(), hoje=iso(b), hm=b.getUTCHours()*60+b.getUTCMinutes();
+  const esperado=ehPregao(hoje)&&hm>=10*60+20?hoje:(ehPregao(hoje)&&hm<10*60+20?pregaoAnterior(hoje):(ehPregao(hoje)?hoje:pregaoAnterior(hoje)));
+  const hg=g.slice(11), dg=`${g.slice(8,10)}/${g.slice(5,7)}`;
+  const idadeMin=(b.getTime()-new Date(g.replace(" ","T")+":00Z").getTime())/6e4;
+  let txt, st=false, intra=false;
+  if(ref<esperado){st=true;txt=`⚠ Dados do pregão de ${dbr(ref)}: a atualização automática atrasou. Os preços podem não ser os de hoje.`}
+  else if(fase==="intradiario"&&ref===hoje&&hm<18*60+20&&idadeMin>90){st=true;txt=`⚠ Preços do pregão de hoje coletados às ${hg}: a atualização automática atrasou e eles podem estar defasados.`}
+  else if(fase==="intradiario"&&(ref<hoje||hm>=19*60)){st=true;txt=`⚠ Preços de ${dbr(ref).slice(0,5)} coletados às ${hg}, antes do fechamento: o preço de fechamento ainda não foi coletado.`}
+  else if(fase==="intradiario"){intra=true;txt=`Pregão de ${dbr(ref).slice(0,5)} em andamento · preços das ${hg}, com atraso de ~15 min da fonte. Mudam até o fechamento.`}
+  else txt=`Fechamento do pregão de ${dbr(ref)} · atualizado ${dg} às ${hg}`;
+  el.classList.toggle("stale",st);el.classList.toggle("intra",intra);
+  $("live-t").textContent=txt;
   $("foot-meta").textContent=`Base de cálculo: ${DATA.metodo.anos} anos completos · taxa Bazin ${DATA.metodo.taxa_bazin*100}% · ${DATA.papeis.length} papéis de ${REPS.length} empresas no universo`;
 }
 const isEst=c=>!!c&&c.startsWith("estatal");
@@ -377,7 +399,7 @@ function filtered(){
     if(setor&&p.setor!==setor)return false;
     if(q){const tk=mode==="simple"?p._grp.map(x=>x.ticker):[p.ticker];if(!(tk.some(t=>t.toLowerCase().includes(q))||p.empresa.toLowerCase().includes(q)))return false}
     if(c==="estatal"&&!isEst(p.controle))return false; if(c&&c!=="estatal"&&p.controle!==c)return false;
-    if(st==="outros"&&["abaixo_teto","acima_teto","nao_se_aplica"].includes(p._st))return false; if(st&&st!=="outros"&&p._st!==st)return false;
+    if(st==="outros"&&["abaixo_teto","abaixo_teto_conferir","acima_teto","nao_se_aplica"].includes(p._st))return false; if(st&&st!=="outros"&&p._st!==st)return false;
     if(hc&&p.status==="sem_cotacao")return false;
     if(lq&&(p.baixa_liquidez||p.status==="sem_cotacao"))return false;
     if(na&&p._niv!=="ok")return false;
@@ -582,7 +604,7 @@ async function boot(){[DATA,QUAL]=await Promise.all([fetchData(),fetchQual()]);g
   if(QUAL)$("foot-q").textContent=`Dados financeiros até ${dbr(QUAL.data_base_mais_recente)} · gerado em ${QUAL.gerado_em.slice(8,10)}/${QUAL.gerado_em.slice(5,7)}.`;if(!DATA){liveLabel();return}prep();liveLabel();
   $("m-simple").setAttribute("aria-pressed",mode==="simple");$("m-full").setAttribute("aria-pressed",mode==="full");head();sectors();render()}
 boot();
-setInterval(async()=>{const d=await fetchData();if(d&&d.gerado_em!==DATA?.gerado_em){DATA=d;prep();liveLabel();sectors();render()}},5*60*1000);
+setInterval(async()=>{const d=await fetchData();if(d&&d.gerado_em!==DATA?.gerado_em){DATA=d;prep();liveLabel();sectors();render()}else if(DATA)liveLabel()},5*60*1000);
 })();
 </script>
 
