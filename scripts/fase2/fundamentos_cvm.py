@@ -325,7 +325,8 @@ def main():
         tk, setor = p["ticker"], p["setor"]
         cd = mapa.get(tk[:4])
         if not cd:
-            saida[tk] = {"erro": "sem CD_CVM", "motivo": LOG["mapa"].get(tk[:4])}
+            saida[tk] = {"erro": "sem CD_CVM", "motivo": LOG["mapa"].get(tk[:4]),
+                         "sem_cotacao": p.get("preco") is None}
             continue
         tipos = {}
         for (c, t) in anuais:
@@ -334,15 +335,22 @@ def main():
         if not tipos:
             saida[tk] = {"erro": "sem DFP", "cd_cvm": cd, "empresa_cvm": nomes.get(cd)}
             continue
-        tipo = "con" if "con" in tipos and tem_dre(tipos["con"]) else "ind" if "ind" in tipos else "con"
-        anos = sorted(tipos[tipo])
-        d, dant = tipos[tipo][anos[-1]], tipos[tipo].get(anos[-2], {}) if len(anos) > 1 else {}
+        # por exercício: consolidada se tiver DRE com valores, senão individual; vale o exercício mais recente
+        por_ano = {}
+        for t in ("ind", "con"):
+            for ano_, dd in tipos.get(t, {}).items():
+                if t == "con" and not tem_dre({ano_: dd}) and ano_ in por_ano:
+                    continue
+                por_ano[ano_] = (t, dd)
+        anos = sorted(por_ano)
+        tipo, d = por_ano[anos[-1]]
+        dant = por_ano[anos[-2]][1] if len(anos) > 1 else {}
         fa = fluxo(d.get("DRE", {}), d.get("DFC", {}), d.get("DVA", {}))
         ba, bant = balanco(d.get("BPA", {}), d.get("BPP", {})), balanco(dant.get("BPA", {}), dant.get("BPP", {}))
         flags, m = [], {}
 
         # janela de 12 meses
-        trims = itr.get((cd, tipo), {})
+        trims = itr.get((cd, tipo), {}) or itr.get((cd, "ind" if tipo == "con" else "con"), {})
         atual = max((f for f in trims if f[:4] > anos[-1]), default=None)
         f12, b_fim, b_ini, ref, base = fa, ba, bant, anos[-1] + "-12-31", "exercício " + anos[-1]
         if atual:
@@ -402,6 +410,8 @@ def main():
         if tipo == "ind":
             flags.append("demonstracao_individual")
         m["semaforo"], m["nota"] = nota(setor, m, flags)
+        if p.get("preco") is None:
+            flags.append("sem_cotacao")
         m.update(cd_cvm=cd, empresa_cvm=nomes.get(cd), demonstracao="consolidada" if tipo == "con" else "individual",
                  referencia=ref, base=base, mapeamento=LOG["mapa"].get(tk[:4]), flags=flags)
         if not m["descartados"]:

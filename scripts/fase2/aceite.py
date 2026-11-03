@@ -2,7 +2,10 @@
 import json, sys
 from pathlib import Path
 
-f = json.loads(Path(sys.argv[1]).read_text())
+todos = json.loads(Path(sys.argv[1]).read_text())
+painel = {p["ticker"]: p for p in json.loads(Path("dados/besst/painel.json").read_text())["papeis"]}
+sem_cot = sorted(t for t in todos if painel.get(t, {}).get("preco") is None)
+f = {t: v for t, v in todos.items() if t not in sem_cot}  # aceite medido só nos papéis negociados
 falha = json.loads(Path(sys.argv[2]).read_text()) if len(sys.argv) > 2 and Path(sys.argv[2]).exists() else None
 raiz = lambda t: t[:4]
 emis = {raiz(t) for t in f}
@@ -18,6 +21,9 @@ roe_pl_neg = [t for t, v in f.items() if v.get("roe") is not None and "patrimoni
 nota_sem_ll = [t for t, v in f.items() if v.get("nota") is not None and v.get("ll") is None]
 pct = lambda a, b: round(100 * len(a) / len(b), 1) if b else 0
 r = {
+    "papeis_no_universo": len(todos),
+    "papeis_sem_cotacao_excluidos_do_aceite": sem_cot,
+    "papeis_negociados": len(f),
     "emissores": len(emis),
     "emissores_mapeados_pct (meta >=95)": pct(mapeados, emis),
     "emissores_com_dado_ate_15m_pct (meta >=90)": pct(recentes, emis),
@@ -28,6 +34,8 @@ r = {
     "roe_com_pl_negativo (meta 0)": roe_pl_neg,
     "nota_com_lucro_ausente (meta 0)": nota_sem_ll,
     "sem_mapeamento": sorted({raiz(t): v.get("motivo") for t, v in f.items() if v.get("erro") == "sem CD_CVM"}.items()),
+    "dado_antigo": sorted({raiz(t): [x for x in v["flags"] if x.startswith("dado_antigo")][0] for t, v in f.items()
+                           if "erro" not in v and any(x.startswith("dado_antigo") for x in v["flags"])}.items()),
     "sem_dfp": sorted({raiz(t) for t, v in f.items() if v.get("erro") == "sem DFP"}),
     "execucao_com_download_forcado_a_falhar": (None if falha is None else
         f"concluiu: {sum(1 for v in falha.values() if 'erro' not in v)} papéis com dados"),
