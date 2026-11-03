@@ -37,7 +37,7 @@ payout (fase 1, só CVM) e acrescentar as regulatórias depois (fase 2).
 | Setor | Métrica | Fórmula | Verde | Amarelo | Vermelho |
 |---|---|---|---|---|---|
 | Bancos | ROE | Lucro 12m atrib. controladores ÷ PL médio controladores | ≥ 15% | 10–15% | < 10% ou prejuízo |
-| Bancos | Payout | Dividendos+JCP pagos 12m ÷ lucro 12m | 25–60% | 60–80% ou < 25% | > 80% |
+| Bancos | Payout | Dividendos+JCP declarados no exercício (DVA) ÷ lucro do exercício | 25–60% | 60–80% ou < 25% | > 80% |
 | Bancos (fase 2) | Índice de Basileia | Patrimônio de referência ÷ ativos ponderados por risco (BCB IF.data) | ≥ 14% | 11,5–14% | < 11,5% |
 | Bancos (fase 2) | Custo de crédito | Despesa de PDD 12m ÷ carteira média | < 3% | 3–5% | > 5% |
 | Seguros | ROE | idem bancos | ≥ 15% | 10–15% | < 10% |
@@ -56,7 +56,7 @@ payout (fase 1, só CVM) e acrescentar as regulatórias depois (fase 2).
 Notas de calibragem: Basileia mínimo regulatório total = 8% + 2,5% de conservação (+ adicional sistêmico para D-SIBs),
 conforme Res. CMN 4.958/2021 — 11,5% amarelo dá folga sobre o piso. Transmissoras (TAEE, ISAE, ALUP) toleram até ~4x por
 receita contratada (RAP); distribuidoras e geradoras com energia descontratada não. ROE é comparado ao custo de capital: com Selic em dois
-dígitos, ROE < 10% destrói valor. Payout < 25% fica amarelo (baixo para quem busca dividendos, mas não é risco).
+dígitos, ROE < 10% fica abaixo do custo de capital típico do setor. Payout < 25% fica amarelo (baixo para quem busca dividendos, mas não é risco).
 Exibição: 3 bolinhas coloridas por linha + tooltip com o número e a frase "por que importa"; cinza = sem dado.
 
 ## 3. Fonte pública e gratuita automatizável (GitHub Actions)

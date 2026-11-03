@@ -259,14 +259,17 @@ def nota(setor, m, flags):
     sem = {k: cor(m.get(k) if k not in m.get("descartados", []) else None, r) for k, r in FAIXAS[setor].items()}
     if m.get("ll") is None:
         flags.append("lucro_indisponivel")
+        flags.append("sem_nota:lucro_indisponivel")
         return sem, None
     if any(f.startswith("dado_antigo") for f in flags):
+        flags.append("sem_nota:dado_antigo")
         return sem, None
     if m.get("descartados"):
         flags.append("sem_nota:metrica_fora_da_faixa_plausivel")
         return sem, None
     ok = [c for c in sem.values() if c != "cinza"]
     if len(ok) < 2:
+        flags.append("sem_nota:indicadores_insuficientes")
         return sem, None
     pts = sum(1 if c == "verde" else 0.5 if c == "amarelo" else 0 for c in ok)
     n = int(3 * pts / len(ok) + 0.5)  # arredondamento explícito: ,5 sobe
@@ -465,6 +468,19 @@ def processar(p, mapa, anuais, itr, nomes, hoje, saida):
                 "dva_" + anos[-1]: {k: [ds, v] for k, (ds, v) in sorted(d.get("DVA", {}).items())
                                     if re.search(r"dividend|juros sobre|capita|retid|controlador", ds)},
                 "dre_" + str(atual): pega(trims[atual].get("DRE", {})) if atual else None}
+        financeiro = setor in FINANCEIROS
+        m["padrao"] = (("IFRS consolidado" if tipo == "con" else "Cosif individual") if financeiro
+                       else ("IFRS consolidado" if tipo == "con" else "IFRS individual (CPC)"))
+        m["nota_provisoria"] = m["nota"] is not None and any(f.startswith("verificar") for f in flags)
+        MOT = {"lucro_indisponivel": "o lucro do período não aparece nos dados da CVM",
+               "dado_antigo": "o último balanço entregue à CVM tem mais de 15 meses",
+               "metrica_fora_da_faixa_plausivel": "um indicador ficou fora da faixa plausível e precisa de conferência",
+               "sem_cotacao": "não há cotação recente deste código",
+               "indicadores_insuficientes": "há menos de dois indicadores disponíveis para este setor"}
+        sn = [f.split(":", 1)[1] for f in flags if f.startswith("sem_nota:")]
+        if m["nota"] is None:
+            m["motivo_sem_nota"] = MOT.get(sn[0], sn[0]) if sn else "indicadores insuficientes"
+        erros += LOG["downloads_falhos"]
         m.update(cd_cvm=cd, empresa_cvm=nomes.get(cd), demonstracao="consolidada" if tipo == "con" else "individual",
                  referencia=ref, base=base, mapeamento=LOG["mapa"].get(tk[:4]), flags=flags, erros=erros)
         if not m["descartados"]:

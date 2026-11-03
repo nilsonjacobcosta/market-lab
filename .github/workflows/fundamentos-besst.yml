@@ -1,0 +1,42 @@
+name: Atualizar qualidade financeira (BETA)
+
+on:
+  schedule:
+    - cron: "43 10 * * *"   # diário, 07:43 em Brasília (ITR/DFP mudam poucas vezes por trimestre)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: monitor-besst
+  cancel-in-progress: false
+
+jobs:
+  fundamentos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Testes unitários (bloqueiam a publicação)
+        run: python3 -m unittest tests/test_fase2.py -v
+      - name: Coletar e calcular
+        run: |
+          mkdir -p /tmp/f2
+          python3 scripts/fase2/fundamentos_cvm.py --painel dados/besst/painel.json --saida /tmp/f2/fundamentos.json --log /tmp/f2/log.json
+      - name: Medir aceite
+        run: python3 scripts/fase2/aceite.py /tmp/f2/fundamentos.json > /tmp/f2/aceite.json && cat /tmp/f2/aceite.json
+      - name: Publicar só se o aceite estiver limpo
+        run: python3 scripts/fase2/publicar.py /tmp/f2/fundamentos.json /tmp/f2/aceite.json dados/besst/fundamentos.json
+      - name: Commit
+        run: |
+          git config user.name "market-lab bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add dados/besst/fundamentos.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Qualidade financeira (beta): atualização $(date -u +'%Y-%m-%d %H:%M') UTC"
+          git pull --rebase
+          git push
