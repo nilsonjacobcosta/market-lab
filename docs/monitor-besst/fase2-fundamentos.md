@@ -22,7 +22,9 @@ Base na literatura e na prática:
   [American Economic Review 46(2)](https://www.jstor.org/stable/1910664)
 - Brasil (Lei 6.404, art. 202): o dividendo obrigatório é o que o estatuto fixar; se o estatuto for omisso, é **metade
   (50%) do lucro líquido ajustado**; se a assembleia alterar um estatuto omisso para fixá-lo, o percentual não pode ser
-  inferior a 25% do lucro ajustado. Payout acima de 100% indica distribuição de reservas ou de recursos de terceiros.
+  inferior a 25% do lucro ajustado. Exceções: o § 3º permite dividendo inferior ou retenção total em companhia aberta só
+  quando ela capta recursos exclusivamente por debêntures não conversíveis (e em fechadas não controladas por abertas), e o
+  § 4º dispensa o obrigatório no exercício em que a administração informar que ele é incompatível com a situação financeira. Payout acima de 100% indica distribuição de reservas ou de recursos de terceiros.
   *(Texto corrigido em 02/11/2026 por exigência do parecer dos juízes.)* [Planalto](https://www.planalto.gov.br/ccivil_03/leis/l6404consol.htm)
 
 Por que "parcial": (i) para iniciante, mais de 3 números por papel vira ruído; (ii) parte das métricas setoriais corretas
@@ -134,3 +136,14 @@ Combinar também com a coluna "tendência" já existente: margem alta + tendênc
    BBSE3, TAEE11, CMIG4, EGIE3, SBSP3, SAPR11, VIVT3, TIMS3) e ajustar regex de contas.
 2. Gerar `dados/besst/fundamentos.json` em workflow semanal; página lê os dois JSONs e mostra 3 bolinhas + nota + matriz.
 3. Fase 2: IF.data (Basileia) para bancos e SUSEP SES (índice combinado) para seguradoras operacionais.
+
+## Atualização após a 2ª rodada de testes (03/11/2026)
+
+- **FCF yield retirado** da tabela de métricas: a contagem de ações do arquivo `composicao_capital` da CVM tem escala
+  inconsistente entre emissores. Em Telecomunicações, o ROE ocupa o lugar dele.
+- **Payout = proventos declarados sobre o lucro do exercício** (JCP + dividendos da linha "remuneração de capitais
+  próprios" da DVA), divididos pelo lucro atribuído aos controladores do mesmo exercício. O valor pago em caixa no ano
+  (DFC) aparece só como conferência.
+- **Lucro = lucro contábil (IFRS/Cosif)** dos últimos 12 meses; pode diferir do lucro "recorrente" dos releases.
+- Variação do lucro acumulado acima de ±60% contra o mesmo período do ano anterior recebe o aviso "verificar"
+  (possível efeito não recorrente). O ROE médio dos exercícios fechados aparece ao lado do ROE de 12 meses.

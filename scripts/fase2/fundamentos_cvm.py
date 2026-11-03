@@ -52,7 +52,8 @@ FAIXAS = {
 # (verificar se fora de [a, b]; descartar se fora de [c, d])
 SANIDADE = {"roe": (-30, 60, -100, 150), "payout": (0, 110, 0, 150),
             "div_liq_ebitda": (-3, 6, -10, 15), }
-LOG = {"downloads_falhos": [], "mapa": {}}
+LOG = {"downloads_falhos": [], "mapa": {}, "conferencia": {}}
+CONFERIR = {"EGIE", "CPLE", "ITUB", "BBDC", "SANB", "BBAS", "BBSE", "EKTR", "CMIG", "TAEE", "ISAE", "BPAC"}
 
 
 def norm(s):
@@ -259,13 +260,16 @@ def nota(setor, m, flags):
     if m.get("ll") is None:
         flags.append("lucro_indisponivel")
         return sem, None
-    if "dado_antigo" in flags:
+    if any(f.startswith("dado_antigo") for f in flags):
+        return sem, None
+    if m.get("descartados"):
+        flags.append("sem_nota:metrica_fora_da_faixa_plausivel")
         return sem, None
     ok = [c for c in sem.values() if c != "cinza"]
     if len(ok) < 2:
         return sem, None
     pts = sum(1 if c == "verde" else 0.5 if c == "amarelo" else 0 for c in ok)
-    n = round(3 * pts / len(ok))
+    n = int(3 * pts / len(ok) + 0.5)  # arredondamento explícito: ,5 sobe
     if m["ll"] < 0:
         n = 0
     elif "vermelho" in ok and n > 1:
@@ -323,19 +327,28 @@ def main():
 
     saida = {}
     for p in papeis:
+        try:
+            processar(p, mapa, anuais, itr, nomes, hoje, saida)
+        except Exception as e:  # um papel com problema não derruba os outros
+            saida[p["ticker"]] = {"erro": "excecao", "erros": [repr(e)]}
+    return saida, a
+
+
+def processar(p, mapa, anuais, itr, nomes, hoje, saida):
+    if True:
         tk, setor = p["ticker"], p["setor"]
         cd = mapa.get(tk[:4])
         if not cd:
             saida[tk] = {"erro": "sem CD_CVM", "motivo": LOG["mapa"].get(tk[:4]),
                          "sem_cotacao": p.get("preco") is None}
-            continue
+            return
         tipos = {}
         for (c, t) in anuais:
             if c == cd:
                 tipos[t] = anuais[(c, t)]
         if not tipos:
             saida[tk] = {"erro": "sem DFP", "cd_cvm": cd, "empresa_cvm": nomes.get(cd)}
-            continue
+            return
         # por exercício: consolidada se tiver DRE com valores, senão individual; vale o exercício mais recente
         por_ano = {}
         for t in ("ind", "con"):
@@ -349,26 +362,40 @@ def main():
         fa = fluxo(d.get("DRE", {}), d.get("DFC", {}), d.get("DVA", {}))
         ba, bant = balanco(d.get("BPA", {}), d.get("BPP", {})), balanco(dant.get("BPA", {}), dant.get("BPP", {}))
         flags, m = [], {}
+        erros = []
 
         # janela de 12 meses
-        trims = itr.get((cd, tipo), {}) or itr.get((cd, "ind" if tipo == "con" else "con"), {})
-        atual = max((f for f in trims if f[:4] > anos[-1]), default=None)
+        trims = itr.get((cd, tipo), {})  # mesma visão (consolidada/individual) da DFP
+        atual = max((f for f in trims if int(f[:4]) == int(anos[-1]) + 1), default=None)
+        if not atual and any(int(f[:4]) > int(anos[-1]) + 1 for f in trims):
+            flags_ltm = ["ltm_recusado:ITR mais de um ano após a DFP"]
+        else:
+            flags_ltm = []
         f12, b_fim, b_ini, ref, base = fa, ba, bant, anos[-1] + "-12-31", "exercício " + anos[-1]
         if atual:
             ant = f"{int(atual[:4]) - 1}{atual[4:]}"
             x, y = trims[atual], trims.get(ant)
+            fx = fluxo(x.get("DRE", {}), x.get("DFC", {}))
+            fy = fluxo(y.get("DRE", {}), y.get("DFC", {})) if y else None
+            if y and len({fa["base_ll"], fx["base_ll"], fy["base_ll"]} - {None}) > 1:
+                flags.append("ltm_recusado:base de lucro diferente entre as peças (usado o exercício fechado)")
+                y = None
             if y:
-                fl, faltou = ltm(fa, fluxo(x.get("DRE", {}), x.get("DFC", {})), fluxo(y.get("DRE", {}), y.get("DFC", {})))
-                m["componentes_lucro"] = {"exercicio_" + anos[-1]: fa["ll"], "acumulado_" + atual: x and fluxo(x.get("DRE", {}), {}).get("ll"),
-                                          "acumulado_" + ant: fluxo(y.get("DRE", {}), {}).get("ll")}
+                fl, faltou = ltm(fa, fx, fy)
+                m["componentes_lucro"] = {"exercicio_" + anos[-1]: fa["ll"], "acumulado_" + atual: fx["ll"],
+                                          "acumulado_" + ant: fy["ll"]}
+                # variação forte do lucro acumulado = possível efeito não recorrente (P1)
+                if fx["ll"] is not None and fy["ll"] and abs(fx["ll"] / fy["ll"] - 1) > 0.6:
+                    flags.append(f"verificar:variacao_lucro={round(100 * (fx['ll'] / fy['ll'] - 1))}%")
                 if fl["ll"] is not None:
                     f12, ref, base = fl, atual, "12 meses até " + atual
                     b_fim, b_ini = balanco(x.get("BPA", {}), x.get("BPP", {})), balanco(y.get("BPA", {}), y.get("BPP", {}))
                     flags += [f"ltm_incompleto:{k}" for k in faltou]
                 else:
                     flags.append("ltm_incompleto:ll (usado o exercício fechado)")
-            else:
+            elif not any(f.startswith("ltm_recusado") for f in flags):
                 flags.append(f"sem ITR de {ant} (usado o exercício fechado)")
+        flags += flags_ltm
 
         m["ll"] = f12["ll"]
         m["base_lucro"] = f"lucro contábil, {f12.get('base_ll') or 'indisponível'}"
@@ -383,10 +410,25 @@ def main():
                 if not pi:
                     flags.append("roe_sem_pl_inicial")
                 m["roe"] = round(100 * m["ll"] / pl_med, 1)
+        # ROE médio dos exercícios fechados disponíveis (P1)
+        roes = []
+        for i in range(1, len(anos)):
+            fa_i = fluxo(por_ano[anos[i]][1].get("DRE", {}), {})
+            p1 = balanco(por_ano[anos[i - 1]][1].get("BPA", {}), por_ano[anos[i - 1]][1].get("BPP", {}))["pl"]
+            p2 = balanco(por_ano[anos[i]][1].get("BPA", {}), por_ano[anos[i]][1].get("BPP", {}))["pl"]
+            if fa_i["ll"] is not None and p1 and p2 and p1 > 0 and p2 > 0:
+                roes.append(100 * fa_i["ll"] / ((p1 + p2) / 2))
+        if roes:
+            m["roe_medio_exercicios"] = round(sum(roes) / len(roes), 1)
+            m["roe_medio_n"] = len(roes)
         # payout do último exercício fechado (correção 4)
         if fa["ll"] and fa["ll"] > 0 and (fa["prov_decl"] or fa["prov_caixa"]):
             if fa["prov_decl"]:
                 m["payout"], m["base_payout"] = round(100 * fa["prov_decl"] / fa["ll"], 1), f"declarado (DVA) {anos[-1]}"
+                if fa["prov_caixa"]:
+                    m["payout_caixa"] = round(100 * fa["prov_caixa"] / fa["ll"], 1)
+                if abs(m["payout"] - 100) < 0.5:
+                    flags.append("verificar:payout_igual_ao_lucro (conferir DVA x DMPL)")
             else:
                 m["payout"], m["base_payout"] = round(100 * fa["prov_caixa"] / fa["ll"], 1), f"pago em caixa (DFC) {anos[-1]}"
         if setor not in FINANCEIROS:
@@ -410,14 +452,27 @@ def main():
             flags.append(f"dado_antigo:{idade}_meses")
         if tipo == "ind":
             flags.append("demonstracao_individual")
-        m["semaforo"], m["nota"] = nota(setor, m, flags)
         if p.get("preco") is None:
             flags.append("sem_cotacao")
+        m["semaforo"], m["nota"] = nota(setor, m, flags)
+        if p.get("preco") is None and m["nota"] is not None:
+            m["nota"] = None
+            flags.append("sem_nota:sem_cotacao")
+        if tk[:4] in CONFERIR and tk[:4] not in LOG["conferencia"]:
+            pega = lambda c: {k: [ds, v] for k, (ds, v) in sorted(c.items()) if nivel(k) <= 3}
+            LOG["conferencia"][tk[:4]] = {
+                "visao": tipo, "dre_" + anos[-1]: pega(d.get("DRE", {})),
+                "dva_" + anos[-1]: {k: v for k, v in pega(d.get("DVA", {})).items() if k.startswith("7.08")} or
+                                    {k: [ds, v] for k, (ds, v) in sorted(d.get("DVA", {}).items()) if re.search(r"dividend|juros sobre|capita", ds)},
+                "dre_" + str(atual): pega(trims[atual].get("DRE", {})) if atual else None}
         m.update(cd_cvm=cd, empresa_cvm=nomes.get(cd), demonstracao="consolidada" if tipo == "con" else "individual",
-                 referencia=ref, base=base, mapeamento=LOG["mapa"].get(tk[:4]), flags=flags)
+                 referencia=ref, base=base, mapeamento=LOG["mapa"].get(tk[:4]), flags=flags, erros=erros)
         if not m["descartados"]:
             m.pop("descartados")
         saida[tk] = m
+
+
+def gravar(saida, a):
     Path(a.saida).write_text(json.dumps(saida, ensure_ascii=False, indent=1))
     if a.log:
         Path(a.log).write_text(json.dumps(LOG, ensure_ascii=False, indent=1))
@@ -427,4 +482,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    gravar(*main())

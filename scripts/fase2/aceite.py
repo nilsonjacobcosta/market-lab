@@ -33,6 +33,13 @@ r = {
     "lucro_zero_aceito (meta 0)": ll0,
     "roe_com_pl_negativo (meta 0)": roe_pl_neg,
     "nota_com_lucro_ausente (meta 0)": nota_sem_ll,
+    "nota_com_dado_antigo (meta 0)": [t for t, v in todos.items() if v.get("nota") is not None and any(x.startswith("dado_antigo") for x in v.get("flags", []))],
+    "nota_com_metrica_descartada (meta 0)": [t for t, v in todos.items() if v.get("nota") is not None and v.get("descartados")],
+    "nota_sem_cotacao (meta 0)": [t for t, v in todos.items() if v.get("nota") is not None and t in sem_cot],
+    "papeis_com_excecao": [t for t, v in todos.items() if v.get("erro") == "excecao"],
+    "universo_inteiro_com_nota_pct": round(100 * sum(1 for v in todos.values() if v.get("nota") is not None) / len(todos), 1),
+    "flags_verificar": sorted({t: [x for x in v.get("flags", []) if x.startswith("verificar")] for t, v in f.items()
+                               if any(x.startswith("verificar") for x in v.get("flags", []))}.items()),
     "sem_mapeamento": sorted({raiz(t): v.get("motivo") for t, v in f.items() if v.get("erro") == "sem CD_CVM"}.items()),
     "dado_antigo": sorted({raiz(t): [x for x in v["flags"] if x.startswith("dado_antigo")][0] for t, v in f.items()
                            if "erro" not in v and any(x.startswith("dado_antigo") for x in v["flags"])}.items()),
