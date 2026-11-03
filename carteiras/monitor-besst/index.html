@@ -128,9 +128,9 @@ tr.detail td{background:var(--surface-2);white-space:normal;text-align:left;font
 .q-sn{background:transparent;color:var(--muted);border:1px dashed var(--line)}
 .beta{display:inline-block;font-family:var(--f-body);font-size:.66rem;font-weight:700;letter-spacing:.06em;padding:1px 6px;border-radius:4px;background:var(--accent-soft);color:var(--accent);vertical-align:middle}
 .box.qual{border-left:4px solid var(--ink-2)}
-.qtab{border-collapse:collapse;font-size:.85rem;margin:6px 0}
-.qtab td,.qtab th{padding:3px 10px 3px 0;text-align:left;border-bottom:1px solid var(--line);position:static;box-shadow:none;white-space:normal}
-.qtab td.n{font-family:var(--f-mono);white-space:nowrap}
+.qgrid{display:grid;grid-template-columns:minmax(0,1.2fr) auto minmax(0,2fr);gap:4px 12px;margin:8px 0;font-size:.86rem;align-items:baseline}
+.qgrid>div{display:contents}.qgrid b{font-weight:600}.qgrid .n{font-family:var(--f-mono);white-space:nowrap}.qgrid .c{color:var(--ink-2)}
+@media (max-width:600px){.qgrid{grid-template-columns:1fr auto}.qgrid .c{grid-column:1/-1;margin-bottom:6px}}
 .box.grave{border-left:4px solid var(--neg)}
 td.na{font-family:var(--f-body);font-size:.78rem;color:var(--ink-2)}
 .ct{display:inline-block;padding:1px 7px;border-radius:4px;font-family:var(--f-body);font-size:.72rem;font-weight:600}
@@ -435,7 +435,7 @@ function estBox(p){
 }
 function sibBox(p){
   const o=(p._grp||[]).filter(x=>x!==p);if(!o.length)return "";
-  return `<div class="box"><h4>Outros códigos da mesma empresa</h4><p>São classes de ação da mesma empresa: o negócio é o mesmo, mudam direitos, preço e liquidez. ${mode==="simple"?"A linha principal usa o código mais negociado.":""}</p><div class="sib-scroll"><table class="sib-t"><thead><tr><th scope="col">Código</th><th scope="col">Classe</th><th scope="col">Preço</th><th scope="col">DY 12m</th><th scope="col">Liquidez/dia</th></tr></thead><tbody>${[p,...o].map(x=>`<tr><td>${esc(x.ticker)}${x===p?" (este)":""}</td><td style="font-family:var(--f-body)">${classe(x.ticker)}</td><td>${brl(x.preco)}</td><td>${x.dy_12m!=null?fmt(x.dy_12m,1)+"%":"–"}</td><td>${liq(x.liquidez_mil)}</td></tr>`).join("")}</tbody></table></div></div>`;
+  return `<div class="box"><h4>Outros códigos da mesma empresa</h4><p>São classes de ação da mesma empresa: o negócio é o mesmo, mudam direitos, preço e liquidez. ${mode==="simple"?"A linha principal usa o código mais negociado.":""}</p><div class="sib-scroll"><table class="sib-t"><thead><tr><th scope="col">Código</th><th scope="col">Classe</th><th scope="col">Preço</th><th scope="col">DY 12m</th><th scope="col">Liquidez/dia</th></tr></thead><tbody>${[p,...o].map(x=>`<tr><td>${esc(x.ticker)}${x===p?" (este)":""}</td><td style="font-family:var(--f-body)">${classe(x.ticker)}</span><span class="c">${brl(x.preco)}</td><td>${x.dy_12m!=null?fmt(x.dy_12m,1)+"%":"–"}</td><td>${liq(x.liquidez_mil)}</span></div>`).join("")}</tbody></table></div></div>`;
 }
 function alPill(p,inline){
   const st=inline?' style="vertical-align:middle"':"";
@@ -462,10 +462,10 @@ function qualBox(p){
   if(!f||f.erro)return `<div class="box qual">${head}<p>Sem dados da CVM para este código${f&&f.motivo?": "+esc(f.motivo):""}.</p></div>`;
   const pc=v=>v==null?"–":fmt(v,1)+"%", x=v=>v==null?"–":fmt(v,2)+"x";
   const ref=dbr(f.referencia), fin=["Bancos","Seguros"].includes(p.setor);
-  let rows=`<tr><th scope="row">Lucro (${esc(f.base||"")})</th><td class="n">${f.ll!=null?brl(f.ll/1e9,2)+" bi":"–"}</td><td>${esc(f.padrao||"")}</td></tr>`;
-  rows+=`<tr><th scope="row">ROE 12m</th><td class="n">${pc(f.roe)}</td><td>${f.semaforo&&f.semaforo.roe?SEM[f.semaforo.roe]:""}${f.roe_medio_exercicios!=null?` · média de ${f.roe_medio_n} exercício(s): ${pc(f.roe_medio_exercicios)}`:""}</td></tr>`;
-  rows+=`<tr><th scope="row">Payout</th><td class="n">${pc(f.payout)}</td><td>${f.semaforo&&f.semaforo.payout?SEM[f.semaforo.payout]:""}${f.base_payout?" · "+esc(f.base_payout):""}${f.payout_caixa!=null?` · pago em caixa no ano: ${pc(f.payout_caixa)}`:""}</td></tr>`;
-  if(!fin)rows+=`<tr><th scope="row">Dívida líquida/EBITDA</th><td class="n">${x(f.div_liq_ebitda)}</td><td>${f.semaforo&&f.semaforo.div_liq_ebitda?SEM[f.semaforo.div_liq_ebitda]:"sem dado"}</td></tr>`;
+  let rows=`<div><b>Lucro (${esc((f.base||"").replace(/(\d{4})-(\d{2})-(\d{2})/,"$3/$2/$1"))})</b><span class="n">${f.ll!=null?brl(f.ll/1e9,2)+" bi":"–"}</span><span class="c">${esc(f.padrao||"")}</span></div>`;
+  rows+=`<div><b>ROE 12m</b><span class="n">${pc(f.roe)}</span><span class="c">${f.semaforo&&f.semaforo.roe?SEM[f.semaforo.roe]:""}${f.roe_medio_exercicios!=null?` · média de ${f.roe_medio_n} exercício(s): ${pc(f.roe_medio_exercicios)}`:""}</span></div>`;
+  rows+=`<div><b>Payout</b><span class="n">${pc(f.payout)}</span><span class="c">${f.semaforo&&f.semaforo.payout?SEM[f.semaforo.payout]:""}${f.base_payout?" · "+esc(f.base_payout):""}${f.payout_caixa!=null?` · pago em caixa no ano: ${pc(f.payout_caixa)}`:""}</span></div>`;
+  if(!fin)rows+=`<div><b>Dívida líquida/EBITDA</b><span class="n">${x(f.div_liq_ebitda)}</span><span class="c">${f.semaforo&&f.semaforo.div_liq_ebitda?SEM[f.semaforo.div_liq_ebitda]:"sem dado"}</span></div>`;
   const avisos=[];
   (f.flags||[]).forEach(g=>{
     if(g.startsWith("verificar:variacao_lucro"))avisos.push(`O lucro acumulado mudou ${esc(g.split("=")[1])} contra o mesmo período do ano anterior: pode haver efeito não recorrente. A nota é provisória.`);
@@ -476,7 +476,7 @@ function qualBox(p){
   });
   if(NOTA_EMP[p.ticker.slice(0,4)])avisos.push(NOTA_EMP[p.ticker.slice(0,4)]);
   const nota=f.nota==null?`<p><b>Sem nota:</b> ${esc(f.motivo_sem_nota||"indicadores insuficientes")}.</p>`:`<p>${qPill(p,true)} ${f.nota_provisoria?"(provisória)":""}</p>`;
-  return `<div class="box qual">${head}${nota}<table class="qtab"><tbody>${rows}</tbody></table>${avisos.length?`<ul>${[...new Set(avisos)].map(a=>`<li>${a}</li>`).join("")}</ul>`:""}<p style="font-size:.8rem">Dados até ${ref}, fonte CVM (Dados Abertos). Lucro contábil: pode diferir do lucro recorrente ou ajustado do release. Convenção do painel, não é recomendação.</p></div>`;
+  return `<div class="box qual">${head}${nota}<div class="qgrid">${rows}</div>${avisos.length?`<ul>${[...new Set(avisos)].map(a=>`<li>${a}</li>`).join("")}</ul>`:""}<p style="font-size:.8rem">Dados até ${ref}, fonte CVM (Dados Abertos). Lucro contábil: pode diferir do lucro recorrente ou ajustado do release. Convenção do painel, não é recomendação.</p></div>`;
 }
 function detail(p){
   const sid="sim-"+p.ticker;
