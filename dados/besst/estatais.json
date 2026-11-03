@@ -1,0 +1,1085 @@
+{
+ "atualizado": "2026-11-02",
+ "empresas": [
+  {
+   "tickers": [
+    "BBAS3"
+   ],
+   "nome": "Banco do Brasil",
+   "setor": "Bancos",
+   "categoria": "estatal_federal",
+   "controlador": "União",
+   "nota": "União detém ~50% do capital; controle federal direto.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "SANB3",
+    "SANB4",
+    "SANB11"
+   ],
+   "nome": "Santander Brasil",
+   "setor": "Bancos",
+   "categoria": "privada",
+   "controlador": "Banco Santander S.A. (Espanha)",
+   "nota": "Controlado pelo grupo espanhol privado.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "BRSR3",
+    "BRSR5",
+    "BRSR6"
+   ],
+   "nome": "Banrisul",
+   "setor": "Bancos",
+   "categoria": "estatal_estadual",
+   "controlador": "Estado do Rio Grande do Sul (RS)",
+   "nota": "RS mantém maioria das ações ON; venda parcial de PN em 2021 não alterou controle; sem privatização em curso confirmada.",
+   "fonte": "https://www.seudinheiro.com/governador-do-rs-diz-que-vai-manter-banrisul-como-banco-publico/",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "BBDC3",
+    "BBDC4"
+   ],
+   "nome": "Bradesco",
+   "setor": "Bancos",
+   "categoria": "privada",
+   "controlador": "Cidade de Deus Participações / Fundação Bradesco",
+   "nota": "Controle privado.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "ABCB4"
+   ],
+   "nome": "ABC Brasil",
+   "setor": "Bancos",
+   "categoria": "estatal_estrangeira",
+   "controlador": "Arab Banking Corporation (Bahrein), controlada pelo Banco Central da Líbia",
+   "nota": "Bank ABC tem como acionista majoritário o Central Bank of Libya (~59%); verificar percentual atual.",
+   "fonte": "https://en.wikipedia.org/wiki/Arab_Banking_Corporation",
+   "confianca": "media"
+  },
+  {
+   "tickers": [
+    "ITUB3",
+    "ITUB4"
+   ],
+   "nome": "Itaú Unibanco",
+   "setor": "Bancos",
+   "categoria": "privada",
+   "controlador": "IUPAR (Itaúsa + família Moreira Salles)",
+   "nota": "Controle privado.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "BRIV3",
+    "BRIV4"
+   ],
+   "nome": "Alfa Investimento",
+   "setor": "Bancos",
+   "categoria": "privada",
+   "controlador": "Conglomerado Alfa (herdeiros de Aloysio Faria)",
+   "nota": "Controle privado familiar.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "BMEB3",
+    "BMEB4"
+   ],
+   "nome": "Mercantil do Brasil",
+   "setor": "Bancos",
+   "categoria": "privada",
+   "controlador": "Família Araújo",
+   "nota": "Controle privado familiar.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "BPAC3",
+    "BPAC5",
+    "BPAC11"
+   ],
+   "nome": "BTG Pactual",
+   "setor": "Bancos",
+   "categoria": "privada",
+   "controlador": "Sócios do BTG (André Esteves e partnership)",
+   "nota": "Controle privado.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "BSLI3",
+    "BSLI4"
+   ],
+   "nome": "BRB",
+   "setor": "Bancos",
+   "categoria": "estatal_estadual",
+   "controlador": "Distrito Federal (DF)",
+   "nota": "GDF segue controlador; banco em crise após operações com o Banco Master, com aumento de capital de até R$ 8,8 bi aprovado em 2026 e apoio via empréstimo do FGC/União.",
+   "fonte": "https://www.poder360.com.br/poder-economia/emprestimo-ao-brb-fgc-emprestara-r-65-bi-apos-acordo-entre-df-e-uniao-no-stf/",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "BAZA3"
+   ],
+   "nome": "Banco da Amazônia",
+   "setor": "Bancos",
+   "categoria": "estatal_federal",
+   "controlador": "União",
+   "nota": "Banco federal de desenvolvimento regional.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "RPAD3",
+    "RPAD5",
+    "RPAD6"
+   ],
+   "nome": "Alfa Holding",
+   "setor": "Bancos",
+   "categoria": "privada",
+   "controlador": "Conglomerado Alfa",
+   "nota": "Controle privado familiar.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "BGIP3",
+    "BGIP4"
+   ],
+   "nome": "Banese",
+   "setor": "Bancos",
+   "categoria": "estatal_estadual",
+   "controlador": "Estado de Sergipe (SE)",
+   "nota": "Banco estadual controlado por SE.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "media"
+  },
+  {
+   "tickers": [
+    "BMIN3",
+    "BMIN4"
+   ],
+   "nome": "Mercantil Investimentos",
+   "setor": "Bancos",
+   "categoria": "privada",
+   "controlador": "Banco Mercantil do Brasil",
+   "nota": "Subsidiária do Mercantil do Brasil.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "BMGB4"
+   ],
+   "nome": "Banco BMG",
+   "setor": "Bancos",
+   "categoria": "privada",
+   "controlador": "Família Pentagna Guimarães",
+   "nota": "Controle privado familiar.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "BPAR3"
+   ],
+   "nome": "Banpará",
+   "setor": "Bancos",
+   "categoria": "estatal_estadual",
+   "controlador": "Estado do Pará (PA)",
+   "nota": "Banco estadual controlado pelo PA.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "media"
+  },
+  {
+   "tickers": [
+    "BEES3",
+    "BEES4"
+   ],
+   "nome": "Banestes",
+   "setor": "Bancos",
+   "categoria": "estatal_estadual",
+   "controlador": "Estado do Espírito Santo (ES)",
+   "nota": "Banco estadual controlado pelo ES.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "media"
+  },
+  {
+   "tickers": [
+    "BNBR3"
+   ],
+   "nome": "Banco do Nordeste",
+   "setor": "Bancos",
+   "categoria": "estatal_federal",
+   "controlador": "União",
+   "nota": "Banco federal de desenvolvimento regional.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "PINE3",
+    "PINE4"
+   ],
+   "nome": "Pine",
+   "setor": "Bancos",
+   "categoria": "privada",
+   "controlador": "Noberto Pinheiro",
+   "nota": "Controle privado.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "BPAN4"
+   ],
+   "nome": "Banco Pan",
+   "setor": "Bancos",
+   "categoria": "privada",
+   "controlador": "BTG Pactual",
+   "nota": "Incorporado pelo BTG Pactual; ações deixaram a B3 (liquidação da incorporação concluída). Antes, Caixapar (Caixa) havia saído do bloco de controle em 2021.",
+   "fonte": "https://investidor10.com.br/noticias/banco-pan-bpan4-se-despede-da-b3-apos-incorporacao-pelo-btg-pactual-bpac11-118196/",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "BRBI11"
+   ],
+   "nome": "BR Partners",
+   "setor": "Bancos",
+   "categoria": "privada",
+   "controlador": "Sócios fundadores (Ricardo Lacerda)",
+   "nota": "Controle privado.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "CMIG3",
+    "CMIG4"
+   ],
+   "nome": "Cemig",
+   "setor": "Energia",
+   "categoria": "estatal_estadual",
+   "controlador": "Estado de Minas Gerais (MG)",
+   "nota": "MG mantém ~51% das ações ON; privatização (PL de 2024/PEC) não avançou e a federalização também não; governador eleito em out/2026 (Cleitinho) diz que não vai privatizar.",
+   "fonte": "https://canalsolar.com.br/governador-minas-gerais-cleitinho-cemig-privatizacao/",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "TAEE3",
+    "TAEE4",
+    "TAEE11"
+   ],
+   "nome": "Taesa",
+   "setor": "Energia",
+   "categoria": "estatal_estadual",
+   "controlador": "Controle compartilhado: Cemig (MG) + ISA Investimentos (ISA/Ecopetrol, Colômbia)",
+   "nota": "Acordo de acionistas Cemig–ISA; os dois controladores são estatais (MG e Colômbia); Cemig estuda desinvestimentos, mas venda não confirmada.",
+   "fonte": "https://www.suno.com.br/noticias/taesa-taee11-cemig-cmig4-acordo-acionistas/amp/",
+   "confianca": "media"
+  },
+  {
+   "tickers": [
+    "ISAE3",
+    "ISAE4"
+   ],
+   "nome": "ISA Energia Brasil (ex-CTEEP)",
+   "setor": "Energia",
+   "categoria": "estatal_estrangeira",
+   "controlador": "ISA – Interconexión Eléctrica S.A., controlada pela Ecopetrol (Colômbia)",
+   "nota": "Ecopetrol detém ~51% da ISA e é controlada pelo Estado colombiano; Axia (ex-Eletrobras) tem fatia relevante sem controle.",
+   "fonte": "https://acionista.com.br/axia-energia-axia3-descruzamento-de-participacoes-de-transmissao-com-isa-energia/",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "CPFE3"
+   ],
+   "nome": "CPFL Energia",
+   "setor": "Energia",
+   "categoria": "estatal_estrangeira",
+   "controlador": "State Grid Corporation of China (China)",
+   "nota": "State Grid detém ~84% desde 2017.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "EGIE3"
+   ],
+   "nome": "Engie Brasil",
+   "setor": "Energia",
+   "categoria": "privada",
+   "controlador": "Engie S.A. (França)",
+   "nota": "Estado francês tem ~24% da Engie S.A., mas sem controle; tratar como privada (verificar se deseja 'participação estatal estrangeira').",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "media"
+  },
+  {
+   "tickers": [
+    "CPLE3"
+   ],
+   "nome": "Copel",
+   "setor": "Energia",
+   "categoria": "participacao_estatal_relevante",
+   "controlador": "Sem controlador (corporation); Estado do Paraná com ~15% e golden share",
+   "nota": "Privatizada em ago/2023 via oferta secundária; voto limitado a 10%.",
+   "fonte": "https://www.gazetadopovo.com.br/parana/copel-golden-share-poder-ao-estado/",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "ENGI3",
+    "ENGI4",
+    "ENGI11"
+   ],
+   "nome": "Energisa",
+   "setor": "Energia",
+   "categoria": "privada",
+   "controlador": "Família Botelho (Gipar)",
+   "nota": "Controle privado familiar.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "VBBR3"
+   ],
+   "nome": "Vibra",
+   "setor": "Energia",
+   "categoria": "privada",
+   "controlador": "Sem controlador definido",
+   "nota": "Petrobras vendeu toda a participação em 2021.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "CLSC3",
+    "CLSC4"
+   ],
+   "nome": "Celesc",
+   "setor": "Energia",
+   "categoria": "estatal_estadual",
+   "controlador": "Estado de Santa Catarina (SC)",
+   "nota": "SC detém ~50,2% das ações ON; EDP é acionista relevante e defende privatização, sem processo aprovado.",
+   "fonte": "https://www.nsctotal.com.br/?p=6776661",
+   "confianca": "media"
+  },
+  {
+   "tickers": [
+    "ALUP3",
+    "ALUP4",
+    "ALUP11"
+   ],
+   "nome": "Alupar",
+   "setor": "Energia",
+   "categoria": "privada",
+   "controlador": "Guarupart (família Godoy)",
+   "nota": "Controle privado.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "NEOE3"
+   ],
+   "nome": "Neoenergia",
+   "setor": "Energia",
+   "categoria": "privada",
+   "controlador": "Iberdrola (Espanha)",
+   "nota": "Iberdrola lançou OPA para fechamento de capital (nov/2025); verificar se ainda listada.",
+   "fonte": "https://cenarioenergia.com.br/2025/11/24/iberdrola-lanca-oferta-publica-para-fechar-capital-da-neoenergia/",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "EQTL3"
+   ],
+   "nome": "Equatorial",
+   "setor": "Energia",
+   "categoria": "privada",
+   "controlador": "Sem controlador definido (capital pulverizado)",
+   "nota": "Corporation privada.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "SRNA3"
+   ],
+   "nome": "Serena Energia",
+   "setor": "Energia",
+   "categoria": "privada",
+   "controlador": "Actis e GIC",
+   "nota": "Actis/GIC fizeram OPA para fechar o capital em 2025; verificar se ainda listada.",
+   "fonte": "https://www.moneytimes.com.br/serena-energia-srna3-fora-da-bolsa-rnda/",
+   "confianca": "media"
+  },
+  {
+   "tickers": [
+    "AURE3"
+   ],
+   "nome": "Auren",
+   "setor": "Energia",
+   "categoria": "privada",
+   "controlador": "Votorantim S.A. e CPP Investments",
+   "nota": "Controle privado; incorporou AES Brasil em 2024.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "MEGA3"
+   ],
+   "nome": "Omega (atual Serena)",
+   "setor": "Energia",
+   "categoria": "privada",
+   "controlador": "Actis e GIC",
+   "nota": "Omega Energia foi renomeada Serena Energia (SRNA3); MEGA3 é o ticker antigo.",
+   "fonte": "https://cenarioenergia.com.br/2025/05/14/serena-energia-caminha-para-fechamento-de-capital-em-oferta-liderada-por-actis-e-gic/",
+   "confianca": "media"
+  },
+  {
+   "tickers": [
+    "CEBR3",
+    "CEBR5",
+    "CEBR6"
+   ],
+   "nome": "CEB",
+   "setor": "Energia",
+   "categoria": "estatal_estadual",
+   "controlador": "Distrito Federal (DF)",
+   "nota": "Holding CEB segue com o GDF; a distribuidora foi vendida à Neoenergia em 2020.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "media"
+  },
+  {
+   "tickers": [
+    "CSRN3",
+    "CSRN5",
+    "CSRN6"
+   ],
+   "nome": "Cosern",
+   "setor": "Energia",
+   "categoria": "privada",
+   "controlador": "Neoenergia (Iberdrola)",
+   "nota": "Subsidiária da Neoenergia.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "EKTR3",
+    "EKTR4"
+   ],
+   "nome": "Elektro",
+   "setor": "Energia",
+   "categoria": "privada",
+   "controlador": "Neoenergia (Iberdrola)",
+   "nota": "Subsidiária da Neoenergia.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "GEPA3",
+    "GEPA4"
+   ],
+   "nome": "Rio Paranapanema Energia",
+   "setor": "Energia",
+   "categoria": "estatal_estrangeira",
+   "controlador": "China Three Gorges (China)",
+   "nota": "Controlada pela CTG Brasil.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "GPAR3"
+   ],
+   "nome": "Celgpar",
+   "setor": "Energia",
+   "categoria": "estatal_estadual",
+   "controlador": "Estado de Goiás (GO)",
+   "nota": "GO segue controlador; lei autorizando privatização sancionada em ago/2026, sem venda concluída confirmada.",
+   "fonte": "https://www.maisgoias.com.br/politica/caiado-sanciona-projeto-que-autoriza-privatizacao-da-celgpar/",
+   "confianca": "media"
+  },
+  {
+   "tickers": [
+    "CEEB3",
+    "CEEB5",
+    "CEEB6"
+   ],
+   "nome": "Coelba",
+   "setor": "Energia",
+   "categoria": "privada",
+   "controlador": "Neoenergia (Iberdrola)",
+   "nota": "Subsidiária da Neoenergia.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "REDE3"
+   ],
+   "nome": "Rede Energia",
+   "setor": "Energia",
+   "categoria": "privada",
+   "controlador": "Energisa",
+   "nota": "Energisa detém ~99,7%.",
+   "fonte": "https://acionista.com.br/energisa-rede3-aumenta-participacao-e-passa-a-deter-9974-do-capital-da-controlada/",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "ENMT3",
+    "ENMT4"
+   ],
+   "nome": "Energisa MT",
+   "setor": "Energia",
+   "categoria": "privada",
+   "controlador": "Energisa",
+   "nota": "Subsidiária da Energisa.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "EQPA3",
+    "EQPA5",
+    "EQPA6",
+    "EQPA7"
+   ],
+   "nome": "Equatorial Pará",
+   "setor": "Energia",
+   "categoria": "privada",
+   "controlador": "Equatorial",
+   "nota": "Subsidiária da Equatorial.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "AFLT3"
+   ],
+   "nome": "Afluente T",
+   "setor": "Energia",
+   "categoria": "privada",
+   "controlador": "Neoenergia (Iberdrola)",
+   "nota": "Subsidiária da Neoenergia.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "EEEL3",
+    "EEEL4"
+   ],
+   "nome": "CEEE-GT / CPFL Transmissão (ex-CEEE-T)",
+   "setor": "Energia",
+   "categoria": "estatal_estrangeira",
+   "controlador": "CPFL Energia / State Grid (China)",
+   "nota": "CEEE-T privatizada em 2021 para a CPFL; o ticker EEEL hoje corresponde à CPFL Transmissão. CEEE-G foi vendida à CSN em 2022 (privada).",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "media"
+  },
+  {
+   "tickers": [
+    "COCE3",
+    "COCE5",
+    "COCE6"
+   ],
+   "nome": "Coelce (Enel Ceará)",
+   "setor": "Energia",
+   "categoria": "estatal_estrangeira",
+   "controlador": "Enel S.p.A. (Itália; MEF com ~23,6% e controle de fato)",
+   "nota": "Considerado estatal estrangeira pelo controle de fato do governo italiano sobre a Enel; verificar critério.",
+   "fonte": "https://italianismo.com.br/enel-concessao-sp-governo-italia-maior-acionista/",
+   "confianca": "media"
+  },
+  {
+   "tickers": [
+    "EMAE3",
+    "EMAE4"
+   ],
+   "nome": "EMAE",
+   "setor": "Energia",
+   "categoria": "privada",
+   "controlador": "Sabesp",
+   "nota": "Privatizada em 2024 (Fundo Phoenix/Tanure); Sabesp assumiu o controle em 2026 e incorporou as ações remanescentes (possível saída da B3, verificar). A Sabesp tem participação estatal relevante (SP).",
+   "fonte": "https://cenarioenergia.com.br/2026/02/23/sabesp-assume-controle-da-emae-destitui-nelson-tanure-e-reestrutura-governanca-da-geradora/",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "LIGT3"
+   ],
+   "nome": "Light",
+   "setor": "Energia",
+   "categoria": "privada",
+   "controlador": "Nelson Tanure (WNT e fundos) como acionista de referência",
+   "nota": "Em recuperação judicial desde 2023; controle privado.",
+   "fonte": "https://www.suno.com.br/noticias/light-ligt3-tanure-vira-acionista-majoritario/amp/",
+   "confianca": "media"
+  },
+  {
+   "tickers": [
+    "CEPE3",
+    "CEPE5",
+    "CEPE6"
+   ],
+   "nome": "Celpe",
+   "setor": "Energia",
+   "categoria": "privada",
+   "controlador": "Neoenergia (Iberdrola)",
+   "nota": "Subsidiária da Neoenergia.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "LIPR3"
+   ],
+   "nome": "Eletropar",
+   "setor": "Energia",
+   "categoria": "participacao_estatal_relevante",
+   "controlador": "Axia Energia (ex-Eletrobras)",
+   "nota": "Controlada pela Axia; incorporação pela Eletrobras proposta em 2025 (verificar se já deixou a B3).",
+   "fonte": "https://acionista.com.br/eletrobras-elet3-propoe-incorporacao-da-eletropar-lipr3-acoes-caem-161/",
+   "confianca": "media"
+  },
+  {
+   "tickers": [
+    "AXIA3",
+    "AXIA6"
+   ],
+   "nome": "Axia Energia (ex-Eletrobras)",
+   "setor": "Energia",
+   "categoria": "participacao_estatal_relevante",
+   "controlador": "Sem controlador (corporation); União com cerca de 40% do capital",
+   "nota": "Privatizada em 2022 com voto limitado a 10%; acordo homologado no STF (dez/2025) dá à União 3 de 10 assentos no conselho.",
+   "fonte": "https://lexlegal.com.br/?p=48874",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "CBEE3"
+   ],
+   "nome": "Ampla (Enel RJ)",
+   "setor": "Energia",
+   "categoria": "estatal_estrangeira",
+   "controlador": "Enel S.p.A. (Itália; MEF com ~23,6% e controle de fato)",
+   "nota": "Mesmo critério da Coelce; verificar.",
+   "fonte": "https://italianismo.com.br/enel-concessao-sp-governo-italia-maior-acionista/",
+   "confianca": "media"
+  },
+  {
+   "tickers": [
+    "RNEW3",
+    "RNEW4",
+    "RNEW11"
+   ],
+   "nome": "Renova Energia",
+   "setor": "Energia",
+   "categoria": "privada",
+   "controlador": "AP Energias e outros acionistas privados",
+   "nota": "Cemig vendeu sua fatia; em recuperação judicial.",
+   "fonte": "https://www.moneytimes.com.br/cemig-vende-fatia-na-renova-energia-por-r-60-mi/",
+   "confianca": "media"
+  },
+  {
+   "tickers": [
+    "CEED3",
+    "CEED4"
+   ],
+   "nome": "CEEE-D (Equatorial RS)",
+   "setor": "Energia",
+   "categoria": "privada",
+   "controlador": "Equatorial",
+   "nota": "Privatizada em 2021.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "ENEV3"
+   ],
+   "nome": "Eneva",
+   "setor": "Energia",
+   "categoria": "privada",
+   "controlador": "Sem controlador definido (BTG Pactual como maior acionista)",
+   "nota": "Controle privado.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "AESO3"
+   ],
+   "nome": "AES Brasil Operações",
+   "setor": "Energia",
+   "categoria": "privada",
+   "controlador": "Auren Energia",
+   "nota": "Ex-AES Tietê; subsidiária da Auren após a incorporação da AES Brasil (2024).",
+   "fonte": "https://www.tipranks.com/stocks/br:aeso3",
+   "confianca": "media"
+  },
+  {
+   "tickers": [
+    "COMR3"
+   ],
+   "nome": "Comerc",
+   "setor": "Energia",
+   "categoria": "privada",
+   "controlador": "Vibra Energia",
+   "nota": "IPO cancelado em 2021; controlada pela Vibra. Verificar se há ações negociadas.",
+   "fonte": "https://acionista.com.br/vibra-vbbr-aumento-do-capital-social-da-comerc/",
+   "confianca": "media"
+  },
+  {
+   "tickers": [
+    "RIOS3"
+   ],
+   "nome": "Rio Alto Energias Renováveis",
+   "setor": "Energia",
+   "categoria": "privada",
+   "controlador": "Fundadores/acionistas privados",
+   "nota": "Estreou na B3 em out/2025; controlador exato a verificar.",
+   "fonte": "https://investidor10.com.br/noticias/ola-b3-empresa-tera-acoes-negociadas-a-partir-de-2-outubro-de-2025-115666/",
+   "confianca": "media"
+  },
+  {
+   "tickers": [
+    "UPKP3"
+   ],
+   "nome": "Uptick Participações",
+   "setor": "Energia",
+   "categoria": "privada",
+   "controlador": "verificar",
+   "nota": "Holding de energia com PL de ~R$ 65 mi; controlador não confirmado.",
+   "fonte": "https://analitica.auvp.com.br/acoes/UPKP3/simplificada",
+   "confianca": "baixa"
+  },
+  {
+   "tickers": [
+    "BBSE3"
+   ],
+   "nome": "BB Seguridade",
+   "setor": "Seguros",
+   "categoria": "estatal_federal",
+   "controlador": "Banco do Brasil (União)",
+   "nota": "BB detém ~66%.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "CXSE3"
+   ],
+   "nome": "Caixa Seguridade",
+   "setor": "Seguros",
+   "categoria": "estatal_federal",
+   "controlador": "Caixa Econômica Federal (União)",
+   "nota": "Caixa detém ~83%.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "PSSA3"
+   ],
+   "nome": "Porto Seguro",
+   "setor": "Seguros",
+   "categoria": "privada",
+   "controlador": "Família Garfinkel",
+   "nota": "Controle privado.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "WIZC3"
+   ],
+   "nome": "Wiz",
+   "setor": "Seguros",
+   "categoria": "privada",
+   "controlador": "Acionistas privados (acordo de acionistas)",
+   "nota": "Controle privado; verificar composição atual.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "media"
+  },
+  {
+   "tickers": [
+    "CSAB3",
+    "CSAB4"
+   ],
+   "nome": "Cia de Seguros Aliança da Bahia",
+   "setor": "Seguros",
+   "categoria": "privada",
+   "controlador": "Família Catharino/Garcez",
+   "nota": "Controle privado.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "media"
+  },
+  {
+   "tickers": [
+    "BRGE3",
+    "BRGE5",
+    "BRGE6",
+    "BRGE7",
+    "BRGE8",
+    "BRGE11",
+    "BRGE12"
+   ],
+   "nome": "Alfa Consórcio",
+   "setor": "Seguros",
+   "categoria": "privada",
+   "controlador": "Conglomerado Alfa",
+   "nota": "Controle privado familiar.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "APER3"
+   ],
+   "nome": "Alper",
+   "setor": "Seguros",
+   "categoria": "privada",
+   "controlador": "Acionistas privados",
+   "nota": "Controle privado.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "media"
+  },
+  {
+   "tickers": [
+    "SAPR3",
+    "SAPR4",
+    "SAPR11"
+   ],
+   "nome": "Sanepar",
+   "setor": "Saneamento",
+   "categoria": "estatal_estadual",
+   "controlador": "Estado do Paraná (PR)",
+   "nota": "PR detém ~60% das ações ON; privatização não é o cenário-base e a gestão a descarta.",
+   "fonte": "https://euqueroinvestir.com/acoes/sanepar-privatizacao-nao-e-mais-o-cenario-base-avalia-xp",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "CSMG3"
+   ],
+   "nome": "Copasa",
+   "setor": "Saneamento",
+   "categoria": "participacao_estatal_relevante",
+   "controlador": "Equatorial (Gerais Saneamento) como acionista de referência; MG com ~5% e golden share",
+   "nota": "Privatizada em jun/2026 por oferta de ~R$ 8,3 bi a R$ 49,03/ação; Equatorial com pelo menos 30%.",
+   "fonte": "https://www.moneytimes.com.br/privatizacao-da-copasa-csmg3-movimenta-r-83-bilhoes-com-venda-de-acoes-a-r-4903-diz-valor/",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "SBSP3"
+   ],
+   "nome": "Sabesp",
+   "setor": "Saneamento",
+   "categoria": "participacao_estatal_relevante",
+   "controlador": "Equatorial (~15%) como acionista de referência; Estado de SP com ~18% e golden share",
+   "nota": "Privatizada em jul/2024.",
+   "fonte": "https://bnamericas.com/en/analysis/a-new-era-for-sabesp-as-sao-paulo-hands-control-to-private-sector",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "CASN3",
+    "CASN4"
+   ],
+   "nome": "Casan",
+   "setor": "Saneamento",
+   "categoria": "estatal_estadual",
+   "controlador": "Estado de Santa Catarina (SC)",
+   "nota": "SC segue controlador; o governador sinalizou possível venda parcial, sem processo concluído.",
+   "fonte": "https://www.nsctotal.com.br/?p=7459327",
+   "confianca": "media"
+  },
+  {
+   "tickers": [
+    "AMBP3"
+   ],
+   "nome": "Ambipar",
+   "setor": "Saneamento",
+   "categoria": "privada",
+   "controlador": "Tércio Borlenghi Jr.",
+   "nota": "Controle privado; em recuperação judicial desde 2025.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "media"
+  },
+  {
+   "tickers": [
+    "ORVR3"
+   ],
+   "nome": "Orizon",
+   "setor": "Saneamento",
+   "categoria": "privada",
+   "controlador": "Acionistas privados (fundadores/Gestora)",
+   "nota": "Controle privado.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "media"
+  },
+  {
+   "tickers": [
+    "IGSN3"
+   ],
+   "nome": "Iguá",
+   "setor": "Saneamento",
+   "categoria": "privada",
+   "controlador": "CPP Investments e AIMCo",
+   "nota": "Controle privado.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "media"
+  },
+  {
+   "tickers": [
+    "TIMS3"
+   ],
+   "nome": "TIM Brasil",
+   "setor": "Telecom",
+   "categoria": "estatal_estrangeira",
+   "controlador": "Telecom Italia, controlada pela Poste Italiane (Estado italiano)",
+   "nota": "Poste Italiane passou a deter ~87% da Telecom Italia em set/2026 e tornou-se controladora indireta da TIM Brasil.",
+   "fonte": "https://teletime.com.br/18/09/2026/poste-italiane-controladora-tim-brasil/",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "VIVT3"
+   ],
+   "nome": "Telefônica Brasil (Vivo)",
+   "setor": "Telecom",
+   "categoria": "privada",
+   "controlador": "Telefónica S.A. (Espanha)",
+   "nota": "O Estado espanhol (SEPI) tem ~10% da Telefónica, sem controle.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "BRST3"
+   ],
+   "nome": "Brisanet",
+   "setor": "Telecom",
+   "categoria": "privada",
+   "controlador": "Fundadores (família Galdino)",
+   "nota": "Controle privado.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "OIBR3",
+    "OIBR4"
+   ],
+   "nome": "Oi",
+   "setor": "Telecom",
+   "categoria": "privada",
+   "controlador": "Sem controlador (credores convertidos)",
+   "nota": "Falência decretada; perdeu a listagem na B3 de ofício.",
+   "fonte": "https://renovainvest.com.br/?p=106839",
+   "confianca": "media"
+  },
+  {
+   "tickers": [
+    "TELB3",
+    "TELB4"
+   ],
+   "nome": "Telebras",
+   "setor": "Telecom",
+   "categoria": "estatal_federal",
+   "controlador": "União",
+   "nota": "Estatal federal.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "FIQE3"
+   ],
+   "nome": "Unifique",
+   "setor": "Telecom",
+   "categoria": "privada",
+   "controlador": "Fundadores",
+   "nota": "Controle privado.",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "DESK3"
+   ],
+   "nome": "Desktop",
+   "setor": "Telecom",
+   "categoria": "privada",
+   "controlador": "Claro NXT (América Móvil)",
+   "nota": "Claro assumiu 72,8% em out/2026; OPA para fechar o capital prevista.",
+   "fonte": "https://teletime.com.br/01/10/2026/claro-assume-controle-desktop/",
+   "confianca": "alta"
+  },
+  {
+   "tickers": [
+    "ELPL4"
+   ],
+   "nome": "Eletropaulo (Enel SP)",
+   "setor": "Energia",
+   "categoria": "estatal_estrangeira",
+   "controlador": "Enel S.p.A. (Itália; MEF com ~23,6% e controle de fato)",
+   "nota": "Ações fora de negociação desde a aquisição pela Enel (2018).",
+   "fonte": "https://italianismo.com.br/enel-concessao-sp-governo-italia-maior-acionista/",
+   "confianca": "media"
+  },
+  {
+   "tickers": [
+    "OMGE3"
+   ],
+   "nome": "Omega Geração (atual Serena)",
+   "setor": "Energia",
+   "categoria": "privada",
+   "controlador": "Actis e GIC",
+   "nota": "Ticker antigo; empresa incorporada no grupo Serena.",
+   "fonte": "https://cenarioenergia.com.br/2025/05/14/serena-energia-caminha-para-fechamento-de-capital-em-oferta-liderada-por-actis-e-gic/",
+   "confianca": "media"
+  },
+  {
+   "tickers": [
+    "BRIT3"
+   ],
+   "nome": "Brisanet",
+   "setor": "Telecom",
+   "categoria": "privada",
+   "controlador": "Fundadores (família Galdino)",
+   "nota": "Ticker antigo da Brisanet (atual BRST3).",
+   "fonte": "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm",
+   "confianca": "media"
+  }
+ ]
+}

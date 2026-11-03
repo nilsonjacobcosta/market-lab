@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Monitor BESST</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: painel operacional — resumo por setor no topo, barra de filtros fixa, tabela ordenável com ficha expansível por papel, método e glossário no fim. */
+:root{
+  --bg:#f2f4f7; --surface:#ffffff; --surface-2:#e9edf2; --surface-3:#dde3ea;
+  --ink:#152131; --ink-2:#465567; --muted:#6f7d8d; --line:#d9e0e8;
+  --accent:#b86e0c; --accent-soft:#fbefdc;
+  --pos:#1d7f55; --pos-soft:#dff2e8; --neg:#b9443a; --neg-soft:#f8e3e0; --warn:#9a6a00; --warn-soft:#fbf1d6;
+  --fed:#2e66a3; --fed-soft:#e1ecf8; --est:#7a4fb3; --est-soft:#efe7fa; --ext:#c0572a; --ext-soft:#fbe9e1; --mix:#5f6b7a; --mix-soft:#e8ecf0;
+  --f-display:"Bricolage Grotesque","Avenir Next","Segoe UI",sans-serif;
+  --f-body:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0d131a; --surface:#141c26; --surface-2:#1b2532; --surface-3:#222e3d;
+  --ink:#e5ecf3; --ink-2:#aab6c3; --muted:#7f8c9a; --line:#263241;
+  --accent:#e9a443; --accent-soft:#2c2213;
+  --pos:#45c08a; --pos-soft:#14291f; --neg:#ef7b6f; --neg-soft:#2e1816; --warn:#e3b94f; --warn-soft:#2b2410;
+  --fed:#6ea2dc; --fed-soft:#16253a; --est:#b08ae6; --est-soft:#231a33; --ext:#ef8a5c; --ext-soft:#2e1b12; --mix:#9aa6b4; --mix-soft:#1f2833;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0d131a; --surface:#141c26; --surface-2:#1b2532; --surface-3:#222e3d;
+  --ink:#e5ecf3; --ink-2:#aab6c3; --muted:#7f8c9a; --line:#263241;
+  --accent:#e9a443; --accent-soft:#2c2213;
+  --pos:#45c08a; --pos-soft:#14291f; --neg:#ef7b6f; --neg-soft:#2e1816; --warn:#e3b94f; --warn-soft:#2b2410;
+  --fed:#6ea2dc; --fed-soft:#16253a; --est:#b08ae6; --est-soft:#231a33; --ext:#ef8a5c; --ext-soft:#2e1b12; --mix:#9aa6b4; --mix-soft:#1f2833;
+  color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding-block:28px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:28px}
+h1,h2,h3{font-family:var(--f-display);margin:0;line-height:1.12;text-wrap:balance}
+h1{font-size:clamp(1.9rem,4.5vw,2.9rem);letter-spacing:-.02em}
+h2{font-size:1.4rem}
+h3{font-size:1rem}
+p{margin:0;max-width:72ch}
+a{color:var(--fed)}
+.eyebrow{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.pos{color:var(--pos)}.neg{color:var(--neg)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+
+header.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px}
+header.top > div{min-width:0}
+.lede{color:var(--ink-2);margin-top:10px}
+.live{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 12px}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--pos);display:block;box-shadow:0 0 0 3px var(--pos-soft)}
+.live.stale i{background:var(--warn);box-shadow:0 0 0 3px var(--warn-soft)}
+
+.sectors{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.sec{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px;display:flex;flex-direction:column;gap:6px;cursor:pointer;text-align:left;font:inherit;color:inherit;min-width:0}
+.sec:hover{border-color:var(--ink-2)}
+.sec[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.sec .letter{font-family:var(--f-display);font-size:1.6rem;font-weight:700;line-height:1;color:var(--accent)}
+.sec .name{font-weight:600}
+.sec .stats{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:.8rem;color:var(--ink-2)}
+.bar{display:flex;height:6px;border-radius:3px;overflow:hidden;background:var(--surface-2);gap:2px}
+.bar span{display:block;height:100%}
+
+.filters{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.filters input[type=search],.filters select{font:inherit;font-size:.88rem;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)}
+.filters input[type=search]{min-width:0;flex:1 1 180px}
+.chk input{margin:0;accent-color:var(--ink)}
+.chk{display:inline-flex;align-items:center;gap:6px;font-size:.85rem;color:var(--ink-2)}
+.count{margin-left:auto;font-size:.85rem;color:var(--muted)}
+
+.tbl{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+table{border-collapse:collapse;width:100%;font-size:.88rem;min-width:980px}
+th,td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th:nth-child(-n+2),td:nth-child(-n+2){text-align:left}
+th{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:500;position:sticky;top:0;background:var(--surface);cursor:pointer;user-select:none}
+th[aria-sort="ascending"]::after{content:" ▲"}th[aria-sort="descending"]::after{content:" ▼"}
+td{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+td.name{font-family:var(--f-body)}
+td.name b{font-family:var(--f-mono)}
+td.name small{color:var(--muted);display:block;font-size:.78rem}
+tr.row{cursor:pointer}
+tr.row:hover td{background:var(--surface-2)}
+tr.secrow td{background:var(--surface-2);font-family:var(--f-display);font-weight:700;font-size:.95rem;text-align:left}
+tr.detail td{background:var(--surface-2);white-space:normal;text-align:left;font-family:var(--f-body)}
+.pill{display:inline-block;padding:2px 8px;border-radius:999px;font-family:var(--f-body);font-size:.74rem;font-weight:600}
+.st-abaixo_teto{background:var(--pos-soft);color:var(--pos)}
+.st-acima_teto{background:var(--neg-soft);color:var(--neg)}
+.st-sem_proventos,.st-historico_curto,.st-sem_cotacao{background:var(--surface-3);color:var(--muted)}
+.ct{display:inline-block;padding:1px 7px;border-radius:4px;font-family:var(--f-body);font-size:.72rem;font-weight:600}
+.ct-estatal_federal{background:var(--fed-soft);color:var(--fed)}
+.ct-estatal_estadual{background:var(--est-soft);color:var(--est)}
+.ct-estatal_estrangeira{background:var(--ext-soft);color:var(--ext)}
+.ct-participacao_estatal_relevante{background:var(--mix-soft);color:var(--mix)}
+.ct-privada{color:var(--muted)}
+.flag{color:var(--warn);font-size:.75rem;font-family:var(--f-body)}
+.margin-bar{display:inline-block;width:46px;height:6px;background:var(--surface-3);border-radius:3px;position:relative;vertical-align:middle;margin-left:6px;overflow:hidden}
+.margin-bar span{position:absolute;top:0;bottom:0;border-radius:3px}
+.detail-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:18px;padding:6px 2px}
+.detail-grid > *{min-width:0}
+.detail-grid p{font-size:.88rem;color:var(--ink-2)}
+.minichart svg{display:block;width:100%;max-width:420px;height:auto}
+.minichart text{font-family:var(--f-mono);font-size:11px;fill:var(--ink-2)}
+
+.method{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:6px}
+.card p{font-size:.9rem;color:var(--ink-2)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:.82rem;color:var(--ink-2);align-items:center}
+footer{font-size:.85rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:16px;display:flex;flex-direction:column;gap:8px}
+.tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);padding:6px 9px;border-radius:7px;font-size:.8rem;z-index:30;opacity:0;transition:opacity .1s}
+@media (max-width:900px){.sectors{grid-template-columns:repeat(2,1fr)}.method,.detail-grid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header class="top">
+  <div>
+    <div class="eyebrow">market-lab · carteiras de dividendos</div>
+    <h1>Monitor BESST</h1>
+    <p class="lede">Bancos, Energia, Seguros, Saneamento e Telecomunicações: os papéis dos cinco setores perenes da B3, com preço-teto, DPA médio e DY médio calculados com dados públicos. Clique numa linha para ver o histórico de proventos e o controle acionário.</p>
+  </div>
+  <span class="live" id="live"><i></i><span id="live-t">Carregando dados…</span></span>
+</header>
+
+<div class="sectors" id="sectors"></div>
+
+<div class="legend">
+  <span><span class="pill st-abaixo_teto">Abaixo do teto</span> preço menor que o preço-teto</span>
+  <span><span class="pill st-acima_teto">Acima do teto</span></span>
+  <span><span class="ct ct-estatal_federal">Federal</span></span>
+  <span><span class="ct ct-estatal_estadual">Estadual</span></span>
+  <span><span class="ct ct-estatal_estrangeira">Estatal estrangeira</span></span>
+  <span><span class="ct ct-participacao_estatal_relevante">Participação estatal</span> governo tem fatia relevante, sem controle</span>
+</div>
+
+<div class="filters" role="search">
+  <input id="q" type="search" placeholder="Buscar papel ou empresa" aria-label="Buscar papel ou empresa">
+  <select id="f-ctrl" aria-label="Controle acionário">
+    <option value="">Todo controle</option>
+    <option value="estatal">Só estatais (qualquer esfera)</option>
+    <option value="estatal_federal">Estatal federal</option>
+    <option value="estatal_estadual">Estatal estadual</option>
+    <option value="estatal_estrangeira">Estatal estrangeira</option>
+    <option value="participacao_estatal_relevante">Participação estatal relevante</option>
+    <option value="privada">Privada</option>
+  </select>
+  <select id="f-status" aria-label="Situação">
+    <option value="">Toda situação</option>
+    <option value="abaixo_teto">Abaixo do teto</option>
+    <option value="acima_teto">Acima do teto</option>
+    <option value="outros">Sem métrica</option>
+  </select>
+  <label class="chk"><input id="f-liq" type="checkbox" checked> Só com liquidez (≥ R$ 500 mil/dia)</label>
+  <label class="chk"><input id="f-cot" type="checkbox" checked> Esconder sem cotação</label>
+  <span class="count" id="count"></span>
+</div>
+
+<div class="tbl"><table id="t"><thead><tr>
+  <th data-k="ticker">Papel</th>
+  <th data-k="controle">Controle</th>
+  <th data-k="preco">Preço</th>
+  <th data-k="dpa_medio">DPA médio</th>
+  <th data-k="dy_medio">DY médio</th>
+  <th data-k="dy_12m">DY 12m</th>
+  <th data-k="preco_teto">Preço-teto</th>
+  <th data-k="margem" aria-sort="descending">Margem</th>
+  <th data-k="tendencia">Tendência</th>
+  <th data-k="liquidez_mil">Liquidez/dia</th>
+  <th data-k="status">Situação</th>
+</tr></thead><tbody></tbody></table></div>
+
+<section class="method" aria-label="Método">
+  <div class="card"><span class="eyebrow">Como calculamos</span><h3>DPA, DY e preço-teto</h3><p><b>DPA médio</b>: média dos proventos por ação (dividendos e JCP, pela data-ex) dos 5 últimos anos completos. <b>DY médio</b>: média anual de proventos ÷ preço médio do ano. <b>Preço-teto</b>: DPA médio ÷ 6%, pelo método de Décio Bazin. <b>Margem</b>: quanto o preço está abaixo do teto.</p></div>
+  <div class="card"><span class="eyebrow">Sinais de alerta</span><h3>O que olhar além da margem</h3><p><b>Tendência</b> compara o provento do último ano completo com a média: queda forte indica que a média pode estar inflada por anos que não se repetem. <b>Liquidez</b> abaixo de R$ 500 mil/dia dificulta comprar e vender. Proventos extraordinários elevam a média.</p></div>
+  <div class="card"><span class="eyebrow">Controle acionário</span><h3>Quem manda na empresa</h3><p>Classificação pesquisada em fontes públicas (RI, CVM, imprensa) em 02/11/2026. Estatais podem ter interferência política em tarifas e dividendos; privatizações recentes mudam o perfil. Abra a linha para ver o controlador e a fonte.</p></div>
+</section>
+
+<footer>
+  <p>Preços e proventos: Yahoo Finance, ajustados por desdobramentos e bonificações, atualizados automaticamente por rotina do GitHub Actions em dias de pregão. Valores de proventos são brutos (JCP antes do IR). Material educativo; não é recomendação de investimento.</p>
+  <p class="num" id="foot-meta"></p>
+</footer>
+</div>
+<div class="tip" id="tip"></div>
+
+<script>
+window.__EMBED__ = /*DADOS*/null;
+(function(){
+const $=id=>document.getElementById(id);
+const SET=["Bancos","Energia","Seguros","Saneamento","Telecomunicações"];
+const LET={"Bancos":"B","Energia":"E","Seguros":"S","Saneamento":"S","Telecomunicações":"T"};
+const CT={estatal_federal:"Federal",estatal_estadual:"Estadual",estatal_estrangeira:"Estatal estrangeira",participacao_estatal_relevante:"Participação estatal",privada:"Privada"};
+const ST={abaixo_teto:"Abaixo do teto",acima_teto:"Acima do teto",sem_proventos:"Sem proventos",historico_curto:"Histórico curto",sem_cotacao:"Sem cotação"};
+const fmt=(v,d=2)=>v==null?"–":v.toLocaleString("pt-BR",{minimumFractionDigits:d,maximumFractionDigits:d});
+const pct=(v,d=1)=>v==null?"–":(v>0?"+":"")+fmt(v,d)+"%";
+const liq=v=>v==null?"–":v>=1000?"R$ "+fmt(v/1000,1)+" mi":"R$ "+fmt(v,0)+" mil";
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let DATA=null, sortK="margem", sortDir=-1, setor="", open=new Set();
+
+function store(k,v){try{v===undefined?localStorage.removeItem(k):localStorage.setItem(k,v)}catch(e){}}
+function load(k){try{return localStorage.getItem(k)}catch(e){return null}}
+
+async function fetchData(){
+  try{const r=await fetch("../../dados/besst/painel.json?t="+Date.now(),{cache:"no-store"});if(r.ok)return await r.json()}catch(e){}
+  return window.__EMBED__;
+}
+function liveLabel(){
+  const el=$("live");if(!DATA){$("live-t").textContent="Sem dados";return}
+  const g=DATA.gerado_em, ref=DATA.pregao_referencia;
+  const age=(Date.now()-new Date(g.replace(" ","T")+":00-03:00").getTime())/36e5;
+  el.classList.toggle("stale",age>26);
+  $("live-t").textContent=`Pregão de ${ref.split("-").reverse().join("/")} · atualizado ${g.slice(8,10)}/${g.slice(5,7)} às ${g.slice(11)}`;
+  $("foot-meta").textContent=`Base de cálculo: ${DATA.metodo.anos} anos completos · taxa Bazin ${DATA.metodo.taxa_bazin*100}% · ${DATA.papeis.length} papéis no universo`;
+}
+function isEst(c){return c&&c.startsWith("estatal")}
+
+function sectors(){
+  const host=$("sectors");host.innerHTML="";
+  SET.forEach(s=>{const L=DATA.papeis.filter(p=>p.setor===s);const cot=L.filter(p=>p.status!=="sem_cotacao");
+    const ab=cot.filter(p=>p.status==="abaixo_teto"&&!p.baixa_liquidez).length;const est=L.filter(p=>isEst(p.controle)).length;
+    const b=document.createElement("button");b.className="sec";b.type="button";b.setAttribute("aria-pressed",setor===s);
+    const counts=["estatal_federal","estatal_estadual","estatal_estrangeira","participacao_estatal_relevante","privada"].map(k=>[k,L.filter(p=>p.controle===k).length]);
+    const col={estatal_federal:"var(--fed)",estatal_estadual:"var(--est)",estatal_estrangeira:"var(--ext)",participacao_estatal_relevante:"var(--mix)",privada:"var(--surface-3)"};
+    b.innerHTML=`<span class="letter">${LET[s]}</span><span class="name">${s}</span><span class="stats"><span>${L.length} papéis</span><span>${ab} abaixo do teto com liquidez</span><span>${est} estatais</span></span><span class="bar" title="Controle acionário">${counts.filter(c=>c[1]).map(([k,n])=>`<span style="flex:${n};background:${col[k]}"></span>`).join("")}</span>`;
+    b.onclick=()=>{setor=setor===s?"":s;sectors();render()};host.appendChild(b)})
+}
+
+function filtered(){
+  const q=$("q").value.trim().toLowerCase(), c=$("f-ctrl").value, st=$("f-status").value, lq=$("f-liq").checked, hc=$("f-cot").checked;
+  return DATA.papeis.filter(p=>{
+    if(setor&&p.setor!==setor)return false;
+    if(q&&!(p.ticker.toLowerCase().includes(q)||p.empresa.toLowerCase().includes(q)))return false;
+    if(c==="estatal"&&!isEst(p.controle))return false; if(c&&c!=="estatal"&&p.controle!==c)return false;
+    if(st==="outros"&&["abaixo_teto","acima_teto"].includes(p.status))return false; if(st&&st!=="outros"&&p.status!==st)return false;
+    if(hc&&p.status==="sem_cotacao")return false;
+    if(lq&&(p.baixa_liquidez||p.status==="sem_cotacao"))return false;
+    return true})
+}
+function cmp(a,b){let x=a[sortK],y=b[sortK];if(x==null&&y==null)return 0;if(x==null)return 1;if(y==null)return -1;return (typeof x==="string"?x.localeCompare(y):x-y)*sortDir}
+
+function mini(p){
+  const ys=Object.keys(p.proventos_ano||{}).sort();if(!ys.length)return "<p>Sem proventos registrados.</p>";
+  const W=400,H=120,L=8,B=20,T=14;const mx=Math.max(...ys.map(y=>p.proventos_ano[y]),p.dpa_medio||0)||1;const bw=(W-L*2)/ys.length;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Proventos por ação por ano">`;
+  ys.forEach((y,i)=>{const v=p.proventos_ano[y];const h=v/mx*(H-B-T);const x=L+i*bw+4;const part=i===ys.length-1&&+y===new Date().getFullYear();
+    s+=`<rect x="${x}" y="${H-B-h}" width="${bw-8}" height="${Math.max(h,1)}" rx="3" fill="${part?"var(--surface-3)":"var(--fed)"}"></rect><text x="${x+(bw-8)/2}" y="${H-6}" text-anchor="middle">${y}${part?"*":""}</text><text x="${x+(bw-8)/2}" y="${H-B-h-4}" text-anchor="middle">${fmt(v,2)}</text>`});
+  if(p.dpa_medio){const y=H-B-p.dpa_medio/mx*(H-B-T);s+=`<line x1="${L}" x2="${W-L}" y1="${y}" y2="${y}" stroke="var(--accent)" stroke-dasharray="4 3"></line>`}
+  return s+"</svg><p style=\"font-size:.8rem\">Barras: proventos por ação em cada ano (R$). Linha tracejada: DPA médio. * ano em curso.</p>"
+}
+
+function render(){
+  const rows=filtered().sort(cmp);const tb=document.querySelector("#t tbody");tb.innerHTML="";
+  $("count").textContent=`${rows.length} de ${DATA.papeis.length} papéis`;
+  const bySec=sortK==="ticker"||sortK==="margem"?SET.map(s=>[s,rows.filter(r=>r.setor===s)]):[["",rows]];
+  for(const [s,list] of bySec){ if(!list.length)continue;
+    if(s){const tr=document.createElement("tr");tr.className="secrow";tr.innerHTML=`<td colspan="11">${LET[s]} · ${s} <span class="num" style="font-weight:400;color:var(--muted);font-size:.8rem">${list.length}</span></td>`;tb.appendChild(tr)}
+    for(const p of list){
+      const tr=document.createElement("tr");tr.className="row";tr.tabIndex=0;tr.setAttribute("aria-expanded",open.has(p.ticker));
+      const m=p.margem;const mb=m==null?"":`<span class="margin-bar"><span style="${m>=0?"left:50%;width:"+Math.min(50,m/2)+"%;background:var(--pos)":"right:50%;width:"+Math.min(50,-m/2)+"%;background:var(--neg)"}"></span></span>`;
+      tr.innerHTML=`<td class="name"><b>${esc(p.ticker)}</b><small>${esc(p.empresa)}</small></td>
+        <td>${p.controle?`<span class="ct ct-${p.controle}">${CT[p.controle]}</span>`:"–"}</td>
+        <td>${p.preco!=null?"R$ "+fmt(p.preco):"–"}</td><td>${fmt(p.dpa_medio,3)}</td><td>${p.dy_medio!=null?fmt(p.dy_medio,1)+"%":"–"}</td>
+        <td>${p.dy_12m!=null?fmt(p.dy_12m,1)+"%":"–"}</td><td>${p.preco_teto!=null?"R$ "+fmt(p.preco_teto):"–"}</td>
+        <td class="${m>0?"pos":m<0?"neg":""}">${pct(m)}${mb}</td>
+        <td class="${p.tendencia<=-25?"neg":""}">${pct(p.tendencia,0)}</td>
+        <td>${liq(p.liquidez_mil)}${p.baixa_liquidez?' <span class="flag" title="Baixa liquidez">⚠</span>':""}</td>
+        <td><span class="pill st-${p.status}">${ST[p.status]}</span></td>`;
+      const toggle=()=>{open.has(p.ticker)?open.delete(p.ticker):open.add(p.ticker);render()};
+      tr.onclick=toggle;tr.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle()}};
+      tb.appendChild(tr);
+      if(open.has(p.ticker)){const d=document.createElement("tr");d.className="detail";
+        d.innerHTML=`<td colspan="11"><div class="detail-grid"><div class="minichart">${mini(p)}</div><div style="display:flex;flex-direction:column;gap:8px">
+          <h3>${esc(p.empresa)} · ${esc(p.ticker)}</h3>
+          <p><b>Controle:</b> ${esc(p.controlador||"não classificado")}${p.controle_nota?". "+esc(p.controle_nota):""}${p.controle_fonte?` <a href="${esc(p.controle_fonte)}" target="_blank" rel="noopener">Fonte</a>`:""}</p>
+          <p><b>Histórico:</b> ${p.anos_historico??0} anos com cotação na base de cálculo, proventos em ${p.anos_com_provento??0}. Último pregão: ${p.data?p.data.split("-").reverse().join("/"):"–"}.</p>
+          ${p.tendencia!=null&&p.tendencia<=-25?`<p class="neg"><b>Atenção:</b> o provento do último ano ficou ${fmt(-p.tendencia,0)}% abaixo da média; o preço-teto pode estar otimista.</p>`:""}
+          ${p.baixa_liquidez?`<p class="flag">Baixa liquidez: média de ${liq(p.liquidez_mil)} por dia nos últimos 3 meses.</p>`:""}
+        </div></div></td>`;tb.appendChild(d)}
+    }}
+  document.querySelectorAll("#t th").forEach(th=>th.setAttribute("aria-sort",th.dataset.k===sortK?(sortDir>0?"ascending":"descending"):"none"));
+}
+
+document.querySelectorAll("#t th").forEach(th=>th.onclick=()=>{const k=th.dataset.k;if(sortK===k)sortDir*=-1;else{sortK=k;sortDir=["ticker","controle","status"].includes(k)?1:-1}render()});
+["q","f-ctrl","f-status","f-liq","f-cot"].forEach(id=>$(id).addEventListener("input",()=>{render();if(id!=="q")store("besst-"+id,$(id).type==="checkbox"?String($(id).checked):$(id).value)}));
+["f-ctrl","f-status","f-liq","f-cot"].forEach(id=>{const v=load("besst-"+id);if(v!=null){if($(id).type==="checkbox")$(id).checked=v==="true";else $(id).value=v}});
+
+async function boot(){DATA=await fetchData();if(!DATA)return;liveLabel();sectors();render()}
+boot();
+setInterval(async()=>{const d=await fetchData();if(d&&d.gerado_em!==DATA?.gerado_em){DATA=d;liveLabel();sectors();render()}},5*60*1000);
+})();
+</script>
+
+</body>
+</html>

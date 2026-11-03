@@ -1,0 +1,726 @@
+{
+ "descricao": "Universo de papéis dos cinco setores BESST (Bancos, Energia, Seguros, Saneamento, Telecomunicações) listados na B3",
+ "atualizado": "2026-11-02",
+ "papeis": [
+  {
+   "ticker": "BBAS3",
+   "empresa": "Banco do Brasil",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "SANB4",
+   "empresa": "Santander Brasil",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "SANB11",
+   "empresa": "Santander Brasil",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "SANB3",
+   "empresa": "Santander Brasil",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "BRSR6",
+   "empresa": "Banrisul",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "BBDC4",
+   "empresa": "Bradesco",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "BBDC3",
+   "empresa": "Bradesco",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "ABCB4",
+   "empresa": "ABC Brasil",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "BRSR5",
+   "empresa": "Banrisul",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "BRSR3",
+   "empresa": "Banrisul",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "ITUB4",
+   "empresa": "Itaú Unibanco",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "ITUB3",
+   "empresa": "Itaú Unibanco",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "BRIV4",
+   "empresa": "Alfa Investimento",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "BMEB3",
+   "empresa": "Mercantil do Brasil",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "BMEB4",
+   "empresa": "Mercantil do Brasil",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "BPAC11",
+   "empresa": "BTG Pactual",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "BPAC5",
+   "empresa": "BTG Pactual",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "BPAC3",
+   "empresa": "BTG Pactual",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "BRIV3",
+   "empresa": "Alfa Investimento",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "BSLI4",
+   "empresa": "BRB",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "BSLI3",
+   "empresa": "BRB",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "BAZA3",
+   "empresa": "Banco da Amazônia",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "RPAD5",
+   "empresa": "Alfa Holding",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "BGIP4",
+   "empresa": "Banese",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "BMIN4",
+   "empresa": "Mercantil Investimentos",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "BMGB4",
+   "empresa": "Banco BMG",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "BPAR3",
+   "empresa": "Banpará",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "BEES4",
+   "empresa": "Banestes",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "BEES3",
+   "empresa": "Banestes",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "BNBR3",
+   "empresa": "Banco do Nordeste",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "BGIP3",
+   "empresa": "Banese",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "BMIN3",
+   "empresa": "Mercantil Investimentos",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "PINE4",
+   "empresa": "Pine",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "BPAN4",
+   "empresa": "Banco Pan",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "RPAD6",
+   "empresa": "Alfa Holding",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "RPAD3",
+   "empresa": "Alfa Holding",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "BRBI11",
+   "empresa": "BR Partners",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "PINE3",
+   "empresa": "Pine",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "PINE11",
+   "empresa": "Pine",
+   "setor": "Bancos"
+  },
+  {
+   "ticker": "CMIG4",
+   "empresa": "Cemig",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "TAEE3",
+   "empresa": "Taesa",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "TAEE11",
+   "empresa": "Taesa",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "TAEE4",
+   "empresa": "Taesa",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "ISAE4",
+   "empresa": "ISA Energia",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "CPFE3",
+   "empresa": "CPFL Energia",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "EGIE3",
+   "empresa": "Engie Brasil",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "CMIG3",
+   "empresa": "Cemig",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "ISAE3",
+   "empresa": "ISA Energia",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "CPLE3",
+   "empresa": "Copel",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "ENGI4",
+   "empresa": "Energisa",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "ENGI11",
+   "empresa": "Energisa",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "VBBR3",
+   "empresa": "Vibra",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "CLSC4",
+   "empresa": "Celesc",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "CLSC3",
+   "empresa": "Celesc",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "ALUP4",
+   "empresa": "Alupar",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "ENGI3",
+   "empresa": "Energisa",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "ALUP11",
+   "empresa": "Alupar",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "ALUP3",
+   "empresa": "Alupar",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "NEOE3",
+   "empresa": "Neoenergia",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "EQTL3",
+   "empresa": "Equatorial",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "SRNA3",
+   "empresa": "Serena",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "AURE3",
+   "empresa": "Auren",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "MEGA3",
+   "empresa": "Omega",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "CEBR5",
+   "empresa": "CEB",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "CEBR3",
+   "empresa": "CEB",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "CEBR6",
+   "empresa": "CEB",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "CSRN3",
+   "empresa": "Cosern",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "CSRN5",
+   "empresa": "Cosern",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "CSRN6",
+   "empresa": "Cosern",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "EKTR4",
+   "empresa": "Elektro",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "GEPA4",
+   "empresa": "Rio Paranapanema",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "GEPA3",
+   "empresa": "Rio Paranapanema",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "GPAR3",
+   "empresa": "Celgpar",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "CEEB5",
+   "empresa": "Coelba",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "REDE3",
+   "empresa": "Rede Energia",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "ENMT3",
+   "empresa": "Energisa MT",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "EQPA3",
+   "empresa": "Equatorial Pará",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "ENMT4",
+   "empresa": "Energisa MT",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "CEEB3",
+   "empresa": "Coelba",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "EKTR3",
+   "empresa": "Elektro",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "AFLT3",
+   "empresa": "Afluente T",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "EEEL4",
+   "empresa": "CEEE-GT",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "EQPA6",
+   "empresa": "Equatorial Pará",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "EEEL3",
+   "empresa": "CEEE-GT",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "EQPA5",
+   "empresa": "Equatorial Pará",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "EQPA7",
+   "empresa": "Equatorial Pará",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "COCE5",
+   "empresa": "Coelce",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "EMAE4",
+   "empresa": "EMAE",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "COCE3",
+   "empresa": "Coelce",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "LIGT3",
+   "empresa": "Light",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "CEPE5",
+   "empresa": "Celpe",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "LIPR3",
+   "empresa": "Eletropar",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "AXIA3",
+   "empresa": "Axia Energia",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "CBEE3",
+   "empresa": "Ampla",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "CEPE3",
+   "empresa": "Celpe",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "RNEW3",
+   "empresa": "Renova",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "CEED4",
+   "empresa": "CEEE-D",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "CEED3",
+   "empresa": "CEEE-D",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "EMAE3",
+   "empresa": "EMAE",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "ELPL4",
+   "empresa": "Eletropaulo",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "ENEV3",
+   "empresa": "Eneva",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "OMGE3",
+   "empresa": "Omega Geração",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "RNEW11",
+   "empresa": "Renova",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "RNEW4",
+   "empresa": "Renova",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "AESO3",
+   "empresa": "AES",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "CEEB6",
+   "empresa": "Coelba",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "COCE6",
+   "empresa": "Coelce",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "COMR3",
+   "empresa": "Comerc",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "UPKP3",
+   "empresa": "UPK",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "RIOS3",
+   "empresa": "Rios",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "AXIA7",
+   "empresa": "Axia Energia",
+   "setor": "Energia"
+  },
+  {
+   "ticker": "WIZC3",
+   "empresa": "Wiz",
+   "setor": "Seguros"
+  },
+  {
+   "ticker": "BBSE3",
+   "empresa": "BB Seguridade",
+   "setor": "Seguros"
+  },
+  {
+   "ticker": "PSSA3",
+   "empresa": "Porto Seguro",
+   "setor": "Seguros"
+  },
+  {
+   "ticker": "CXSE3",
+   "empresa": "Caixa Seguridade",
+   "setor": "Seguros"
+  },
+  {
+   "ticker": "BRGE6",
+   "empresa": "Alfa Consórcio",
+   "setor": "Seguros"
+  },
+  {
+   "ticker": "CSAB3",
+   "empresa": "Aliança da Bahia",
+   "setor": "Seguros"
+  },
+  {
+   "ticker": "CSAB4",
+   "empresa": "Aliança da Bahia",
+   "setor": "Seguros"
+  },
+  {
+   "ticker": "BRGE11",
+   "empresa": "Alfa Consórcio",
+   "setor": "Seguros"
+  },
+  {
+   "ticker": "BRGE8",
+   "empresa": "Alfa Consórcio",
+   "setor": "Seguros"
+  },
+  {
+   "ticker": "BRGE5",
+   "empresa": "Alfa Consórcio",
+   "setor": "Seguros"
+  },
+  {
+   "ticker": "APER3",
+   "empresa": "Alper",
+   "setor": "Seguros"
+  },
+  {
+   "ticker": "BRGE12",
+   "empresa": "Alfa Consórcio",
+   "setor": "Seguros"
+  },
+  {
+   "ticker": "BRGE3",
+   "empresa": "Alfa Consórcio",
+   "setor": "Seguros"
+  },
+  {
+   "ticker": "SAPR4",
+   "empresa": "Sanepar",
+   "setor": "Saneamento"
+  },
+  {
+   "ticker": "SAPR11",
+   "empresa": "Sanepar",
+   "setor": "Saneamento"
+  },
+  {
+   "ticker": "CSMG3",
+   "empresa": "Copasa",
+   "setor": "Saneamento"
+  },
+  {
+   "ticker": "SAPR3",
+   "empresa": "Sanepar",
+   "setor": "Saneamento"
+  },
+  {
+   "ticker": "SBSP3",
+   "empresa": "Sabesp",
+   "setor": "Saneamento"
+  },
+  {
+   "ticker": "CASN4",
+   "empresa": "Casan",
+   "setor": "Saneamento"
+  },
+  {
+   "ticker": "CASN3",
+   "empresa": "Casan",
+   "setor": "Saneamento"
+  },
+  {
+   "ticker": "AMBP3",
+   "empresa": "Ambipar",
+   "setor": "Saneamento"
+  },
+  {
+   "ticker": "ORVR3",
+   "empresa": "Orizon",
+   "setor": "Saneamento"
+  },
+  {
+   "ticker": "IGSN3",
+   "empresa": "Iguá",
+   "setor": "Saneamento"
+  },
+  {
+   "ticker": "TIMS3",
+   "empresa": "TIM",
+   "setor": "Telecomunicações"
+  },
+  {
+   "ticker": "VIVT3",
+   "empresa": "Telefônica Brasil (Vivo)",
+   "setor": "Telecomunicações"
+  },
+  {
+   "ticker": "BRIT3",
+   "empresa": "Brisanet",
+   "setor": "Telecomunicações"
+  },
+  {
+   "ticker": "OIBR4",
+   "empresa": "Oi",
+   "setor": "Telecomunicações"
+  },
+  {
+   "ticker": "OIBR3",
+   "empresa": "Oi",
+   "setor": "Telecomunicações"
+  },
+  {
+   "ticker": "TELB4",
+   "empresa": "Telebras",
+   "setor": "Telecomunicações"
+  },
+  {
+   "ticker": "TELB3",
+   "empresa": "Telebras",
+   "setor": "Telecomunicações"
+  },
+  {
+   "ticker": "FIQE3",
+   "empresa": "Unifique",
+   "setor": "Telecomunicações"
+  },
+  {
+   "ticker": "DESK3",
+   "empresa": "Desktop",
+   "setor": "Telecomunicações"
+  },
+  {
+   "ticker": "BRST3",
+   "empresa": "Brisanet",
+   "setor": "Telecomunicações"
+  }
+ ]
+}
