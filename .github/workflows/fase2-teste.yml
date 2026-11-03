@@ -15,6 +15,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Diagnóstico do mapeamento por nome
+        continue-on-error: true
+        run: python3 scripts/fase2/diagnostico_mapa.py
       - name: Rodar fundamentos (v2)
         continue-on-error: true
         run: |
