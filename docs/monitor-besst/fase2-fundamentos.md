@@ -20,8 +20,10 @@ Base na literatura e na prática:
   [Rev. Accounting Studies 16 — doi:10.1007/s11142-009-9113-8](https://doi.org/10.1007/s11142-009-9113-8)
 - **Lintner (1956)**: empresas suavizam dividendos em torno de um payout-alvo; payout muito acima do lucro não se sustenta.
   [American Economic Review 46(2)](https://www.jstor.org/stable/1910664)
-- Brasil: dividendo mínimo obrigatório de 25% do lucro ajustado (Lei 6.404, art. 202) — payout abaixo disso é anômalo e
-  acima de 100% é distribuição de reservas/dívida. [Planalto](https://www.planalto.gov.br/ccivil_03/leis/l6404consol.htm)
+- Brasil (Lei 6.404, art. 202): o dividendo obrigatório é o que o estatuto fixar; se o estatuto for omisso, é **metade
+  (50%) do lucro líquido ajustado**; se a assembleia alterar um estatuto omisso para fixá-lo, o percentual não pode ser
+  inferior a 25% do lucro ajustado. Payout acima de 100% indica distribuição de reservas ou de recursos de terceiros.
+  *(Texto corrigido em 02/11/2026 por exigência do parecer dos juízes.)* [Planalto](https://www.planalto.gov.br/ccivil_03/leis/l6404consol.htm)
 
 Por que "parcial": (i) para iniciante, mais de 3 números por papel vira ruído; (ii) parte das métricas setoriais corretas
 (Basileia, inadimplência, índice combinado) não está na DFP e exige outra fonte; (iii) contabilidade IFRS de concessões
@@ -94,15 +96,19 @@ Exibição: 3 bolinhas coloridas por linha + tooltip com o número e a frase "po
 Regra (igual para todos os setores, métricas da tabela): verde = 1 ponto, amarelo = 0,5, vermelho = 0; nota = 3 × pontos ÷
 métricas disponíveis, arredondada. Travas: prejuízo nos 12m → 0; qualquer vermelho → no máximo 1; menos de 2 métricas → "sem nota".
 Frase para iniciante: **"A nota mostra se a empresa ganha dinheiro suficiente, sem dever demais, para continuar pagando o
-que pagou no passado (3 = sólida, 0 = sinal de alerta)."**
+que pagou no passado (3 = indicadores fortes, 0 = indicadores fracos; não é recomendação)."**
 
-Matriz barato × qualidade (substitui o rótulo único "abaixo do teto"):
+Matriz preço × qualidade — **rótulos descritivos, sem juízo de compra ou venda** (Res. CVM 20/2021; reescrita em
+02/11/2026 por exigência dos juízes):
 
 | | Nota 3 | Nota 2 | Nota 0–1 |
 |---|---|---|---|
-| Margem ≥ 20% | **Oportunidade a estudar** | Barata, conferir o amarelo | **Possível armadilha** |
-| Margem 0–20% | Preço justo, empresa sólida | Neutro | Evitar / acompanhar |
-| Margem < 0 | Boa empresa, cara | Cara | Cara e frágil |
+| Preço ≥ 20% abaixo do teto | Abaixo do teto · indicadores fortes | Abaixo do teto · indicadores mistos | Abaixo do teto · indicadores fracos — investigar o motivo |
+| Preço 0–20% abaixo do teto | Perto do teto · indicadores fortes | Perto do teto · indicadores mistos | Perto do teto · indicadores fracos |
+| Preço acima do teto | Acima do teto · indicadores fortes | Acima do teto · indicadores mistos | Acima do teto · indicadores fracos |
+
+Na tela, os indicadores são rotulados como **"lucro contábil (IFRS/Cosif), últimos 12 meses"** — diferente do lucro
+"recorrente" ou "ajustado" que bancos e empresas destacam nos releases.
 
 Combinar também com a coluna "tendência" já existente: margem alta + tendência < −20% + nota ≤ 1 = alerta vermelho explícito.
 

@@ -15,14 +15,24 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Diagnóstico da estrutura dos arquivos da CVM
-        continue-on-error: true
-        run: python3 scripts/fase2/diagnostico_cvm.py 2>&1 | tee dados/besst/fase2_teste/log_diagnostico.txt
-      - name: Rodar o esboço de fundamentos
+      - name: Rodar fundamentos (v2)
         continue-on-error: true
         run: |
           python3 scripts/fase2/fundamentos_cvm.py --painel dados/besst/painel.json \
-            --saida dados/besst/fase2_teste/fundamentos.json 2>&1 | tee dados/besst/fase2_teste/log_fundamentos.txt
+            --saida dados/besst/fase2_teste/fundamentos.json --log dados/besst/fase2_teste/log_execucao.json \
+            2>&1 | tee dados/besst/fase2_teste/log_fundamentos.txt
+      - name: Teste de robustez (download da DFP 2024 forçado a falhar)
+        continue-on-error: true
+        env:
+          FASE2_FORCAR_FALHA: dfp_cia_aberta_2024.zip
+        run: |
+          python3 scripts/fase2/fundamentos_cvm.py --painel dados/besst/painel.json \
+            --saida dados/besst/fase2_teste/fundamentos_falha_forcada.json 2>&1 | tee dados/besst/fase2_teste/log_falha_forcada.txt
+      - name: Medir critérios de aceite
+        continue-on-error: true
+        run: |
+          python3 scripts/fase2/aceite.py dados/besst/fase2_teste/fundamentos.json \
+            dados/besst/fase2_teste/fundamentos_falha_forcada.json | tee dados/besst/fase2_teste/aceite.json
       - name: Guardar resultados do teste
         run: |
           git config user.name "market-lab bot"
