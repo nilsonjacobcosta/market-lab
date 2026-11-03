@@ -9,13 +9,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: painel operacional — resumo por setor no topo, barra de filtros fixa, tabela ordenável com ficha expansível por papel, método e glossário no fim. */
+/* Layout: aviso + guia de leitura no topo, resumo por setor, barra de filtros com modo Iniciante/Completo, tabela ordenável (uma linha por empresa no modo Iniciante) com ficha expansível (frase-resumo, simulador, alertas, controle), método e glossário no fim. */
 :root{
   --bg:#f2f4f7; --surface:#ffffff; --surface-2:#e9edf2; --surface-3:#dde3ea;
-  --ink:#152131; --ink-2:#465567; --muted:#6f7d8d; --line:#d9e0e8;
+  --ink:#152131; --ink-2:#465567; --muted:#56636f; --line:#d9e0e8;
   --accent:#b86e0c; --accent-soft:#fbefdc;
-  --pos:#1d7f55; --pos-soft:#dff2e8; --neg:#b9443a; --neg-soft:#f8e3e0; --warn:#9a6a00; --warn-soft:#fbf1d6;
-  --fed:#2e66a3; --fed-soft:#e1ecf8; --est:#7a4fb3; --est-soft:#efe7fa; --ext:#c0572a; --ext-soft:#fbe9e1; --mix:#5f6b7a; --mix-soft:#e8ecf0;
+  --pos:#176d48; --pos-soft:#dff2e8; --neg:#a63a30; --neg-soft:#f8e3e0; --warn:#7d5600; --warn-soft:#fbf1d6;
+  --fed:#2e66a3; --fed-soft:#e1ecf8; --est:#7a4fb3; --est-soft:#efe7fa; --ext:#a4461e; --ext-soft:#fbe9e1; --mix:#5f6b7a; --mix-soft:#e8ecf0;
   --f-display:"Bricolage Grotesque","Avenir Next","Segoe UI",sans-serif;
   --f-body:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
@@ -23,21 +23,21 @@
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#0d131a; --surface:#141c26; --surface-2:#1b2532; --surface-3:#222e3d;
-  --ink:#e5ecf3; --ink-2:#aab6c3; --muted:#7f8c9a; --line:#263241;
+  --ink:#e5ecf3; --ink-2:#aab6c3; --muted:#8e9aa8; --line:#263241;
   --accent:#e9a443; --accent-soft:#2c2213;
   --pos:#45c08a; --pos-soft:#14291f; --neg:#ef7b6f; --neg-soft:#2e1816; --warn:#e3b94f; --warn-soft:#2b2410;
   --fed:#6ea2dc; --fed-soft:#16253a; --est:#b08ae6; --est-soft:#231a33; --ext:#ef8a5c; --ext-soft:#2e1b12; --mix:#9aa6b4; --mix-soft:#1f2833;
   color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0d131a; --surface:#141c26; --surface-2:#1b2532; --surface-3:#222e3d;
-  --ink:#e5ecf3; --ink-2:#aab6c3; --muted:#7f8c9a; --line:#263241;
+  --ink:#e5ecf3; --ink-2:#aab6c3; --muted:#8e9aa8; --line:#263241;
   --accent:#e9a443; --accent-soft:#2c2213;
   --pos:#45c08a; --pos-soft:#14291f; --neg:#ef7b6f; --neg-soft:#2e1816; --warn:#e3b94f; --warn-soft:#2b2410;
   --fed:#6ea2dc; --fed-soft:#16253a; --est:#b08ae6; --est-soft:#231a33; --ext:#ef8a5c; --ext-soft:#2e1b12; --mix:#9aa6b4; --mix-soft:#1f2833;
   color-scheme:dark}
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5}
-.wrap{max-width:1240px;margin:0 auto;padding-block:28px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:28px}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5;margin:0}
+.wrap{max-width:1240px;margin:0 auto;padding-block:28px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:24px}
 h1,h2,h3{font-family:var(--f-display);margin:0;line-height:1.12;text-wrap:balance}
 h1{font-size:clamp(1.9rem,4.5vw,2.9rem);letter-spacing:-.02em}
 h2{font-size:1.4rem}
@@ -46,52 +46,85 @@ p{margin:0;max-width:72ch}
 a{color:var(--fed)}
 .eyebrow{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
 .num{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
-.pos{color:var(--pos)}.neg{color:var(--neg)}
+.pos{color:var(--ink)}.neg{color:var(--neg)}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 header.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px}
 header.top > div{min-width:0}
 .lede{color:var(--ink-2);margin-top:10px}
 .live{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 12px}
-.live i{width:8px;height:8px;border-radius:50%;background:var(--pos);display:block;box-shadow:0 0 0 3px var(--pos-soft)}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--pos);display:block;box-shadow:0 0 0 3px var(--pos-soft);flex:none}
 .live.stale i{background:var(--warn);box-shadow:0 0 0 3px var(--warn-soft)}
+
+.notice{background:var(--warn-soft);border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:var(--r);padding:12px 14px;font-size:.9rem}
+.notice p{max-width:none}
+
+.guide{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+.guide summary{cursor:pointer;padding:14px 16px;font-family:var(--f-display);font-weight:700;font-size:1.05rem;list-style-position:inside}
+.guide ol{list-style:none;margin:0;padding:0 16px 16px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;counter-reset:passo}
+.guide li{counter-increment:passo;background:var(--surface-2);border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.guide li::before{content:counter(passo);font-family:var(--f-display);font-weight:700;font-size:1.4rem;line-height:1;color:var(--accent)}
+.guide li b{font-family:var(--f-display)}
+.guide li p{font-size:.86rem;color:var(--ink-2)}
 
 .sectors{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
 .sec{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px;display:flex;flex-direction:column;gap:6px;cursor:pointer;text-align:left;font:inherit;color:inherit;min-width:0}
 .sec:hover{border-color:var(--ink-2)}
 .sec[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
 .sec .letter{font-family:var(--f-display);font-size:1.6rem;font-weight:700;line-height:1;color:var(--accent)}
-.sec .name{font-weight:600}
+.sec .name{font-weight:600;overflow-wrap:anywhere}
 .sec .stats{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:.8rem;color:var(--ink-2)}
 .bar{display:flex;height:6px;border-radius:3px;overflow:hidden;background:var(--surface-2);gap:2px}
 .bar span{display:block;height:100%}
 
 .filters{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;border-bottom:1px solid var(--line)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
-.filters input[type=search],.filters select{font:inherit;font-size:.88rem;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)}
+.filters input[type=search],.filters select{font:inherit;font-size:.88rem;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);max-width:100%}
 .filters input[type=search]{min-width:0;flex:1 1 180px}
 .chk input{margin:0;accent-color:var(--ink)}
 .chk{display:inline-flex;align-items:center;gap:6px;font-size:.85rem;color:var(--ink-2)}
 .count{margin-left:auto;font-size:.85rem;color:var(--muted)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--surface)}
+.seg button{font:inherit;font-size:.85rem;font-weight:600;padding:7px 12px;border:0;background:transparent;color:var(--ink-2);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.modehint{flex-basis:100%;font-size:.8rem;color:var(--muted)}
 
 .tbl{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
-table{border-collapse:collapse;width:100%;font-size:.88rem;min-width:980px}
+table{border-collapse:collapse;width:100%;font-size:.88rem;min-width:1060px}
+table.simple{min-width:780px}
 th,td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
 th:nth-child(-n+2),td:nth-child(-n+2){text-align:left}
-th{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:500;position:sticky;top:0;background:var(--surface);cursor:pointer;user-select:none}
-th[aria-sort="ascending"]::after{content:" ▲"}th[aria-sort="descending"]::after{content:" ▼"}
+th{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:500;background:var(--surface)}
+th .thw{display:inline-flex;align-items:center;gap:3px}
+th button.sort{font:inherit;letter-spacing:inherit;text-transform:inherit;color:inherit;background:none;border:0;padding:2px 0;cursor:pointer}
+th button.sort:hover{color:var(--ink)}
+th[aria-sort="ascending"] button.sort::after{content:" ▲"}th[aria-sort="descending"] button.sort::after{content:" ▼"}
+button.qm{font-family:var(--f-body);font-size:.72rem;font-weight:600;width:24px;height:24px;border-radius:50%;border:1px solid var(--line);background:var(--surface-2);color:var(--ink-2);cursor:pointer;padding:0;line-height:1;flex:none}
+button.qm:hover,button.qm[aria-expanded="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 td{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
 td.name{font-family:var(--f-body)}
 td.name b{font-family:var(--f-mono)}
 td.name small{color:var(--muted);display:block;font-size:.78rem}
+td.name small.sib{font-family:var(--f-mono);font-size:.72rem}
+/* primeira coluna fixa ao rolar a tabela no celular */
+tr.row td:first-child,thead th:first-child{position:sticky;left:0;z-index:1;background:var(--surface);box-shadow:1px 0 0 var(--line)}
 tr.row{cursor:pointer}
-tr.row:hover td{background:var(--surface-2)}
+tr.row:hover td,tr.row:hover td:first-child{background:var(--surface-2)}
 tr.secrow td{background:var(--surface-2);font-family:var(--f-display);font-weight:700;font-size:.95rem;text-align:left}
 tr.detail td{background:var(--surface-2);white-space:normal;text-align:left;font-family:var(--f-body)}
+.dwrap{position:sticky;left:10px;width:calc(var(--tblw,100%) - 22px);max-width:100%}
 .pill{display:inline-block;padding:2px 8px;border-radius:999px;font-family:var(--f-body);font-size:.74rem;font-weight:600}
-.st-abaixo_teto{background:var(--pos-soft);color:var(--pos)}
-.st-acima_teto{background:var(--neg-soft);color:var(--neg)}
-.st-sem_proventos,.st-historico_curto,.st-sem_cotacao{background:var(--surface-3);color:var(--muted)}
+/* situação: pílulas neutras (nada de verde que pareça sinal de compra) */
+.st-abaixo_teto,.st-acima_teto{background:var(--surface);color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink-2)}
+.st-acima_teto{box-shadow:none;background:var(--surface-2);color:var(--ink-2)}
+.st-sem_proventos,.st-historico_curto,.st-sem_cotacao,.st-nao_se_aplica{background:var(--surface-3);color:var(--ink-2)}
+.al-grave{background:var(--neg-soft);color:var(--neg)}
+.al-atencao{background:var(--warn-soft);color:var(--warn)}
+.al-ok{background:var(--surface-2);color:var(--ink-2)}
+.al-na{background:var(--surface-3);color:var(--ink-2)}
+.box.grave{border-left:4px solid var(--neg)}
+td.na{font-family:var(--f-body);font-size:.78rem;color:var(--ink-2)}
 .ct{display:inline-block;padding:1px 7px;border-radius:4px;font-family:var(--f-body);font-size:.72rem;font-weight:600}
 .ct-estatal_federal{background:var(--fed-soft);color:var(--fed)}
 .ct-estatal_estadual{background:var(--est-soft);color:var(--est)}
@@ -101,19 +134,40 @@ tr.detail td{background:var(--surface-2);white-space:normal;text-align:left;font
 .flag{color:var(--warn);font-size:.75rem;font-family:var(--f-body)}
 .margin-bar{display:inline-block;width:46px;height:6px;background:var(--surface-3);border-radius:3px;position:relative;vertical-align:middle;margin-left:6px;overflow:hidden}
 .margin-bar span{position:absolute;top:0;bottom:0;border-radius:3px}
-.detail-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:18px;padding:6px 2px}
+.detail-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:18px;padding:6px 2px}
 .detail-grid > *{min-width:0}
-.detail-grid p{font-size:.88rem;color:var(--ink-2)}
+.detail-grid p,.detail-grid li{font-size:.88rem;color:var(--ink-2)}
+.dcol{display:flex;flex-direction:column;gap:10px}
+.resumo{font-size:.95rem!important;color:var(--ink)!important}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:6px}
+.box.warn{border-left:4px solid var(--warn)}
+.box.state{border-left:4px solid var(--fed)}
+.box h4{margin:0;font-size:.85rem;font-family:var(--f-body);font-weight:600}
+.box ul{margin:0;padding-left:18px}
+.sim label{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:.88rem;font-weight:600}
+.sim input{font:inherit;font-family:var(--f-mono);width:120px;padding:5px 8px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink)}
+.sib-t{border-collapse:collapse;font-size:.8rem;min-width:0;width:auto}
+.sib-t th,.sib-t td{padding:4px 8px;border-bottom:1px solid var(--line);white-space:nowrap;position:static;box-shadow:none}
+.sib-scroll{overflow-x:auto;max-width:100%}
 .minichart svg{display:block;width:100%;max-width:420px;height:auto}
 .minichart text{font-family:var(--f-mono);font-size:11px;fill:var(--ink-2)}
 
 .method{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:6px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:6px;min-width:0}
 .card p{font-size:.9rem;color:var(--ink-2)}
+.gloss{display:flex;flex-direction:column;gap:12px}
+.gloss dl{margin:0;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.gloss dl > div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px;min-width:0}
+.gloss dt{font-weight:600}
+.gloss dd{margin:2px 0 0;font-size:.88rem;color:var(--ink-2)}
 .legend{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:.82rem;color:var(--ink-2);align-items:center}
 footer{font-size:.85rem;color:var(--ink-2);border-top:1px solid var(--line);padding-top:16px;display:flex;flex-direction:column;gap:8px}
-.tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);padding:6px 9px;border-radius:7px;font-size:.8rem;z-index:30;opacity:0;transition:opacity .1s}
-@media (max-width:900px){.sectors{grid-template-columns:repeat(2,1fr)}.method,.detail-grid{grid-template-columns:1fr}}
+.pop{position:fixed;z-index:30;max-width:min(320px,calc(100vw - 16px));background:var(--ink);color:var(--bg);padding:9px 11px;border-radius:8px;font-size:.84rem;line-height:1.4;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.pop[hidden]{display:none}
+.pop b{display:block;margin-bottom:2px}
+@media (max-width:900px){.sectors{grid-template-columns:repeat(2,1fr)}.method,.detail-grid{grid-template-columns:1fr}.guide ol{grid-template-columns:repeat(2,1fr)}}
+.ct-inline{display:none;margin-top:3px}
+@media (max-width:600px){#t th[data-k="controle"],#t td.c-ctrl{display:none}.ct-inline{display:inline-block}table.simple{min-width:640px}.filters{position:static}.guide ol,.gloss dl{grid-template-columns:1fr}.count{margin-left:0;flex-basis:100%}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -124,16 +178,30 @@ footer{font-size:.85rem;color:var(--ink-2);border-top:1px solid var(--line);padd
   <div>
     <div class="eyebrow">market-lab · carteiras de dividendos</div>
     <h1>Monitor BESST</h1>
-    <p class="lede">Bancos, Energia, Seguros, Saneamento e Telecomunicações: os papéis dos cinco setores perenes da B3, com preço-teto, DPA médio e DY médio calculados com dados públicos. Clique numa linha para ver o histórico de proventos e o controle acionário.</p>
+    <p class="lede">Bancos, Energia, Seguros, Saneamento e Telecomunicações: as empresas dos cinco setores perenes da B3, com quanto pagaram de proventos e o preço-teto pelo método Bazin, calculados com dados públicos. Toque numa linha para ver a ficha da empresa.</p>
   </div>
   <span class="live" id="live"><i></i><span id="live-t">Carregando dados…</span></span>
 </header>
 
-<div class="sectors" id="sectors"></div>
+<div class="notice" role="note"><p><b>Material educativo, não é recomendação.</b> “Abaixo do teto” só diz que o preço de hoje é menor que um cálculo feito com o que a empresa pagou no passado. Não significa que a ação está barata nem que vai pagar o mesmo daqui para frente. Confira sempre os alertas e a ficha antes de tirar conclusões.</p></div>
 
-<div class="legend">
-  <span><span class="pill st-abaixo_teto">Abaixo do teto</span> preço menor que o preço-teto</span>
-  <span><span class="pill st-acima_teto">Acima do teto</span></span>
+<details class="guide" id="guide" open>
+  <summary>Como ler este painel em 4 passos</summary>
+  <ol>
+    <li><b>Pense na empresa, não no código</b><p>Uma empresa pode ter vários códigos (ON final 3, PN final 4/5/6, unit final 11). No modo Iniciante mostramos uma linha por empresa, com o código mais negociado.</p></li>
+    <li><b>Veja quanto ela pagou</b><p><b>DY 12m</b> é o que pagou nos últimos 12 meses sobre o preço de hoje. <b>DY médio</b> é a média de 5 anos sobre os preços da época. Números muito diferentes pedem atenção.</p></li>
+    <li><b>Compare preço e preço-teto</b><p>O preço-teto robusto é o preço em que os proventos típicos (sem anos fora da curva) renderiam 6% ao ano. Estar abaixo dele é um primeiro filtro, não um sinal de compra.</p></li>
+    <li><b>Leia os alertas</b><p>“Grave” quer dizer que o teto não se aplica (empresa em crise, papel sem negócios ou dado implausível). “Atenção” aponta provento em queda, pouca negociação, ano fora da curva e outros pontos. Abra a ficha para ver os detalhes.</p></li>
+  </ol>
+</details>
+
+<div class="sectors" id="sectors" role="group" aria-label="Filtrar por setor"></div>
+
+<div class="legend" aria-label="Legenda">
+  <span><span class="pill st-abaixo_teto">Abaixo do teto</span> preço menor que o preço-teto robusto (não é sinal de compra)</span>
+  <span><span class="pill al-grave">Grave: teto não se aplica</span> crise, papel sem negócios ou dado implausível</span>
+  <span><span class="pill al-atencao">Atenção · n</span> n pontos a conferir na ficha</span>
+  <span><span class="pill al-ok">Nenhum alerta automático</span> nenhuma regra disparou; não quer dizer que é seguro</span>
   <span><span class="ct ct-estatal_federal">Federal</span></span>
   <span><span class="ct ct-estatal_estadual">Estadual</span></span>
   <span><span class="ct ct-estatal_estrangeira">Estatal estrangeira</span></span>
@@ -141,7 +209,11 @@ footer{font-size:.85rem;color:var(--ink-2);border-top:1px solid var(--line);padd
 </div>
 
 <div class="filters" role="search">
-  <input id="q" type="search" placeholder="Buscar papel ou empresa" aria-label="Buscar papel ou empresa">
+  <div class="seg" role="group" aria-label="Modo de visualização">
+    <button type="button" id="m-simple" aria-pressed="true">Iniciante</button>
+    <button type="button" id="m-full" aria-pressed="false">Completo</button>
+  </div>
+  <input id="q" type="search" placeholder="Buscar código ou empresa" aria-label="Buscar código ou empresa">
   <select id="f-ctrl" aria-label="Controle acionário">
     <option value="">Todo controle</option>
     <option value="estatal">Só estatais (qualquer esfera)</option>
@@ -155,31 +227,28 @@ footer{font-size:.85rem;color:var(--ink-2);border-top:1px solid var(--line);padd
     <option value="">Toda situação</option>
     <option value="abaixo_teto">Abaixo do teto</option>
     <option value="acima_teto">Acima do teto</option>
+    <option value="nao_se_aplica">Teto não se aplica</option>
     <option value="outros">Sem métrica</option>
   </select>
   <label class="chk"><input id="f-liq" type="checkbox" checked> Só com liquidez (≥ R$ 500 mil/dia)</label>
   <label class="chk"><input id="f-cot" type="checkbox" checked> Esconder sem cotação</label>
-  <span class="count" id="count"></span>
+  <label class="chk"><input id="f-alert" type="checkbox"> Só sem alerta automático</label>
+  <label class="chk"><input id="f-grave" type="checkbox"> Esconder graves</label>
+  <span class="count" id="count" aria-live="polite"></span>
+  <span class="modehint" id="modehint"></span>
 </div>
 
-<div class="tbl"><table id="t"><thead><tr>
-  <th data-k="ticker">Papel</th>
-  <th data-k="controle">Controle</th>
-  <th data-k="preco">Preço</th>
-  <th data-k="dpa_medio">DPA médio</th>
-  <th data-k="dy_medio">DY médio</th>
-  <th data-k="dy_12m">DY 12m</th>
-  <th data-k="preco_teto">Preço-teto</th>
-  <th data-k="margem" aria-sort="descending">Margem</th>
-  <th data-k="tendencia">Tendência</th>
-  <th data-k="liquidez_mil">Liquidez/dia</th>
-  <th data-k="status">Situação</th>
-</tr></thead><tbody></tbody></table></div>
+<div class="tbl" id="tbl"><table id="t"><caption class="sr" id="t-cap">Papéis do universo BESST</caption><thead><tr id="thead-row"></tr></thead><tbody></tbody></table></div>
 
 <section class="method" aria-label="Método">
-  <div class="card"><span class="eyebrow">Como calculamos</span><h3>DPA, DY e preço-teto</h3><p><b>DPA médio</b>: média dos proventos por ação (dividendos e JCP, pela data-ex) dos 5 últimos anos completos. <b>DY médio</b>: média anual de proventos ÷ preço médio do ano. <b>Preço-teto</b>: DPA médio ÷ 6%, pelo método de Décio Bazin. <b>Margem</b>: quanto o preço está abaixo do teto.</p></div>
-  <div class="card"><span class="eyebrow">Sinais de alerta</span><h3>O que olhar além da margem</h3><p><b>Tendência</b> compara o provento do último ano completo com a média: queda forte indica que a média pode estar inflada por anos que não se repetem. <b>Liquidez</b> abaixo de R$ 500 mil/dia dificulta comprar e vender. Proventos extraordinários elevam a média.</p></div>
-  <div class="card"><span class="eyebrow">Controle acionário</span><h3>Quem manda na empresa</h3><p>Classificação pesquisada em fontes públicas (RI, CVM, imprensa) em 02/11/2026. Estatais podem ter interferência política em tarifas e dividendos; privatizações recentes mudam o perfil. Abra a linha para ver o controlador e a fonte.</p></div>
+  <div class="card"><span class="eyebrow">Como calculamos</span><h3>DPA, DY e preço-teto</h3><p><b>DPA médio</b>: média dos proventos por ação (dividendos e JCP, pela data-ex) dos 5 últimos anos completos. <b>Bazin clássico (média simples)</b>: DPA médio ÷ 6%. <b>Teto robusto</b>: o mesmo cálculo com a média sem o maior e o menor ano (mediana com 3 ou 4 anos), sem o ano de estreia na bolsa e sem anos com provento zerado por provável falha da fonte. A situação e a cor da linha usam o teto robusto.</p></div>
+  <div class="card"><span class="eyebrow">Regras de alerta</span><h3>Grave, Atenção ou nenhum alerta</h3><p>Os alertas vêm prontos do arquivo de dados, calculados por regras automáticas. <b>Grave</b> (teto não se aplica): situação especial (recuperação judicial, OPA, falência), papel quase sem negócios ou teto implausivelmente acima do preço. <b>Atenção</b>: provento extraordinário, provento caindo 25% ou mais, DY 12m abaixo da metade da média ou muito acima do normal, liquidez abaixo de R$ 500 mil/dia, histórico curto, anos sem provento, entre outros. As regras não captam tudo: “nenhum alerta automático” não quer dizer seguro.</p></div>
+  <div class="card"><span class="eyebrow">Controle acionário</span><h3>Quem manda na empresa</h3><p>Classificação pesquisada em fontes públicas (RI, CVM, imprensa) em 02/11/2026. Estatais podem ter interferência política em tarifas e dividendos; privatizações recentes mudam o perfil. Abra a ficha para ver o controlador e a fonte.</p></div>
+</section>
+
+<section class="gloss" aria-labelledby="gloss-h">
+  <h2 id="gloss-h">Glossário</h2>
+  <dl id="gloss"></dl>
 </section>
 
 <footer>
@@ -187,7 +256,7 @@ footer{font-size:.85rem;color:var(--ink-2);border-top:1px solid var(--line);padd
   <p class="num" id="foot-meta"></p>
 </footer>
 </div>
-<div class="tip" id="tip"></div>
+<div class="pop" id="pop" role="tooltip" hidden></div>
 
 <script>
 window.__EMBED__ = /*DADOS*/null;
@@ -196,15 +265,44 @@ const $=id=>document.getElementById(id);
 const SET=["Bancos","Energia","Seguros","Saneamento","Telecomunicações"];
 const LET={"Bancos":"B","Energia":"E","Seguros":"S","Saneamento":"S","Telecomunicações":"T"};
 const CT={estatal_federal:"Federal",estatal_estadual:"Estadual",estatal_estrangeira:"Estatal estrangeira",participacao_estatal_relevante:"Participação estatal",privada:"Privada"};
-const ST={abaixo_teto:"Abaixo do teto",acima_teto:"Acima do teto",sem_proventos:"Sem proventos",historico_curto:"Histórico curto",sem_cotacao:"Sem cotação"};
-const fmt=(v,d=2)=>v==null?"–":v.toLocaleString("pt-BR",{minimumFractionDigits:d,maximumFractionDigits:d});
+const ST={abaixo_teto:"Abaixo do teto",acima_teto:"Acima do teto",sem_proventos:"Sem proventos",historico_curto:"Histórico curto",sem_cotacao:"Sem cotação",nao_se_aplica:"Teto não se aplica"};
+const DEF={
+  ticker:["Papel","Código de negociação na B3. Final 3 = ordinária (ON, dá voto); 4, 5 ou 6 = preferencial (PN, prioridade nos dividendos); 11 = unit (pacote de ações). Vários códigos podem ser da mesma empresa."],
+  controle:["Controle","Quem manda na empresa: governo federal, governo estadual, estatal de outro país, governo com fatia relevante sem controle, ou acionistas privados."],
+  preco:["Preço","Último preço de fechamento da ação no pregão de referência."],
+  dpa_medio:["DPA médio","Dividendo por ação: quanto a empresa pagou, em média, por ação a cada ano (dividendos + JCP, brutos) nos últimos 5 anos completos."],
+  dy_medio:["DY médio","Rendimento médio dos últimos 5 anos: proventos de cada ano ÷ preço médio daquele ano. Mostra o passado, não o que rende para quem compra hoje."],
+  dy_12m:["DY 12m","Proventos pagos nos últimos 12 meses ÷ preço de hoje. Muda rápido e pode incluir pagamentos extraordinários que não se repetem."],
+  preco_teto_robusto:["Preço-teto robusto","Proventos típicos ÷ 6%: usa a média dos 5 anos sem o maior e o menor ano (ou a mediana), para que um ano fora da curva não infle o teto. Supõe que a empresa continue pagando como pagou."],
+  margem_robusta:["Margem (robusta)","Quanto o preço está abaixo (+) ou acima (−) do preço-teto robusto, em % do teto. Margens enormes costumam indicar problema, não pechincha."],
+  preco_teto:["Teto Bazin clássico","Bazin clássico (média simples): DPA médio ÷ 6%. Um único ano extraordinário pode inflar este valor; por isso a situação usa o teto robusto."],
+  margem:["Margem clássica","Quanto o preço está abaixo (+) ou acima (−) do teto Bazin clássico (média simples), em % do teto."],
+  tendencia:["Tendência","Provento do último ano completo comparado com a média de 5 anos. Muito negativa (≤ −25%) indica que a empresa está pagando menos e o teto pode estar otimista."],
+  liquidez_mil:["Liquidez/dia","Valor médio negociado por dia nos últimos 3 meses. Abaixo de R$ 500 mil/dia pode ser difícil comprar ou vender pelo preço da tela."],
+  _nal:["Alertas","Resultado das regras automáticas do arquivo de dados. Grave: o teto não se aplica. Atenção · n: n pontos a conferir na ficha. Nenhum alerta automático: nenhuma regra disparou, o que não quer dizer que o papel é seguro."],
+  status:["Situação","Comparação do preço com o preço-teto robusto. Abaixo do teto é só um filtro inicial, não um sinal de compra. Teto não se aplica: papel com alerta grave. Sem métrica: não há histórico ou proventos suficientes."]
+};
+const COLS=[
+  {k:"ticker"},{k:"controle"},{k:"preco"},{k:"dpa_medio",adv:1},{k:"dy_medio",adv:1},{k:"dy_12m"},
+  {k:"preco_teto_robusto"},{k:"margem_robusta"},{k:"preco_teto",adv:1},{k:"margem",adv:1},
+  {k:"tendencia",adv:1},{k:"liquidez_mil",adv:1},{k:"_nal"},{k:"_st"}
+];
+DEF._st=DEF.status;
+const NA=p=>p.status==="nao_se_aplica";
+/* valor usado na ordenação: teto e margem não existem para quem tem alerta grave */
+function val(p,k){if(k==="ticker")return null;if(NA(p)&&["preco_teto","margem","preco_teto_robusto","margem_robusta"].includes(k))return null;return p[k]}
+const fmt=(v,d=2)=>v==null||isNaN(v)?"–":v.toLocaleString("pt-BR",{minimumFractionDigits:d,maximumFractionDigits:d});
 const pct=(v,d=1)=>v==null?"–":(v>0?"+":"")+fmt(v,d)+"%";
+const brl=(v,d=2)=>v==null?"–":"R$ "+fmt(v,d);
 const liq=v=>v==null?"–":v>=1000?"R$ "+fmt(v/1000,1)+" mi":"R$ "+fmt(v,0)+" mil";
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-let DATA=null, sortK="margem", sortDir=-1, setor="", open=new Set();
-
+const dbr=s=>s?s.split("-").reverse().join("/"):"–";
 function store(k,v){try{v===undefined?localStorage.removeItem(k):localStorage.setItem(k,v)}catch(e){}}
 function load(k){try{return localStorage.getItem(k)}catch(e){return null}}
+
+let DATA=null, REPS=[], sortK="ticker", sortDir=1, setor="", open=new Set();
+let mode=load("besst-modo")==="full"?"full":"simple";
+let simAmt=+(load("besst-sim")||1000); if(!(simAmt>0))simAmt=1000;
 
 async function fetchData(){
   try{const r=await fetch("../../dados/besst/painel.json?t="+Date.now(),{cache:"no-store"});if(r.ok)return await r.json()}catch(e){}
@@ -215,84 +313,206 @@ function liveLabel(){
   const g=DATA.gerado_em, ref=DATA.pregao_referencia;
   const age=(Date.now()-new Date(g.replace(" ","T")+":00-03:00").getTime())/36e5;
   el.classList.toggle("stale",age>26);
-  $("live-t").textContent=`Pregão de ${ref.split("-").reverse().join("/")} · atualizado ${g.slice(8,10)}/${g.slice(5,7)} às ${g.slice(11)}`;
-  $("foot-meta").textContent=`Base de cálculo: ${DATA.metodo.anos} anos completos · taxa Bazin ${DATA.metodo.taxa_bazin*100}% · ${DATA.papeis.length} papéis no universo`;
+  $("live-t").textContent=`Pregão de ${dbr(ref)} · atualizado ${g.slice(8,10)}/${g.slice(5,7)} às ${g.slice(11)}`;
+  $("foot-meta").textContent=`Base de cálculo: ${DATA.metodo.anos} anos completos · taxa Bazin ${DATA.metodo.taxa_bazin*100}% · ${DATA.papeis.length} papéis de ${REPS.length} empresas no universo`;
 }
-function isEst(c){return c&&c.startsWith("estatal")}
+const isEst=c=>!!c&&c.startsWith("estatal");
+function classe(t){const s=t.replace(/^[A-Z]{4}/,"");return s==="3"?"ON (ordinária)":/^[456]$/.test(s)?"PN (preferencial)":s==="11"?"Unit (pacote)":s}
+
+/* ---------- alertas: vêm prontos do JSON (nivel_alerta, alertas, alertas_texto); a página não recalcula ---------- */
+const NIV_ORD={ok:0,atencao:1,grave:3};
+function prep(){
+  const g=new Map();
+  DATA.papeis.forEach(p=>{p._al=Array.isArray(p.alertas_texto)?p.alertas_texto:[];p._niv=p.nivel_alerta||null;
+    p._nal=p._niv?NIV_ORD[p._niv]+(p._niv==="atencao"?(p.alertas||[]).length/100:0):null;
+    p._st=p.status==="sem_cotacao"||NA(p)?p.status:(p.status_robusto||p.status);
+    if(!g.has(p.empresa))g.set(p.empresa,[]);g.get(p.empresa).push(p)});
+  REPS=[];
+  g.forEach(list=>{list.sort((a,b)=>(b.liquidez_mil??-1)-(a.liquidez_mil??-1));list.forEach(p=>p._grp=list);REPS.push(list[0])});
+}
+function base(){return mode==="simple"?REPS:DATA.papeis}
 
 function sectors(){
-  const host=$("sectors");host.innerHTML="";
-  SET.forEach(s=>{const L=DATA.papeis.filter(p=>p.setor===s);const cot=L.filter(p=>p.status!=="sem_cotacao");
-    const ab=cot.filter(p=>p.status==="abaixo_teto"&&!p.baixa_liquidez).length;const est=L.filter(p=>isEst(p.controle)).length;
+  const host=$("sectors");host.innerHTML="";const B=base(), un=mode==="simple"?"empresas":"papéis";
+  const col={estatal_federal:"var(--fed)",estatal_estadual:"var(--est)",estatal_estrangeira:"var(--ext)",participacao_estatal_relevante:"var(--mix)",privada:"var(--surface-3)"};
+  SET.forEach(s=>{const L=B.filter(p=>p.setor===s);
+    const ab=L.filter(p=>p._st==="abaixo_teto"&&!p.baixa_liquidez).length;const est=L.filter(p=>isEst(p.controle)).length;
     const b=document.createElement("button");b.className="sec";b.type="button";b.setAttribute("aria-pressed",setor===s);
-    const counts=["estatal_federal","estatal_estadual","estatal_estrangeira","participacao_estatal_relevante","privada"].map(k=>[k,L.filter(p=>p.controle===k).length]);
-    const col={estatal_federal:"var(--fed)",estatal_estadual:"var(--est)",estatal_estrangeira:"var(--ext)",participacao_estatal_relevante:"var(--mix)",privada:"var(--surface-3)"};
-    b.innerHTML=`<span class="letter">${LET[s]}</span><span class="name">${s}</span><span class="stats"><span>${L.length} papéis</span><span>${ab} abaixo do teto com liquidez</span><span>${est} estatais</span></span><span class="bar" title="Controle acionário">${counts.filter(c=>c[1]).map(([k,n])=>`<span style="flex:${n};background:${col[k]}"></span>`).join("")}</span>`;
+    const counts=Object.keys(col).map(k=>[k,L.filter(p=>p.controle===k).length]);
+    b.innerHTML=`<span class="letter" aria-hidden="true">${LET[s]}</span><span class="name">${s}</span><span class="stats"><span>${L.length} ${un}</span><span>${ab} abaixo do teto com liquidez</span><span>${est} estatais</span></span><span class="bar" aria-hidden="true">${counts.filter(c=>c[1]).map(([k,n])=>`<span style="flex:${n};background:${col[k]}"></span>`).join("")}</span>`;
+    b.setAttribute("aria-label",`${s}: ${L.length} ${un}, ${ab} abaixo do teto com liquidez, ${est} estatais. ${setor===s?"Filtro ativo; clique para remover.":"Clique para filtrar."}`);
     b.onclick=()=>{setor=setor===s?"":s;sectors();render()};host.appendChild(b)})
 }
 
 function filtered(){
-  const q=$("q").value.trim().toLowerCase(), c=$("f-ctrl").value, st=$("f-status").value, lq=$("f-liq").checked, hc=$("f-cot").checked;
-  return DATA.papeis.filter(p=>{
+  const q=$("q").value.trim().toLowerCase(), c=$("f-ctrl").value, st=$("f-status").value, lq=$("f-liq").checked, hc=$("f-cot").checked, na=$("f-alert").checked, hg=$("f-grave").checked;
+  return base().filter(p=>{
     if(setor&&p.setor!==setor)return false;
-    if(q&&!(p.ticker.toLowerCase().includes(q)||p.empresa.toLowerCase().includes(q)))return false;
+    if(q){const tk=mode==="simple"?p._grp.map(x=>x.ticker):[p.ticker];if(!(tk.some(t=>t.toLowerCase().includes(q))||p.empresa.toLowerCase().includes(q)))return false}
     if(c==="estatal"&&!isEst(p.controle))return false; if(c&&c!=="estatal"&&p.controle!==c)return false;
-    if(st==="outros"&&["abaixo_teto","acima_teto"].includes(p.status))return false; if(st&&st!=="outros"&&p.status!==st)return false;
+    if(st==="outros"&&["abaixo_teto","acima_teto","nao_se_aplica"].includes(p._st))return false; if(st&&st!=="outros"&&p._st!==st)return false;
     if(hc&&p.status==="sem_cotacao")return false;
     if(lq&&(p.baixa_liquidez||p.status==="sem_cotacao"))return false;
+    if(na&&p._niv!=="ok")return false;
+    if(hg&&p._niv==="grave")return false;
     return true})
 }
-function cmp(a,b){let x=a[sortK],y=b[sortK];if(x==null&&y==null)return 0;if(x==null)return 1;if(y==null)return -1;return (typeof x==="string"?x.localeCompare(y):x-y)*sortDir}
+function cmp(a,b){
+  if(sortK==="ticker")return (a.empresa.localeCompare(b.empresa,"pt-BR")||a.ticker.localeCompare(b.ticker))*sortDir;
+  let x=val(a,sortK),y=val(b,sortK);if(x==null&&y==null)return 0;if(x==null)return 1;if(y==null)return -1;return (typeof x==="string"?x.localeCompare(y):x-y)*sortDir}
+const visCols=()=>COLS.filter(c=>mode==="full"||!c.adv);
+
+function head(){
+  const tr=$("thead-row");tr.innerHTML="";
+  visCols().forEach(c=>{const th=document.createElement("th");th.scope="col";th.dataset.k=c.k;
+    const lab=c.k==="ticker"&&mode==="simple"?"Empresa":DEF[c.k][0];
+    th.innerHTML=`<span class="thw"><button type="button" class="sort">${lab}</button><button type="button" class="qm" data-def="${c.k}" aria-label="O que é ${DEF[c.k][0]}?" aria-expanded="false">?</button></span>`;
+    th.querySelector(".sort").onclick=()=>{const k=c.k;if(sortK===k)sortDir*=-1;else{sortK=k;sortDir=["ticker","controle","_st","_nal"].includes(k)?1:-1}render()};
+    tr.appendChild(th)});
+  $("t").classList.toggle("simple",mode==="simple");
+}
 
 function mini(p){
   const ys=Object.keys(p.proventos_ano||{}).sort();if(!ys.length)return "<p>Sem proventos registrados.</p>";
-  const W=400,H=120,L=8,B=20,T=14;const mx=Math.max(...ys.map(y=>p.proventos_ano[y]),p.dpa_medio||0)||1;const bw=(W-L*2)/ys.length;
-  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Proventos por ação por ano">`;
-  ys.forEach((y,i)=>{const v=p.proventos_ano[y];const h=v/mx*(H-B-T);const x=L+i*bw+4;const part=i===ys.length-1&&+y===new Date().getFullYear();
+  const refY=(DATA.pregao_referencia||"").slice(0,4);
+  const W=400,H=120,L=8,B=20,T=14;const mx=Math.max(...ys.map(y=>p.proventos_ano[y]),p.dpa_medio||0,p.dpa_robusto||0)||1;const bw=(W-L*2)/ys.length;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Proventos por ação por ano: ${ys.map(y=>y+" R$ "+fmt(p.proventos_ano[y],2)).join("; ")}">`;
+  ys.forEach((y,i)=>{const v=p.proventos_ano[y];const h=v/mx*(H-B-T);const x=L+i*bw+4;const part=y>=refY;
     s+=`<rect x="${x}" y="${H-B-h}" width="${bw-8}" height="${Math.max(h,1)}" rx="3" fill="${part?"var(--surface-3)":"var(--fed)"}"></rect><text x="${x+(bw-8)/2}" y="${H-6}" text-anchor="middle">${y}${part?"*":""}</text><text x="${x+(bw-8)/2}" y="${H-B-h-4}" text-anchor="middle">${fmt(v,2)}</text>`});
-  if(p.dpa_medio){const y=H-B-p.dpa_medio/mx*(H-B-T);s+=`<line x1="${L}" x2="${W-L}" y1="${y}" y2="${y}" stroke="var(--accent)" stroke-dasharray="4 3"></line>`}
-  return s+"</svg><p style=\"font-size:.8rem\">Barras: proventos por ação em cada ano (R$). Linha tracejada: DPA médio. * ano em curso.</p>"
+  const rob=p.dpa_robusto!=null;
+  if(rob){const y=H-B-p.dpa_robusto/mx*(H-B-T);s+=`<line x1="${L}" x2="${W-L}" y1="${y}" y2="${y}" stroke="var(--accent)" stroke-width="2" stroke-dasharray="6 3"></line>`}
+  if(p.dpa_medio&&(mode==="full"||!rob)){const y=H-B-p.dpa_medio/mx*(H-B-T);s+=`<line x1="${L}" x2="${W-L}" y1="${y}" y2="${y}" stroke="var(--ink-2)" stroke-dasharray="2 3"></line>`}
+  const leg=rob?(mode==="full"?"Linha laranja tracejada: DPA robusto (sem anos fora da curva). Linha pontilhada: DPA médio (Bazin clássico).":"Linha laranja tracejada: DPA robusto (proventos típicos, sem anos fora da curva)."):"Linha pontilhada: DPA médio.";
+  return s+`</svg><p style="font-size:.8rem">Barras: proventos por ação em cada ano (R$, brutos). ${leg} * ano em curso, ainda incompleto.</p>`
+}
+
+function resumo(p){
+  if(p.status==="sem_cotacao")return "Não encontramos cotação recente deste código na fonte de dados, então não há como calcular rendimento nem preço-teto.";
+  if(NA(p))return `<b>${esc(p.motivo_sem_teto||"Preço-teto não se aplica: este papel tem um alerta grave e o cálculo pelo histórico de proventos não serve de referência.")}</b> Os números ficam no modo Completo só para consulta.`;
+  if(p._st==="historico_curto")return `Este código tem menos de 3 anos de cotação na base (${p.anos_historico??0}), pouco para calcular uma média de proventos confiável.`;
+  if(p._st==="sem_proventos")return `${esc(p.empresa)} não pagou proventos neste código nos anos da base de cálculo. Para quem busca dividendos, não há o que medir.`;
+  const dr=p.dpa_robusto??p.dpa_medio, tr=p.preco_teto_robusto??p.preco_teto, mr=p.margem_robusta??p.margem;
+  const yNow=dr/p.preco*100;
+  let t=`Nos últimos ${p.anos_historico} anos completos, ${esc(p.empresa)} pagou em média R$ ${fmt(p.dpa_medio,2)} por ação por ano (dividendos + JCP, valores brutos). Sem os anos fora da curva, a referência usada no painel é <b>R$ ${fmt(dr,2)} por ação por ano</b>, o que equivale a <b>${fmt(yNow,1)}% ao ano</b> ao preço de hoje (${brl(p.preco)}). Nos últimos 12 meses os pagamentos somaram ${fmt(p.dy_12m,1)}% do preço atual. O preço-teto robusto de ${brl(tr)} é o preço em que essa referência renderia ${DATA.metodo.taxa_bazin*100}% ao ano; hoje o preço está ${fmt(Math.abs(mr),0)}% ${mr>=0?"abaixo":"acima"} dele.`;
+  if(mode==="full"&&p.preco_teto!=null)t+=` Pelo Bazin clássico (média simples), o teto seria ${brl(p.preco_teto)} (margem ${pct(p.margem)}).`;
+  return t;
+}
+function simText(p){
+  const dr=p.dpa_robusto??p.dpa_medio, n=Math.floor(simAmt/p.preco);
+  if(n<1)return `Com ${brl(simAmt)} não dá para comprar uma ação (cada uma custa ${brl(p.preco)}).`;
+  const med=n*dr, u12=n*p.preco*(p.dy_12m||0)/100;
+  return `Com ${brl(simAmt)} você compraria <b>${n.toLocaleString("pt-BR")} ${n===1?"ação":"ações"}</b> (${brl(n*p.preco)}). Se a empresa repetir os proventos típicos (DPA robusto): <b>~${brl(med)} por ano</b>, em pagamentos irregulares ao longo do ano. Se repetir os últimos 12 meses: ~${brl(u12)} por ano. Valores brutos, e nada garante que os pagamentos se repitam. A conta não considera variação do preço, custos nem impostos sobre dividendos futuros (o JCP já tem 15% de IR na fonte).`;
+}
+function estBox(p){
+  const c=p.controle, who=esc(p.controlador||"governo");
+  if(c==="estatal_federal"||c==="estatal_estadual")return `<div class="box state"><h4>Empresa estatal (${c==="estatal_federal"?"governo federal":"governo estadual"})</h4><p>Controlador: ${who}. <b>Possível benefício:</b> o governo também recebe os dividendos, o que pode estimular pagamentos. <b>Risco:</b> decisões políticas podem mudar tarifas, investimentos e a política de dividendos; trocas de governo e privatizações mudam o perfil da empresa.</p></div>`;
+  if(c==="estatal_estrangeira")return `<div class="box state"><h4>Controlada por estatal de outro país</h4><p>Controlador: ${who}. As decisões seguem a estratégia do grupo controlador e do país de origem, o que pode mudar investimentos e dividendos aqui.</p></div>`;
+  if(c==="participacao_estatal_relevante")return `<div class="box state"><h4>Governo com fatia relevante</h4><p>${who}. O governo não controla, mas pode influenciar decisões importantes.</p></div>`;
+  return "";
+}
+function sibBox(p){
+  const o=(p._grp||[]).filter(x=>x!==p);if(!o.length)return "";
+  return `<div class="box"><h4>Outros códigos da mesma empresa</h4><p>São classes de ação da mesma empresa: o negócio é o mesmo, mudam direitos, preço e liquidez. ${mode==="simple"?"A linha principal usa o código mais negociado.":""}</p><div class="sib-scroll"><table class="sib-t"><thead><tr><th scope="col">Código</th><th scope="col">Classe</th><th scope="col">Preço</th><th scope="col">DY 12m</th><th scope="col">Liquidez/dia</th></tr></thead><tbody>${[p,...o].map(x=>`<tr><td>${esc(x.ticker)}${x===p?" (este)":""}</td><td style="font-family:var(--f-body)">${classe(x.ticker)}</td><td>${brl(x.preco)}</td><td>${x.dy_12m!=null?fmt(x.dy_12m,1)+"%":"–"}</td><td>${liq(x.liquidez_mil)}</td></tr>`).join("")}</tbody></table></div></div>`;
+}
+function alPill(p,inline){
+  const st=inline?' style="vertical-align:middle"':"";
+  if(p._niv==="grave")return `<span class="pill al-grave"${st}>Grave: teto não se aplica</span>`;
+  if(p._niv==="atencao")return `<span class="pill al-atencao"${st}>Atenção · ${(p.alertas||[]).length}</span>`;
+  if(p._niv==="ok")return `<span class="pill al-ok"${st}>Nenhum alerta automático</span>`;
+  return inline?"":`<span class="pill al-na" aria-label="sem avaliação">–</span>`;
+}
+function detail(p){
+  const sid="sim-"+p.ticker;
+  const hasSim=!NA(p)&&p.preco>0&&(p.dpa_robusto??p.dpa_medio)>0&&["abaixo_teto","acima_teto"].includes(p._st);
+  const g=p._niv==="grave";
+  return `<div class="dwrap"><div class="detail-grid"><div class="minichart">${mini(p)}</div><div class="dcol">
+    <h3>${esc(p.empresa)} · ${esc(p.ticker)} ${alPill(p,true)}</h3>
+    <p class="resumo">${resumo(p)}</p>
+    ${hasSim?`<div class="box sim"><label for="${sid}">Se eu investir R$ <input id="${sid}" type="number" inputmode="decimal" min="1" step="100" value="${simAmt}"></label><p aria-live="polite" id="${sid}-o">${simText(p)}</p></div>`:""}
+    ${p._al.length?`<div class="box ${g?"grave":"warn"}"><h4>${g?"Alertas (grave: teto não se aplica)":"Pontos de atenção"}</h4><ul>${p._al.map(a=>`<li>${esc(a)}</li>`).join("")}</ul></div>`:(p._niv==="ok"?`<p>Nenhum alerta automático: nenhuma das regras disparou. Isso não quer dizer que o papel é seguro; as regras não captam tudo.</p>`:"")}
+    ${estBox(p)}
+    <p><b>Controle:</b> ${esc(p.controlador||"não classificado")}${p.controle_nota?". "+esc(p.controle_nota):""}${p.controle_fonte?` <a href="${esc(p.controle_fonte)}" target="_blank" rel="noopener">Fonte</a>`:""}</p>
+    <p><b>Histórico:</b> ${p.anos_historico??0} anos com cotação na base de cálculo, proventos em ${p.anos_com_provento??0}. Último pregão: ${dbr(p.data)}. Liquidez: ${liq(p.liquidez_mil)} por dia.</p>
+    ${sibBox(p)}
+  </div></div></div>`;
+}
+function wireSim(p,d){
+  const i=d.querySelector("#sim-"+p.ticker);if(!i)return;
+  i.addEventListener("input",()=>{const v=parseFloat(i.value);if(v>0){simAmt=v;store("besst-sim",String(v));d.querySelector("#sim-"+p.ticker+"-o").innerHTML=simText(p)}});
+  i.addEventListener("click",e=>e.stopPropagation());i.addEventListener("keydown",e=>e.stopPropagation());
 }
 
 function render(){
-  const rows=filtered().sort(cmp);const tb=document.querySelector("#t tbody");tb.innerHTML="";
-  $("count").textContent=`${rows.length} de ${DATA.papeis.length} papéis`;
-  const bySec=sortK==="ticker"||sortK==="margem"?SET.map(s=>[s,rows.filter(r=>r.setor===s)]):[["",rows]];
+  closePop();
+  const rows=filtered().sort(cmp);const tb=document.querySelector("#t tbody");tb.innerHTML="";const nc=visCols().length;
+  $("count").textContent=mode==="simple"?`${rows.length} de ${REPS.length} empresas`:`${rows.length} de ${DATA.papeis.length} papéis`;
+  $("modehint").textContent=mode==="simple"?"Modo Iniciante: uma linha por empresa (código mais negociado) e só as colunas essenciais. Use “Completo” para ver todos os códigos e colunas.":"Modo Completo: todos os códigos (ON, PN e units aparecem separados) e todas as colunas.";
+  $("t-cap").textContent=mode==="simple"?"Empresas do universo BESST, uma linha por empresa":"Todos os papéis do universo BESST";
+  const bySec=sortK==="ticker"?SET.map(s=>[s,rows.filter(r=>r.setor===s)]):[["",rows]];
+  if(!rows.length){const tr=document.createElement("tr");tr.innerHTML=`<td colspan="${nc}" style="text-align:left;font-family:var(--f-body);color:var(--muted)">Nenhum resultado com estes filtros.</td>`;tb.appendChild(tr)}
   for(const [s,list] of bySec){ if(!list.length)continue;
-    if(s){const tr=document.createElement("tr");tr.className="secrow";tr.innerHTML=`<td colspan="11">${LET[s]} · ${s} <span class="num" style="font-weight:400;color:var(--muted);font-size:.8rem">${list.length}</span></td>`;tb.appendChild(tr)}
+    if(s){const tr=document.createElement("tr");tr.className="secrow";tr.innerHTML=`<td colspan="${nc}">${LET[s]} · ${s} <span class="num" style="font-weight:400;color:var(--muted);font-size:.8rem">${list.length}</span></td>`;tb.appendChild(tr)}
     for(const p of list){
-      const tr=document.createElement("tr");tr.className="row";tr.tabIndex=0;tr.setAttribute("aria-expanded",open.has(p.ticker));
-      const m=p.margem;const mb=m==null?"":`<span class="margin-bar"><span style="${m>=0?"left:50%;width:"+Math.min(50,m/2)+"%;background:var(--pos)":"right:50%;width:"+Math.min(50,-m/2)+"%;background:var(--neg)"}"></span></span>`;
-      tr.innerHTML=`<td class="name"><b>${esc(p.ticker)}</b><small>${esc(p.empresa)}</small></td>
-        <td>${p.controle?`<span class="ct ct-${p.controle}">${CT[p.controle]}</span>`:"–"}</td>
-        <td>${p.preco!=null?"R$ "+fmt(p.preco):"–"}</td><td>${fmt(p.dpa_medio,3)}</td><td>${p.dy_medio!=null?fmt(p.dy_medio,1)+"%":"–"}</td>
-        <td>${p.dy_12m!=null?fmt(p.dy_12m,1)+"%":"–"}</td><td>${p.preco_teto!=null?"R$ "+fmt(p.preco_teto):"–"}</td>
-        <td class="${m>0?"pos":m<0?"neg":""}">${pct(m)}${mb}</td>
-        <td class="${p.tendencia<=-25?"neg":""}">${pct(p.tendencia,0)}</td>
-        <td>${liq(p.liquidez_mil)}${p.baixa_liquidez?' <span class="flag" title="Baixa liquidez">⚠</span>':""}</td>
-        <td><span class="pill st-${p.status}">${ST[p.status]}</span></td>`;
-      const toggle=()=>{open.has(p.ticker)?open.delete(p.ticker):open.add(p.ticker);render()};
-      tr.onclick=toggle;tr.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle()}};
+      const tr=document.createElement("tr");tr.className="row";tr.tabIndex=0;const isOpen=open.has(p.ticker);tr.setAttribute("aria-expanded",isOpen);
+      tr.setAttribute("aria-label",`${p.ticker}, ${p.empresa}. ${isOpen?"Fechar":"Abrir"} ficha`);
+      const na=NA(p), naCell=`<td class="na">não se aplica</td>`;
+      const mcell=m=>{const mb=m==null?"":`<span class="margin-bar" aria-hidden="true"><span style="${m>=0?"left:50%;width:"+Math.min(50,m/2)+"%;background:var(--ink-2)":"right:50%;width:"+Math.min(50,-m/2)+"%;background:var(--neg)"}"></span></span>`;return na?naCell:`<td class="${m<0?"neg":""}">${pct(m)}${mb}</td>`};
+      const sib=mode==="simple"&&p._grp.length>1?`<small class="sib">também ${p._grp.slice(1).map(x=>esc(x.ticker)).join(" · ")}</small>`:"";
+      const al=alPill(p,false);
+      const cell={
+        ticker:`<td class="name"><b>${esc(p.ticker)}</b><small>${esc(p.empresa)}</small>${sib}${p.controle&&p.controle!=="privada"?`<span class="ct ct-inline ct-${p.controle}">${CT[p.controle]}</span>`:""}</td>`,
+        controle:`<td class="c-ctrl">${p.controle?`<span class="ct ct-${p.controle}">${CT[p.controle]}</span>`:"–"}</td>`,
+        preco:`<td>${brl(p.preco)}</td>`, dpa_medio:`<td>${fmt(p.dpa_medio,3)}</td>`,
+        dy_medio:`<td>${p.dy_medio!=null?fmt(p.dy_medio,1)+"%":"–"}</td>`, dy_12m:`<td>${p.dy_12m!=null?fmt(p.dy_12m,1)+"%":"–"}</td>`,
+        preco_teto:na?naCell:`<td>${brl(p.preco_teto)}</td>`, margem:mcell(p.margem),
+        preco_teto_robusto:na?naCell:`<td>${brl(p.preco_teto_robusto)}</td>`, margem_robusta:mcell(p.margem_robusta),
+        tendencia:`<td class="${p.tendencia<=-25?"neg":""}">${pct(p.tendencia,0)}</td>`,
+        liquidez_mil:`<td>${liq(p.liquidez_mil)}${p.baixa_liquidez?' <span class="flag" title="Baixa liquidez" aria-label="Baixa liquidez">⚠</span>':""}</td>`,
+        _nal:`<td>${al}</td>`, _st:`<td><span class="pill st-${p._st}">${ST[p._st]||esc(p._st)}</span></td>`
+      };
+      tr.innerHTML=visCols().map(c=>cell[c.k]).join("");
+      const toggle=()=>{open.has(p.ticker)?open.delete(p.ticker):open.add(p.ticker);render();const r=document.querySelector(`tr.row[data-t="${p.ticker}"]`);if(r)r.focus({preventScroll:true})};
+      tr.dataset.t=p.ticker;
+      tr.onclick=e=>{if(e.target.closest("a,input,button"))return;toggle()};
+      tr.onkeydown=e=>{if(e.target!==tr)return;if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle()}};
       tb.appendChild(tr);
-      if(open.has(p.ticker)){const d=document.createElement("tr");d.className="detail";
-        d.innerHTML=`<td colspan="11"><div class="detail-grid"><div class="minichart">${mini(p)}</div><div style="display:flex;flex-direction:column;gap:8px">
-          <h3>${esc(p.empresa)} · ${esc(p.ticker)}</h3>
-          <p><b>Controle:</b> ${esc(p.controlador||"não classificado")}${p.controle_nota?". "+esc(p.controle_nota):""}${p.controle_fonte?` <a href="${esc(p.controle_fonte)}" target="_blank" rel="noopener">Fonte</a>`:""}</p>
-          <p><b>Histórico:</b> ${p.anos_historico??0} anos com cotação na base de cálculo, proventos em ${p.anos_com_provento??0}. Último pregão: ${p.data?p.data.split("-").reverse().join("/"):"–"}.</p>
-          ${p.tendencia!=null&&p.tendencia<=-25?`<p class="neg"><b>Atenção:</b> o provento do último ano ficou ${fmt(-p.tendencia,0)}% abaixo da média; o preço-teto pode estar otimista.</p>`:""}
-          ${p.baixa_liquidez?`<p class="flag">Baixa liquidez: média de ${liq(p.liquidez_mil)} por dia nos últimos 3 meses.</p>`:""}
-        </div></div></td>`;tb.appendChild(d)}
+      if(isOpen){const d=document.createElement("tr");d.className="detail";d.innerHTML=`<td colspan="${nc}">${detail(p)}</td>`;tb.appendChild(d);wireSim(p,d)}
     }}
-  document.querySelectorAll("#t th").forEach(th=>th.setAttribute("aria-sort",th.dataset.k===sortK?(sortDir>0?"ascending":"descending"):"none"));
+  document.querySelectorAll("#t thead th").forEach(th=>th.setAttribute("aria-sort",th.dataset.k===sortK?(sortDir>0?"ascending":"descending"):"none"));
+  sizeTbl();
 }
+function sizeTbl(){$("tbl").style.setProperty("--tblw",$("tbl").clientWidth+"px")}
+window.addEventListener("resize",sizeTbl);
 
-document.querySelectorAll("#t th").forEach(th=>th.onclick=()=>{const k=th.dataset.k;if(sortK===k)sortDir*=-1;else{sortK=k;sortDir=["ticker","controle","status"].includes(k)?1:-1}render()});
-["q","f-ctrl","f-status","f-liq","f-cot"].forEach(id=>$(id).addEventListener("input",()=>{render();if(id!=="q")store("besst-"+id,$(id).type==="checkbox"?String($(id).checked):$(id).value)}));
-["f-ctrl","f-status","f-liq","f-cot"].forEach(id=>{const v=load("besst-"+id);if(v!=null){if($(id).type==="checkbox")$(id).checked=v==="true";else $(id).value=v}});
+/* ---------- popover de definição ---------- */
+let popBtn=null, popAt=0;
+function closePop(){const p=$("pop");p.hidden=true;if(popBtn){popBtn.setAttribute("aria-expanded","false");popBtn.removeAttribute("aria-describedby");popBtn=null}}
+function openPop(btn){
+  const k=btn.dataset.def, p=$("pop");if(popBtn===btn){closePop();return}closePop();
+  p.innerHTML=`<b>${DEF[k][0]}</b>${DEF[k][1]}`;p.hidden=false;popAt=Date.now();popBtn=btn;btn.setAttribute("aria-expanded","true");btn.setAttribute("aria-describedby","pop");
+  const r=btn.getBoundingClientRect(), w=p.offsetWidth, h=p.offsetHeight;
+  p.style.left=Math.max(8,Math.min(r.left+r.width/2-w/2,innerWidth-w-8))+"px";
+  p.style.top=(r.bottom+6+h>innerHeight-8?Math.max(8,r.top-6-h):r.bottom+6)+"px";
+}
+document.addEventListener("click",e=>{const b=e.target.closest("button.qm");if(b){e.stopPropagation();openPop(b);return}if(!e.target.closest("#pop"))closePop()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&popBtn){const b=popBtn;closePop();b.focus()}});
+const scrollClose=()=>{if(Date.now()-popAt>400)closePop()};
+window.addEventListener("scroll",scrollClose,{passive:true});$("tbl").addEventListener("scroll",scrollClose,{passive:true});
 
-async function boot(){DATA=await fetchData();if(!DATA)return;liveLabel();sectors();render()}
+function gloss(){$("gloss").innerHTML=Object.values(DEF).map(([t,d])=>`<div><dt>${t}</dt><dd>${d}</dd></div>`).join("")}
+
+function setMode(m){mode=m;store("besst-modo",m);$("m-simple").setAttribute("aria-pressed",m==="simple");$("m-full").setAttribute("aria-pressed",m==="full");
+  if(m==="simple"&&COLS.find(c=>c.k===sortK)?.adv){sortK="ticker";sortDir=1}
+  open.clear();head();sectors();render()}
+$("m-simple").onclick=()=>setMode("simple");$("m-full").onclick=()=>setMode("full");
+["q","f-ctrl","f-status","f-liq","f-cot","f-alert","f-grave"].forEach(id=>$(id).addEventListener("input",()=>{render();if(id!=="q")store("besst-"+id,$(id).type==="checkbox"?String($(id).checked):$(id).value)}));
+["f-ctrl","f-status","f-liq","f-cot","f-alert","f-grave"].forEach(id=>{const v=load("besst-"+id);if(v!=null){if($(id).type==="checkbox")$(id).checked=v==="true";else $(id).value=v}});
+const gd=$("guide");if(load("besst-guia")==="fechado")gd.open=false;gd.addEventListener("toggle",()=>store("besst-guia",gd.open?"aberto":"fechado"));
+
+async function boot(){DATA=await fetchData();gloss();if(!DATA){liveLabel();return}prep();liveLabel();
+  $("m-simple").setAttribute("aria-pressed",mode==="simple");$("m-full").setAttribute("aria-pressed",mode==="full");head();sectors();render()}
 boot();
-setInterval(async()=>{const d=await fetchData();if(d&&d.gerado_em!==DATA?.gerado_em){DATA=d;liveLabel();sectors();render()}},5*60*1000);
+setInterval(async()=>{const d=await fetchData();if(d&&d.gerado_em!==DATA?.gerado_em){DATA=d;prep();liveLabel();sectors();render()}},5*60*1000);
 })();
 </script>
 

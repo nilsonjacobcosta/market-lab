@@ -11,6 +11,14 @@ Painel com os 144 papéis listados na B3 dos cinco setores perenes (Bancos, Ener
 - **Liquidez** média diária dos últimos 3 meses e alerta abaixo de R$ 500 mil/dia.
 - **Controle acionário**: estatal federal, estadual, estatal estrangeira, participação estatal relevante ou privada, com controlador e fonte.
 
+## Alertas e preço-teto robusto
+
+- **Preço-teto robusto**: média dos 5 anos sem o maior e o menor ano (mediana com 3–4 anos), excluindo anos com lacuna na fonte. O teto clássico (média simples) aparece no modo Completo.
+- **Alertas automáticos** (`alertas`, `nivel_alerta`): provento extraordinário, queda de proventos, DY 12m atípico, baixa liquidez, sem negociação, histórico curto, lacuna na fonte, margem extrema e situação especial (recuperação judicial, falência, OPA), esta a partir de `dados/besst/situacoes_especiais.json`, revisada manualmente.
+- Papéis com alerta **grave** ficam com situação "não se aplica": o teto não é calculado como referência.
+
+Pareceres e documentação dos times em [`docs/monitor-besst/`](../../docs/monitor-besst/).
+
 ## Atualização
 
 A rotina `.github/workflows/monitor-besst.yml` roda de hora em hora nos dias úteis durante o pregão, executa `scripts/besst_painel.py --coletar` e publica `dados/besst/painel.json`. A página relê os dados a cada 5 minutos.
