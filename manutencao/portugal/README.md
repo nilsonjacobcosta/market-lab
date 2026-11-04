@@ -14,6 +14,20 @@ Página: `portugal/monitor/` (publicada como material de estudo; cartão na pág
 - Se uma fonte falhar, o script mantém o último dado guardado (preço por papel, taxa, lista) e a página mostra a data real.
 - Se os testes falharem, **nada é publicado** e a página continua com a versão anterior.
 
+## Qualidade financeira (BETA) — automática, semanal
+- `.github/workflows/portugal-fundamentos.yml` (segundas, 06h41 UTC, e manual). Lê os relatórios anuais ESEF de cada empresa em
+  filings.xbrl.org (lista de relatórios com país PT; associação por nome em `NOMES` do script), calcula ROE, payout declarado
+  (DPA do exercício no cadastro ÷ lucro por ação básico) e dívida líquida/EBITDA, com as faixas e a regra de nota do Monitor BESST.
+- `scripts/portugal/aceite_fundamentos.py` só publica `dados/portugal/fundamentos.json` se: ≥ 90% com relatório, ≥ 90% com lucro,
+  ≥ 75% com nota **e** o lucro de 2025 de BCP, Galp, Jerónimo Martins, EDP, NOS e EDP Renováveis bater com o divulgado (≤ 2%).
+- Rubricas próprias das empresas (extensões ESEF) ficam no dicionário `EXTENSOES` do script — mapa explícito, conferido à mão.
+- Diagnóstico: correr o workflow com "descobrir" ligado; o log mostra LEI, relatórios, rubricas usadas e candidatas.
+
+### Runbook 4 — nova época de relatórios (abril/maio de cada ano)
+1. Na 1.ª segunda-feira de maio, confirme no log que o exercício mais recente passou a ser o novo ano.
+2. Atualize `LUCRO_REFERENCIA_<ano>` no aceite com o lucro atribuível divulgado (comunicado de resultados) de pelo menos 6 empresas.
+3. Empresa sem EBITDA ou dívida: corra o diagnóstico, procure a rubrica nas candidatas e acrescente-a a `EXTENSOES` com nota no registo.
+
 ## O que é manual
 
 | Tarefa | Arquivo | Quando |
@@ -50,5 +64,7 @@ Sites que bloqueiam leitura automática da nuvem (abrir no Chrome do dono): Mill
 - Altri 2022–2024 e 2026: obter comunicados (numerário/espécie) e passar a `oficial`.
 - Jerónimo Martins, Navigator e Semapa 2026: confirmar valores do exercício de 2025.
 - Corticeira Amorim 2022: a tabela da empresa tem parcelas que somam 0,275 e total 0,29 — confirmar no comunicado.
-- Fase seguinte: indicadores de qualidade financeira a partir dos relatórios anuais ESEF/iXBRL; controlo acionista.
+- Galp: EBITDA não etiquetado (sem resultado operacional nem antes de impostos no ESEF) — dívida/EBITDA em branco; nota com ROE e payout.
+- Altri e Ibersol: payout do exercício de 2025 acima de 150% (dividendos acima do lucro) → "sem nota" pela regra de plausibilidade.
+- Controlo acionista e situações especiais.
 - Parecer jurídico (J2) recomendado; publicação aberta decidida pelo dono com risco assumido (04/11/2026).

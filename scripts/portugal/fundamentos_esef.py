@@ -327,7 +327,9 @@ def metricas(papel, setor, dados_ano, dados_ant, ano, hoje):
         m["payout_caixa"] = round(100 * abs(d["div_pagos"]) / d["ll"], 1)
     if regra != "Bancos":
         op = d["op"]
-        if op is None and d["lai"] is not None and d["fin_liq"] is not None:
+        if d.get("ebitda") is not None:
+            op = None  # a empresa etiqueta o EBITDA: não reconstruir o resultado operacional
+        elif op is None and d["lai"] is not None and d["fin_liq"] is not None:
             op = d["lai"] - d["fin_liq"]; flags.append("info:ebit_reconstruido_resultado_financeiro")
         elif op is None and d["lai"] is not None and d["desp_fin"] is not None:
             op = d["lai"] + abs(d["desp_fin"]) - abs(d["rec_fin"] or 0); flags.append("info:ebit_reconstruido_resultado_financeiro")

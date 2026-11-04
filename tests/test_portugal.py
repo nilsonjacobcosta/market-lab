@@ -162,5 +162,41 @@ class Aceite(unittest.TestCase):
                     self.assertGreater(l["preco"], 0)
 
 
+spec_f = importlib.util.spec_from_file_location("fe", RAIZ / "scripts/portugal/fundamentos_esef.py")
+fe = importlib.util.module_from_spec(spec_f); spec_f.loader.exec_module(fe)
+
+
+class Fundamentos(unittest.TestCase):
+    D = "2025-01-01T00:00:00/2026-01-01T00:00:00"; I = "2026-01-01T00:00:00"; I0 = "2025-01-01T00:00:00"
+
+    def f(self, c, p, v, u="iso4217:EUR", **x):
+        return {"value": str(v), "dimensions": {"concept": c, "entity": "lei:X", "period": p, "unit": u, **x}}
+
+    def test_le_factos_e_ignora_dimensoes(self):
+        doc = {"facts": {str(i): x for i, x in enumerate([
+            self.f("ifrs-full:ProfitLossAttributableToOwnersOfParent", self.D, 100),
+            self.f("ifrs-full:ProfitLossAttributableToOwnersOfParent", self.D, 999, **{"ifrs-full:SegmentsAxis": "x"}),
+            self.f("ifrs-full:EquityAttributableToOwnersOfParent", self.I, 1100),
+            self.f("ifrs-full:EquityAttributableToOwnersOfParent", self.I0, 900)])}}
+        d = fe.extrair(fe.indexar(doc), 2025)
+        self.assertEqual((d["ll"], d["pl"], d["pl_ini"]), (100.0, 1100.0, 900.0))
+
+    def test_regra_da_nota_igual_ao_besst(self):
+        # verde + verde + amarelo = 2,5 pontos de 3 -> nota 3 (arredondamento ,5 sobe), como no Monitor BESST
+        m = {"ll": 1, "roe": 15, "payout": 50, "div_liq_ebitda": 3.5}
+        sem, n = fe.nota("Energia", m, [])
+        self.assertEqual(n, 3)
+        m = {"ll": -1, "roe": 15, "payout": 50, "div_liq_ebitda": 1}
+        self.assertEqual(fe.nota("Energia", m, [])[1], 0)  # prejuízo -> 0
+
+    def test_banco_sem_divida_ebitda(self):
+        d = {"ll": 100, "ll_total": 100, "ir": 1, "pl": 1000, "pl_ini": 1000, "lpa": 0.1, "op": 200, "lai": 150, "desp_fin": 1,
+             "rec_fin": 1, "fin_liq": None, "da": 10, "ebitda": None, "caixa": 5, "emprestimos": None, "locacoes": None,
+             "div_pagos": None, "_ext_divida": []}
+        m = fe.metricas("BCP", "Banca", d, None, 2025, datetime(2026, 11, 4, tzinfo=timezone.utc))
+        self.assertNotIn("div_liq_ebitda", m)
+        self.assertEqual(m["regra"], "Bancos")
+
+
 if __name__ == "__main__":
     unittest.main()
