@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-11-04T09:47+00:00",
+ "gerado_em": "2026-11-04T09:55+00:00",
  "precos_coletados_em": "2026-11-04T09:06+00:00",
  "autor": "market-lab — projeto pessoal de estudo de nilsonjacobcosta (GitHub)",
  "aviso": "Material educativo, não é recomendação de investimento.",
@@ -1049,7 +1049,7 @@
    },
    "qualidade": {
     "nota": 2,
-    "nota_provisoria": true,
+    "nota_provisoria": false,
     "motivo_sem_nota": null,
     "roe": 10.0,
     "roe_medio_2a": 8.5,
@@ -1071,7 +1071,6 @@
     "relatorio": "529900CLC3WDMGI9VH80-2025-12-31-ESEF-PT-3",
     "relatorio_url": "https://filings.xbrl.org/529900CLC3WDMGI9VH80/2025-12-31/ESEF/PT/3/529900CLC3WDMGI9VH80-2025-12-31/reports/ixbrlviewer.html",
     "flags": [
-     "verificar:ebit_reconstruido_lucro_impostos_financeiro",
      "info:ebitda_reportado_pela_empresa",
      "info:locacoes_nao_identificadas"
     ],
@@ -3491,7 +3490,7 @@
   ]
  },
  "qualidade_meta": {
-  "gerado_em": "2026-11-04 09:46",
+  "gerado_em": "2026-11-04 09:54",
   "fonte": "Relatórios anuais ESEF (iXBRL) via filings.xbrl.org; LEI via GLEIF",
   "aceite": {
    "com_relatorio_pct (meta >=90)": 100.0,
