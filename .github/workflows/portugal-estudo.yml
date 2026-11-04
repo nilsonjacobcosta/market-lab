@@ -1,0 +1,20 @@
+name: Portugal - estudo de observação (não publica)
+
+# Execução manual. Lê relatórios ESEF das cotadas fora do núcleo e imprime o histórico no log. Não faz commit.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  estudo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Estudo
+        run: python3 scripts/portugal/estudo_observacao.py
