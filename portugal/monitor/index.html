@@ -440,7 +440,7 @@ function ctrlBox(l){
   const c=l.controlo;if(!c)return "";
   const tit={estatal:"Empresa controlada pelo Estado português",estatal_estrangeira:"Controlada por estatal de outro país",participacao_estatal_relevante:"Um Estado com fatia relevante",privada:"Controlo acionista"}[c.categoria]||"Controlo acionista";
   const risco=c.categoria==="privada"?"":`<p><b>Possível efeito:</b> um acionista público também recebe dividendos e pode influenciar estratégia, investimentos e política de dividendos; mudanças de governo ou de estratégia do país de origem podem mudar o perfil da empresa.</p>`;
-  return `<div class="box ${c.categoria==="privada"?"":"state"}"><h4>${tit}</h4><p><b>${esc(c.controlador)}</b> (${ESTR[c.estrutura]||esc(c.estrutura)}).</p><p>${esc(c.nota)}</p>${risco}<p style="font-size:.8rem">Dados de ${esc(c.data_ref)} · confiança ${esc(c.confianca)} · <a href="${esc(c.fonte)}" target="_blank" rel="noopener">fonte</a></p></div>`;
+  return `<div class="box ${c.categoria==="privada"?"":"state"}"><h4>${tit}</h4><p><b>${esc(c.controlador)}</b> (${ESTR[c.estrutura]||esc(c.estrutura)}).</p><p>${esc(c.nota)}</p>${risco}<p style="font-size:.8rem">Dados de ${/^\d{4}-\d{2}-\d{2}$/.test(c.data_ref||"")?dpt(c.data_ref):esc(c.data_ref)} · confiança ${({alta:"alta",media:"média",baixa:"baixa"})[c.confianca]||esc(c.confianca)} · <a href="${esc(c.fonte)}" target="_blank" rel="noopener">fonte</a></p></div>`;
 }
 function qualBox(l){
   const f=l.qualidade,head=`<h4>Qualidade financeira <span class="beta">BETA</span></h4>`;
