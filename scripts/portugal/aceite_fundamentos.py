@@ -11,7 +11,9 @@ LUCRO_REFERENCIA_2025 = {
     "BCP": (1018.6, "Millennium bcp, resultados de 2025 (Forbes Portugal, 2026)"),
     "GALP": (1120.0, "Galp, resultados de 2025 (Forbes España, 2026)"),
     "JMT": (646.0, "Jerónimo Martins, resultados de 2025 (ECO, 18/03/2026)"),
-    "SON": (247.0, "Sonae, resultado líquido total de 2025 (Observador, 19/03/2026)", "ll_total"),
+    "EDP": (1150.0, "EDP, resultados de 2025 (Observador e RTP, 25/02/2026)"),
+    "NOS": (245.9, "NOS, resultados de 2025 (RTP e Dinheiro Vivo, 03/2026)"),
+    "EDPR": (216.0, "EDP Renováveis, resultados de 2025 (Renascença, 25/02/2026)"),
 }
 METAS = {"com_relatorio_pct (meta >=90)": 90, "lucro_encontrado_pct (meta >=90)": 90, "com_nota_pct (meta >=75)": 75}
 
