@@ -53,6 +53,8 @@ C = {  # rubricas ifrs-full, por ordem de preferência
     "desp_fin": ["FinanceCosts"],
     "rec_fin": ["FinanceIncome"],
     "fin_liq": ["FinanceIncomeCost"],
+    "ll_total": ["ProfitLoss"],
+    "ir": ["IncomeTaxExpenseContinuingOperations"],
     "da": ["DepreciationAmortisationAndImpairmentLossReversalOfImpairmentLossRecognisedInProfitOrLoss",
            "DepreciationAndAmortisationExpense",
            "AdjustmentsForDepreciationAndAmortisationExpenseAndImpairmentLossReversalOfImpairmentLossRecognisedInProfitOrLoss",
@@ -74,6 +76,17 @@ DIVIDA = {
 }
 DIVIDA["outros_emprestimos_nc"] = ["NoncurrentPortionOfOtherNoncurrentBorrowings"]
 DIVIDA["outros_emprestimos_c"] = ["OtherCurrentBorrowingsAndCurrentPortionOfOtherNoncurrentBorrowings"]
+# Componentes detalhados: só somados quando a empresa NÃO apresenta os totais de empréstimos (evita dupla contagem).
+DETALHE = {
+    "bancarios_nc": ["NoncurrentPortionOfNoncurrentBankLoansReceived"],
+    "bancarios_c": ["CurrentBankLoansReceivedAndCurrentPortionOfNoncurrentBankLoansReceived", "ShorttermBankLoansReceived"],
+    "obrigacoes_nc": ["NoncurrentPortionOfNoncurrentBondsIssued"],
+    "obrigacoes_c": ["CurrentBondsIssuedAndCurrentPortionOfNoncurrentBondsIssued"],
+    "papel_nc": ["NoncurrentPortionOfNoncurrentCommercialPapersIssued"],
+    "papel_c": ["CurrentCommercialPapersIssued", "CurrentPortionOfNoncurrentCommercialPapersIssued"],
+    "outros_nc": ["NoncurrentPortionOfNoncurrentLoansReceived"],
+    "outros_c": ["CurrentLoansReceivedAndCurrentPortionOfNoncurrentLoansReceived"],
+}
 # Rubricas próprias da empresa (extensões ESEF), conferidas à mão no relatório. Mapa explícito e auditável.
 EXTENSOES = {
     "ALTR": {"emprestimos_extra": ["altri:EmprestimosBancariosCorrentes", "altri:EmprestimosBancariosNaoCorrentes"]},
@@ -194,7 +207,7 @@ def periodos(ano):
 def extrair(idx, ano, papel=None):
     dur, fim, ini = periodos(ano)
     r, origem = {}, {}
-    for k in ("ll", "lpa", "op", "lai", "desp_fin", "rec_fin", "fin_liq", "da", "div_pagos"):
+    for k in ("ll", "ll_total", "ir", "lpa", "op", "lai", "desp_fin", "rec_fin", "fin_liq", "da", "div_pagos"):
         r[k], origem[k] = pega(idx, C[k], dur)
     for k, per in (("pl", fim), ("pl_ini", ini), ("caixa", fim)):
         r[k], origem[k] = pega(idx, C["pl" if k.startswith("pl") else k], per)
@@ -203,6 +216,11 @@ def extrair(idx, ano, papel=None):
     partes = [g[k][0] for k in ("emprestimos_nc", "emprestimos_c", "outros_emprestimos_nc", "outros_emprestimos_c")]
     if emp is None and any(v is not None for v in partes):
         emp = sum(v or 0 for v in partes)
+    if g["emprestimos_total"][0] is None and g["emprestimos_nc"][0] is None and g["emprestimos_c"][0] is None:
+        det = {k: pega(idx, v, fim) for k, v in DETALHE.items()}
+        if any(v[0] is not None for v in det.values()):
+            emp = (emp or 0) + sum(v[0] or 0 for v in det.values())
+            origem["divida_detalhe"] = {k: v[1] for k, v in det.items() if v[1]}
     ext = EXTENSOES.get(papel, {})
     extra = [idx.get((c, fim)) for c in ext.get("emprestimos_extra", [])]
     if any(v is not None for v in extra):
@@ -224,9 +242,9 @@ def extrair(idx, ano, papel=None):
     ext = sorted({(c, round(v)) for (c, p), v in idx.items()
                   if p == fim and not c.startswith("ifrs-full:") and RX_DIVIDA_EXT.search(c.split(":")[-1])})
     r["_ext_divida"] = ext[:15]
-    rx = re.compile(r"(Depreciation|Amorti|OperatingActivit|OperatingProfit|FinanceIncome|FinanceCost|Borrowing|EBITDA|Ebitda)")
+    rx = re.compile(r"(Depreciation|Amorti|OperatingActivit|OperatingProfit|FinanceIncome|FinanceCost|Borrowing|EBITDA|Ebitda|Bond|Loan|Paper|Obrigac|Papel|Emprest|BeforeTax|IncomeTax)")
     r["_candidatos"] = sorted({(c, p[0], round(v)) for (c, p), v in idx.items()
-                               if rx.search(c) and ((p[0] == "d" and p[2] == f"{ano}-12-31") or (p[0] == "i" and p[1] == f"{ano}-12-31"))})[:40]
+                               if rx.search(c) and ((p[0] == "d" and p[2] == f"{ano}-12-31") or (p[0] == "i" and p[1] == f"{ano}-12-31"))})[:60]
     r["_origem"] = origem
     return r
 
@@ -313,6 +331,9 @@ def metricas(papel, setor, dados_ano, dados_ant, ano, hoje):
             op = d["lai"] - d["fin_liq"]; flags.append("info:ebit_reconstruido_resultado_financeiro")
         elif op is None and d["lai"] is not None and d["desp_fin"] is not None:
             op = d["lai"] + abs(d["desp_fin"]) - abs(d["rec_fin"] or 0); flags.append("info:ebit_reconstruido_resultado_financeiro")
+        elif op is None and d["ll_total"] is not None and d["ir"] is not None and d["desp_fin"] is not None:
+            op = d["ll_total"] + d["ir"] + abs(d["desp_fin"]) - abs(d["rec_fin"] or 0)
+            flags.append("verificar:ebit_reconstruido_lucro_impostos_financeiro")
         ebitda = op + abs(d["da"]) if op is not None and d["da"] is not None else None
         if d.get("ebitda") is not None:
             ebitda = d["ebitda"]; flags.append("info:ebitda_reportado_pela_empresa")
@@ -412,7 +433,7 @@ def main():
                       "relatorio_url": FXO + (usado[ano].get("viewer_url") or usado[ano].get("report_url") or ""),
                       "publicado": usado[ano]["publicado"],
                       "origem_rubricas": dados[ano]["_origem"],
-                      "componentes": {k: dados[ano][k] for k in ("ll", "pl", "pl_ini", "lpa", "op", "lai", "fin_liq", "desp_fin", "rec_fin", "da", "ebitda", "caixa", "emprestimos", "locacoes", "div_pagos")}})
+                      "componentes": {k: dados[ano][k] for k in ("ll", "ll_total", "ir", "pl", "pl_ini", "lpa", "op", "lai", "fin_liq", "desp_fin", "rec_fin", "da", "ebitda", "caixa", "emprestimos", "locacoes", "div_pagos")}})
             saida["papeis"][t] = m
             if a.descobrir:
                 print(json.dumps({k: v for k, v in m.items() if k not in ("semaforo",)}, ensure_ascii=False))

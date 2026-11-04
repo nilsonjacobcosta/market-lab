@@ -11,7 +11,7 @@ LUCRO_REFERENCIA_2025 = {
     "BCP": (1018.6, "Millennium bcp, resultados de 2025 (Forbes Portugal, 2026)"),
     "GALP": (1120.0, "Galp, resultados de 2025 (Forbes España, 2026)"),
     "JMT": (646.0, "Jerónimo Martins, resultados de 2025 (ECO, 18/03/2026)"),
-    "SON": (247.0, "Sonae, resultados de 2025 (Observador, 19/03/2026)"),
+    "SON": (247.0, "Sonae, resultado líquido total de 2025 (Observador, 19/03/2026)", "ll_total"),
 }
 METAS = {"com_relatorio_pct (meta >=90)": 90, "lucro_encontrado_pct (meta >=90)": 90, "com_nota_pct (meta >=75)": 75}
 
@@ -23,12 +23,13 @@ def main(novo, destino):
         if d["aceite"].get(k, 0) < meta:
             falhas.append(f"{k} = {d['aceite'].get(k)}")
     ok_lucro = 0
-    for p, (ref, fonte) in LUCRO_REFERENCIA_2025.items():
+    for p, (ref, fonte, *campo) in LUCRO_REFERENCIA_2025.items():
         v = d["papeis"].get(p, {})
-        if v.get("exercicio") != 2025 or v.get("ll") is None:
+        val = v.get("ll") if not campo else (v.get("componentes") or {}).get(campo[0])
+        if v.get("exercicio") != 2025 or val is None:
             conf[p] = "sem dado de 2025"; continue
-        dif = abs(v["ll"] / 1e6 - ref) / ref * 100
-        conf[p] = f"{v['ll'] / 1e6:.1f} vs {ref} M€ ({dif:.2f}%) — {fonte}"
+        dif = abs(val / 1e6 - ref) / ref * 100
+        conf[p] = f"{val / 1e6:.1f} vs {ref} M€ ({dif:.2f}%) — {fonte}"
         ok_lucro += dif <= 2
     if ok_lucro < len(LUCRO_REFERENCIA_2025):
         falhas.append(f"lucro conferido: {ok_lucro}/{len(LUCRO_REFERENCIA_2025)} dentro de 2%")
