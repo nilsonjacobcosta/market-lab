@@ -52,10 +52,12 @@ C = {  # rubricas ifrs-full, por ordem de preferência
     "lai": ["ProfitLossBeforeTax"],
     "desp_fin": ["FinanceCosts"],
     "rec_fin": ["FinanceIncome"],
+    "fin_liq": ["FinanceIncomeCost"],
     "da": ["DepreciationAmortisationAndImpairmentLossReversalOfImpairmentLossRecognisedInProfitOrLoss",
            "DepreciationAndAmortisationExpense",
            "AdjustmentsForDepreciationAndAmortisationExpenseAndImpairmentLossReversalOfImpairmentLossRecognisedInProfitOrLoss",
-           "AdjustmentsForDepreciationAndAmortisationExpense"],
+           "AdjustmentsForDepreciationAndAmortisationExpense",
+           "DepreciationPropertyPlantAndEquipment"],
     "caixa": ["CashAndCashEquivalents", "Cash"],
     "div_pagos": ["DividendsPaidClassifiedAsFinancingActivities", "DividendsPaidToEquityHoldersOfParentClassifiedAsFinancingActivities",
                   "DividendsPaid", "DividendsRecognisedAsDistributionsToOwnersOfParent"],
@@ -88,7 +90,7 @@ def get_json(url, tentativas=3):
 # ---------------------------------------------------------------- descoberta
 NOMES = {  # padrões do nome registado no filings.xbrl.org (normalizado, maiúsculas, sem acentos)
     "ALTR": r"\bALTRI\b", "BCP": r"BANCO COMERCIAL PORTUGUES", "COR": r"CORTICEIRA AMORIM", "CTT": r"\bCTT\b",
-    "EDP": r"^EDP[ ,-]+(S\.?A|ENERGIAS)", "EDPR": r"EDP RENEWABLES|EDP RENOVAVEIS", "EGL": r"MOTA[ -]ENGIL",
+    "EDP": r"^EDP[ ,-]+(S\.?A|ENERGIAS)", "EDPR": r"EDP RENEWABLES|EDP RENOVAVEIS", "EGL": r"MOTA\s*-?\s*ENGIL",
     "GALP": r"\bGALP\b", "IBS": r"IBERSOL", "JMT": r"JERONIMO MARTINS", "NOS": r"^NOS[ ,]+S\.?G\.?P\.?S",
     "NVG": r"NAVIGATOR", "RENE": r"REDES ENERGETICAS|^REN\b", "SEM": r"SEMAPA", "SON": r"^SONAE[ ,-]+S\.?G\.?P\.?S",
     "TDSA": r"TEIXEIRA DUARTE"}
@@ -181,7 +183,7 @@ def periodos(ano):
 def extrair(idx, ano):
     dur, fim, ini = periodos(ano)
     r, origem = {}, {}
-    for k in ("ll", "lpa", "op", "lai", "desp_fin", "rec_fin", "da", "div_pagos"):
+    for k in ("ll", "lpa", "op", "lai", "desp_fin", "rec_fin", "fin_liq", "da", "div_pagos"):
         r[k], origem[k] = pega(idx, C[k], dur)
     for k, per in (("pl", fim), ("pl_ini", ini), ("caixa", fim)):
         r[k], origem[k] = pega(idx, C["pl" if k.startswith("pl") else k], per)
@@ -198,6 +200,9 @@ def extrair(idx, ano):
     ext = sorted({(c, round(v)) for (c, p), v in idx.items()
                   if p == fim and not c.startswith("ifrs-full:") and RX_DIVIDA_EXT.search(c.split(":")[-1])})
     r["_ext_divida"] = ext[:15]
+    rx = re.compile(r"(Depreciation|Amorti|OperatingActivit|OperatingProfit|FinanceIncome|FinanceCost|Borrowing|EBITDA|Ebitda)")
+    r["_candidatos"] = sorted({(c, p[0], round(v)) for (c, p), v in idx.items()
+                               if rx.search(c) and ((p[0] == "d" and p[2] == f"{ano}-12-31") or (p[0] == "i" and p[1] == f"{ano}-12-31"))})[:40]
     r["_origem"] = origem
     return r
 
@@ -269,6 +274,8 @@ def metricas(papel, setor, dados_ano, dados_ant, ano, hoje):
         if m.get("roe") is not None:
             m["roe_medio_2a"] = round((m["roe"] + r2) / 2, 1)
     dpa = dpa_exercicio(papel, ano)
+    if dpa is None and hoje.date() > datetime(ano + 1, 7, 31).date():
+        dpa = 0.0; flags.append("info:sem_dividendo_cadastrado_para_o_exercicio")
     m["dpa_exercicio"], m["lpa"] = dpa, d["lpa"]
     if dpa is not None and d["lpa"] and d["lpa"] > 0:
         m["payout"] = round(100 * dpa / d["lpa"], 1)
@@ -278,8 +285,10 @@ def metricas(papel, setor, dados_ano, dados_ant, ano, hoje):
         m["payout_caixa"] = round(100 * abs(d["div_pagos"]) / d["ll"], 1)
     if regra != "Bancos":
         op = d["op"]
-        if op is None and d["lai"] is not None and d["desp_fin"] is not None:
-            op = d["lai"] + abs(d["desp_fin"]) - abs(d["rec_fin"] or 0); flags.append("verificar:ebit_reconstruido")
+        if op is None and d["lai"] is not None and d["fin_liq"] is not None:
+            op = d["lai"] - d["fin_liq"]; flags.append("info:ebit_reconstruido_resultado_financeiro")
+        elif op is None and d["lai"] is not None and d["desp_fin"] is not None:
+            op = d["lai"] + abs(d["desp_fin"]) - abs(d["rec_fin"] or 0); flags.append("info:ebit_reconstruido_resultado_financeiro")
         ebitda = op + abs(d["da"]) if op is not None and d["da"] is not None else None
         m["ebitda"] = ebitda
         if d["emprestimos"] is None:
@@ -290,7 +299,7 @@ def metricas(papel, setor, dados_ano, dados_ant, ano, hoje):
             if ebitda and ebitda > 0:
                 m["div_liq_ebitda"] = round(dl / ebitda, 2)
             if d["locacoes"] is None:
-                flags.append("verificar:locacoes_nao_identificadas")
+                flags.append("info:locacoes_nao_identificadas")
     m["descartados"] = []
     for k, (va, vb, da_, db) in SANIDADE.items():
         v = m.get(k)
@@ -382,6 +391,7 @@ def main():
             if a.descobrir:
                 print(json.dumps({k: v for k, v in m.items() if k not in ("semaforo",)}, ensure_ascii=False))
                 print("extensões tipo dívida:", dados[ano]["_ext_divida"])
+                print("candidatas:", dados[ano]["_candidatos"])
         except Exception as e:
             saida["papeis"][t] = {"erro": f"falha: {str(e)[:120]}", "nota": None, "motivo_sem_nota": "falha ao ler a fonte"}
             print(t, "ERRO", e)
