@@ -1,12 +1,12 @@
 # Manutenção do Monitor Portugal (Euronext Lisbon)
 
 Instruções para manter o que **não se atualiza sozinho** no Monitor Portugal e o que fazer quando a rotina falha.
-Página: `portugal/monitor/` (link não divulgado; `noindex`). Dados: `dados/portugal/`. Código: `scripts/portugal/`.
+Página: `portugal/monitor/` (publicada como material de estudo; cartão na página inicial desde 04/11/2026). Dados: `dados/portugal/`. Código: `scripts/portugal/`.
 
 > Material educativo, não é recomendação de investimento. O dono assumiu o risco regulatório de manter o preço-teto
 > (decisão de 04/11/2026); por isso a página segue voluntariamente os requisitos de apresentação objetiva do
 > Regulamento Delegado (UE) 2016/958: autor, data, factos vs cálculo, fontes, metodologia, riscos e histórico.
-> Ponto em aberto: parecer jurídico sobre comunicação à CMVM (Reg. CMVM 2/2007) antes de qualquer divulgação do link.
+> Ponto em aberto: parecer jurídico sobre comunicação à CMVM (Reg. CMVM 2/2007); publicação aberta foi decisão do dono.
 
 ## O que é automático
 - `.github/workflows/monitor-portugal.yml`, dias úteis às 17h23, 17h48, 18h37 e 20h12 UTC (depois do fecho de Lisboa, 16h30 locais):
@@ -51,4 +51,4 @@ Sites que bloqueiam leitura automática da nuvem (abrir no Chrome do dono): Mill
 - Jerónimo Martins, Navigator e Semapa 2026: confirmar valores do exercício de 2025.
 - Corticeira Amorim 2022: a tabela da empresa tem parcelas que somam 0,275 e total 0,29 — confirmar no comunicado.
 - Fase seguinte: indicadores de qualidade financeira a partir dos relatórios anuais ESEF/iXBRL; controlo acionista.
-- Parecer jurídico (J2) antes de divulgar o link.
+- Parecer jurídico (J2) recomendado; publicação aberta decidida pelo dono com risco assumido (04/11/2026).

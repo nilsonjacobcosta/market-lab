@@ -11,6 +11,7 @@ Laboratório de painéis e estudos sobre mercado financeiro: sazonalidade, ciclo
 | Rali do Midterm | [`sazonalidade/rali-midterm`](sazonalidade/rali-midterm/) | Publicado, auditado | Sazonalidade do S&P 500 no ano de eleição de meio de mandato nos EUA e nos 12 meses seguintes |
 | Termômetro macro do midterm | [`macro/termometro-midterm`](macro/termometro-midterm/) | Publicado | Juros, petróleo, dólar, metais e índices no ciclo presidencial; o que explica outubro de 2026 |
 | Monitor BESST | [`carteiras/monitor-besst`](carteiras/monitor-besst/) | Publicado, atualização automática | Preço-teto, DPA médio, DY médio e controle acionário de 144 papéis dos setores BESST |
+| Monitor de Dividendos Lisboa | [`portugal/monitor`](portugal/monitor/) | Publicado (estudo), atualização automática | 16 ações da Euronext Lisbon para residentes em Portugal: proventos do cadastro oficial, preço-teto com juro das OT a 10 anos (BCE), alertas; manutenção em [`manutencao/portugal`](manutencao/portugal/) |
 | Monitor multi-gráficos | [`monitor/`](monitor/) | Planejado | Vários gráficos de mercado na mesma tela (widgets do TradingView) |
 
 ## Estrutura

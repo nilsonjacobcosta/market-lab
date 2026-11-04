@@ -26,6 +26,11 @@ e as condições para divulgar o link.
 - Runbooks em `manutencao/portugal/README.md`; registo atualizado.
 - Pendência: os commits diários incluem a hora de geração mesmo sem novos preços (até 4 por dia).
 
+## Decisão do dono — 04/11/2026, 06h14 (Brasília)
+O dono autorizou a publicação aberta no GitHub como **material de estudo**: cartão na página inicial, linha no README e
+página indexável. A condição do J2 (parecer jurídico antes de divulgar) fica registada como **risco assumido pelo dono**,
+coerente com a decisão de 04/11 de manter o preço-teto. O parecer jurídico continua recomendado e listado nas pendências.
+
 ## Paridade com o Monitor BESST — o que falta
 | Recurso do BESST | Portugal v0.1 |
 |---|---|
