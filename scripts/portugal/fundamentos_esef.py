@@ -86,27 +86,52 @@ def get_json(url, tentativas=3):
 
 
 # ---------------------------------------------------------------- descoberta
-def lei_por_isin(isin):
-    j = get_json(f"https://api.gleif.org/api/v1/lei-records?filter%5Bisin%5D={isin}")
-    d = j.get("data") or []
-    return (d[0]["id"], d[0]["attributes"]["entity"]["legalName"]["name"]) if d else (None, None)
+NOMES = {  # padrões do nome registado no filings.xbrl.org (normalizado, maiúsculas, sem acentos)
+    "ALTR": r"\bALTRI\b", "BCP": r"BANCO COMERCIAL PORTUGUES", "COR": r"CORTICEIRA AMORIM", "CTT": r"\bCTT\b",
+    "EDP": r"^EDP[ ,-]+(S\.?A|ENERGIAS)", "EDPR": r"EDP RENEWABLES|EDP RENOVAVEIS", "EGL": r"MOTA[ -]ENGIL",
+    "GALP": r"\bGALP\b", "IBS": r"IBERSOL", "JMT": r"JERONIMO MARTINS", "NOS": r"^NOS[ ,]+S\.?G\.?P\.?S",
+    "NVG": r"NAVIGATOR", "RENE": r"REDES ENERGETICAS|^REN\b", "SEM": r"SEMAPA", "SON": r"^SONAE[ ,-]+S\.?G\.?P\.?S",
+    "TDSA": r"TEIXEIRA DUARTE"}
 
 
-def relatorios(lei):
-    f = urllib.parse.quote(json.dumps([{"name": "identifier", "op": "eq", "val": lei}]))
-    ents = (get_json(f"{FXO}/api/entities?filter={f}").get("data") or [])
-    if ents:
-        j = get_json(f"{FXO}/api/entities/{ents[0]['id']}/filings?page%5Bsize%5D=50")
-    else:
-        f = urllib.parse.quote(json.dumps([{"name": "entity", "op": "has", "val": {"name": "identifier", "op": "eq", "val": lei}}]))
-        j = get_json(f"{FXO}/api/filings?filter={f}&page%5Bsize%5D=50")
-    out = []
-    for d in j.get("data") or []:
-        a = d["attributes"]
-        out.append({"periodo": a.get("period_end"), "fxo_id": a.get("fxo_id"), "json_url": a.get("json_url"),
-                    "report_url": a.get("report_url"), "viewer_url": a.get("viewer_url"), "publicado": a.get("date_added"),
-                    "erros": a.get("error_count")})
-    return sorted(out, key=lambda r: (r["periodo"] or "", r["publicado"] or ""), reverse=True)
+def _norm(s):
+    import unicodedata
+    return unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode().upper().strip()
+
+
+def todos_relatorios_pt():
+    """Todos os relatórios ESEF com país PT, agrupados por LEI: {lei: {"nome":..., "relatorios":[...]}}."""
+    f = urllib.parse.quote(json.dumps([{"name": "country", "op": "eq", "val": "PT"}]))
+    pag, out = 1, {}
+    while True:
+        j = get_json(f"{FXO}/api/filings?filter={f}&include=entity&page%5Bsize%5D=100&page%5Bnumber%5D={pag}")
+        ents = {e["id"]: e["attributes"] for e in j.get("included") or [] if e.get("type") == "entity"}
+        for d in j.get("data") or []:
+            a = d["attributes"]
+            eid = ((d.get("relationships") or {}).get("entity") or {}).get("data", {}).get("id")
+            ent = ents.get(eid) or {}
+            lei = ent.get("identifier") or (a.get("fxo_id") or "").split("-")[0]
+            g = out.setdefault(lei, {"nome": ent.get("name") or "", "relatorios": []})
+            g["nome"] = g["nome"] or ent.get("name") or ""
+            g["relatorios"].append({"periodo": a.get("period_end"), "fxo_id": a.get("fxo_id"), "json_url": a.get("json_url"),
+                                    "report_url": a.get("report_url"), "viewer_url": a.get("viewer_url"),
+                                    "publicado": a.get("date_added"), "erros": a.get("error_count")})
+        if not (j.get("links") or {}).get("next") or not j.get("data"):
+            break
+        pag += 1
+        time.sleep(0.5)
+    for g in out.values():
+        g["relatorios"].sort(key=lambda r: (r["periodo"] or "", r["publicado"] or ""), reverse=True)
+    return out
+
+
+def casar(papel, base, mapa):
+    lei = (mapa.get(papel) or {}).get("lei")
+    if lei and lei in base:
+        return lei
+    rx = re.compile(NOMES[papel])
+    achados = [k for k, g in base.items() if rx.search(_norm(g["nome"]))]
+    return achados[0] if len(achados) == 1 else (lei or None)
 
 
 # ---------------------------------------------------------------- leitura de factos
@@ -313,18 +338,21 @@ def main():
              "aviso": "Material educativo, não é recomendação de investimento. Faixas são convenções do painel.",
              "papeis": {}}
     novos_mapa = []
+    base = todos_relatorios_pt()
+    print("Entidades PT no filings.xbrl.org:", len(base))
+    if a.descobrir:
+        for k, g in sorted(base.items(), key=lambda x: x[1]["nome"]):
+            print(f"  {k}  {g['nome']}  ({len(g['relatorios'])} relatórios; último {g['relatorios'][0]['periodo'] if g['relatorios'] else '-'})")
     for p in universo["papeis"]:
         t = p["papel"]
         try:
-            lei = (mapa.get(t) or {}).get("lei")
-            nome_lei = (mapa.get(t) or {}).get("nome_lei")
-            if not lei:
-                lei, nome_lei = lei_por_isin(p["isin"])
+            lei = casar(t, base, mapa)
+            nome_lei = (base.get(lei) or {}).get("nome", "")
             novos_mapa.append({"papel": t, "isin": p["isin"], "lei": lei or "", "nome_lei": nome_lei or ""})
             if not lei:
                 saida["papeis"][t] = {"erro": "LEI não encontrado", "nota": None, "motivo_sem_nota": MOTIVO["sem_relatorio"]}
                 print(t, "sem LEI"); continue
-            rel = relatorios(lei)
+            rel = (base.get(lei) or {}).get("relatorios") or []
             anos = sorted({int(r["periodo"][:4]) for r in rel if r.get("periodo")}, reverse=True)
             if a.descobrir:
                 print(f"\n=== {t} {p['nome']} LEI {lei} ({nome_lei}) — relatórios: {[r['fxo_id'] for r in rel[:6]]}")
