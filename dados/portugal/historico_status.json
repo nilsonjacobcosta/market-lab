@@ -1,0 +1,146 @@
+{
+ "ALTR": [
+  {
+   "data": "2026-11-04",
+   "status": "acima",
+   "rotulo": "Acima do teto calculado",
+   "preco": 4.255,
+   "teto": 4.0803
+  }
+ ],
+ "BCP": [
+  {
+   "data": "2026-11-04",
+   "status": "acima",
+   "rotulo": "Acima do teto calculado",
+   "preco": 1.048,
+   "teto": 0.1515
+  }
+ ],
+ "COR": [
+  {
+   "data": "2026-11-04",
+   "status": "acima",
+   "rotulo": "Acima do teto calculado",
+   "preco": 6.33,
+   "teto": 4.6181
+  }
+ ],
+ "CTT": [
+  {
+   "data": "2026-11-04",
+   "status": "acima",
+   "rotulo": "Acima do teto calculado",
+   "preco": 5.33,
+   "teto": 2.1192
+  }
+ ],
+ "EDP": [
+  {
+   "data": "2026-11-04",
+   "status": "acima",
+   "rotulo": "Acima do teto calculado",
+   "preco": 4.87,
+   "teto": 3.0523
+  }
+ ],
+ "EDPR": [
+  {
+   "data": "2026-11-04",
+   "status": "acima",
+   "rotulo": "Acima do teto calculado",
+   "preco": 13.05,
+   "teto": 2.2774
+  }
+ ],
+ "EGL": [
+  {
+   "data": "2026-11-04",
+   "status": "acima",
+   "rotulo": "Acima do teto calculado",
+   "preco": 4.47,
+   "teto": 1.4127
+  }
+ ],
+ "GALP": [
+  {
+   "data": "2026-11-04",
+   "status": "acima",
+   "rotulo": "Acima do teto calculado",
+   "preco": 20.01,
+   "teto": 8.9831
+  }
+ ],
+ "IBS": [
+  {
+   "data": "2026-11-04",
+   "status": "acima",
+   "rotulo": "Acima do teto calculado",
+   "preco": 10.32,
+   "teto": 6.4368
+  }
+ ],
+ "JMT": [
+  {
+   "data": "2026-11-04",
+   "status": "acima",
+   "rotulo": "Acima do teto calculado",
+   "preco": 18.55,
+   "teto": 9.0716
+  }
+ ],
+ "NOS": [
+  {
+   "data": "2026-11-04",
+   "status": "abaixo",
+   "rotulo": "Abaixo do teto calculado",
+   "preco": 5.24,
+   "teto": 5.4911
+  }
+ ],
+ "NVG": [
+  {
+   "data": "2026-11-04",
+   "status": "abaixo_conferir",
+   "rotulo": "Abaixo do teto · conferir dados",
+   "preco": 2.992,
+   "teto": 4.1118
+  }
+ ],
+ "RENE": [
+  {
+   "data": "2026-11-04",
+   "status": "acima",
+   "rotulo": "Acima do teto calculado",
+   "preco": 3.58,
+   "teto": 2.7012
+  }
+ ],
+ "SEM": [
+  {
+   "data": "2026-11-04",
+   "status": "acima",
+   "rotulo": "Acima do teto calculado",
+   "preco": 19.36,
+   "teto": 14.1642
+  }
+ ],
+ "SON": [
+  {
+   "data": "2026-11-04",
+   "status": "acima",
+   "rotulo": "Acima do teto calculado",
+   "preco": 2.11,
+   "teto": 0.8509
+  }
+ ],
+ "TDSA": [
+  {
+   "data": "2026-11-04",
+   "status": "sem_proventos",
+   "rotulo": "Sem proventos nos últimos 5 anos",
+   "preco": 0.419,
+   "teto": null
+  }
+ ]
+}

@@ -1,0 +1,3016 @@
+{
+ "gerado_em": "2026-11-04T09:06+00:00",
+ "precos_coletados_em": "2026-11-04T09:06+00:00",
+ "autor": "market-lab — projeto pessoal de estudo de nilsonjacobcosta (GitHub)",
+ "aviso": "Material educativo, não é recomendação de investimento.",
+ "parametros": {
+  "revisado_em": "2026-11-04",
+  "anos_media": 5,
+  "premio_pp": 3.0,
+  "taxa_minima_pct": 5.0,
+  "faixa_pp": 1.0,
+  "taxa_reserva_pct": 3.2,
+  "taxa_reserva_nota": "Usada só se a série do BCE não puder ser lida e não houver valor guardado. Valor de referência: OT a 10 anos perto de 3,1–3,4% em 2026 (IGCP/imprensa).",
+  "serie_bce": "IRS/M.PT.L.L40.CI.0000.EUR.N.Z",
+  "serie_bce_descricao": "Taxa de juro de longo prazo para efeitos de convergência — Portugal (obrigações do Tesouro a 10 anos), mensal, BCE",
+  "retencao_irs_pct": 28.0,
+  "autor": "market-lab — projeto pessoal de estudo de nilsonjacobcosta (GitHub)"
+ },
+ "universo": {
+  "revisado_em": "2026-11-04",
+  "proxima_revisao": "2027-02-04",
+  "criterio": "Ações do mercado regulamentado da Euronext Lisbon (MIC XLIS) com mediana do volume financeiro diário em 12 meses >= 100 mil euros e no máximo 5% de dias sem negócio; excluídos emitentes cuja sede ou listagem principal não é Portugal (Euronext N.V., Merlin Properties).",
+  "corte_liquidez_eur": 100000,
+  "max_pct_dias_sem_negocio": 5
+ },
+ "universo_alertas": [],
+ "n_euronext_xlis": 32,
+ "anos": [
+  "2021",
+  "2022",
+  "2023",
+  "2024",
+  "2025"
+ ],
+ "taxa": {
+  "ot10_media12m_pct": 3.323,
+  "ultima_obs": [
+   "2026-09",
+   3.846
+  ],
+  "n_obs": 12,
+  "origem": "BCE",
+  "lida_em": "2026-11-04",
+  "premio_pp": 3.0,
+  "taxa_minima_pct": 5.0,
+  "taxa_exigida_pct": 6.323,
+  "faixa_pp": 1.0
+ },
+ "linhas": [
+  {
+   "papel": "ALTR",
+   "nome": "Altri",
+   "setor": "Celulose e materiais",
+   "isin": "PTALT0AE0002",
+   "preco": 4.255,
+   "data_preco": "2026-11-03",
+   "variacao_12m_pct": -13.2,
+   "proventos_por_ano": {
+    "2021": 0.25,
+    "2022": 0.24,
+    "2023": 0.25,
+    "2024": 0.25,
+    "2025": 0.3
+   },
+   "estado_por_ano": {
+    "2021": [
+     "oficial"
+    ],
+    "2022": [
+     "a_conferir"
+    ],
+    "2023": [
+     "a_conferir"
+    ],
+    "2024": [
+     "a_conferir"
+    ],
+    "2025": [
+     "oficial"
+    ]
+   },
+   "proventos_12m": 0.25,
+   "dpa_medio": 0.258,
+   "dpa_aparado": 0.25,
+   "dy_12m_pct": 5.88,
+   "dy_medio_pct": 6.06,
+   "teto": 4.0803,
+   "teto_robusto": 3.9538,
+   "faixa_teto": [
+    3.5231,
+    4.8469
+   ],
+   "margem_pct": -4.1,
+   "status": "acima",
+   "status_rotulo": "Acima do teto calculado",
+   "liquidez_mediana_12m_eur": 1162050,
+   "pct_dias_sem_negocio_12m": 0.0,
+   "pct_eventos_oficiais": 33,
+   "tem_scrip": false,
+   "eventos": [
+    {
+     "data_pagamento": "2026-05-28",
+     "valor_bruto": 0.25,
+     "tipo": "dinheiro",
+     "exercicio": "2025",
+     "estado": "a_conferir",
+     "fonte_url": "",
+     "nota": "valor da fonte de cotações e da imprensa; comunicado de 12/05/2026 não legível automaticamente"
+    },
+    {
+     "data_pagamento": "2025-05-19",
+     "valor_bruto": 0.3,
+     "tipo": "dinheiro",
+     "exercicio": "2024",
+     "estado": "oficial",
+     "fonte_url": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2025/04/30/Connect_altricomunicadodividendos-dinheiropt.pdf",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2024-05-15",
+     "valor_bruto": 0.25,
+     "tipo": "dinheiro",
+     "exercicio": "2023",
+     "estado": "a_conferir",
+     "fonte_url": "",
+     "nota": "valor da fonte de cotações; comunicado de 07/05/2024"
+    },
+    {
+     "data_pagamento": "2023-05-15",
+     "valor_bruto": 0.25,
+     "tipo": "dinheiro",
+     "exercicio": "2022",
+     "estado": "a_conferir",
+     "fonte_url": "",
+     "nota": "valor da fonte de cotações; comunicado de 02/05/2023 (numerário e espécie)"
+    },
+    {
+     "data_pagamento": "2022-05-15",
+     "valor_bruto": 0.24,
+     "tipo": "dinheiro",
+     "exercicio": "2021",
+     "estado": "a_conferir",
+     "fonte_url": "",
+     "nota": "valor da fonte de cotações; comunicado de 03/05/2022 (numerário e espécie) não legível automaticamente"
+    },
+    {
+     "data_pagamento": "2021-05-20",
+     "valor_bruto": 0.25,
+     "tipo": "dinheiro",
+     "exercicio": "2020",
+     "estado": "oficial",
+     "fonte_url": "https://live.euronext.com/sites/default/files/Connect_altri20210504pt.pdf",
+     "nota": "a fonte de cotações indica 0.35 no ano de 2021 — diferença em investigação; em 2021-2023 houve também distribuições em espécie (ações Greenvolt) não contadas"
+    }
+   ],
+   "alertas": [
+    {
+     "nivel": "atencao",
+     "codigo": "proventos_a_conferir",
+     "texto": "Proventos de 2022, 2023, 2024, 2026 ainda sem documento oficial no cadastro."
+    },
+    {
+     "nivel": "atencao",
+     "codigo": "evento_nao_cadastrado",
+     "texto": "A fonte de cotações mostra provento sem registo oficial no cadastro: 2021-07-07 (0.1)."
+    }
+   ],
+   "historico_preco_mensal": {
+    "2021-12": 3.3532,
+    "2022-01": 3.5543,
+    "2022-02": 3.574,
+    "2022-03": 3.5952,
+    "2022-04": 4.0608,
+    "2022-05": 4.4933,
+    "2022-06": 5.3751,
+    "2022-07": 5.2355,
+    "2022-08": 4.7487,
+    "2022-09": 4.4632,
+    "2022-10": 4.5563,
+    "2022-11": 4.7899,
+    "2022-12": 4.41,
+    "2023-01": 4.1746,
+    "2023-02": 3.8903,
+    "2023-03": 3.9922,
+    "2023-04": 4.0516,
+    "2023-05": 4.1418,
+    "2023-06": 4.1485,
+    "2023-07": 4.2238,
+    "2023-08": 4.2659,
+    "2023-09": 4.415,
+    "2023-10": 4.4179,
+    "2023-11": 4.6576,
+    "2023-12": 4.6882,
+    "2024-01": 4.5525,
+    "2024-02": 4.4607,
+    "2024-03": 4.7586,
+    "2024-04": 5.1357,
+    "2024-05": 5.3059,
+    "2024-06": 5.2116,
+    "2024-07": 5.311,
+    "2024-08": 4.8198,
+    "2024-09": 4.8926,
+    "2024-10": 5.1141,
+    "2024-11": 5.0754,
+    "2024-12": 5.1758,
+    "2025-01": 5.4957,
+    "2025-02": 5.9872,
+    "2025-03": 6.0888,
+    "2025-04": 6.0752,
+    "2025-05": 5.9859,
+    "2025-06": 5.0543,
+    "2025-07": 4.893,
+    "2025-08": 5.0455,
+    "2025-09": 4.9768,
+    "2025-10": 4.9611,
+    "2025-11": 4.6965,
+    "2025-12": 4.4048,
+    "2026-01": 4.4957,
+    "2026-02": 4.7038,
+    "2026-03": 4.6743,
+    "2026-04": 4.8955,
+    "2026-05": 5.0577,
+    "2026-06": 4.9225,
+    "2026-07": 4.7124,
+    "2026-08": 4.7407,
+    "2026-09": 4.7077,
+    "2026-10": 4.3516,
+    "2026-11": 4.2775
+   }
+  },
+  {
+   "papel": "BCP",
+   "nome": "Banco Comercial Português",
+   "setor": "Banca",
+   "isin": "PTBCP0AM0015",
+   "preco": 1.048,
+   "data_preco": "2026-11-03",
+   "variacao_12m_pct": 35.6,
+   "proventos_por_ano": {
+    "2021": 0,
+    "2022": 0.0009,
+    "2023": 0,
+    "2024": 0.017,
+    "2025": 0.03
+   },
+   "estado_por_ano": {
+    "2021": [],
+    "2022": [
+     "oficial"
+    ],
+    "2023": [],
+    "2024": [
+     "oficial"
+    ],
+    "2025": [
+     "oficial"
+    ]
+   },
+   "proventos_12m": 0.0344,
+   "dpa_medio": 0.00958,
+   "dpa_aparado": 0.005967,
+   "dy_12m_pct": 3.28,
+   "dy_medio_pct": 0.91,
+   "teto": 0.1515,
+   "teto_robusto": 0.0944,
+   "faixa_teto": [
+    0.1308,
+    0.18
+   ],
+   "margem_pct": -85.5,
+   "status": "acima",
+   "status_rotulo": "Acima do teto calculado",
+   "liquidez_mediana_12m_eur": 44660408,
+   "pct_dias_sem_negocio_12m": 0.0,
+   "pct_eventos_oficiais": 100,
+   "tem_scrip": false,
+   "eventos": [
+    {
+     "data_pagamento": "2026-06-03",
+     "valor_bruto": 0.0344,
+     "tipo": "dinheiro",
+     "exercicio": "2025",
+     "estado": "oficial",
+     "fonte_url": "https://ind.millenniumbcp.pt/pt/Institucional/investidores/Documents/comunicados/2026/Dividendo_PT_12052026.pdf",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2025-06-15",
+     "valor_bruto": 0.03,
+     "tipo": "dinheiro",
+     "exercicio": "2024",
+     "estado": "oficial",
+     "fonte_url": "https://ind.millenniumbcp.pt/pt/Institucional/investidores/Pages/Dividendos.aspx",
+     "nota": "dia aproximado"
+    },
+    {
+     "data_pagamento": "2024-06-15",
+     "valor_bruto": 0.017,
+     "tipo": "dinheiro",
+     "exercicio": "2023",
+     "estado": "oficial",
+     "fonte_url": "https://ind.millenniumbcp.pt/pt/Institucional/investidores/Pages/Dividendos.aspx",
+     "nota": "dia aproximado"
+    },
+    {
+     "data_pagamento": "2022-06-15",
+     "valor_bruto": 0.0009,
+     "tipo": "dinheiro",
+     "exercicio": "2021",
+     "estado": "oficial",
+     "fonte_url": "https://ind.millenniumbcp.pt/pt/Institucional/investidores/Pages/Dividendos.aspx",
+     "nota": "dia aproximado"
+    }
+   ],
+   "alertas": [
+    {
+     "nivel": "atencao",
+     "codigo": "anos_sem_proventos",
+     "texto": "Sem proventos em 2021, 2023: a média de 5 anos fica mais baixa e o teto também."
+    }
+   ],
+   "historico_preco_mensal": {
+    "2021-12": 0.1399,
+    "2022-01": 0.1581,
+    "2022-02": 0.1831,
+    "2022-03": 0.1498,
+    "2022-04": 0.1622,
+    "2022-05": 0.164,
+    "2022-06": 0.1786,
+    "2022-07": 0.1467,
+    "2022-08": 0.1473,
+    "2022-09": 0.1415,
+    "2022-10": 0.1337,
+    "2022-11": 0.1511,
+    "2022-12": 0.1454,
+    "2023-01": 0.1817,
+    "2023-02": 0.2102,
+    "2023-03": 0.2057,
+    "2023-04": 0.2229,
+    "2023-05": 0.219,
+    "2023-06": 0.2143,
+    "2023-07": 0.2377,
+    "2023-08": 0.2478,
+    "2023-09": 0.2565,
+    "2023-10": 0.2763,
+    "2023-11": 0.2926,
+    "2023-12": 0.2948,
+    "2024-01": 0.2848,
+    "2024-02": 0.2661,
+    "2024-03": 0.2821,
+    "2024-04": 0.3112,
+    "2024-05": 0.3498,
+    "2024-06": 0.3462,
+    "2024-07": 0.3783,
+    "2024-08": 0.3894,
+    "2024-09": 0.4104,
+    "2024-10": 0.4207,
+    "2024-11": 0.4471,
+    "2024-12": 0.4485,
+    "2025-01": 0.4923,
+    "2025-02": 0.5296,
+    "2025-03": 0.5503,
+    "2025-04": 0.5392,
+    "2025-05": 0.6308,
+    "2025-06": 0.6661,
+    "2025-07": 0.6736,
+    "2025-08": 0.7564,
+    "2025-09": 0.7274,
+    "2025-10": 0.7591,
+    "2025-11": 0.7967,
+    "2025-12": 0.8668,
+    "2026-01": 0.8962,
+    "2026-02": 0.9056,
+    "2026-03": 0.8148,
+    "2026-04": 0.8889,
+    "2026-05": 0.9404,
+    "2026-06": 0.9788,
+    "2026-07": 1.0505,
+    "2026-08": 1.0989,
+    "2026-09": 1.177,
+    "2026-10": 1.1168,
+    "2026-11": 1.0627
+   }
+  },
+  {
+   "papel": "COR",
+   "nome": "Corticeira Amorim",
+   "setor": "Cortiça e materiais",
+   "isin": "PTCOR0AE0006",
+   "preco": 6.33,
+   "data_preco": "2026-11-03",
+   "variacao_12m_pct": -6.5,
+   "proventos_por_ano": {
+    "2021": 0.27,
+    "2022": 0.29,
+    "2023": 0.29,
+    "2024": 0.29,
+    "2025": 0.32
+   },
+   "estado_por_ano": {
+    "2021": [
+     "oficial"
+    ],
+    "2022": [
+     "oficial"
+    ],
+    "2023": [
+     "oficial"
+    ],
+    "2024": [
+     "oficial"
+    ],
+    "2025": [
+     "oficial"
+    ]
+   },
+   "proventos_12m": 0.35,
+   "dpa_medio": 0.292,
+   "dpa_aparado": 0.29,
+   "dy_12m_pct": 5.53,
+   "dy_medio_pct": 4.61,
+   "teto": 4.6181,
+   "teto_robusto": 4.5864,
+   "faixa_teto": [
+    3.9874,
+    5.4856
+   ],
+   "margem_pct": -27.0,
+   "status": "acima",
+   "status_rotulo": "Acima do teto calculado",
+   "liquidez_mediana_12m_eur": 860996,
+   "pct_dias_sem_negocio_12m": 0.0,
+   "pct_eventos_oficiais": 100,
+   "tem_scrip": false,
+   "eventos": [
+    {
+     "data_pagamento": "2026-05-15",
+     "valor_bruto": 0.35,
+     "tipo": "dinheiro",
+     "exercicio": "2025",
+     "estado": "oficial",
+     "fonte_url": "https://www.amorim.com/en/investors/corticeira-amorim-share/dividends/",
+     "nota": "comunicado de 04/05/2026; dia aproximado"
+    },
+    {
+     "data_pagamento": "2025-05-15",
+     "valor_bruto": 0.32,
+     "tipo": "dinheiro",
+     "exercicio": "2024",
+     "estado": "oficial",
+     "fonte_url": "https://www.amorim.com/en/investors/corticeira-amorim-share/dividends/",
+     "nota": "comunicado de 06/05/2025; dia aproximado"
+    },
+    {
+     "data_pagamento": "2024-12-15",
+     "valor_bruto": 0.09,
+     "tipo": "dinheiro",
+     "exercicio": "2024",
+     "estado": "oficial",
+     "fonte_url": "https://www.amorim.com/en/investors/corticeira-amorim-share/dividends/",
+     "nota": "comunicado de 02/12/2024; a fonte de cotações não registou este pagamento"
+    },
+    {
+     "data_pagamento": "2024-05-15",
+     "valor_bruto": 0.2,
+     "tipo": "dinheiro",
+     "exercicio": "2023",
+     "estado": "oficial",
+     "fonte_url": "https://www.amorim.com/en/investors/corticeira-amorim-share/dividends/",
+     "nota": "dia aproximado"
+    },
+    {
+     "data_pagamento": "2023-06-15",
+     "valor_bruto": 0.29,
+     "tipo": "dinheiro",
+     "exercicio": "2022",
+     "estado": "oficial",
+     "fonte_url": "https://www.amorim.com/en/investors/corticeira-amorim-share/dividends/",
+     "nota": "total do ano (0.20 + 0.09); dia aproximado"
+    },
+    {
+     "data_pagamento": "2022-06-15",
+     "valor_bruto": 0.29,
+     "tipo": "dinheiro",
+     "exercicio": "2021",
+     "estado": "oficial",
+     "fonte_url": "https://www.amorim.com/en/investors/corticeira-amorim-share/dividends/",
+     "nota": "total indicado pela empresa; as duas parcelas listadas somam 0.275 — conferir"
+    },
+    {
+     "data_pagamento": "2021-06-15",
+     "valor_bruto": 0.27,
+     "tipo": "dinheiro",
+     "exercicio": "2020",
+     "estado": "oficial",
+     "fonte_url": "https://www.amorim.com/en/investors/corticeira-amorim-share/dividends/",
+     "nota": "total do ano (0.185 + 0.085); dia aproximado"
+    }
+   ],
+   "alertas": [
+    {
+     "nivel": "atencao",
+     "codigo": "evento_nao_cadastrado",
+     "texto": "A fonte de cotações mostra provento sem registo oficial no cadastro: 2021-12-20 (0.085); 2022-12-19 (0.09); 2023-12-18 (0.09)."
+    }
+   ],
+   "historico_preco_mensal": {
+    "2021-12": 10.9991,
+    "2022-01": 10.6057,
+    "2022-02": 10.1665,
+    "2022-03": 9.8174,
+    "2022-04": 9.9342,
+    "2022-05": 10.1586,
+    "2022-06": 10.3718,
+    "2022-07": 10.1905,
+    "2022-08": 10.4487,
+    "2022-09": 9.5936,
+    "2022-10": 9.1567,
+    "2022-11": 8.9936,
+    "2022-12": 8.7571,
+    "2023-01": 8.8755,
+    "2023-02": 9.487,
+    "2023-03": 9.8317,
+    "2023-04": 10.1133,
+    "2023-05": 10.1605,
+    "2023-06": 9.7886,
+    "2023-07": 10.0457,
+    "2023-08": 9.9878,
+    "2023-09": 9.9129,
+    "2023-10": 9.3168,
+    "2023-11": 9.0845,
+    "2023-12": 9.1616,
+    "2024-01": 9.2159,
+    "2024-02": 9.3386,
+    "2024-03": 9.5045,
+    "2024-04": 9.7671,
+    "2024-05": 9.6255,
+    "2024-06": 9.3585,
+    "2024-07": 9.4943,
+    "2024-08": 8.9064,
+    "2024-09": 8.9533,
+    "2024-10": 8.6961,
+    "2024-11": 8.2643,
+    "2024-12": 8.158,
+    "2025-01": 8.1432,
+    "2025-02": 8.3565,
+    "2025-03": 8.12,
+    "2025-04": 7.466,
+    "2025-05": 8.0048,
+    "2025-06": 7.8438,
+    "2025-07": 7.8417,
+    "2025-08": 7.6786,
+    "2025-09": 7.3995,
+    "2025-10": 7.2217,
+    "2025-11": 6.65,
+    "2025-12": 6.56,
+    "2026-01": 6.7933,
+    "2026-02": 6.92,
+    "2026-03": 6.3773,
+    "2026-04": 6.5595,
+    "2026-05": 6.85,
+    "2026-06": 6.4909,
+    "2026-07": 6.4696,
+    "2026-08": 6.8329,
+    "2026-09": 7.0377,
+    "2026-10": 6.8114,
+    "2026-11": 6.665
+   }
+  },
+  {
+   "papel": "CTT",
+   "nome": "CTT – Correios de Portugal",
+   "setor": "Correios e serviços financeiros",
+   "isin": "PTCTT0AM0001",
+   "preco": 5.33,
+   "data_preco": "2026-11-03",
+   "variacao_12m_pct": -26.6,
+   "proventos_por_ano": {
+    "2021": 0.085,
+    "2022": 0.12,
+    "2023": 0.125,
+    "2024": 0.17,
+    "2025": 0.17
+   },
+   "estado_por_ano": {
+    "2021": [
+     "oficial"
+    ],
+    "2022": [
+     "oficial"
+    ],
+    "2023": [
+     "oficial"
+    ],
+    "2024": [
+     "oficial"
+    ],
+    "2025": [
+     "oficial"
+    ]
+   },
+   "proventos_12m": 0.19,
+   "dpa_medio": 0.134,
+   "dpa_aparado": 0.138333,
+   "dy_12m_pct": 3.56,
+   "dy_medio_pct": 2.51,
+   "teto": 2.1192,
+   "teto_robusto": 2.1878,
+   "faixa_teto": [
+    1.8299,
+    2.5174
+   ],
+   "margem_pct": -60.2,
+   "status": "acima",
+   "status_rotulo": "Acima do teto calculado",
+   "liquidez_mediana_12m_eur": 2076012,
+   "pct_dias_sem_negocio_12m": 0.0,
+   "pct_eventos_oficiais": 100,
+   "tem_scrip": false,
+   "eventos": [
+    {
+     "data_pagamento": "2026-05-15",
+     "valor_bruto": 0.19,
+     "tipo": "dinheiro",
+     "exercicio": "2025",
+     "estado": "oficial",
+     "fonte_url": "https://www.ctt.pt/dA/e6143c9e039fc1db86eafdbca06dcfd1/ficheiro/Notice_to_Convene_CTT_Annual_General_Meeting_2026_EN.pdf",
+     "nota": "valor proposto à AG de 30/04/2026 e coincidente com a fonte de cotações; dia aproximado"
+    },
+    {
+     "data_pagamento": "2025-05-15",
+     "valor_bruto": 0.17,
+     "tipo": "dinheiro",
+     "exercicio": "2024",
+     "estado": "oficial",
+     "fonte_url": "https://www.ctt.pt/contentAsset/raw-data/13adc021-f0bf-4007-9484-8360cec91032/ficheiroPdf/20250502_Dividendo_PT.pdf",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2024-05-16",
+     "valor_bruto": 0.17,
+     "tipo": "dinheiro",
+     "exercicio": "2023",
+     "estado": "oficial",
+     "fonte_url": "https://www.ctt.pt/contentAsset/raw-data/582f4226-7bd1-4e80-a3cd-3476abf17344/ficheiro/export/Dividend2023_EN.pdf",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2023-05-19",
+     "valor_bruto": 0.125,
+     "tipo": "dinheiro",
+     "exercicio": "2022",
+     "estado": "oficial",
+     "fonte_url": "https://www.ctt.pt/dA/4fb4f400-8232-497a-9c4e-55f4f3559764/ficheiro/Dividendo2022_PT.pdf",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2022-05-20",
+     "valor_bruto": 0.12,
+     "tipo": "dinheiro",
+     "exercicio": "2021",
+     "estado": "oficial",
+     "fonte_url": "https://www.ctt.pt/dA/4a70743c-5fc0-49f7-ab7d-6945f8c2a7cc/ficheiro/Dividendo2021_PT.pdf",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2021-05-20",
+     "valor_bruto": 0.085,
+     "tipo": "dinheiro",
+     "exercicio": "2020",
+     "estado": "oficial",
+     "fonte_url": "https://www.ctt.pt/dA/5e2af18a-72ed-49ab-ab7e-498e4ffa0763/ficheiro/Dividendo2020_PT.pdf",
+     "nota": ""
+    }
+   ],
+   "alertas": [],
+   "historico_preco_mensal": {
+    "2021-12": 4.464,
+    "2022-01": 4.4737,
+    "2022-02": 4.7446,
+    "2022-03": 4.5457,
+    "2022-04": 4.5008,
+    "2022-05": 3.9661,
+    "2022-06": 3.4539,
+    "2022-07": 3.2363,
+    "2022-08": 3.4356,
+    "2022-09": 3.1387,
+    "2022-10": 3.0041,
+    "2022-11": 3.2353,
+    "2022-12": 3.1464,
+    "2023-01": 3.3532,
+    "2023-02": 3.6955,
+    "2023-03": 3.6037,
+    "2023-04": 3.6697,
+    "2023-05": 3.5514,
+    "2023-06": 3.3886,
+    "2023-07": 3.6033,
+    "2023-08": 3.4033,
+    "2023-09": 3.3576,
+    "2023-10": 3.4364,
+    "2023-11": 3.5514,
+    "2023-12": 3.5216,
+    "2024-01": 3.6186,
+    "2024-02": 3.6824,
+    "2024-03": 3.78,
+    "2024-04": 4.4071,
+    "2024-05": 4.3705,
+    "2024-06": 4.2635,
+    "2024-07": 4.3954,
+    "2024-08": 4.2632,
+    "2024-09": 4.4588,
+    "2024-10": 4.2557,
+    "2024-11": 4.3952,
+    "2024-12": 4.8265,
+    "2025-01": 5.5495,
+    "2025-02": 6.5625,
+    "2025-03": 7.2029,
+    "2025-04": 7.2175,
+    "2025-05": 7.2157,
+    "2025-06": 7.401,
+    "2025-07": 7.6483,
+    "2025-08": 7.6371,
+    "2025-09": 7.3064,
+    "2025-10": 7.1278,
+    "2025-11": 7.2015,
+    "2025-12": 7.3286,
+    "2026-01": 7.139,
+    "2026-02": 7.1815,
+    "2026-03": 6.4373,
+    "2026-04": 6.5117,
+    "2026-05": 6.28,
+    "2026-06": 5.922,
+    "2026-07": 5.917,
+    "2026-08": 6.3736,
+    "2026-09": 6.3473,
+    "2026-10": 5.5916,
+    "2026-11": 5.2975
+   }
+  },
+  {
+   "papel": "EDP",
+   "nome": "EDP",
+   "setor": "Energia",
+   "isin": "PTEDP0AM0009",
+   "preco": 4.87,
+   "data_preco": "2026-11-03",
+   "variacao_12m_pct": 11.0,
+   "proventos_por_ano": {
+    "2021": 0.19,
+    "2022": 0.19,
+    "2023": 0.19,
+    "2024": 0.195,
+    "2025": 0.2
+   },
+   "estado_por_ano": {
+    "2021": [
+     "coincide"
+    ],
+    "2022": [
+     "oficial"
+    ],
+    "2023": [
+     "oficial"
+    ],
+    "2024": [
+     "oficial"
+    ],
+    "2025": [
+     "oficial"
+    ]
+   },
+   "proventos_12m": 0.205,
+   "dpa_medio": 0.193,
+   "dpa_aparado": 0.191667,
+   "dy_12m_pct": 4.21,
+   "dy_medio_pct": 3.96,
+   "teto": 3.0523,
+   "teto_robusto": 3.0313,
+   "faixa_teto": [
+    2.6355,
+    3.6258
+   ],
+   "margem_pct": -37.3,
+   "status": "acima",
+   "status_rotulo": "Acima do teto calculado",
+   "liquidez_mediana_12m_eur": 36191790,
+   "pct_dias_sem_negocio_12m": 0.0,
+   "pct_eventos_oficiais": 67,
+   "tem_scrip": false,
+   "eventos": [
+    {
+     "data_pagamento": "2026-05-05",
+     "valor_bruto": 0.205,
+     "tipo": "dinheiro",
+     "exercicio": "2025",
+     "estado": "coincide",
+     "fonte_url": "https://edp.com/sites/default/files/document/2026-04/20260416_EDP_Pagamento_de_dividendos.pdf",
+     "nota": "comunicado localizado; valor da fonte de cotações e da proposta noticiada; dia aproximado"
+    },
+    {
+     "data_pagamento": "2025-05-06",
+     "valor_bruto": 0.2,
+     "tipo": "dinheiro",
+     "exercicio": "2024",
+     "estado": "oficial",
+     "fonte_url": "https://edp.com/en/investors/investor-information/market-notifications/payment-dividends-year-2024",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2024-05-08",
+     "valor_bruto": 0.195,
+     "tipo": "dinheiro",
+     "exercicio": "2023",
+     "estado": "oficial",
+     "fonte_url": "https://www.edp.com/en/node/84036",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2023-05-03",
+     "valor_bruto": 0.19,
+     "tipo": "dinheiro",
+     "exercicio": "2022",
+     "estado": "oficial",
+     "fonte_url": "https://edp.com/en/investors/investor-information/market-notifications/payment-dividends-year-2022",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2022-04-28",
+     "valor_bruto": 0.19,
+     "tipo": "dinheiro",
+     "exercicio": "2021",
+     "estado": "oficial",
+     "fonte_url": "https://www.edp.com/en/investors/investor-information/market-notifications/payment-dividends-year-2021",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2021-05-15",
+     "valor_bruto": 0.19,
+     "tipo": "dinheiro",
+     "exercicio": "2020",
+     "estado": "coincide",
+     "fonte_url": "",
+     "nota": "fonte de cotações; EDP conferida em 2022-2025 sem diferenças; dia aproximado"
+    }
+   ],
+   "alertas": [],
+   "historico_preco_mensal": {
+    "2021-12": 4.7853,
+    "2022-01": 4.5516,
+    "2022-02": 4.1678,
+    "2022-03": 4.281,
+    "2022-04": 4.5854,
+    "2022-05": 4.5331,
+    "2022-06": 4.5587,
+    "2022-07": 4.6915,
+    "2022-08": 5.044,
+    "2022-09": 4.8024,
+    "2022-10": 4.3305,
+    "2022-11": 4.426,
+    "2022-12": 4.6517,
+    "2023-01": 4.7607,
+    "2023-02": 4.6839,
+    "2023-03": 4.784,
+    "2023-04": 5.0729,
+    "2023-05": 4.7666,
+    "2023-06": 4.5903,
+    "2023-07": 4.3401,
+    "2023-08": 4.1773,
+    "2023-09": 4.1191,
+    "2023-10": 3.7614,
+    "2023-11": 4.2364,
+    "2023-12": 4.5013,
+    "2024-01": 4.3418,
+    "2024-02": 3.811,
+    "2024-03": 3.6445,
+    "2024-04": 3.558,
+    "2024-05": 3.7265,
+    "2024-06": 3.6593,
+    "2024-07": 3.651,
+    "2024-08": 3.739,
+    "2024-09": 4.0245,
+    "2024-10": 3.8375,
+    "2024-11": 3.4467,
+    "2024-12": 3.1972,
+    "2025-01": 3.0614,
+    "2025-02": 3.0087,
+    "2025-03": 3.0982,
+    "2025-04": 3.1949,
+    "2025-05": 3.4024,
+    "2025-06": 3.6218,
+    "2025-07": 3.8069,
+    "2025-08": 3.765,
+    "2025-09": 3.848,
+    "2025-10": 4.2951,
+    "2025-11": 3.9087,
+    "2025-12": 3.8395,
+    "2026-01": 4.1585,
+    "2026-02": 4.3519,
+    "2026-03": 4.3548,
+    "2026-04": 4.5974,
+    "2026-05": 4.41,
+    "2026-06": 4.4321,
+    "2026-07": 4.5323,
+    "2026-08": 4.5783,
+    "2026-09": 4.754,
+    "2026-10": 4.8118,
+    "2026-11": 4.86
+   }
+  },
+  {
+   "papel": "EDPR",
+   "nome": "EDP Renováveis",
+   "setor": "Energia renovável",
+   "isin": "ES0127797019",
+   "preco": 13.05,
+   "data_preco": "2026-11-03",
+   "variacao_12m_pct": 0.0,
+   "proventos_por_ano": {
+    "2021": 0.08,
+    "2022": 0.09,
+    "2023": 0.265,
+    "2024": 0.201,
+    "2025": 0.084
+   },
+   "estado_por_ano": {
+    "2021": [
+     "oficial"
+    ],
+    "2022": [
+     "oficial"
+    ],
+    "2023": [
+     "oficial"
+    ],
+    "2024": [
+     "oficial"
+    ],
+    "2025": [
+     "oficial"
+    ]
+   },
+   "proventos_12m": 0.124,
+   "dpa_medio": 0.144,
+   "dpa_aparado": 0.125,
+   "dy_12m_pct": 0.95,
+   "dy_medio_pct": 1.1,
+   "teto": 2.2774,
+   "teto_robusto": 1.9769,
+   "faixa_teto": [
+    1.9664,
+    2.7052
+   ],
+   "margem_pct": -82.5,
+   "status": "acima",
+   "status_rotulo": "Acima do teto calculado",
+   "liquidez_mediana_12m_eur": 11851387,
+   "pct_dias_sem_negocio_12m": 0.0,
+   "pct_eventos_oficiais": 100,
+   "tem_scrip": true,
+   "eventos": [
+    {
+     "data_pagamento": "2026-06-02",
+     "valor_bruto": 0.124,
+     "tipo": "scrip",
+     "exercicio": "2025",
+     "estado": "oficial",
+     "fonte_url": "https://www.edpr-investors.com/sites/edpr-investors/files/document/2026-05/EDPR_Scrip_Dividend_Launch_0.pdf",
+     "nota": "scrip: preço fixo de compra do direito pela EDPR"
+    },
+    {
+     "data_pagamento": "2025-05-15",
+     "valor_bruto": 0.084,
+     "tipo": "scrip",
+     "exercicio": "2024",
+     "estado": "oficial",
+     "fonte_url": "https://www.edpr-investors.com/en/share/dividend-history",
+     "nota": "scrip; dia aproximado"
+    },
+    {
+     "data_pagamento": "2024-05-15",
+     "valor_bruto": 0.201,
+     "tipo": "scrip",
+     "exercicio": "2023",
+     "estado": "oficial",
+     "fonte_url": "https://www.edpr-investors.com/en/share/dividend-history",
+     "nota": "scrip; dia aproximado"
+    },
+    {
+     "data_pagamento": "2023-05-15",
+     "valor_bruto": 0.265,
+     "tipo": "scrip",
+     "exercicio": "2022",
+     "estado": "oficial",
+     "fonte_url": "https://www.edpr-investors.com/en/share/dividend-history",
+     "nota": "dividendo em ações (scrip); a fonte de cotações registou zero; dia aproximado"
+    },
+    {
+     "data_pagamento": "2022-05-15",
+     "valor_bruto": 0.09,
+     "tipo": "dinheiro",
+     "exercicio": "2021",
+     "estado": "oficial",
+     "fonte_url": "https://www.edpr-investors.com/en/share/dividend-history",
+     "nota": "dia aproximado"
+    },
+    {
+     "data_pagamento": "2021-05-15",
+     "valor_bruto": 0.08,
+     "tipo": "dinheiro",
+     "exercicio": "2020",
+     "estado": "oficial",
+     "fonte_url": "https://www.edpr-investors.com/en/share/dividend-history",
+     "nota": "dia aproximado"
+    }
+   ],
+   "alertas": [
+    {
+     "nivel": "info",
+     "codigo": "scrip",
+     "texto": "Parte dos proventos foi paga em ações (scrip). Conta-se o valor de referência por ação indicado pela empresa."
+    },
+    {
+     "nivel": "atencao",
+     "codigo": "queda_proventos",
+     "texto": "Proventos de 2025 caíram mais de 30% face a 2024."
+    }
+   ],
+   "historico_preco_mensal": {
+    "2021-12": 21.0689,
+    "2022-01": 18.9247,
+    "2022-02": 17.8907,
+    "2022-03": 21.5766,
+    "2022-04": 22.5242,
+    "2022-05": 20.9196,
+    "2022-06": 21.9104,
+    "2022-07": 23.3909,
+    "2022-08": 24.9922,
+    "2022-09": 22.8448,
+    "2022-10": 20.1089,
+    "2022-11": 21.3563,
+    "2022-12": 20.8819,
+    "2023-01": 20.1546,
+    "2023-02": 19.2631,
+    "2023-03": 19.6652,
+    "2023-04": 19.8947,
+    "2023-05": 19.3058,
+    "2023-06": 18.7633,
+    "2023-07": 17.4802,
+    "2023-08": 16.7605,
+    "2023-09": 16.0132,
+    "2023-10": 14.2502,
+    "2023-11": 15.7527,
+    "2023-12": 17.3478,
+    "2024-01": 16.0464,
+    "2024-02": 13.6741,
+    "2024-03": 12.9849,
+    "2024-04": 12.465,
+    "2024-05": 14.3895,
+    "2024-06": 13.9725,
+    "2024-07": 13.8435,
+    "2024-08": 14.1573,
+    "2024-09": 15.3986,
+    "2024-10": 13.8696,
+    "2024-11": 11.2067,
+    "2024-12": 9.9898,
+    "2025-01": 9.2702,
+    "2025-02": 8.7905,
+    "2025-03": 8.2036,
+    "2025-04": 7.6583,
+    "2025-05": 8.6862,
+    "2025-06": 9.5119,
+    "2025-07": 10.2109,
+    "2025-08": 10.1521,
+    "2025-09": 10.2968,
+    "2025-10": 12.86,
+    "2025-11": 11.8,
+    "2025-12": 11.79,
+    "2026-01": 12.759,
+    "2026-02": 13.2555,
+    "2026-03": 13.1495,
+    "2026-04": 13.9125,
+    "2026-05": 14.149,
+    "2026-06": 13.7791,
+    "2026-07": 13.9226,
+    "2026-08": 13.5662,
+    "2026-09": 12.965,
+    "2026-10": 12.3464,
+    "2026-11": 12.81
+   }
+  },
+  {
+   "papel": "EGL",
+   "nome": "Mota-Engil",
+   "setor": "Construção e engenharia",
+   "isin": "PTMEN0AE0005",
+   "preco": 4.47,
+   "data_preco": "2026-11-03",
+   "variacao_12m_pct": -23.8,
+   "proventos_por_ano": {
+    "2021": 0,
+    "2022": 0.069,
+    "2023": 0.10023,
+    "2024": 0.1277,
+    "2025": 0.1497
+   },
+   "estado_por_ano": {
+    "2021": [],
+    "2022": [
+     "oficial"
+    ],
+    "2023": [
+     "oficial"
+    ],
+    "2024": [
+     "oficial"
+    ],
+    "2025": [
+     "oficial"
+    ]
+   },
+   "proventos_12m": 0.173,
+   "dpa_medio": 0.089326,
+   "dpa_aparado": 0.098977,
+   "dy_12m_pct": 3.87,
+   "dy_medio_pct": 2.0,
+   "teto": 1.4127,
+   "teto_robusto": 1.5653,
+   "faixa_teto": [
+    1.2198,
+    1.6781
+   ],
+   "margem_pct": -68.4,
+   "status": "acima",
+   "status_rotulo": "Acima do teto calculado",
+   "liquidez_mediana_12m_eur": 7284977,
+   "pct_dias_sem_negocio_12m": 0.0,
+   "pct_eventos_oficiais": 100,
+   "tem_scrip": false,
+   "eventos": [
+    {
+     "data_pagamento": "2026-05-15",
+     "valor_bruto": 0.173,
+     "tipo": "dinheiro",
+     "exercicio": "2025",
+     "estado": "oficial",
+     "fonte_url": "https://www.mota-engil.com/app/uploads/2026/05/Comunicado-dividendos-2026.pdf",
+     "nota": "dia aproximado"
+    },
+    {
+     "data_pagamento": "2025-05-15",
+     "valor_bruto": 0.1497,
+     "tipo": "dinheiro",
+     "exercicio": "2024",
+     "estado": "oficial",
+     "fonte_url": "https://www.mota-engil.com/app/uploads/2025/05/Comunicado-dividendos-2025.pdf",
+     "nota": "dia aproximado"
+    },
+    {
+     "data_pagamento": "2024-05-15",
+     "valor_bruto": 0.1277,
+     "tipo": "dinheiro",
+     "exercicio": "2023",
+     "estado": "oficial",
+     "fonte_url": "https://www.mota-engil.com/app/uploads/2025/03/Comunicado-dividendos-2024.pdf",
+     "nota": "dia aproximado"
+    },
+    {
+     "data_pagamento": "2023-05-15",
+     "valor_bruto": 0.10023,
+     "tipo": "dinheiro",
+     "exercicio": "2022",
+     "estado": "oficial",
+     "fonte_url": "https://www.mota-engil.com/app/uploads/2025/03/Comunicado-dividendos-2023.pdf",
+     "nota": "dia aproximado"
+    },
+    {
+     "data_pagamento": "2022-05-25",
+     "valor_bruto": 0.069,
+     "tipo": "dinheiro",
+     "exercicio": "2021",
+     "estado": "oficial",
+     "fonte_url": "https://www.mota-engil.com/en/investors/mota-engil-share/",
+     "nota": ""
+    }
+   ],
+   "alertas": [
+    {
+     "nivel": "atencao",
+     "codigo": "anos_sem_proventos",
+     "texto": "Sem proventos em 2021: a média de 5 anos fica mais baixa e o teto também."
+    },
+    {
+     "nivel": "atencao",
+     "codigo": "evento_nao_cadastrado",
+     "texto": "A fonte de cotações mostra provento sem registo oficial no cadastro: 2022-10-03 (0.01725)."
+    }
+   ],
+   "historico_preco_mensal": {
+    "2021-12": 1.2494,
+    "2022-01": 1.2749,
+    "2022-02": 1.2345,
+    "2022-03": 1.2924,
+    "2022-04": 1.3269,
+    "2022-05": 1.3149,
+    "2022-06": 1.2814,
+    "2022-07": 1.2181,
+    "2022-08": 1.2136,
+    "2022-09": 1.1691,
+    "2022-10": 1.1317,
+    "2022-11": 1.2377,
+    "2022-12": 1.1981,
+    "2023-01": 1.3767,
+    "2023-02": 1.9061,
+    "2023-03": 1.5556,
+    "2023-04": 1.8147,
+    "2023-05": 2.005,
+    "2023-06": 2.0488,
+    "2023-07": 2.3331,
+    "2023-08": 2.5143,
+    "2023-09": 3.2414,
+    "2023-10": 2.9932,
+    "2023-11": 3.2457,
+    "2023-12": 4.0474,
+    "2024-01": 4.6889,
+    "2024-02": 5.3024,
+    "2024-03": 5.0753,
+    "2024-04": 4.412,
+    "2024-05": 4.0304,
+    "2024-06": 3.6502,
+    "2024-07": 3.5668,
+    "2024-08": 3.3668,
+    "2024-09": 2.5874,
+    "2024-10": 2.519,
+    "2024-11": 2.5546,
+    "2024-12": 2.7567,
+    "2025-01": 2.9131,
+    "2025-02": 2.9395,
+    "2025-03": 3.2923,
+    "2025-04": 3.3193,
+    "2025-05": 4.2891,
+    "2025-06": 4.0401,
+    "2025-07": 4.179,
+    "2025-08": 5.1651,
+    "2025-09": 5.1144,
+    "2025-10": 5.7166,
+    "2025-11": 5.4388,
+    "2025-12": 4.827,
+    "2026-01": 4.818,
+    "2026-02": 4.9832,
+    "2026-03": 4.4709,
+    "2026-04": 4.8193,
+    "2026-05": 4.794,
+    "2026-06": 4.6388,
+    "2026-07": 4.6055,
+    "2026-08": 4.5794,
+    "2026-09": 5.0052,
+    "2026-10": 4.6939,
+    "2026-11": 4.505
+   }
+  },
+  {
+   "papel": "GALP",
+   "nome": "Galp Energia",
+   "setor": "Petróleo, gás e energia",
+   "isin": "PTGAL0AM0009",
+   "preco": 20.01,
+   "data_preco": "2026-11-03",
+   "variacao_12m_pct": 12.8,
+   "proventos_por_ano": {
+    "2021": 0.6,
+    "2022": 0.51,
+    "2023": 0.53,
+    "2024": 0.55,
+    "2025": 0.65
+   },
+   "estado_por_ano": {
+    "2021": [
+     "oficial"
+    ],
+    "2022": [
+     "oficial"
+    ],
+    "2023": [
+     "oficial"
+    ],
+    "2024": [
+     "oficial"
+    ],
+    "2025": [
+     "oficial"
+    ]
+   },
+   "proventos_12m": 0.68,
+   "dpa_medio": 0.568,
+   "dpa_aparado": 0.56,
+   "dy_12m_pct": 3.4,
+   "dy_medio_pct": 2.84,
+   "teto": 8.9831,
+   "teto_robusto": 8.8566,
+   "faixa_teto": [
+    7.7564,
+    10.6707
+   ],
+   "margem_pct": -55.1,
+   "status": "acima",
+   "status_rotulo": "Acima do teto calculado",
+   "liquidez_mediana_12m_eur": 33492209,
+   "pct_dias_sem_negocio_12m": 0.0,
+   "pct_eventos_oficiais": 100,
+   "tem_scrip": false,
+   "eventos": [
+    {
+     "data_pagamento": "2026-08-21",
+     "valor_bruto": 0.35,
+     "tipo": "dinheiro",
+     "exercicio": "2026",
+     "estado": "oficial",
+     "fonte_url": "https://www.galp.com/corp/en/investors/information-to-shareholders/dividends",
+     "nota": "intercalar"
+    },
+    {
+     "data_pagamento": "2026-05-21",
+     "valor_bruto": 0.33,
+     "tipo": "dinheiro",
+     "exercicio": "2025",
+     "estado": "oficial",
+     "fonte_url": "https://www.galp.com/corp/en/investors/information-to-shareholders/dividends",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2025-08-18",
+     "valor_bruto": 0.31,
+     "tipo": "dinheiro",
+     "exercicio": "2025",
+     "estado": "oficial",
+     "fonte_url": "https://www.galp.com/corp/en/investors/information-to-shareholders/dividends",
+     "nota": "intercalar"
+    },
+    {
+     "data_pagamento": "2025-05-28",
+     "valor_bruto": 0.34,
+     "tipo": "dinheiro",
+     "exercicio": "2024",
+     "estado": "oficial",
+     "fonte_url": "https://www.galp.com/corp/en/investors/information-to-shareholders/dividends",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2024-08-19",
+     "valor_bruto": 0.28,
+     "tipo": "dinheiro",
+     "exercicio": "2024",
+     "estado": "oficial",
+     "fonte_url": "https://www.galp.com/corp/en/investors/information-to-shareholders/dividends",
+     "nota": "intercalar"
+    },
+    {
+     "data_pagamento": "2024-05-31",
+     "valor_bruto": 0.27,
+     "tipo": "dinheiro",
+     "exercicio": "2023",
+     "estado": "oficial",
+     "fonte_url": "https://www.galp.com/corp/en/investors/information-to-shareholders/dividends",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2023-08-25",
+     "valor_bruto": 0.27,
+     "tipo": "dinheiro",
+     "exercicio": "2023",
+     "estado": "oficial",
+     "fonte_url": "https://www.galp.com/corp/en/investors/information-to-shareholders/dividends",
+     "nota": "intercalar"
+    },
+    {
+     "data_pagamento": "2023-05-23",
+     "valor_bruto": 0.26,
+     "tipo": "dinheiro",
+     "exercicio": "2022",
+     "estado": "oficial",
+     "fonte_url": "https://www.galp.com/corp/en/investors/information-to-shareholders/dividends",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2022-09-20",
+     "valor_bruto": 0.26,
+     "tipo": "dinheiro",
+     "exercicio": "2022",
+     "estado": "oficial",
+     "fonte_url": "https://www.galp.com/corp/en/investors/information-to-shareholders/dividends",
+     "nota": "intercalar"
+    },
+    {
+     "data_pagamento": "2022-05-10",
+     "valor_bruto": 0.25,
+     "tipo": "dinheiro",
+     "exercicio": "2021",
+     "estado": "oficial",
+     "fonte_url": "https://www.galp.com/corp/en/investors/information-to-shareholders/dividends",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2021-09-16",
+     "valor_bruto": 0.25,
+     "tipo": "dinheiro",
+     "exercicio": "2021",
+     "estado": "oficial",
+     "fonte_url": "https://www.galp.com/corp/en/investors/information-to-shareholders/dividends",
+     "nota": "intercalar"
+    },
+    {
+     "data_pagamento": "2021-05-20",
+     "valor_bruto": 0.35,
+     "tipo": "dinheiro",
+     "exercicio": "2020",
+     "estado": "oficial",
+     "fonte_url": "https://www.galp.com/corp/Portals/0/Recursos/Investidores/SharedResources/Dividendos/PT/2021_05_10_Dividendo_vpt.pdf",
+     "nota": ""
+    }
+   ],
+   "alertas": [],
+   "historico_preco_mensal": {
+    "2021-12": 8.7108,
+    "2022-01": 9.8577,
+    "2022-02": 10.1563,
+    "2022-03": 11.4137,
+    "2022-04": 11.8231,
+    "2022-05": 11.3986,
+    "2022-06": 12.204,
+    "2022-07": 10.2959,
+    "2022-08": 10.9245,
+    "2022-09": 10.4846,
+    "2022-10": 10.3751,
+    "2022-11": 11.5104,
+    "2022-12": 12.4093,
+    "2023-01": 13.0183,
+    "2023-02": 12.1333,
+    "2023-03": 10.7045,
+    "2023-04": 11.234,
+    "2023-05": 10.7937,
+    "2023-06": 10.9294,
+    "2023-07": 11.4883,
+    "2023-08": 12.5811,
+    "2023-09": 14.1576,
+    "2023-10": 14.5988,
+    "2023-11": 14.057,
+    "2023-12": 13.7968,
+    "2024-01": 14.7192,
+    "2024-02": 14.7773,
+    "2024-03": 15.3342,
+    "2024-04": 17.848,
+    "2024-05": 20.2159,
+    "2024-06": 19.6027,
+    "2024-07": 19.9665,
+    "2024-08": 19.5584,
+    "2024-09": 17.673,
+    "2024-10": 17.1143,
+    "2024-11": 15.8993,
+    "2024-12": 16.633,
+    "2025-01": 16.4795,
+    "2025-02": 15.7705,
+    "2025-03": 15.3126,
+    "2025-04": 13.735,
+    "2025-05": 13.9255,
+    "2025-06": 15.4152,
+    "2025-07": 16.3596,
+    "2025-08": 16.389,
+    "2025-09": 16.1089,
+    "2025-10": 16.6315,
+    "2025-11": 17.7047,
+    "2025-12": 15.2305,
+    "2026-01": 15.7445,
+    "2026-02": 17.8307,
+    "2026-03": 20.4461,
+    "2026-04": 19.6487,
+    "2026-05": 19.3247,
+    "2026-06": 18.8232,
+    "2026-07": 19.4611,
+    "2026-08": 20.7681,
+    "2026-09": 21.7905,
+    "2026-10": 21.9718,
+    "2026-11": 20.165
+   }
+  },
+  {
+   "papel": "IBS",
+   "nome": "Ibersol",
+   "setor": "Restauração",
+   "isin": "PTIBS0AM0008",
+   "preco": 10.32,
+   "data_preco": "2026-11-03",
+   "variacao_12m_pct": 2.2,
+   "proventos_por_ano": {
+    "2021": 0,
+    "2022": 0.135,
+    "2023": 0.7,
+    "2024": 0.5,
+    "2025": 0.7
+   },
+   "estado_por_ano": {
+    "2021": [],
+    "2022": [
+     "oficial"
+    ],
+    "2023": [
+     "oficial"
+    ],
+    "2024": [
+     "oficial"
+    ],
+    "2025": [
+     "oficial"
+    ]
+   },
+   "proventos_12m": 0.7,
+   "dpa_medio": 0.407,
+   "dpa_aparado": 0.445,
+   "dy_12m_pct": 6.78,
+   "dy_medio_pct": 3.94,
+   "teto": 6.4368,
+   "teto_robusto": 7.0378,
+   "faixa_teto": [
+    5.5578,
+    7.6461
+   ],
+   "margem_pct": -37.6,
+   "status": "acima",
+   "status_rotulo": "Acima do teto calculado",
+   "liquidez_mediana_12m_eur": 205097,
+   "pct_dias_sem_negocio_12m": 0.0,
+   "pct_eventos_oficiais": 100,
+   "tem_scrip": false,
+   "eventos": [
+    {
+     "data_pagamento": "2026-06-15",
+     "valor_bruto": 0.7,
+     "tipo": "dinheiro",
+     "exercicio": "2025",
+     "estado": "oficial",
+     "fonte_url": "https://www.ibersol.pt/investidores/assembleias-gerais/2026/12_Propostas_pontos_1_a_7.pdf",
+     "nota": "proposta à AG (inclui reservas livres); dia aproximado"
+    },
+    {
+     "data_pagamento": "2025-06-19",
+     "valor_bruto": 0.7,
+     "tipo": "dinheiro",
+     "exercicio": "2024",
+     "estado": "oficial",
+     "fonte_url": "https://www.ibersol.pt/investidores/comunicados/2025/ANUNCIODIV24ingles.pdf",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2024-06-19",
+     "valor_bruto": 0.5,
+     "tipo": "dinheiro",
+     "exercicio": "2023",
+     "estado": "oficial",
+     "fonte_url": "https://www.ibersol.pt/investidores/comunicados/2024/ANUNCIODIV23.pdf",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2023-06-20",
+     "valor_bruto": 0.7,
+     "tipo": "dinheiro",
+     "exercicio": "2022",
+     "estado": "oficial",
+     "fonte_url": "https://www.ibersol.pt/investidores/comunicados/2023/Pagamento_dividendos_2022_PT.pdf",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2022-06-21",
+     "valor_bruto": 0.135,
+     "tipo": "dinheiro",
+     "exercicio": "2021",
+     "estado": "oficial",
+     "fonte_url": "https://www.ibersol.pt/investidores/comunicados/2022/ANUNCIODIV21.pdf",
+     "nota": ""
+    }
+   ],
+   "alertas": [
+    {
+     "nivel": "atencao",
+     "codigo": "anos_sem_proventos",
+     "texto": "Sem proventos em 2021: a média de 5 anos fica mais baixa e o teto também."
+    }
+   ],
+   "historico_preco_mensal": {
+    "2021-12": 5.7885,
+    "2022-01": 5.5367,
+    "2022-02": 5.5975,
+    "2022-03": 5.8952,
+    "2022-04": 6.4231,
+    "2022-05": 6.4436,
+    "2022-06": 6.8928,
+    "2022-07": 6.5074,
+    "2022-08": 6.5846,
+    "2022-09": 6.2392,
+    "2022-10": 5.9934,
+    "2022-11": 6.2461,
+    "2022-12": 6.1712,
+    "2023-01": 6.2945,
+    "2023-02": 6.8371,
+    "2023-03": 7.0643,
+    "2023-04": 7.2094,
+    "2023-05": 7.5414,
+    "2023-06": 7.3891,
+    "2023-07": 6.8819,
+    "2023-08": 6.7583,
+    "2023-09": 6.9219,
+    "2023-10": 6.7664,
+    "2023-11": 6.6536,
+    "2023-12": 6.6832,
+    "2024-01": 6.6564,
+    "2024-02": 6.6371,
+    "2024-03": 6.538,
+    "2024-04": 6.9829,
+    "2024-05": 7.2818,
+    "2024-06": 7.125,
+    "2024-07": 7.0087,
+    "2024-08": 7.1209,
+    "2024-09": 7.24,
+    "2024-10": 7.233,
+    "2024-11": 7.4343,
+    "2024-12": 7.494,
+    "2025-01": 7.9518,
+    "2025-02": 8.286,
+    "2025-03": 8.7562,
+    "2025-04": 8.888,
+    "2025-05": 9.3676,
+    "2025-06": 9.7262,
+    "2025-07": 9.6922,
+    "2025-08": 9.6695,
+    "2025-09": 9.9582,
+    "2025-10": 10.1035,
+    "2025-11": 10.26,
+    "2025-12": 9.9576,
+    "2026-01": 10.1819,
+    "2026-02": 11.145,
+    "2026-03": 10.8205,
+    "2026-04": 11.5565,
+    "2026-05": 11.775,
+    "2026-06": 10.365,
+    "2026-07": 9.4035,
+    "2026-08": 9.9552,
+    "2026-09": 10.1268,
+    "2026-10": 10.0923,
+    "2026-11": 10.36
+   }
+  },
+  {
+   "papel": "JMT",
+   "nome": "Jerónimo Martins",
+   "setor": "Retalho alimentar",
+   "isin": "PTJMT0AE0001",
+   "preco": 18.55,
+   "data_preco": "2026-11-03",
+   "variacao_12m_pct": -16.2,
+   "proventos_por_ano": {
+    "2021": 0.288,
+    "2022": 0.785,
+    "2023": 0.55,
+    "2024": 0.655,
+    "2025": 0.59
+   },
+   "estado_por_ano": {
+    "2021": [
+     "oficial"
+    ],
+    "2022": [
+     "oficial"
+    ],
+    "2023": [
+     "oficial"
+    ],
+    "2024": [
+     "oficial"
+    ],
+    "2025": [
+     "oficial"
+    ]
+   },
+   "proventos_12m": 0.65,
+   "dpa_medio": 0.5736,
+   "dpa_aparado": 0.598333,
+   "dy_12m_pct": 3.5,
+   "dy_medio_pct": 3.09,
+   "teto": 9.0716,
+   "teto_robusto": 9.4628,
+   "faixa_teto": [
+    7.8329,
+    10.7759
+   ],
+   "margem_pct": -51.1,
+   "status": "acima",
+   "status_rotulo": "Acima do teto calculado",
+   "liquidez_mediana_12m_eur": 18567338,
+   "pct_dias_sem_negocio_12m": 0.0,
+   "pct_eventos_oficiais": 83,
+   "tem_scrip": false,
+   "eventos": [
+    {
+     "data_pagamento": "2026-05-15",
+     "valor_bruto": 0.65,
+     "tipo": "dinheiro",
+     "exercicio": "2025",
+     "estado": "a_conferir",
+     "fonte_url": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2026/03/30/Connect_propostasponto124ordemtrabalhos2026.pdf",
+     "nota": "valor anunciado com os resultados de 2025 (imprensa); proposta localizada; dia aproximado"
+    },
+    {
+     "data_pagamento": "2025-05-15",
+     "valor_bruto": 0.59,
+     "tipo": "dinheiro",
+     "exercicio": "2024",
+     "estado": "oficial",
+     "fonte_url": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2025/04/24/Connect_dividendpayment2025.pdf",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2024-05-15",
+     "valor_bruto": 0.655,
+     "tipo": "dinheiro",
+     "exercicio": "2023",
+     "estado": "oficial",
+     "fonte_url": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2024/04/18/Connect_aprovacaodividendo2023.pdf",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2023-05-15",
+     "valor_bruto": 0.55,
+     "tipo": "dinheiro",
+     "exercicio": "2022",
+     "estado": "oficial",
+     "fonte_url": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2023/04/20/Connect_comunicadodeliberacoesag2023.pdf",
+     "nota": "dia aproximado"
+    },
+    {
+     "data_pagamento": "2022-05-15",
+     "valor_bruto": 0.785,
+     "tipo": "dinheiro",
+     "exercicio": "2021",
+     "estado": "oficial",
+     "fonte_url": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2022/04/21/Connect_comunicadodeliberacoesag2022.pdf",
+     "nota": "dia aproximado"
+    },
+    {
+     "data_pagamento": "2021-05-15",
+     "valor_bruto": 0.288,
+     "tipo": "dinheiro",
+     "exercicio": "2020",
+     "estado": "oficial",
+     "fonte_url": "https://live.euronext.com/sites/default/files/Connect_deliberacoesagm2021.pdf",
+     "nota": "dia aproximado"
+    }
+   ],
+   "alertas": [
+    {
+     "nivel": "atencao",
+     "codigo": "proventos_a_conferir",
+     "texto": "Proventos de 2026 ainda sem documento oficial no cadastro."
+    }
+   ],
+   "historico_preco_mensal": {
+    "2021-12": 20.0359,
+    "2022-01": 20.9305,
+    "2022-02": 19.9625,
+    "2022-03": 19.9124,
+    "2022-04": 20.9516,
+    "2022-05": 19.2114,
+    "2022-06": 19.0845,
+    "2022-07": 21.2724,
+    "2022-08": 22.5643,
+    "2022-09": 21.7736,
+    "2022-10": 19.7195,
+    "2022-11": 20.8591,
+    "2022-12": 20.5762,
+    "2023-01": 20.5005,
+    "2023-02": 19.585,
+    "2023-03": 20.25,
+    "2023-04": 21.7556,
+    "2023-05": 22.7664,
+    "2023-06": 24.8236,
+    "2023-07": 25.8514,
+    "2023-08": 23.9417,
+    "2023-09": 21.7133,
+    "2023-10": 20.5277,
+    "2023-11": 22.2,
+    "2023-12": 23.2747,
+    "2024-01": 21.5091,
+    "2024-02": 21.9638,
+    "2024-03": 19.58,
+    "2024-04": 18.4143,
+    "2024-05": 20.2114,
+    "2024-06": 19.536,
+    "2024-07": 18.4948,
+    "2024-08": 16.4191,
+    "2024-09": 16.8571,
+    "2024-10": 17.0943,
+    "2024-11": 18.1538,
+    "2024-12": 18.4155,
+    "2025-01": 18.805,
+    "2025-02": 19.856,
+    "2025-03": 19.9014,
+    "2025-04": 20.651,
+    "2025-05": 21.8714,
+    "2025-06": 21.3657,
+    "2025-07": 22.1991,
+    "2025-08": 21.0057,
+    "2025-09": 21.2309,
+    "2025-10": 20.6643,
+    "2025-11": 21.635,
+    "2025-12": 20.131,
+    "2026-01": 20.551,
+    "2026-02": 21.128,
+    "2026-03": 21.1336,
+    "2026-04": 20.773,
+    "2026-05": 18.812,
+    "2026-06": 17.5541,
+    "2026-07": 16.7561,
+    "2026-08": 17.4976,
+    "2026-09": 17.9977,
+    "2026-10": 17.7445,
+    "2026-11": 18.54
+   }
+  },
+  {
+   "papel": "NOS",
+   "nome": "NOS",
+   "setor": "Telecomunicações e media",
+   "isin": "PTZON0AM0006",
+   "preco": 5.24,
+   "data_preco": "2026-11-03",
+   "variacao_12m_pct": 42.8,
+   "proventos_por_ano": {
+    "2021": 0.278,
+    "2022": 0.278,
+    "2023": 0.43,
+    "2024": 0.35,
+    "2025": 0.4
+   },
+   "estado_por_ano": {
+    "2021": [
+     "oficial"
+    ],
+    "2022": [
+     "oficial"
+    ],
+    "2023": [
+     "oficial"
+    ],
+    "2024": [
+     "oficial"
+    ],
+    "2025": [
+     "oficial"
+    ]
+   },
+   "proventos_12m": 0.45,
+   "dpa_medio": 0.3472,
+   "dpa_aparado": 0.342667,
+   "dy_12m_pct": 8.59,
+   "dy_medio_pct": 6.63,
+   "teto": 5.4911,
+   "teto_robusto": 5.4194,
+   "faixa_teto": [
+    4.7412,
+    6.5226
+   ],
+   "margem_pct": 4.8,
+   "status": "abaixo",
+   "status_rotulo": "Abaixo do teto calculado",
+   "liquidez_mediana_12m_eur": 2478608,
+   "pct_dias_sem_negocio_12m": 0.0,
+   "pct_eventos_oficiais": 100,
+   "tem_scrip": false,
+   "eventos": [
+    {
+     "data_pagamento": "2026-05-08",
+     "valor_bruto": 0.45,
+     "tipo": "dinheiro",
+     "exercicio": "2025",
+     "estado": "oficial",
+     "fonte_url": "https://www.nos.pt/en/institutional/investors/capital-markets/dividends",
+     "nota": "inclui extraordinário de 0.10"
+    },
+    {
+     "data_pagamento": "2025-05-15",
+     "valor_bruto": 0.4,
+     "tipo": "dinheiro",
+     "exercicio": "2024",
+     "estado": "oficial",
+     "fonte_url": "https://www.nos.pt/en/institutional/investors/capital-markets/dividends",
+     "nota": "inclui extraordinário de 0.05; dia aproximado"
+    },
+    {
+     "data_pagamento": "2024-05-15",
+     "valor_bruto": 0.35,
+     "tipo": "dinheiro",
+     "exercicio": "2023",
+     "estado": "oficial",
+     "fonte_url": "https://www.nos.pt/en/institutional/investors/capital-markets/dividends",
+     "nota": "dia aproximado"
+    },
+    {
+     "data_pagamento": "2023-05-15",
+     "valor_bruto": 0.43,
+     "tipo": "dinheiro",
+     "exercicio": "2022",
+     "estado": "oficial",
+     "fonte_url": "https://www.nos.pt/en/institutional/investors/capital-markets/dividends",
+     "nota": "inclui extraordinário de 0.152; dia aproximado"
+    },
+    {
+     "data_pagamento": "2022-05-15",
+     "valor_bruto": 0.278,
+     "tipo": "dinheiro",
+     "exercicio": "2021",
+     "estado": "oficial",
+     "fonte_url": "https://www.nos.pt/en/institutional/investors/capital-markets/dividends",
+     "nota": "dia aproximado"
+    },
+    {
+     "data_pagamento": "2021-05-15",
+     "valor_bruto": 0.278,
+     "tipo": "dinheiro",
+     "exercicio": "2020",
+     "estado": "oficial",
+     "fonte_url": "https://www.nos.pt/en/institutional/investors/capital-markets/dividends",
+     "nota": "dia aproximado"
+    }
+   ],
+   "alertas": [],
+   "historico_preco_mensal": {
+    "2021-12": 3.3865,
+    "2022-01": 3.4493,
+    "2022-02": 3.4763,
+    "2022-03": 3.6094,
+    "2022-04": 3.9787,
+    "2022-05": 3.9152,
+    "2022-06": 3.8562,
+    "2022-07": 3.7467,
+    "2022-08": 3.7274,
+    "2022-09": 3.5399,
+    "2022-10": 3.5992,
+    "2022-11": 3.8907,
+    "2022-12": 3.7908,
+    "2023-01": 3.9268,
+    "2023-02": 4.0836,
+    "2023-03": 4.2183,
+    "2023-04": 4.1842,
+    "2023-05": 3.694,
+    "2023-06": 3.3945,
+    "2023-07": 3.3935,
+    "2023-08": 3.3361,
+    "2023-09": 3.5319,
+    "2023-10": 3.4399,
+    "2023-11": 3.4425,
+    "2023-12": 3.2591,
+    "2024-01": 3.28,
+    "2024-02": 3.1932,
+    "2024-03": 3.45,
+    "2024-04": 3.5005,
+    "2024-05": 3.3493,
+    "2024-06": 3.3245,
+    "2024-07": 3.5189,
+    "2024-08": 3.4943,
+    "2024-09": 3.6117,
+    "2024-10": 3.6096,
+    "2024-11": 3.4483,
+    "2024-12": 3.3555,
+    "2025-01": 3.3432,
+    "2025-02": 3.727,
+    "2025-03": 4.3788,
+    "2025-04": 4.0415,
+    "2025-05": 3.744,
+    "2025-06": 3.8276,
+    "2025-07": 3.758,
+    "2025-08": 3.83,
+    "2025-09": 3.8727,
+    "2025-10": 3.7696,
+    "2025-11": 3.6755,
+    "2025-12": 3.8583,
+    "2026-01": 4.221,
+    "2026-02": 4.7995,
+    "2026-03": 5.325,
+    "2026-04": 5.5598,
+    "2026-05": 5.31,
+    "2026-06": 5.169,
+    "2026-07": 4.8982,
+    "2026-08": 4.8704,
+    "2026-09": 5.2387,
+    "2026-10": 5.2302,
+    "2026-11": 5.2075
+   }
+  },
+  {
+   "papel": "NVG",
+   "nome": "The Navigator Company",
+   "setor": "Papel e celulose",
+   "isin": "PTPTI0AM0006",
+   "preco": 2.992,
+   "data_preco": "2026-11-03",
+   "variacao_12m_pct": -1.6,
+   "proventos_por_ano": {
+    "2021": 0.2103,
+    "2022": 0.3515,
+    "2023": 0.2812,
+    "2024": 0.2109,
+    "2025": 0.24606
+   },
+   "estado_por_ano": {
+    "2021": [
+     "oficial"
+    ],
+    "2022": [
+     "oficial"
+    ],
+    "2023": [
+     "oficial"
+    ],
+    "2024": [
+     "oficial"
+    ],
+    "2025": [
+     "oficial"
+    ]
+   },
+   "proventos_12m": 0.1125,
+   "dpa_medio": 0.259992,
+   "dpa_aparado": 0.246053,
+   "dy_12m_pct": 3.76,
+   "dy_medio_pct": 8.69,
+   "teto": 4.1118,
+   "teto_robusto": 3.8914,
+   "faixa_teto": [
+    3.5503,
+    4.8843
+   ],
+   "margem_pct": 37.4,
+   "status": "abaixo_conferir",
+   "status_rotulo": "Abaixo do teto · conferir dados",
+   "liquidez_mediana_12m_eur": 2452312,
+   "pct_dias_sem_negocio_12m": 0.0,
+   "pct_eventos_oficiais": 89,
+   "tem_scrip": false,
+   "eventos": [
+    {
+     "data_pagamento": "2026-06-15",
+     "valor_bruto": 0.1125,
+     "tipo": "dinheiro",
+     "exercicio": "2025",
+     "estado": "a_conferir",
+     "fonte_url": "",
+     "nota": "valor da fonte de cotações; exercício de 2025 ainda não listado na página da empresa"
+    },
+    {
+     "data_pagamento": "2025-07-01",
+     "valor_bruto": 0.10545,
+     "tipo": "dinheiro",
+     "exercicio": "2024",
+     "estado": "oficial",
+     "fonte_url": "https://thenavigatorcompany.com/investidores/accao-navigator/",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2025-01-14",
+     "valor_bruto": 0.14061,
+     "tipo": "dinheiro",
+     "exercicio": "2024",
+     "estado": "oficial",
+     "fonte_url": "https://thenavigatorcompany.com/investidores/accao-navigator/",
+     "nota": "antecipado"
+    },
+    {
+     "data_pagamento": "2024-06-11",
+     "valor_bruto": 0.2109,
+     "tipo": "dinheiro",
+     "exercicio": "2023",
+     "estado": "oficial",
+     "fonte_url": "https://thenavigatorcompany.com/investidores/accao-navigator/",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2023-05-31",
+     "valor_bruto": 0.2812,
+     "tipo": "dinheiro",
+     "exercicio": "2022",
+     "estado": "oficial",
+     "fonte_url": "https://thenavigatorcompany.com/investidores/accao-navigator/",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2022-12-12",
+     "valor_bruto": 0.2109,
+     "tipo": "dinheiro",
+     "exercicio": "2021",
+     "estado": "oficial",
+     "fonte_url": "https://thenavigatorcompany.com/investidores/accao-navigator/",
+     "nota": "distribuição de reservas"
+    },
+    {
+     "data_pagamento": "2022-06-07",
+     "valor_bruto": 0.1406,
+     "tipo": "dinheiro",
+     "exercicio": "2021",
+     "estado": "oficial",
+     "fonte_url": "https://thenavigatorcompany.com/investidores/accao-navigator/",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2021-12-28",
+     "valor_bruto": 0.0703,
+     "tipo": "dinheiro",
+     "exercicio": "2021",
+     "estado": "oficial",
+     "fonte_url": "https://thenavigatorcompany.com/investidores/accao-navigator/",
+     "nota": "antecipado"
+    },
+    {
+     "data_pagamento": "2021-05-25",
+     "valor_bruto": 0.14,
+     "tipo": "dinheiro",
+     "exercicio": "2020",
+     "estado": "oficial",
+     "fonte_url": "https://thenavigatorcompany.com/investidores/accao-navigator/",
+     "nota": ""
+    }
+   ],
+   "alertas": [
+    {
+     "nivel": "atencao",
+     "codigo": "proventos_a_conferir",
+     "texto": "Proventos de 2026 ainda sem documento oficial no cadastro."
+    }
+   ],
+   "historico_preco_mensal": {
+    "2021-12": 3.2632,
+    "2022-01": 3.3346,
+    "2022-02": 3.4174,
+    "2022-03": 3.235,
+    "2022-04": 3.6628,
+    "2022-05": 4.0175,
+    "2022-06": 3.9236,
+    "2022-07": 3.906,
+    "2022-08": 4.0468,
+    "2022-09": 3.6182,
+    "2022-10": 3.7698,
+    "2022-11": 3.7785,
+    "2022-12": 3.6312,
+    "2023-01": 3.327,
+    "2023-02": 3.2711,
+    "2023-03": 3.2941,
+    "2023-04": 3.3482,
+    "2023-05": 3.3649,
+    "2023-06": 3.1642,
+    "2023-07": 3.1353,
+    "2023-08": 3.2296,
+    "2023-09": 3.3638,
+    "2023-10": 3.6512,
+    "2023-11": 3.7543,
+    "2023-12": 3.6324,
+    "2024-01": 3.6886,
+    "2024-02": 3.7501,
+    "2024-03": 3.8477,
+    "2024-04": 4.039,
+    "2024-05": 4.1881,
+    "2024-06": 3.8411,
+    "2024-07": 3.8366,
+    "2024-08": 3.6444,
+    "2024-09": 3.6616,
+    "2024-10": 3.6777,
+    "2024-11": 3.531,
+    "2024-12": 3.4726,
+    "2025-01": 3.5328,
+    "2025-02": 3.4194,
+    "2025-03": 3.2346,
+    "2025-04": 3.2472,
+    "2025-05": 3.4761,
+    "2025-06": 3.319,
+    "2025-07": 3.2281,
+    "2025-08": 3.281,
+    "2025-09": 3.2694,
+    "2025-10": 3.1022,
+    "2025-11": 3.0135,
+    "2025-12": 3.0609,
+    "2026-01": 3.2398,
+    "2026-02": 3.3517,
+    "2026-03": 3.285,
+    "2026-04": 3.3651,
+    "2026-05": 3.3696,
+    "2026-06": 3.4298,
+    "2026-07": 3.2114,
+    "2026-08": 3.2521,
+    "2026-09": 3.2449,
+    "2026-10": 3.0645,
+    "2026-11": 3.011
+   }
+  },
+  {
+   "papel": "RENE",
+   "nome": "REN – Redes Energéticas Nacionais",
+   "setor": "Redes de energia (regulada)",
+   "isin": "PTREL0AM0008",
+   "preco": 3.58,
+   "data_preco": "2026-11-03",
+   "variacao_12m_pct": 6.9,
+   "proventos_por_ano": {
+    "2021": 0.171,
+    "2022": 0.218,
+    "2023": 0.154,
+    "2024": 0.154,
+    "2025": 0.157
+   },
+   "estado_por_ano": {
+    "2021": [
+     "oficial"
+    ],
+    "2022": [
+     "oficial"
+    ],
+    "2023": [
+     "oficial"
+    ],
+    "2024": [
+     "oficial"
+    ],
+    "2025": [
+     "oficial"
+    ]
+   },
+   "proventos_12m": 0.16,
+   "dpa_medio": 0.1708,
+   "dpa_aparado": 0.160667,
+   "dy_12m_pct": 4.47,
+   "dy_medio_pct": 4.77,
+   "teto": 2.7012,
+   "teto_robusto": 2.541,
+   "faixa_teto": [
+    2.3324,
+    3.2087
+   ],
+   "margem_pct": -24.5,
+   "status": "acima",
+   "status_rotulo": "Acima do teto calculado",
+   "liquidez_mediana_12m_eur": 2072255,
+   "pct_dias_sem_negocio_12m": 0.0,
+   "pct_eventos_oficiais": 100,
+   "tem_scrip": false,
+   "eventos": [
+    {
+     "data_pagamento": "2026-05-12",
+     "valor_bruto": 0.096,
+     "tipo": "dinheiro",
+     "exercicio": "2025",
+     "estado": "oficial",
+     "fonte_url": "https://www.ren.pt/media/x4dhxfde/pagamento-de-dividendos-do-exercicio-2025.pdf",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2025-12-15",
+     "valor_bruto": 0.064,
+     "tipo": "dinheiro",
+     "exercicio": "2025",
+     "estado": "oficial",
+     "fonte_url": "https://www.ren.pt/media/ecnl1tg0/dividendos_nov2025.pdf",
+     "nota": "intercalar; dia aproximado"
+    },
+    {
+     "data_pagamento": "2025-05-13",
+     "valor_bruto": 0.093,
+     "tipo": "dinheiro",
+     "exercicio": "2024",
+     "estado": "oficial",
+     "fonte_url": "https://www.ren.pt/media/u1rjovmy/pagamento-de-dividendos-do-exercício-de-2024.pdf",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2024-12-20",
+     "valor_bruto": 0.064,
+     "tipo": "dinheiro",
+     "exercicio": "2024",
+     "estado": "oficial",
+     "fonte_url": "https://www.ren.pt/media/ennldnhi/pagamento-de-dividendos-intercalares-do-exercicio-de-2024.pdf",
+     "nota": "intercalar"
+    },
+    {
+     "data_pagamento": "2024-05-15",
+     "valor_bruto": 0.09,
+     "tipo": "dinheiro",
+     "exercicio": "2023",
+     "estado": "oficial",
+     "fonte_url": "https://www.ren.pt/en-gb/investors/dividend",
+     "nota": "dia aproximado"
+    },
+    {
+     "data_pagamento": "2023-12-15",
+     "valor_bruto": 0.064,
+     "tipo": "dinheiro",
+     "exercicio": "2023",
+     "estado": "oficial",
+     "fonte_url": "https://www.ren.pt/media/tj4b4sfh/comunicado-dividendos-nov23_pt.pdf",
+     "nota": "intercalar; dia aproximado"
+    },
+    {
+     "data_pagamento": "2023-05-15",
+     "valor_bruto": 0.09,
+     "tipo": "dinheiro",
+     "exercicio": "2022",
+     "estado": "oficial",
+     "fonte_url": "https://www.ren.pt/en-gb/investors/dividend",
+     "nota": "dia aproximado"
+    },
+    {
+     "data_pagamento": "2022-12-15",
+     "valor_bruto": 0.064,
+     "tipo": "dinheiro",
+     "exercicio": "2022",
+     "estado": "oficial",
+     "fonte_url": "https://www.ren.pt/en-gb/investors/dividend",
+     "nota": "intercalar; dia aproximado"
+    },
+    {
+     "data_pagamento": "2022-05-15",
+     "valor_bruto": 0.154,
+     "tipo": "dinheiro",
+     "exercicio": "2021",
+     "estado": "oficial",
+     "fonte_url": "https://www.ren.pt/en-gb/investors/dividend",
+     "nota": "dia aproximado"
+    },
+    {
+     "data_pagamento": "2021-05-15",
+     "valor_bruto": 0.171,
+     "tipo": "dinheiro",
+     "exercicio": "2020",
+     "estado": "oficial",
+     "fonte_url": "https://www.ren.pt/en-gb/investors/dividend",
+     "nota": "dia aproximado"
+    }
+   ],
+   "alertas": [],
+   "historico_preco_mensal": {
+    "2021-12": 2.5143,
+    "2022-01": 2.5267,
+    "2022-02": 2.518,
+    "2022-03": 2.6909,
+    "2022-04": 2.8918,
+    "2022-05": 2.9025,
+    "2022-06": 2.8307,
+    "2022-07": 2.7843,
+    "2022-08": 2.7539,
+    "2022-09": 2.5464,
+    "2022-10": 2.4881,
+    "2022-11": 2.5789,
+    "2022-12": 2.5686,
+    "2023-01": 2.5489,
+    "2023-02": 2.5358,
+    "2023-03": 2.5713,
+    "2023-04": 2.6967,
+    "2023-05": 2.5561,
+    "2023-06": 2.5214,
+    "2023-07": 2.4876,
+    "2023-08": 2.4635,
+    "2023-09": 2.4836,
+    "2023-10": 2.4209,
+    "2023-11": 2.4386,
+    "2023-12": 2.3974,
+    "2024-01": 2.3052,
+    "2024-02": 2.2083,
+    "2024-03": 2.1947,
+    "2024-04": 2.2155,
+    "2024-05": 2.3864,
+    "2024-06": 2.3315,
+    "2024-07": 2.3309,
+    "2024-08": 2.3616,
+    "2024-09": 2.4207,
+    "2024-10": 2.372,
+    "2024-11": 2.3714,
+    "2024-12": 2.3207,
+    "2025-01": 2.3232,
+    "2025-02": 2.4395,
+    "2025-03": 2.6495,
+    "2025-04": 2.8045,
+    "2025-05": 2.8495,
+    "2025-06": 3.0124,
+    "2025-07": 3.088,
+    "2025-08": 2.9814,
+    "2025-09": 2.952,
+    "2025-10": 3.1163,
+    "2025-11": 3.3332,
+    "2025-12": 3.2481,
+    "2026-01": 3.3295,
+    "2026-02": 3.6837,
+    "2026-03": 3.7814,
+    "2026-04": 3.7855,
+    "2026-05": 3.6035,
+    "2026-06": 3.5757,
+    "2026-07": 3.6654,
+    "2026-08": 3.5243,
+    "2026-09": 3.5195,
+    "2026-10": 3.5559,
+    "2026-11": 3.59
+   }
+  },
+  {
+   "papel": "SEM",
+   "nome": "Semapa",
+   "setor": "Holding industrial",
+   "isin": "PTSEM0AM0004",
+   "preco": 19.36,
+   "data_preco": "2026-11-03",
+   "variacao_12m_pct": 8.6,
+   "proventos_por_ano": {
+    "2021": 0.512,
+    "2022": 1.764,
+    "2023": 0.95,
+    "2024": 0.626,
+    "2025": 0.626
+   },
+   "estado_por_ano": {
+    "2021": [
+     "oficial"
+    ],
+    "2022": [
+     "oficial"
+    ],
+    "2023": [
+     "oficial"
+    ],
+    "2024": [
+     "oficial"
+    ],
+    "2025": [
+     "oficial"
+    ]
+   },
+   "proventos_12m": 0.626,
+   "dpa_medio": 0.8956,
+   "dpa_aparado": 0.734,
+   "dy_12m_pct": 3.23,
+   "dy_medio_pct": 4.63,
+   "teto": 14.1642,
+   "teto_robusto": 11.6084,
+   "faixa_teto": [
+    12.23,
+    16.8251
+   ],
+   "margem_pct": -26.8,
+   "status": "acima",
+   "status_rotulo": "Acima do teto calculado",
+   "liquidez_mediana_12m_eur": 436443,
+   "pct_dias_sem_negocio_12m": 0.0,
+   "pct_eventos_oficiais": 86,
+   "tem_scrip": false,
+   "eventos": [
+    {
+     "data_pagamento": "2026-06-15",
+     "valor_bruto": 0.626,
+     "tipo": "dinheiro",
+     "exercicio": "2025",
+     "estado": "a_conferir",
+     "fonte_url": "",
+     "nota": "valor da fonte de cotações; exercício de 2025 ainda não listado na página da empresa"
+    },
+    {
+     "data_pagamento": "2025-06-11",
+     "valor_bruto": 0.626,
+     "tipo": "dinheiro",
+     "exercicio": "2024",
+     "estado": "oficial",
+     "fonte_url": "https://www.semapa.pt/investidores/acao-semapa/",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2024-06-12",
+     "valor_bruto": 0.626,
+     "tipo": "dinheiro",
+     "exercicio": "2023",
+     "estado": "oficial",
+     "fonte_url": "https://www.semapa.pt/investidores/acao-semapa/",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2023-06-01",
+     "valor_bruto": 0.95,
+     "tipo": "dinheiro",
+     "exercicio": "2022",
+     "estado": "oficial",
+     "fonte_url": "https://www.semapa.pt/investidores/acao-semapa/",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2022-12-13",
+     "valor_bruto": 1.252,
+     "tipo": "dinheiro",
+     "exercicio": "2021",
+     "estado": "oficial",
+     "fonte_url": "https://www.semapa.pt/investidores/acao-semapa/",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2022-06-09",
+     "valor_bruto": 0.512,
+     "tipo": "dinheiro",
+     "exercicio": "2021",
+     "estado": "oficial",
+     "fonte_url": "https://www.semapa.pt/investidores/acao-semapa/",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2021-05-11",
+     "valor_bruto": 0.512,
+     "tipo": "dinheiro",
+     "exercicio": "2020",
+     "estado": "oficial",
+     "fonte_url": "https://www.semapa.pt/investidores/acao-semapa/",
+     "nota": ""
+    }
+   ],
+   "alertas": [
+    {
+     "nivel": "atencao",
+     "codigo": "proventos_a_conferir",
+     "texto": "Proventos de 2026 ainda sem documento oficial no cadastro."
+    }
+   ],
+   "historico_preco_mensal": {
+    "2021-12": 11.6313,
+    "2022-01": 11.7295,
+    "2022-02": 11.943,
+    "2022-03": 11.4183,
+    "2022-04": 12.68,
+    "2022-05": 14.0082,
+    "2022-06": 14.2818,
+    "2022-07": 13.641,
+    "2022-08": 14.3478,
+    "2022-09": 13.3427,
+    "2022-10": 12.4829,
+    "2022-11": 13.7255,
+    "2022-12": 12.939,
+    "2023-01": 12.3618,
+    "2023-02": 13.114,
+    "2023-03": 13.7643,
+    "2023-04": 13.8756,
+    "2023-05": 13.9145,
+    "2023-06": 13.2418,
+    "2023-07": 13.039,
+    "2023-08": 13.1009,
+    "2023-09": 13.2743,
+    "2023-10": 13.5045,
+    "2023-11": 13.55,
+    "2023-12": 13.3421,
+    "2024-01": 13.8082,
+    "2024-02": 13.9438,
+    "2024-03": 13.949,
+    "2024-04": 15.2981,
+    "2024-05": 16.0527,
+    "2024-06": 14.524,
+    "2024-07": 14.9696,
+    "2024-08": 14.3036,
+    "2024-09": 14.4229,
+    "2024-10": 14.7487,
+    "2024-11": 14.0714,
+    "2024-12": 13.773,
+    "2025-01": 14.5182,
+    "2025-02": 15.648,
+    "2025-03": 15.2895,
+    "2025-04": 15.6324,
+    "2025-05": 17.7669,
+    "2025-06": 16.5962,
+    "2025-07": 17.2852,
+    "2025-08": 17.8114,
+    "2025-09": 17.9436,
+    "2025-10": 18.1774,
+    "2025-11": 17.31,
+    "2025-12": 18.3295,
+    "2026-01": 21.781,
+    "2026-02": 23.35,
+    "2026-03": 21.7386,
+    "2026-04": 22.4925,
+    "2026-05": 23.3775,
+    "2026-06": 22.4205,
+    "2026-07": 20.3726,
+    "2026-08": 20.3733,
+    "2026-09": 20.6955,
+    "2026-10": 19.4236,
+    "2026-11": 19.6
+   }
+  },
+  {
+   "papel": "SON",
+   "nome": "Sonae",
+   "setor": "Retalho e holding",
+   "isin": "PTSON0AM0001",
+   "preco": 2.11,
+   "data_preco": "2026-11-03",
+   "variacao_12m_pct": 49.4,
+   "proventos_por_ano": {
+    "2021": 0.0486,
+    "2022": 0.0511,
+    "2023": 0.0537,
+    "2024": 0.0564,
+    "2025": 0.05921
+   },
+   "estado_por_ano": {
+    "2021": [
+     "coincide"
+    ],
+    "2022": [
+     "oficial"
+    ],
+    "2023": [
+     "coincide"
+    ],
+    "2024": [
+     "coincide"
+    ],
+    "2025": [
+     "oficial"
+    ]
+   },
+   "proventos_12m": 0.06217,
+   "dpa_medio": 0.053802,
+   "dpa_aparado": 0.053733,
+   "dy_12m_pct": 2.95,
+   "dy_medio_pct": 2.55,
+   "teto": 0.8509,
+   "teto_robusto": 0.8498,
+   "faixa_teto": [
+    0.7347,
+    1.0107
+   ],
+   "margem_pct": -59.7,
+   "status": "acima",
+   "status_rotulo": "Acima do teto calculado",
+   "liquidez_mediana_12m_eur": 3080669,
+   "pct_dias_sem_negocio_12m": 0.0,
+   "pct_eventos_oficiais": 50,
+   "tem_scrip": false,
+   "eventos": [
+    {
+     "data_pagamento": "2026-05-13",
+     "valor_bruto": 0.06217,
+     "tipo": "dinheiro",
+     "exercicio": "2025",
+     "estado": "oficial",
+     "fonte_url": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2026/05/04/Connect_20260430-comunicado-dividendos-sonaept.pdf",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2025-05-15",
+     "valor_bruto": 0.05921,
+     "tipo": "dinheiro",
+     "exercicio": "2024",
+     "estado": "oficial",
+     "fonte_url": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2025/04/30/Connect_comunicado-dividendos-sonae-pt.pdf",
+     "nota": ""
+    },
+    {
+     "data_pagamento": "2024-05-15",
+     "valor_bruto": 0.0564,
+     "tipo": "dinheiro",
+     "exercicio": "2023",
+     "estado": "coincide",
+     "fonte_url": "",
+     "nota": "fonte de cotações; dia aproximado"
+    },
+    {
+     "data_pagamento": "2023-05-15",
+     "valor_bruto": 0.0537,
+     "tipo": "dinheiro",
+     "exercicio": "2022",
+     "estado": "coincide",
+     "fonte_url": "",
+     "nota": "fonte de cotações; Sonae conferida em 2022/2025/2026 sem diferenças; dia aproximado"
+    },
+    {
+     "data_pagamento": "2022-05-15",
+     "valor_bruto": 0.0511,
+     "tipo": "dinheiro",
+     "exercicio": "2021",
+     "estado": "oficial",
+     "fonte_url": "https://www.sonae.pt/fotos/press_releases/en_20220317_pr_resultados_fy21_vf_2184476496232f20536bdf.pdf",
+     "nota": "dia aproximado"
+    },
+    {
+     "data_pagamento": "2021-05-15",
+     "valor_bruto": 0.0486,
+     "tipo": "dinheiro",
+     "exercicio": "2020",
+     "estado": "coincide",
+     "fonte_url": "https://www.sonae.pt/fotos/press_releases/en_20220317_pr_resultados_fy21_vf_2184476496232f20536bdf.pdf",
+     "nota": "fonte de cotações; coerente com +5% indicado pela empresa para 2021; dia aproximado"
+    }
+   ],
+   "alertas": [],
+   "historico_preco_mensal": {
+    "2021-12": 0.9662,
+    "2022-01": 1.0237,
+    "2022-02": 1.0,
+    "2022-03": 0.9844,
+    "2022-04": 1.0246,
+    "2022-05": 1.0374,
+    "2022-06": 1.1208,
+    "2022-07": 1.1208,
+    "2022-08": 1.0413,
+    "2022-09": 0.9306,
+    "2022-10": 0.9074,
+    "2022-11": 0.9694,
+    "2022-12": 0.9365,
+    "2023-01": 0.9588,
+    "2023-02": 0.9745,
+    "2023-03": 1.0126,
+    "2023-04": 1.0169,
+    "2023-05": 0.9749,
+    "2023-06": 0.9192,
+    "2023-07": 0.9553,
+    "2023-08": 0.9639,
+    "2023-09": 0.9511,
+    "2023-10": 0.9204,
+    "2023-11": 0.9392,
+    "2023-12": 0.9122,
+    "2024-01": 0.9012,
+    "2024-02": 0.8776,
+    "2024-03": 0.8748,
+    "2024-04": 0.9068,
+    "2024-05": 0.9529,
+    "2024-06": 0.9088,
+    "2024-07": 0.9171,
+    "2024-08": 0.9263,
+    "2024-09": 0.9583,
+    "2024-10": 0.9326,
+    "2024-11": 0.9237,
+    "2024-12": 0.9126,
+    "2025-01": 0.9056,
+    "2025-02": 0.9427,
+    "2025-03": 1.0259,
+    "2025-04": 1.0499,
+    "2025-05": 1.1735,
+    "2025-06": 1.2001,
+    "2025-07": 1.2618,
+    "2025-08": 1.2965,
+    "2025-09": 1.309,
+    "2025-10": 1.3892,
+    "2025-11": 1.4436,
+    "2025-12": 1.5917,
+    "2026-01": 1.7117,
+    "2026-02": 1.9149,
+    "2026-03": 1.9058,
+    "2026-04": 1.9715,
+    "2026-05": 1.9176,
+    "2026-06": 1.9593,
+    "2026-07": 2.0713,
+    "2026-08": 2.0209,
+    "2026-09": 2.059,
+    "2026-10": 2.0923,
+    "2026-11": 2.105
+   }
+  },
+  {
+   "papel": "TDSA",
+   "nome": "Teixeira Duarte",
+   "setor": "Construção e imobiliário",
+   "isin": "PTTD10AM0000",
+   "preco": 0.419,
+   "data_preco": "2026-11-03",
+   "variacao_12m_pct": -39.8,
+   "proventos_por_ano": {
+    "2021": 0,
+    "2022": 0,
+    "2023": 0,
+    "2024": 0,
+    "2025": 0
+   },
+   "estado_por_ano": {
+    "2021": [],
+    "2022": [],
+    "2023": [],
+    "2024": [],
+    "2025": []
+   },
+   "proventos_12m": 0,
+   "dpa_medio": 0.0,
+   "dpa_aparado": 0.0,
+   "dy_12m_pct": 0.0,
+   "dy_medio_pct": 0.0,
+   "teto": null,
+   "teto_robusto": null,
+   "faixa_teto": null,
+   "margem_pct": null,
+   "status": "sem_proventos",
+   "status_rotulo": "Sem proventos nos últimos 5 anos",
+   "liquidez_mediana_12m_eur": 1677108,
+   "pct_dias_sem_negocio_12m": 0.0,
+   "pct_eventos_oficiais": null,
+   "tem_scrip": false,
+   "eventos": [],
+   "alertas": [
+    {
+     "nivel": "atencao",
+     "codigo": "anos_sem_proventos",
+     "texto": "Sem proventos em 2021, 2022, 2023, 2024, 2025: a média de 5 anos fica mais baixa e o teto também."
+    }
+   ],
+   "historico_preco_mensal": {
+    "2021-12": 0.0926,
+    "2022-01": 0.099,
+    "2022-02": 0.1012,
+    "2022-03": 0.0963,
+    "2022-04": 0.0947,
+    "2022-05": 0.0892,
+    "2022-06": 0.0881,
+    "2022-07": 0.0863,
+    "2022-08": 0.0855,
+    "2022-09": 0.0793,
+    "2022-10": 0.0752,
+    "2022-11": 0.0775,
+    "2022-12": 0.0719,
+    "2023-01": 0.0732,
+    "2023-02": 0.0879,
+    "2023-03": 0.0839,
+    "2023-04": 0.0823,
+    "2023-05": 0.0819,
+    "2023-06": 0.0804,
+    "2023-07": 0.0818,
+    "2023-08": 0.0802,
+    "2023-09": 0.0784,
+    "2023-10": 0.0739,
+    "2023-11": 0.0702,
+    "2023-12": 0.0683,
+    "2024-01": 0.1008,
+    "2024-02": 0.1133,
+    "2024-03": 0.109,
+    "2024-04": 0.1085,
+    "2024-05": 0.1012,
+    "2024-06": 0.0998,
+    "2024-07": 0.1044,
+    "2024-08": 0.0955,
+    "2024-09": 0.0958,
+    "2024-10": 0.0929,
+    "2024-11": 0.0887,
+    "2024-12": 0.0835,
+    "2025-01": 0.087,
+    "2025-02": 0.0993,
+    "2025-03": 0.1269,
+    "2025-04": 0.1504,
+    "2025-05": 0.2564,
+    "2025-06": 0.3192,
+    "2025-07": 0.3749,
+    "2025-08": 0.49,
+    "2025-09": 0.5185,
+    "2025-10": 0.6414,
+    "2025-11": 0.6876,
+    "2025-12": 0.6593,
+    "2026-01": 0.582,
+    "2026-02": 0.5131,
+    "2026-03": 0.4431,
+    "2026-04": 0.4378,
+    "2026-05": 0.4288,
+    "2026-06": 0.469,
+    "2026-07": 0.4969,
+    "2026-08": 0.4846,
+    "2026-09": 0.4849,
+    "2026-10": 0.444,
+    "2026-11": 0.4192
+   }
+  }
+ ],
+ "fecho_esperado": "2026-11-03",
+ "historico_status": {
+  "ALTR": [
+   {
+    "data": "2026-11-04",
+    "status": "acima",
+    "rotulo": "Acima do teto calculado",
+    "preco": 4.255,
+    "teto": 4.0803
+   }
+  ],
+  "BCP": [
+   {
+    "data": "2026-11-04",
+    "status": "acima",
+    "rotulo": "Acima do teto calculado",
+    "preco": 1.048,
+    "teto": 0.1515
+   }
+  ],
+  "COR": [
+   {
+    "data": "2026-11-04",
+    "status": "acima",
+    "rotulo": "Acima do teto calculado",
+    "preco": 6.33,
+    "teto": 4.6181
+   }
+  ],
+  "CTT": [
+   {
+    "data": "2026-11-04",
+    "status": "acima",
+    "rotulo": "Acima do teto calculado",
+    "preco": 5.33,
+    "teto": 2.1192
+   }
+  ],
+  "EDP": [
+   {
+    "data": "2026-11-04",
+    "status": "acima",
+    "rotulo": "Acima do teto calculado",
+    "preco": 4.87,
+    "teto": 3.0523
+   }
+  ],
+  "EDPR": [
+   {
+    "data": "2026-11-04",
+    "status": "acima",
+    "rotulo": "Acima do teto calculado",
+    "preco": 13.05,
+    "teto": 2.2774
+   }
+  ],
+  "EGL": [
+   {
+    "data": "2026-11-04",
+    "status": "acima",
+    "rotulo": "Acima do teto calculado",
+    "preco": 4.47,
+    "teto": 1.4127
+   }
+  ],
+  "GALP": [
+   {
+    "data": "2026-11-04",
+    "status": "acima",
+    "rotulo": "Acima do teto calculado",
+    "preco": 20.01,
+    "teto": 8.9831
+   }
+  ],
+  "IBS": [
+   {
+    "data": "2026-11-04",
+    "status": "acima",
+    "rotulo": "Acima do teto calculado",
+    "preco": 10.32,
+    "teto": 6.4368
+   }
+  ],
+  "JMT": [
+   {
+    "data": "2026-11-04",
+    "status": "acima",
+    "rotulo": "Acima do teto calculado",
+    "preco": 18.55,
+    "teto": 9.0716
+   }
+  ],
+  "NOS": [
+   {
+    "data": "2026-11-04",
+    "status": "abaixo",
+    "rotulo": "Abaixo do teto calculado",
+    "preco": 5.24,
+    "teto": 5.4911
+   }
+  ],
+  "NVG": [
+   {
+    "data": "2026-11-04",
+    "status": "abaixo_conferir",
+    "rotulo": "Abaixo do teto · conferir dados",
+    "preco": 2.992,
+    "teto": 4.1118
+   }
+  ],
+  "RENE": [
+   {
+    "data": "2026-11-04",
+    "status": "acima",
+    "rotulo": "Acima do teto calculado",
+    "preco": 3.58,
+    "teto": 2.7012
+   }
+  ],
+  "SEM": [
+   {
+    "data": "2026-11-04",
+    "status": "acima",
+    "rotulo": "Acima do teto calculado",
+    "preco": 19.36,
+    "teto": 14.1642
+   }
+  ],
+  "SON": [
+   {
+    "data": "2026-11-04",
+    "status": "acima",
+    "rotulo": "Acima do teto calculado",
+    "preco": 2.11,
+    "teto": 0.8509
+   }
+  ],
+  "TDSA": [
+   {
+    "data": "2026-11-04",
+    "status": "sem_proventos",
+    "rotulo": "Sem proventos nos últimos 5 anos",
+    "preco": 0.419,
+    "teto": null
+   }
+  ]
+ }
+}
