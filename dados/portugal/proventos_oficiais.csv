@@ -1,0 +1,105 @@
+papel,data_pagamento,valor_bruto,tipo,exercicio,estado,fonte_url,nota
+# Cadastro de proventos por DATA DE PAGAMENTO (valor bruto por ação, antes da retenção de 28%). Montado em 04/11/2026.,,,,,,,
+# estado: oficial = conferido em comunicado/página da empresa; coincide = valor da fonte de cotações igual à amostra oficial da mesma empresa; a_conferir = ainda sem documento oficial.,,,,,,,
+# Datas com dia 15 marcado em nota "dia aproximado" quando a fonte oficial só dá o mês ou o ano.,,,,,,,
+ALTR,2021-05-20,0.25,dinheiro,2020,oficial,https://live.euronext.com/sites/default/files/Connect_altri20210504pt.pdf,a fonte de cotações indica 0.35 no ano de 2021 — diferença em investigação; em 2021-2023 houve também distribuições em espécie (ações Greenvolt) não contadas
+ALTR,2022-05-15,0.24,dinheiro,2021,a_conferir,,valor da fonte de cotações; comunicado de 03/05/2022 (numerário e espécie) não legível automaticamente
+ALTR,2023-05-15,0.25,dinheiro,2022,a_conferir,,valor da fonte de cotações; comunicado de 02/05/2023 (numerário e espécie)
+ALTR,2024-05-15,0.25,dinheiro,2023,a_conferir,,valor da fonte de cotações; comunicado de 07/05/2024
+ALTR,2025-05-19,0.30,dinheiro,2024,oficial,https://live.euronext.com/sites/default/files/company_press_releases/attachments/2025/04/30/Connect_altricomunicadodividendos-dinheiropt.pdf,
+ALTR,2026-05-28,0.25,dinheiro,2025,a_conferir,,valor da fonte de cotações e da imprensa; comunicado de 12/05/2026 não legível automaticamente
+BCP,2022-06-15,0.0009,dinheiro,2021,oficial,https://ind.millenniumbcp.pt/pt/Institucional/investidores/Pages/Dividendos.aspx,dia aproximado
+BCP,2024-06-15,0.0170,dinheiro,2023,oficial,https://ind.millenniumbcp.pt/pt/Institucional/investidores/Pages/Dividendos.aspx,dia aproximado
+BCP,2025-06-15,0.0300,dinheiro,2024,oficial,https://ind.millenniumbcp.pt/pt/Institucional/investidores/Pages/Dividendos.aspx,dia aproximado
+BCP,2026-06-03,0.0344,dinheiro,2025,oficial,https://ind.millenniumbcp.pt/pt/Institucional/investidores/Documents/comunicados/2026/Dividendo_PT_12052026.pdf,
+COR,2021-06-15,0.27,dinheiro,2020,oficial,https://www.amorim.com/en/investors/corticeira-amorim-share/dividends/,total do ano (0.185 + 0.085); dia aproximado
+COR,2022-06-15,0.29,dinheiro,2021,oficial,https://www.amorim.com/en/investors/corticeira-amorim-share/dividends/,total indicado pela empresa; as duas parcelas listadas somam 0.275 — conferir
+COR,2023-06-15,0.29,dinheiro,2022,oficial,https://www.amorim.com/en/investors/corticeira-amorim-share/dividends/,total do ano (0.20 + 0.09); dia aproximado
+COR,2024-05-15,0.20,dinheiro,2023,oficial,https://www.amorim.com/en/investors/corticeira-amorim-share/dividends/,dia aproximado
+COR,2024-12-15,0.09,dinheiro,2024,oficial,https://www.amorim.com/en/investors/corticeira-amorim-share/dividends/,comunicado de 02/12/2024; a fonte de cotações não registou este pagamento
+COR,2025-05-15,0.32,dinheiro,2024,oficial,https://www.amorim.com/en/investors/corticeira-amorim-share/dividends/,comunicado de 06/05/2025; dia aproximado
+COR,2026-05-15,0.35,dinheiro,2025,oficial,https://www.amorim.com/en/investors/corticeira-amorim-share/dividends/,comunicado de 04/05/2026; dia aproximado
+CTT,2021-05-20,0.085,dinheiro,2020,oficial,https://www.ctt.pt/dA/5e2af18a-72ed-49ab-ab7e-498e4ffa0763/ficheiro/Dividendo2020_PT.pdf,
+CTT,2022-05-20,0.12,dinheiro,2021,oficial,https://www.ctt.pt/dA/4a70743c-5fc0-49f7-ab7d-6945f8c2a7cc/ficheiro/Dividendo2021_PT.pdf,
+CTT,2023-05-19,0.125,dinheiro,2022,oficial,https://www.ctt.pt/dA/4fb4f400-8232-497a-9c4e-55f4f3559764/ficheiro/Dividendo2022_PT.pdf,
+CTT,2024-05-16,0.17,dinheiro,2023,oficial,https://www.ctt.pt/contentAsset/raw-data/582f4226-7bd1-4e80-a3cd-3476abf17344/ficheiro/export/Dividend2023_EN.pdf,
+CTT,2025-05-15,0.17,dinheiro,2024,oficial,https://www.ctt.pt/contentAsset/raw-data/13adc021-f0bf-4007-9484-8360cec91032/ficheiroPdf/20250502_Dividendo_PT.pdf,
+CTT,2026-05-15,0.19,dinheiro,2025,oficial,https://www.ctt.pt/dA/e6143c9e039fc1db86eafdbca06dcfd1/ficheiro/Notice_to_Convene_CTT_Annual_General_Meeting_2026_EN.pdf,valor proposto à AG de 30/04/2026 e coincidente com a fonte de cotações; dia aproximado
+EDP,2021-05-15,0.19,dinheiro,2020,coincide,,fonte de cotações; EDP conferida em 2022-2025 sem diferenças; dia aproximado
+EDP,2022-04-28,0.19,dinheiro,2021,oficial,https://www.edp.com/en/investors/investor-information/market-notifications/payment-dividends-year-2021,
+EDP,2023-05-03,0.19,dinheiro,2022,oficial,https://edp.com/en/investors/investor-information/market-notifications/payment-dividends-year-2022,
+EDP,2024-05-08,0.195,dinheiro,2023,oficial,https://www.edp.com/en/node/84036,
+EDP,2025-05-06,0.20,dinheiro,2024,oficial,https://edp.com/en/investors/investor-information/market-notifications/payment-dividends-year-2024,
+EDP,2026-05-05,0.205,dinheiro,2025,coincide,https://edp.com/sites/default/files/document/2026-04/20260416_EDP_Pagamento_de_dividendos.pdf,comunicado localizado; valor da fonte de cotações e da proposta noticiada; dia aproximado
+EDPR,2021-05-15,0.08,dinheiro,2020,oficial,https://www.edpr-investors.com/en/share/dividend-history,dia aproximado
+EDPR,2022-05-15,0.09,dinheiro,2021,oficial,https://www.edpr-investors.com/en/share/dividend-history,dia aproximado
+EDPR,2023-05-15,0.265,scrip,2022,oficial,https://www.edpr-investors.com/en/share/dividend-history,dividendo em ações (scrip); a fonte de cotações registou zero; dia aproximado
+EDPR,2024-05-15,0.201,scrip,2023,oficial,https://www.edpr-investors.com/en/share/dividend-history,scrip; dia aproximado
+EDPR,2025-05-15,0.084,scrip,2024,oficial,https://www.edpr-investors.com/en/share/dividend-history,scrip; dia aproximado
+EDPR,2026-06-02,0.124,scrip,2025,oficial,https://www.edpr-investors.com/sites/edpr-investors/files/document/2026-05/EDPR_Scrip_Dividend_Launch_0.pdf,scrip: preço fixo de compra do direito pela EDPR
+EGL,2022-05-25,0.069,dinheiro,2021,oficial,https://www.mota-engil.com/en/investors/mota-engil-share/,
+EGL,2023-05-15,0.10023,dinheiro,2022,oficial,https://www.mota-engil.com/app/uploads/2025/03/Comunicado-dividendos-2023.pdf,dia aproximado
+EGL,2024-05-15,0.1277,dinheiro,2023,oficial,https://www.mota-engil.com/app/uploads/2025/03/Comunicado-dividendos-2024.pdf,dia aproximado
+EGL,2025-05-15,0.1497,dinheiro,2024,oficial,https://www.mota-engil.com/app/uploads/2025/05/Comunicado-dividendos-2025.pdf,dia aproximado
+EGL,2026-05-15,0.173,dinheiro,2025,oficial,https://www.mota-engil.com/app/uploads/2026/05/Comunicado-dividendos-2026.pdf,dia aproximado
+GALP,2021-05-20,0.35,dinheiro,2020,oficial,https://www.galp.com/corp/Portals/0/Recursos/Investidores/SharedResources/Dividendos/PT/2021_05_10_Dividendo_vpt.pdf,
+GALP,2021-09-16,0.25,dinheiro,2021,oficial,https://www.galp.com/corp/en/investors/information-to-shareholders/dividends,intercalar
+GALP,2022-05-10,0.25,dinheiro,2021,oficial,https://www.galp.com/corp/en/investors/information-to-shareholders/dividends,
+GALP,2022-09-20,0.26,dinheiro,2022,oficial,https://www.galp.com/corp/en/investors/information-to-shareholders/dividends,intercalar
+GALP,2023-05-23,0.26,dinheiro,2022,oficial,https://www.galp.com/corp/en/investors/information-to-shareholders/dividends,
+GALP,2023-08-25,0.27,dinheiro,2023,oficial,https://www.galp.com/corp/en/investors/information-to-shareholders/dividends,intercalar
+GALP,2024-05-31,0.27,dinheiro,2023,oficial,https://www.galp.com/corp/en/investors/information-to-shareholders/dividends,
+GALP,2024-08-19,0.28,dinheiro,2024,oficial,https://www.galp.com/corp/en/investors/information-to-shareholders/dividends,intercalar
+GALP,2025-05-28,0.34,dinheiro,2024,oficial,https://www.galp.com/corp/en/investors/information-to-shareholders/dividends,
+GALP,2025-08-18,0.31,dinheiro,2025,oficial,https://www.galp.com/corp/en/investors/information-to-shareholders/dividends,intercalar
+GALP,2026-05-21,0.33,dinheiro,2025,oficial,https://www.galp.com/corp/en/investors/information-to-shareholders/dividends,
+GALP,2026-08-21,0.35,dinheiro,2026,oficial,https://www.galp.com/corp/en/investors/information-to-shareholders/dividends,intercalar
+IBS,2022-06-21,0.135,dinheiro,2021,oficial,https://www.ibersol.pt/investidores/comunicados/2022/ANUNCIODIV21.pdf,
+IBS,2023-06-20,0.70,dinheiro,2022,oficial,https://www.ibersol.pt/investidores/comunicados/2023/Pagamento_dividendos_2022_PT.pdf,
+IBS,2024-06-19,0.50,dinheiro,2023,oficial,https://www.ibersol.pt/investidores/comunicados/2024/ANUNCIODIV23.pdf,
+IBS,2025-06-19,0.70,dinheiro,2024,oficial,https://www.ibersol.pt/investidores/comunicados/2025/ANUNCIODIV24ingles.pdf,
+IBS,2026-06-15,0.70,dinheiro,2025,oficial,https://www.ibersol.pt/investidores/assembleias-gerais/2026/12_Propostas_pontos_1_a_7.pdf,proposta à AG (inclui reservas livres); dia aproximado
+JMT,2021-05-15,0.288,dinheiro,2020,oficial,https://live.euronext.com/sites/default/files/Connect_deliberacoesagm2021.pdf,dia aproximado
+JMT,2022-05-15,0.785,dinheiro,2021,oficial,https://live.euronext.com/sites/default/files/company_press_releases/attachments/2022/04/21/Connect_comunicadodeliberacoesag2022.pdf,dia aproximado
+JMT,2023-05-15,0.55,dinheiro,2022,oficial,https://live.euronext.com/sites/default/files/company_press_releases/attachments/2023/04/20/Connect_comunicadodeliberacoesag2023.pdf,dia aproximado
+JMT,2024-05-15,0.655,dinheiro,2023,oficial,https://live.euronext.com/sites/default/files/company_press_releases/attachments/2024/04/18/Connect_aprovacaodividendo2023.pdf,
+JMT,2025-05-15,0.59,dinheiro,2024,oficial,https://live.euronext.com/sites/default/files/company_press_releases/attachments/2025/04/24/Connect_dividendpayment2025.pdf,
+JMT,2026-05-15,0.65,dinheiro,2025,a_conferir,https://live.euronext.com/sites/default/files/company_press_releases/attachments/2026/03/30/Connect_propostasponto124ordemtrabalhos2026.pdf,valor anunciado com os resultados de 2025 (imprensa); proposta localizada; dia aproximado
+NOS,2021-05-15,0.278,dinheiro,2020,oficial,https://www.nos.pt/en/institutional/investors/capital-markets/dividends,dia aproximado
+NOS,2022-05-15,0.278,dinheiro,2021,oficial,https://www.nos.pt/en/institutional/investors/capital-markets/dividends,dia aproximado
+NOS,2023-05-15,0.43,dinheiro,2022,oficial,https://www.nos.pt/en/institutional/investors/capital-markets/dividends,inclui extraordinário de 0.152; dia aproximado
+NOS,2024-05-15,0.35,dinheiro,2023,oficial,https://www.nos.pt/en/institutional/investors/capital-markets/dividends,dia aproximado
+NOS,2025-05-15,0.40,dinheiro,2024,oficial,https://www.nos.pt/en/institutional/investors/capital-markets/dividends,inclui extraordinário de 0.05; dia aproximado
+NOS,2026-05-08,0.45,dinheiro,2025,oficial,https://www.nos.pt/en/institutional/investors/capital-markets/dividends,inclui extraordinário de 0.10
+NVG,2021-05-25,0.14,dinheiro,2020,oficial,https://thenavigatorcompany.com/investidores/accao-navigator/,
+NVG,2021-12-28,0.0703,dinheiro,2021,oficial,https://thenavigatorcompany.com/investidores/accao-navigator/,antecipado
+NVG,2022-06-07,0.1406,dinheiro,2021,oficial,https://thenavigatorcompany.com/investidores/accao-navigator/,
+NVG,2022-12-12,0.2109,dinheiro,2021,oficial,https://thenavigatorcompany.com/investidores/accao-navigator/,distribuição de reservas
+NVG,2023-05-31,0.2812,dinheiro,2022,oficial,https://thenavigatorcompany.com/investidores/accao-navigator/,
+NVG,2024-06-11,0.2109,dinheiro,2023,oficial,https://thenavigatorcompany.com/investidores/accao-navigator/,
+NVG,2025-01-14,0.14061,dinheiro,2024,oficial,https://thenavigatorcompany.com/investidores/accao-navigator/,antecipado
+NVG,2025-07-01,0.10545,dinheiro,2024,oficial,https://thenavigatorcompany.com/investidores/accao-navigator/,
+NVG,2026-06-15,0.1125,dinheiro,2025,a_conferir,,valor da fonte de cotações; exercício de 2025 ainda não listado na página da empresa
+RENE,2021-05-15,0.171,dinheiro,2020,oficial,https://www.ren.pt/en-gb/investors/dividend,dia aproximado
+RENE,2022-05-15,0.154,dinheiro,2021,oficial,https://www.ren.pt/en-gb/investors/dividend,dia aproximado
+RENE,2022-12-15,0.064,dinheiro,2022,oficial,https://www.ren.pt/en-gb/investors/dividend,intercalar; dia aproximado
+RENE,2023-05-15,0.090,dinheiro,2022,oficial,https://www.ren.pt/en-gb/investors/dividend,dia aproximado
+RENE,2023-12-15,0.064,dinheiro,2023,oficial,https://www.ren.pt/media/tj4b4sfh/comunicado-dividendos-nov23_pt.pdf,intercalar; dia aproximado
+RENE,2024-05-15,0.090,dinheiro,2023,oficial,https://www.ren.pt/en-gb/investors/dividend,dia aproximado
+RENE,2024-12-20,0.064,dinheiro,2024,oficial,https://www.ren.pt/media/ennldnhi/pagamento-de-dividendos-intercalares-do-exercicio-de-2024.pdf,intercalar
+RENE,2025-05-13,0.093,dinheiro,2024,oficial,https://www.ren.pt/media/u1rjovmy/pagamento-de-dividendos-do-exercício-de-2024.pdf,
+RENE,2025-12-15,0.064,dinheiro,2025,oficial,https://www.ren.pt/media/ecnl1tg0/dividendos_nov2025.pdf,intercalar; dia aproximado
+RENE,2026-05-12,0.096,dinheiro,2025,oficial,https://www.ren.pt/media/x4dhxfde/pagamento-de-dividendos-do-exercicio-2025.pdf,
+SEM,2021-05-11,0.512,dinheiro,2020,oficial,https://www.semapa.pt/investidores/acao-semapa/,
+SEM,2022-06-09,0.512,dinheiro,2021,oficial,https://www.semapa.pt/investidores/acao-semapa/,
+SEM,2022-12-13,1.252,dinheiro,2021,oficial,https://www.semapa.pt/investidores/acao-semapa/,
+SEM,2023-06-01,0.950,dinheiro,2022,oficial,https://www.semapa.pt/investidores/acao-semapa/,
+SEM,2024-06-12,0.626,dinheiro,2023,oficial,https://www.semapa.pt/investidores/acao-semapa/,
+SEM,2025-06-11,0.626,dinheiro,2024,oficial,https://www.semapa.pt/investidores/acao-semapa/,
+SEM,2026-06-15,0.626,dinheiro,2025,a_conferir,,valor da fonte de cotações; exercício de 2025 ainda não listado na página da empresa
+SON,2021-05-15,0.0486,dinheiro,2020,coincide,https://www.sonae.pt/fotos/press_releases/en_20220317_pr_resultados_fy21_vf_2184476496232f20536bdf.pdf,fonte de cotações; coerente com +5% indicado pela empresa para 2021; dia aproximado
+SON,2022-05-15,0.0511,dinheiro,2021,oficial,https://www.sonae.pt/fotos/press_releases/en_20220317_pr_resultados_fy21_vf_2184476496232f20536bdf.pdf,dia aproximado
+SON,2023-05-15,0.0537,dinheiro,2022,coincide,,fonte de cotações; Sonae conferida em 2022/2025/2026 sem diferenças; dia aproximado
+SON,2024-05-15,0.0564,dinheiro,2023,coincide,,fonte de cotações; dia aproximado
+SON,2025-05-15,0.05921,dinheiro,2024,oficial,https://live.euronext.com/sites/default/files/company_press_releases/attachments/2025/04/30/Connect_comunicado-dividendos-sonae-pt.pdf,
+SON,2026-05-13,0.06217,dinheiro,2025,oficial,https://live.euronext.com/sites/default/files/company_press_releases/attachments/2026/05/04/Connect_20260430-comunicado-dividendos-sonaept.pdf,

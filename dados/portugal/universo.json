@@ -1,0 +1,26 @@
+{
+  "revisado_em": "2026-11-04",
+  "proxima_revisao": "2027-02-04",
+  "criterio": "Ações do mercado regulamentado da Euronext Lisbon (MIC XLIS) com mediana do volume financeiro diário em 12 meses >= 100 mil euros e no máximo 5% de dias sem negócio; excluídos emitentes cuja sede ou listagem principal não é Portugal (Euronext N.V., Merlin Properties).",
+  "fonte_criterio": "docs/monitor-portugal/fase0-cobertura-e-j1.md",
+  "corte_liquidez_eur": 100000,
+  "max_pct_dias_sem_negocio": 5,
+  "papeis": [
+    {"papel": "ALTR", "nome": "Altri", "setor": "Celulose e materiais", "isin": "PTALT0AE0002"},
+    {"papel": "BCP", "nome": "Banco Comercial Português", "setor": "Banca", "isin": "PTBCP0AM0015"},
+    {"papel": "COR", "nome": "Corticeira Amorim", "setor": "Cortiça e materiais", "isin": "PTCOR0AE0006"},
+    {"papel": "CTT", "nome": "CTT – Correios de Portugal", "setor": "Correios e serviços financeiros", "isin": "PTCTT0AM0001"},
+    {"papel": "EDP", "nome": "EDP", "setor": "Energia", "isin": "PTEDP0AM0009"},
+    {"papel": "EDPR", "nome": "EDP Renováveis", "setor": "Energia renovável", "isin": "ES0127797019"},
+    {"papel": "EGL", "nome": "Mota-Engil", "setor": "Construção e engenharia", "isin": "PTMEN0AE0005"},
+    {"papel": "GALP", "nome": "Galp Energia", "setor": "Petróleo, gás e energia", "isin": "PTGAL0AM0009"},
+    {"papel": "IBS", "nome": "Ibersol", "setor": "Restauração", "isin": "PTIBS0AM0008"},
+    {"papel": "JMT", "nome": "Jerónimo Martins", "setor": "Retalho alimentar", "isin": "PTJMT0AE0001"},
+    {"papel": "NOS", "nome": "NOS", "setor": "Telecomunicações e media", "isin": "PTZON0AM0006"},
+    {"papel": "NVG", "nome": "The Navigator Company", "setor": "Papel e celulose", "isin": "PTPTI0AM0006"},
+    {"papel": "RENE", "nome": "REN – Redes Energéticas Nacionais", "setor": "Redes de energia (regulada)", "isin": "PTREL0AM0008"},
+    {"papel": "SEM", "nome": "Semapa", "setor": "Holding industrial", "isin": "PTSEM0AM0004"},
+    {"papel": "SON", "nome": "Sonae", "setor": "Retalho e holding", "isin": "PTSON0AM0001"},
+    {"papel": "TDSA", "nome": "Teixeira Duarte", "setor": "Construção e imobiliário", "isin": "PTTD10AM0000"}
+  ]
+}

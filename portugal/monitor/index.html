@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Monitor de Dividendos Lisboa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#f2f4f7; --surface:#ffffff; --surface-2:#e9edf2; --surface-3:#dde3ea;
+  --ink:#152131; --ink-2:#465567; --muted:#56636f; --line:#d9e0e8;
+  --accent:#0f6b6b; --accent-soft:#dcf0ef;
+  --pos:#176d48; --pos-soft:#dff2e8; --neg:#a63a30; --neg-soft:#f8e3e0; --warn:#7d5600; --warn-soft:#fbf1d6;
+  --info:#2e66a3; --info-soft:#e1ecf8;
+  --f-display:"Bricolage Grotesque","Avenir Next","Segoe UI",sans-serif;
+  --f-body:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0d131a; --surface:#141c26; --surface-2:#1b2532; --surface-3:#222e3d;
+  --ink:#e5ecf3; --ink-2:#aab6c3; --muted:#8e9aa8; --line:#263241;
+  --accent:#4fc2bd; --accent-soft:#12292a;
+  --pos:#45c08a; --pos-soft:#14291f; --neg:#ef7b6f; --neg-soft:#2e1816; --warn:#e3b94f; --warn-soft:#2b2410;
+  --info:#6ea2dc; --info-soft:#16253a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0d131a; --surface:#141c26; --surface-2:#1b2532; --surface-3:#222e3d;
+  --ink:#e5ecf3; --ink-2:#aab6c3; --muted:#8e9aa8; --line:#263241;
+  --accent:#4fc2bd; --accent-soft:#12292a;
+  --pos:#45c08a; --pos-soft:#14291f; --neg:#ef7b6f; --neg-soft:#2e1816; --warn:#e3b94f; --warn-soft:#2b2410;
+  --info:#6ea2dc; --info-soft:#16253a; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5;margin:0}
+.wrap{max-width:1240px;margin:0 auto;padding:28px max(16px,env(safe-area-inset-right,0px)) 64px max(16px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;gap:24px}
+h1,h2,h3{font-family:var(--f-display);margin:0;line-height:1.12;text-wrap:balance}
+h1{font-size:clamp(1.9rem,4.5vw,2.8rem);letter-spacing:-.02em}
+h2{font-size:1.35rem}h3{font-size:1rem}
+p{margin:0;max-width:74ch}
+a{color:var(--info)}
+.eyebrow{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.neg{color:var(--neg)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+header.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px}
+.lede{color:var(--ink-2);margin-top:10px}
+.live{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 12px}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--pos);box-shadow:0 0 0 3px var(--pos-soft)}
+.live.stale{border-color:var(--warn);background:var(--warn-soft);color:var(--ink)}
+.live.stale i{background:var(--warn);box-shadow:0 0 0 3px var(--warn-soft)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px}
+.aviso{border-left:4px solid var(--warn);background:var(--warn-soft)}
+.aviso p+p{margin-top:6px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.kpi .v{font-family:var(--f-mono);font-size:1.5rem;margin-top:4px}
+.kpi small{color:var(--muted);display:block;margin-top:2px}
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--surface)}
+.seg button{border:0;background:none;padding:7px 14px;font:inherit;color:var(--ink-2);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:#fff}
+input[type=search],select,input[type=number]{font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)}
+.tabela{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+thead th{position:sticky;top:0;background:var(--surface-2);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-2);z-index:1}
+th button{all:unset;cursor:pointer}
+th button::after{content:" ↕";color:var(--muted)}
+td.r,th.r{text-align:right}
+tr.linha{cursor:pointer}
+tr.linha:hover{background:var(--surface-2)}
+tr.ficha td{white-space:normal;background:var(--bg);padding:16px}
+.badge{display:inline-block;padding:2px 9px;border-radius:999px;font-size:.78rem;font-weight:600;border:1px solid transparent}
+.b-abaixo{background:var(--pos-soft);color:var(--pos)}
+.b-abaixo_conferir{background:var(--warn-soft);color:var(--warn)}
+.b-acima{background:var(--surface-3);color:var(--ink-2)}
+.b-sem_proventos,.b-sem_preco{background:var(--neg-soft);color:var(--neg)}
+.e-oficial{background:var(--pos-soft);color:var(--pos)}
+.e-coincide{background:var(--info-soft);color:var(--info)}
+.e-a_conferir{background:var(--warn-soft);color:var(--warn)}
+.al{display:flex;gap:8px;align-items:flex-start;margin-top:6px}
+.al b{font-family:var(--f-mono);font-size:.72rem;padding:1px 6px;border-radius:5px;flex:none}
+.al .grave{background:var(--neg-soft);color:var(--neg)}.al .atencao{background:var(--warn-soft);color:var(--warn)}.al .info{background:var(--info-soft);color:var(--info)}
+.ficha-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.ficha-grid section{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+.ficha-grid h3{margin-bottom:8px}
+.mini td,.mini th{padding:4px 6px;font-size:.84rem}
+.barras{display:flex;align-items:flex-end;gap:6px;height:80px;margin-top:6px}
+.barras div{flex:1;background:var(--accent);border-radius:4px 4px 0 0;min-height:2px;position:relative}
+.barras span{position:absolute;bottom:-18px;left:0;right:0;text-align:center;font-size:.7rem;color:var(--muted)}
+.spark{width:100%;height:70px}
+.so-completo{display:none}
+body.completo .so-completo{display:table-cell}
+body.completo div.so-completo,body.completo section.so-completo{display:block}
+details.card summary{cursor:pointer;font-family:var(--f-display);font-weight:700;font-size:1.1rem}
+details.card[open] summary{margin-bottom:10px}
+details.card ul,details.card ol{margin:6px 0 0 18px;padding:0;max-width:78ch}
+details.card li+li{margin-top:4px}
+.foot{color:var(--muted);font-size:.85rem}
+@media (max-width:720px){.hide-m{display:none}td,th{padding:8px 6px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div>
+    <div class="eyebrow">market-lab · Euronext Lisbon · versão de estudo</div>
+    <h1>Monitor de Dividendos Lisboa</h1>
+    <p class="lede">Proventos, preço-teto calculado e alertas de dados das ações mais líquidas da bolsa de Lisboa, para quem tem residência fiscal em Portugal.</p>
+  </div>
+  <div id="selo" class="live" role="status"><i></i><span>A carregar…</span></div>
+</header>
+
+<div class="card aviso" role="note">
+  <p><strong>Material educativo, não é recomendação de investimento.</strong> Nada aqui diz o que comprar, vender ou manter, nem considera a situação, os objetivos ou o perfil de risco de quem lê.</p>
+  <p>O "preço-teto" é o resultado de uma fórmula fixa aplicada a proventos passados. Não é preço-alvo nem estimativa de valor justo. Proventos passados não garantem proventos futuros.</p>
+</div>
+
+<section class="card">
+  <h2>Como ler em 30 segundos</h2>
+  <ol style="margin:10px 0 0 18px;padding:0">
+    <li><strong>Factos</strong>: preço de fecho, proventos pagos (com link para o comunicado da empresa) e liquidez.</li>
+    <li><strong>Cálculo</strong>: preço-teto = proventos médios dos últimos 5 anos ÷ taxa exigida. A taxa exigida parte do juro das obrigações do Tesouro a 10 anos.</li>
+    <li><strong>Sinais juntos não são conclusão</strong>: "abaixo do teto" pode acontecer porque o preço caiu por um problema real da empresa. Veja sempre os alertas e a ficha.</li>
+  </ol>
+</section>
+
+<section class="grid" id="kpis" aria-label="Resumo"></section>
+
+<section>
+  <div class="toolbar" style="margin-bottom:10px">
+    <div class="seg" role="group" aria-label="Modo de leitura">
+      <button id="mIni" aria-pressed="true">Iniciante</button>
+      <button id="mComp" aria-pressed="false">Completo</button>
+    </div>
+    <label class="sr" for="busca">Procurar empresa</label>
+    <input id="busca" type="search" placeholder="Procurar empresa ou setor">
+    <span class="foot" id="contagem"></span>
+  </div>
+  <div class="tabela">
+    <table>
+      <thead><tr>
+        <th scope="col"><button data-ord="nome">Empresa</button></th>
+        <th scope="col" class="hide-m"><button data-ord="setor">Setor</button></th>
+        <th scope="col" class="r">Preço (€)</th>
+        <th scope="col" class="r"><button data-ord="dy_12m_pct">Rend. 12m</button></th>
+        <th scope="col" class="r so-completo">Rend. médio 5a</th>
+        <th scope="col" class="r">Teto (€)</th>
+        <th scope="col" class="r so-completo">Faixa do teto (€)</th>
+        <th scope="col" class="r hide-m">Distância</th>
+        <th scope="col">Situação</th>
+        <th scope="col" class="r so-completo"><button data-ord="liquidez_mediana_12m_eur">Liquidez/dia</button></th>
+        <th scope="col" class="r hide-m">Alertas</th>
+      </tr></thead>
+      <tbody id="corpo"><tr><td colspan="11">A carregar dados…</td></tr></tbody>
+    </table>
+  </div>
+  <p class="foot" style="margin-top:8px">Clique numa linha para abrir a ficha. Não há ordenação por distância ao teto nem por situação, para a tabela não funcionar como lista de compras.</p>
+</section>
+
+<details class="card" id="taxa-box" open>
+  <summary>Taxa exigida usada no teto</summary>
+  <div id="taxa"></div>
+</details>
+
+<details class="card">
+  <summary>Impostos sobre dividendos (residente em Portugal)</summary>
+  <ul>
+    <li>Dividendos de empresas portuguesas pagos a pessoas singulares residentes sofrem <strong>retenção na fonte de 28%</strong>, a título liberatório (a retenção é o imposto final e não precisa de os declarar).</li>
+    <li>Pode optar pelo <strong>englobamento</strong>: os dividendos de empresas sujeitas a IRC contam só por 50% do valor (art. 40.º-A do Código do IRS) e são tributados às taxas gerais. Mas a opção obriga a englobar <strong>todos</strong> os rendimentos de capitais (categoria E) do ano — simule antes.</li>
+    <li>A taxa sobe para 35% em casos especiais (por exemplo, contas em nome de terceiros não identificados ou entidades em territórios com regime fiscal claramente mais favorável).</li>
+    <li>Os valores do painel são <strong>brutos</strong>. O simulador mostra também o líquido com 28% retidos.</li>
+  </ul>
+  <p class="foot" style="margin-top:8px">Fontes: Ordem dos Contabilistas Certificados, <a href="https://occ.pt/pt-pt/noticias/irs-enquadramento-fiscal-na-distribuicao-de-lucros" target="_blank" rel="noopener">enquadramento fiscal na distribuição de lucros</a>; comunicados de pagamento das empresas (ex.: <a href="https://edp.com/en/investors/investor-information/market-notifications/payment-dividends-year-2024" target="_blank" rel="noopener">EDP</a>). Não substitui aconselhamento fiscal.</p>
+</details>
+
+<details class="card">
+  <summary>Metodologia</summary>
+  <ul>
+    <li><strong>Universo</strong>: <span id="univ-crit"></span> Revisto em <span id="univ-rev"></span>; próxima revisão em <span id="univ-prox"></span>.</li>
+    <li><strong>Proventos</strong>: só do cadastro próprio, montado a partir de comunicados e páginas de investidores das empresas. Cada pagamento mostra o estado: <span class="badge e-oficial">oficial</span> (documento da empresa), <span class="badge e-coincide">coincide</span> (valor da fonte de cotações igual à amostra oficial da mesma empresa) ou <span class="badge e-a_conferir">a conferir</span>.</li>
+    <li><strong>Base temporal</strong>: ano em que o provento foi pago; média dos últimos 5 anos civis completos. Dividendos pagos em ações (scrip) contam pelo valor de referência indicado pela empresa. Distribuições em espécie não são contadas.</li>
+    <li><strong>Preço-teto</strong> = DPA médio de 5 anos ÷ taxa exigida. <strong>Taxa exigida</strong> = média de 12 meses da taxa das obrigações do Tesouro a 10 anos (série do BCE para Portugal) + prémio fixo de <span class="p-premio"></span> p.p., com mínimo de <span class="p-min"></span>%. A faixa mostra o teto com a taxa ±<span class="p-faixa"></span> p.p. No modo Completo aparece também o teto "robusto" (média sem o melhor e o pior ano).</li>
+    <li><strong>Preços e liquidez</strong>: fecho diário da fonte de cotações pública (sufixo .LS), coletado uma vez por dia depois do fecho de Lisboa (16h30). Liquidez = mediana do volume financeiro diário em 12 meses.</li>
+    <li><strong>Alertas</strong>: preço atrasado face ao calendário da Euronext; anos sem proventos; proventos a conferir; queda de proventos acima de 30%; liquidez abaixo do corte; e provento que aparece na fonte de cotações mas não no cadastro oficial.</li>
+    <li><strong>Limitações</strong>: sem indicadores de balanço nesta versão (em preparação a partir dos relatórios anuais em formato eletrónico europeu); sem controlo acionista; a média de 5 anos ignora mudanças de política de dividendos.</li>
+  </ul>
+</details>
+
+<details class="card">
+  <summary>Riscos</summary>
+  <ul>
+    <li>Ações podem perder valor; dividendos podem ser cortados ou suspensos a qualquer momento.</li>
+    <li>A fórmula do teto é sensível à taxa: +1 p.p. na taxa reduz o teto em cerca de 15%.</li>
+    <li>Empresas com poucos negócios diários podem ter preços que não refletem o valor de transação possível.</li>
+    <li>Proventos extraordinários (por exemplo, distribuição de reservas) inflacionam a média.</li>
+  </ul>
+</details>
+
+<details class="card">
+  <summary>Histórico de mudanças de situação (12 meses)</summary>
+  <div id="hist"></div>
+</details>
+
+<details class="card">
+  <summary>Fontes, autor e data</summary>
+  <ul id="fontes">
+    <li><strong>Autor</strong>: <span id="autor"></span>. Sem relação comercial com as empresas listadas e sem remuneração ligada a este conteúdo.</li>
+    <li><strong>Produzido em</strong>: <span id="gerado"></span> (cálculo automático diário).</li>
+    <li>Lista de ações: <a href="https://live.euronext.com/pt/markets/lisbon" target="_blank" rel="noopener">Euronext Lisbon</a>. Juro de longo prazo: <a href="https://data.ecb.europa.eu/" target="_blank" rel="noopener">BCE – Data Portal</a>. Proventos: links por pagamento, na ficha de cada empresa.</li>
+    <li>Enquadramento: Regulamento (UE) n.º 596/2014 (art. 20.º) e Regulamento Delegado (UE) 2016/958, sobre apresentação objetiva de informação de investimento.</li>
+  </ul>
+</details>
+
+<details class="card">
+  <summary>Glossário</summary>
+  <ul>
+    <li><strong>DPA</strong>: dividendo (provento) por ação, bruto.</li>
+    <li><strong>Rendimento 12m</strong>: proventos pagos nos últimos 12 meses ÷ preço atual.</li>
+    <li><strong>Scrip</strong>: dividendo pago em ações novas; quem não as quer pode vender os direitos.</li>
+    <li><strong>Data ex</strong>: a partir deste dia, quem compra a ação já não recebe o provento anunciado.</li>
+    <li><strong>Englobamento</strong>: opção de juntar rendimentos aos restantes no IRS, tributados às taxas gerais.</li>
+    <li><strong>Cotada</strong>: empresa com ações admitidas em bolsa.</li>
+  </ul>
+</details>
+
+<p class="foot" id="rodape">Material educativo, não é recomendação de investimento. Código e dados: repositório market-lab.</p>
+</div>
+
+<script>
+const $=s=>document.querySelector(s);
+const fmt=(v,d=2)=>v==null?"–":v.toLocaleString("pt-PT",{minimumFractionDigits:d,maximumFractionDigits:d});
+const pct=(v,d=1)=>v==null?"–":fmt(v,d)+"%";
+const eur0=v=>v==null?"–":Math.round(v).toLocaleString("pt-PT")+" €";
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const dataPT=s=>{if(!s)return"–";const [a,m,d]=s.slice(0,10).split("-");return `${d}/${m}/${a}`};
+let P=null, ord=null, aberto=null;
+
+function modo(c){document.body.classList.toggle("completo",c);$("#mIni").setAttribute("aria-pressed",!c);$("#mComp").setAttribute("aria-pressed",c);try{localStorage.setItem("pt-modo",c?"c":"i")}catch(e){}}
+$("#mIni").onclick=()=>modo(false);$("#mComp").onclick=()=>modo(true);
+try{if(localStorage.getItem("pt-modo")==="c")modo(true)}catch(e){}
+
+function selo(){
+  const s=$("#selo"), ult=P.linhas.map(l=>l.data_preco).filter(Boolean).sort().pop();
+  if(!ult){s.className="live stale";s.querySelector("span").textContent="Sem preços disponíveis";return}
+  const atras=ult<P.fecho_esperado;
+  s.className="live"+(atras?" stale":"");
+  s.querySelector("span").textContent=atras?`Atrasado: último fecho ${dataPT(ult)} (esperado ${dataPT(P.fecho_esperado)})`:`Fecho de ${dataPT(ult)}`;
+}
+
+function kpis(){
+  const L=P.linhas, n=s=>L.filter(l=>l.status===s).length, t=P.taxa;
+  const ofi=L.flatMap(l=>l.eventos).filter(e=>e.data_pagamento>=P.anos[0]);
+  const pOf=ofi.length?Math.round(100*ofi.filter(e=>e.estado!=="a_conferir").length/ofi.length):null;
+  $("#kpis").innerHTML=[
+    ["Empresas no universo",L.length,`de ${P.n_euronext_xlis??"–"} ações em Lisboa`],
+    ["Taxa exigida",pct(t.taxa_exigida_pct,2),`OT 10 anos ${pct(t.ot10_media12m_pct,2)} + ${fmt(t.premio_pp,1)} p.p.`],
+    ["Abaixo do teto calculado",n("abaixo")+n("abaixo_conferir"),`${n("abaixo_conferir")} com dados a conferir`],
+    ["Proventos conferidos",pOf==null?"–":pOf+"%",`oficiais ou coincidentes, desde ${P.anos[0]}`]
+  ].map(([a,b,c])=>`<div class="card kpi"><div class="eyebrow">${a}</div><div class="v">${b}</div><small>${c}</small></div>`).join("");
+}
+
+function linhaHTML(l){
+  const al=l.alertas.filter(a=>a.nivel!=="info").length;
+  return `<tr class="linha" data-p="${l.papel}" tabindex="0" aria-expanded="${aberto===l.papel}">
+    <td><strong>${esc(l.nome)}</strong> <span class="foot num">${l.papel}</span></td>
+    <td class="hide-m">${esc(l.setor)}</td>
+    <td class="r num">${fmt(l.preco,3)}</td>
+    <td class="r num">${pct(l.dy_12m_pct)}</td>
+    <td class="r num so-completo">${pct(l.dy_medio_pct)}</td>
+    <td class="r num">${l.teto?fmt(l.teto,3):"–"}</td>
+    <td class="r num so-completo">${l.faixa_teto?fmt(l.faixa_teto[0],2)+" – "+fmt(l.faixa_teto[1],2):"–"}</td>
+    <td class="r num hide-m ${l.margem_pct<0?"neg":""}">${l.margem_pct==null?"–":(l.margem_pct>0?"+":"")+fmt(l.margem_pct,1)+"%"}</td>
+    <td><span class="badge b-${l.status}">${esc(l.status_rotulo)}</span></td>
+    <td class="r num so-completo">${eur0(l.liquidez_mediana_12m_eur)}</td>
+    <td class="r num hide-m">${al||"–"}</td></tr>`;
+}
+
+function spark(h){
+  const v=Object.values(h||{});if(v.length<2)return"";
+  const mn=Math.min(...v),mx=Math.max(...v),w=300,hh=60,pts=v.map((y,i)=>`${(i/(v.length-1)*w).toFixed(1)},${(hh-(y-mn)/(mx-mn||1)*hh).toFixed(1)}`).join(" ");
+  return `<svg class="spark" viewBox="0 -4 ${w} ${hh+8}" preserveAspectRatio="none" role="img" aria-label="Preço médio mensal, últimos ${v.length} meses"><polyline fill="none" stroke="var(--accent)" stroke-width="2" points="${pts}"/></svg>
+  <div class="foot">Preço médio mensal: mín. ${fmt(mn,2)} € · máx. ${fmt(mx,2)} € (${v.length} meses)</div>`;
+}
+
+function fichaHTML(l){
+  const anos=P.anos, mx=Math.max(...anos.map(a=>l.proventos_por_ano[a]),0.0001);
+  const frase=l.preco==null?"Sem cotação disponível hoje.":
+    `Pagou em média ${fmt(l.dpa_medio,3)} € por ação por ano entre ${anos[0]} e ${anos.at(-1)}; ao preço de ${fmt(l.preco,3)} €, isso equivale a ${pct(l.dy_medio_pct)} ao ano (bruto). `+
+    (l.teto?`Com a taxa exigida de ${pct(P.taxa.taxa_exigida_pct,2)}, o teto calculado é ${fmt(l.teto,3)} €.`:"Sem proventos suficientes para calcular teto.");
+  const h=(P.historico_status||{})[l.papel]||[];
+  return `<tr class="ficha"><td colspan="11"><div class="ficha-grid">
+    <section><h3>Em resumo</h3><p>${frase}</p>
+      ${l.alertas.length?l.alertas.map(a=>`<div class="al"><b class="${a.nivel}">${a.nivel==="grave"?"GRAVE":a.nivel==="atencao"?"ATENÇÃO":"INFO"}</b><span>${esc(a.texto)}</span></div>`).join(""):'<p class="foot" style="margin-top:6px">Sem alertas.</p>'}
+    </section>
+    <section><h3>Proventos por ano de pagamento (€)</h3>
+      <div class="barras">${anos.map(a=>`<div style="height:${100*l.proventos_por_ano[a]/mx}%" title="${a}: ${fmt(l.proventos_por_ano[a],4)} €"><span>${a.slice(2)}</span></div>`).join("")}</div>
+      <table class="mini" style="margin-top:24px"><tr>${anos.map(a=>`<th>${a}</th>`).join("")}<th>12m</th></tr><tr>${anos.map(a=>`<td class="num">${fmt(l.proventos_por_ano[a],3)}</td>`).join("")}<td class="num">${fmt(l.proventos_12m,3)}</td></tr></table>
+      <p class="foot so-completo" style="margin-top:6px">Teto robusto (sem melhor e pior ano): ${l.teto_robusto?fmt(l.teto_robusto,3)+" €":"–"}</p>
+    </section>
+    <section><h3>Simulador</h3>
+      <label>Valor investido (€) <input type="number" min="0" step="100" value="1000" data-sim="${l.papel}" style="width:9em"></label>
+      <p class="sim-out" id="sim-${l.papel}" style="margin-top:8px"></p>
+      <p class="foot">Usa o DPA médio de 5 anos e o preço de hoje; ignora comissões e variação do preço. Não é previsão.</p>
+    </section>
+    <section><h3>Pagamentos registados</h3>
+      <table class="mini"><tr><th>Data</th><th class="r">€/ação</th><th>Tipo</th><th>Estado</th></tr>
+      ${l.eventos.slice(0,12).map(e=>`<tr><td class="num">${dataPT(e.data_pagamento)}</td><td class="r num">${fmt(e.valor_bruto,4)}</td><td>${e.tipo}</td><td>${e.fonte_url?`<a href="${esc(e.fonte_url)}" target="_blank" rel="noopener"><span class="badge e-${e.estado}">${e.estado.replace("_"," ")}</span></a>`:`<span class="badge e-${e.estado}">${e.estado.replace("_"," ")}</span>`}</td></tr>`+(e.nota?`<tr><td colspan="4" class="foot">${esc(e.nota)}</td></tr>`:"")).join("")||'<tr><td colspan="4">Nenhum pagamento registado nos últimos anos.</td></tr>'}
+      </table>
+    </section>
+    <section><h3>Preço</h3>${spark(l.historico_preco_mensal)}
+      <p class="foot" style="margin-top:6px">Variação em 12 meses: ${pct(l.variacao_12m_pct)} · Dias sem negócio: ${pct(l.pct_dias_sem_negocio_12m)} · ISIN ${esc(l.isin)}</p>
+      <p class="foot">Situação desde: ${h.length?dataPT(h.at(-1).data)+" ("+esc(h.at(-1).rotulo)+")":"–"}</p>
+    </section>
+  </div></td></tr>`;
+}
+
+function sim(p){
+  const l=P.linhas.find(x=>x.papel===p), inp=document.querySelector(`[data-sim="${p}"]`), out=$("#sim-"+p);
+  if(!l||!inp||!out)return;
+  const v=parseFloat(inp.value)||0;
+  if(!l.preco){out.textContent="Sem preço para simular.";return}
+  const acoes=Math.floor(v/l.preco), br=acoes*l.dpa_medio, liq=br*(1-P.parametros.retencao_irs_pct/100);
+  out.innerHTML=`${acoes.toLocaleString("pt-PT")} ações → proventos brutos de <strong>${fmt(br,2)} €</strong>/ano; <strong>${fmt(liq,2)} €</strong> líquidos com retenção de ${fmt(P.parametros.retencao_irs_pct,0)}%.`;
+}
+
+function tabela(){
+  const q=$("#busca").value.trim().toLowerCase();
+  let L=P.linhas.filter(l=>!q||(l.nome+" "+l.setor+" "+l.papel).toLowerCase().includes(q));
+  if(ord){const [k,d]=ord;L=[...L].sort((a,b)=>{const x=a[k],y=b[k];if(x==null)return 1;if(y==null)return -1;return(typeof x==="string"?x.localeCompare(y,"pt"):x-y)*d})}
+  $("#corpo").innerHTML=L.map(l=>linhaHTML(l)+(aberto===l.papel?fichaHTML(l):"")).join("")||'<tr><td colspan="11">Nenhuma empresa encontrada.</td></tr>';
+  $("#contagem").textContent=`${L.length} de ${P.linhas.length} empresas`;
+  if(aberto)sim(aberto);
+}
+
+document.addEventListener("click",e=>{
+  const th=e.target.closest("th button");if(th){const k=th.dataset.ord;ord=ord&&ord[0]===k?[k,-ord[1]]:[k,typeof P.linhas[0][k]==="string"?1:-1];tabela();return}
+  const tr=e.target.closest("tr.linha");if(tr){aberto=aberto===tr.dataset.p?null:tr.dataset.p;tabela();const n=document.querySelector(`tr.linha[data-p="${tr.dataset.p}"]`);n&&n.focus({preventScroll:true})}
+});
+document.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.matches("tr.linha")){e.preventDefault();e.target.click()}});
+document.addEventListener("input",e=>{if(e.target.dataset.sim)sim(e.target.dataset.sim);if(e.target.id==="busca")tabela()});
+
+function extras(){
+  const t=P.taxa, u=P.universo;
+  $("#taxa").innerHTML=`<p>Taxa das obrigações do Tesouro português a 10 anos, média de ${t.n_obs||"–"} meses: <strong class="num">${pct(t.ot10_media12m_pct,2)}</strong>${t.ultima_obs?` (última observação ${t.ultima_obs[0]}: ${pct(t.ultima_obs[1],2)})`:""}. Origem: ${esc(t.origem)}${t.lida_em?", lida em "+dataPT(t.lida_em):""}.</p>
+  <p style="margin-top:6px">Taxa exigida = ${pct(t.ot10_media12m_pct,2)} + ${fmt(t.premio_pp,1)} p.p. = <strong class="num">${pct(t.taxa_exigida_pct,2)}</strong> (mínimo ${pct(t.taxa_minima_pct,1)}). O prémio é um parâmetro do método, revisto em ${dataPT(P.parametros.revisado_em)}, e não uma estimativa de retorno.</p>`+
+  (P.universo_alertas&&P.universo_alertas.length?`<div class="al"><b class="atencao">UNIVERSO</b><span>${P.universo_alertas.map(esc).join(" ")}</span></div>`:"");
+  $("#univ-crit").textContent=u.criterio;$("#univ-rev").textContent=dataPT(u.revisado_em);$("#univ-prox").textContent=dataPT(u.proxima_revisao);
+  document.querySelectorAll(".p-premio").forEach(x=>x.textContent=fmt(t.premio_pp,1));
+  document.querySelectorAll(".p-min").forEach(x=>x.textContent=fmt(t.taxa_minima_pct,1));
+  document.querySelectorAll(".p-faixa").forEach(x=>x.textContent=fmt(t.faixa_pp,1));
+  $("#autor").textContent=P.autor;
+  $("#gerado").textContent=new Date(P.gerado_em).toLocaleString("pt-PT",{timeZone:"Europe/Lisbon"})+" (hora de Lisboa)";
+  const H=P.historico_status||{}, rows=Object.entries(H).flatMap(([p,v])=>v.map(x=>({p,...x}))).sort((a,b)=>b.data.localeCompare(a.data));
+  $("#hist").innerHTML=`<table class="mini"><tr><th>Data</th><th>Empresa</th><th>Nova situação</th><th class="r">Preço</th><th class="r">Teto</th></tr>${rows.slice(0,60).map(r=>`<tr><td class="num">${dataPT(r.data)}</td><td>${r.p}</td><td>${esc(r.rotulo)}</td><td class="r num">${fmt(r.preco,3)}</td><td class="r num">${r.teto?fmt(r.teto,3):"–"}</td></tr>`).join("")}</table><p class="foot" style="margin-top:6px">Primeiro registo de cada empresa = início do painel.</p>`;
+}
+
+(async()=>{
+  try{const r=await fetch("../../dados/portugal/painel.json?t="+Date.now(),{cache:"no-store"});if(!r.ok)throw new Error(r.status);P=await r.json()}
+  catch(e){$("#corpo").innerHTML='<tr><td colspan="11">Não foi possível carregar os dados. Tente recarregar a página.</td></tr>';$("#selo").className="live stale";$("#selo span").textContent="Dados indisponíveis";return}
+  selo();kpis();extras();tabela();
+})();
+</script>
+</body>
+</html>

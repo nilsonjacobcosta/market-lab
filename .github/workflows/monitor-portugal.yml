@@ -1,0 +1,43 @@
+name: Atualizar Monitor Portugal
+
+on:
+  schedule:
+    # Euronext Lisbon fecha às 16h30 de Lisboa (15h30 UTC no verão, 16h30 UTC no inverno).
+    # Várias tentativas porque o GitHub atrasa ou descarta agendamentos; só publica se algo mudar.
+    # Horários UTC: 17h23, 17h48, 18h37 e 20h12, dias úteis.
+    - cron: "23,48 17 * * 1-5"
+    - cron: "37 18 * * 1-5"
+    - cron: "12 20 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: monitor-portugal
+  cancel-in-progress: false
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Testes (antes da coleta)
+        run: python3 -m unittest tests/test_portugal.py -v
+      - name: Coletar preços, taxa do BCE e lista da Euronext; recalcular
+        run: python3 scripts/portugal/painel_pt.py --coletar
+      - name: Critérios de aceite (depois da coleta) — se falhar, nada é publicado
+        run: python3 -m unittest tests/test_portugal.py -v
+      - name: Publicar se houve mudança
+        run: |
+          git config user.name "market-lab bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add dados/portugal/painel.json dados/portugal/brutos/ultimo.json dados/portugal/historico_status.json
+          if git diff --cached --quiet; then echo "Sem mudanças"; exit 0; fi
+          git commit -m "Monitor Portugal: atualização automática $(date -u +'%Y-%m-%d %H:%M') UTC"
+          git pull --rebase
+          git push
