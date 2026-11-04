@@ -1,0 +1,39 @@
+name: Portugal - teste de cobertura (fase 0, não publica)
+
+# Execução manual: Actions > "Portugal - teste de cobertura" > Run workflow.
+# Só lê dados e anexa o relatório como artefato da execução. Não faz commit nem altera o site.
+on:
+  workflow_dispatch:
+    inputs:
+      so_semente:
+        description: "Usar só a semente manual (ignorar a lista da Euronext)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  testar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Testar cobertura das cotadas de Lisboa
+        run: |
+          ARG=""
+          if [ "${{ inputs.so_semente }}" = "true" ]; then ARG="--so-semente"; fi
+          python3 scripts/portugal/teste_cobertura.py --saida saida $ARG
+      - name: Resumo na página da execução
+        if: always()
+        run: if [ -f saida/relatorio.md ]; then cat saida/relatorio.md >> "$GITHUB_STEP_SUMMARY"; fi
+      - name: Anexar relatório e CSV
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: portugal-cobertura
+          path: saida/
+          retention-days: 30
