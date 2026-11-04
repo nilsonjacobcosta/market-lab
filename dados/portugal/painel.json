@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-11-04T09:08+00:00",
+ "gerado_em": "2026-11-04T09:47+00:00",
  "precos_coletados_em": "2026-11-04T09:06+00:00",
  "autor": "market-lab — projeto pessoal de estudo de nilsonjacobcosta (GitHub)",
  "aviso": "Material educativo, não é recomendação de investimento.",
@@ -235,6 +235,36 @@
     "2026-09": 4.7077,
     "2026-10": 4.3516,
     "2026-11": 4.2775
+   },
+   "qualidade": {
+    "nota": null,
+    "nota_provisoria": false,
+    "motivo_sem_nota": "um indicador ficou fora da faixa plausível e precisa de conferência",
+    "roe": 4.9,
+    "roe_medio_2a": 14.9,
+    "payout": 250.0,
+    "payout_caixa": 287.9,
+    "div_liq_ebitda": 4.69,
+    "divida_liquida": 441854308.0,
+    "ebitda": 94152091.0,
+    "ll": 21377386.0,
+    "lpa": 0.1,
+    "dpa_exercicio": 0.25,
+    "exercicio": 2025,
+    "regra": "Geral",
+    "semaforo": {
+     "roe": "vermelho",
+     "div_liq_ebitda": "vermelho",
+     "payout": "cinza"
+    },
+    "relatorio": "213800AKSTYRLHY3X497-2025-12-31-ESEF-PT-0",
+    "relatorio_url": "https://filings.xbrl.org/213800AKSTYRLHY3X497/2025-12-31/ESEF/PT/0/051988-2025-12-31/reports/ixbrlviewer.html",
+    "flags": [
+     "info:ebit_reconstruido_resultado_financeiro",
+     "descartado:payout=250.0",
+     "sem_nota:metrica_fora_da_faixa_plausivel"
+    ],
+    "erro": null
    }
   },
   {
@@ -389,6 +419,31 @@
     "2026-09": 1.177,
     "2026-10": 1.1168,
     "2026-11": 1.0627
+   },
+   "qualidade": {
+    "nota": 2,
+    "nota_provisoria": false,
+    "motivo_sem_nota": null,
+    "roe": 11.8,
+    "roe_medio_2a": 12.4,
+    "payout": 52.1,
+    "payout_caixa": 43.9,
+    "div_liq_ebitda": null,
+    "divida_liquida": null,
+    "ebitda": null,
+    "ll": 1018647000.0,
+    "lpa": 0.066,
+    "dpa_exercicio": 0.0344,
+    "exercicio": 2025,
+    "regra": "Bancos",
+    "semaforo": {
+     "roe": "amarelo",
+     "payout": "verde"
+    },
+    "relatorio": "JU1U6S0DG9YLT7N8ZV32-2025-12-31-ESEF-PT-1",
+    "relatorio_url": "https://filings.xbrl.org/JU1U6S0DG9YLT7N8ZV32/2025-12-31/ESEF/PT/1/000432-2025-12-31/reports/ixbrlviewer.html",
+    "flags": [],
+    "erro": null
    }
   },
   {
@@ -595,6 +650,34 @@
     "2026-09": 7.0377,
     "2026-10": 6.8114,
     "2026-11": 6.665
+   },
+   "qualidade": {
+    "nota": 1,
+    "nota_provisoria": false,
+    "motivo_sem_nota": null,
+    "roe": 6.6,
+    "roe_medio_2a": 7.6,
+    "payout": 83.7,
+    "payout_caixa": 76.6,
+    "div_liq_ebitda": 0.54,
+    "divida_liquida": 75859000.0,
+    "ebitda": 140985000.0,
+    "ll": 55567000.0,
+    "lpa": 0.418,
+    "dpa_exercicio": 0.35,
+    "exercicio": 2025,
+    "regra": "Geral",
+    "semaforo": {
+     "roe": "vermelho",
+     "div_liq_ebitda": "verde",
+     "payout": "amarelo"
+    },
+    "relatorio": "213800J5M11TDEP3LQ76-2025-12-31-ESEF-PT-0",
+    "relatorio_url": "https://filings.xbrl.org/213800J5M11TDEP3LQ76/2025-12-31/ESEF/PT/0/000544-2025-12-31/reports/ixbrlviewer.html",
+    "flags": [
+     "info:locacoes_nao_identificadas"
+    ],
+    "erro": null
    }
   },
   {
@@ -765,6 +848,34 @@
     "2026-09": 6.3473,
     "2026-10": 5.5916,
     "2026-11": 5.2975
+   },
+   "qualidade": {
+    "nota": 3,
+    "nota_provisoria": false,
+    "motivo_sem_nota": null,
+    "roe": 20.1,
+    "roe_medio_2a": 19.2,
+    "payout": 50.0,
+    "payout_caixa": 48.1,
+    "div_liq_ebitda": -0.02,
+    "divida_liquida": -4200754.0,
+    "ebitda": 175873594.0,
+    "ll": 50709394.0,
+    "lpa": 0.38,
+    "dpa_exercicio": 0.19,
+    "exercicio": 2025,
+    "regra": "Geral",
+    "semaforo": {
+     "roe": "verde",
+     "div_liq_ebitda": "verde",
+     "payout": "verde"
+    },
+    "relatorio": "529900G4A1IKOKC22K56-2025-12-31-ESEF-PT-0",
+    "relatorio_url": "https://filings.xbrl.org/529900G4A1IKOKC22K56/2025-12-31/ESEF/PT/0/002367-2025-12-31/reports/ixbrlviewer.html",
+    "flags": [
+     "info:locacoes_nao_identificadas"
+    ],
+    "erro": null
    }
   },
   {
@@ -935,6 +1046,36 @@
     "2026-09": 4.754,
     "2026-10": 4.8118,
     "2026-11": 4.86
+   },
+   "qualidade": {
+    "nota": 2,
+    "nota_provisoria": true,
+    "motivo_sem_nota": null,
+    "roe": 10.0,
+    "roe_medio_2a": 8.5,
+    "payout": 73.2,
+    "payout_caixa": 71.9,
+    "div_liq_ebitda": 3.55,
+    "divida_liquida": 17860957000.0,
+    "ebitda": 5027723000.0,
+    "ll": 1149726000.0,
+    "lpa": 0.28,
+    "dpa_exercicio": 0.205,
+    "exercicio": 2025,
+    "regra": "Energia",
+    "semaforo": {
+     "roe": "amarelo",
+     "div_liq_ebitda": "amarelo",
+     "payout": "verde"
+    },
+    "relatorio": "529900CLC3WDMGI9VH80-2025-12-31-ESEF-PT-3",
+    "relatorio_url": "https://filings.xbrl.org/529900CLC3WDMGI9VH80/2025-12-31/ESEF/PT/3/529900CLC3WDMGI9VH80-2025-12-31/reports/ixbrlviewer.html",
+    "flags": [
+     "verificar:ebit_reconstruido_lucro_impostos_financeiro",
+     "info:ebitda_reportado_pela_empresa",
+     "info:locacoes_nao_identificadas"
+    ],
+    "erro": null
    }
   },
   {
@@ -1116,6 +1257,34 @@
     "2026-09": 12.965,
     "2026-10": 12.3464,
     "2026-11": 12.81
+   },
+   "qualidade": {
+    "nota": 1,
+    "nota_provisoria": false,
+    "motivo_sem_nota": null,
+    "roe": 2.1,
+    "roe_medio_2a": null,
+    "payout": 59.0,
+    "payout_caixa": 18.7,
+    "div_liq_ebitda": 4.2,
+    "divida_liquida": 8172908000.0,
+    "ebitda": 1944645000.0,
+    "ll": 215801000.0,
+    "lpa": 0.21,
+    "dpa_exercicio": 0.124,
+    "exercicio": 2025,
+    "regra": "Energia",
+    "semaforo": {
+     "roe": "vermelho",
+     "div_liq_ebitda": "vermelho",
+     "payout": "verde"
+    },
+    "relatorio": "529900MUFAH07Q1TAX06-2025-12-31-ESEF-PT-1",
+    "relatorio_url": "https://filings.xbrl.org/529900MUFAH07Q1TAX06/2025-12-31/ESEF/PT/1/529900MUFAH07Q1TAX06-2025-12-31/reports/ixbrlviewer.html",
+    "flags": [
+     "info:locacoes_nao_identificadas"
+    ],
+    "erro": null
    }
   },
   {
@@ -1291,6 +1460,34 @@
     "2026-09": 5.0052,
     "2026-10": 4.6939,
     "2026-11": 4.505
+   },
+   "qualidade": {
+    "nota": 3,
+    "nota_provisoria": false,
+    "motivo_sem_nota": null,
+    "roe": 44.7,
+    "roe_medio_2a": 46.6,
+    "payout": 39.6,
+    "payout_caixa": 44.2,
+    "div_liq_ebitda": 2.43,
+    "divida_liquida": 2350346000.0,
+    "ebitda": 965249000.0,
+    "ll": 133121000.0,
+    "lpa": 0.437,
+    "dpa_exercicio": 0.173,
+    "exercicio": 2025,
+    "regra": "Geral",
+    "semaforo": {
+     "roe": "verde",
+     "div_liq_ebitda": "verde",
+     "payout": "verde"
+    },
+    "relatorio": "549300L6RR1203WN9F57-2025-12-31-ESEF-PT-0",
+    "relatorio_url": "https://filings.xbrl.org/549300L6RR1203WN9F57/2025-12-31/ESEF/PT/0/010102-2025-12-31/reports/ixbrlviewer.html",
+    "flags": [
+     "info:ebit_reconstruido_resultado_financeiro"
+    ],
+    "erro": null
    }
   },
   {
@@ -1515,6 +1712,32 @@
     "2026-09": 21.7905,
     "2026-10": 21.9718,
     "2026-11": 20.165
+   },
+   "qualidade": {
+    "nota": 3,
+    "nota_provisoria": false,
+    "motivo_sem_nota": null,
+    "roe": 24.6,
+    "roe_medio_2a": 23.7,
+    "payout": 42.4,
+    "payout_caixa": 42.9,
+    "div_liq_ebitda": null,
+    "divida_liquida": 2549000000.0,
+    "ebitda": null,
+    "ll": 1120000000.0,
+    "lpa": 1.51,
+    "dpa_exercicio": 0.64,
+    "exercicio": 2025,
+    "regra": "Energia",
+    "semaforo": {
+     "roe": "verde",
+     "div_liq_ebitda": "cinza",
+     "payout": "verde"
+    },
+    "relatorio": "2138003319Y7NM75FG53-2025-12-31-ESEF-PT-1",
+    "relatorio_url": "https://filings.xbrl.org/2138003319Y7NM75FG53/2025-12-31/ESEF/PT/1/023179-2025-12-31/reports/ixbrlviewer.html",
+    "flags": [],
+    "erro": null
    }
   },
   {
@@ -1680,6 +1903,35 @@
     "2026-09": 10.1268,
     "2026-10": 10.0923,
     "2026-11": 10.36
+   },
+   "qualidade": {
+    "nota": null,
+    "nota_provisoria": false,
+    "motivo_sem_nota": "um indicador ficou fora da faixa plausível e precisa de conferência",
+    "roe": 4.6,
+    "roe_medio_2a": 4.3,
+    "payout": 189.2,
+    "payout_caixa": 188.1,
+    "div_liq_ebitda": 1.27,
+    "divida_liquida": 168536250.0,
+    "ebitda": 132466506.0,
+    "ll": 15173400.0,
+    "lpa": 0.37,
+    "dpa_exercicio": 0.7,
+    "exercicio": 2025,
+    "regra": "Geral",
+    "semaforo": {
+     "roe": "vermelho",
+     "div_liq_ebitda": "verde",
+     "payout": "cinza"
+    },
+    "relatorio": "549300ZG20XRKSRKZ238-2025-12-31-ESEF-PT-0",
+    "relatorio_url": "https://filings.xbrl.org/549300ZG20XRKSRKZ238/2025-12-31/ESEF/PT/0/000845-2025-12-31/reports/ixbrlviewer.html",
+    "flags": [
+     "descartado:payout=189.2",
+     "sem_nota:metrica_fora_da_faixa_plausivel"
+    ],
+    "erro": null
    }
   },
   {
@@ -1856,6 +2108,32 @@
     "2026-09": 17.9977,
     "2026-10": 17.7445,
     "2026-11": 18.54
+   },
+   "qualidade": {
+    "nota": 3,
+    "nota_provisoria": false,
+    "motivo_sem_nota": null,
+    "roe": 20.5,
+    "roe_medio_2a": 20.5,
+    "payout": 63.2,
+    "payout_caixa": 60.1,
+    "div_liq_ebitda": 1.41,
+    "divida_liquida": 3304000000.0,
+    "ebitda": 2350000000.0,
+    "ll": 646000000.0,
+    "lpa": 1.0287,
+    "dpa_exercicio": 0.65,
+    "exercicio": 2025,
+    "regra": "Geral",
+    "semaforo": {
+     "roe": "verde",
+     "div_liq_ebitda": "verde",
+     "payout": "verde"
+    },
+    "relatorio": "259400A8SZP10GB5IB19-2025-12-31-ESEF-PT-0",
+    "relatorio_url": "https://filings.xbrl.org/259400A8SZP10GB5IB19/2025-12-31/ESEF/PT/0/000320-2025-12-31/reports/ixbrlviewer.html",
+    "flags": [],
+    "erro": null
    }
   },
   {
@@ -2026,6 +2304,34 @@
     "2026-09": 5.2387,
     "2026-10": 5.2302,
     "2026-11": 5.2075
+   },
+   "qualidade": {
+    "nota": 3,
+    "nota_provisoria": false,
+    "motivo_sem_nota": null,
+    "roe": 22.4,
+    "roe_medio_2a": 24.4,
+    "payout": 93.8,
+    "payout_caixa": 83.3,
+    "div_liq_ebitda": 2.06,
+    "divida_liquida": 1660663000.0,
+    "ebitda": 806851000.0,
+    "ll": 245875000.0,
+    "lpa": 0.48,
+    "dpa_exercicio": 0.45,
+    "exercicio": 2025,
+    "regra": "Telecomunicações",
+    "semaforo": {
+     "roe": "verde",
+     "div_liq_ebitda": "amarelo",
+     "payout": "verde"
+    },
+    "relatorio": "5493004DM8FGIY6QKF37-2025-12-31-ESEF-PT-1",
+    "relatorio_url": "https://filings.xbrl.org/5493004DM8FGIY6QKF37/2025-12-31/ESEF/PT/1/023002-2025-12-31/reports/ixbrlviewer.html",
+    "flags": [
+     "info:locacoes_nao_identificadas"
+    ],
+    "erro": null
    }
   },
   {
@@ -2229,6 +2535,32 @@
     "2026-09": 3.2449,
     "2026-10": 3.0645,
     "2026-11": 3.011
+   },
+   "qualidade": {
+    "nota": 3,
+    "nota_provisoria": false,
+    "motivo_sem_nota": null,
+    "roe": 10.5,
+    "roe_medio_2a": 16.0,
+    "payout": 55.4,
+    "payout_caixa": 121.0,
+    "div_liq_ebitda": 2.2,
+    "divida_liquida": 836158538.0,
+    "ebitda": 379256566.0,
+    "ll": 144667435.0,
+    "lpa": 0.203,
+    "dpa_exercicio": 0.1125,
+    "exercicio": 2025,
+    "regra": "Geral",
+    "semaforo": {
+     "roe": "amarelo",
+     "div_liq_ebitda": "verde",
+     "payout": "verde"
+    },
+    "relatorio": "549300UNIB7M2AXUXS35-2025-12-31-ESEF-PT-1",
+    "relatorio_url": "https://filings.xbrl.org/549300UNIB7M2AXUXS35/2025-12-31/ESEF/PT/1/007394-2025-12-31/reports/ixbrlviewer.html",
+    "flags": [],
+    "erro": null
    }
   },
   {
@@ -2435,6 +2767,34 @@
     "2026-09": 3.5195,
     "2026-10": 3.5559,
     "2026-11": 3.59
+   },
+   "qualidade": {
+    "nota": 1,
+    "nota_provisoria": false,
+    "motivo_sem_nota": null,
+    "roe": 10.4,
+    "roe_medio_2a": 10.2,
+    "payout": 66.7,
+    "payout_caixa": 65.2,
+    "div_liq_ebitda": 4.83,
+    "divida_liquida": 2496953000.0,
+    "ebitda": 516512000.0,
+    "ll": 159813000.0,
+    "lpa": 0.24,
+    "dpa_exercicio": 0.16,
+    "exercicio": 2025,
+    "regra": "Energia",
+    "semaforo": {
+     "roe": "amarelo",
+     "div_liq_ebitda": "vermelho",
+     "payout": "verde"
+    },
+    "relatorio": "549300FR1FN48IGHR915-2025-12-31-ESEF-PT-0",
+    "relatorio_url": "https://filings.xbrl.org/549300FR1FN48IGHR915/2025-12-31/ESEF/PT/0/009892-2025-12-31/reports/ixbrlviewer.html",
+    "flags": [
+     "info:locacoes_nao_identificadas"
+    ],
+    "erro": null
    }
   },
   {
@@ -2620,6 +2980,32 @@
     "2026-09": 20.6955,
     "2026-10": 19.4236,
     "2026-11": 19.6
+   },
+   "qualidade": {
+    "nota": 2,
+    "nota_provisoria": false,
+    "motivo_sem_nota": null,
+    "roe": 9.3,
+    "roe_medio_2a": 12.1,
+    "payout": 31.9,
+    "payout_caixa": 65.4,
+    "div_liq_ebitda": 2.97,
+    "divida_liquida": 1142386753.0,
+    "ebitda": 385202794.0,
+    "ll": 156599440.0,
+    "lpa": 1.961,
+    "dpa_exercicio": 0.626,
+    "exercicio": 2025,
+    "regra": "Geral",
+    "semaforo": {
+     "roe": "amarelo",
+     "div_liq_ebitda": "amarelo",
+     "payout": "verde"
+    },
+    "relatorio": "549300HNGOW85KIOH584-2025-12-31-ESEF-PT-0",
+    "relatorio_url": "https://filings.xbrl.org/549300HNGOW85KIOH584/2025-12-31/ESEF/PT/0/009772-2025-12-31/reports/ixbrlviewer.html",
+    "flags": [],
+    "erro": null
    }
   },
   {
@@ -2790,6 +3176,34 @@
     "2026-09": 2.059,
     "2026-10": 2.0923,
     "2026-11": 2.105
+   },
+   "qualidade": {
+    "nota": 1,
+    "nota_provisoria": false,
+    "motivo_sem_nota": null,
+    "roe": 6.4,
+    "roe_medio_2a": 6.9,
+    "payout": 60.6,
+    "payout_caixa": 83.4,
+    "div_liq_ebitda": 2.82,
+    "divida_liquida": 3209753000.0,
+    "ebitda": 1139038000.0,
+    "ll": 199222000.0,
+    "lpa": 0.10254,
+    "dpa_exercicio": 0.06217,
+    "exercicio": 2025,
+    "regra": "Geral",
+    "semaforo": {
+     "roe": "vermelho",
+     "div_liq_ebitda": "amarelo",
+     "payout": "verde"
+    },
+    "relatorio": "549300847SOBT7HY7R50-2025-12-31-ESEF-PT-0",
+    "relatorio_url": "https://filings.xbrl.org/549300847SOBT7HY7R50/2025-12-31/ESEF/PT/0/000187-2025-12-31/reports/ixbrlviewer.html",
+    "flags": [
+     "info:ebit_reconstruido_resultado_financeiro"
+    ],
+    "erro": null
    }
   },
   {
@@ -2898,6 +3312,34 @@
     "2026-09": 0.4849,
     "2026-10": 0.444,
     "2026-11": 0.4192
+   },
+   "qualidade": {
+    "nota": 1,
+    "nota_provisoria": false,
+    "motivo_sem_nota": null,
+    "roe": 34.1,
+    "roe_medio_2a": 26.3,
+    "payout": 0.0,
+    "payout_caixa": null,
+    "div_liq_ebitda": 5.65,
+    "divida_liquida": 511239000.0,
+    "ebitda": 90533000.0,
+    "ll": 50031000.0,
+    "lpa": 0.12,
+    "dpa_exercicio": 0.0,
+    "exercicio": 2025,
+    "regra": "Geral",
+    "semaforo": {
+     "roe": "verde",
+     "div_liq_ebitda": "vermelho",
+     "payout": "amarelo"
+    },
+    "relatorio": "959800JFY96QF028V484-2025-12-31-ESEF-PT-0",
+    "relatorio_url": "https://filings.xbrl.org/959800JFY96QF028V484/2025-12-31/ESEF/PT/0/959800JFY96QF028V484-2025-12-31/reports/ixbrlviewer.html",
+    "flags": [
+     "info:sem_dividendo_cadastrado_para_o_exercicio"
+    ],
+    "erro": null
    }
   }
  ],
@@ -3047,5 +3489,22 @@
     "teto": null
    }
   ]
+ },
+ "qualidade_meta": {
+  "gerado_em": "2026-11-04 09:46",
+  "fonte": "Relatórios anuais ESEF (iXBRL) via filings.xbrl.org; LEI via GLEIF",
+  "aceite": {
+   "com_relatorio_pct (meta >=90)": 100.0,
+   "com_nota_pct (meta >=75)": 87.5,
+   "lucro_encontrado_pct (meta >=90)": 100.0,
+   "conferencia_lucro_2025": {
+    "BCP": "1018.6 vs 1018.6 M€ (0.00%) — Millennium bcp, resultados de 2025 (Forbes Portugal, 2026)",
+    "GALP": "1120.0 vs 1120.0 M€ (0.00%) — Galp, resultados de 2025 (Forbes España, 2026)",
+    "JMT": "646.0 vs 646.0 M€ (0.00%) — Jerónimo Martins, resultados de 2025 (ECO, 18/03/2026)",
+    "EDP": "1149.7 vs 1150.0 M€ (0.02%) — EDP, resultados de 2025 (Observador e RTP, 25/02/2026)",
+    "NOS": "245.9 vs 245.9 M€ (0.01%) — NOS, resultados de 2025 (RTP e Dinheiro Vivo, 03/2026)",
+    "EDPR": "215.8 vs 216.0 M€ (0.09%) — EDP Renováveis, resultados de 2025 (Renascença, 25/02/2026)"
+   }
+  }
  }
 }
