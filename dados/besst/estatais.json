@@ -659,18 +659,6 @@
   },
   {
    "tickers": [
-    "LIPR3"
-   ],
-   "nome": "Eletropar",
-   "setor": "Energia",
-   "categoria": "participacao_estatal_relevante",
-   "controlador": "Axia Energia (ex-Eletrobras)",
-   "nota": "Cadastro CVM: registro CANCELADO em 02/06/2025, motivo 'ELISÃO POR INCORPORAÇÃO' (código CVM 15784; cadastro consultado em 02/11/2026). A Eletropar foi incorporada pela Axia (ex-Eletrobras) e o papel deixou de ser negociado.",
-   "fonte": "https://dados.cvm.gov.br/dados/CIA_ABERTA/CAD/DADOS/cad_cia_aberta.csv",
-   "confianca": "alta"
-  },
-  {
-   "tickers": [
     "AXIA3",
     "AXIA6"
    ],

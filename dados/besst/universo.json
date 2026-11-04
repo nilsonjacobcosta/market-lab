@@ -438,11 +438,6 @@
    "setor": "Energia"
   },
   {
-   "ticker": "EMAE4",
-   "empresa": "EMAE",
-   "setor": "Energia"
-  },
-  {
    "ticker": "COCE3",
    "empresa": "Coelce",
    "setor": "Energia"
@@ -455,11 +450,6 @@
   {
    "ticker": "CEPE5",
    "empresa": "Celpe",
-   "setor": "Energia"
-  },
-  {
-   "ticker": "LIPR3",
-   "empresa": "Eletropar",
    "setor": "Energia"
   },
   {
@@ -490,11 +480,6 @@
   {
    "ticker": "CEED3",
    "empresa": "CEEE-D",
-   "setor": "Energia"
-  },
-  {
-   "ticker": "EMAE3",
-   "empresa": "EMAE",
    "setor": "Energia"
   },
   {
