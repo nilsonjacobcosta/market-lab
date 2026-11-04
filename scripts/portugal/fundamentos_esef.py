@@ -72,6 +72,17 @@ DIVIDA = {
     "locacoes_nc": ["NoncurrentLeaseLiabilities"],
     "locacoes_c": ["CurrentLeaseLiabilities"],
 }
+DIVIDA["outros_emprestimos_nc"] = ["NoncurrentPortionOfOtherNoncurrentBorrowings"]
+DIVIDA["outros_emprestimos_c"] = ["OtherCurrentBorrowingsAndCurrentPortionOfOtherNoncurrentBorrowings"]
+# Rubricas próprias da empresa (extensões ESEF), conferidas à mão no relatório. Mapa explícito e auditável.
+EXTENSOES = {
+    "ALTR": {"emprestimos_extra": ["altri:EmprestimosBancariosCorrentes", "altri:EmprestimosBancariosNaoCorrentes"]},
+    "EGL": {"emprestimos_extra": ["egl:EmprestimosComRecurso", "egl:EmprestimosComRecursoCorrente",
+                                  "egl:EmprestimosSemRecurso", "egl:EmprestimosSemRecursoCorrente"]},
+    "EDP": {"ebitda": ["edp:ResultadoLiquidoAntesDeProvisoesAmortizacoesEImparidadesProveitosFinanceirosECustosFinanceirosImpostosSobreOsLucrosEContribuicaoExtraordinariaParaOSectorEnergeticoCESE"]},
+    "GALP": {"da": ["galp:AmortizacoesDepreciacoesEImparidadesEmAtivosFixos"]},
+    "CTT": {"da": ["ctt:DepreciacoesAmortizacoesEImparidadeDeInvestimentosPerdasReversoes"]},
+}
 RX_DIVIDA_EXT = re.compile(r"(borrowing|debt|loan|bond|emprestim|financiament|obrigac)", re.I)
 
 
@@ -180,7 +191,7 @@ def periodos(ano):
     return ("d", f"{ano}-01-01", f"{ano}-12-31"), ("i", f"{ano}-12-31"), ("i", f"{ano - 1}-12-31")
 
 
-def extrair(idx, ano):
+def extrair(idx, ano, papel=None):
     dur, fim, ini = periodos(ano)
     r, origem = {}, {}
     for k in ("ll", "lpa", "op", "lai", "desp_fin", "rec_fin", "fin_liq", "da", "div_pagos"):
@@ -189,12 +200,25 @@ def extrair(idx, ano):
         r[k], origem[k] = pega(idx, C["pl" if k.startswith("pl") else k], per)
     g = {k: pega(idx, v, fim) for k, v in DIVIDA.items()}
     emp = g["emprestimos_total"][0]
-    if emp is None and (g["emprestimos_nc"][0] is not None or g["emprestimos_c"][0] is not None):
-        emp = (g["emprestimos_nc"][0] or 0) + (g["emprestimos_c"][0] or 0)
+    partes = [g[k][0] for k in ("emprestimos_nc", "emprestimos_c", "outros_emprestimos_nc", "outros_emprestimos_c")]
+    if emp is None and any(v is not None for v in partes):
+        emp = sum(v or 0 for v in partes)
+    ext = EXTENSOES.get(papel, {})
+    extra = [idx.get((c, fim)) for c in ext.get("emprestimos_extra", [])]
+    if any(v is not None for v in extra):
+        emp = (emp or 0) + sum(v or 0 for v in extra)
+        origem["divida_extensoes"] = [c for c, v in zip(ext["emprestimos_extra"], extra) if v is not None]
+    for k in ("da", "ebitda"):
+        for c in ext.get(k, []):
+            v = idx.get((c, dur))
+            if v is not None and (k == "ebitda" or r.get("da") is None):
+                r[k], origem[k] = v, c
+                break
     loc = g["locacoes_total"][0]
     if loc is None and (g["locacoes_nc"][0] is not None or g["locacoes_c"][0] is not None):
         loc = (g["locacoes_nc"][0] or 0) + (g["locacoes_c"][0] or 0)
     r["emprestimos"], r["locacoes"] = emp, loc
+    r.setdefault("ebitda", None)
     origem["divida"] = {k: v[1] for k, v in g.items() if v[1]}
     # extensões da empresa que parecem dívida (só para diagnóstico/alerta, não entram na conta)
     ext = sorted({(c, round(v)) for (c, p), v in idx.items()
@@ -290,6 +314,8 @@ def metricas(papel, setor, dados_ano, dados_ant, ano, hoje):
         elif op is None and d["lai"] is not None and d["desp_fin"] is not None:
             op = d["lai"] + abs(d["desp_fin"]) - abs(d["rec_fin"] or 0); flags.append("info:ebit_reconstruido_resultado_financeiro")
         ebitda = op + abs(d["da"]) if op is not None and d["da"] is not None else None
+        if d.get("ebitda") is not None:
+            ebitda = d["ebitda"]; flags.append("info:ebitda_reportado_pela_empresa")
         m["ebitda"] = ebitda
         if d["emprestimos"] is None:
             flags.append("verificar:emprestimos_nao_identificados" + (":extensoes" if d["_ext_divida"] else ""))
@@ -374,7 +400,7 @@ def main():
                 for cand in escolher(rel, ano):
                     doc = get_json(FXO + cand["json_url"])
                     idx = indexar(doc)
-                    d = extrair(idx, ano)
+                    d = extrair(idx, ano, t)
                     if d["ll"] is not None or ano not in dados:
                         dados[ano], usado[ano] = d, cand
                     if d["_origem"].get("ll") == "ifrs-full:ProfitLossAttributableToOwnersOfParent":
@@ -386,7 +412,7 @@ def main():
                       "relatorio_url": FXO + (usado[ano].get("viewer_url") or usado[ano].get("report_url") or ""),
                       "publicado": usado[ano]["publicado"],
                       "origem_rubricas": dados[ano]["_origem"],
-                      "componentes": {k: dados[ano][k] for k in ("ll", "pl", "pl_ini", "lpa", "op", "da", "caixa", "emprestimos", "locacoes", "div_pagos")}})
+                      "componentes": {k: dados[ano][k] for k in ("ll", "pl", "pl_ini", "lpa", "op", "lai", "fin_liq", "desp_fin", "rec_fin", "da", "ebitda", "caixa", "emprestimos", "locacoes", "div_pagos")}})
             saida["papeis"][t] = m
             if a.descobrir:
                 print(json.dumps({k: v for k, v in m.items() if k not in ("semaforo",)}, ensure_ascii=False))

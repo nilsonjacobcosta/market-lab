@@ -341,6 +341,15 @@ def main():
             universo_alertas.append(f"{p['papel']} não aparece na lista atual da Euronext Lisbon (saída da bolsa ou mudança de código?).")
         elif e and e["isin"] != p["isin"]:
             universo_alertas.append(f"{p['papel']}: ISIN no cadastro ({p['isin']}) difere da Euronext ({e['isin']}).")
+    fund_arq = DADOS / "fundamentos.json"
+    fund = json.loads(fund_arq.read_text(encoding="utf-8")) if fund_arq.exists() else {}
+    for l in res["linhas"]:
+        q = (fund.get("papeis") or {}).get(l["papel"])
+        if q:
+            l["qualidade"] = {k: q.get(k) for k in ("nota", "nota_provisoria", "motivo_sem_nota", "roe", "roe_medio_2a", "payout",
+                                                    "payout_caixa", "div_liq_ebitda", "divida_liquida", "ebitda", "ll", "lpa",
+                                                    "dpa_exercicio", "exercicio", "regra", "semaforo", "relatorio", "relatorio_url",
+                                                    "flags", "erro")}
     hist = atualizar_historico(res["linhas"], agora)
     painel = {
         "gerado_em": agora.isoformat(timespec="minutes"),
@@ -353,6 +362,7 @@ def main():
         "n_euronext_xlis": len(euronext) or None,
         **res,
         "historico_status": hist,
+        "qualidade_meta": {k: fund.get(k) for k in ("gerado_em", "fonte", "aceite")} if fund else None,
     }
     (DADOS / "painel.json").write_text(json.dumps(painel, ensure_ascii=False, indent=1), encoding="utf-8")
     n = {s: sum(1 for l in res["linhas"] if l["status"] == s) for s in {l["status"] for l in res["linhas"]}}
