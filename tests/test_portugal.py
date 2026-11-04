@@ -98,6 +98,13 @@ class Calculo(unittest.TestCase):
         self.assertEqual(tdsa["status"], "sem_proventos")
         self.assertIsNone(tdsa["teto"])
 
+    def test_especie_nao_conta(self):
+        agora, brutos = self._brutos()
+        r = pt.calcular(UNIVERSO, PARAMS, EVENTOS, brutos, agora)
+        altr = next(l for l in r["linhas"] if l["papel"] == "ALTR")
+        self.assertAlmostEqual(altr["proventos_por_ano"]["2021"], 0.25)
+        self.assertIn("especie", [a["codigo"] for a in altr["alertas"]])
+
     def test_taxa_minima(self):
         agora, brutos = self._brutos()
         brutos["taxa_bce"]["obs"] = [["2026-%02d" % m, 1.0] for m in range(1, 13)]

@@ -185,7 +185,9 @@ def calcular(universo, params, eventos, brutos, agora):
     linhas = []
     for p in universo["papeis"]:
         t = p["papel"]
-        ev = [e for e in eventos if e["papel"] == t]
+        todos = [e for e in eventos if e["papel"] == t]
+        ev = [e for e in todos if e["tipo"] in ("dinheiro", "scrip")]  # distribuições em espécie não entram no cálculo
+        especie = [e for e in todos if e["tipo"] == "especie"]
         por_ano = {a: round(sum(e["valor_bruto"] for e in ev if e["data_pagamento"][:4] == a), 6) for a in anos}
         d12 = round(sum(e["valor_bruto"] for e in ev if inicio12 < e["data_pagamento"] <= hoje.isoformat()), 6)
         vals = [por_ano[a] for a in anos]
@@ -229,6 +231,8 @@ def calcular(universo, params, eventos, brutos, agora):
             add("atencao", "anos_sem_proventos", f"Sem proventos em {', '.join(anos_zero)}: a média de 5 anos fica mais baixa e o teto também.")
         if a_conferir:
             add("atencao", "proventos_a_conferir", f"Proventos de {', '.join(a_conferir)} ainda sem documento oficial no cadastro.")
+        if especie:
+            add("info", "especie", "Houve distribuição em espécie (" + ", ".join(e["data_pagamento"] for e in especie) + "), não contada nos proventos.")
         if tem_scrip:
             add("info", "scrip", "Parte dos proventos foi paga em ações (scrip). Conta-se o valor de referência por ação indicado pela empresa.")
         if liq is not None and liq < universo["corte_liquidez_eur"]:
@@ -238,7 +242,7 @@ def calcular(universo, params, eventos, brutos, agora):
         if vals[-1] > 0 and vals[-2] > 0 and vals[-1] < 0.7 * vals[-2]:
             add("atencao", "queda_proventos", f"Proventos de {anos[-1]} caíram mais de 30% face a {anos[-2]}.")
         # Fonte de cotações como detector: evento de provento na fonte sem evento no cadastro até 45 dias.
-        cad_datas = [datetime.strptime(e["data_pagamento"], "%Y-%m-%d").date() for e in ev]
+        cad_datas = [datetime.strptime(e["data_pagamento"], "%Y-%m-%d").date() for e in todos]
         orfaos = []
         for d, v in pr.get("divs_fonte", []):
             dd = datetime.strptime(d, "%Y-%m-%d").date()
@@ -269,7 +273,7 @@ def calcular(universo, params, eventos, brutos, agora):
             "liquidez_mediana_12m_eur": liq, "pct_dias_sem_negocio_12m": sem_neg,
             "pct_eventos_oficiais": pct_oficial, "tem_scrip": tem_scrip,
             "eventos": [{k: e[k] for k in ("data_pagamento", "valor_bruto", "tipo", "exercicio", "estado", "fonte_url", "nota")}
-                        for e in sorted(ev, key=lambda e: e["data_pagamento"], reverse=True)],
+                        for e in sorted(todos, key=lambda e: e["data_pagamento"], reverse=True)],
             "alertas": alertas,
             "historico_preco_mensal": dict(list((pr.get("precos_mes") or {}).items())[-60:]),
         })

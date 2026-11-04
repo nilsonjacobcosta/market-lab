@@ -3,6 +3,7 @@ papel,data_pagamento,valor_bruto,tipo,exercicio,estado,fonte_url,nota
 # estado: oficial = conferido em comunicado/página da empresa; coincide = valor da fonte de cotações igual à amostra oficial da mesma empresa; a_conferir = ainda sem documento oficial.,,,,,,,
 # Datas com dia 15 marcado em nota "dia aproximado" quando a fonte oficial só dá o mês ou o ano.,,,,,,,
 ALTR,2021-05-20,0.25,dinheiro,2020,oficial,https://live.euronext.com/sites/default/files/Connect_altri20210504pt.pdf,a fonte de cotações indica 0.35 no ano de 2021 — diferença em investigação; em 2021-2023 houve também distribuições em espécie (ações Greenvolt) não contadas
+ALTR,2021-07-07,0.10,especie,,a_conferir,,distribuição em espécie (ações Greenvolt) registada pela fonte de cotações com 0.10; NÃO entra no cálculo
 ALTR,2022-05-15,0.24,dinheiro,2021,a_conferir,,valor da fonte de cotações; comunicado de 03/05/2022 (numerário e espécie) não legível automaticamente
 ALTR,2023-05-15,0.25,dinheiro,2022,a_conferir,,valor da fonte de cotações; comunicado de 02/05/2023 (numerário e espécie)
 ALTR,2024-05-15,0.25,dinheiro,2023,a_conferir,,valor da fonte de cotações; comunicado de 07/05/2024
@@ -12,11 +13,14 @@ BCP,2022-06-15,0.0009,dinheiro,2021,oficial,https://ind.millenniumbcp.pt/pt/Inst
 BCP,2024-06-15,0.0170,dinheiro,2023,oficial,https://ind.millenniumbcp.pt/pt/Institucional/investidores/Pages/Dividendos.aspx,dia aproximado
 BCP,2025-06-15,0.0300,dinheiro,2024,oficial,https://ind.millenniumbcp.pt/pt/Institucional/investidores/Pages/Dividendos.aspx,dia aproximado
 BCP,2026-06-03,0.0344,dinheiro,2025,oficial,https://ind.millenniumbcp.pt/pt/Institucional/investidores/Documents/comunicados/2026/Dividendo_PT_12052026.pdf,
-COR,2021-06-15,0.27,dinheiro,2020,oficial,https://www.amorim.com/en/investors/corticeira-amorim-share/dividends/,total do ano (0.185 + 0.085); dia aproximado
-COR,2022-06-15,0.29,dinheiro,2021,oficial,https://www.amorim.com/en/investors/corticeira-amorim-share/dividends/,total indicado pela empresa; as duas parcelas listadas somam 0.275 — conferir
-COR,2023-06-15,0.29,dinheiro,2022,oficial,https://www.amorim.com/en/investors/corticeira-amorim-share/dividends/,total do ano (0.20 + 0.09); dia aproximado
-COR,2024-05-15,0.20,dinheiro,2023,oficial,https://www.amorim.com/en/investors/corticeira-amorim-share/dividends/,dia aproximado
-COR,2024-12-15,0.09,dinheiro,2024,oficial,https://www.amorim.com/en/investors/corticeira-amorim-share/dividends/,comunicado de 02/12/2024; a fonte de cotações não registou este pagamento
+COR,2021-05-15,0.185,dinheiro,2020,oficial,https://www.amorim.com/en/investors/corticeira-amorim-share/dividends/,1.ª parcela do ano; dia aproximado
+COR,2021-12-20,0.085,dinheiro,2021,oficial,https://www.amorim.com/en/investors/corticeira-amorim-share/dividends/,2.ª parcela (antecipada); data da fonte de cotações
+COR,2022-05-15,0.20,dinheiro,2021,oficial,https://www.amorim.com/en/investors/corticeira-amorim-share/dividends/,1.ª parcela = total do ano 0.29 menos a parcela de dezembro; a tabela da empresa lista parcelas que somam 0.275 — conferir; dia aproximado
+COR,2022-12-19,0.09,dinheiro,2022,oficial,https://www.amorim.com/en/investors/corticeira-amorim-share/dividends/,2.ª parcela; data da fonte de cotações
+COR,2023-05-15,0.20,dinheiro,2022,oficial,https://www.amorim.com/en/investors/corticeira-amorim-share/dividends/,1.ª parcela; dia aproximado
+COR,2023-12-18,0.09,dinheiro,2023,oficial,https://www.amorim.com/en/investors/corticeira-amorim-share/dividends/,2.ª parcela; data da fonte de cotações
+COR,2024-05-15,0.20,dinheiro,2023,oficial,https://www.amorim.com/en/investors/corticeira-amorim-share/dividends/,1.ª parcela; dia aproximado
+COR,2024-12-15,0.09,dinheiro,2024,oficial,https://www.amorim.com/en/investors/corticeira-amorim-share/dividends/,2.ª parcela (comunicado de 02/12/2024); a fonte de cotações não registou este pagamento; dia aproximado
 COR,2025-05-15,0.32,dinheiro,2024,oficial,https://www.amorim.com/en/investors/corticeira-amorim-share/dividends/,comunicado de 06/05/2025; dia aproximado
 COR,2026-05-15,0.35,dinheiro,2025,oficial,https://www.amorim.com/en/investors/corticeira-amorim-share/dividends/,comunicado de 04/05/2026; dia aproximado
 CTT,2021-05-20,0.085,dinheiro,2020,oficial,https://www.ctt.pt/dA/5e2af18a-72ed-49ab-ab7e-498e4ffa0763/ficheiro/Dividendo2020_PT.pdf,
@@ -37,7 +41,8 @@ EDPR,2023-05-15,0.265,scrip,2022,oficial,https://www.edpr-investors.com/en/share
 EDPR,2024-05-15,0.201,scrip,2023,oficial,https://www.edpr-investors.com/en/share/dividend-history,scrip; dia aproximado
 EDPR,2025-05-15,0.084,scrip,2024,oficial,https://www.edpr-investors.com/en/share/dividend-history,scrip; dia aproximado
 EDPR,2026-06-02,0.124,scrip,2025,oficial,https://www.edpr-investors.com/sites/edpr-investors/files/document/2026-05/EDPR_Scrip_Dividend_Launch_0.pdf,scrip: preço fixo de compra do direito pela EDPR
-EGL,2022-05-25,0.069,dinheiro,2021,oficial,https://www.mota-engil.com/en/investors/mota-engil-share/,
+EGL,2022-05-25,0.05175,dinheiro,2021,oficial,https://www.mota-engil.com/en/investors/mota-engil-share/,total de 2022 (0.069) indicado pela empresa menos o adicional de outubro; dia aproximado
+EGL,2022-10-03,0.01725,dinheiro,2021,coincide,https://www.idealista.pt/news/node/54164,dividendo adicional (imprensa e fonte de cotações); soma com a parcela de maio dá o total oficial de 2022
 EGL,2023-05-15,0.10023,dinheiro,2022,oficial,https://www.mota-engil.com/app/uploads/2025/03/Comunicado-dividendos-2023.pdf,dia aproximado
 EGL,2024-05-15,0.1277,dinheiro,2023,oficial,https://www.mota-engil.com/app/uploads/2025/03/Comunicado-dividendos-2024.pdf,dia aproximado
 EGL,2025-05-15,0.1497,dinheiro,2024,oficial,https://www.mota-engil.com/app/uploads/2025/05/Comunicado-dividendos-2025.pdf,dia aproximado
