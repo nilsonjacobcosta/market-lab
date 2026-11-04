@@ -201,6 +201,8 @@ details.card li+li{margin-top:4px}
 .mini-t{border-collapse:collapse;font-size:.8rem;min-width:0;width:100%}
 .mini-t th,.mini-t td{padding:4px 6px;border-bottom:1px solid var(--line);white-space:nowrap;position:static;box-shadow:none;text-align:right}
 .mini-t th:first-child,.mini-t td:first-child{text-align:left}
+.ct-estatal{background:var(--fed-soft);color:var(--fed)}
+@media (max-width:600px){#t th[data-k="controlo"],#t td.c-ctrl{display:none}}
 .mini-t td.nt{white-space:normal;font-family:var(--f-body);color:var(--muted);font-size:.74rem;text-align:left;padding-top:0}
 </style>
 </head>
@@ -225,7 +227,7 @@ details.card li+li{margin-top:4px}
   <ol>
     <li><b>Veja quanto pagou</b><p><b>Rend. 12m</b> é o que a empresa pagou nos últimos 12 meses sobre o preço de hoje. <b>Rend. médio</b> é a média de 5 anos sobre o preço de hoje. Cada pagamento tem link para o comunicado oficial.</p></li>
     <li><b>Compare preço e preço-teto</b><p>O preço-teto é o preço em que os proventos médios de 5 anos renderiam a <b>taxa exigida</b>: juro das obrigações do Tesouro a 10 anos + 3 pontos. Estar abaixo é um primeiro filtro, não um sinal de compra.</p></li>
-    <li><b>Confira a saúde financeira <span class="beta">BETA</span></b><p>A coluna <b>Qualidade</b> resume, com o relatório anual oficial em formato eletrónico europeu, se a empresa lucra o suficiente, sem dever demais, para sustentar o que paga. Indicadores fortes não garantem bom investimento.</p></li>
+    <li><b>Confira a saúde financeira <span class="beta">BETA</span></b><p>A coluna <b>Qualidade</b> resume, com o relatório anual oficial em formato eletrónico europeu, se a empresa lucra o suficiente, sem dever demais, para sustentar o que paga. Indicadores fortes não garantem bom investimento. A coluna <b>Controlo</b> mostra quem manda na empresa e se há um Estado entre os acionistas.</p></li>
     <li><b>Leia os alertas</b><p>“Atenção” aponta anos sem proventos, valores ainda a conferir, queda de proventos, pouca liquidez ou provento que apareceu na fonte de preços mas não no cadastro oficial.</p></li>
     <li><b>Lembre-se do imposto</b><p>Os valores são brutos. Para residentes, a retenção é de 28% (com opção de englobamento a 50%). O simulador da ficha mostra o líquido.</p></li>
   </ol>
@@ -240,6 +242,9 @@ details.card li+li{margin-top:4px}
   <span><span class="pill al-atencao">Atenção · n</span> n pontos a conferir na ficha</span>
   <span><span class="pill al-ok">Nenhum alerta automático</span> nenhuma regra disparou; não quer dizer que é seguro</span>
   <span><span class="pill q">Indicadores fortes<i>▮▮▮</i></span> <span class="beta">BETA</span> qualidade financeira pelo relatório anual oficial. Não é sinal de compra</span>
+  <span><span class="ct ct-participacao_estatal_relevante">Participação estatal</span> um Estado (português ou estrangeiro) tem 5% ou mais, sem controlar</span>
+  <span><span class="ct ct-estatal_estrangeira">Estatal estrangeira</span> estatal de outro país controla</span>
+  <span><span class="ct ct-estatal">Estado português</span> o Estado controla</span>
   <span><span class="est est-oficial">oficial</span> <span class="est est-coincide">coincide</span> <span class="est est-a_conferir">a conferir</span> estado de cada provento no cadastro</span>
 </div>
 
@@ -249,6 +254,11 @@ details.card li+li{margin-top:4px}
     <button type="button" id="m-full" aria-pressed="false">Completo</button>
   </div>
   <input id="q" type="search" placeholder="Procurar código ou empresa" aria-label="Procurar código ou empresa">
+  <select id="f-ctrl" aria-label="Controlo acionista">
+    <option value="">Todo o controlo</option>
+    <option value="estado">Com participação de um Estado</option>
+    <option value="privada">Privada</option>
+  </select>
   <select id="f-status" aria-label="Situação">
     <option value="">Toda a situação</option>
     <option value="abaixo">Abaixo do teto</option>
@@ -267,6 +277,7 @@ details.card li+li{margin-top:4px}
   <div class="card"><span class="eyebrow">Como calculamos</span><h3>DPA, rendimento e preço-teto</h3><p><b>DPA médio</b>: média dos proventos brutos por ação pagos em cada um dos 5 últimos anos civis completos (data de pagamento), só do cadastro oficial. Dividendos em ações (scrip) contam pelo valor de referência; distribuições em espécie não contam. <b>Preço-teto</b> = DPA médio ÷ taxa exigida. <b>Taxa exigida</b> = média de 12 meses do juro das obrigações do Tesouro português a 10 anos (série do BCE) + <span class="p-premio"></span> pontos, com mínimo de <span class="p-min"></span>%. O modo Completo mostra também o teto <b>robusto</b> (sem o melhor e o pior ano) e a faixa com a taxa ±<span class="p-faixa"></span> ponto.</p></div>
   <div class="card"><span class="eyebrow">Regras de alerta</span><h3>Grave, Atenção ou nenhum alerta</h3><p><b>Grave</b>: sem cotação. <b>Atenção</b>: preço atrasado face ao calendário da Euronext, anos sem proventos, proventos ainda sem documento oficial, queda de proventos acima de 30%, liquidez abaixo do corte do universo, muitos dias sem negócio, ou provento que aparece na fonte de preços mas não no cadastro oficial. As regras não captam tudo: “nenhum alerta automático” não quer dizer seguro.</p></div>
   <div class="card"><span class="eyebrow">Qualidade financeira · BETA</span><h3>ROE, endividamento e payout</h3><p>Calculados com o relatório anual consolidado que cada empresa publica em formato eletrónico europeu (ESEF), lido em filings.xbrl.org. <b>ROE</b>: lucro atribuível aos acionistas ÷ capital próprio médio do ano. <b>Payout</b>: dividendo por ação do exercício (cadastro oficial) ÷ lucro por ação básico. <b>Dívida líquida/EBITDA</b>: (empréstimos + locações − caixa) ÷ (resultado operacional + depreciações); não se aplica a bancos. Nota de 0 a 3 com as <b>mesmas faixas e regras do Monitor BESST</b>; fica <b>provisória</b> (⚠) quando algum valor precisou de reconstrução ou está fora do intervalo usual. Sem dado confiável, mostramos “sem nota” com o motivo, nunca uma nota baixa.</p></div>
+  <div class="card"><span class="eyebrow">Controlo acionista</span><h3>Quem manda na empresa</h3><p>Classificação pelas participações qualificadas publicadas pela própria empresa (página de investidores ou relatório de governo societário), com imprensa reconhecida só para mudanças mais recentes. <b>Participação estatal</b>: um Estado, português ou estrangeiro, tem 5% ou mais sem controlar. Indicamos também se há um acionista com maioria, um acionista de referência sem maioria ou capital disperso. Revista em <span id="ctrl-rev"></span>; próxima revisão em <span id="ctrl-prox"></span>. Abra a ficha para ver o controlador, a fonte e a data.</p></div>
   <div class="card"><span class="eyebrow">Impostos · residente em Portugal</span><h3>28% retidos na fonte</h3><p>Dividendos de empresas portuguesas pagos a pessoas singulares residentes sofrem retenção de 28% a título liberatório. Há opção de englobamento: os dividendos contam por 50% (art. 40.º-A do Código do IRS) e são tributados às taxas gerais, mas a opção obriga a englobar todos os rendimentos de capitais do ano. Fonte: <a href="https://occ.pt/pt-pt/noticias/irs-enquadramento-fiscal-na-distribuicao-de-lucros" target="_blank" rel="noopener">Ordem dos Contabilistas Certificados</a>. Não substitui aconselhamento fiscal.</p></div>
 </section>
 
@@ -321,10 +332,13 @@ const GR={"Banca":"Banca","Energia":"Energia","Energia renovável":"Energia","Pe
   "Construção e engenharia":"Construção","Construção e imobiliário":"Construção","Correios e serviços financeiros":"Serviços","Restauração":"Serviços"};
 const SET=["Banca","Energia","Telecomunicações","Retalho","Materiais e indústria","Construção","Serviços"];
 const LET={"Banca":"B","Energia":"E","Telecomunicações":"T","Retalho":"R","Materiais e indústria":"M","Construção":"C","Serviços":"S"};
+const CT={estatal:"Estado português",estatal_estrangeira:"Estatal estrangeira",participacao_estatal_relevante:"Participação estatal",privada:"Privada"};
+const ESTR={controlo_maioritario:"acionista com maioria",acionista_de_referencia:"acionista de referência sem maioria",acionistas_de_referencia:"acionistas de referência, sem maioria",disperso:"capital disperso",disperso_familiar:"várias holdings familiares, sem maioria"};
 const STC={abaixo:"st-abaixo_teto",abaixo_conferir:"st-abaixo_teto_conferir",acima:"st-acima_teto",sem_proventos:"st-sem_proventos",sem_preco:"st-sem_cotacao"};
 const STL={abaixo:"Abaixo do teto",abaixo_conferir:"Abaixo do teto · conferir dados",acima:"Acima do teto",sem_proventos:"Sem proventos",sem_preco:"Sem cotação"};
 const DEF={
   nome:["Empresa","Nome e código de negociação na Euronext Lisbon. Uma linha por empresa."],
+  controlo:["Controlo","Quem manda na empresa: o Estado português, uma estatal de outro país, um Estado com fatia relevante sem controlar, ou acionistas privados."],
   preco:["Preço","Preço de fecho da última sessão, atualizado uma vez por dia depois das 16h30 de Lisboa."],
   dy_12m_pct:["Rend. 12m","Proventos pagos nos últimos 12 meses ÷ preço de hoje. Pode incluir pagamentos extraordinários que não se repetem."],
   dy_medio_pct:["Rend. médio","DPA médio de 5 anos ÷ preço de hoje. Mostra quanto renderia, ao preço de hoje, se a empresa pagasse como pagou em média."],
@@ -346,7 +360,7 @@ let P=null, MODE="simple", SECTOR=null, SORT=null, OPEN=null;
 try{if(localStorage.getItem("ml-pt-modo")==="full")MODE="full"}catch(e){}
 
 function cols(){
-  const c=[["nome","Empresa",1],["preco","Preço",1],["dy_12m_pct","Rend. 12m",1],["dy_medio_pct","Rend. médio",1]];
+  const c=[["nome","Empresa",1],["controlo","Controlo",1],["preco","Preço",1],["dy_12m_pct","Rend. 12m",1],["dy_medio_pct","Rend. médio",1]];
   if(MODE==="full")c.push(["dpa_medio","DPA médio",1]);
   c.push(["teto","Preço-teto",0]);
   if(MODE==="full")c.push(["teto_robusto","Teto robusto",0],["faixa","Faixa do teto",0]);
@@ -365,10 +379,11 @@ function qPill(l,inline){const f=l.qualidade,st=inline?' style="vertical-align:m
   const bars="▮".repeat(f.nota)+"▯".repeat(3-f.nota);
   return `<span class="pill q"${st} aria-label="${QL[f.nota]}, nota ${f.nota} de 3${f.nota_provisoria?", provisória":""}">${inline?QL[f.nota]:QS[f.nota]}<i aria-hidden="true">${bars}</i>${f.nota_provisoria?' <span aria-hidden="true">⚠</span>':""}</span>`}
 function mbar(m){if(m==null)return"";const w=Math.min(Math.abs(m),100)/2;return `<span class="margin-bar" aria-hidden="true"><span style="${m>=0?"left:50%":"right:50%"};width:${w}%;background:${m>=0?"var(--ink-2)":"var(--neg)"}"></span></span>`}
-function val(l,k){const f=l.qualidade||{};switch(k){case"nome":return l.nome;case"qual":return f.nota??-1;case"roe":return f.roe;case"payout":return f.payout;case"div_liq_ebitda":return f.div_liq_ebitda;case"liquidez":return l.liquidez_mediana_12m_eur;default:return l[k]}}
+function val(l,k){const f=l.qualidade||{};switch(k){case"nome":return l.nome;case"controlo":return (l.controlo||{}).categoria||"";case"qual":return f.nota??-1;case"roe":return f.roe;case"payout":return f.payout;case"div_liq_ebitda":return f.div_liq_ebitda;case"liquidez":return l.liquidez_mediana_12m_eur;default:return l[k]}}
 function cell(l,k){const f=l.qualidade||{},fin=f.regra==="Bancos";
   switch(k){
-    case"nome":return `<td class="name"><b>${l.papel}</b> ${esc(l.nome)}<small>${esc(l.setor)}</small></td>`;
+    case"nome":{const c=l.controlo||{};return `<td class="name"><b>${l.papel}</b> ${esc(l.nome)}<small>${esc(l.setor)}</small>${c.categoria&&c.categoria!=="privada"?`<span class="ct ct-inline ct-${c.categoria}">${CT[c.categoria]}</span>`:""}</td>`}
+    case"controlo":{const c=l.controlo;return `<td class="c-ctrl">${c?`<span class="ct ct-${c.categoria}" title="${esc(c.controlador)}">${CT[c.categoria]}</span>`:"–"}</td>`}
     case"preco":return `<td>${fmt(l.preco,3)}</td>`;
     case"dy_12m_pct":return `<td>${pct(l.dy_12m_pct)}</td>`;
     case"dy_medio_pct":return `<td>${pct(l.dy_medio_pct)}</td>`;
@@ -396,7 +411,7 @@ function sectors(){
     const ab=L.filter(l=>l.status.startsWith("abaixo")).length,ac=L.filter(l=>l.status==="acima").length,ou=L.length-ab-ac;
     const dy=L.map(l=>l.dy_medio_pct).filter(v=>v!=null),m=dy.length?dy.reduce((a,b)=>a+b,0)/dy.length:null;
     return `<button type="button" class="sec" data-s="${s}" aria-pressed="${SECTOR===s}"><span class="letter">${LET[s]}</span><span class="name">${s}</span>
-      <span class="stats"><span>${L.length} ${L.length>1?"empresas":"empresa"}</span><span>rend. médio ${pct(m)}</span><span>${ab} abaixo do teto</span></span>
+      <span class="stats"><span>${L.length} ${L.length>1?"empresas":"empresa"}</span><span>rend. médio ${pct(m)}</span><span>${ab} abaixo do teto</span><span>${L.filter(l=>((l.controlo||{}).categoria||"privada")!=="privada").length} com Estado</span></span>
       <span class="bar" aria-hidden="true">${ab?`<span style="flex:${ab};background:var(--ink)"></span>`:""}${ac?`<span style="flex:${ac};background:var(--ink-2);opacity:.45"></span>`:""}${ou?`<span style="flex:${ou};background:var(--surface-3)"></span>`:""}</span></button>`}).join("");
   document.querySelectorAll(".sec").forEach(b=>b.onclick=()=>{SECTOR=SECTOR===b.dataset.s?null:b.dataset.s;sectors();render()});
 }
@@ -407,9 +422,9 @@ function head(){
 
 function render(){
   head();
-  const q=$("q").value.trim().toLowerCase(),fs=$("f-status").value,fa=$("f-alert").checked;
+  const q=$("q").value.trim().toLowerCase(),fs=$("f-status").value,fa=$("f-alert").checked,fc=$("f-ctrl").value;
   let L=P.linhas.filter(l=>(!SECTOR||GR[l.setor]===SECTOR)&&(!q||(l.papel+" "+l.nome+" "+l.setor).toLowerCase().includes(q))
-    &&(!fs||(fs==="outros"?!["abaixo","abaixo_conferir","acima"].includes(l.status):l.status===fs))&&(!fa||niv(l)==="ok"));
+    &&(!fs||(fs==="outros"?!["abaixo","abaixo_conferir","acima"].includes(l.status):l.status===fs))&&(!fa||niv(l)==="ok")&&(!fc||(fc==="estado"?((l.controlo||{}).categoria||"privada")!=="privada":((l.controlo||{}).categoria||"privada")===fc)));
   if(SORT){const [k,d]=SORT;L=[...L].sort((a,b)=>{const x=val(a,k),y=val(b,k);if(x==null)return 1;if(y==null)return -1;return(typeof x==="string"?x.localeCompare(y,"pt"):x-y)*d})}
   const C=cols();
   $("t").querySelector("tbody").innerHTML=L.map(l=>`<tr class="row" data-p="${l.papel}" tabindex="0" aria-expanded="${OPEN===l.papel}">${C.map(([k])=>cell(l,k)).join("")}</tr>`+(OPEN===l.papel?`<tr class="detail"><td colspan="${C.length}"><div class="dwrap">${detail(l)}</div></td></tr>`:"")).join("")||`<tr><td colspan="${C.length}" style="text-align:left">Nenhuma empresa com estes filtros.</td></tr>`;
@@ -421,6 +436,12 @@ function render(){
 }
 
 const SEM={verde:"forte",amarelo:"intermédio",vermelho:"fraco",cinza:"sem dado"},SEMP={verde:"dentro da faixa",amarelo:"atenção",vermelho:"fora da faixa",cinza:"sem dado"};
+function ctrlBox(l){
+  const c=l.controlo;if(!c)return "";
+  const tit={estatal:"Empresa controlada pelo Estado português",estatal_estrangeira:"Controlada por estatal de outro país",participacao_estatal_relevante:"Um Estado com fatia relevante",privada:"Controlo acionista"}[c.categoria]||"Controlo acionista";
+  const risco=c.categoria==="privada"?"":`<p><b>Possível efeito:</b> um acionista público também recebe dividendos e pode influenciar estratégia, investimentos e política de dividendos; mudanças de governo ou de estratégia do país de origem podem mudar o perfil da empresa.</p>`;
+  return `<div class="box ${c.categoria==="privada"?"":"state"}"><h4>${tit}</h4><p><b>${esc(c.controlador)}</b> (${ESTR[c.estrutura]||esc(c.estrutura)}).</p><p>${esc(c.nota)}</p>${risco}<p style="font-size:.8rem">Dados de ${esc(c.data_ref)} · confiança ${esc(c.confianca)} · <a href="${esc(c.fonte)}" target="_blank" rel="noopener">fonte</a></p></div>`;
+}
 function qualBox(l){
   const f=l.qualidade,head=`<h4>Qualidade financeira <span class="beta">BETA</span></h4>`;
   if(!f||f.erro)return `<div class="box qual">${head}<p>Sem relatório anual eletrónico para esta empresa${f&&f.erro?": "+esc(f.erro):""}.</p></div>`;
@@ -460,6 +481,7 @@ function detail(l){
     <p class="resumo">${frase}</p>
     ${al.length?`<div class="box warn"><h4>Alertas</h4><ul>${al.map(a=>`<li>${a.nivel==="info"?"":"<b>"+(a.nivel==="grave"?"Grave":"Atenção")+":</b> "}${esc(a.texto)}</li>`).join("")}</ul></div>`:`<div class="box"><h4>Alertas</h4><p>Nenhum alerta automático. Não quer dizer que é seguro.</p></div>`}
     ${qualBox(l)}
+    ${ctrlBox(l)}
     <div class="box sim"><h4>Simulador</h4><label>Valor investido (€) <input type="number" min="0" step="100" value="1000" data-sim="${l.papel}"></label><p id="sim-${l.papel}"></p><p style="font-size:.8rem">Usa o DPA médio de 5 anos e o preço de hoje; ignora comissões e variação do preço. Não é previsão.</p></div>
   </div><div class="dcol">
     <div class="box"><h4>Proventos por ano de pagamento (€ por ação, brutos)</h4>${chart(l)}<p style="font-size:.8rem">Últimos 12 meses: ${fmt(l.proventos_12m,3)} € · Teto robusto: ${l.teto_robusto?fmt(l.teto_robusto,3)+" €":"–"} · Faixa: ${l.faixa_teto?fmt(l.faixa_teto[0],2)+" a "+fmt(l.faixa_teto[1],2)+" €":"–"}</p></div>
@@ -480,6 +502,7 @@ function extras(){
   $("taxa-h").textContent=pct(t.taxa_exigida_pct,2);
   $("taxa").innerHTML=`<p>Juro das obrigações do Tesouro português a 10 anos, média de ${t.n_obs||"–"} meses: <b>${pct(t.ot10_media12m_pct,2)}</b>${t.ultima_obs?` (última observação ${t.ultima_obs[0]}: ${pct(t.ultima_obs[1],2)})`:""}, mais ${fmt(t.premio_pp,1)} pontos de prémio. Origem: ${esc(t.origem)}${t.lida_em?", lida em "+dpt(t.lida_em):""}. O prémio é um parâmetro do método, não uma estimativa de retorno.</p>`+(P.universo_alertas&&P.universo_alertas.length?`<p><b>Universo:</b> ${P.universo_alertas.map(esc).join(" ")}</p>`:"");
   $("univ").textContent=`${u.criterio} Revisto em ${dpt(u.revisado_em)}; próxima revisão em ${dpt(u.proxima_revisao)}. ${P.linhas.length} de ${P.n_euronext_xlis||"–"} ações do mercado regulamentado de Lisboa.`;
+  if(P.controlo_meta){$("ctrl-rev").textContent=dpt(P.controlo_meta.atualizado);$("ctrl-prox").textContent=dpt(P.controlo_meta.proxima_revisao)}
   document.querySelectorAll(".p-premio").forEach(x=>x.textContent=fmt(t.premio_pp,1));
   document.querySelectorAll(".p-min").forEach(x=>x.textContent=fmt(t.taxa_minima_pct,1));
   document.querySelectorAll(".p-faixa").forEach(x=>x.textContent=fmt(t.faixa_pp,0));
@@ -503,7 +526,7 @@ document.addEventListener("click",e=>{
   const tr=e.target.closest("tr.row");if(tr&&!e.target.closest("a")){OPEN=OPEN===tr.dataset.p?null:tr.dataset.p;render();const n=document.querySelector(`tr.row[data-p="${tr.dataset.p}"]`);n&&n.focus({preventScroll:true})}
 });
 document.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.matches("tr.row")){e.preventDefault();e.target.click()}if(e.key==="Escape")pop.hidden=true});
-document.addEventListener("input",e=>{if(e.target.dataset&&e.target.dataset.sim)sim(e.target.dataset.sim);if(["q","f-status","f-alert"].includes(e.target.id))render()});
+document.addEventListener("input",e=>{if(e.target.dataset&&e.target.dataset.sim)sim(e.target.dataset.sim);if(["q","f-status","f-alert","f-ctrl"].includes(e.target.id))render()});
 function setMode(m){MODE=m;$("m-simple").setAttribute("aria-pressed",m==="simple");$("m-full").setAttribute("aria-pressed",m==="full");try{localStorage.setItem("ml-pt-modo",m)}catch(e){}if(P)render()}
 $("m-simple").onclick=()=>setMode("simple");$("m-full").onclick=()=>setMode("full");setMode(MODE);
 addEventListener("resize",()=>{if(P)document.documentElement.style.setProperty("--tblw",$("tbl").clientWidth+"px")});

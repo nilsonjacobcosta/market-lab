@@ -350,6 +350,17 @@ def main():
                                                     "payout_caixa", "div_liq_ebitda", "divida_liquida", "ebitda", "ll", "lpa",
                                                     "dpa_exercicio", "exercicio", "regra", "semaforo", "relatorio", "relatorio_url",
                                                     "flags", "erro")}
+    ctrl_arq = DADOS / "controlo.json"
+    ctrl = json.loads(ctrl_arq.read_text(encoding="utf-8")) if ctrl_arq.exists() else {}
+    cmap = {c["papel"]: c for c in ctrl.get("empresas", [])}
+    idade_ctrl = (agora.date() - datetime.strptime(ctrl["atualizado"], "%Y-%m-%d").date()).days if ctrl else None
+    for l in res["linhas"]:
+        c = cmap.get(l["papel"])
+        if c:
+            l["controlo"] = {k: c.get(k) for k in ("categoria", "estrutura", "controlador", "nota", "fonte", "data_ref", "confianca")}
+        if idade_ctrl is not None and idade_ctrl > 90:
+            l["alertas"].append({"nivel": "info", "codigo": "controlo_antigo",
+                                 "texto": f"A classificação do controlo acionista tem {idade_ctrl} dias; pode estar desatualizada."})
     hist = atualizar_historico(res["linhas"], agora)
     painel = {
         "gerado_em": agora.isoformat(timespec="minutes"),
@@ -362,6 +373,7 @@ def main():
         "n_euronext_xlis": len(euronext) or None,
         **res,
         "historico_status": hist,
+        "controlo_meta": {k: ctrl.get(k) for k in ("atualizado", "proxima_revisao", "criterio")} if ctrl else None,
         "qualidade_meta": {k: fund.get(k) for k in ("gerado_em", "fonte", "aceite")} if fund else None,
     }
     (DADOS / "painel.json").write_text(json.dumps(painel, ensure_ascii=False, indent=1), encoding="utf-8")

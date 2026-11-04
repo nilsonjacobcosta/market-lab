@@ -19,3 +19,8 @@ Entrega: qualidade financeira (BETA) a partir dos relatórios anuais ESEF e pág
 - Workflow semanal com aceite que bloqueia a publicação; diagnóstico separado; testes de regressão (leitura de factos, regra da nota, bancos).
 - Página validada em ecrã largo (iframe 1240 px) e estreito; JS validado.
 - Ressalva: o GitHub devolveu erros 500 intermitentes no envio; os scripts de envio repetem automaticamente.
+
+## Adenda — controlo acionista (04/11/2026, ~07h40)
+- J1 (8,5): 16/16 com fonte; 11 com documento oficial da empresa e confiança alta; 5 com confiança média (dados sem data na fonte, página desatualizada ou mudança recente só na imprensa). Mudanças de 2026 captadas: Estado português na REN (19%) e venda de ações da Sonangol no BCP para ficar abaixo de 20%.
+- J2 (8,0): mesmas categorias do BESST adaptadas a Portugal (sem esferas federal/estadual); texto de risco igual em espírito; nenhum juízo de valor sobre os acionistas.
+- J3 (8,5): teste de completude e formato; aviso automático se a classificação tiver mais de 90 dias; runbook 5.

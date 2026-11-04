@@ -198,5 +198,19 @@ class Fundamentos(unittest.TestCase):
         self.assertEqual(m["regra"], "Bancos")
 
 
+class Controlo(unittest.TestCase):
+    def test_cadastro_completo_e_com_fonte(self):
+        c = json.loads((RAIZ / "dados/portugal/controlo.json").read_text(encoding="utf-8"))
+        papeis = {p["papel"] for p in UNIVERSO["papeis"]}
+        self.assertEqual({e["papel"] for e in c["empresas"]}, papeis)
+        for e in c["empresas"]:
+            with self.subTest(p=e["papel"]):
+                self.assertIn(e["categoria"], {"estatal", "estatal_estrangeira", "participacao_estatal_relevante", "privada"})
+                self.assertIn(e["estrutura"], {"controlo_maioritario", "acionista_de_referencia", "acionistas_de_referencia", "disperso", "disperso_familiar"})
+                self.assertTrue(e["fonte"].startswith("https://"))
+                self.assertIn(e["confianca"], {"alta", "media", "baixa"})
+                self.assertTrue(e["controlador"] and e["nota"])
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -55,6 +55,18 @@ Sites que bloqueiam leitura automática da nuvem (abrir no Chrome do dono): Mill
 3. Papel novo: acrescente em `universo.json` (ISIN da lista da Euronext) **e** os proventos de 5 anos no cadastro antes de publicar.
 4. Atualize `revisado_em` e `proxima_revisao`; registo em `manutencao/registro.md`.
 
+## Runbook 5 — controlo acionista (`dados/portugal/controlo.json`)
+Quando: a cada 60 dias (`proxima_revisao`), na época de relatórios de governo (abril) e quando houver notícia de compra/venda
+de participação qualificada (ex.: Estado na REN e no BCP, Fosun/Sonangol no BCP). O painel avisa se a classificação tiver mais de 90 dias.
+1. Fontes, por ordem: página "estrutura acionista" da empresa → relatório de governo societário (ponto 7, participações qualificadas)
+   → comunicados de participação qualificada (Euronext/CMVM) → imprensa reconhecida (só para mudanças posteriores, `confianca: media`).
+2. Categoria: `estatal` (Estado português controla), `estatal_estrangeira`, `participacao_estatal_relevante` (um Estado ≥ 5% sem controlar),
+   `privada`. Estrutura: `controlo_maioritario`, `acionista_de_referencia`, `acionistas_de_referencia`, `disperso`, `disperso_familiar`.
+3. Atualize `controlador`, `nota` (percentagens e data), `fonte`, `data_ref`, `confianca`; mude `atualizado` e `proxima_revisao`.
+4. `python3 -m unittest tests/test_portugal.py` e `python3 scripts/portugal/painel_pt.py`; commit só desses ficheiros; linha no registo.
+Sites que pedem o Chrome do dono: Millennium bcp (página de estrutura acionista desatualizada, de 2016), NOS (percentagens em imagem),
+Jerónimo Martins (relatório anual interativo), Navigator e Sonae (bloqueio a leitura automática).
+
 ## Runbook 3 — falha da rotina
 - Selo "Atrasado" na página: veja a última execução em Actions. Erro de fonte (403/timeout) → espere a próxima tentativa; repetido 2 dias → registe e abra investigação.
 - Teste vermelho: leia qual. `J1Cadastro` = erro no CSV; `Aceite.test_cobertura_de_precos` = mais de um papel sem preço (fonte fora do ar ou código mudou → ver lista da Euronext).
@@ -66,5 +78,6 @@ Sites que bloqueiam leitura automática da nuvem (abrir no Chrome do dono): Mill
 - Corticeira Amorim 2022: a tabela da empresa tem parcelas que somam 0,275 e total 0,29 — confirmar no comunicado.
 - Galp: EBITDA não etiquetado (sem resultado operacional nem antes de impostos no ESEF) — dívida/EBITDA em branco; nota com ROE e payout.
 - Altri e Ibersol: payout do exercício de 2025 acima de 150% (dividendos acima do lucro) → "sem nota" pela regra de plausibilidade.
-- Controlo acionista e situações especiais.
+- Controlo: confirmar % da Semapa na Navigator no relatório de 2025; BCP a acompanhar (saída da Fosun, eventual entrada do Estado); REN: visto do Tribunal de Contas à compra à Fidelidade.
+- Situações especiais (OPA, saída de bolsa).
 - Parecer jurídico (J2) recomendado; publicação aberta decidida pelo dono com risco assumido (04/11/2026).

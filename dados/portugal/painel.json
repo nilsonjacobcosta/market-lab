@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-11-04T09:55+00:00",
+ "gerado_em": "2026-11-04T10:04+00:00",
  "precos_coletados_em": "2026-11-04T09:06+00:00",
  "autor": "market-lab — projeto pessoal de estudo de nilsonjacobcosta (GitHub)",
  "aviso": "Material educativo, não é recomendação de investimento.",
@@ -265,6 +265,15 @@
      "sem_nota:metrica_fora_da_faixa_plausivel"
     ],
     "erro": null
+   },
+   "controlo": {
+    "categoria": "privada",
+    "estrutura": "disperso_familiar",
+    "controlador": "Sem controlador único: cinco sociedades de famílias fundadoras com 10% a 18% cada",
+    "nota": "Promendo Investimentos 17,78%, Caderno Azul 16,67%, Vieira de Matos – VDM Capital 16,60%, Actium Capital 15,22% e 1 Thing, Investments 10,01% dos direitos de voto. A página não indica data de referência.",
+    "fonte": "https://altri.pt/pt/investidores/informacao-acionista",
+    "data_ref": "sem data na fonte",
+    "confianca": "media"
    }
   },
   {
@@ -444,6 +453,15 @@
     "relatorio_url": "https://filings.xbrl.org/JU1U6S0DG9YLT7N8ZV32/2025-12-31/ESEF/PT/1/000432-2025-12-31/reports/ixbrlviewer.html",
     "flags": [],
     "erro": null
+   },
+   "controlo": {
+    "categoria": "participacao_estatal_relevante",
+    "estrutura": "acionistas_de_referencia",
+    "controlador": "Sem controlador: Fosun (grupo privado chinês) ~20,5% e Sonangol (petrolífera estatal angolana) 19,9%",
+    "nota": "A Sonangol vendeu ações em outubro de 2026 para ficar abaixo de 20% (acima disso precisaria de autorização do BCE). Notícias de outubro de 2026 referem que o Estado português pondera comprar até 5% se a Fosun sair — ainda sem decisão. A página de estrutura acionista do banco está desatualizada (2016).",
+    "fonte": "https://eco.sapo.pt/2026/10/21/sonangol-abre-a-porta-a-reforcar-no-bcp-se-fosun-sair/",
+    "data_ref": "2026-10-21",
+    "confianca": "media"
    }
   },
   {
@@ -678,6 +696,15 @@
      "info:locacoes_nao_identificadas"
     ],
     "erro": null
+   },
+   "controlo": {
+    "categoria": "privada",
+    "estrutura": "controlo_maioritario",
+    "controlador": "Família Amorim, via Amorim Investimentos e Participações (51,0%)",
+    "nota": "Entidades da família Amorim somam cerca de 71% (Amorim Investimentos e Participações 51,0%, Amorim SGPS 10,1%, A Porta da Lua 6,2%, outras). Free float 28,6%.",
+    "fonte": "https://www.amorim.com/xms/files/Investidores/Outros_Relatorios/RC_PT_1S2025_Corticeira_Amorim.pdf",
+    "data_ref": "2025-07-28",
+    "confianca": "alta"
    }
   },
   {
@@ -876,6 +903,15 @@
      "info:locacoes_nao_identificadas"
     ],
     "erro": null
+   },
+   "controlo": {
+    "categoria": "privada",
+    "estrutura": "disperso",
+    "controlador": "Sem controlador: capital disperso",
+    "nota": "Manuel Champalimaud SGPS 14,76%, Global Portfolio Investments (Indumenta Pueri) 14,29%, GreenWood Builders Fund I 6,38%; ações próprias 3,91%. Privatizados em 2013–2014.",
+    "fonte": "https://www.ctt.pt/grupo-ctt/investidores/estrutura-acionista",
+    "data_ref": "2026-10-28",
+    "confianca": "alta"
    }
   },
   {
@@ -1075,6 +1111,15 @@
      "info:locacoes_nao_identificadas"
     ],
     "erro": null
+   },
+   "controlo": {
+    "categoria": "participacao_estatal_relevante",
+    "estrutura": "acionista_de_referencia",
+    "controlador": "Sem controlador: China Three Gorges (estatal chinesa) 22,2%",
+    "nota": "Outros: BlackRock 8,35% do capital (8,76% dos votos), Oppidum Capital/família Masaveu 6,82% (6,93% imputados). Os estatutos não contam votos acima de 25% do capital.",
+    "fonte": "https://edp.com/sites/default/files/document/2026-05/RAI_2025_Relat%C3%B3riodeGovernodaSociedade.pdf",
+    "data_ref": "2025-12-31",
+    "confianca": "alta"
    }
   },
   {
@@ -1284,6 +1329,15 @@
      "info:locacoes_nao_identificadas"
     ],
     "erro": null
+   },
+   "controlo": {
+    "categoria": "privada",
+    "estrutura": "controlo_maioritario",
+    "controlador": "EDP, S.A. (71,4%)",
+    "nota": "Controlada pela EDP; indiretamente, a China Three Gorges (estatal chinesa) é a maior acionista da EDP com 22,2%. GIC 4,4%, BlackRock 3,4%. Sociedade espanhola cotada em Lisboa.",
+    "fonte": "https://www.edpr-investors.com/en/share/shareholder-structure",
+    "data_ref": "2026-06-30",
+    "confianca": "alta"
    }
   },
   {
@@ -1487,6 +1541,15 @@
      "info:ebit_reconstruido_resultado_financeiro"
     ],
     "erro": null
+   },
+   "controlo": {
+    "categoria": "participacao_estatal_relevante",
+    "estrutura": "acionista_de_referencia",
+    "controlador": "Família Mota, via Mota Gestão e Participações (40,3%), com a estatal chinesa CCCC (32,4%)",
+    "nota": "Mota Gestão e Participações 40,32%; Epoch Capital Investments (China Communications Construction Company, estatal chinesa) 32,41%. Free float 25,4%.",
+    "fonte": "https://www.mota-engil.com/en/investors/mota-engil-share/",
+    "data_ref": "2025-12-31",
+    "confianca": "alta"
    }
   },
   {
@@ -1737,6 +1800,15 @@
     "relatorio_url": "https://filings.xbrl.org/2138003319Y7NM75FG53/2025-12-31/ESEF/PT/1/023179-2025-12-31/reports/ixbrlviewer.html",
     "flags": [],
     "erro": null
+   },
+   "controlo": {
+    "categoria": "participacao_estatal_relevante",
+    "estrutura": "acionista_de_referencia",
+    "controlador": "Amorim Energia (37,5%) e Estado português via Parpública (8,4%)",
+    "nota": "A Amorim Energia é detida em 45% pela Esperaza (controlada pela Sonangol, estatal angolana) e em 55% por sociedades da família Amorim. Parpública 8,42% dos votos. Free float 54,1%.",
+    "fonte": "https://galp.com/corp/en/investors/information-to-shareholders/shareholding-structure",
+    "data_ref": "sem data na fonte (consultado em 2026-11-04)",
+    "confianca": "alta"
    }
   },
   {
@@ -1931,6 +2003,15 @@
      "sem_nota:metrica_fora_da_faixa_plausivel"
     ],
     "erro": null
+   },
+   "controlo": {
+    "categoria": "privada",
+    "estrutura": "controlo_maioritario",
+    "controlador": "ATPS (52,2% dos votos), em controlo conjunto dos fundadores António Carlos Vaz Pinto de Sousa e António Alberto Guerra Leal Teixeira",
+    "nota": "Há acordo parassocial entre os dois sobre os votos da ATPS. Fergie – Serviços e Gestão (sociedade dos filhos dos fundadores) 10,96%.",
+    "fonte": "https://www.ibersol.pt/investidores/relatorio-contas/2025/3_Relatorio_Governo_30_4_2025.pdf",
+    "data_ref": "2024-12-31",
+    "confianca": "alta"
    }
   },
   {
@@ -2133,6 +2214,15 @@
     "relatorio_url": "https://filings.xbrl.org/259400A8SZP10GB5IB19/2025-12-31/ESEF/PT/0/000320-2025-12-31/reports/ixbrlviewer.html",
     "flags": [],
     "erro": null
+   },
+   "controlo": {
+    "categoria": "privada",
+    "estrutura": "controlo_maioritario",
+    "controlador": "Família Soares dos Santos, via Sociedade Francisco Manuel dos Santos (56,1%)",
+    "nota": "Participação detida através da Sociedade Francisco Manuel dos Santos, B.V.",
+    "fonte": "https://reports.jeronimomartins.com/annual-report/2025/corporate-governance/part-i/section-a/subsection-ii/point-7.html",
+    "data_ref": "2025-12-31",
+    "confianca": "alta"
    }
   },
   {
@@ -2331,6 +2421,15 @@
      "info:locacoes_nao_identificadas"
     ],
     "erro": null
+   },
+   "controlo": {
+    "categoria": "privada",
+    "estrutura": "acionista_de_referencia",
+    "controlador": "Sonaecom / Sonae (37,4%), sem maioria",
+    "nota": "Sonaecom 37,37% (imputável a Sonae e à Efanor, que não tem acionista de controlo desde 2017); ZOPT 26,07% (imputável a sociedades de Isabel dos Santos); outros 36,56%. A página foi atualizada a 29/04/2025.",
+    "fonte": "https://www.nos.pt/pt/institucional/investidores/mercado-de-capitais/estrutura-acionista",
+    "data_ref": "2025-04-29",
+    "confianca": "media"
    }
   },
   {
@@ -2560,6 +2659,15 @@
     "relatorio_url": "https://filings.xbrl.org/549300UNIB7M2AXUXS35/2025-12-31/ESEF/PT/1/007394-2025-12-31/reports/ixbrlviewer.html",
     "flags": [],
     "erro": null
+   },
+   "controlo": {
+    "categoria": "privada",
+    "estrutura": "controlo_maioritario",
+    "controlador": "Semapa (≈70%), controlada pelas irmãs Queiroz Pereira",
+    "nota": "Semapa detém 69,97% do capital da Navigator (relatório anual de 2023 da Semapa; percentagem a reconfirmar no relatório mais recente).",
+    "fonte": "https://www.semapa.pt/wp-content/uploads/2024/04/SEMAPA-RA-2023-versao-nao-ESEF.pdf",
+    "data_ref": "2023-12-31",
+    "confianca": "media"
    }
   },
   {
@@ -2794,6 +2902,15 @@
      "info:locacoes_nao_identificadas"
     ],
     "erro": null
+   },
+   "controlo": {
+    "categoria": "participacao_estatal_relevante",
+    "estrutura": "acionistas_de_referencia",
+    "controlador": "Sem controlador: State Grid (estatal chinesa) 25% e Estado português via Parpública 19%",
+    "nota": "O Estado comprou 13,7% à Pontegadea (concluído a 7/9/2026) e 5,3% à Fidelidade (anunciado a 9/10/2026, sujeito a visto do Tribunal de Contas).",
+    "fonte": "https://www.dn.pt/economia/estado-fecha-regresso-ren-nos-19-aps-comprar-posio-da-fidelidade",
+    "data_ref": "2026-10-09",
+    "confianca": "media"
    }
   },
   {
@@ -3005,6 +3122,15 @@
     "relatorio_url": "https://filings.xbrl.org/549300HNGOW85KIOH584/2025-12-31/ESEF/PT/0/009772-2025-12-31/reports/ixbrlviewer.html",
     "flags": [],
     "erro": null
+   },
+   "controlo": {
+    "categoria": "privada",
+    "estrutura": "controlo_maioritario",
+    "controlador": "Irmãs Filipa, Mafalda e Lua Queiroz Pereira, via Sodim e Cimo (81,8%)",
+    "nota": "Sodim 33,85% e Cimo (100% Sodim) 47,94% do capital; acordo parassocial entre as três irmãs.",
+    "fonte": "https://www.semapa.pt/wp-content/uploads/2026/04/SEMAPA_RGS2025_PT_20260417.pdf",
+    "data_ref": "2025-12-31",
+    "confianca": "alta"
    }
   },
   {
@@ -3203,6 +3329,15 @@
      "info:ebit_reconstruido_resultado_financeiro"
     ],
     "erro": null
+   },
+   "controlo": {
+    "categoria": "privada",
+    "estrutura": "controlo_maioritario",
+    "controlador": "Efanor (53,0%), holding da família Azevedo",
+    "nota": "Efanor 53,03% (direta e via Pareuro); Criteria Caixa 5,00%. A Efanor declara não ter acionista de controlo desde 29/11/2017.",
+    "fonte": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2026/04/01/Connect_sonaecgr2025pt.pdf",
+    "data_ref": "2025-12-31",
+    "confianca": "alta"
    }
   },
   {
@@ -3339,6 +3474,15 @@
      "info:sem_dividendo_cadastrado_para_o_exercicio"
     ],
     "erro": null
+   },
+   "controlo": {
+    "categoria": "privada",
+    "estrutura": "acionista_de_referencia",
+    "controlador": "Teixeira Duarte 1886 (39,0%), sem maioria",
+    "nota": "Dualis Capital 9,35%; Midinvest 7,53%.",
+    "fonte": "https://www.teixeiraduarte.pt/wp-content/uploads/2025/08/TDSA-1-semestre-2025.pdf",
+    "data_ref": "2025-06-30",
+    "confianca": "alta"
    }
   }
  ],
@@ -3488,6 +3632,11 @@
     "teto": null
    }
   ]
+ },
+ "controlo_meta": {
+  "atualizado": "2026-11-04",
+  "proxima_revisao": "2027-01-04",
+  "criterio": "Participações qualificadas (art. 16.º e 20.º do Código dos Valores Mobiliários) segundo a página de investidores ou o relatório de governo societário mais recente da empresa; imprensa reconhecida só para mudanças posteriores ao último documento oficial. 'estatal' = o Estado português controla; 'estatal_estrangeira' = estatal de outro país controla; 'participacao_estatal_relevante' = um Estado (português ou estrangeiro) tem 5% ou mais sem controlar; 'privada' = restantes. 'estrutura' descreve se há maioria (controlo), um acionista de referência sem maioria, ou capital disperso."
  },
  "qualidade_meta": {
   "gerado_em": "2026-11-04 09:54",
