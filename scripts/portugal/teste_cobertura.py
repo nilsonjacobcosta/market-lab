@@ -189,6 +189,9 @@ def main():
     md = relatorio(linhas, fonte, aviso, agora.strftime("%Y-%m-%d %H:%M"))
     (saida / "relatorio.md").write_text(md, encoding="utf-8")
     print(md)
+    # Detalhe por papel também no log (o artefato nem sempre pode ser baixado de onde se revisa).
+    print("\n--- DETALHE POR PAPEL (CSV) ---")
+    print((saida / "cobertura.csv").read_text(encoding="utf-8"))
     return 0 if any(l.get("status") == "ok" for l in linhas) else 1
 
 
