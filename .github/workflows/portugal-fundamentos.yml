@@ -1,0 +1,52 @@
+name: Portugal - qualidade financeira (ESEF)
+
+# Relatórios anuais mudam poucas vezes por ano: corre às segundas e pode ser disparado à mão.
+# Só publica se os testes e o aceite passarem.
+on:
+  schedule:
+    - cron: "41 6 * * 1"
+  workflow_dispatch:
+    inputs:
+      descobrir:
+        description: "Só diagnóstico (imprime LEI, relatórios e rubricas; não publica)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: monitor-portugal
+  cancel-in-progress: false
+
+jobs:
+  fundamentos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Diagnóstico
+        if: ${{ inputs.descobrir }}
+        run: python3 scripts/portugal/fundamentos_esef.py --descobrir --saida /tmp/fundamentos.json
+      - name: Testes
+        if: ${{ !inputs.descobrir }}
+        run: python3 -m unittest tests/test_portugal.py -v
+      - name: Coletar e calcular
+        if: ${{ !inputs.descobrir }}
+        run: python3 scripts/portugal/fundamentos_esef.py --saida /tmp/fundamentos.json
+      - name: Aceite e publicação
+        if: ${{ !inputs.descobrir }}
+        run: |
+          python3 scripts/portugal/aceite_fundamentos.py /tmp/fundamentos.json dados/portugal/fundamentos.json
+          python3 scripts/portugal/painel_pt.py
+          python3 -m unittest tests/test_portugal.py -v
+          git config user.name "market-lab bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add dados/portugal/fundamentos.json dados/portugal/painel.json dados/portugal/historico_status.json
+          if git diff --cached --quiet; then echo "Sem mudanças"; exit 0; fi
+          git commit -m "Monitor Portugal: qualidade financeira (ESEF) $(date -u +'%Y-%m-%d')"
+          git pull --rebase
+          git push
