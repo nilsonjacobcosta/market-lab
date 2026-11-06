@@ -1,6 +1,6 @@
 {
  "gerado_em": "2026-11-06T21:58+00:00",
- "precos_coletados_em": "2026-11-06T08:52+00:00",
+ "precos_coletados_em": "2026-11-06T21:58+00:00",
  "autor": "market-lab — projeto pessoal de estudo de nilsonjacobcosta (GitHub)",
  "aviso": "Material educativo, não é recomendação de investimento.",
  "parametros": {
@@ -59,9 +59,9 @@
    "cadastro_proventos": "completo",
    "faixa_liquidez": "alta",
    "cadastro_completo": true,
-   "preco": 4.18,
+   "preco": 4.22,
    "data_preco": "2026-11-06",
-   "variacao_12m_pct": -14.3,
+   "variacao_12m_pct": -13.4,
    "proventos_por_ano": {
     "2021": 0.25,
     "2022": 0.24,
@@ -89,18 +89,18 @@
    "proventos_12m": 0.25,
    "dpa_medio": 0.258,
    "dpa_aparado": 0.25,
-   "dy_12m_pct": 5.98,
-   "dy_medio_pct": 6.17,
+   "dy_12m_pct": 5.92,
+   "dy_medio_pct": 6.11,
    "teto": 4.0803,
    "teto_robusto": 3.9538,
    "faixa_teto": [
     3.5231,
     4.8469
    ],
-   "margem_pct": -2.4,
+   "margem_pct": -3.3,
    "status": "acima",
    "status_rotulo": "Acima do teto calculado",
-   "liquidez_mediana_12m_eur": 1187723,
+   "liquidez_mediana_12m_eur": 1200452,
    "pct_dias_sem_negocio_12m": 0.0,
    "pct_eventos_oficiais": 33,
    "tem_scrip": false,
@@ -241,7 +241,7 @@
     "2026-08": 4.7407,
     "2026-09": 4.7077,
     "2026-10": 4.3516,
-    "2026-11": 4.233
+    "2026-11": 4.241
    },
    "qualidade": {
     "nota": null,
@@ -292,9 +292,9 @@
    "cadastro_proventos": "completo",
    "faixa_liquidez": "alta",
    "cadastro_completo": true,
-   "preco": 1.091,
+   "preco": 1.084,
    "data_preco": "2026-11-06",
-   "variacao_12m_pct": 41.7,
+   "variacao_12m_pct": 40.8,
    "proventos_por_ano": {
     "2021": 0,
     "2022": 0.0009,
@@ -318,7 +318,7 @@
    "proventos_12m": 0.0344,
    "dpa_medio": 0.00958,
    "dpa_aparado": 0.005967,
-   "dy_12m_pct": 3.15,
+   "dy_12m_pct": 3.17,
    "dy_medio_pct": 0.88,
    "teto": 0.1515,
    "teto_robusto": 0.0944,
@@ -326,7 +326,7 @@
     0.1308,
     0.18
    ],
-   "margem_pct": -86.1,
+   "margem_pct": -86.0,
    "status": "acima",
    "status_rotulo": "Acima do teto calculado",
    "liquidez_mediana_12m_eur": 44645789,
@@ -438,7 +438,7 @@
     "2026-08": 1.0989,
     "2026-09": 1.177,
     "2026-10": 1.1168,
-    "2026-11": 1.0791
+    "2026-11": 1.0777
    },
    "qualidade": {
     "nota": 2,
@@ -484,9 +484,9 @@
    "cadastro_proventos": "completo",
    "faixa_liquidez": "alta",
    "cadastro_completo": true,
-   "preco": 6.69,
+   "preco": 6.7,
    "data_preco": "2026-11-06",
-   "variacao_12m_pct": 2.6,
+   "variacao_12m_pct": 2.8,
    "proventos_por_ano": {
     "2021": 0.27,
     "2022": 0.29,
@@ -514,7 +514,7 @@
    "proventos_12m": 0.35,
    "dpa_medio": 0.292,
    "dpa_aparado": 0.29,
-   "dy_12m_pct": 5.23,
+   "dy_12m_pct": 5.22,
    "dy_medio_pct": 4.36,
    "teto": 4.6181,
    "teto_robusto": 4.5864,
@@ -522,7 +522,7 @@
     3.9874,
     5.4856
    ],
-   "margem_pct": -31.0,
+   "margem_pct": -31.1,
    "status": "acima",
    "status_rotulo": "Acima do teto calculado",
    "liquidez_mediana_12m_eur": 860200,
@@ -682,7 +682,7 @@
     "2026-08": 6.8329,
     "2026-09": 7.0377,
     "2026-10": 6.8114,
-    "2026-11": 6.684
+    "2026-11": 6.686
    },
    "qualidade": {
     "nota": 1,
@@ -731,9 +731,9 @@
    "cadastro_proventos": "completo",
    "faixa_liquidez": "alta",
    "cadastro_completo": true,
-   "preco": 4.55,
+   "preco": 4.522,
    "data_preco": "2026-11-06",
-   "variacao_12m_pct": -38.7,
+   "variacao_12m_pct": -39.1,
    "proventos_por_ano": {
     "2021": 0.085,
     "2022": 0.12,
@@ -761,18 +761,18 @@
    "proventos_12m": 0.19,
    "dpa_medio": 0.134,
    "dpa_aparado": 0.138333,
-   "dy_12m_pct": 4.18,
-   "dy_medio_pct": 2.95,
+   "dy_12m_pct": 4.2,
+   "dy_medio_pct": 2.96,
    "teto": 2.1192,
    "teto_robusto": 2.1878,
    "faixa_teto": [
     1.8299,
     2.5174
    ],
-   "margem_pct": -53.4,
+   "margem_pct": -53.1,
    "status": "acima",
    "status_rotulo": "Acima do teto calculado",
-   "liquidez_mediana_12m_eur": 2063888,
+   "liquidez_mediana_12m_eur": 2088135,
    "pct_dias_sem_negocio_12m": 0.0,
    "pct_eventos_oficiais": 100,
    "tem_scrip": false,
@@ -893,7 +893,7 @@
     "2026-08": 6.3736,
     "2026-09": 6.3473,
     "2026-10": 5.5916,
-    "2026-11": 4.885
+    "2026-11": 4.8794
    },
    "qualidade": {
     "nota": 3,
@@ -942,9 +942,9 @@
    "cadastro_proventos": "completo",
    "faixa_liquidez": "alta",
    "cadastro_completo": true,
-   "preco": 4.975,
+   "preco": 5.0,
    "data_preco": "2026-11-06",
-   "variacao_12m_pct": 27.8,
+   "variacao_12m_pct": 28.4,
    "proventos_por_ano": {
     "2021": 0.19,
     "2022": 0.19,
@@ -972,18 +972,18 @@
    "proventos_12m": 0.205,
    "dpa_medio": 0.193,
    "dpa_aparado": 0.191667,
-   "dy_12m_pct": 4.12,
-   "dy_medio_pct": 3.88,
+   "dy_12m_pct": 4.1,
+   "dy_medio_pct": 3.86,
    "teto": 3.0523,
    "teto_robusto": 3.0313,
    "faixa_teto": [
     2.6355,
     3.6258
    ],
-   "margem_pct": -38.6,
+   "margem_pct": -39.0,
    "status": "acima",
    "status_rotulo": "Acima do teto calculado",
-   "liquidez_mediana_12m_eur": 36197791,
+   "liquidez_mediana_12m_eur": 36279685,
    "pct_dias_sem_negocio_12m": 0.0,
    "pct_eventos_oficiais": 67,
    "tem_scrip": false,
@@ -1104,7 +1104,7 @@
     "2026-08": 4.5783,
     "2026-09": 4.754,
     "2026-10": 4.8118,
-    "2026-11": 4.93
+    "2026-11": 4.935
    },
    "qualidade": {
     "nota": 2,
@@ -1154,9 +1154,9 @@
    "cadastro_proventos": "completo",
    "faixa_liquidez": "alta",
    "cadastro_completo": true,
-   "preco": 13.69,
+   "preco": 14.49,
    "data_preco": "2026-11-06",
-   "variacao_12m_pct": 16.8,
+   "variacao_12m_pct": 23.6,
    "proventos_por_ano": {
     "2021": 0.08,
     "2022": 0.09,
@@ -1184,18 +1184,18 @@
    "proventos_12m": 0.124,
    "dpa_medio": 0.144,
    "dpa_aparado": 0.125,
-   "dy_12m_pct": 0.91,
-   "dy_medio_pct": 1.05,
+   "dy_12m_pct": 0.86,
+   "dy_medio_pct": 0.99,
    "teto": 2.2774,
    "teto_robusto": 1.9769,
    "faixa_teto": [
     1.9664,
     2.7052
    ],
-   "margem_pct": -83.4,
+   "margem_pct": -84.3,
    "status": "acima",
    "status_rotulo": "Acima do teto calculado",
-   "liquidez_mediana_12m_eur": 11845309,
+   "liquidez_mediana_12m_eur": 11857464,
    "pct_dias_sem_negocio_12m": 0.0,
    "pct_eventos_oficiais": 100,
    "tem_scrip": true,
@@ -1327,7 +1327,7 @@
     "2026-08": 13.5662,
     "2026-09": 12.965,
     "2026-10": 12.3464,
-    "2026-11": 13.294
+    "2026-11": 13.454
    },
    "qualidade": {
     "nota": 1,
@@ -1376,9 +1376,9 @@
    "cadastro_proventos": "completo",
    "faixa_liquidez": "alta",
    "cadastro_completo": true,
-   "preco": 4.444,
+   "preco": 4.51,
    "data_preco": "2026-11-06",
-   "variacao_12m_pct": -22.5,
+   "variacao_12m_pct": -21.4,
    "proventos_por_ano": {
     "2021": 0,
     "2022": 0.069,
@@ -1405,15 +1405,15 @@
    "proventos_12m": 0.173,
    "dpa_medio": 0.089326,
    "dpa_aparado": 0.098977,
-   "dy_12m_pct": 3.89,
-   "dy_medio_pct": 2.01,
+   "dy_12m_pct": 3.84,
+   "dy_medio_pct": 1.98,
    "teto": 1.4127,
    "teto_robusto": 1.5653,
    "faixa_teto": [
     1.2198,
     1.6781
    ],
-   "margem_pct": -68.2,
+   "margem_pct": -68.7,
    "status": "acima",
    "status_rotulo": "Acima do teto calculado",
    "liquidez_mediana_12m_eur": 7203261,
@@ -1543,7 +1543,7 @@
     "2026-08": 4.5794,
     "2026-09": 5.0052,
     "2026-10": 4.6939,
-    "2026-11": 4.4804
+    "2026-11": 4.4936
    },
    "qualidade": {
     "nota": 3,
@@ -1592,9 +1592,9 @@
    "cadastro_proventos": "pendente",
    "faixa_liquidez": "baixa",
    "cadastro_completo": false,
-   "preco": 2.7,
-   "data_preco": "2026-11-05",
-   "variacao_12m_pct": -38.6,
+   "preco": 2.72,
+   "data_preco": "2026-11-06",
+   "variacao_12m_pct": -38.2,
    "proventos_por_ano": {
     "2021": 0,
     "2022": 0,
@@ -1621,16 +1621,11 @@
    "status": "em_cadastro",
    "status_rotulo": "Em cadastro: proventos por conferir",
    "liquidez_mediana_12m_eur": 0,
-   "pct_dias_sem_negocio_12m": 61.8,
+   "pct_dias_sem_negocio_12m": 61.6,
    "pct_eventos_oficiais": null,
    "tem_scrip": false,
    "eventos": [],
    "alertas": [
-    {
-     "nivel": "atencao",
-     "codigo": "preco_atrasado",
-     "texto": "Último preço é de 2026-11-05; esperado o fecho de 2026-11-06."
-    },
     {
      "nivel": "info",
      "codigo": "fora_nucleo",
@@ -1639,7 +1634,7 @@
     {
      "nivel": "atencao",
      "codigo": "negociacao_intermitente",
-     "texto": "Negociação intermitente: 61.8% dos dias sem negócio em 12 meses; o último preço pode não corresponder a um negócio real."
+     "texto": "Negociação intermitente: 61.6% dos dias sem negócio em 12 meses; o último preço pode não corresponder a um negócio real."
     },
     {
      "nivel": "info",
@@ -1712,7 +1707,7 @@
     "2026-08": 3.2676,
     "2026-09": 3.2136,
     "2026-10": 2.8818,
-    "2026-11": 2.7
+    "2026-11": 2.704
    }
   },
   {
@@ -1724,9 +1719,9 @@
    "cadastro_proventos": "pendente",
    "faixa_liquidez": "baixa",
    "cadastro_completo": false,
-   "preco": 2.64,
-   "data_preco": "2026-11-05",
-   "variacao_12m_pct": -28.3,
+   "preco": 2.78,
+   "data_preco": "2026-11-06",
+   "variacao_12m_pct": -24.5,
    "proventos_por_ano": {
     "2021": 0,
     "2022": 0,
@@ -1752,17 +1747,12 @@
    "margem_pct": null,
    "status": "em_cadastro",
    "status_rotulo": "Em cadastro: proventos por conferir",
-   "liquidez_mediana_12m_eur": 379,
+   "liquidez_mediana_12m_eur": 378,
    "pct_dias_sem_negocio_12m": 16.1,
    "pct_eventos_oficiais": null,
    "tem_scrip": false,
    "eventos": [],
    "alertas": [
-    {
-     "nivel": "atencao",
-     "codigo": "preco_atrasado",
-     "texto": "Último preço é de 2026-11-05; esperado o fecho de 2026-11-06."
-    },
     {
      "nivel": "info",
      "codigo": "fora_nucleo",
@@ -1839,7 +1829,7 @@
     "2026-08": 2.8695,
     "2026-09": 2.76,
     "2026-10": 2.6764,
-    "2026-11": 2.76
+    "2026-11": 2.764
    }
   },
   {
@@ -1983,9 +1973,9 @@
    "cadastro_proventos": "completo",
    "faixa_liquidez": "alta",
    "cadastro_completo": true,
-   "preco": 19.7,
+   "preco": 19.08,
    "data_preco": "2026-11-06",
-   "variacao_12m_pct": 12.3,
+   "variacao_12m_pct": 8.8,
    "proventos_por_ano": {
     "2021": 0.6,
     "2022": 0.51,
@@ -2013,15 +2003,15 @@
    "proventos_12m": 0.68,
    "dpa_medio": 0.568,
    "dpa_aparado": 0.56,
-   "dy_12m_pct": 3.45,
-   "dy_medio_pct": 2.88,
+   "dy_12m_pct": 3.56,
+   "dy_medio_pct": 2.98,
    "teto": 8.9831,
    "teto_robusto": 8.8566,
    "faixa_teto": [
     7.7564,
     10.6707
    ],
-   "margem_pct": -54.4,
+   "margem_pct": -52.9,
    "status": "acima",
    "status_rotulo": "Acima do teto calculado",
    "liquidez_mediana_12m_eur": 33886385,
@@ -2199,7 +2189,7 @@
     "2026-08": 20.7681,
     "2026-09": 21.7905,
     "2026-10": 21.9718,
-    "2026-11": 19.916
+    "2026-11": 19.792
    },
    "qualidade": {
     "nota": 3,
@@ -2246,9 +2236,9 @@
    "cadastro_proventos": "pendente",
    "faixa_liquidez": "baixa",
    "cadastro_completo": false,
-   "preco": 1.22,
-   "data_preco": "2026-11-05",
-   "variacao_12m_pct": -26.1,
+   "preco": 1.215,
+   "data_preco": "2026-11-06",
+   "variacao_12m_pct": -26.4,
    "proventos_por_ano": {
     "2021": 0,
     "2022": 0,
@@ -2274,17 +2264,12 @@
    "margem_pct": null,
    "status": "em_cadastro",
    "status_rotulo": "Em cadastro: proventos por conferir",
-   "liquidez_mediana_12m_eur": 10488,
+   "liquidez_mediana_12m_eur": 10562,
    "pct_dias_sem_negocio_12m": 2.0,
    "pct_eventos_oficiais": null,
    "tem_scrip": false,
    "eventos": [],
    "alertas": [
-    {
-     "nivel": "atencao",
-     "codigo": "preco_atrasado",
-     "texto": "Último preço é de 2026-11-05; esperado o fecho de 2026-11-06."
-    },
     {
      "nivel": "info",
      "codigo": "fora_nucleo",
@@ -2361,7 +2346,7 @@
     "2026-08": 1.1979,
     "2026-09": 1.225,
     "2026-10": 1.2132,
-    "2026-11": 1.2013
+    "2026-11": 1.204
    }
   },
   {
@@ -2373,9 +2358,9 @@
    "cadastro_proventos": "completo",
    "faixa_liquidez": "alta",
    "cadastro_completo": true,
-   "preco": 10.5,
+   "preco": 10.48,
    "data_preco": "2026-11-06",
-   "variacao_12m_pct": 3.4,
+   "variacao_12m_pct": 3.3,
    "proventos_por_ano": {
     "2021": 0,
     "2022": 0.135,
@@ -2401,7 +2386,7 @@
    "proventos_12m": 0.7,
    "dpa_medio": 0.407,
    "dpa_aparado": 0.445,
-   "dy_12m_pct": 6.67,
+   "dy_12m_pct": 6.68,
    "dy_medio_pct": 3.88,
    "teto": 6.4368,
    "teto_robusto": 7.0378,
@@ -2409,7 +2394,7 @@
     5.5578,
     7.6461
    ],
-   "margem_pct": -38.7,
+   "margem_pct": -38.6,
    "status": "acima",
    "status_rotulo": "Acima do teto calculado",
    "liquidez_mediana_12m_eur": 207365,
@@ -2530,7 +2515,7 @@
     "2026-08": 9.9552,
     "2026-09": 10.1268,
     "2026-10": 10.0923,
-    "2026-11": 10.424
+    "2026-11": 10.42
    },
    "qualidade": {
     "nota": null,
@@ -2580,9 +2565,9 @@
    "cadastro_proventos": "pendente",
    "faixa_liquidez": "baixa",
    "cadastro_completo": false,
-   "preco": 0.1904,
+   "preco": 0.1894,
    "data_preco": "2026-11-06",
-   "variacao_12m_pct": -25.3,
+   "variacao_12m_pct": -25.7,
    "proventos_por_ano": {
     "2021": 0,
     "2022": 0,
@@ -2685,7 +2670,7 @@
     "2026-08": 0.215,
     "2026-09": 0.2051,
     "2026-10": 0.1927,
-    "2026-11": 0.1904
+    "2026-11": 0.1902
    }
   },
   {
@@ -2697,9 +2682,9 @@
    "cadastro_proventos": "completo",
    "faixa_liquidez": "alta",
    "cadastro_completo": true,
-   "preco": 19.43,
+   "preco": 19.33,
    "data_preco": "2026-11-06",
-   "variacao_12m_pct": -10.3,
+   "variacao_12m_pct": -10.8,
    "proventos_por_ano": {
     "2021": 0.288,
     "2022": 0.785,
@@ -2727,15 +2712,15 @@
    "proventos_12m": 0.65,
    "dpa_medio": 0.5736,
    "dpa_aparado": 0.598333,
-   "dy_12m_pct": 3.35,
-   "dy_medio_pct": 2.95,
+   "dy_12m_pct": 3.36,
+   "dy_medio_pct": 2.97,
    "teto": 9.0716,
    "teto_robusto": 9.4628,
    "faixa_teto": [
     7.8329,
     10.7759
    ],
-   "margem_pct": -53.3,
+   "margem_pct": -53.1,
    "status": "acima",
    "status_rotulo": "Acima do teto calculado",
    "liquidez_mediana_12m_eur": 18615389,
@@ -2865,7 +2850,7 @@
     "2026-08": 17.4976,
     "2026-09": 17.9977,
     "2026-10": 17.7445,
-    "2026-11": 19.042
+    "2026-11": 19.022
    },
    "qualidade": {
     "nota": 3,
@@ -2912,9 +2897,9 @@
    "cadastro_proventos": "completo",
    "faixa_liquidez": "baixa",
    "cadastro_completo": true,
-   "preco": 2.29,
+   "preco": 2.24,
    "data_preco": "2026-11-06",
-   "variacao_12m_pct": -5.4,
+   "variacao_12m_pct": -7.4,
    "proventos_por_ano": {
     "2021": 0,
     "2022": 0,
@@ -2934,15 +2919,15 @@
    "proventos_12m": 0.093,
    "dpa_medio": 0.024,
    "dpa_aparado": 0.0,
-   "dy_12m_pct": 4.06,
-   "dy_medio_pct": 1.05,
+   "dy_12m_pct": 4.15,
+   "dy_medio_pct": 1.07,
    "teto": 0.3796,
    "teto_robusto": null,
    "faixa_teto": [
     0.3277,
     0.4509
    ],
-   "margem_pct": -83.4,
+   "margem_pct": -83.1,
    "status": "acima",
    "status_rotulo": "Acima do teto calculado",
    "liquidez_mediana_12m_eur": 8624,
@@ -3041,7 +3026,7 @@
     "2026-08": 2.321,
     "2026-09": 2.3218,
     "2026-10": 2.2745,
-    "2026-11": 2.278
+    "2026-11": 2.268
    }
   },
   {
@@ -3185,9 +3170,9 @@
    "cadastro_proventos": "completo",
    "faixa_liquidez": "baixa",
    "cadastro_completo": true,
-   "preco": 7.16,
-   "data_preco": "2026-11-05",
-   "variacao_12m_pct": -19.1,
+   "preco": 7.14,
+   "data_preco": "2026-11-06",
+   "variacao_12m_pct": -19.3,
    "proventos_por_ano": {
     "2021": 0,
     "2022": 0,
@@ -3212,17 +3197,17 @@
    "dpa_medio": 0.712,
    "dpa_aparado": 0.59,
    "dy_12m_pct": 0.0,
-   "dy_medio_pct": 9.94,
+   "dy_medio_pct": 9.97,
    "teto": 11.2605,
    "teto_robusto": 9.331,
    "faixa_teto": [
     9.7228,
     13.3759
    ],
-   "margem_pct": 57.3,
+   "margem_pct": 57.7,
    "status": "abaixo_conferir",
    "status_rotulo": "Abaixo do teto · conferir dados",
-   "liquidez_mediana_12m_eur": 12333,
+   "liquidez_mediana_12m_eur": 12312,
    "pct_dias_sem_negocio_12m": 0.4,
    "pct_eventos_oficiais": 100,
    "tem_scrip": true,
@@ -3292,11 +3277,6 @@
     }
    ],
    "alertas": [
-    {
-     "nivel": "atencao",
-     "codigo": "preco_atrasado",
-     "texto": "Último preço é de 2026-11-05; esperado o fecho de 2026-11-06."
-    },
     {
      "nivel": "atencao",
      "codigo": "anos_sem_proventos",
@@ -3378,7 +3358,7 @@
     "2026-08": 7.2543,
     "2026-09": 7.1173,
     "2026-10": 7.0445,
-    "2026-11": 7.15
+    "2026-11": 7.148
    }
   },
   {
@@ -3390,9 +3370,9 @@
    "cadastro_proventos": "completo",
    "faixa_liquidez": "alta",
    "cadastro_completo": true,
-   "preco": 5.525,
+   "preco": 5.44,
    "data_preco": "2026-11-06",
-   "variacao_12m_pct": 50.1,
+   "variacao_12m_pct": 47.8,
    "proventos_por_ano": {
     "2021": 0.278,
     "2022": 0.278,
@@ -3420,18 +3400,18 @@
    "proventos_12m": 0.45,
    "dpa_medio": 0.3472,
    "dpa_aparado": 0.342667,
-   "dy_12m_pct": 8.14,
-   "dy_medio_pct": 6.28,
+   "dy_12m_pct": 8.27,
+   "dy_medio_pct": 6.38,
    "teto": 5.4911,
    "teto_robusto": 5.4194,
    "faixa_teto": [
     4.7412,
     6.5226
    ],
-   "margem_pct": -0.6,
-   "status": "acima",
-   "status_rotulo": "Acima do teto calculado",
-   "liquidez_mediana_12m_eur": 2498736,
+   "margem_pct": 0.9,
+   "status": "abaixo",
+   "status_rotulo": "Abaixo do teto calculado",
+   "liquidez_mediana_12m_eur": 2503494,
    "pct_dias_sem_negocio_12m": 0.0,
    "pct_eventos_oficiais": 100,
    "tem_scrip": false,
@@ -3552,7 +3532,7 @@
     "2026-08": 4.8704,
     "2026-09": 5.2387,
     "2026-10": 5.2302,
-    "2026-11": 5.355
+    "2026-11": 5.338
    },
    "qualidade": {
     "nota": 3,
@@ -3601,9 +3581,9 @@
    "cadastro_proventos": "completo",
    "faixa_liquidez": "alta",
    "cadastro_completo": true,
-   "preco": 3.062,
+   "preco": 3.042,
    "data_preco": "2026-11-06",
-   "variacao_12m_pct": 0.9,
+   "variacao_12m_pct": 0.3,
    "proventos_por_ano": {
     "2021": 0.2103,
     "2022": 0.3515,
@@ -3631,15 +3611,15 @@
    "proventos_12m": 0.1125,
    "dpa_medio": 0.259992,
    "dpa_aparado": 0.246053,
-   "dy_12m_pct": 3.67,
-   "dy_medio_pct": 8.49,
+   "dy_12m_pct": 3.7,
+   "dy_medio_pct": 8.55,
    "teto": 4.1118,
    "teto_robusto": 3.8914,
    "faixa_teto": [
     3.5503,
     4.8843
    ],
-   "margem_pct": 34.3,
+   "margem_pct": 35.2,
    "status": "abaixo_conferir",
    "status_rotulo": "Abaixo do teto · conferir dados",
    "liquidez_mediana_12m_eur": 2441530,
@@ -3796,7 +3776,7 @@
     "2026-08": 3.2521,
     "2026-09": 3.2449,
     "2026-10": 3.0645,
-    "2026-11": 3.042
+    "2026-11": 3.038
    },
    "qualidade": {
     "nota": 3,
@@ -3960,9 +3940,9 @@
    "cadastro_proventos": "completo",
    "faixa_liquidez": "baixa",
    "cadastro_completo": true,
-   "preco": 6.46,
+   "preco": 6.48,
    "data_preco": "2026-11-06",
-   "variacao_12m_pct": -13.9,
+   "variacao_12m_pct": -13.6,
    "proventos_por_ano": {
     "2021": 0.6,
     "2022": 0.6,
@@ -3991,15 +3971,15 @@
    "proventos_12m": 0.24,
    "dpa_medio": 0.886,
    "dpa_aparado": 0.823333,
-   "dy_12m_pct": 3.72,
-   "dy_medio_pct": 13.72,
+   "dy_12m_pct": 3.7,
+   "dy_medio_pct": 13.67,
    "teto": 14.0123,
    "teto_robusto": 13.0212,
    "faixa_teto": [
     12.0989,
     16.6447
    ],
-   "margem_pct": 116.9,
+   "margem_pct": 116.2,
    "status": "abaixo",
    "status_rotulo": "Abaixo do teto calculado",
    "liquidez_mediana_12m_eur": 10019,
@@ -4147,7 +4127,7 @@
     "2026-08": 6.841,
     "2026-09": 6.8255,
     "2026-10": 6.5809,
-    "2026-11": 6.512
+    "2026-11": 6.516
    }
   },
   {
@@ -4159,9 +4139,9 @@
    "cadastro_proventos": "completo",
    "faixa_liquidez": "alta",
    "cadastro_completo": true,
-   "preco": 3.635,
+   "preco": 3.625,
    "data_preco": "2026-11-06",
-   "variacao_12m_pct": 8.5,
+   "variacao_12m_pct": 8.2,
    "proventos_por_ano": {
     "2021": 0.171,
     "2022": 0.218,
@@ -4189,18 +4169,18 @@
    "proventos_12m": 0.16,
    "dpa_medio": 0.1708,
    "dpa_aparado": 0.160667,
-   "dy_12m_pct": 4.4,
-   "dy_medio_pct": 4.7,
+   "dy_12m_pct": 4.41,
+   "dy_medio_pct": 4.71,
    "teto": 2.7012,
    "teto_robusto": 2.541,
    "faixa_teto": [
     2.3324,
     3.2087
    ],
-   "margem_pct": -25.7,
+   "margem_pct": -25.5,
    "status": "acima",
    "status_rotulo": "Acima do teto calculado",
-   "liquidez_mediana_12m_eur": 2069990,
+   "liquidez_mediana_12m_eur": 2074521,
    "pct_dias_sem_negocio_12m": 0.0,
    "pct_eventos_oficiais": 100,
    "tem_scrip": false,
@@ -4357,7 +4337,7 @@
     "2026-08": 3.5243,
     "2026-09": 3.5195,
     "2026-10": 3.5559,
-    "2026-11": 3.609
+    "2026-11": 3.607
    },
    "qualidade": {
     "nota": 1,
@@ -4406,9 +4386,9 @@
    "cadastro_proventos": "pendente",
    "faixa_liquidez": "baixa",
    "cadastro_completo": false,
-   "preco": 0.985,
-   "data_preco": "2026-11-05",
-   "variacao_12m_pct": -0.5,
+   "preco": 0.95,
+   "data_preco": "2026-11-06",
+   "variacao_12m_pct": -4.0,
    "proventos_por_ano": {
     "2021": 0,
     "2022": 0,
@@ -4434,17 +4414,12 @@
    "margem_pct": null,
    "status": "em_cadastro",
    "status_rotulo": "Em cadastro: proventos por conferir",
-   "liquidez_mediana_12m_eur": 228,
-   "pct_dias_sem_negocio_12m": 14.2,
+   "liquidez_mediana_12m_eur": 226,
+   "pct_dias_sem_negocio_12m": 14.1,
    "pct_eventos_oficiais": null,
    "tem_scrip": false,
    "eventos": [],
    "alertas": [
-    {
-     "nivel": "atencao",
-     "codigo": "preco_atrasado",
-     "texto": "Último preço é de 2026-11-05; esperado o fecho de 2026-11-06."
-    },
     {
      "nivel": "info",
      "codigo": "fora_nucleo",
@@ -4453,7 +4428,7 @@
     {
      "nivel": "atencao",
      "codigo": "dias_sem_negocio",
-     "texto": "14.2% de dias sem negócio em 12 meses."
+     "texto": "14.1% de dias sem negócio em 12 meses."
     },
     {
      "nivel": "info",
@@ -4521,7 +4496,7 @@
     "2026-08": 0.9798,
     "2026-09": 0.9807,
     "2026-10": 0.9791,
-    "2026-11": 0.9587
+    "2026-11": 0.957
    }
   },
   {
@@ -4534,7 +4509,7 @@
    "faixa_liquidez": "baixa",
    "cadastro_completo": true,
    "preco": 6.65,
-   "data_preco": "2026-11-05",
+   "data_preco": "2026-11-06",
    "variacao_12m_pct": 5.6,
    "proventos_por_ano": {
     "2021": 0.3,
@@ -4574,8 +4549,8 @@
    "margem_pct": -33.4,
    "status": "acima",
    "status_rotulo": "Acima do teto calculado",
-   "liquidez_mediana_12m_eur": 79,
-   "pct_dias_sem_negocio_12m": 40.6,
+   "liquidez_mediana_12m_eur": 83,
+   "pct_dias_sem_negocio_12m": 40.4,
    "pct_eventos_oficiais": 83,
    "tem_scrip": false,
    "eventos": [
@@ -4636,11 +4611,6 @@
    ],
    "alertas": [
     {
-     "nivel": "atencao",
-     "codigo": "preco_atrasado",
-     "texto": "Último preço é de 2026-11-05; esperado o fecho de 2026-11-06."
-    },
-    {
      "nivel": "info",
      "codigo": "fora_nucleo",
      "texto": "Em observação: fora do núcleo de alta liquidez (faixa baixa)."
@@ -4648,7 +4618,7 @@
     {
      "nivel": "atencao",
      "codigo": "negociacao_intermitente",
-     "texto": "Negociação intermitente: 40.6% dos dias sem negócio em 12 meses; o último preço pode não corresponder a um negócio real."
+     "texto": "Negociação intermitente: 40.4% dos dias sem negócio em 12 meses; o último preço pode não corresponder a um negócio real."
     }
    ],
    "historico_preco_mensal": {
@@ -4711,7 +4681,7 @@
     "2026-08": 7.1714,
     "2026-09": 7.0455,
     "2026-10": 7.3455,
-    "2026-11": 6.6875
+    "2026-11": 6.68
    }
   },
   {
@@ -4723,9 +4693,9 @@
    "cadastro_proventos": "completo",
    "faixa_liquidez": "alta",
    "cadastro_completo": true,
-   "preco": 19.84,
+   "preco": 19.94,
    "data_preco": "2026-11-06",
-   "variacao_12m_pct": 12.3,
+   "variacao_12m_pct": 12.9,
    "proventos_por_ano": {
     "2021": 0.512,
     "2022": 1.764,
@@ -4753,15 +4723,15 @@
    "proventos_12m": 0.626,
    "dpa_medio": 0.8956,
    "dpa_aparado": 0.734,
-   "dy_12m_pct": 3.16,
-   "dy_medio_pct": 4.51,
+   "dy_12m_pct": 3.14,
+   "dy_medio_pct": 4.49,
    "teto": 14.1642,
    "teto_robusto": 11.6084,
    "faixa_teto": [
     12.23,
     16.8251
    ],
-   "margem_pct": -28.6,
+   "margem_pct": -29.0,
    "status": "acima",
    "status_rotulo": "Acima do teto calculado",
    "liquidez_mediana_12m_eur": 438338,
@@ -4900,7 +4870,7 @@
     "2026-08": 20.3733,
     "2026-09": 20.6955,
     "2026-10": 19.4236,
-    "2026-11": 19.716
+    "2026-11": 19.736
    },
    "qualidade": {
     "nota": 2,
@@ -4947,9 +4917,9 @@
    "cadastro_proventos": "pendente",
    "faixa_liquidez": "baixa",
    "cadastro_completo": false,
-   "preco": 6.48,
+   "preco": 6.44,
    "data_preco": "2026-11-06",
-   "variacao_12m_pct": 0.6,
+   "variacao_12m_pct": 0.0,
    "proventos_por_ano": {
     "2021": 0,
     "2022": 0,
@@ -4975,7 +4945,7 @@
    "margem_pct": null,
    "status": "em_cadastro",
    "status_rotulo": "Em cadastro: proventos por conferir",
-   "liquidez_mediana_12m_eur": 9579,
+   "liquidez_mediana_12m_eur": 9797,
    "pct_dias_sem_negocio_12m": 0.0,
    "pct_eventos_oficiais": null,
    "tem_scrip": false,
@@ -5052,7 +5022,7 @@
     "2026-08": 6.7705,
     "2026-09": 6.6218,
     "2026-10": 6.58,
-    "2026-11": 6.516
+    "2026-11": 6.508
    }
   },
   {
@@ -5249,9 +5219,9 @@
    "cadastro_proventos": "completo",
    "faixa_liquidez": "alta",
    "cadastro_completo": true,
-   "preco": 2.275,
+   "preco": 2.225,
    "data_preco": "2026-11-06",
-   "variacao_12m_pct": 59.8,
+   "variacao_12m_pct": 56.3,
    "proventos_por_ano": {
     "2021": 0.0486,
     "2022": 0.0511,
@@ -5279,15 +5249,15 @@
    "proventos_12m": 0.06217,
    "dpa_medio": 0.053802,
    "dpa_aparado": 0.053733,
-   "dy_12m_pct": 2.73,
-   "dy_medio_pct": 2.36,
+   "dy_12m_pct": 2.79,
+   "dy_medio_pct": 2.42,
    "teto": 0.8509,
    "teto_robusto": 0.8498,
    "faixa_teto": [
     0.7347,
     1.0107
    ],
-   "margem_pct": -62.6,
+   "margem_pct": -61.8,
    "status": "acima",
    "status_rotulo": "Acima do teto calculado",
    "liquidez_mediana_12m_eur": 3083265,
@@ -5411,7 +5381,7 @@
     "2026-08": 2.0209,
     "2026-09": 2.059,
     "2026-10": 2.0923,
-    "2026-11": 2.183
+    "2026-11": 2.173
    },
    "qualidade": {
     "nota": 1,
@@ -5460,9 +5430,9 @@
    "cadastro_proventos": "completo",
    "faixa_liquidez": "alta",
    "cadastro_completo": true,
-   "preco": 0.415,
+   "preco": 0.412,
    "data_preco": "2026-11-06",
-   "variacao_12m_pct": -39.1,
+   "variacao_12m_pct": -39.6,
    "proventos_por_ano": {
     "2021": 0,
     "2022": 0,
@@ -5560,7 +5530,7 @@
     "2026-08": 0.4846,
     "2026-09": 0.4849,
     "2026-10": 0.444,
-    "2026-11": 0.4177
+    "2026-11": 0.4171
    },
    "qualidade": {
     "nota": 1,
@@ -5720,6 +5690,13 @@
     "status": "acima",
     "rotulo": "Acima do teto calculado",
     "preco": 5.525,
+    "teto": 5.4911
+   },
+   {
+    "data": "2026-11-06",
+    "status": "abaixo",
+    "rotulo": "Abaixo do teto calculado",
+    "preco": 5.44,
     "teto": 5.4911
    }
   ],
