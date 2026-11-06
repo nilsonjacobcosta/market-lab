@@ -258,6 +258,13 @@
    "rotulo": "Em cadastro: proventos por conferir",
    "preco": 2.29,
    "teto": null
+  },
+  {
+   "data": "2026-11-06",
+   "status": "acima",
+   "rotulo": "Acima do teto calculado",
+   "preco": 2.29,
+   "teto": 0.3796
   }
  ],
  "MCP": [
@@ -290,6 +297,13 @@
    "rotulo": "Em cadastro: proventos por conferir",
    "preco": 7.16,
    "teto": null
+  },
+  {
+   "data": "2026-11-06",
+   "status": "abaixo_conferir",
+   "rotulo": "Abaixo do teto · conferir dados",
+   "preco": 7.16,
+   "teto": 11.2605
   }
  ],
  "PHR": [
@@ -322,6 +336,13 @@
    "rotulo": "Em cadastro: proventos por conferir",
    "preco": 6.46,
    "teto": null
+  },
+  {
+   "data": "2026-11-06",
+   "status": "abaixo",
+   "rotulo": "Abaixo do teto calculado",
+   "preco": 6.46,
+   "teto": 14.0123
   }
  ],
  "SCP": [
@@ -354,6 +375,13 @@
    "rotulo": "Em cadastro: proventos por conferir",
    "preco": 6.65,
    "teto": null
+  },
+  {
+   "data": "2026-11-06",
+   "status": "acima",
+   "rotulo": "Acima do teto calculado",
+   "preco": 6.65,
+   "teto": 4.4283
   }
  ],
  "SLBEN": [
@@ -386,6 +414,13 @@
    "rotulo": "Em cadastro: proventos por conferir",
    "preco": 2.9,
    "teto": null
+  },
+  {
+   "data": "2026-11-06",
+   "status": "acima",
+   "rotulo": "Acima do teto calculado",
+   "preco": 2.9,
+   "teto": 1.3253
   }
  ]
 }

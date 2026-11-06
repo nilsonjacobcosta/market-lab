@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-11-06T08:52+00:00",
+ "gerado_em": "2026-11-06T21:58+00:00",
  "precos_coletados_em": "2026-11-06T08:52+00:00",
  "autor": "market-lab — projeto pessoal de estudo de nilsonjacobcosta (GitHub)",
  "aviso": "Material educativo, não é recomendação de investimento.",
@@ -1627,6 +1627,11 @@
    "eventos": [],
    "alertas": [
     {
+     "nivel": "atencao",
+     "codigo": "preco_atrasado",
+     "texto": "Último preço é de 2026-11-05; esperado o fecho de 2026-11-06."
+    },
+    {
      "nivel": "info",
      "codigo": "fora_nucleo",
      "texto": "Em observação: fora do núcleo de alta liquidez (faixa baixa)."
@@ -1754,6 +1759,11 @@
    "eventos": [],
    "alertas": [
     {
+     "nivel": "atencao",
+     "codigo": "preco_atrasado",
+     "texto": "Último preço é de 2026-11-05; esperado o fecho de 2026-11-06."
+    },
+    {
      "nivel": "info",
      "codigo": "fora_nucleo",
      "texto": "Em observação: fora do núcleo de alta liquidez (faixa baixa)."
@@ -1875,6 +1885,11 @@
    "tem_scrip": false,
    "eventos": [],
    "alertas": [
+    {
+     "nivel": "atencao",
+     "codigo": "preco_atrasado",
+     "texto": "Último preço é de 2026-11-05; esperado o fecho de 2026-11-06."
+    },
     {
      "nivel": "info",
      "codigo": "fora_nucleo",
@@ -2265,6 +2280,11 @@
    "tem_scrip": false,
    "eventos": [],
    "alertas": [
+    {
+     "nivel": "atencao",
+     "codigo": "preco_atrasado",
+     "texto": "Último preço é de 2026-11-05; esperado o fecho de 2026-11-06."
+    },
     {
      "nivel": "info",
      "codigo": "fora_nucleo",
@@ -2889,9 +2909,9 @@
    "setor": "Metalomecânica e energia",
    "isin": "PTMFR0AM0003",
    "grupo": "observacao",
-   "cadastro_proventos": "pendente",
+   "cadastro_proventos": "completo",
    "faixa_liquidez": "baixa",
-   "cadastro_completo": false,
+   "cadastro_completo": true,
    "preco": 2.29,
    "data_preco": "2026-11-06",
    "variacao_12m_pct": -5.4,
@@ -2900,46 +2920,65 @@
     "2022": 0,
     "2023": 0,
     "2024": 0,
-    "2025": 0
+    "2025": 0.12
    },
    "estado_por_ano": {
     "2021": [],
     "2022": [],
     "2023": [],
     "2024": [],
-    "2025": []
+    "2025": [
+     "oficial"
+    ]
    },
-   "proventos_12m": 0,
-   "dpa_medio": 0.0,
+   "proventos_12m": 0.093,
+   "dpa_medio": 0.024,
    "dpa_aparado": 0.0,
-   "dy_12m_pct": 0.0,
-   "dy_medio_pct": 0.0,
-   "teto": null,
+   "dy_12m_pct": 4.06,
+   "dy_medio_pct": 1.05,
+   "teto": 0.3796,
    "teto_robusto": null,
-   "faixa_teto": null,
-   "margem_pct": null,
-   "status": "em_cadastro",
-   "status_rotulo": "Em cadastro: proventos por conferir",
+   "faixa_teto": [
+    0.3277,
+    0.4509
+   ],
+   "margem_pct": -83.4,
+   "status": "acima",
+   "status_rotulo": "Acima do teto calculado",
    "liquidez_mediana_12m_eur": 8624,
    "pct_dias_sem_negocio_12m": 0.4,
-   "pct_eventos_oficiais": null,
+   "pct_eventos_oficiais": 50,
    "tem_scrip": false,
-   "eventos": [],
+   "eventos": [
+    {
+     "data_pagamento": "2026-06-25",
+     "valor_bruto": 0.093,
+     "tipo": "dinheiro",
+     "exercicio": "2025",
+     "estado": "coincide",
+     "fonte_url": "https://martifer.com/multimedia/martifer/pt/kyFfkJyyCQ-ponto-3-proposta-de-aplicacao-de-resultados-2025.pdf",
+     "nota": "proposta da AG de 27/05/2026: 0,023 de dividendo e 0,070 de reservas (o texto tem erro de digitação: 0,23 e 0,70); total de 9,09 M€ coincide com a fonte de cotações (ex 23/06/2026); data inferida"
+    },
+    {
+     "data_pagamento": "2025-06-25",
+     "valor_bruto": 0.12,
+     "tipo": "dinheiro",
+     "exercicio": "2024",
+     "estado": "oficial",
+     "fonte_url": "https://martifer.com/multimedia/martifer/pt/v3xi93fPM-20250613comunicado.pdf",
+     "nota": "comunicado de pagamento relativo ao exercício de 2024"
+    }
+   ],
    "alertas": [
+    {
+     "nivel": "atencao",
+     "codigo": "anos_sem_proventos",
+     "texto": "Sem proventos em 2021, 2022, 2023, 2024: a média de 5 anos fica mais baixa e o teto também."
+    },
     {
      "nivel": "info",
      "codigo": "fora_nucleo",
      "texto": "Em observação: fora do núcleo de alta liquidez (faixa baixa)."
-    },
-    {
-     "nivel": "info",
-     "codigo": "cadastro_pendente",
-     "texto": "Proventos ainda não conferidos no cadastro oficial: sem preço-teto até estarem conferidos."
-    },
-    {
-     "nivel": "atencao",
-     "codigo": "evento_nao_cadastrado",
-     "texto": "A fonte de cotações mostra provento sem registo oficial no cadastro: 2025-06-23 (0.12); 2026-06-23 (0.093)."
     }
    ],
    "historico_preco_mensal": {
@@ -3049,6 +3088,11 @@
    "eventos": [],
    "alertas": [
     {
+     "nivel": "atencao",
+     "codigo": "preco_atrasado",
+     "texto": "Último preço é de 2026-11-05; esperado o fecho de 2026-11-06."
+    },
+    {
      "nivel": "info",
      "codigo": "fora_nucleo",
      "texto": "Em observação: fora do núcleo de alta liquidez (faixa baixa)."
@@ -3138,57 +3182,140 @@
    "setor": "Tecnologia e serviços",
    "isin": "PTNBA0AM0006",
    "grupo": "observacao",
-   "cadastro_proventos": "pendente",
+   "cadastro_proventos": "completo",
    "faixa_liquidez": "baixa",
-   "cadastro_completo": false,
+   "cadastro_completo": true,
    "preco": 7.16,
    "data_preco": "2026-11-05",
    "variacao_12m_pct": -19.1,
    "proventos_por_ano": {
     "2021": 0,
     "2022": 0,
-    "2023": 0,
-    "2024": 0,
-    "2025": 0
+    "2023": 0.42,
+    "2024": 1.79,
+    "2025": 1.35
    },
    "estado_por_ano": {
     "2021": [],
     "2022": [],
-    "2023": [],
-    "2024": [],
-    "2025": []
+    "2023": [
+     "oficial"
+    ],
+    "2024": [
+     "oficial"
+    ],
+    "2025": [
+     "oficial"
+    ]
    },
    "proventos_12m": 0,
-   "dpa_medio": 0.0,
-   "dpa_aparado": 0.0,
+   "dpa_medio": 0.712,
+   "dpa_aparado": 0.59,
    "dy_12m_pct": 0.0,
-   "dy_medio_pct": 0.0,
-   "teto": null,
-   "teto_robusto": null,
-   "faixa_teto": null,
-   "margem_pct": null,
-   "status": "em_cadastro",
-   "status_rotulo": "Em cadastro: proventos por conferir",
+   "dy_medio_pct": 9.94,
+   "teto": 11.2605,
+   "teto_robusto": 9.331,
+   "faixa_teto": [
+    9.7228,
+    13.3759
+   ],
+   "margem_pct": 57.3,
+   "status": "abaixo_conferir",
+   "status_rotulo": "Abaixo do teto · conferir dados",
    "liquidez_mediana_12m_eur": 12333,
    "pct_dias_sem_negocio_12m": 0.4,
-   "pct_eventos_oficiais": null,
-   "tem_scrip": false,
-   "eventos": [],
+   "pct_eventos_oficiais": 100,
+   "tem_scrip": true,
+   "eventos": [
+    {
+     "data_pagamento": "2026-07-10",
+     "valor_bruto": 0.4,
+     "tipo": "capital",
+     "exercicio": "capital",
+     "estado": "oficial",
+     "fonte_url": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2026/07/03/Connect_aumred03072026pt.pdf",
+     "nota": "redução do valor nominal de 1,37 para 0,97 por ação, paga aos acionistas; não é dividendo"
+    },
+    {
+     "data_pagamento": "2025-06-23",
+     "valor_bruto": 1.35,
+     "tipo": "scrip",
+     "exercicio": "2024",
+     "estado": "oficial",
+     "fonte_url": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2025/05/22/Connect_docinfopt.pdf",
+     "nota": "dividendo em dinheiro com alternativa em ações (cerca de 29% do capital optou por ações)"
+    },
+    {
+     "data_pagamento": "2024-06-24",
+     "valor_bruto": 1.41,
+     "tipo": "scrip",
+     "exercicio": "2023",
+     "estado": "oficial",
+     "fonte_url": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2024/05/22/Connect_delag22052024pt.pdf",
+     "nota": "dividendo em dinheiro com alternativa em ações (cerca de 80% do capital optou por ações); data de pagamento inferida (resultado da opção em 25/06/2024)"
+    },
+    {
+     "data_pagamento": "2024-06-24",
+     "valor_bruto": 0.38,
+     "tipo": "scrip",
+     "exercicio": "reservas",
+     "estado": "oficial",
+     "fonte_url": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2024/05/22/Connect_delag22052024pt.pdf",
+     "nota": "reservas livres, mesma opção em ações; total de 1,79 por ação"
+    },
+    {
+     "data_pagamento": "2023-06-23",
+     "valor_bruto": 0.1,
+     "tipo": "dinheiro",
+     "exercicio": "2022",
+     "estado": "oficial",
+     "fonte_url": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2023/05/24/Connect_dpspt20230524.pdf",
+     "nota": "dividendo; pagamento conjunto com 0,32 de reservas livres"
+    },
+    {
+     "data_pagamento": "2023-06-23",
+     "valor_bruto": 0.32,
+     "tipo": "dinheiro",
+     "exercicio": "reservas",
+     "estado": "oficial",
+     "fonte_url": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2023/05/24/Connect_dpspt20230524.pdf",
+     "nota": "reservas livres; a fonte de cotações não regista esta parcela"
+    },
+    {
+     "data_pagamento": "2022-07-27",
+     "valor_bruto": 0.43,
+     "tipo": "capital",
+     "exercicio": "capital",
+     "estado": "oficial",
+     "fonte_url": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2022/05/24/Connect_delag24052022pt.pdf",
+     "nota": "redução de capital (de 54,6 M€ para 33,0 M€) paga aos acionistas, não é dividendo; a fonte de cotações regista 0,451 (ajustado); data inferida (ex 25/07/2022)"
+    }
+   ],
    "alertas": [
+    {
+     "nivel": "atencao",
+     "codigo": "preco_atrasado",
+     "texto": "Último preço é de 2026-11-05; esperado o fecho de 2026-11-06."
+    },
+    {
+     "nivel": "atencao",
+     "codigo": "anos_sem_proventos",
+     "texto": "Sem proventos em 2021, 2022: a média de 5 anos fica mais baixa e o teto também."
+    },
+    {
+     "nivel": "info",
+     "codigo": "devolucao_capital",
+     "texto": "Houve devolução de capital (2022-07-27: 0.43, 2026-07-10: 0.4), não contada nos proventos."
+    },
+    {
+     "nivel": "info",
+     "codigo": "scrip",
+     "texto": "Parte dos proventos foi paga em ações (scrip). Conta-se o valor de referência por ação indicado pela empresa."
+    },
     {
      "nivel": "info",
      "codigo": "fora_nucleo",
      "texto": "Em observação: fora do núcleo de alta liquidez (faixa baixa)."
-    },
-    {
-     "nivel": "info",
-     "codigo": "cadastro_pendente",
-     "texto": "Proventos ainda não conferidos no cadastro oficial: sem preço-teto até estarem conferidos."
-    },
-    {
-     "nivel": "atencao",
-     "codigo": "evento_nao_cadastrado",
-     "texto": "A fonte de cotações mostra provento sem registo oficial no cadastro: 2022-07-25 (0.451319); 2023-06-21 (0.104958); 2024-06-06 (1.79); 2025-06-05 (1.35)."
     }
    ],
    "historico_preco_mensal": {
@@ -3830,57 +3957,134 @@
    "setor": "Construção e imobiliário",
    "isin": "PTFRV0AE0004",
    "grupo": "observacao",
-   "cadastro_proventos": "pendente",
+   "cadastro_proventos": "completo",
    "faixa_liquidez": "baixa",
-   "cadastro_completo": false,
+   "cadastro_completo": true,
    "preco": 6.46,
    "data_preco": "2026-11-06",
    "variacao_12m_pct": -13.9,
    "proventos_por_ano": {
-    "2021": 0,
-    "2022": 0,
-    "2023": 0,
-    "2024": 0,
-    "2025": 0
+    "2021": 0.6,
+    "2022": 0.6,
+    "2023": 0.82,
+    "2024": 1.36,
+    "2025": 1.05
    },
    "estado_por_ano": {
-    "2021": [],
-    "2022": [],
-    "2023": [],
-    "2024": [],
-    "2025": []
+    "2021": [
+     "oficial"
+    ],
+    "2022": [
+     "oficial"
+    ],
+    "2023": [
+     "oficial"
+    ],
+    "2024": [
+     "oficial"
+    ],
+    "2025": [
+     "coincide",
+     "oficial"
+    ]
    },
-   "proventos_12m": 0,
-   "dpa_medio": 0.0,
-   "dpa_aparado": 0.0,
-   "dy_12m_pct": 0.0,
-   "dy_medio_pct": 0.0,
-   "teto": null,
-   "teto_robusto": null,
-   "faixa_teto": null,
-   "margem_pct": null,
-   "status": "em_cadastro",
-   "status_rotulo": "Em cadastro: proventos por conferir",
+   "proventos_12m": 0.24,
+   "dpa_medio": 0.886,
+   "dpa_aparado": 0.823333,
+   "dy_12m_pct": 3.72,
+   "dy_medio_pct": 13.72,
+   "teto": 14.0123,
+   "teto_robusto": 13.0212,
+   "faixa_teto": [
+    12.0989,
+    16.6447
+   ],
+   "margem_pct": 116.9,
+   "status": "abaixo",
+   "status_rotulo": "Abaixo do teto calculado",
    "liquidez_mediana_12m_eur": 10019,
    "pct_dias_sem_negocio_12m": 0.0,
-   "pct_eventos_oficiais": null,
+   "pct_eventos_oficiais": 88,
    "tem_scrip": false,
-   "eventos": [],
+   "eventos": [
+    {
+     "data_pagamento": "2026-04-24",
+     "valor_bruto": 0.24,
+     "tipo": "dinheiro",
+     "exercicio": "2025",
+     "estado": "oficial",
+     "fonte_url": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2026/03/05/Connect_ponto-2a8.pdf",
+     "nota": "proposta do conselho (0,24 bruto) aprovada por 100% dos votos na AG de 27/03/2026; data inferida (ex 22/04/2026 + 2 dias úteis)"
+    },
+    {
+     "data_pagamento": "2025-10-06",
+     "valor_bruto": 0.65,
+     "tipo": "dinheiro",
+     "exercicio": "reservas",
+     "estado": "oficial",
+     "fonte_url": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2025/09/18/Connect_ramadapagamentoreservaslivresout2025.pdf",
+     "nota": "distribuição de reservas livres"
+    },
+    {
+     "data_pagamento": "2025-05-19",
+     "valor_bruto": 0.4,
+     "tipo": "dinheiro",
+     "exercicio": "2024",
+     "estado": "coincide",
+     "fonte_url": "https://executivedigest.sapo.pt/?p=606984",
+     "nota": "proposta aprovada na AG de 28/04/2025 (Executive Digest, 28/04/2025); comunicado de pagamento de 30/04/2025 existe na Euronext, PDF não localizado; data inferida (ex 15/05/2025 + 2 dias úteis)"
+    },
+    {
+     "data_pagamento": "2024-12-12",
+     "valor_bruto": 0.78,
+     "tipo": "dinheiro",
+     "exercicio": "reservas",
+     "estado": "oficial",
+     "fonte_url": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2024/11/27/Connect_ramadapagamentoreservaslivresnov2024.pdf",
+     "nota": "distribuição de reservas livres aprovada na AG extraordinária de 22/11/2024"
+    },
+    {
+     "data_pagamento": "2024-05-23",
+     "valor_bruto": 0.58,
+     "tipo": "dinheiro",
+     "exercicio": "2023",
+     "estado": "oficial",
+     "fonte_url": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2024/05/07/Connect_ramadapagamentodividendos2024pt.pdf",
+     "nota": "comunicado de pagamento; proposta da AG de 03/05/2024 combina 14,9 M€ de dividendos e 21,9 M€ de reservas livres"
+    },
+    {
+     "data_pagamento": "2023-05-19",
+     "valor_bruto": 0.82,
+     "tipo": "dinheiro",
+     "exercicio": "2022",
+     "estado": "oficial",
+     "fonte_url": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2023/05/02/Connect_ramadapagamentodividendos2023.pdf",
+     "nota": "comunicado de pagamento da Ramada"
+    },
+    {
+     "data_pagamento": "2022-05-20",
+     "valor_bruto": 0.6,
+     "tipo": "dinheiro",
+     "exercicio": "2021",
+     "estado": "oficial",
+     "fonte_url": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2022/05/03/Connect_ri20220503pt.pdf",
+     "nota": "comunicado de pagamento da Ramada"
+    },
+    {
+     "data_pagamento": "2021-05-20",
+     "valor_bruto": 0.6,
+     "tipo": "dinheiro",
+     "exercicio": "2020",
+     "estado": "oficial",
+     "fonte_url": "https://live.euronext.com/sites/default/files/Connect_ri20210504pt.pdf",
+     "nota": "comunicado de pagamento da Ramada"
+    }
+   ],
    "alertas": [
     {
      "nivel": "info",
      "codigo": "fora_nucleo",
      "texto": "Em observação: fora do núcleo de alta liquidez (faixa baixa)."
-    },
-    {
-     "nivel": "info",
-     "codigo": "cadastro_pendente",
-     "texto": "Proventos ainda não conferidos no cadastro oficial: sem preço-teto até estarem conferidos."
-    },
-    {
-     "nivel": "atencao",
-     "codigo": "evento_nao_cadastrado",
-     "texto": "A fonte de cotações mostra provento sem registo oficial no cadastro: 2021-05-18 (0.6); 2022-05-18 (0.6); 2023-05-17 (0.82); 2024-05-21 (0.58); 2024-12-10 (0.78); 2025-05-15 (0.4); 2025-10-02 (0.65); 2026-04-22 (0.24)."
     }
    ],
    "historico_preco_mensal": {
@@ -4237,6 +4441,11 @@
    "eventos": [],
    "alertas": [
     {
+     "nivel": "atencao",
+     "codigo": "preco_atrasado",
+     "texto": "Último preço é de 2026-11-05; esperado o fecho de 2026-11-06."
+    },
+    {
      "nivel": "info",
      "codigo": "fora_nucleo",
      "texto": "Em observação: fora do núcleo de alta liquidez (faixa baixa)."
@@ -4321,43 +4530,116 @@
    "setor": "Automóvel (distribuição)",
    "isin": "PTSCT0AP0018",
    "grupo": "observacao",
-   "cadastro_proventos": "pendente",
+   "cadastro_proventos": "completo",
    "faixa_liquidez": "baixa",
-   "cadastro_completo": false,
+   "cadastro_completo": true,
    "preco": 6.65,
    "data_preco": "2026-11-05",
    "variacao_12m_pct": 5.6,
    "proventos_por_ano": {
-    "2021": 0,
-    "2022": 0,
-    "2023": 0,
-    "2024": 0,
-    "2025": 0
+    "2021": 0.3,
+    "2022": 0.2,
+    "2023": 0.25,
+    "2024": 0.3,
+    "2025": 0.35
    },
    "estado_por_ano": {
-    "2021": [],
-    "2022": [],
-    "2023": [],
-    "2024": [],
-    "2025": []
+    "2021": [
+     "oficial"
+    ],
+    "2022": [
+     "coincide"
+    ],
+    "2023": [
+     "oficial"
+    ],
+    "2024": [
+     "oficial"
+    ],
+    "2025": [
+     "oficial"
+    ]
    },
-   "proventos_12m": 0,
-   "dpa_medio": 0.0,
-   "dpa_aparado": 0.0,
-   "dy_12m_pct": 0.0,
-   "dy_medio_pct": 0.0,
-   "teto": null,
-   "teto_robusto": null,
-   "faixa_teto": null,
-   "margem_pct": null,
-   "status": "em_cadastro",
-   "status_rotulo": "Em cadastro: proventos por conferir",
+   "proventos_12m": 0.35,
+   "dpa_medio": 0.28,
+   "dpa_aparado": 0.283333,
+   "dy_12m_pct": 5.26,
+   "dy_medio_pct": 4.21,
+   "teto": 4.4283,
+   "teto_robusto": 4.481,
+   "faixa_teto": [
+    3.8236,
+    5.2602
+   ],
+   "margem_pct": -33.4,
+   "status": "acima",
+   "status_rotulo": "Acima do teto calculado",
    "liquidez_mediana_12m_eur": 79,
    "pct_dias_sem_negocio_12m": 40.6,
-   "pct_eventos_oficiais": null,
+   "pct_eventos_oficiais": 83,
    "tem_scrip": false,
-   "eventos": [],
+   "eventos": [
+    {
+     "data_pagamento": "2026-06-09",
+     "valor_bruto": 0.35,
+     "tipo": "dinheiro",
+     "exercicio": "2025",
+     "estado": "oficial",
+     "fonte_url": "https://toyotacaetano.pt/wp-content/uploads/sites/24/2026/06/tcpdelii.pdf",
+     "nota": "AG de 29/05/2026: 0,30 do resultado e 0,05 de reservas; data inferida (ex 05/06/2026 + 2 dias úteis)"
+    },
+    {
+     "data_pagamento": "2025-06-11",
+     "valor_bruto": 0.35,
+     "tipo": "dinheiro",
+     "exercicio": "2024",
+     "estado": "oficial",
+     "fonte_url": "https://toyotacaetano.pt/wp-content/uploads/sites/24/2025/05/tcpdelib.pdf",
+     "nota": "AG de 28/05/2025; data inferida (ex 09/06/2025 + 2 dias úteis)"
+    },
+    {
+     "data_pagamento": "2024-06-12",
+     "valor_bruto": 0.3,
+     "tipo": "dinheiro",
+     "exercicio": "2023",
+     "estado": "oficial",
+     "fonte_url": "https://toyotacaetano.pt/wp-content/uploads/sites/24/2024/05/tcpdelib.pdf",
+     "nota": "AG de 27/05/2024; data inferida (ex 10/06/2024 + 2 dias úteis)"
+    },
+    {
+     "data_pagamento": "2023-06-16",
+     "valor_bruto": 0.25,
+     "tipo": "dinheiro",
+     "exercicio": "2022",
+     "estado": "oficial",
+     "fonte_url": "https://toyotacaetano.pt/wp-content/uploads/sites/24/2023/05/tcpdelib.pdf",
+     "nota": "AG de 30/05/2023; data inferida (ex 14/06/2023 + 2 dias úteis)"
+    },
+    {
+     "data_pagamento": "2022-06-09",
+     "valor_bruto": 0.2,
+     "tipo": "dinheiro",
+     "exercicio": "2021",
+     "estado": "coincide",
+     "fonte_url": "https://dinheirovivo.dn.pt/acionistas-da-toyota-caetano-aprovam-dividendo-de-20-centimos-por-acao-14905262.html",
+     "nota": "AG de 31/05/2022 (Dinheiro Vivo); documento da deliberação não localizado; data inferida (ex 07/06/2022)"
+    },
+    {
+     "data_pagamento": "2021-12-16",
+     "valor_bruto": 0.3,
+     "tipo": "dinheiro",
+     "exercicio": "reservas",
+     "estado": "oficial",
+     "fonte_url": "https://in.marketscreener.com/quote/stock/TOYOTA-CAETANO-PORTUGAL-S-51675/news/Toyota-Caetano-Portugal-S-A-informa-sobre-proposta-referente-ao-Ponto-1-a-apresentar-na-Assemblei-36958864",
+     "nota": "proposta de 09/11/2021 para a AG extraordinária de 30/11/2021: 0,30 por ação de resultados transitados; a fonte de cotações regista 0,216 (valor líquido de 28%); data inferida (ex 14/12/2021)"
+    }
+   ],
    "alertas": [
+    {
+     "nivel": "atencao",
+     "codigo": "preco_atrasado",
+     "texto": "Último preço é de 2026-11-05; esperado o fecho de 2026-11-06."
+    },
     {
      "nivel": "info",
      "codigo": "fora_nucleo",
@@ -4367,16 +4649,6 @@
      "nivel": "atencao",
      "codigo": "negociacao_intermitente",
      "texto": "Negociação intermitente: 40.6% dos dias sem negócio em 12 meses; o último preço pode não corresponder a um negócio real."
-    },
-    {
-     "nivel": "info",
-     "codigo": "cadastro_pendente",
-     "texto": "Proventos ainda não conferidos no cadastro oficial: sem preço-teto até estarem conferidos."
-    },
-    {
-     "nivel": "atencao",
-     "codigo": "evento_nao_cadastrado",
-     "texto": "A fonte de cotações mostra provento sem registo oficial no cadastro: 2021-12-14 (0.216); 2022-06-07 (0.2); 2023-06-14 (0.25); 2024-06-10 (0.3); 2025-06-09 (0.35); 2026-06-05 (0.35)."
     }
    ],
    "historico_preco_mensal": {
@@ -4789,42 +5061,110 @@
    "setor": "Telecomunicações e TI",
    "isin": "PTSNC0AM0006",
    "grupo": "observacao",
-   "cadastro_proventos": "pendente",
+   "cadastro_proventos": "completo",
    "faixa_liquidez": "baixa",
-   "cadastro_completo": false,
+   "cadastro_completo": true,
    "preco": 2.9,
    "data_preco": "2026-11-06",
    "variacao_12m_pct": 0.0,
    "proventos_por_ano": {
-    "2021": 0,
-    "2022": 0,
-    "2023": 0,
-    "2024": 0,
-    "2025": 0
+    "2021": 0.097,
+    "2022": 0.194,
+    "2023": 0.03,
+    "2024": 0.07,
+    "2025": 0.028
    },
    "estado_por_ano": {
-    "2021": [],
-    "2022": [],
-    "2023": [],
-    "2024": [],
-    "2025": []
+    "2021": [
+     "oficial"
+    ],
+    "2022": [
+     "oficial"
+    ],
+    "2023": [
+     "oficial"
+    ],
+    "2024": [
+     "oficial"
+    ],
+    "2025": [
+     "oficial"
+    ]
    },
-   "proventos_12m": 0,
-   "dpa_medio": 0.0,
-   "dpa_aparado": 0.0,
-   "dy_12m_pct": 0.0,
-   "dy_medio_pct": 0.0,
-   "teto": null,
-   "teto_robusto": null,
-   "faixa_teto": null,
-   "margem_pct": null,
-   "status": "em_cadastro",
-   "status_rotulo": "Em cadastro: proventos por conferir",
+   "proventos_12m": 0.083,
+   "dpa_medio": 0.0838,
+   "dpa_aparado": 0.065667,
+   "dy_12m_pct": 2.86,
+   "dy_medio_pct": 2.89,
+   "teto": 1.3253,
+   "teto_robusto": 1.0385,
+   "faixa_teto": [
+    1.1443,
+    1.5743
+   ],
+   "margem_pct": -54.3,
+   "status": "acima",
+   "status_rotulo": "Acima do teto calculado",
    "liquidez_mediana_12m_eur": 5577,
    "pct_dias_sem_negocio_12m": 0.0,
-   "pct_eventos_oficiais": null,
+   "pct_eventos_oficiais": 100,
    "tem_scrip": false,
-   "eventos": [],
+   "eventos": [
+    {
+     "data_pagamento": "2026-05-14",
+     "valor_bruto": 0.083,
+     "tipo": "dinheiro",
+     "exercicio": "2025",
+     "estado": "oficial",
+     "fonte_url": "https://sonaecom.pt/2026/04/30/SONAECOM_DividendPayment_2025.pdf",
+     "nota": "comunicado de pagamento"
+    },
+    {
+     "data_pagamento": "2025-05-22",
+     "valor_bruto": 0.028,
+     "tipo": "dinheiro",
+     "exercicio": "2024",
+     "estado": "oficial",
+     "fonte_url": "https://sonaecom.pt/2025/05/08/SONAECOM_DividendPayment_2025-1.pdf",
+     "nota": "comunicado de pagamento"
+    },
+    {
+     "data_pagamento": "2024-05-16",
+     "valor_bruto": 0.07,
+     "tipo": "dinheiro",
+     "exercicio": "2023",
+     "estado": "oficial",
+     "fonte_url": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2024/04/30/Connect_comunicacao-distribuicao-dividendos-pt-maio2024.pdf",
+     "nota": "comunicado de pagamento"
+    },
+    {
+     "data_pagamento": "2023-05-12",
+     "valor_bruto": 0.03,
+     "tipo": "dinheiro",
+     "exercicio": "2022",
+     "estado": "oficial",
+     "fonte_url": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2023/04/03/Connect_propostas-sonaecom-pt.pdf",
+     "nota": "proposta da AG de 28/04/2023; pagamento a partir de 12/05/2023 segundo o comunicado da empresa (Executive Digest, 12/05/2023)"
+    },
+    {
+     "data_pagamento": "2022-05-26",
+     "valor_bruto": 0.194,
+     "tipo": "dinheiro",
+     "exercicio": "2021",
+     "estado": "oficial",
+     "fonte_url": "https://sonaecom.pt/2022/04/04/Proposal_no.2/Proposal_no.2.pdf",
+     "nota": "proposta aprovada na AG de 28/04/2022 (inclui 16,2 M€ de outras reservas); data inferida (ex 24/05/2022 + 2 dias úteis)"
+    },
+    {
+     "data_pagamento": "2021-05-21",
+     "valor_bruto": 0.097,
+     "tipo": "dinheiro",
+     "exercicio": "2020",
+     "estado": "oficial",
+     "fonte_url": "https://cdn.financialreports.eu/financialreports/media/filings/1921/2021/ISS/1921_iss_2021-05-05_4eb4eb49-b531-4d80-85a4-f29a7bceb3ce.pdf",
+     "nota": "comunicado da Sonaecom de 05/05/2021 (cópia em financialreports.eu)"
+    }
+   ],
    "alertas": [
     {
      "nivel": "info",
@@ -4832,14 +5172,9 @@
      "texto": "Em observação: fora do núcleo de alta liquidez (faixa baixa)."
     },
     {
-     "nivel": "info",
-     "codigo": "cadastro_pendente",
-     "texto": "Proventos ainda não conferidos no cadastro oficial: sem preço-teto até estarem conferidos."
-    },
-    {
      "nivel": "atencao",
-     "codigo": "evento_nao_cadastrado",
-     "texto": "A fonte de cotações mostra provento sem registo oficial no cadastro: 2021-05-19 (0.097); 2022-05-24 (0.194); 2023-05-10 (0.03); 2024-05-14 (0.07); 2025-05-20 (0.028); 2026-05-12 (0.083)."
+     "codigo": "queda_proventos",
+     "texto": "Proventos de 2025 caíram mais de 30% face a 2024."
     }
    ],
    "historico_preco_mensal": {
@@ -5266,7 +5601,7 @@
    }
   }
  ],
- "fecho_esperado": "2026-11-05",
+ "fecho_esperado": "2026-11-06",
  "historico_status": {
   "ALTR": [
    {
@@ -5527,6 +5862,13 @@
     "rotulo": "Em cadastro: proventos por conferir",
     "preco": 2.29,
     "teto": null
+   },
+   {
+    "data": "2026-11-06",
+    "status": "acima",
+    "rotulo": "Acima do teto calculado",
+    "preco": 2.29,
+    "teto": 0.3796
    }
   ],
   "MCP": [
@@ -5559,6 +5901,13 @@
     "rotulo": "Em cadastro: proventos por conferir",
     "preco": 7.16,
     "teto": null
+   },
+   {
+    "data": "2026-11-06",
+    "status": "abaixo_conferir",
+    "rotulo": "Abaixo do teto · conferir dados",
+    "preco": 7.16,
+    "teto": 11.2605
    }
   ],
   "PHR": [
@@ -5591,6 +5940,13 @@
     "rotulo": "Em cadastro: proventos por conferir",
     "preco": 6.46,
     "teto": null
+   },
+   {
+    "data": "2026-11-06",
+    "status": "abaixo",
+    "rotulo": "Abaixo do teto calculado",
+    "preco": 6.46,
+    "teto": 14.0123
    }
   ],
   "SCP": [
@@ -5623,6 +5979,13 @@
     "rotulo": "Em cadastro: proventos por conferir",
     "preco": 6.65,
     "teto": null
+   },
+   {
+    "data": "2026-11-06",
+    "status": "acima",
+    "rotulo": "Acima do teto calculado",
+    "preco": 6.65,
+    "teto": 4.4283
    }
   ],
   "SLBEN": [
@@ -5655,6 +6018,13 @@
     "rotulo": "Em cadastro: proventos por conferir",
     "preco": 2.9,
     "teto": null
+   },
+   {
+    "data": "2026-11-06",
+    "status": "acima",
+    "rotulo": "Acima do teto calculado",
+    "preco": 2.9,
+    "teto": 1.3253
    }
   ]
  },

@@ -32,7 +32,7 @@ class J1Cadastro(unittest.TestCase):
                 self.assertIn(e["papel"], papeis)
                 datetime.strptime(e["data_pagamento"], "%Y-%m-%d")
                 self.assertGreater(e["valor_bruto"], 0)
-                self.assertIn(e["tipo"], {"dinheiro", "scrip", "especie"})
+                self.assertIn(e["tipo"], {"dinheiro", "scrip", "especie", "capital"})
                 self.assertIn(e["estado"], {"oficial", "coincide", "a_conferir"})
                 if e["estado"] == "oficial":
                     self.assertTrue(e["fonte_url"].startswith("https://"), "linha oficial sem link")
@@ -136,7 +136,10 @@ class Grupos(unittest.TestCase):
         for p in UNIVERSO["papeis"]:
             if p["grupo"] == "observacao":
                 with self.subTest(p=p["papel"]):
-                    self.assertEqual(p["cadastro_proventos"], "pendente")
+                    self.assertIn(p["cadastro_proventos"], ("pendente", "completo"))
+                    if p["cadastro_proventos"] == "completo":  # só com proventos conferidos no cadastro oficial
+                        n = sum(1 for e in EVENTOS if e["papel"] == p["papel"] and e["estado"] in ("oficial", "coincide"))
+                        self.assertGreaterEqual(n, 1, "cadastro completo sem proventos conferidos")
             else:
                 self.assertEqual(p.get("cadastro_proventos", "completo"), "completo")
 

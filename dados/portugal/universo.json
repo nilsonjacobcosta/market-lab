@@ -132,7 +132,7 @@
    "setor": "Metalomecânica e energia",
    "isin": "PTMFR0AM0003",
    "grupo": "observacao",
-   "cadastro_proventos": "pendente"
+   "cadastro_proventos": "completo"
   },
   {
    "papel": "MCP",
@@ -148,7 +148,7 @@
    "setor": "Tecnologia e serviços",
    "isin": "PTNBA0AM0006",
    "grupo": "observacao",
-   "cadastro_proventos": "pendente"
+   "cadastro_proventos": "completo"
   },
   {
    "papel": "NOS",
@@ -180,7 +180,7 @@
    "setor": "Construção e imobiliário",
    "isin": "PTFRV0AE0004",
    "grupo": "observacao",
-   "cadastro_proventos": "pendente"
+   "cadastro_proventos": "completo"
   },
   {
    "papel": "RENE",
@@ -204,7 +204,7 @@
    "setor": "Automóvel (distribuição)",
    "isin": "PTSCT0AP0018",
    "grupo": "observacao",
-   "cadastro_proventos": "pendente"
+   "cadastro_proventos": "completo"
   },
   {
    "papel": "SEM",
@@ -228,7 +228,7 @@
    "setor": "Telecomunicações e TI",
    "isin": "PTSNC0AM0006",
    "grupo": "observacao",
-   "cadastro_proventos": "pendente"
+   "cadastro_proventos": "completo"
   },
   {
    "papel": "SON",

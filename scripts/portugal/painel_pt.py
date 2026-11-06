@@ -215,6 +215,7 @@ def calcular(universo, params, eventos, brutos, agora):
         todos = [e for e in eventos if e["papel"] == t]
         ev = [e for e in todos if e["tipo"] in ("dinheiro", "scrip")]  # distribuições em espécie não entram no cálculo
         especie = [e for e in todos if e["tipo"] == "especie"]
+        capital = [e for e in todos if e["tipo"] == "capital"]  # devolução de capital (redução do valor nominal): não é dividendo
         por_ano = {a: round(sum(e["valor_bruto"] for e in ev if e["data_pagamento"][:4] == a), 6) for a in anos}
         d12 = round(sum(e["valor_bruto"] for e in ev if inicio12 < e["data_pagamento"] <= hoje.isoformat()), 6)
         vals = [por_ano[a] for a in anos]
@@ -262,6 +263,8 @@ def calcular(universo, params, eventos, brutos, agora):
             add("atencao", "proventos_a_conferir", f"Proventos de {', '.join(a_conferir)} ainda sem documento oficial no cadastro.")
         if especie:
             add("info", "especie", "Houve distribuição em espécie (" + ", ".join(e["data_pagamento"] for e in especie) + "), não contada nos proventos.")
+        if capital:
+            add("info", "devolucao_capital", "Houve devolução de capital (" + ", ".join(f"{e['data_pagamento']}: {e['valor_bruto']:g}" for e in capital) + "), não contada nos proventos.")
         if tem_scrip:
             add("info", "scrip", "Parte dos proventos foi paga em ações (scrip). Conta-se o valor de referência por ação indicado pela empresa.")
         if grupo == "observacao":
