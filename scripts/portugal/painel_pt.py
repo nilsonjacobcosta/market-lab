@@ -256,7 +256,7 @@ def calcular(universo, params, eventos, brutos, agora):
             add("grave", "sem_preco", "Sem cotação na fonte: o painel não calcula margem.")
         elif data_preco < fecho_esperado:
             add("atencao", "preco_atrasado", f"Último preço é de {data_preco}; esperado o fecho de {fecho_esperado}.")
-        if anos_zero:
+        if anos_zero and cadastro_ok:  # com cadastro pendente, "zero" quer dizer "não conferido", não "não pagou"
             add("atencao", "anos_sem_proventos", f"Sem proventos em {', '.join(anos_zero)}: a média de 5 anos fica mais baixa e o teto também.")
         if a_conferir:
             add("atencao", "proventos_a_conferir", f"Proventos de {', '.join(a_conferir)} ainda sem documento oficial no cadastro.")
