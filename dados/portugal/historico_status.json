@@ -110,6 +110,13 @@
    "rotulo": "Abaixo do teto calculado",
    "preco": 5.31,
    "teto": 5.4911
+  },
+  {
+   "data": "2026-11-06",
+   "status": "acima",
+   "rotulo": "Acima do teto calculado",
+   "preco": 5.525,
+   "teto": 5.4911
   }
  ],
  "NVG": [
@@ -164,6 +171,13 @@
    "rotulo": "Sem cotação",
    "preco": null,
    "teto": null
+  },
+  {
+   "data": "2026-11-06",
+   "status": "em_cadastro",
+   "rotulo": "Em cadastro: proventos por conferir",
+   "preco": 2.7,
+   "teto": null
   }
  ],
  "FCP": [
@@ -172,6 +186,13 @@
    "status": "sem_preco",
    "rotulo": "Sem cotação",
    "preco": null,
+   "teto": null
+  },
+  {
+   "data": "2026-11-06",
+   "status": "em_cadastro",
+   "rotulo": "Em cadastro: proventos por conferir",
+   "preco": 2.64,
    "teto": null
   }
  ],
@@ -182,6 +203,13 @@
    "rotulo": "Sem cotação",
    "preco": null,
    "teto": null
+  },
+  {
+   "data": "2026-11-06",
+   "status": "em_cadastro",
+   "rotulo": "Em cadastro: proventos por conferir",
+   "preco": 5.15,
+   "teto": null
   }
  ],
  "GLINT": [
@@ -190,6 +218,13 @@
    "status": "sem_preco",
    "rotulo": "Sem cotação",
    "preco": null,
+   "teto": null
+  },
+  {
+   "data": "2026-11-06",
+   "status": "em_cadastro",
+   "rotulo": "Em cadastro: proventos por conferir",
+   "preco": 1.22,
    "teto": null
   }
  ],
@@ -200,6 +235,13 @@
    "rotulo": "Sem cotação",
    "preco": null,
    "teto": null
+  },
+  {
+   "data": "2026-11-06",
+   "status": "em_cadastro",
+   "rotulo": "Em cadastro: proventos por conferir",
+   "preco": 0.1904,
+   "teto": null
   }
  ],
  "MAR": [
@@ -208,6 +250,13 @@
    "status": "sem_preco",
    "rotulo": "Sem cotação",
    "preco": null,
+   "teto": null
+  },
+  {
+   "data": "2026-11-06",
+   "status": "em_cadastro",
+   "rotulo": "Em cadastro: proventos por conferir",
+   "preco": 2.29,
    "teto": null
   }
  ],
@@ -218,6 +267,13 @@
    "rotulo": "Sem cotação",
    "preco": null,
    "teto": null
+  },
+  {
+   "data": "2026-11-06",
+   "status": "em_cadastro",
+   "rotulo": "Em cadastro: proventos por conferir",
+   "preco": 1.9,
+   "teto": null
   }
  ],
  "NBA": [
@@ -226,6 +282,13 @@
    "status": "sem_preco",
    "rotulo": "Sem cotação",
    "preco": null,
+   "teto": null
+  },
+  {
+   "data": "2026-11-06",
+   "status": "em_cadastro",
+   "rotulo": "Em cadastro: proventos por conferir",
+   "preco": 7.16,
    "teto": null
   }
  ],
@@ -236,6 +299,13 @@
    "rotulo": "Sem cotação",
    "preco": null,
    "teto": null
+  },
+  {
+   "data": "2026-11-06",
+   "status": "em_cadastro",
+   "rotulo": "Em cadastro: proventos por conferir",
+   "preco": 0.0916,
+   "teto": null
   }
  ],
  "RAM": [
@@ -244,6 +314,13 @@
    "status": "sem_preco",
    "rotulo": "Sem cotação",
    "preco": null,
+   "teto": null
+  },
+  {
+   "data": "2026-11-06",
+   "status": "em_cadastro",
+   "rotulo": "Em cadastro: proventos por conferir",
+   "preco": 6.46,
    "teto": null
   }
  ],
@@ -254,6 +331,13 @@
    "rotulo": "Sem cotação",
    "preco": null,
    "teto": null
+  },
+  {
+   "data": "2026-11-06",
+   "status": "em_cadastro",
+   "rotulo": "Em cadastro: proventos por conferir",
+   "preco": 0.985,
+   "teto": null
   }
  ],
  "SCT": [
@@ -262,6 +346,13 @@
    "status": "sem_preco",
    "rotulo": "Sem cotação",
    "preco": null,
+   "teto": null
+  },
+  {
+   "data": "2026-11-06",
+   "status": "em_cadastro",
+   "rotulo": "Em cadastro: proventos por conferir",
+   "preco": 6.65,
    "teto": null
   }
  ],
@@ -272,6 +363,13 @@
    "rotulo": "Sem cotação",
    "preco": null,
    "teto": null
+  },
+  {
+   "data": "2026-11-06",
+   "status": "em_cadastro",
+   "rotulo": "Em cadastro: proventos por conferir",
+   "preco": 6.48,
+   "teto": null
   }
  ],
  "SNC": [
@@ -280,6 +378,13 @@
    "status": "sem_preco",
    "rotulo": "Sem cotação",
    "preco": null,
+   "teto": null
+  },
+  {
+   "data": "2026-11-06",
+   "status": "em_cadastro",
+   "rotulo": "Em cadastro: proventos por conferir",
+   "preco": 2.9,
    "teto": null
   }
  ]
