@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-11-06T22:09+00:00",
+ "gerado_em": "2026-11-06T22:31+00:00",
  "precos_coletados_em": "2026-11-06T22:09+00:00",
  "autor": "market-lab — projeto pessoal de estudo de nilsonjacobcosta (GitHub)",
  "aviso": "Material educativo, não é recomendação de investimento.",
@@ -1838,42 +1838,110 @@
    "setor": "Investimento (sociedade)",
    "isin": "PTFXD0AM0018",
    "grupo": "observacao",
-   "cadastro_proventos": "pendente",
+   "cadastro_proventos": "completo",
    "faixa_liquidez": "baixa",
-   "cadastro_completo": false,
+   "cadastro_completo": true,
    "preco": 5.15,
    "data_preco": "2026-11-05",
    "variacao_12m_pct": 7.7,
    "proventos_por_ano": {
-    "2021": 0,
-    "2022": 0,
-    "2023": 0,
-    "2024": 0,
-    "2025": 0
+    "2021": 0.0332,
+    "2022": 0.0523,
+    "2023": 0.1169,
+    "2024": 0.085,
+    "2025": 0.1757
    },
    "estado_por_ano": {
-    "2021": [],
-    "2022": [],
-    "2023": [],
-    "2024": [],
-    "2025": []
+    "2021": [
+     "oficial"
+    ],
+    "2022": [
+     "oficial"
+    ],
+    "2023": [
+     "oficial"
+    ],
+    "2024": [
+     "oficial"
+    ],
+    "2025": [
+     "oficial"
+    ]
    },
-   "proventos_12m": 0,
-   "dpa_medio": 0.0,
-   "dpa_aparado": 0.0,
-   "dy_12m_pct": 0.0,
-   "dy_medio_pct": 0.0,
-   "teto": null,
-   "teto_robusto": null,
-   "faixa_teto": null,
-   "margem_pct": null,
-   "status": "em_cadastro",
-   "status_rotulo": "Em cadastro: proventos por conferir",
+   "proventos_12m": 0.2004,
+   "dpa_medio": 0.09262,
+   "dpa_aparado": 0.084733,
+   "dy_12m_pct": 3.89,
+   "dy_medio_pct": 1.8,
+   "teto": 1.4648,
+   "teto_robusto": 1.3401,
+   "faixa_teto": [
+    1.2648,
+    1.74
+   ],
+   "margem_pct": -71.6,
+   "status": "acima",
+   "status_rotulo": "Acima do teto calculado",
    "liquidez_mediana_12m_eur": 0,
    "pct_dias_sem_negocio_12m": 90.9,
-   "pct_eventos_oficiais": null,
+   "pct_eventos_oficiais": 100,
    "tem_scrip": false,
-   "eventos": [],
+   "eventos": [
+    {
+     "data_pagamento": "2026-06-23",
+     "valor_bruto": 0.2004,
+     "tipo": "dinheiro",
+     "exercicio": "2025",
+     "estado": "oficial",
+     "fonte_url": "https://admin.flexdeal.pt/uploads/investorAgenda-210.pdf",
+     "nota": "aviso de pagamento (ex 19/06/2026); a fonte de cotações regista 0.2004 em 19/06/2026"
+    },
+    {
+     "data_pagamento": "2025-06-18",
+     "valor_bruto": 0.1757,
+     "tipo": "dinheiro",
+     "exercicio": "2023/2024",
+     "estado": "oficial",
+     "fonte_url": "https://admin.flexdeal.pt/uploads/investorAgenda-187.pdf",
+     "nota": "aviso de pagamento (ex 16/06/2025)"
+    },
+    {
+     "data_pagamento": "2024-03-22",
+     "valor_bruto": 0.085,
+     "tipo": "dinheiro",
+     "exercicio": "2022/2023",
+     "estado": "oficial",
+     "fonte_url": "https://admin.flexdeal.pt/uploads/investorAgenda-171.pdf",
+     "nota": "aviso de pagamento (ex 20/03/2024)"
+    },
+    {
+     "data_pagamento": "2023-03-22",
+     "valor_bruto": 0.1169,
+     "tipo": "dinheiro",
+     "exercicio": "2021/2022",
+     "estado": "oficial",
+     "fonte_url": "https://admin.flexdeal.pt/uploads/investorAgenda-152.pdf",
+     "nota": "aviso de pagamento (ex 20/03/2023)"
+    },
+    {
+     "data_pagamento": "2022-04-06",
+     "valor_bruto": 0.0523,
+     "tipo": "dinheiro",
+     "exercicio": "2020/2021",
+     "estado": "oficial",
+     "fonte_url": "https://admin.flexdeal.pt/uploads/investorAgenda-120.pdf",
+     "nota": "aviso de pagamento (ex 04/04/2022)"
+    },
+    {
+     "data_pagamento": "2021-04-23",
+     "valor_bruto": 0.0332,
+     "tipo": "dinheiro",
+     "exercicio": "2019/2020",
+     "estado": "oficial",
+     "fonte_url": "https://admin.flexdeal.pt/uploads/investorAgenda-94.pdf",
+     "nota": "aviso de pagamento (ex 21/04/2021)"
+    }
+   ],
    "alertas": [
     {
      "nivel": "atencao",
@@ -1889,16 +1957,6 @@
      "nivel": "atencao",
      "codigo": "negociacao_intermitente",
      "texto": "Negociação intermitente: 90.9% dos dias sem negócio em 12 meses; o último preço pode não corresponder a um negócio real."
-    },
-    {
-     "nivel": "info",
-     "codigo": "cadastro_pendente",
-     "texto": "Proventos ainda não conferidos no cadastro oficial: sem preço-teto até estarem conferidos."
-    },
-    {
-     "nivel": "atencao",
-     "codigo": "evento_nao_cadastrado",
-     "texto": "A fonte de cotações mostra provento sem registo oficial no cadastro: 2021-04-21 (0.00332); 2022-04-04 (0.0523); 2023-03-20 (0.1169); 2024-03-20 (0.085); 2025-06-16 (0.1757); 2026-06-19 (0.2004)."
     }
    ],
    "historico_preco_mensal": {
@@ -3035,47 +3093,107 @@
    "setor": "Media",
    "isin": "PTGMC0AM0003",
    "grupo": "observacao",
-   "cadastro_proventos": "pendente",
+   "cadastro_proventos": "completo",
    "faixa_liquidez": "baixa",
-   "cadastro_completo": false,
+   "cadastro_completo": true,
    "preco": 1.9,
    "data_preco": "2026-11-05",
    "variacao_12m_pct": 0.0,
    "proventos_por_ano": {
     "2021": 0,
-    "2022": 0,
+    "2022": 0.118,
     "2023": 0,
-    "2024": 0,
-    "2025": 0
+    "2024": 0.125,
+    "2025": 0.042
    },
    "estado_por_ano": {
     "2021": [],
-    "2022": [],
+    "2022": [
+     "coincide"
+    ],
     "2023": [],
-    "2024": [],
-    "2025": []
+    "2024": [
+     "oficial"
+    ],
+    "2025": [
+     "oficial"
+    ]
    },
-   "proventos_12m": 0,
-   "dpa_medio": 0.0,
-   "dpa_aparado": 0.0,
-   "dy_12m_pct": 0.0,
-   "dy_medio_pct": 0.0,
-   "teto": null,
-   "teto_robusto": null,
-   "faixa_teto": null,
-   "margem_pct": null,
-   "status": "em_cadastro",
-   "status_rotulo": "Em cadastro: proventos por conferir",
+   "proventos_12m": 0.042,
+   "dpa_medio": 0.057,
+   "dpa_aparado": 0.053333,
+   "dy_12m_pct": 2.21,
+   "dy_medio_pct": 3.0,
+   "teto": 0.9015,
+   "teto_robusto": 0.8435,
+   "faixa_teto": [
+    0.7784,
+    1.0708
+   ],
+   "margem_pct": -52.6,
+   "status": "acima",
+   "status_rotulo": "Acima do teto calculado",
    "liquidez_mediana_12m_eur": 0,
    "pct_dias_sem_negocio_12m": 97.2,
-   "pct_eventos_oficiais": null,
+   "pct_eventos_oficiais": 80,
    "tem_scrip": false,
-   "eventos": [],
+   "eventos": [
+    {
+     "data_pagamento": "2026-05-29",
+     "valor_bruto": 0.042,
+     "tipo": "dinheiro",
+     "exercicio": "reservas",
+     "estado": "oficial",
+     "fonte_url": "https://mediacapital.pt/wp-content/uploads/2026/05/GMC-Aviso-Dividendos-2026-20052026.pdf",
+     "nota": "reservas livres; AG de 20/05/2026 (ex 27/05/2026)"
+    },
+    {
+     "data_pagamento": "2025-05-30",
+     "valor_bruto": 0.042,
+     "tipo": "dinheiro",
+     "exercicio": "reservas",
+     "estado": "oficial",
+     "fonte_url": "https://mediacapital.pt/wp-content/uploads/2025/05/deae7d5f9aed81ae1323fef2d427a452.pdf",
+     "nota": "reservas livres; AG de 21/05/2025 (ex 28/05/2025)"
+    },
+    {
+     "data_pagamento": "2024-10-22",
+     "valor_bruto": 0.083,
+     "tipo": "dinheiro",
+     "exercicio": "reservas",
+     "estado": "oficial",
+     "fonte_url": "https://mediacapital.pt/wp-content/uploads/2024/11/Grupo-Media-Capital-informa-sobre-pagamento-de-dividendos.pdf",
+     "nota": "reservas livres; AG extraordinária de 15/10/2024 (ex 18/10/2024)"
+    },
+    {
+     "data_pagamento": "2024-01-04",
+     "valor_bruto": 0.042,
+     "tipo": "dinheiro",
+     "exercicio": "reservas",
+     "estado": "oficial",
+     "fonte_url": "https://mediacapital.pt/wp-content/uploads/2024/11/Grupo-Media-Capital-SGPS-S.A.-informa-sobre-pagamento-de-dividendos.pdf",
+     "nota": "reservas livres; AG extraordinária de 14/12/2023; errata fixou ex em 02/01/2024"
+    },
+    {
+     "data_pagamento": "2022-07-11",
+     "valor_bruto": 0.118,
+     "tipo": "dinheiro",
+     "exercicio": "reservas",
+     "estado": "coincide",
+     "fonte_url": "https://in.marketscreener.com/quote/stock/GRUPO-MEDIA-CAPITAL-SGPS--5804/valuation-dividend/",
+     "nota": "valor de agregador coincide com a fonte de cotações (ex 07/07/2022); aviso original não localizado; data inferida (ex + 2 dias úteis)"
+    }
+   ],
    "alertas": [
     {
      "nivel": "atencao",
      "codigo": "preco_atrasado",
      "texto": "Último preço é de 2026-11-05; esperado o fecho de 2026-11-06."
+    },
+    {
+     "nivel": "atencao",
+     "codigo": "anos_sem_proventos",
+     "texto": "Sem proventos em 2021, 2023: a média de 5 anos fica mais baixa e o teto também."
     },
     {
      "nivel": "info",
@@ -3088,14 +3206,9 @@
      "texto": "Negociação intermitente: 97.2% dos dias sem negócio em 12 meses; o último preço pode não corresponder a um negócio real."
     },
     {
-     "nivel": "info",
-     "codigo": "cadastro_pendente",
-     "texto": "Proventos ainda não conferidos no cadastro oficial: sem preço-teto até estarem conferidos."
-    },
-    {
      "nivel": "atencao",
-     "codigo": "evento_nao_cadastrado",
-     "texto": "A fonte de cotações mostra provento sem registo oficial no cadastro: 2022-07-07 (0.118); 2024-01-02 (0.042); 2024-10-18 (0.083); 2025-05-28 (0.042); 2026-05-27 (0.042)."
+     "codigo": "queda_proventos",
+     "texto": "Proventos de 2025 caíram mais de 30% face a 2024."
     }
    ],
    "historico_preco_mensal": {
@@ -5791,6 +5904,13 @@
     "rotulo": "Em cadastro: proventos por conferir",
     "preco": 5.15,
     "teto": null
+   },
+   {
+    "data": "2026-11-06",
+    "status": "acima",
+    "rotulo": "Acima do teto calculado",
+    "preco": 5.15,
+    "teto": 1.4648
    }
   ],
   "GLINT": [
@@ -5862,6 +5982,13 @@
     "rotulo": "Em cadastro: proventos por conferir",
     "preco": 1.9,
     "teto": null
+   },
+   {
+    "data": "2026-11-06",
+    "status": "acima",
+    "rotulo": "Acima do teto calculado",
+    "preco": 1.9,
+    "teto": 0.9015
    }
   ],
   "NBA": [

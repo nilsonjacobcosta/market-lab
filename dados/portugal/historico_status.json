@@ -217,6 +217,13 @@
    "rotulo": "Em cadastro: proventos por conferir",
    "preco": 5.15,
    "teto": null
+  },
+  {
+   "data": "2026-11-06",
+   "status": "acima",
+   "rotulo": "Acima do teto calculado",
+   "preco": 5.15,
+   "teto": 1.4648
   }
  ],
  "GLINT": [
@@ -288,6 +295,13 @@
    "rotulo": "Em cadastro: proventos por conferir",
    "preco": 1.9,
    "teto": null
+  },
+  {
+   "data": "2026-11-06",
+   "status": "acima",
+   "rotulo": "Acima do teto calculado",
+   "preco": 1.9,
+   "teto": 0.9015
   }
  ],
  "NBA": [

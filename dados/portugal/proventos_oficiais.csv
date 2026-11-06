@@ -137,3 +137,14 @@ SCT,2025-06-11,0.35,dinheiro,2024,oficial,https://toyotacaetano.pt/wp-content/up
 SCT,2026-06-09,0.35,dinheiro,2025,oficial,https://toyotacaetano.pt/wp-content/uploads/sites/24/2026/06/tcpdelii.pdf,"AG de 29/05/2026: 0,30 do resultado e 0,05 de reservas; data inferida (ex 05/06/2026 + 2 dias úteis)"
 MAR,2025-06-25,0.12,dinheiro,2024,oficial,https://martifer.com/multimedia/martifer/pt/v3xi93fPM-20250613comunicado.pdf,comunicado de pagamento relativo ao exercício de 2024
 MAR,2026-06-25,0.093,dinheiro,2025,coincide,https://martifer.com/multimedia/martifer/pt/kyFfkJyyCQ-ponto-3-proposta-de-aplicacao-de-resultados-2025.pdf,"proposta da AG de 27/05/2026: 0,023 de dividendo e 0,070 de reservas (o texto tem erro de digitação: 0,23 e 0,70); total de 9,09 M€ coincide com a fonte de cotações (ex 23/06/2026); data inferida"
+FLEXD,2021-04-23,0.0332,dinheiro,2019/2020,oficial,https://admin.flexdeal.pt/uploads/investorAgenda-94.pdf,aviso de pagamento (ex 21/04/2021)
+FLEXD,2022-04-06,0.0523,dinheiro,2020/2021,oficial,https://admin.flexdeal.pt/uploads/investorAgenda-120.pdf,aviso de pagamento (ex 04/04/2022)
+FLEXD,2023-03-22,0.1169,dinheiro,2021/2022,oficial,https://admin.flexdeal.pt/uploads/investorAgenda-152.pdf,aviso de pagamento (ex 20/03/2023)
+FLEXD,2024-03-22,0.085,dinheiro,2022/2023,oficial,https://admin.flexdeal.pt/uploads/investorAgenda-171.pdf,aviso de pagamento (ex 20/03/2024)
+FLEXD,2025-06-18,0.1757,dinheiro,2023/2024,oficial,https://admin.flexdeal.pt/uploads/investorAgenda-187.pdf,aviso de pagamento (ex 16/06/2025)
+FLEXD,2026-06-23,0.2004,dinheiro,2025,oficial,https://admin.flexdeal.pt/uploads/investorAgenda-210.pdf,aviso de pagamento (ex 19/06/2026); a fonte de cotações regista 0.2004 em 19/06/2026
+MCP,2022-07-11,0.118,dinheiro,reservas,coincide,https://in.marketscreener.com/quote/stock/GRUPO-MEDIA-CAPITAL-SGPS--5804/valuation-dividend/,"valor de agregador coincide com a fonte de cotações (ex 07/07/2022); aviso original não localizado; data inferida (ex + 2 dias úteis)"
+MCP,2024-01-04,0.042,dinheiro,reservas,oficial,https://mediacapital.pt/wp-content/uploads/2024/11/Grupo-Media-Capital-SGPS-S.A.-informa-sobre-pagamento-de-dividendos.pdf,reservas livres; AG extraordinária de 14/12/2023; errata fixou ex em 02/01/2024
+MCP,2024-10-22,0.083,dinheiro,reservas,oficial,https://mediacapital.pt/wp-content/uploads/2024/11/Grupo-Media-Capital-informa-sobre-pagamento-de-dividendos.pdf,reservas livres; AG extraordinária de 15/10/2024 (ex 18/10/2024)
+MCP,2025-05-30,0.042,dinheiro,reservas,oficial,https://mediacapital.pt/wp-content/uploads/2025/05/deae7d5f9aed81ae1323fef2d427a452.pdf,reservas livres; AG de 21/05/2025 (ex 28/05/2025)
+MCP,2026-05-29,0.042,dinheiro,reservas,oficial,https://mediacapital.pt/wp-content/uploads/2026/05/GMC-Aviso-Dividendos-2026-20052026.pdf,reservas livres; AG de 20/05/2026 (ex 27/05/2026)
