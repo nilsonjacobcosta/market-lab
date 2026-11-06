@@ -1627,11 +1627,6 @@
    "eventos": [],
    "alertas": [
     {
-     "nivel": "atencao",
-     "codigo": "anos_sem_proventos",
-     "texto": "Sem proventos em 2021, 2022, 2023, 2024, 2025: a média de 5 anos fica mais baixa e o teto também."
-    },
-    {
      "nivel": "info",
      "codigo": "fora_nucleo",
      "texto": "Em observação: fora do núcleo de alta liquidez (faixa baixa)."
@@ -1759,11 +1754,6 @@
    "eventos": [],
    "alertas": [
     {
-     "nivel": "atencao",
-     "codigo": "anos_sem_proventos",
-     "texto": "Sem proventos em 2021, 2022, 2023, 2024, 2025: a média de 5 anos fica mais baixa e o teto também."
-    },
-    {
      "nivel": "info",
      "codigo": "fora_nucleo",
      "texto": "Em observação: fora do núcleo de alta liquidez (faixa baixa)."
@@ -1885,11 +1875,6 @@
    "tem_scrip": false,
    "eventos": [],
    "alertas": [
-    {
-     "nivel": "atencao",
-     "codigo": "anos_sem_proventos",
-     "texto": "Sem proventos em 2021, 2022, 2023, 2024, 2025: a média de 5 anos fica mais baixa e o teto também."
-    },
     {
      "nivel": "info",
      "codigo": "fora_nucleo",
@@ -2281,11 +2266,6 @@
    "eventos": [],
    "alertas": [
     {
-     "nivel": "atencao",
-     "codigo": "anos_sem_proventos",
-     "texto": "Sem proventos em 2021, 2022, 2023, 2024, 2025: a média de 5 anos fica mais baixa e o teto também."
-    },
-    {
      "nivel": "info",
      "codigo": "fora_nucleo",
      "texto": "Em observação: fora do núcleo de alta liquidez (faixa baixa)."
@@ -2614,11 +2594,6 @@
    "tem_scrip": false,
    "eventos": [],
    "alertas": [
-    {
-     "nivel": "atencao",
-     "codigo": "anos_sem_proventos",
-     "texto": "Sem proventos em 2021, 2022, 2023, 2024, 2025: a média de 5 anos fica mais baixa e o teto também."
-    },
     {
      "nivel": "info",
      "codigo": "fora_nucleo",
@@ -2952,11 +2927,6 @@
    "eventos": [],
    "alertas": [
     {
-     "nivel": "atencao",
-     "codigo": "anos_sem_proventos",
-     "texto": "Sem proventos em 2021, 2022, 2023, 2024, 2025: a média de 5 anos fica mais baixa e o teto também."
-    },
-    {
      "nivel": "info",
      "codigo": "fora_nucleo",
      "texto": "Em observação: fora do núcleo de alta liquidez (faixa baixa)."
@@ -3078,11 +3048,6 @@
    "tem_scrip": false,
    "eventos": [],
    "alertas": [
-    {
-     "nivel": "atencao",
-     "codigo": "anos_sem_proventos",
-     "texto": "Sem proventos em 2021, 2022, 2023, 2024, 2025: a média de 5 anos fica mais baixa e o teto também."
-    },
     {
      "nivel": "info",
      "codigo": "fora_nucleo",
@@ -3210,11 +3175,6 @@
    "tem_scrip": false,
    "eventos": [],
    "alertas": [
-    {
-     "nivel": "atencao",
-     "codigo": "anos_sem_proventos",
-     "texto": "Sem proventos em 2021, 2022, 2023, 2024, 2025: a média de 5 anos fica mais baixa e o teto também."
-    },
     {
      "nivel": "info",
      "codigo": "fora_nucleo",
@@ -3791,11 +3751,6 @@
    "eventos": [],
    "alertas": [
     {
-     "nivel": "atencao",
-     "codigo": "anos_sem_proventos",
-     "texto": "Sem proventos em 2021, 2022, 2023, 2024, 2025: a média de 5 anos fica mais baixa e o teto também."
-    },
-    {
      "nivel": "info",
      "codigo": "fora_nucleo",
      "texto": "Em observação: fora do núcleo de alta liquidez (faixa media)."
@@ -3912,11 +3867,6 @@
    "tem_scrip": false,
    "eventos": [],
    "alertas": [
-    {
-     "nivel": "atencao",
-     "codigo": "anos_sem_proventos",
-     "texto": "Sem proventos em 2021, 2022, 2023, 2024, 2025: a média de 5 anos fica mais baixa e o teto também."
-    },
     {
      "nivel": "info",
      "codigo": "fora_nucleo",
@@ -4287,11 +4237,6 @@
    "eventos": [],
    "alertas": [
     {
-     "nivel": "atencao",
-     "codigo": "anos_sem_proventos",
-     "texto": "Sem proventos em 2021, 2022, 2023, 2024, 2025: a média de 5 anos fica mais baixa e o teto também."
-    },
-    {
      "nivel": "info",
      "codigo": "fora_nucleo",
      "texto": "Em observação: fora do núcleo de alta liquidez (faixa baixa)."
@@ -4413,11 +4358,6 @@
    "tem_scrip": false,
    "eventos": [],
    "alertas": [
-    {
-     "nivel": "atencao",
-     "codigo": "anos_sem_proventos",
-     "texto": "Sem proventos em 2021, 2022, 2023, 2024, 2025: a média de 5 anos fica mais baixa e o teto também."
-    },
     {
      "nivel": "info",
      "codigo": "fora_nucleo",
@@ -4770,11 +4710,6 @@
    "eventos": [],
    "alertas": [
     {
-     "nivel": "atencao",
-     "codigo": "anos_sem_proventos",
-     "texto": "Sem proventos em 2021, 2022, 2023, 2024, 2025: a média de 5 anos fica mais baixa e o teto também."
-    },
-    {
      "nivel": "info",
      "codigo": "fora_nucleo",
      "texto": "Em observação: fora do núcleo de alta liquidez (faixa baixa)."
@@ -4891,11 +4826,6 @@
    "tem_scrip": false,
    "eventos": [],
    "alertas": [
-    {
-     "nivel": "atencao",
-     "codigo": "anos_sem_proventos",
-     "texto": "Sem proventos em 2021, 2022, 2023, 2024, 2025: a média de 5 anos fica mais baixa e o teto também."
-    },
     {
      "nivel": "info",
      "codigo": "fora_nucleo",
