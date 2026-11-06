@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-11-06T00:57+00:00",
+ "gerado_em": "2026-11-06T08:51+00:00",
  "precos_coletados_em": "2026-11-06T00:57+00:00",
  "autor": "market-lab — projeto pessoal de estudo de nilsonjacobcosta (GitHub)",
  "aviso": "Material educativo, não é recomendação de investimento.",
@@ -17,11 +17,14 @@
   "autor": "market-lab — projeto pessoal de estudo de nilsonjacobcosta (GitHub)"
  },
  "universo": {
-  "revisado_em": "2026-11-04",
-  "proxima_revisao": "2027-02-04",
-  "criterio": "Ações do mercado regulamentado da Euronext Lisbon (MIC XLIS) com mediana do volume financeiro diário em 12 meses >= 100 mil euros e no máximo 5% de dias sem negócio; excluídos emitentes cuja sede ou listagem principal não é Portugal (Euronext N.V., Merlin Properties).",
+  "revisado_em": "2026-11-06",
+  "proxima_revisao": "2027-02-06",
+  "criterio": "Ações do mercado regulamentado da Euronext Lisbon (MIC XLIS) de emitentes portugueses (30, excluídas Euronext N.V. e Merlin Properties). Núcleo: liquidez mediana de 12 meses >= 100 mil €/dia e no máximo 5% de dias sem negócio. Em observação: as restantes, com faixa de liquidez Média ou Baixa, sempre com avisos de negociação.",
   "corte_liquidez_eur": 100000,
-  "max_pct_dias_sem_negocio": 5
+  "corte_media_eur": 25000,
+  "corte_saida_eur": 80000,
+  "max_pct_dias_sem_negocio": 5,
+  "regra_grupo": "Entra no núcleo com liquidez mediana de 12 meses >= 100 mil €/dia. Só sai do núcleo se ficar abaixo de 80 mil €/dia em duas revisões seguidas. Papéis em observação sem cadastro de proventos conferido aparecem sem preço-teto."
  },
  "universo_alertas": [],
  "n_euronext_xlis": 32,
@@ -52,6 +55,10 @@
    "nome": "Altri",
    "setor": "Celulose e materiais",
    "isin": "PTALT0AE0002",
+   "grupo": "nucleo",
+   "cadastro_proventos": "completo",
+   "faixa_liquidez": "alta",
+   "cadastro_completo": true,
    "preco": 4.25,
    "data_preco": "2026-11-04",
    "variacao_12m_pct": -12.8,
@@ -286,6 +293,10 @@
    "nome": "Banco Comercial Português",
    "setor": "Banca",
    "isin": "PTBCP0AM0015",
+   "grupo": "nucleo",
+   "cadastro_proventos": "completo",
+   "faixa_liquidez": "alta",
+   "cadastro_completo": true,
    "preco": 1.088,
    "data_preco": "2026-11-04",
    "variacao_12m_pct": 41.3,
@@ -479,6 +490,10 @@
    "nome": "Corticeira Amorim",
    "setor": "Cortiça e materiais",
    "isin": "PTCOR0AE0006",
+   "grupo": "nucleo",
+   "cadastro_proventos": "completo",
+   "faixa_liquidez": "alta",
+   "cadastro_completo": true,
    "preco": 6.71,
    "data_preco": "2026-11-04",
    "variacao_12m_pct": 2.9,
@@ -728,6 +743,10 @@
    "nome": "CTT – Correios de Portugal",
    "setor": "Correios e serviços financeiros",
    "isin": "PTCTT0AM0001",
+   "grupo": "nucleo",
+   "cadastro_proventos": "completo",
+   "faixa_liquidez": "alta",
+   "cadastro_completo": true,
    "preco": 4.73,
    "data_preco": "2026-11-04",
    "variacao_12m_pct": -36.3,
@@ -941,6 +960,10 @@
    "nome": "EDP",
    "setor": "Energia",
    "isin": "PTEDP0AM0009",
+   "grupo": "nucleo",
+   "cadastro_proventos": "completo",
+   "faixa_liquidez": "alta",
+   "cadastro_completo": true,
    "preco": 4.98,
    "data_preco": "2026-11-04",
    "variacao_12m_pct": 27.9,
@@ -1155,6 +1178,10 @@
    "nome": "EDP Renováveis",
    "setor": "Energia renovável",
    "isin": "ES0127797019",
+   "grupo": "nucleo",
+   "cadastro_proventos": "completo",
+   "faixa_liquidez": "alta",
+   "cadastro_completo": true,
    "preco": 13.47,
    "data_preco": "2026-11-04",
    "variacao_12m_pct": 14.9,
@@ -1378,6 +1405,10 @@
    "nome": "Mota-Engil",
    "setor": "Construção e engenharia",
    "isin": "PTMEN0AE0005",
+   "grupo": "nucleo",
+   "cadastro_proventos": "completo",
+   "faixa_liquidez": "alta",
+   "cadastro_completo": true,
    "preco": 4.504,
    "data_preco": "2026-11-04",
    "variacao_12m_pct": -21.5,
@@ -1591,10 +1622,212 @@
    }
   },
   {
+   "papel": "ESON",
+   "nome": "Estoril Sol",
+   "setor": "Turismo e imobiliário",
+   "isin": "PTESO0AM0000",
+   "grupo": "observacao",
+   "cadastro_proventos": "pendente",
+   "faixa_liquidez": null,
+   "cadastro_completo": false,
+   "preco": null,
+   "data_preco": null,
+   "variacao_12m_pct": null,
+   "proventos_por_ano": {
+    "2021": 0,
+    "2022": 0,
+    "2023": 0,
+    "2024": 0,
+    "2025": 0
+   },
+   "estado_por_ano": {
+    "2021": [],
+    "2022": [],
+    "2023": [],
+    "2024": [],
+    "2025": []
+   },
+   "proventos_12m": 0,
+   "dpa_medio": 0.0,
+   "dpa_aparado": 0.0,
+   "dy_12m_pct": null,
+   "dy_medio_pct": null,
+   "teto": null,
+   "teto_robusto": null,
+   "faixa_teto": null,
+   "margem_pct": null,
+   "status": "sem_preco",
+   "status_rotulo": "Sem cotação",
+   "liquidez_mediana_12m_eur": null,
+   "pct_dias_sem_negocio_12m": null,
+   "pct_eventos_oficiais": null,
+   "tem_scrip": false,
+   "eventos": [],
+   "alertas": [
+    {
+     "nivel": "grave",
+     "codigo": "sem_preco",
+     "texto": "Sem cotação na fonte: o painel não calcula margem."
+    },
+    {
+     "nivel": "atencao",
+     "codigo": "anos_sem_proventos",
+     "texto": "Sem proventos em 2021, 2022, 2023, 2024, 2025: a média de 5 anos fica mais baixa e o teto também."
+    },
+    {
+     "nivel": "info",
+     "codigo": "fora_nucleo",
+     "texto": "Em observação: fora do núcleo de alta liquidez (faixa sem dados)."
+    },
+    {
+     "nivel": "info",
+     "codigo": "cadastro_pendente",
+     "texto": "Proventos ainda não conferidos no cadastro oficial: sem preço-teto até estarem conferidos."
+    }
+   ],
+   "historico_preco_mensal": {}
+  },
+  {
+   "papel": "FCP",
+   "nome": "FC Porto SAD",
+   "setor": "Futebol (SAD)",
+   "isin": "PTFCP0AM0008",
+   "grupo": "observacao",
+   "cadastro_proventos": "pendente",
+   "faixa_liquidez": null,
+   "cadastro_completo": false,
+   "preco": null,
+   "data_preco": null,
+   "variacao_12m_pct": null,
+   "proventos_por_ano": {
+    "2021": 0,
+    "2022": 0,
+    "2023": 0,
+    "2024": 0,
+    "2025": 0
+   },
+   "estado_por_ano": {
+    "2021": [],
+    "2022": [],
+    "2023": [],
+    "2024": [],
+    "2025": []
+   },
+   "proventos_12m": 0,
+   "dpa_medio": 0.0,
+   "dpa_aparado": 0.0,
+   "dy_12m_pct": null,
+   "dy_medio_pct": null,
+   "teto": null,
+   "teto_robusto": null,
+   "faixa_teto": null,
+   "margem_pct": null,
+   "status": "sem_preco",
+   "status_rotulo": "Sem cotação",
+   "liquidez_mediana_12m_eur": null,
+   "pct_dias_sem_negocio_12m": null,
+   "pct_eventos_oficiais": null,
+   "tem_scrip": false,
+   "eventos": [],
+   "alertas": [
+    {
+     "nivel": "grave",
+     "codigo": "sem_preco",
+     "texto": "Sem cotação na fonte: o painel não calcula margem."
+    },
+    {
+     "nivel": "atencao",
+     "codigo": "anos_sem_proventos",
+     "texto": "Sem proventos em 2021, 2022, 2023, 2024, 2025: a média de 5 anos fica mais baixa e o teto também."
+    },
+    {
+     "nivel": "info",
+     "codigo": "fora_nucleo",
+     "texto": "Em observação: fora do núcleo de alta liquidez (faixa sem dados)."
+    },
+    {
+     "nivel": "info",
+     "codigo": "cadastro_pendente",
+     "texto": "Proventos ainda não conferidos no cadastro oficial: sem preço-teto até estarem conferidos."
+    }
+   ],
+   "historico_preco_mensal": {}
+  },
+  {
+   "papel": "FLEXD",
+   "nome": "Flexdeal",
+   "setor": "Investimento (sociedade)",
+   "isin": "PTFXD0AM0018",
+   "grupo": "observacao",
+   "cadastro_proventos": "pendente",
+   "faixa_liquidez": null,
+   "cadastro_completo": false,
+   "preco": null,
+   "data_preco": null,
+   "variacao_12m_pct": null,
+   "proventos_por_ano": {
+    "2021": 0,
+    "2022": 0,
+    "2023": 0,
+    "2024": 0,
+    "2025": 0
+   },
+   "estado_por_ano": {
+    "2021": [],
+    "2022": [],
+    "2023": [],
+    "2024": [],
+    "2025": []
+   },
+   "proventos_12m": 0,
+   "dpa_medio": 0.0,
+   "dpa_aparado": 0.0,
+   "dy_12m_pct": null,
+   "dy_medio_pct": null,
+   "teto": null,
+   "teto_robusto": null,
+   "faixa_teto": null,
+   "margem_pct": null,
+   "status": "sem_preco",
+   "status_rotulo": "Sem cotação",
+   "liquidez_mediana_12m_eur": null,
+   "pct_dias_sem_negocio_12m": null,
+   "pct_eventos_oficiais": null,
+   "tem_scrip": false,
+   "eventos": [],
+   "alertas": [
+    {
+     "nivel": "grave",
+     "codigo": "sem_preco",
+     "texto": "Sem cotação na fonte: o painel não calcula margem."
+    },
+    {
+     "nivel": "atencao",
+     "codigo": "anos_sem_proventos",
+     "texto": "Sem proventos em 2021, 2022, 2023, 2024, 2025: a média de 5 anos fica mais baixa e o teto também."
+    },
+    {
+     "nivel": "info",
+     "codigo": "fora_nucleo",
+     "texto": "Em observação: fora do núcleo de alta liquidez (faixa sem dados)."
+    },
+    {
+     "nivel": "info",
+     "codigo": "cadastro_pendente",
+     "texto": "Proventos ainda não conferidos no cadastro oficial: sem preço-teto até estarem conferidos."
+    }
+   ],
+   "historico_preco_mensal": {}
+  },
+  {
    "papel": "GALP",
    "nome": "Galp Energia",
    "setor": "Petróleo, gás e energia",
    "isin": "PTGAL0AM0009",
+   "grupo": "nucleo",
+   "cadastro_proventos": "completo",
+   "faixa_liquidez": "alta",
+   "cadastro_completo": true,
    "preco": 19.85,
    "data_preco": "2026-11-04",
    "variacao_12m_pct": 13.2,
@@ -1856,10 +2089,80 @@
    }
   },
   {
+   "papel": "GLINT",
+   "nome": "Glintt",
+   "setor": "Software e serviços de TI",
+   "isin": "PTPAD0AM0007",
+   "grupo": "observacao",
+   "cadastro_proventos": "pendente",
+   "faixa_liquidez": null,
+   "cadastro_completo": false,
+   "preco": null,
+   "data_preco": null,
+   "variacao_12m_pct": null,
+   "proventos_por_ano": {
+    "2021": 0,
+    "2022": 0,
+    "2023": 0,
+    "2024": 0,
+    "2025": 0
+   },
+   "estado_por_ano": {
+    "2021": [],
+    "2022": [],
+    "2023": [],
+    "2024": [],
+    "2025": []
+   },
+   "proventos_12m": 0,
+   "dpa_medio": 0.0,
+   "dpa_aparado": 0.0,
+   "dy_12m_pct": null,
+   "dy_medio_pct": null,
+   "teto": null,
+   "teto_robusto": null,
+   "faixa_teto": null,
+   "margem_pct": null,
+   "status": "sem_preco",
+   "status_rotulo": "Sem cotação",
+   "liquidez_mediana_12m_eur": null,
+   "pct_dias_sem_negocio_12m": null,
+   "pct_eventos_oficiais": null,
+   "tem_scrip": false,
+   "eventos": [],
+   "alertas": [
+    {
+     "nivel": "grave",
+     "codigo": "sem_preco",
+     "texto": "Sem cotação na fonte: o painel não calcula margem."
+    },
+    {
+     "nivel": "atencao",
+     "codigo": "anos_sem_proventos",
+     "texto": "Sem proventos em 2021, 2022, 2023, 2024, 2025: a média de 5 anos fica mais baixa e o teto também."
+    },
+    {
+     "nivel": "info",
+     "codigo": "fora_nucleo",
+     "texto": "Em observação: fora do núcleo de alta liquidez (faixa sem dados)."
+    },
+    {
+     "nivel": "info",
+     "codigo": "cadastro_pendente",
+     "texto": "Proventos ainda não conferidos no cadastro oficial: sem preço-teto até estarem conferidos."
+    }
+   ],
+   "historico_preco_mensal": {}
+  },
+  {
    "papel": "IBS",
    "nome": "Ibersol",
    "setor": "Restauração",
    "isin": "PTIBS0AM0008",
+   "grupo": "nucleo",
+   "cadastro_proventos": "completo",
+   "faixa_liquidez": "alta",
+   "cadastro_completo": true,
    "preco": 10.4,
    "data_preco": "2026-11-04",
    "variacao_12m_pct": 2.5,
@@ -2064,10 +2367,80 @@
    }
   },
   {
+   "papel": "IPR",
+   "nome": "Impresa",
+   "setor": "Media e telecomunicações",
+   "isin": "PTIPR0AM0000",
+   "grupo": "observacao",
+   "cadastro_proventos": "pendente",
+   "faixa_liquidez": null,
+   "cadastro_completo": false,
+   "preco": null,
+   "data_preco": null,
+   "variacao_12m_pct": null,
+   "proventos_por_ano": {
+    "2021": 0,
+    "2022": 0,
+    "2023": 0,
+    "2024": 0,
+    "2025": 0
+   },
+   "estado_por_ano": {
+    "2021": [],
+    "2022": [],
+    "2023": [],
+    "2024": [],
+    "2025": []
+   },
+   "proventos_12m": 0,
+   "dpa_medio": 0.0,
+   "dpa_aparado": 0.0,
+   "dy_12m_pct": null,
+   "dy_medio_pct": null,
+   "teto": null,
+   "teto_robusto": null,
+   "faixa_teto": null,
+   "margem_pct": null,
+   "status": "sem_preco",
+   "status_rotulo": "Sem cotação",
+   "liquidez_mediana_12m_eur": null,
+   "pct_dias_sem_negocio_12m": null,
+   "pct_eventos_oficiais": null,
+   "tem_scrip": false,
+   "eventos": [],
+   "alertas": [
+    {
+     "nivel": "grave",
+     "codigo": "sem_preco",
+     "texto": "Sem cotação na fonte: o painel não calcula margem."
+    },
+    {
+     "nivel": "atencao",
+     "codigo": "anos_sem_proventos",
+     "texto": "Sem proventos em 2021, 2022, 2023, 2024, 2025: a média de 5 anos fica mais baixa e o teto também."
+    },
+    {
+     "nivel": "info",
+     "codigo": "fora_nucleo",
+     "texto": "Em observação: fora do núcleo de alta liquidez (faixa sem dados)."
+    },
+    {
+     "nivel": "info",
+     "codigo": "cadastro_pendente",
+     "texto": "Proventos ainda não conferidos no cadastro oficial: sem preço-teto até estarem conferidos."
+    }
+   ],
+   "historico_preco_mensal": {}
+  },
+  {
    "papel": "JMT",
    "nome": "Jerónimo Martins",
    "setor": "Retalho alimentar",
    "isin": "PTJMT0AE0001",
+   "grupo": "nucleo",
+   "cadastro_proventos": "completo",
+   "faixa_liquidez": "alta",
+   "cadastro_completo": true,
    "preco": 19.27,
    "data_preco": "2026-11-04",
    "variacao_12m_pct": -11.0,
@@ -2280,10 +2653,212 @@
    }
   },
   {
+   "papel": "MAR",
+   "nome": "Martifer",
+   "setor": "Metalomecânica e energia",
+   "isin": "PTMFR0AM0003",
+   "grupo": "observacao",
+   "cadastro_proventos": "pendente",
+   "faixa_liquidez": null,
+   "cadastro_completo": false,
+   "preco": null,
+   "data_preco": null,
+   "variacao_12m_pct": null,
+   "proventos_por_ano": {
+    "2021": 0,
+    "2022": 0,
+    "2023": 0,
+    "2024": 0,
+    "2025": 0
+   },
+   "estado_por_ano": {
+    "2021": [],
+    "2022": [],
+    "2023": [],
+    "2024": [],
+    "2025": []
+   },
+   "proventos_12m": 0,
+   "dpa_medio": 0.0,
+   "dpa_aparado": 0.0,
+   "dy_12m_pct": null,
+   "dy_medio_pct": null,
+   "teto": null,
+   "teto_robusto": null,
+   "faixa_teto": null,
+   "margem_pct": null,
+   "status": "sem_preco",
+   "status_rotulo": "Sem cotação",
+   "liquidez_mediana_12m_eur": null,
+   "pct_dias_sem_negocio_12m": null,
+   "pct_eventos_oficiais": null,
+   "tem_scrip": false,
+   "eventos": [],
+   "alertas": [
+    {
+     "nivel": "grave",
+     "codigo": "sem_preco",
+     "texto": "Sem cotação na fonte: o painel não calcula margem."
+    },
+    {
+     "nivel": "atencao",
+     "codigo": "anos_sem_proventos",
+     "texto": "Sem proventos em 2021, 2022, 2023, 2024, 2025: a média de 5 anos fica mais baixa e o teto também."
+    },
+    {
+     "nivel": "info",
+     "codigo": "fora_nucleo",
+     "texto": "Em observação: fora do núcleo de alta liquidez (faixa sem dados)."
+    },
+    {
+     "nivel": "info",
+     "codigo": "cadastro_pendente",
+     "texto": "Proventos ainda não conferidos no cadastro oficial: sem preço-teto até estarem conferidos."
+    }
+   ],
+   "historico_preco_mensal": {}
+  },
+  {
+   "papel": "MCP",
+   "nome": "Media Capital",
+   "setor": "Media",
+   "isin": "PTGMC0AM0003",
+   "grupo": "observacao",
+   "cadastro_proventos": "pendente",
+   "faixa_liquidez": null,
+   "cadastro_completo": false,
+   "preco": null,
+   "data_preco": null,
+   "variacao_12m_pct": null,
+   "proventos_por_ano": {
+    "2021": 0,
+    "2022": 0,
+    "2023": 0,
+    "2024": 0,
+    "2025": 0
+   },
+   "estado_por_ano": {
+    "2021": [],
+    "2022": [],
+    "2023": [],
+    "2024": [],
+    "2025": []
+   },
+   "proventos_12m": 0,
+   "dpa_medio": 0.0,
+   "dpa_aparado": 0.0,
+   "dy_12m_pct": null,
+   "dy_medio_pct": null,
+   "teto": null,
+   "teto_robusto": null,
+   "faixa_teto": null,
+   "margem_pct": null,
+   "status": "sem_preco",
+   "status_rotulo": "Sem cotação",
+   "liquidez_mediana_12m_eur": null,
+   "pct_dias_sem_negocio_12m": null,
+   "pct_eventos_oficiais": null,
+   "tem_scrip": false,
+   "eventos": [],
+   "alertas": [
+    {
+     "nivel": "grave",
+     "codigo": "sem_preco",
+     "texto": "Sem cotação na fonte: o painel não calcula margem."
+    },
+    {
+     "nivel": "atencao",
+     "codigo": "anos_sem_proventos",
+     "texto": "Sem proventos em 2021, 2022, 2023, 2024, 2025: a média de 5 anos fica mais baixa e o teto também."
+    },
+    {
+     "nivel": "info",
+     "codigo": "fora_nucleo",
+     "texto": "Em observação: fora do núcleo de alta liquidez (faixa sem dados)."
+    },
+    {
+     "nivel": "info",
+     "codigo": "cadastro_pendente",
+     "texto": "Proventos ainda não conferidos no cadastro oficial: sem preço-teto até estarem conferidos."
+    }
+   ],
+   "historico_preco_mensal": {}
+  },
+  {
+   "papel": "NBA",
+   "nome": "Novabase",
+   "setor": "Tecnologia e serviços",
+   "isin": "PTNBA0AM0006",
+   "grupo": "observacao",
+   "cadastro_proventos": "pendente",
+   "faixa_liquidez": null,
+   "cadastro_completo": false,
+   "preco": null,
+   "data_preco": null,
+   "variacao_12m_pct": null,
+   "proventos_por_ano": {
+    "2021": 0,
+    "2022": 0,
+    "2023": 0,
+    "2024": 0,
+    "2025": 0
+   },
+   "estado_por_ano": {
+    "2021": [],
+    "2022": [],
+    "2023": [],
+    "2024": [],
+    "2025": []
+   },
+   "proventos_12m": 0,
+   "dpa_medio": 0.0,
+   "dpa_aparado": 0.0,
+   "dy_12m_pct": null,
+   "dy_medio_pct": null,
+   "teto": null,
+   "teto_robusto": null,
+   "faixa_teto": null,
+   "margem_pct": null,
+   "status": "sem_preco",
+   "status_rotulo": "Sem cotação",
+   "liquidez_mediana_12m_eur": null,
+   "pct_dias_sem_negocio_12m": null,
+   "pct_eventos_oficiais": null,
+   "tem_scrip": false,
+   "eventos": [],
+   "alertas": [
+    {
+     "nivel": "grave",
+     "codigo": "sem_preco",
+     "texto": "Sem cotação na fonte: o painel não calcula margem."
+    },
+    {
+     "nivel": "atencao",
+     "codigo": "anos_sem_proventos",
+     "texto": "Sem proventos em 2021, 2022, 2023, 2024, 2025: a média de 5 anos fica mais baixa e o teto também."
+    },
+    {
+     "nivel": "info",
+     "codigo": "fora_nucleo",
+     "texto": "Em observação: fora do núcleo de alta liquidez (faixa sem dados)."
+    },
+    {
+     "nivel": "info",
+     "codigo": "cadastro_pendente",
+     "texto": "Proventos ainda não conferidos no cadastro oficial: sem preço-teto até estarem conferidos."
+    }
+   ],
+   "historico_preco_mensal": {}
+  },
+  {
    "papel": "NOS",
    "nome": "NOS",
    "setor": "Telecomunicações e media",
    "isin": "PTZON0AM0006",
+   "grupo": "nucleo",
+   "cadastro_proventos": "completo",
+   "faixa_liquidez": "alta",
+   "cadastro_completo": true,
    "preco": 5.31,
    "data_preco": "2026-11-04",
    "variacao_12m_pct": 44.3,
@@ -2497,6 +3072,10 @@
    "nome": "The Navigator Company",
    "setor": "Papel e celulose",
    "isin": "PTPTI0AM0006",
+   "grupo": "nucleo",
+   "cadastro_proventos": "completo",
+   "faixa_liquidez": "alta",
+   "cadastro_completo": true,
    "preco": 3.064,
    "data_preco": "2026-11-04",
    "variacao_12m_pct": 1.0,
@@ -2736,10 +3315,146 @@
    }
   },
   {
+   "papel": "PHR",
+   "nome": "Pharol",
+   "setor": "Holding (sem atividade operacional relevante)",
+   "isin": "PTPTC0AM0009",
+   "grupo": "observacao",
+   "cadastro_proventos": "pendente",
+   "faixa_liquidez": null,
+   "cadastro_completo": false,
+   "preco": null,
+   "data_preco": null,
+   "variacao_12m_pct": null,
+   "proventos_por_ano": {
+    "2021": 0,
+    "2022": 0,
+    "2023": 0,
+    "2024": 0,
+    "2025": 0
+   },
+   "estado_por_ano": {
+    "2021": [],
+    "2022": [],
+    "2023": [],
+    "2024": [],
+    "2025": []
+   },
+   "proventos_12m": 0,
+   "dpa_medio": 0.0,
+   "dpa_aparado": 0.0,
+   "dy_12m_pct": null,
+   "dy_medio_pct": null,
+   "teto": null,
+   "teto_robusto": null,
+   "faixa_teto": null,
+   "margem_pct": null,
+   "status": "sem_preco",
+   "status_rotulo": "Sem cotação",
+   "liquidez_mediana_12m_eur": null,
+   "pct_dias_sem_negocio_12m": null,
+   "pct_eventos_oficiais": null,
+   "tem_scrip": false,
+   "eventos": [],
+   "alertas": [
+    {
+     "nivel": "grave",
+     "codigo": "sem_preco",
+     "texto": "Sem cotação na fonte: o painel não calcula margem."
+    },
+    {
+     "nivel": "atencao",
+     "codigo": "anos_sem_proventos",
+     "texto": "Sem proventos em 2021, 2022, 2023, 2024, 2025: a média de 5 anos fica mais baixa e o teto também."
+    },
+    {
+     "nivel": "info",
+     "codigo": "fora_nucleo",
+     "texto": "Em observação: fora do núcleo de alta liquidez (faixa sem dados)."
+    },
+    {
+     "nivel": "info",
+     "codigo": "cadastro_pendente",
+     "texto": "Proventos ainda não conferidos no cadastro oficial: sem preço-teto até estarem conferidos."
+    }
+   ],
+   "historico_preco_mensal": {}
+  },
+  {
+   "papel": "RAM",
+   "nome": "Ramada Investimentos",
+   "setor": "Construção e imobiliário",
+   "isin": "PTFRV0AE0004",
+   "grupo": "observacao",
+   "cadastro_proventos": "pendente",
+   "faixa_liquidez": null,
+   "cadastro_completo": false,
+   "preco": null,
+   "data_preco": null,
+   "variacao_12m_pct": null,
+   "proventos_por_ano": {
+    "2021": 0,
+    "2022": 0,
+    "2023": 0,
+    "2024": 0,
+    "2025": 0
+   },
+   "estado_por_ano": {
+    "2021": [],
+    "2022": [],
+    "2023": [],
+    "2024": [],
+    "2025": []
+   },
+   "proventos_12m": 0,
+   "dpa_medio": 0.0,
+   "dpa_aparado": 0.0,
+   "dy_12m_pct": null,
+   "dy_medio_pct": null,
+   "teto": null,
+   "teto_robusto": null,
+   "faixa_teto": null,
+   "margem_pct": null,
+   "status": "sem_preco",
+   "status_rotulo": "Sem cotação",
+   "liquidez_mediana_12m_eur": null,
+   "pct_dias_sem_negocio_12m": null,
+   "pct_eventos_oficiais": null,
+   "tem_scrip": false,
+   "eventos": [],
+   "alertas": [
+    {
+     "nivel": "grave",
+     "codigo": "sem_preco",
+     "texto": "Sem cotação na fonte: o painel não calcula margem."
+    },
+    {
+     "nivel": "atencao",
+     "codigo": "anos_sem_proventos",
+     "texto": "Sem proventos em 2021, 2022, 2023, 2024, 2025: a média de 5 anos fica mais baixa e o teto também."
+    },
+    {
+     "nivel": "info",
+     "codigo": "fora_nucleo",
+     "texto": "Em observação: fora do núcleo de alta liquidez (faixa sem dados)."
+    },
+    {
+     "nivel": "info",
+     "codigo": "cadastro_pendente",
+     "texto": "Proventos ainda não conferidos no cadastro oficial: sem preço-teto até estarem conferidos."
+    }
+   ],
+   "historico_preco_mensal": {}
+  },
+  {
    "papel": "RENE",
    "nome": "REN – Redes Energéticas Nacionais",
    "setor": "Redes de energia (regulada)",
    "isin": "PTREL0AM0008",
+   "grupo": "nucleo",
+   "cadastro_proventos": "completo",
+   "faixa_liquidez": "alta",
+   "cadastro_completo": true,
    "preco": 3.595,
    "data_preco": "2026-11-04",
    "variacao_12m_pct": 7.3,
@@ -2985,10 +3700,146 @@
    }
   },
   {
+   "papel": "SCP",
+   "nome": "Sporting SAD",
+   "setor": "Futebol (SAD)",
+   "isin": "PTSCP0AM0001",
+   "grupo": "observacao",
+   "cadastro_proventos": "pendente",
+   "faixa_liquidez": null,
+   "cadastro_completo": false,
+   "preco": null,
+   "data_preco": null,
+   "variacao_12m_pct": null,
+   "proventos_por_ano": {
+    "2021": 0,
+    "2022": 0,
+    "2023": 0,
+    "2024": 0,
+    "2025": 0
+   },
+   "estado_por_ano": {
+    "2021": [],
+    "2022": [],
+    "2023": [],
+    "2024": [],
+    "2025": []
+   },
+   "proventos_12m": 0,
+   "dpa_medio": 0.0,
+   "dpa_aparado": 0.0,
+   "dy_12m_pct": null,
+   "dy_medio_pct": null,
+   "teto": null,
+   "teto_robusto": null,
+   "faixa_teto": null,
+   "margem_pct": null,
+   "status": "sem_preco",
+   "status_rotulo": "Sem cotação",
+   "liquidez_mediana_12m_eur": null,
+   "pct_dias_sem_negocio_12m": null,
+   "pct_eventos_oficiais": null,
+   "tem_scrip": false,
+   "eventos": [],
+   "alertas": [
+    {
+     "nivel": "grave",
+     "codigo": "sem_preco",
+     "texto": "Sem cotação na fonte: o painel não calcula margem."
+    },
+    {
+     "nivel": "atencao",
+     "codigo": "anos_sem_proventos",
+     "texto": "Sem proventos em 2021, 2022, 2023, 2024, 2025: a média de 5 anos fica mais baixa e o teto também."
+    },
+    {
+     "nivel": "info",
+     "codigo": "fora_nucleo",
+     "texto": "Em observação: fora do núcleo de alta liquidez (faixa sem dados)."
+    },
+    {
+     "nivel": "info",
+     "codigo": "cadastro_pendente",
+     "texto": "Proventos ainda não conferidos no cadastro oficial: sem preço-teto até estarem conferidos."
+    }
+   ],
+   "historico_preco_mensal": {}
+  },
+  {
+   "papel": "SCT",
+   "nome": "Toyota Caetano Portugal",
+   "setor": "Automóvel (distribuição)",
+   "isin": "PTSCT0AP0018",
+   "grupo": "observacao",
+   "cadastro_proventos": "pendente",
+   "faixa_liquidez": null,
+   "cadastro_completo": false,
+   "preco": null,
+   "data_preco": null,
+   "variacao_12m_pct": null,
+   "proventos_por_ano": {
+    "2021": 0,
+    "2022": 0,
+    "2023": 0,
+    "2024": 0,
+    "2025": 0
+   },
+   "estado_por_ano": {
+    "2021": [],
+    "2022": [],
+    "2023": [],
+    "2024": [],
+    "2025": []
+   },
+   "proventos_12m": 0,
+   "dpa_medio": 0.0,
+   "dpa_aparado": 0.0,
+   "dy_12m_pct": null,
+   "dy_medio_pct": null,
+   "teto": null,
+   "teto_robusto": null,
+   "faixa_teto": null,
+   "margem_pct": null,
+   "status": "sem_preco",
+   "status_rotulo": "Sem cotação",
+   "liquidez_mediana_12m_eur": null,
+   "pct_dias_sem_negocio_12m": null,
+   "pct_eventos_oficiais": null,
+   "tem_scrip": false,
+   "eventos": [],
+   "alertas": [
+    {
+     "nivel": "grave",
+     "codigo": "sem_preco",
+     "texto": "Sem cotação na fonte: o painel não calcula margem."
+    },
+    {
+     "nivel": "atencao",
+     "codigo": "anos_sem_proventos",
+     "texto": "Sem proventos em 2021, 2022, 2023, 2024, 2025: a média de 5 anos fica mais baixa e o teto também."
+    },
+    {
+     "nivel": "info",
+     "codigo": "fora_nucleo",
+     "texto": "Em observação: fora do núcleo de alta liquidez (faixa sem dados)."
+    },
+    {
+     "nivel": "info",
+     "codigo": "cadastro_pendente",
+     "texto": "Proventos ainda não conferidos no cadastro oficial: sem preço-teto até estarem conferidos."
+    }
+   ],
+   "historico_preco_mensal": {}
+  },
+  {
    "papel": "SEM",
    "nome": "Semapa",
    "setor": "Holding industrial",
    "isin": "PTSEM0AM0004",
+   "grupo": "nucleo",
+   "cadastro_proventos": "completo",
+   "faixa_liquidez": "alta",
+   "cadastro_completo": true,
    "preco": 19.7,
    "data_preco": "2026-11-04",
    "variacao_12m_pct": 11.6,
@@ -3210,10 +4061,146 @@
    }
   },
   {
+   "papel": "SLBEN",
+   "nome": "Benfica SAD",
+   "setor": "Futebol (SAD)",
+   "isin": "PTSLB0AM0010",
+   "grupo": "observacao",
+   "cadastro_proventos": "pendente",
+   "faixa_liquidez": null,
+   "cadastro_completo": false,
+   "preco": null,
+   "data_preco": null,
+   "variacao_12m_pct": null,
+   "proventos_por_ano": {
+    "2021": 0,
+    "2022": 0,
+    "2023": 0,
+    "2024": 0,
+    "2025": 0
+   },
+   "estado_por_ano": {
+    "2021": [],
+    "2022": [],
+    "2023": [],
+    "2024": [],
+    "2025": []
+   },
+   "proventos_12m": 0,
+   "dpa_medio": 0.0,
+   "dpa_aparado": 0.0,
+   "dy_12m_pct": null,
+   "dy_medio_pct": null,
+   "teto": null,
+   "teto_robusto": null,
+   "faixa_teto": null,
+   "margem_pct": null,
+   "status": "sem_preco",
+   "status_rotulo": "Sem cotação",
+   "liquidez_mediana_12m_eur": null,
+   "pct_dias_sem_negocio_12m": null,
+   "pct_eventos_oficiais": null,
+   "tem_scrip": false,
+   "eventos": [],
+   "alertas": [
+    {
+     "nivel": "grave",
+     "codigo": "sem_preco",
+     "texto": "Sem cotação na fonte: o painel não calcula margem."
+    },
+    {
+     "nivel": "atencao",
+     "codigo": "anos_sem_proventos",
+     "texto": "Sem proventos em 2021, 2022, 2023, 2024, 2025: a média de 5 anos fica mais baixa e o teto também."
+    },
+    {
+     "nivel": "info",
+     "codigo": "fora_nucleo",
+     "texto": "Em observação: fora do núcleo de alta liquidez (faixa sem dados)."
+    },
+    {
+     "nivel": "info",
+     "codigo": "cadastro_pendente",
+     "texto": "Proventos ainda não conferidos no cadastro oficial: sem preço-teto até estarem conferidos."
+    }
+   ],
+   "historico_preco_mensal": {}
+  },
+  {
+   "papel": "SNC",
+   "nome": "Sonaecom",
+   "setor": "Telecomunicações e TI",
+   "isin": "PTSNC0AM0006",
+   "grupo": "observacao",
+   "cadastro_proventos": "pendente",
+   "faixa_liquidez": null,
+   "cadastro_completo": false,
+   "preco": null,
+   "data_preco": null,
+   "variacao_12m_pct": null,
+   "proventos_por_ano": {
+    "2021": 0,
+    "2022": 0,
+    "2023": 0,
+    "2024": 0,
+    "2025": 0
+   },
+   "estado_por_ano": {
+    "2021": [],
+    "2022": [],
+    "2023": [],
+    "2024": [],
+    "2025": []
+   },
+   "proventos_12m": 0,
+   "dpa_medio": 0.0,
+   "dpa_aparado": 0.0,
+   "dy_12m_pct": null,
+   "dy_medio_pct": null,
+   "teto": null,
+   "teto_robusto": null,
+   "faixa_teto": null,
+   "margem_pct": null,
+   "status": "sem_preco",
+   "status_rotulo": "Sem cotação",
+   "liquidez_mediana_12m_eur": null,
+   "pct_dias_sem_negocio_12m": null,
+   "pct_eventos_oficiais": null,
+   "tem_scrip": false,
+   "eventos": [],
+   "alertas": [
+    {
+     "nivel": "grave",
+     "codigo": "sem_preco",
+     "texto": "Sem cotação na fonte: o painel não calcula margem."
+    },
+    {
+     "nivel": "atencao",
+     "codigo": "anos_sem_proventos",
+     "texto": "Sem proventos em 2021, 2022, 2023, 2024, 2025: a média de 5 anos fica mais baixa e o teto também."
+    },
+    {
+     "nivel": "info",
+     "codigo": "fora_nucleo",
+     "texto": "Em observação: fora do núcleo de alta liquidez (faixa sem dados)."
+    },
+    {
+     "nivel": "info",
+     "codigo": "cadastro_pendente",
+     "texto": "Proventos ainda não conferidos no cadastro oficial: sem preço-teto até estarem conferidos."
+    }
+   ],
+   "historico_preco_mensal": {}
+  },
+  {
    "papel": "SON",
    "nome": "Sonae",
    "setor": "Retalho e holding",
    "isin": "PTSON0AM0001",
+   "grupo": "nucleo",
+   "cadastro_proventos": "completo",
+   "faixa_liquidez": "alta",
+   "cadastro_completo": true,
    "preco": 2.155,
    "data_preco": "2026-11-04",
    "variacao_12m_pct": 51.3,
@@ -3427,6 +4414,10 @@
    "nome": "Teixeira Duarte",
    "setor": "Construção e imobiliário",
    "isin": "PTTD10AM0000",
+   "grupo": "nucleo",
+   "cadastro_proventos": "completo",
+   "faixa_liquidez": "alta",
+   "cadastro_completo": true,
    "preco": 0.42,
    "data_preco": "2026-11-04",
    "variacao_12m_pct": -38.4,
@@ -3730,6 +4721,132 @@
     "status": "sem_proventos",
     "rotulo": "Sem proventos nos últimos 5 anos",
     "preco": 0.419,
+    "teto": null
+   }
+  ],
+  "ESON": [
+   {
+    "data": "2026-11-06",
+    "status": "sem_preco",
+    "rotulo": "Sem cotação",
+    "preco": null,
+    "teto": null
+   }
+  ],
+  "FCP": [
+   {
+    "data": "2026-11-06",
+    "status": "sem_preco",
+    "rotulo": "Sem cotação",
+    "preco": null,
+    "teto": null
+   }
+  ],
+  "FLEXD": [
+   {
+    "data": "2026-11-06",
+    "status": "sem_preco",
+    "rotulo": "Sem cotação",
+    "preco": null,
+    "teto": null
+   }
+  ],
+  "GLINT": [
+   {
+    "data": "2026-11-06",
+    "status": "sem_preco",
+    "rotulo": "Sem cotação",
+    "preco": null,
+    "teto": null
+   }
+  ],
+  "IPR": [
+   {
+    "data": "2026-11-06",
+    "status": "sem_preco",
+    "rotulo": "Sem cotação",
+    "preco": null,
+    "teto": null
+   }
+  ],
+  "MAR": [
+   {
+    "data": "2026-11-06",
+    "status": "sem_preco",
+    "rotulo": "Sem cotação",
+    "preco": null,
+    "teto": null
+   }
+  ],
+  "MCP": [
+   {
+    "data": "2026-11-06",
+    "status": "sem_preco",
+    "rotulo": "Sem cotação",
+    "preco": null,
+    "teto": null
+   }
+  ],
+  "NBA": [
+   {
+    "data": "2026-11-06",
+    "status": "sem_preco",
+    "rotulo": "Sem cotação",
+    "preco": null,
+    "teto": null
+   }
+  ],
+  "PHR": [
+   {
+    "data": "2026-11-06",
+    "status": "sem_preco",
+    "rotulo": "Sem cotação",
+    "preco": null,
+    "teto": null
+   }
+  ],
+  "RAM": [
+   {
+    "data": "2026-11-06",
+    "status": "sem_preco",
+    "rotulo": "Sem cotação",
+    "preco": null,
+    "teto": null
+   }
+  ],
+  "SCP": [
+   {
+    "data": "2026-11-06",
+    "status": "sem_preco",
+    "rotulo": "Sem cotação",
+    "preco": null,
+    "teto": null
+   }
+  ],
+  "SCT": [
+   {
+    "data": "2026-11-06",
+    "status": "sem_preco",
+    "rotulo": "Sem cotação",
+    "preco": null,
+    "teto": null
+   }
+  ],
+  "SLBEN": [
+   {
+    "data": "2026-11-06",
+    "status": "sem_preco",
+    "rotulo": "Sem cotação",
+    "preco": null,
+    "teto": null
+   }
+  ],
+  "SNC": [
+   {
+    "data": "2026-11-06",
+    "status": "sem_preco",
+    "rotulo": "Sem cotação",
+    "preco": null,
     "teto": null
    }
   ]

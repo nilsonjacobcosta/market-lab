@@ -50,6 +50,11 @@ Página: `portugal/monitor/` (publicada como material de estudo; cartão na pág
 Sites que bloqueiam leitura automática da nuvem (abrir no Chrome do dono): Millennium bcp, Navigator, Altri (links gerados por script), CMVM.
 
 ## Runbook 2 — revisão do universo
+
+Universo atual: 30 emitentes (16 no núcleo, 14 em observação). Campos em `dados/portugal/universo.json`: `grupo` (nucleo/observacao) e `cadastro_proventos` (completo/pendente). Papel em observação com cadastro pendente aparece como "Em cadastro", sem preço-teto. A regra de entrada e saída do núcleo (`regra_grupo` em `painel_pt.py`) é aplicada só nas revisões trimestrais, com a liquidez de cada revisão: entra com 100 mil €/dia; sai só se ficar abaixo de 80 mil €/dia em duas revisões seguidas.
+
+### (texto anterior do runbook 2)
+
 1. Rode o workflow **"Portugal - teste de cobertura"** (manual). Leia no log a tabela de liquidez e o detalhe por papel.
 2. Regra: mediana do volume financeiro diário ≥ 100 mil € e ≤ 5% de dias sem negócio; sem emitentes estrangeiros.
 3. Papel novo: acrescente em `universo.json` (ISIN da lista da Euronext) **e** os proventos de 5 anos no cadastro antes de publicar.

@@ -254,6 +254,11 @@ details.card li+li{margin-top:4px}
     <button type="button" id="m-full" aria-pressed="false">Completo</button>
   </div>
   <input id="q" type="search" placeholder="Procurar código ou empresa" aria-label="Procurar código ou empresa">
+  <select id="f-grupo" aria-label="Grupo de liquidez">
+    <option value="nucleo" selected>Núcleo (alta liquidez)</option>
+    <option value="">Todas, incluindo observação</option>
+    <option value="observacao">Só em observação</option>
+  </select>
   <select id="f-ctrl" aria-label="Controlo acionista">
     <option value="">Todo o controlo</option>
     <option value="estado">Com participação de um Estado</option>
@@ -276,6 +281,7 @@ details.card li+li{margin-top:4px}
 <section class="method" aria-label="Método">
   <div class="card"><span class="eyebrow">Como calculamos</span><h3>DPA, rendimento e preço-teto</h3><p><b>DPA médio</b>: média dos proventos brutos por ação pagos em cada um dos 5 últimos anos civis completos (data de pagamento), só do cadastro oficial. Dividendos em ações (scrip) contam pelo valor de referência; distribuições em espécie não contam. <b>Preço-teto</b> = DPA médio ÷ taxa exigida. <b>Taxa exigida</b> = média de 12 meses do juro das obrigações do Tesouro português a 10 anos (série do BCE) + <span class="p-premio"></span> pontos, com mínimo de <span class="p-min"></span>%. O modo Completo mostra também o teto <b>robusto</b> (sem o melhor e o pior ano) e a faixa com a taxa ±<span class="p-faixa"></span> ponto.</p></div>
   <div class="card"><span class="eyebrow">Regras de alerta</span><h3>Grave, Atenção ou nenhum alerta</h3><p><b>Grave</b>: sem cotação. <b>Atenção</b>: preço atrasado face ao calendário da Euronext, anos sem proventos, proventos ainda sem documento oficial, queda de proventos acima de 30%, liquidez abaixo do corte do universo, muitos dias sem negócio, ou provento que aparece na fonte de preços mas não no cadastro oficial. As regras não captam tudo: “nenhum alerta automático” não quer dizer seguro.</p></div>
+  <div class="card"><span class="eyebrow">Núcleo e observação</span><h3>Quem está na lista</h3><p><b>Núcleo</b>: cotadas com liquidez mediana de 12 meses de 100 mil € por dia ou mais. <b>Em observação</b>: as restantes cotadas portuguesas, com liquidez Média (25 a 100 mil €/dia) ou Baixa (menos de 25 mil €/dia). Uma empresa entra no núcleo com 100 mil €/dia e só sai se ficar abaixo de 80 mil €/dia em duas revisões seguidas. Em observação, o painel só calcula o preço-teto depois de conferir os proventos no cadastro oficial. Estar em observação não é uma avaliação da empresa.</p></div>
   <div class="card"><span class="eyebrow">Qualidade financeira · BETA</span><h3>ROE, endividamento e payout</h3><p>Calculados com o relatório anual consolidado que cada empresa publica em formato eletrónico europeu (ESEF), lido em filings.xbrl.org. <b>ROE</b>: lucro atribuível aos acionistas ÷ capital próprio médio do ano. <b>Payout</b>: dividendo por ação do exercício (cadastro oficial) ÷ lucro por ação básico. <b>Dívida líquida/EBITDA</b>: (empréstimos + locações − caixa) ÷ (resultado operacional + depreciações); não se aplica a bancos. Nota de 0 a 3 com as <b>mesmas faixas e regras do Monitor BESST</b>; fica <b>provisória</b> (⚠) quando algum valor precisou de reconstrução ou está fora do intervalo usual. Sem dado confiável, mostramos “sem nota” com o motivo, nunca uma nota baixa.</p></div>
   <div class="card"><span class="eyebrow">Controlo acionista</span><h3>Quem manda na empresa</h3><p>Classificação pelas participações qualificadas publicadas pela própria empresa (página de investidores ou relatório de governo societário), com imprensa reconhecida só para mudanças mais recentes. <b>Participação estatal</b>: um Estado, português ou estrangeiro, tem 5% ou mais sem controlar. Indicamos também se há um acionista com maioria, um acionista de referência sem maioria ou capital disperso. Revista em <span id="ctrl-rev"></span>; próxima revisão em <span id="ctrl-prox"></span>. Abra a ficha para ver o controlador, a fonte e a data.</p></div>
   <div class="card"><span class="eyebrow">Impostos · residente em Portugal</span><h3>28% retidos na fonte</h3><p>Dividendos de empresas portuguesas pagos a pessoas singulares residentes sofrem retenção de 28% a título liberatório. Há opção de englobamento: os dividendos contam por 50% (art. 40.º-A do Código do IRS) e são tributados às taxas gerais, mas a opção obriga a englobar todos os rendimentos de capitais do ano. Fonte: <a href="https://occ.pt/pt-pt/noticias/irs-enquadramento-fiscal-na-distribuicao-de-lucros" target="_blank" rel="noopener">Ordem dos Contabilistas Certificados</a>. Não substitui aconselhamento fiscal.</p></div>
@@ -329,13 +335,16 @@ const dpt=s=>{if(!s)return"–";const [a,m,d]=String(s).slice(0,10).split("-");r
 const GR={"Banca":"Banca","Energia":"Energia","Energia renovável":"Energia","Petróleo, gás e energia":"Energia","Redes de energia (regulada)":"Energia",
   "Telecomunicações e media":"Telecomunicações","Retalho alimentar":"Retalho","Retalho e holding":"Retalho",
   "Celulose e materiais":"Materiais e indústria","Cortiça e materiais":"Materiais e indústria","Papel e celulose":"Materiais e indústria","Holding industrial":"Materiais e indústria",
-  "Construção e engenharia":"Construção","Construção e imobiliário":"Construção","Correios e serviços financeiros":"Serviços","Restauração":"Serviços"};
+  "Construção e engenharia":"Construção","Construção e imobiliário":"Construção","Correios e serviços financeiros":"Serviços","Restauração":"Serviços",
+  "Holding (sem atividade operacional relevante)":"Serviços","Media e telecomunicações":"Telecomunicações","Media":"Telecomunicações","Telecomunicações e TI":"Telecomunicações",
+  "Tecnologia e serviços":"Serviços","Software e serviços de TI":"Serviços","Futebol (SAD)":"Serviços","Metalomecânica e energia":"Materiais e indústria",
+  "Automóvel (distribuição)":"Materiais e indústria","Turismo e imobiliário":"Serviços","Investimento (sociedade)":"Serviços"};
 const SET=["Banca","Energia","Telecomunicações","Retalho","Materiais e indústria","Construção","Serviços"];
 const LET={"Banca":"B","Energia":"E","Telecomunicações":"T","Retalho":"R","Materiais e indústria":"M","Construção":"C","Serviços":"S"};
 const CT={estatal:"Estado português",estatal_estrangeira:"Estatal estrangeira",participacao_estatal_relevante:"Participação estatal",privada:"Privada"};
 const ESTR={controlo_maioritario:"acionista com maioria",acionista_de_referencia:"acionista de referência sem maioria",acionistas_de_referencia:"acionistas de referência, sem maioria",disperso:"capital disperso",disperso_familiar:"várias holdings familiares, sem maioria"};
-const STC={abaixo:"st-abaixo_teto",abaixo_conferir:"st-abaixo_teto_conferir",acima:"st-acima_teto",sem_proventos:"st-sem_proventos",sem_preco:"st-sem_cotacao"};
-const STL={abaixo:"Abaixo do teto",abaixo_conferir:"Abaixo do teto · conferir dados",acima:"Acima do teto",sem_proventos:"Sem proventos",sem_preco:"Sem cotação"};
+const STC={abaixo:"st-abaixo_teto",abaixo_conferir:"st-abaixo_teto_conferir",acima:"st-acima_teto",sem_proventos:"st-sem_proventos",sem_preco:"st-sem_cotacao",em_cadastro:"st-sem_proventos"};
+const STL={abaixo:"Abaixo do teto",abaixo_conferir:"Abaixo do teto · conferir dados",acima:"Acima do teto",sem_proventos:"Sem proventos",sem_preco:"Sem cotação",em_cadastro:"Em cadastro"};
 const DEF={
   nome:["Empresa","Nome e código de negociação na Euronext Lisbon. Uma linha por empresa."],
   controlo:["Controlo","Quem manda na empresa: o Estado português, uma estatal de outro país, um Estado com fatia relevante sem controlar, ou acionistas privados."],
@@ -353,6 +362,7 @@ const DEF={
   payout:["Payout","Dividendo por ação do exercício ÷ lucro por ação básico do mesmo exercício."],
   div_liq_ebitda:["Dív. líq./EBITDA","Quantos anos de EBITDA pagariam a dívida líquida (empréstimos + locações − caixa). Não se aplica a bancos."],
   liquidez:["Liquidez/dia","Mediana do volume financeiro diário nos últimos 12 meses."],
+  grupo:["Núcleo / liquidez","Núcleo: liquidez de 100 mil € por dia ou mais. Em observação: as restantes cotadas portuguesas. Liquidez Média: 25 a 100 mil €/dia; Baixa: menos de 25 mil €/dia. Em observação, o preço pode ser difícil de negociar: veja os avisos."],
   alertas:["Alertas","Regras automáticas: Grave (sem cotação) ou Atenção (pontos a conferir na ficha)."]
 };
 const GLOSS=[["DPA","Dividendo por ação, bruto (antes do imposto)."],["Rendimento (dividend yield)","Proventos por ação ÷ preço."],["Scrip","Dividendo pago em ações novas; quem não as quer pode vender os direitos."],["Data ex","A partir deste dia, quem compra a ação já não recebe o provento anunciado."],["Englobamento","Opção de juntar rendimentos aos restantes no IRS, tributados às taxas gerais."],["ESEF","Formato eletrónico europeu dos relatórios anuais das cotadas, com os números etiquetados (iXBRL)."],["ROE","Rentabilidade do capital próprio."],["EBITDA","Resultado operacional antes de depreciações e amortizações."],["Payout","Parte do lucro paga como dividendos."],["Cotada","Empresa com ações admitidas em bolsa."]];
@@ -360,7 +370,7 @@ let P=null, MODE="simple", SECTOR=null, SORT=null, OPEN=null;
 try{if(localStorage.getItem("ml-pt-modo")==="full")MODE="full"}catch(e){}
 
 function cols(){
-  const c=[["nome","Empresa",1],["controlo","Controlo",1],["preco","Preço",1],["dy_12m_pct","Rend. 12m",1],["dy_medio_pct","Rend. médio",1]];
+  const c=[["nome","Empresa",1],["grupo","Núcleo / liquidez",0],["controlo","Controlo",1],["preco","Preço",1],["dy_12m_pct","Rend. 12m",1],["dy_medio_pct","Rend. médio",1]];
   if(MODE==="full")c.push(["dpa_medio","DPA médio",1]);
   c.push(["teto","Preço-teto",0]);
   if(MODE==="full")c.push(["teto_robusto","Teto robusto",0],["faixa","Faixa do teto",0]);
@@ -384,6 +394,8 @@ function cell(l,k){const f=l.qualidade||{},fin=f.regra==="Bancos";
   switch(k){
     case"nome":{const c=l.controlo||{};return `<td class="name"><b>${l.papel}</b> ${esc(l.nome)}<small>${esc(l.setor)}</small>${c.categoria&&c.categoria!=="privada"?`<span class="ct ct-inline ct-${c.categoria}">${CT[c.categoria]}</span>`:""}</td>`}
     case"controlo":{const c=l.controlo;return `<td class="c-ctrl">${c?`<span class="ct ct-${c.categoria}" title="${esc(c.controlador)}">${CT[c.categoria]}</span>`:"–"}</td>`}
+    case"grupo":{const F={alta:"Alta",media:"Média",baixa:"Baixa"}[l.faixa_liquidez]||"–";const nu=l.grupo==="nucleo";
+      return `<td><span class="pill">${nu?"Núcleo":"Observação"} · ${F}</span></td>`}
     case"preco":return `<td>${fmt(l.preco,3)}</td>`;
     case"dy_12m_pct":return `<td>${pct(l.dy_12m_pct)}</td>`;
     case"dy_medio_pct":return `<td>${pct(l.dy_medio_pct)}</td>`;
@@ -422,9 +434,11 @@ function head(){
 
 function render(){
   head();
-  const q=$("q").value.trim().toLowerCase(),fs=$("f-status").value,fa=$("f-alert").checked,fc=$("f-ctrl").value;
+  const q=$("q").value.trim().toLowerCase(),fs=$("f-status").value,fa=$("f-alert").checked,fc=$("f-ctrl").value,fg=$("f-grupo").value;
   let L=P.linhas.filter(l=>(!SECTOR||GR[l.setor]===SECTOR)&&(!q||(l.papel+" "+l.nome+" "+l.setor).toLowerCase().includes(q))
-    &&(!fs||(fs==="outros"?!["abaixo","abaixo_conferir","acima"].includes(l.status):l.status===fs))&&(!fa||niv(l)==="ok")&&(!fc||(fc==="estado"?((l.controlo||{}).categoria||"privada")!=="privada":((l.controlo||{}).categoria||"privada")===fc)));
+    &&(!fg||l.grupo===fg)
+    &&(!fs||(fs==="outros"?!["abaixo","abaixo_conferir","acima"].includes(l.status):l.status===fs))&&(!fa||niv(l)==="ok")
+    &&(!fc||(l.controlo&&(fc==="estado"?l.controlo.categoria!=="privada":l.controlo.categoria===fc))));
   if(SORT){const [k,d]=SORT;L=[...L].sort((a,b)=>{const x=val(a,k),y=val(b,k);if(x==null)return 1;if(y==null)return -1;return(typeof x==="string"?x.localeCompare(y,"pt"):x-y)*d})}
   const C=cols();
   $("t").querySelector("tbody").innerHTML=L.map(l=>`<tr class="row" data-p="${l.papel}" tabindex="0" aria-expanded="${OPEN===l.papel}">${C.map(([k])=>cell(l,k)).join("")}</tr>`+(OPEN===l.papel?`<tr class="detail"><td colspan="${C.length}"><div class="dwrap">${detail(l)}</div></td></tr>`:"")).join("")||`<tr><td colspan="${C.length}" style="text-align:left">Nenhuma empresa com estes filtros.</td></tr>`;
@@ -526,7 +540,7 @@ document.addEventListener("click",e=>{
   const tr=e.target.closest("tr.row");if(tr&&!e.target.closest("a")){OPEN=OPEN===tr.dataset.p?null:tr.dataset.p;render();const n=document.querySelector(`tr.row[data-p="${tr.dataset.p}"]`);n&&n.focus({preventScroll:true})}
 });
 document.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.matches("tr.row")){e.preventDefault();e.target.click()}if(e.key==="Escape")pop.hidden=true});
-document.addEventListener("input",e=>{if(e.target.dataset&&e.target.dataset.sim)sim(e.target.dataset.sim);if(["q","f-status","f-alert","f-ctrl"].includes(e.target.id))render()});
+document.addEventListener("input",e=>{if(e.target.dataset&&e.target.dataset.sim)sim(e.target.dataset.sim);if(["q","f-status","f-alert","f-ctrl","f-grupo"].includes(e.target.id))render()});
 function setMode(m){MODE=m;$("m-simple").setAttribute("aria-pressed",m==="simple");$("m-full").setAttribute("aria-pressed",m==="full");try{localStorage.setItem("ml-pt-modo",m)}catch(e){}if(P)render()}
 $("m-simple").onclick=()=>setMode("simple");$("m-full").onclick=()=>setMode("full");setMode(MODE);
 addEventListener("resize",()=>{if(P)document.documentElement.style.setProperty("--tblw",$("tbl").clientWidth+"px")});

@@ -156,5 +156,131 @@
    "preco": 0.419,
    "teto": null
   }
+ ],
+ "ESON": [
+  {
+   "data": "2026-11-06",
+   "status": "sem_preco",
+   "rotulo": "Sem cotação",
+   "preco": null,
+   "teto": null
+  }
+ ],
+ "FCP": [
+  {
+   "data": "2026-11-06",
+   "status": "sem_preco",
+   "rotulo": "Sem cotação",
+   "preco": null,
+   "teto": null
+  }
+ ],
+ "FLEXD": [
+  {
+   "data": "2026-11-06",
+   "status": "sem_preco",
+   "rotulo": "Sem cotação",
+   "preco": null,
+   "teto": null
+  }
+ ],
+ "GLINT": [
+  {
+   "data": "2026-11-06",
+   "status": "sem_preco",
+   "rotulo": "Sem cotação",
+   "preco": null,
+   "teto": null
+  }
+ ],
+ "IPR": [
+  {
+   "data": "2026-11-06",
+   "status": "sem_preco",
+   "rotulo": "Sem cotação",
+   "preco": null,
+   "teto": null
+  }
+ ],
+ "MAR": [
+  {
+   "data": "2026-11-06",
+   "status": "sem_preco",
+   "rotulo": "Sem cotação",
+   "preco": null,
+   "teto": null
+  }
+ ],
+ "MCP": [
+  {
+   "data": "2026-11-06",
+   "status": "sem_preco",
+   "rotulo": "Sem cotação",
+   "preco": null,
+   "teto": null
+  }
+ ],
+ "NBA": [
+  {
+   "data": "2026-11-06",
+   "status": "sem_preco",
+   "rotulo": "Sem cotação",
+   "preco": null,
+   "teto": null
+  }
+ ],
+ "PHR": [
+  {
+   "data": "2026-11-06",
+   "status": "sem_preco",
+   "rotulo": "Sem cotação",
+   "preco": null,
+   "teto": null
+  }
+ ],
+ "RAM": [
+  {
+   "data": "2026-11-06",
+   "status": "sem_preco",
+   "rotulo": "Sem cotação",
+   "preco": null,
+   "teto": null
+  }
+ ],
+ "SCP": [
+  {
+   "data": "2026-11-06",
+   "status": "sem_preco",
+   "rotulo": "Sem cotação",
+   "preco": null,
+   "teto": null
+  }
+ ],
+ "SCT": [
+  {
+   "data": "2026-11-06",
+   "status": "sem_preco",
+   "rotulo": "Sem cotação",
+   "preco": null,
+   "teto": null
+  }
+ ],
+ "SLBEN": [
+  {
+   "data": "2026-11-06",
+   "status": "sem_preco",
+   "rotulo": "Sem cotação",
+   "preco": null,
+   "teto": null
+  }
+ ],
+ "SNC": [
+  {
+   "data": "2026-11-06",
+   "status": "sem_preco",
+   "rotulo": "Sem cotação",
+   "preco": null,
+   "teto": null
+  }
  ]
 }

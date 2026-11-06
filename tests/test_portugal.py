@@ -125,6 +125,52 @@ class Calculo(unittest.TestCase):
         self.assertEqual(next(l for l in r["linhas"] if l["papel"] == "BCP")["status"], "sem_preco")
 
 
+class Grupos(unittest.TestCase):
+    def test_trinta_papeis_dezasseis_no_nucleo(self):
+        papeis = UNIVERSO["papeis"]
+        self.assertEqual(len(papeis), 30)
+        self.assertEqual(sum(1 for p in papeis if p["grupo"] == "nucleo"), 16)
+        self.assertEqual(len({p["isin"] for p in papeis}), 30, "ISIN repetido")
+
+    def test_observacao_entra_com_cadastro_pendente(self):
+        for p in UNIVERSO["papeis"]:
+            if p["grupo"] == "observacao":
+                with self.subTest(p=p["papel"]):
+                    self.assertEqual(p["cadastro_proventos"], "pendente")
+            else:
+                self.assertEqual(p.get("cadastro_proventos", "completo"), "completo")
+
+    def test_faixas_de_liquidez(self):
+        self.assertEqual(pt.faixa_liquidez(100000, UNIVERSO), "alta")
+        self.assertEqual(pt.faixa_liquidez(99999, UNIVERSO), "media")
+        self.assertEqual(pt.faixa_liquidez(25000, UNIVERSO), "media")
+        self.assertEqual(pt.faixa_liquidez(24999, UNIVERSO), "baixa")
+        self.assertIsNone(pt.faixa_liquidez(None, UNIVERSO))
+
+    def test_regra_de_entrada_e_saida_do_nucleo(self):
+        # entra com 100 mil
+        self.assertEqual(pt.regra_grupo("observacao", 100000, 90000, UNIVERSO), "nucleo")
+        # sai só com duas revisões abaixo de 80 mil
+        self.assertEqual(pt.regra_grupo("nucleo", 70000, 75000, UNIVERSO), "observacao")
+        self.assertEqual(pt.regra_grupo("nucleo", 70000, 95000, UNIVERSO), "nucleo")  # só uma revisão
+        self.assertEqual(pt.regra_grupo("nucleo", 85000, 70000, UNIVERSO), "nucleo")  # recuperou
+        self.assertEqual(pt.regra_grupo("nucleo", 70000, None, UNIVERSO), "nucleo")  # primeira revisão
+
+    def test_observacao_sem_cadastro_nao_tem_teto(self):
+        hoje = datetime(2026, 11, 4, 19, tzinfo=timezone.utc)
+        serie = [[(hoje.date() - timedelta(days=i)).isoformat(), 5.0, 100000] for i in range(370, -1, -1)]
+        brutos = {"precos": {"PHR": {"serie": serie, "precos_mes": {}, "divs_fonte": []}},
+                  "taxa_bce": {"obs": [["2026-%02d" % m, 3.0] for m in range(1, 13)]}}
+        uni = dict(UNIVERSO, papeis=[dict(p, grupo="observacao", cadastro_proventos="pendente") for p in UNIVERSO["papeis"] if p["papel"] == "PHR"])
+        r = pt.calcular(uni, PARAMS, [], brutos, hoje)
+        l = r["linhas"][0]
+        self.assertEqual(l["status"], "em_cadastro")
+        self.assertIsNone(l["teto"])
+        self.assertIsNone(l["margem_pct"])
+        self.assertIn("cadastro_pendente", [a["codigo"] for a in l["alertas"]])
+        self.assertIn("fora_nucleo", [a["codigo"] for a in l["alertas"]])
+
+
 class J2Pagina(unittest.TestCase):
     def test_pagina_tem_avisos_e_nao_tem_linguagem_de_compra(self):
         html = (RAIZ / "portugal/monitor/index.html").read_text(encoding="utf-8")
@@ -148,8 +194,10 @@ class Aceite(unittest.TestCase):
         self.assertGreaterEqual(self.p["taxa"]["taxa_exigida_pct"], PARAMS["taxa_minima_pct"])
 
     def test_cobertura_de_precos(self):
-        com = sum(1 for l in self.p["linhas"] if l["preco"])
-        self.assertGreaterEqual(com, len(self.p["linhas"]) - 1, "mais de um papel sem preço")
+        # Exigência sobre o núcleo. Em observação, cotação em falta mostra "Sem cotação" e não bloqueia a publicação.
+        nucleo = [l for l in self.p["linhas"] if l.get("grupo", "nucleo") == "nucleo"]
+        com = sum(1 for l in nucleo if l["preco"])
+        self.assertGreaterEqual(com, len(nucleo) - 1, "mais de um papel do núcleo sem preço")
 
     def test_coerencia(self):
         for l in self.p["linhas"]:
@@ -201,7 +249,8 @@ class Fundamentos(unittest.TestCase):
 class Controlo(unittest.TestCase):
     def test_cadastro_completo_e_com_fonte(self):
         c = json.loads((RAIZ / "dados/portugal/controlo.json").read_text(encoding="utf-8"))
-        papeis = {p["papel"] for p in UNIVERSO["papeis"]}
+        # Controlo das 14 empresas em observação ainda não foi classificado (passo 5 do plano): só o núcleo é exigido.
+        papeis = {p["papel"] for p in UNIVERSO["papeis"] if p.get("grupo", "nucleo") == "nucleo"}
         self.assertEqual({e["papel"] for e in c["empresas"]}, papeis)
         for e in c["empresas"]:
             with self.subTest(p=e["papel"]):

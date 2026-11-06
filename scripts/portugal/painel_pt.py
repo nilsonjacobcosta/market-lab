@@ -160,6 +160,33 @@ def coletar_taxa_bce(serie):
 
 
 # ---------------------------------------------------------------- cálculo
+def faixa_liquidez(liq, universo):
+    """Alta (>= corte do núcleo), Média, Baixa; None sem dados."""
+    if liq is None:
+        return None
+    if liq >= universo["corte_liquidez_eur"]:
+        return "alta"
+    if liq >= universo.get("corte_media_eur", 25000):
+        return "media"
+    return "baixa"
+
+
+def regra_grupo(grupo, liq, liq_revisao_anterior, universo):
+    """Regra de entrada e saída do núcleo. Usada só nas revisões do universo (runbook 2), nunca na coleta diária.
+
+    Entra no núcleo com liquidez >= corte. Sai só se a liquidez ficar abaixo do corte de saída
+    nesta revisão e também na revisão anterior (evita entra-e-sai a cada trimestre).
+    """
+    if liq is None:
+        return grupo
+    if grupo == "observacao" and liq >= universo["corte_liquidez_eur"]:
+        return "nucleo"
+    if (grupo == "nucleo" and liq < universo["corte_saida_eur"]
+            and liq_revisao_anterior is not None and liq_revisao_anterior < universo["corte_saida_eur"]):
+        return "observacao"
+    return grupo
+
+
 def calcular(universo, params, eventos, brutos, agora):
     hoje = agora.date()
     ano_fim = hoje.year - 1
@@ -210,10 +237,12 @@ def calcular(universo, params, eventos, brutos, agora):
         sem_neg = round(100 * sum(1 for x in fin if x == 0) / len(fin), 1) if fin else None
         variacao_12m = round(100 * (preco / ult12[0][0] - 1), 1) if preco and ult12 else None
 
-        teto = round(dpa_medio / (exigida / 100), 4) if dpa_medio > 0 else None
-        teto_robusto = round(dpa_aparado / (exigida / 100), 4) if dpa_aparado > 0 else None
+        grupo = p.get("grupo", "nucleo")
+        cadastro_ok = p.get("cadastro_proventos", "completo") == "completo"
+        teto = round(dpa_medio / (exigida / 100), 4) if dpa_medio > 0 and cadastro_ok else None
+        teto_robusto = round(dpa_aparado / (exigida / 100), 4) if dpa_aparado > 0 and cadastro_ok else None
         faixa = None
-        if dpa_medio > 0:
+        if dpa_medio > 0 and cadastro_ok:
             faixa = [round(dpa_medio / ((exigida + params["faixa_pp"]) / 100), 4),
                      round(dpa_medio / (max(exigida - params["faixa_pp"], 0.5) / 100), 4)]
         margem = round(100 * (teto / preco - 1), 1) if teto and preco else None
@@ -235,10 +264,16 @@ def calcular(universo, params, eventos, brutos, agora):
             add("info", "especie", "Houve distribuição em espécie (" + ", ".join(e["data_pagamento"] for e in especie) + "), não contada nos proventos.")
         if tem_scrip:
             add("info", "scrip", "Parte dos proventos foi paga em ações (scrip). Conta-se o valor de referência por ação indicado pela empresa.")
-        if liq is not None and liq < universo["corte_liquidez_eur"]:
-            add("atencao", "liquidez", f"Liquidez abaixo do corte do universo ({liq:,.0f} €/dia).".replace(",", "."))
-        if sem_neg is not None and sem_neg > universo["max_pct_dias_sem_negocio"]:
+        if grupo == "observacao":
+            add("info", "fora_nucleo", "Em observação: fora do núcleo de alta liquidez (faixa " + (faixa_liquidez(liq, universo) or "sem dados") + ").")
+        elif liq is not None and liq < universo["corte_liquidez_eur"]:
+            add("atencao", "liquidez", f"Liquidez abaixo do corte do núcleo ({liq:,.0f} €/dia).".replace(",", "."))
+        if sem_neg is not None and sem_neg > 20:
+            add("atencao", "negociacao_intermitente", f"Negociação intermitente: {sem_neg}% dos dias sem negócio em 12 meses; o último preço pode não corresponder a um negócio real.")
+        elif sem_neg is not None and sem_neg > universo["max_pct_dias_sem_negocio"]:
             add("atencao", "dias_sem_negocio", f"{sem_neg}% de dias sem negócio em 12 meses.")
+        if not cadastro_ok:
+            add("info", "cadastro_pendente", "Proventos ainda não conferidos no cadastro oficial: sem preço-teto até estarem conferidos.")
         if vals[-1] > 0 and vals[-2] > 0 and vals[-1] < 0.7 * vals[-2]:
             add("atencao", "queda_proventos", f"Proventos de {anos[-1]} caíram mais de 30% face a {anos[-2]}.")
         # Fonte de cotações como detector: evento de provento na fonte sem evento no cadastro até 45 dias.
@@ -255,6 +290,8 @@ def calcular(universo, params, eventos, brutos, agora):
 
         if not serie:
             status, rotulo = "sem_preco", "Sem cotação"
+        elif not cadastro_ok:
+            status, rotulo = "em_cadastro", "Em cadastro: proventos por conferir"
         elif dpa_medio == 0:
             status, rotulo = "sem_proventos", "Sem proventos nos últimos 5 anos"
         elif preco <= teto:
@@ -264,6 +301,7 @@ def calcular(universo, params, eventos, brutos, agora):
 
         linhas.append({
             **p,
+            "grupo": grupo, "faixa_liquidez": faixa_liquidez(liq, universo), "cadastro_completo": cadastro_ok,
             "preco": preco, "data_preco": data_preco, "variacao_12m_pct": variacao_12m,
             "proventos_por_ano": por_ano, "estado_por_ano": est_anos,
             "proventos_12m": d12, "dpa_medio": dpa_medio, "dpa_aparado": dpa_aparado,
@@ -368,7 +406,8 @@ def main():
         "autor": params["autor"],
         "aviso": "Material educativo, não é recomendação de investimento.",
         "parametros": params,
-        "universo": {k: universo[k] for k in ("revisado_em", "proxima_revisao", "criterio", "corte_liquidez_eur", "max_pct_dias_sem_negocio")},
+        "universo": {k: universo[k] for k in ("revisado_em", "proxima_revisao", "criterio", "corte_liquidez_eur", "corte_media_eur",
+                                             "corte_saida_eur", "max_pct_dias_sem_negocio", "regra_grupo")},
         "universo_alertas": universo_alertas,
         "n_euronext_xlis": len(euronext) or None,
         **res,
