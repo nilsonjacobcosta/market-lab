@@ -1,0 +1,1574 @@
+{
+ "gerado_em": "2026-11-07 03:06",
+ "papeis": {
+  "ALTR": {
+   "lei": "213800AKSTYRLHY3X497",
+   "setor": "Celulose e materiais",
+   "anos": [
+    {
+     "ano": 2020,
+     "lucro": 34968479.0,
+     "receita": null,
+     "roe": 7.7,
+     "divida_liquida": 521769203.0
+    },
+    {
+     "ano": 2021,
+     "lucro": 135229824.0,
+     "receita": null,
+     "roe": 27.4,
+     "divida_liquida": 390250295.0
+    },
+    {
+     "ano": 2022,
+     "lucro": 436180279.0,
+     "receita": null,
+     "roe": 75.9,
+     "divida_liquida": 364973207.0
+    },
+    {
+     "ano": 2023,
+     "lucro": 41992497.0,
+     "receita": null,
+     "roe": 8.3,
+     "divida_liquida": 418232190.0
+    },
+    {
+     "ano": 2024,
+     "lucro": 107204025.0,
+     "receita": null,
+     "roe": 24.9,
+     "divida_liquida": 277846640.0,
+     "dl_ebitda": 1.27,
+     "roic": 16.5
+    },
+    {
+     "ano": 2025,
+     "lucro": 21377386.0,
+     "receita": null,
+     "roe": 4.9,
+     "divida_liquida": 412223556.0,
+     "dl_ebitda": 4.38,
+     "roic": 4.8
+    }
+   ]
+  },
+  "BCP": {
+   "lei": "JU1U6S0DG9YLT7N8ZV32",
+   "setor": "Banca",
+   "anos": [
+    {
+     "ano": 2020,
+     "lucro": 192845000.0,
+     "receita": null,
+     "roe": 2.8,
+     "divida_liquida": -579997000.0,
+     "dl_ebitda": -0.47,
+     "roic": 12.2
+    },
+    {
+     "ano": 2021,
+     "lucro": -45889000.0,
+     "receita": null,
+     "roe": -0.7,
+     "divida_liquida": -601772000.0,
+     "dl_ebitda": -0.46,
+     "roic": 13.5
+    },
+    {
+     "ano": 2022,
+     "lucro": 124138000.0,
+     "receita": null,
+     "roe": 2.2,
+     "divida_liquida": -593033000.0,
+     "dl_ebitda": -1.21,
+     "roic": 4.9
+    },
+    {
+     "ano": 2023,
+     "lucro": 950461000.0,
+     "receita": null,
+     "roe": 14.4,
+     "divida_liquida": -688501000.0,
+     "dl_ebitda": -0.45,
+     "roic": 15.9
+    },
+    {
+     "ano": 2024,
+     "lucro": 1000161000.0,
+     "receita": null,
+     "roe": 12.9,
+     "divida_liquida": -666175000.0,
+     "dl_ebitda": -0.47,
+     "roic": 12.6
+    },
+    {
+     "ano": 2025,
+     "lucro": 1018647000.0,
+     "receita": null,
+     "roe": 11.8,
+     "divida_liquida": -668685000.0,
+     "dl_ebitda": -0.41,
+     "roic": 13.1
+    }
+   ]
+  },
+  "COR": {
+   "lei": "213800J5M11TDEP3LQ76",
+   "setor": "Cortiça e materiais",
+   "anos": [
+    {
+     "ano": 2020,
+     "lucro": 64326000.0,
+     "receita": 740113000.0,
+     "roe": 11.5,
+     "divida_liquida": 110717000.0,
+     "dl_ebitda": 0.9,
+     "roic": 10.7
+    },
+    {
+     "ano": 2021,
+     "lucro": 74755000.0,
+     "receita": 837820000.0,
+     "roe": 12.5,
+     "divida_liquida": 48072000.0,
+     "dl_ebitda": 0.36,
+     "roic": 11.4
+    },
+    {
+     "ano": 2022,
+     "lucro": 98395000.0,
+     "receita": 1021391000.0,
+     "roe": 14.4,
+     "divida_liquida": 128988000.0,
+     "dl_ebitda": 0.79,
+     "roic": 12.5
+    },
+    {
+     "ano": 2023,
+     "lucro": 88897000.0,
+     "receita": 985467000.0,
+     "roe": 11.5,
+     "divida_liquida": 240839000.0,
+     "dl_ebitda": 1.36,
+     "roic": 9.9
+    },
+    {
+     "ano": 2024,
+     "lucro": 69699000.0,
+     "receita": 939061000.0,
+     "roe": 8.5,
+     "divida_liquida": 195687000.0,
+     "dl_ebitda": 1.24,
+     "roic": 8.0
+    },
+    {
+     "ano": 2025,
+     "lucro": 55567000.0,
+     "receita": 860967000.0,
+     "roe": 6.6,
+     "divida_liquida": 75859000.0,
+     "dl_ebitda": 0.54,
+     "roic": 7.1
+    }
+   ]
+  },
+  "CTT": {
+   "lei": "529900G4A1IKOKC22K56",
+   "setor": "Correios e serviços financeiros",
+   "anos": [
+    {
+     "ano": 2020,
+     "lucro": 16669309.0,
+     "receita": 672854025.0,
+     "roe": 11.8,
+     "divida_liquida": -311313418.0,
+     "dl_ebitda": -3.22
+    },
+    {
+     "ano": 2021,
+     "lucro": 38404113.0,
+     "receita": 757727347.0,
+     "roe": 23.7,
+     "divida_liquida": -676753246.0,
+     "dl_ebitda": -5.65
+    },
+    {
+     "ano": 2022,
+     "lucro": 36406519.0,
+     "receita": 788581734.0,
+     "roe": 18.3,
+     "divida_liquida": -260514631.0
+    },
+    {
+     "ano": 2023,
+     "lucro": 60511368.0,
+     "receita": 844606406.0,
+     "roe": 25.5,
+     "divida_liquida": -82594677.0,
+     "roic": 44.8
+    },
+    {
+     "ano": 2024,
+     "lucro": 45536317.0,
+     "receita": 965853487.0,
+     "roe": 18.2,
+     "divida_liquida": -89659742.0,
+     "roic": 28.2
+    },
+    {
+     "ano": 2025,
+     "lucro": 50709394.0,
+     "receita": 1128843214.0,
+     "roe": 20.1,
+     "divida_liquida": -4200754.0,
+     "roic": 21.7
+    }
+   ]
+  },
+  "EDP": {
+   "lei": "529900CLC3WDMGI9VH80",
+   "setor": "Energia",
+   "anos": [
+    {
+     "ano": 2020,
+     "lucro": 800692000.0,
+     "receita": 12448205000.0,
+     "roe": 7.2,
+     "divida_liquida": 13332461000.0
+    },
+    {
+     "ano": 2021,
+     "lucro": 656717000.0,
+     "receita": 14982909000.0,
+     "roe": 6.9,
+     "divida_liquida": 13595527000.0
+    },
+    {
+     "ano": 2022,
+     "lucro": 679001000.0,
+     "receita": 20650764000.0,
+     "roe": 7.5,
+     "divida_liquida": 15122268000.0
+    },
+    {
+     "ano": 2023,
+     "lucro": 952348000.0,
+     "receita": 16202308000.0,
+     "roe": 9.3,
+     "divida_liquida": 17260259000.0
+    },
+    {
+     "ano": 2024,
+     "lucro": 800980000.0,
+     "receita": 14965762000.0,
+     "roe": 6.9,
+     "divida_liquida": 18019551000.0
+    },
+    {
+     "ano": 2025,
+     "lucro": 1149726000.0,
+     "receita": 15606993000.0,
+     "roe": 10.0,
+     "divida_liquida": 17860957000.0
+    }
+   ]
+  },
+  "EDPR": {
+   "lei": "529900MUFAH07Q1TAX06",
+   "setor": "Energia renovável",
+   "anos": [
+    {
+     "ano": 2020,
+     "lucro": 555680000.0,
+     "receita": 1528974000.0,
+     "roe": 7.1,
+     "divida_liquida": 3472132000.0,
+     "dl_ebitda": 2.1,
+     "roic": 6.5
+    },
+    {
+     "ano": 2021,
+     "lucro": 655443000.0,
+     "receita": 1580458000.0,
+     "roe": 8.1,
+     "divida_liquida": 3037165000.0,
+     "dl_ebitda": 1.73,
+     "roic": 6.5
+    },
+    {
+     "ano": 2023,
+     "lucro": null,
+     "receita": null,
+     "divida_liquida": null
+    },
+    {
+     "ano": 2024,
+     "lucro": null,
+     "receita": null,
+     "divida_liquida": null
+    },
+    {
+     "ano": 2025,
+     "lucro": 215801000.0,
+     "receita": 2267128000.0,
+     "roe": 2.1,
+     "divida_liquida": 8172908000.0,
+     "dl_ebitda": 4.2,
+     "roic": 3.5
+    }
+   ]
+  },
+  "EGL": {
+   "lei": "549300L6RR1203WN9F57",
+   "setor": "Construção e engenharia",
+   "anos": [
+    {
+     "ano": 2020,
+     "lucro": -19944000.0,
+     "receita": 2429134000.0,
+     "roe": -16.7,
+     "divida_liquida": null
+    },
+    {
+     "ano": 2021,
+     "lucro": 21641000.0,
+     "receita": 2591776000.0,
+     "roe": 67.2,
+     "divida_liquida": null
+    },
+    {
+     "ano": 2022,
+     "lucro": null,
+     "receita": null,
+     "divida_liquida": null
+    },
+    {
+     "ano": 2023,
+     "lucro": 113153000.0,
+     "receita": 5551897000.0,
+     "roe": 49.3,
+     "divida_liquida": -207320000.0,
+     "dl_ebitda": -0.24,
+     "roic": 71.4
+    },
+    {
+     "ano": 2024,
+     "lucro": 122688000.0,
+     "receita": 5950913000.0,
+     "roe": 48.4,
+     "divida_liquida": -74857000.0,
+     "dl_ebitda": -0.08,
+     "roic": 59.1
+    },
+    {
+     "ano": 2025,
+     "lucro": 133121000.0,
+     "receita": 5301427000.0,
+     "roe": 44.7,
+     "divida_liquida": -399221000.0,
+     "dl_ebitda": -0.41,
+     "roic": 74.0
+    }
+   ]
+  },
+  "ESON": {
+   "lei": "529900CYU630FHT7UL18",
+   "setor": "Turismo e imobiliário",
+   "anos": [
+    {
+     "ano": 2020,
+     "lucro": -20328108.0,
+     "receita": 78759557.0,
+     "roe": -22.5,
+     "divida_liquida": -51568340.0,
+     "dl_ebitda": -8.09,
+     "roic": -28.4
+    },
+    {
+     "ano": 2021,
+     "lucro": 11162223.0,
+     "receita": 88078215.0,
+     "roe": 13.5,
+     "divida_liquida": -59428329.0,
+     "dl_ebitda": -2.41,
+     "roic": 55.5
+    },
+    {
+     "ano": 2022,
+     "lucro": 32848885.0,
+     "receita": 139916190.0,
+     "roe": 31.3,
+     "divida_liquida": -112184008.0,
+     "dl_ebitda": -2.42,
+     "roic": 192.5
+    },
+    {
+     "ano": 2023,
+     "lucro": 5653829.0,
+     "receita": 131496009.0,
+     "roe": 4.5,
+     "divida_liquida": -91685936.0,
+     "dl_ebitda": -2.27,
+     "roic": 57.9
+    },
+    {
+     "ano": 2024,
+     "lucro": -12061366.0,
+     "receita": 127311302.0,
+     "roe": -10.0,
+     "divida_liquida": -87363781.0,
+     "dl_ebitda": -3.94,
+     "roic": 10.8
+    },
+    {
+     "ano": 2025,
+     "lucro": -25252467.0,
+     "receita": 124276855.0,
+     "roe": -25.2,
+     "divida_liquida": -85897529.0,
+     "dl_ebitda": -9.53,
+     "roic": -84.0
+    }
+   ]
+  },
+  "FCP": {
+   "lei": "549300H3W4IIDNIV6I38",
+   "setor": "Futebol (SAD)",
+   "anos": [
+    {
+     "ano": 2022,
+     "lucro": null,
+     "receita": null,
+     "divida_liquida": null
+    },
+    {
+     "ano": 2023,
+     "lucro": null,
+     "receita": null,
+     "divida_liquida": null
+    },
+    {
+     "ano": 2024,
+     "lucro": null,
+     "receita": null,
+     "divida_liquida": null
+    },
+    {
+     "ano": 2025,
+     "lucro": null,
+     "receita": null,
+     "divida_liquida": null
+    }
+   ]
+  },
+  "FLEXD": {
+   "lei": "529900WSOSCVTSE4F530",
+   "setor": "Investimento (sociedade)",
+   "anos": [
+    {
+     "ano": 2023,
+     "lucro": null,
+     "receita": null,
+     "divida_liquida": null
+    },
+    {
+     "ano": 2024,
+     "lucro": null,
+     "receita": null,
+     "divida_liquida": 4081147.0
+    },
+    {
+     "ano": 2025,
+     "lucro": 976552.0,
+     "receita": null,
+     "roe": 4.7,
+     "divida_liquida": -5659593.0,
+     "dl_ebitda": -3.43,
+     "roic": 8.0
+    }
+   ]
+  },
+  "GALP": {
+   "lei": "2138003319Y7NM75FG53",
+   "setor": "Petróleo, gás e energia",
+   "anos": [
+    {
+     "ano": 2020,
+     "lucro": -551000000.0,
+     "receita": null,
+     "roe": -12.5,
+     "divida_liquida": 3154000000.0
+    },
+    {
+     "ano": 2021,
+     "lucro": 4000000.0,
+     "receita": null,
+     "roe": 0.1,
+     "divida_liquida": 3537000000.0
+    },
+    {
+     "ano": 2022,
+     "lucro": 1475000000.0,
+     "receita": null,
+     "roe": 40.9,
+     "divida_liquida": 2832000000.0
+    },
+    {
+     "ano": 2023,
+     "lucro": 1242000000.0,
+     "receita": null,
+     "roe": 29.0,
+     "divida_liquida": 3211000000.0
+    },
+    {
+     "ano": 2024,
+     "lucro": 1040000000.0,
+     "receita": null,
+     "roe": 22.9,
+     "divida_liquida": 2622000000.0
+    },
+    {
+     "ano": 2025,
+     "lucro": 1120000000.0,
+     "receita": null,
+     "roe": 24.6,
+     "divida_liquida": 2549000000.0
+    }
+   ]
+  },
+  "GLINT": {
+   "lei": "9598003URM2KB8KRKA46",
+   "setor": "Software e serviços de TI",
+   "anos": [
+    {
+     "ano": 2020,
+     "lucro": 1262466.0,
+     "receita": 91639068.0,
+     "roe": 1.7,
+     "divida_liquida": 42765409.0,
+     "dl_ebitda": 3.46,
+     "roic": 3.5
+    },
+    {
+     "ano": 2021,
+     "lucro": 1604232.0,
+     "receita": 102573865.0,
+     "roe": 2.1,
+     "divida_liquida": 42673347.0,
+     "dl_ebitda": 3.03,
+     "roic": 4.7
+    },
+    {
+     "ano": 2022,
+     "lucro": 3216639.0,
+     "receita": 112595630.0,
+     "roe": 4.2,
+     "divida_liquida": 39789553.0,
+     "dl_ebitda": 2.21,
+     "roic": 6.3
+    },
+    {
+     "ano": 2023,
+     "lucro": 4030231.0,
+     "receita": 120159761.0,
+     "roe": 5.1,
+     "divida_liquida": 37610549.0,
+     "dl_ebitda": 1.99,
+     "roic": 7.0
+    },
+    {
+     "ano": 2024,
+     "lucro": 5038453.0,
+     "receita": 122330093.0,
+     "roe": 6.2,
+     "divida_liquida": 31346263.0,
+     "dl_ebitda": 1.61,
+     "roic": 7.0
+    },
+    {
+     "ano": 2025,
+     "lucro": 7729335.0,
+     "receita": 139361538.0,
+     "roe": 9.1,
+     "divida_liquida": 27090731.0,
+     "dl_ebitda": 1.38,
+     "roic": 8.8
+    }
+   ]
+  },
+  "IBS": {
+   "lei": "549300ZG20XRKSRKZ238",
+   "setor": "Restauração",
+   "anos": [
+    {
+     "ano": 2020,
+     "lucro": -55197249.0,
+     "receita": null,
+     "roe": -29.8,
+     "divida_liquida": 443532821.0,
+     "dl_ebitda": 10.18,
+     "roic": -6.4
+    },
+    {
+     "ano": 2021,
+     "lucro": 31379907.0,
+     "receita": null,
+     "roe": 16.3,
+     "divida_liquida": 213132681.0,
+     "dl_ebitda": 1.57,
+     "roic": 10.5
+    },
+    {
+     "ano": 2022,
+     "lucro": 159873193.0,
+     "receita": null,
+     "roe": 52.2,
+     "divida_liquida": -76177034.0,
+     "dl_ebitda": -1.25,
+     "roic": 5.4
+    },
+    {
+     "ano": 2023,
+     "lucro": 15413686.0,
+     "receita": null,
+     "roe": 4.2,
+     "divida_liquida": 68923170.0,
+     "dl_ebitda": 0.94,
+     "roic": 4.1
+    },
+    {
+     "ano": 2024,
+     "lucro": 13822465.0,
+     "receita": null,
+     "roe": 4.0,
+     "divida_liquida": 177787693.0,
+     "dl_ebitda": 1.86,
+     "roic": 4.2
+    },
+    {
+     "ano": 2025,
+     "lucro": 15173400.0,
+     "receita": null,
+     "roe": 4.6,
+     "divida_liquida": 168536250.0,
+     "dl_ebitda": 1.27,
+     "roic": 4.6
+    }
+   ]
+  },
+  "IPR": {
+   "lei": "2138004YHORSLQZKAL65",
+   "setor": "Media e telecomunicações",
+   "anos": [
+    {
+     "ano": 2020,
+     "lucro": 11220238.0,
+     "receita": null,
+     "roe": 8.1,
+     "divida_liquida": -8668122.0,
+     "dl_ebitda": -0.28,
+     "roic": 12.8
+    },
+    {
+     "ano": 2021,
+     "lucro": 12623649.0,
+     "receita": null,
+     "roe": 8.4,
+     "divida_liquida": -23889606.0,
+     "dl_ebitda": -0.78,
+     "roic": 14.1
+    },
+    {
+     "ano": 2022,
+     "lucro": 1136068.0,
+     "receita": null,
+     "roe": 0.7,
+     "divida_liquida": -21104123.0,
+     "dl_ebitda": -1.27,
+     "roic": 6.5
+    },
+    {
+     "ano": 2023,
+     "lucro": -1994933.0,
+     "receita": null,
+     "roe": -1.3,
+     "divida_liquida": -13200533.0,
+     "dl_ebitda": -0.86,
+     "roic": 5.7
+    },
+    {
+     "ano": 2025,
+     "lucro": 1153017.0,
+     "receita": null,
+     "roe": 1.3,
+     "divida_liquida": -12200746.0,
+     "dl_ebitda": -0.66,
+     "roic": 13.6
+    }
+   ]
+  },
+  "JMT": {
+   "lei": "259400A8SZP10GB5IB19",
+   "setor": "Retalho alimentar",
+   "anos": [
+    {
+     "ano": 2020,
+     "lucro": 312000000.0,
+     "receita": 19293000000.0,
+     "roe": 14.7,
+     "divida_liquida": 1757000000.0,
+     "dl_ebitda": 1.28,
+     "roic": 11.2
+    },
+    {
+     "ano": 2021,
+     "lucro": 463000000.0,
+     "receita": 20889000000.0,
+     "roe": 21.6,
+     "divida_liquida": 1353000000.0,
+     "dl_ebitda": 0.87,
+     "roic": 15.4
+    },
+    {
+     "ano": 2022,
+     "lucro": 590000000.0,
+     "receita": 25385000000.0,
+     "roe": 25.6,
+     "divida_liquida": 1367000000.0,
+     "dl_ebitda": 0.78,
+     "roic": 18.4
+    },
+    {
+     "ano": 2023,
+     "lucro": 756000000.0,
+     "receita": 30608000000.0,
+     "roe": 29.4,
+     "divida_liquida": 2210000000.0,
+     "dl_ebitda": 1.06,
+     "roic": 17.2
+    },
+    {
+     "ano": 2024,
+     "lucro": 599000000.0,
+     "receita": 33464000000.0,
+     "roe": 20.6,
+     "divida_liquida": 3098000000.0,
+     "dl_ebitda": 1.47,
+     "roic": 12.7
+    },
+    {
+     "ano": 2025,
+     "lucro": 646000000.0,
+     "receita": 35991000000.0,
+     "roe": 20.5,
+     "divida_liquida": 3304000000.0,
+     "dl_ebitda": 1.41,
+     "roic": 13.2
+    }
+   ]
+  },
+  "MAR": {
+   "lei": "959800HYZFJ73QZQLS50",
+   "setor": "Metalomecânica e energia",
+   "anos": [
+    {
+     "ano": 2020,
+     "lucro": 6298203.0,
+     "receita": null,
+     "roe": null,
+     "divida_liquida": 97347748.0,
+     "dl_ebitda": 3.84,
+     "roic": 15.5
+    },
+    {
+     "ano": 2021,
+     "lucro": 11266885.0,
+     "receita": null,
+     "roe": 86.5,
+     "divida_liquida": 90674791.0,
+     "dl_ebitda": 2.89,
+     "roic": 20.8
+    },
+    {
+     "ano": 2022,
+     "lucro": 13340204.0,
+     "receita": null,
+     "roe": 49.7,
+     "divida_liquida": 67132917.0,
+     "dl_ebitda": 2.13,
+     "roic": 23.2
+    },
+    {
+     "ano": 2023,
+     "lucro": 19695658.0,
+     "receita": null,
+     "roe": 43.5,
+     "divida_liquida": 34020383.0,
+     "dl_ebitda": 1.0,
+     "roic": 30.5
+    },
+    {
+     "ano": 2024,
+     "lucro": 22997919.0,
+     "receita": null,
+     "roe": 34.2,
+     "divida_liquida": 4661387.0,
+     "dl_ebitda": 0.12,
+     "roic": 34.2
+    },
+    {
+     "ano": 2025,
+     "lucro": 9465840.0,
+     "receita": null,
+     "roe": 12.2,
+     "divida_liquida": 68927579.0,
+     "dl_ebitda": 2.82,
+     "roic": 10.1
+    }
+   ]
+  },
+  "MCP": {
+   "lei": "959800ZHXLTEGNEFL383",
+   "setor": "Media",
+   "anos": [
+    {
+     "ano": 2020,
+     "lucro": -11095716.0,
+     "receita": null,
+     "roe": -13.3,
+     "divida_liquida": 80149373.0,
+     "roic": -6.7
+    },
+    {
+     "ano": 2021,
+     "lucro": -4079657.0,
+     "receita": null,
+     "roe": -5.4,
+     "divida_liquida": 78320487.0,
+     "dl_ebitda": 271.27,
+     "roic": -3.9
+    },
+    {
+     "ano": 2022,
+     "lucro": 36686838.0,
+     "receita": null,
+     "roe": 42.1,
+     "divida_liquida": 21206801.0,
+     "roic": -5.9
+    },
+    {
+     "ano": 2023,
+     "lucro": 319308.0,
+     "receita": null,
+     "roe": 0.3,
+     "divida_liquida": 20491072.0,
+     "dl_ebitda": 2.22,
+     "roic": 1.2
+    },
+    {
+     "ano": 2024,
+     "lucro": 9260021.0,
+     "receita": null,
+     "roe": 9.4,
+     "divida_liquida": 29309465.0,
+     "dl_ebitda": 1.29,
+     "roic": 8.9
+    },
+    {
+     "ano": 2025,
+     "lucro": 3705900.0,
+     "receita": null,
+     "roe": 3.7,
+     "divida_liquida": 28694695.0,
+     "dl_ebitda": 2.02,
+     "roic": 4.5
+    }
+   ]
+  },
+  "NBA": {
+   "lei": "549300J0TPYCTYE0CL94",
+   "setor": "Tecnologia e serviços",
+   "anos": [
+    {
+     "ano": 2020,
+     "lucro": 7486000.0,
+     "receita": 125080000.0,
+     "roe": 10.3,
+     "divida_liquida": -41004000.0,
+     "dl_ebitda": -3.47,
+     "roic": 19.1
+    },
+    {
+     "ano": 2021,
+     "lucro": 8706000.0,
+     "receita": 138788000.0,
+     "roe": 14.2,
+     "divida_liquida": -46431000.0,
+     "dl_ebitda": -3.67,
+     "roic": 30.0
+    },
+    {
+     "ano": 2022,
+     "lucro": 8917000.0,
+     "receita": 163405000.0,
+     "roe": 14.6,
+     "divida_liquida": -27366000.0,
+     "dl_ebitda": -1.96,
+     "roic": 19.1
+    },
+    {
+     "ano": 2023,
+     "lucro": 47058000.0,
+     "receita": 132556000.0,
+     "roe": 71.3,
+     "divida_liquida": -52495000.0,
+     "dl_ebitda": -4.8,
+     "roic": 16.2
+    },
+    {
+     "ano": 2024,
+     "lucro": 6420000.0,
+     "receita": 134188000.0,
+     "roe": 8.6,
+     "divida_liquida": -42476000.0,
+     "dl_ebitda": -3.77,
+     "roic": 13.2
+    },
+    {
+     "ano": 2025,
+     "lucro": 5485000.0,
+     "receita": 124465000.0,
+     "roe": 8.8,
+     "divida_liquida": -15209000.0,
+     "dl_ebitda": -0.99,
+     "roic": 20.8
+    }
+   ]
+  },
+  "NOS": {
+   "lei": "5493004DM8FGIY6QKF37",
+   "setor": "Telecomunicações e media",
+   "anos": [
+    {
+     "ano": 2020,
+     "lucro": 92000000.0,
+     "receita": null,
+     "roe": 9.4,
+     "divida_liquida": 1377355000.0,
+     "dl_ebitda": 2.52,
+     "roic": 4.9
+    },
+    {
+     "ano": 2021,
+     "lucro": 144159000.0,
+     "receita": null,
+     "roe": 15.1,
+     "divida_liquida": 1565707000.0,
+     "dl_ebitda": 2.57,
+     "roic": 6.9
+    },
+    {
+     "ano": 2022,
+     "lucro": 224574000.0,
+     "receita": null,
+     "roe": 22.4,
+     "divida_liquida": 1622419000.0,
+     "dl_ebitda": 2.16,
+     "roic": 8.8
+    },
+    {
+     "ano": 2023,
+     "lucro": 180995000.0,
+     "receita": null,
+     "roe": 17.8,
+     "divida_liquida": 1715811000.0,
+     "dl_ebitda": 2.29,
+     "roic": 8.8
+    },
+    {
+     "ano": 2024,
+     "lucro": 272259000.0,
+     "receita": null,
+     "roe": 26.3,
+     "divida_liquida": 1539146000.0,
+     "dl_ebitda": 1.75,
+     "roic": 12.5
+    },
+    {
+     "ano": 2025,
+     "lucro": 245875000.0,
+     "receita": null,
+     "roe": 22.4,
+     "divida_liquida": 1660663000.0,
+     "dl_ebitda": 2.06,
+     "roic": 10.4
+    }
+   ]
+  },
+  "NVG": {
+   "lei": "549300UNIB7M2AXUXS35",
+   "setor": "Papel e celulose",
+   "anos": [
+    {
+     "ano": 2020,
+     "lucro": 109213720.0,
+     "receita": 1385360624.0,
+     "roe": 10.6,
+     "divida_liquida": 733091871.0,
+     "dl_ebitda": 2.59,
+     "roic": 6.9
+    },
+    {
+     "ano": 2021,
+     "lucro": 171411455.0,
+     "receita": 1595870445.0,
+     "roe": 16.6,
+     "divida_liquida": 648013722.0,
+     "dl_ebitda": 1.84,
+     "roic": 11.0
+    },
+    {
+     "ano": 2022,
+     "lucro": 392537070.0,
+     "receita": 2464624691.0,
+     "roe": 34.1,
+     "divida_liquida": 443858983.0,
+     "dl_ebitda": 0.6,
+     "roic": 25.6
+    },
+    {
+     "ano": 2023,
+     "lucro": 274923820.0,
+     "receita": 1953242900.0,
+     "roe": 21.4,
+     "divida_liquida": 559876317.0,
+     "dl_ebitda": 1.11,
+     "roic": 15.5
+    },
+    {
+     "ano": 2024,
+     "lucro": 286948195.0,
+     "receita": 2088276553.0,
+     "roe": 21.5,
+     "divida_liquida": 729085786.0,
+     "dl_ebitda": 1.33,
+     "roic": 14.8
+    },
+    {
+     "ano": 2025,
+     "lucro": 144667435.0,
+     "receita": 1969765842.0,
+     "roe": 10.5,
+     "divida_liquida": 836158538.0,
+     "dl_ebitda": 2.2,
+     "roic": 7.6
+    }
+   ]
+  },
+  "PHR": {
+   "lei": "549300JNP3LA8FWLU630",
+   "setor": "Holding (sem atividade operacional relevante)",
+   "anos": [
+    {
+     "ano": 2020,
+     "lucro": -14315915.0,
+     "receita": null,
+     "roe": -9.6,
+     "divida_liquida": -20729910.0,
+     "roic": -1.6
+    },
+    {
+     "ano": 2021,
+     "lucro": -2361092.0,
+     "receita": null,
+     "roe": -1.8,
+     "divida_liquida": -17875543.0,
+     "roic": -2.3
+    },
+    {
+     "ano": 2022,
+     "lucro": -2510290.0,
+     "receita": null,
+     "roe": -3.1,
+     "divida_liquida": -20955489.0,
+     "roic": -3.4
+    },
+    {
+     "ano": 2023,
+     "lucro": -967192.0,
+     "receita": null,
+     "roe": -1.4,
+     "divida_liquida": -17196818.0,
+     "roic": -3.5
+    },
+    {
+     "ano": 2024,
+     "lucro": 24224749.0,
+     "receita": null,
+     "roe": 30.2,
+     "divida_liquida": -15954006.0,
+     "dl_ebitda": -0.67,
+     "roic": 29.6
+    },
+    {
+     "ano": 2025,
+     "lucro": 2100757.0,
+     "receita": null,
+     "roe": 2.3,
+     "divida_liquida": -14971834.0,
+     "dl_ebitda": -13.49,
+     "roic": 1.3
+    }
+   ]
+  },
+  "RAM": {
+   "lei": "213800CQ272Y7QY2HL36",
+   "setor": "Construção e imobiliário",
+   "anos": [
+    {
+     "ano": 2020,
+     "lucro": 6988597.0,
+     "receita": 102702170.0,
+     "roe": 5.5,
+     "divida_liquida": 11458128.0,
+     "dl_ebitda": 0.88,
+     "roic": 5.6
+    },
+    {
+     "ano": 2021,
+     "lucro": 15088651.0,
+     "receita": 142781540.0,
+     "roe": 11.6,
+     "divida_liquida": 11596671.0,
+     "dl_ebitda": 0.52,
+     "roic": 11.2
+    },
+    {
+     "ano": 2022,
+     "lucro": 20033547.0,
+     "receita": 193690105.0,
+     "roe": 15.2,
+     "divida_liquida": 26222439.0,
+     "dl_ebitda": 0.89,
+     "roic": 13.1
+    },
+    {
+     "ano": 2023,
+     "lucro": 10413341.0,
+     "receita": 140238275.0,
+     "roe": 8.1,
+     "divida_liquida": 31262420.0,
+     "dl_ebitda": 1.7,
+     "roic": 8.1
+    },
+    {
+     "ano": 2024,
+     "lucro": 28820557.0,
+     "receita": 10202416.0,
+     "roe": 23.9,
+     "divida_liquida": 990548.0
+    },
+    {
+     "ano": 2025,
+     "lucro": 8813576.0,
+     "receita": 10259767.0,
+     "roe": 8.1,
+     "divida_liquida": -1109853.0
+    }
+   ]
+  },
+  "RENE": {
+   "lei": "549300FR1FN48IGHR915",
+   "setor": "Redes de energia (regulada)",
+   "anos": [
+    {
+     "ano": 2020,
+     "lucro": 109249000.0,
+     "receita": null,
+     "roe": 7.7,
+     "divida_liquida": 2761933000.0,
+     "dl_ebitda": 5.88,
+     "roic": 4.1
+    },
+    {
+     "ano": 2021,
+     "lucro": 97153000.0,
+     "receita": null,
+     "roe": 6.9,
+     "divida_liquida": 2367314000.0,
+     "dl_ebitda": 5.14,
+     "roic": 4.3
+    },
+    {
+     "ano": 2022,
+     "lucro": 111771000.0,
+     "receita": null,
+     "roe": 7.6,
+     "divida_liquida": 1969014000.0,
+     "dl_ebitda": 4.03,
+     "roic": 5.2
+    },
+    {
+     "ano": 2023,
+     "lucro": 149236000.0,
+     "receita": null,
+     "roe": 9.9,
+     "divida_liquida": 2693497000.0,
+     "dl_ebitda": 5.21,
+     "roic": 4.7
+    },
+    {
+     "ano": 2024,
+     "lucro": 152512000.0,
+     "receita": null,
+     "roe": 10.0,
+     "divida_liquida": 2491291000.0,
+     "dl_ebitda": 4.97,
+     "roic": 4.6
+    },
+    {
+     "ano": 2025,
+     "lucro": 159813000.0,
+     "receita": null,
+     "roe": 10.4,
+     "divida_liquida": 2496953000.0,
+     "dl_ebitda": 4.83,
+     "roic": 4.7
+    }
+   ]
+  },
+  "SCP": {
+   "lei": "529900VEXUYO06HWF729",
+   "setor": "Futebol (SAD)",
+   "anos": []
+  },
+  "SCT": {
+   "lei": "213800NI6JNPX5F44U15",
+   "setor": "Automóvel (distribuição)",
+   "anos": [
+    {
+     "ano": 2020,
+     "lucro": 4644726.0,
+     "receita": null,
+     "roe": 3.2,
+     "divida_liquida": 32817660.0,
+     "dl_ebitda": 1.12,
+     "roic": 3.4
+    },
+    {
+     "ano": 2021,
+     "lucro": 11695005.0,
+     "receita": null,
+     "roe": 7.9,
+     "divida_liquida": 25533246.0,
+     "dl_ebitda": 0.64,
+     "roic": 7.8
+    },
+    {
+     "ano": 2022,
+     "lucro": 14701869.0,
+     "receita": null,
+     "roe": 9.5,
+     "divida_liquida": 42884496.0,
+     "dl_ebitda": 1.09,
+     "roic": 8.2
+    },
+    {
+     "ano": 2023,
+     "lucro": 17467624.0,
+     "receita": null,
+     "roe": 10.6,
+     "divida_liquida": 88400520.0
+    },
+    {
+     "ano": 2024,
+     "lucro": 27790475.0,
+     "receita": null,
+     "roe": 15.7,
+     "divida_liquida": 51077668.0,
+     "dl_ebitda": 0.68,
+     "roic": 15.0
+    },
+    {
+     "ano": 2025,
+     "lucro": 25082171.0,
+     "receita": null,
+     "roe": 13.0,
+     "divida_liquida": 26654447.0,
+     "dl_ebitda": 0.4,
+     "roic": 15.5
+    }
+   ]
+  },
+  "SEM": {
+   "lei": "549300HNGOW85KIOH584",
+   "setor": "Holding industrial",
+   "anos": [
+    {
+     "ano": 2020,
+     "lucro": 106588079.0,
+     "receita": 1867370709.0,
+     "roe": 9.6,
+     "divida_liquida": 1295870293.0,
+     "dl_ebitda": 3.13,
+     "roic": 7.3
+    },
+    {
+     "ano": 2021,
+     "lucro": 198128028.0,
+     "receita": 2131384149.0,
+     "roe": 19.4,
+     "divida_liquida": 1112286552.0,
+     "dl_ebitda": 2.21,
+     "roic": 11.8
+    },
+    {
+     "ano": 2022,
+     "lucro": 307089834.0,
+     "receita": 3122019519.0,
+     "roe": 25.4,
+     "divida_liquida": 895393633.0,
+     "dl_ebitda": 1.01,
+     "roic": 19.2
+    },
+    {
+     "ano": 2023,
+     "lucro": 244507409.0,
+     "receita": 2706323930.0,
+     "roe": 17.5,
+     "divida_liquida": 1115972407.0,
+     "dl_ebitda": 1.68,
+     "roic": 12.5
+    },
+    {
+     "ano": 2024,
+     "lucro": 232735949.0,
+     "receita": 2849409236.0,
+     "roe": 15.0,
+     "divida_liquida": 1243191740.0,
+     "dl_ebitda": 1.79,
+     "roic": 11.2
+    },
+    {
+     "ano": 2025,
+     "lucro": 156599440.0,
+     "receita": 2114924032.0,
+     "roe": 9.3,
+     "divida_liquida": 1142386753.0,
+     "dl_ebitda": 2.97,
+     "roic": 3.5
+    }
+   ]
+  },
+  "SLBEN": {
+   "lei": "213800EDIKU4Z4I1R529",
+   "setor": "Futebol (SAD)",
+   "anos": [
+    {
+     "ano": 2022,
+     "lucro": null,
+     "receita": null,
+     "divida_liquida": null
+    },
+    {
+     "ano": 2023,
+     "lucro": null,
+     "receita": null,
+     "divida_liquida": null
+    },
+    {
+     "ano": 2024,
+     "lucro": null,
+     "receita": null,
+     "divida_liquida": null
+    },
+    {
+     "ano": 2025,
+     "lucro": null,
+     "receita": null,
+     "divida_liquida": null
+    }
+   ]
+  },
+  "SNC": {
+   "lei": "549300WZEEMSSMZ1MP04",
+   "setor": "Telecomunicações e TI",
+   "anos": [
+    {
+     "ano": 2020,
+     "lucro": 60125890.0,
+     "receita": null,
+     "roe": 5.5,
+     "divida_liquida": -215532727.0,
+     "dl_ebitda": -3.43,
+     "roic": 4.5
+    },
+    {
+     "ano": 2021,
+     "lucro": 120725659.0,
+     "receita": null,
+     "roe": 10.5,
+     "divida_liquida": -272289586.0,
+     "dl_ebitda": -1.89,
+     "roic": 12.2
+    },
+    {
+     "ano": 2022,
+     "lucro": 143082957.0,
+     "receita": null,
+     "roe": 11.5,
+     "divida_liquida": -374483024.0,
+     "dl_ebitda": -4.55,
+     "roic": 8.3
+    },
+    {
+     "ano": 2023,
+     "lucro": 43785889.0,
+     "receita": null,
+     "roe": 3.4,
+     "divida_liquida": -138286702.0,
+     "dl_ebitda": -3.86,
+     "roic": 2.0
+    },
+    {
+     "ano": 2024,
+     "lucro": 17340777.0,
+     "receita": null,
+     "roe": 1.3,
+     "divida_liquida": -164752063.0,
+     "dl_ebitda": -25.64,
+     "roic": 0.3
+    },
+    {
+     "ano": 2025,
+     "lucro": 51630951.0,
+     "receita": null,
+     "roe": 3.9,
+     "divida_liquida": -205805931.0,
+     "dl_ebitda": -5.07,
+     "roic": 2.5
+    }
+   ]
+  },
+  "SON": {
+   "lei": "549300847SOBT7HY7R50",
+   "setor": "Retalho e holding",
+   "anos": [
+    {
+     "ano": 2020,
+     "lucro": 70944578.0,
+     "receita": null,
+     "roe": 2.8,
+     "divida_liquida": 2327936620.0,
+     "dl_ebitda": 4.78,
+     "roic": 3.0
+    },
+    {
+     "ano": 2021,
+     "lucro": 267652127.0,
+     "receita": null,
+     "roe": 11.8,
+     "divida_liquida": 1769845670.0,
+     "dl_ebitda": 2.36,
+     "roic": 7.6
+    },
+    {
+     "ano": 2022,
+     "lucro": 341554000.0,
+     "receita": null,
+     "roe": 12.8,
+     "divida_liquida": 1679202000.0,
+     "dl_ebitda": 2.09,
+     "roic": 8.8
+    },
+    {
+     "ano": 2023,
+     "lucro": 357062000.0,
+     "receita": null,
+     "roe": 12.3,
+     "divida_liquida": 1960039000.0,
+     "dl_ebitda": 2.05,
+     "roic": 10.3
+    },
+    {
+     "ano": 2024,
+     "lucro": 222665000.0,
+     "receita": null,
+     "roe": 7.3,
+     "divida_liquida": 3325776000.0,
+     "dl_ebitda": 3.28,
+     "roic": 6.3
+    },
+    {
+     "ano": 2025,
+     "lucro": 199222000.0,
+     "receita": null,
+     "roe": 6.4,
+     "divida_liquida": 3209753000.0,
+     "dl_ebitda": 2.82,
+     "roic": 6.4
+    }
+   ]
+  },
+  "TDSA": {
+   "lei": "959800JFY96QF028V484",
+   "setor": "Construção e imobiliário",
+   "anos": [
+    {
+     "ano": 2020,
+     "lucro": 3558000.0,
+     "receita": 608366000.0,
+     "roe": 1.3,
+     "divida_liquida": 693506000.0,
+     "dl_ebitda": 7.02,
+     "roic": 4.2
+    },
+    {
+     "ano": 2021,
+     "lucro": -119140000.0,
+     "receita": 539236000.0,
+     "roe": -62.8,
+     "divida_liquida": 718439000.0,
+     "roic": -8.5
+    },
+    {
+     "ano": 2022,
+     "lucro": -13267000.0,
+     "receita": 833878000.0,
+     "roe": -6.9,
+     "divida_liquida": 698015000.0,
+     "dl_ebitda": 11.87,
+     "roic": 1.5
+    },
+    {
+     "ano": 2023,
+     "lucro": -11750000.0,
+     "receita": 767249000.0,
+     "roe": -6.8,
+     "divida_liquida": 647326000.0,
+     "dl_ebitda": 9.09,
+     "roic": 3.6
+    },
+    {
+     "ano": 2024,
+     "lucro": 25641000.0,
+     "receita": 775153000.0,
+     "roe": 18.5,
+     "divida_liquida": 642998000.0,
+     "dl_ebitda": 6.05,
+     "roic": 6.1
+    },
+    {
+     "ano": 2025,
+     "lucro": 50031000.0,
+     "receita": 705838000.0,
+     "roe": 34.1,
+     "divida_liquida": 511239000.0,
+     "dl_ebitda": 5.65,
+     "roic": 5.1
+    }
+   ]
+  }
+ }
+}
