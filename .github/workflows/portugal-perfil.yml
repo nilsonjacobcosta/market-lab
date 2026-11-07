@@ -1,0 +1,36 @@
+name: Portugal - séries ESEF para o quadro de perfil
+
+# Manual (relatórios anuais mudam pouco). Lê 2020–2025 dos 30 emitentes e publica dados/portugal/perfil_series.json.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: monitor-portugal
+  cancel-in-progress: false
+
+jobs:
+  perfil:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Séries
+        run: python3 scripts/portugal/perfil_esef.py --saida /tmp/perfil_series.json
+      - name: Publicar
+        run: |
+          cp /tmp/perfil_series.json dados/portugal/perfil_series.json
+          python3 scripts/portugal/painel_pt.py
+          python3 -m unittest tests/test_portugal.py
+          git config user.name "market-lab bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add dados/portugal/perfil_series.json dados/portugal/painel.json dados/portugal/historico_status.json
+          if git diff --cached --quiet; then echo "Sem mudanças"; exit 0; fi
+          git commit -m "Monitor Portugal: séries ESEF do quadro de perfil $(date -u +'%Y-%m-%d')"
+          git pull --rebase
+          git push
