@@ -264,5 +264,35 @@ class Controlo(unittest.TestCase):
                 self.assertTrue(e["controlador"] and e["nota"])
 
 
+class Perfil(unittest.TestCase):
+    def l(self, **k):
+        d = {"cadastro_completo": True, "proventos_por_ano": {"2021": .1, "2022": .12, "2023": .12, "2024": .13, "2025": .15}, "qualidade": {}}
+        d.update(k); return d
+
+    def anos(self, lucro, roic, dl=-5.0):
+        return {"anos": [{"ano": 2020 + i, "lucro": lucro, "roic": roic, "dl_ebitda": None, "divida_liquida": dl} for i in range(6)]}
+
+    def test_atende_tudo_automatico(self):
+        r = pt.montar_perfil(self.l(), self.anos(10.0, 15.0))
+        est = {c["id"]: c["estado"] for c in r["criterios"]}
+        self.assertEqual((est["lucros"], est["dividendos"], est["divida"], est["roic"], est["vantagem"]), ("sim", "sim", "sim", "sim", "nd"))
+        self.assertEqual((r["atendidos"], r["avaliaveis"]), (4, 4))
+
+    def test_prejuizo_e_corte_reprovam(self):
+        pa = {"2021": .2, "2022": .1, "2023": .1, "2024": .1, "2025": .1}
+        r = pt.montar_perfil(self.l(proventos_por_ano=pa), self.anos(-1.0, 3.0, dl=50.0))
+        est = {c["id"]: c["estado"] for c in r["criterios"]}
+        self.assertEqual((est["lucros"], est["dividendos"], est["roic"]), ("nao", "nao", "nao"))
+
+    def test_sem_cadastro_ou_banco_nao_inventa(self):
+        r = pt.montar_perfil(self.l(cadastro_completo=False, qualidade={"regra": "Bancos"}), self.anos(5.0, None))
+        est = {c["id"]: c["estado"] for c in r["criterios"]}
+        self.assertEqual((est["dividendos"], est["divida"], est["roic"]), ("nd", "nd", "nd"))
+
+    def test_sem_series_e_nd(self):
+        r = pt.montar_perfil(self.l(), None)
+        self.assertEqual(r["criterios"][0]["estado"], "nd")
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -65,3 +65,8 @@ Reconstituído em 03/11/2026 a partir de `git log`, `gh run list` e dos document
 ## 06/11/2026 — Cadastro de FLEXD e MCP fechado
 - Flexdeal (6 avisos em admin.flexdeal.pt) e Media Capital (4 avisos em mediacapital.pt; 2022 por agregador, estado "coincide"): cadastro "completo".
 - GLINT e ESON: relatórios ESEF só dão o total pago (Glintt 1,5 M€ em 2023, 3,0 M€ em 2024, 3,75 M€ em 2025; Estoril Sol 15,5 M€ em 2023, 6,0 M€ em 2024, 9,85 M€ em 2025), sem dividendo por ação oficial coerente; ficam "Em cadastro" até haver aviso de pagamento.
+
+## 07/11/2026 — Quadro de perfil (passo 4, parte ROIC)
+- `scripts/portugal/perfil_esef.py` + workflow manual `portugal-perfil.yml`: séries 2020–2025 (lucro, ROIC aproximado, dívida líquida/EBITDA) dos 30 em `dados/portugal/perfil_series.json`.
+- `painel_pt.montar_perfil`: critérios de estudo do dono (lucros todos os anos, dividendos sem quedas > 10%, dívida líquida/EBITDA ≤ 2x ou caixa líquida, ROIC médio ≥ 10%; vantagem competitiva é qualitativa). Bancos: dívida e ROIC não se aplicam. Mostrado na ficha da empresa como BETA.
+- Limitação: o relatório eletrónico só dá 6 anos (o pedido era 10); lucros de anos anteriores a 2025 não conferidos à mão (BCP 2021 sai −46 M€, EDPR 2023–2024 sem lucro extraído).

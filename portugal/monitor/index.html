@@ -456,6 +456,13 @@ function ctrlBox(l){
   const risco=c.categoria==="privada"?"":`<p><b>Possível efeito:</b> um acionista público também recebe dividendos e pode influenciar estratégia, investimentos e política de dividendos; mudanças de governo ou de estratégia do país de origem podem mudar o perfil da empresa.</p>`;
   return `<div class="box ${c.categoria==="privada"?"":"state"}"><h4>${tit}</h4><p><b>${esc(c.controlador)}</b> (${ESTR[c.estrutura]||esc(c.estrutura)}).</p><p>${esc(c.nota)}</p>${risco}<p style="font-size:.8rem">Dados de ${/^\d{4}-\d{2}-\d{2}$/.test(c.data_ref||"")?dpt(c.data_ref):esc(c.data_ref)} · confiança ${({alta:"alta",media:"média",baixa:"baixa"})[c.confianca]||esc(c.confianca)} · <a href="${esc(c.fonte)}" target="_blank" rel="noopener">fonte</a></p></div>`;
 }
+function perfilBox(l){
+  const f=l.perfil;if(!f)return"";
+  const IC={sim:"✔",nao:"✖",nd:"–"},TX={sim:"Atende",nao:"Não atende",nd:"Sem dado"};
+  const li=f.criterios.map(c=>`<li><b><span aria-hidden="true">${IC[c.estado]}</span> ${esc(c.rotulo)}</b> <span class="c">${TX[c.estado]} · ${esc(c.detalhe)}</span></li>`).join("");
+  const sr=f.anos.filter(a=>a.lucro!=null||a.roic!=null).map(a=>`${a.ano}: ${a.lucro==null?"–":fmt(a.lucro/1e6,1)+" M€"}${a.roic==null?"":" · ROIC "+fmt(a.roic,1)+"%"}`).join(" · ");
+  return `<div class="box qual"><h4>Quadro de perfil <span class="beta">BETA</span></h4><p>Atende ${f.atendidos} de ${f.avaliaveis} critérios avaliáveis. Quadro de estudo, não é nota nem recomendação.</p><ul style="list-style:none;padding:0">${li}</ul>${sr?`<p style="font-size:.8rem">${esc(sr)}</p>`:""}<p style="font-size:.8rem">ROIC aproximado = resultado operacional após imposto ÷ (capital próprio + dívida líquida), do relatório anual eletrónico. Limites (ROIC ≥ 10%, dívida líquida/EBITDA ≤ 2x, nenhuma queda de dividendo superior a 10% entre anos pagos) são convenções do painel. Só o lucro de 2025 foi conferido com a imprensa; os anos anteriores vêm do relatório eletrónico e podem ter lacunas.</p></div>`
+}
 function qualBox(l){
   const f=l.qualidade,head=`<h4>Qualidade financeira <span class="beta">BETA</span></h4>`;
   if(!f||f.erro)return `<div class="box qual">${head}<p>Sem relatório anual eletrónico para esta empresa${f&&f.erro?": "+esc(f.erro):""}.</p></div>`;
@@ -494,7 +501,7 @@ function detail(l){
   return `<div class="detail-grid"><div class="dcol">
     <p class="resumo">${frase}</p>
     ${al.length?`<div class="box warn"><h4>Alertas</h4><ul>${al.map(a=>`<li>${a.nivel==="info"?"":"<b>"+(a.nivel==="grave"?"Grave":"Atenção")+":</b> "}${esc(a.texto)}</li>`).join("")}</ul></div>`:`<div class="box"><h4>Alertas</h4><p>Nenhum alerta automático. Não quer dizer que é seguro.</p></div>`}
-    ${qualBox(l)}
+    ${qualBox(l)}${perfilBox(l)}
     ${ctrlBox(l)}
     <div class="box sim"><h4>Simulador</h4><label>Valor investido (€) <input type="number" min="0" step="100" value="1000" data-sim="${l.papel}"></label><p id="sim-${l.papel}"></p><p style="font-size:.8rem">Usa o DPA médio de 5 anos e o preço de hoje; ignora comissões e variação do preço. Não é previsão.</p></div>
   </div><div class="dcol">

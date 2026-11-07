@@ -278,6 +278,80 @@
     ],
     "erro": null
    },
+   "perfil": {
+    "criterios": [
+     {
+      "id": "lucros",
+      "rotulo": "Lucros todos os anos",
+      "estado": "sim",
+      "detalhe": "6 de 6 anos com lucro (2020–2025); o pedido é de 10 anos, o relatório eletrónico só dá 6"
+     },
+     {
+      "id": "dividendos",
+      "rotulo": "Dividendos estáveis ou crescentes",
+      "estado": "sim",
+      "detalhe": "pagou em 5 de 5 anos; 0 queda(s) superior(es) a 10%; último ≥ primeiro"
+     },
+     {
+      "id": "divida",
+      "rotulo": "Baixo endividamento",
+      "estado": "nao",
+      "detalhe": "dívida líquida/EBITDA 4.4x em 2025 (limite de estudo: 2x)"
+     },
+     {
+      "id": "roic",
+      "rotulo": "ROIC alto (média ≥ 10%)",
+      "estado": "nd",
+      "detalhe": "menos de 3 anos calculáveis"
+     },
+     {
+      "id": "vantagem",
+      "rotulo": "Vantagem competitiva",
+      "estado": "nd",
+      "detalhe": "avaliação qualitativa, fora do cálculo automático"
+     }
+    ],
+    "atendidos": 2,
+    "avaliaveis": 3,
+    "anos": [
+     {
+      "ano": 2020,
+      "lucro": 34968479.0,
+      "roic": null,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2021,
+      "lucro": 135229824.0,
+      "roic": null,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2022,
+      "lucro": 436180279.0,
+      "roic": null,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2023,
+      "lucro": 41992497.0,
+      "roic": null,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2024,
+      "lucro": 107204025.0,
+      "roic": 16.5,
+      "dl_ebitda": 1.27
+     },
+     {
+      "ano": 2025,
+      "lucro": 21377386.0,
+      "roic": 4.8,
+      "dl_ebitda": 4.38
+     }
+    ]
+   },
    "controlo": {
     "categoria": "privada",
     "estrutura": "disperso_familiar",
@@ -474,6 +548,80 @@
     "relatorio_url": "https://filings.xbrl.org/JU1U6S0DG9YLT7N8ZV32/2025-12-31/ESEF/PT/1/000432-2025-12-31/reports/ixbrlviewer.html",
     "flags": [],
     "erro": null
+   },
+   "perfil": {
+    "criterios": [
+     {
+      "id": "lucros",
+      "rotulo": "Lucros todos os anos",
+      "estado": "nao",
+      "detalhe": "5 de 6 anos com lucro (2020–2025); o pedido é de 10 anos, o relatório eletrónico só dá 6"
+     },
+     {
+      "id": "dividendos",
+      "rotulo": "Dividendos estáveis ou crescentes",
+      "estado": "nao",
+      "detalhe": "pagou em 3 de 5 anos; 0 queda(s) superior(es) a 10%; último ≥ primeiro"
+     },
+     {
+      "id": "divida",
+      "rotulo": "Baixo endividamento",
+      "estado": "nd",
+      "detalhe": "não se aplica a bancos"
+     },
+     {
+      "id": "roic",
+      "rotulo": "ROIC alto (média ≥ 10%)",
+      "estado": "nd",
+      "detalhe": "não se aplica a bancos"
+     },
+     {
+      "id": "vantagem",
+      "rotulo": "Vantagem competitiva",
+      "estado": "nd",
+      "detalhe": "avaliação qualitativa, fora do cálculo automático"
+     }
+    ],
+    "atendidos": 0,
+    "avaliaveis": 2,
+    "anos": [
+     {
+      "ano": 2020,
+      "lucro": 192845000.0,
+      "roic": 12.2,
+      "dl_ebitda": -0.47
+     },
+     {
+      "ano": 2021,
+      "lucro": -45889000.0,
+      "roic": 13.5,
+      "dl_ebitda": -0.46
+     },
+     {
+      "ano": 2022,
+      "lucro": 124138000.0,
+      "roic": 4.9,
+      "dl_ebitda": -1.21
+     },
+     {
+      "ano": 2023,
+      "lucro": 950461000.0,
+      "roic": 15.9,
+      "dl_ebitda": -0.45
+     },
+     {
+      "ano": 2024,
+      "lucro": 1000161000.0,
+      "roic": 12.6,
+      "dl_ebitda": -0.47
+     },
+     {
+      "ano": 2025,
+      "lucro": 1018647000.0,
+      "roic": 13.1,
+      "dl_ebitda": -0.41
+     }
+    ]
    },
    "controlo": {
     "categoria": "participacao_estatal_relevante",
@@ -728,6 +876,80 @@
     ],
     "erro": null
    },
+   "perfil": {
+    "criterios": [
+     {
+      "id": "lucros",
+      "rotulo": "Lucros todos os anos",
+      "estado": "sim",
+      "detalhe": "6 de 6 anos com lucro (2020–2025); o pedido é de 10 anos, o relatório eletrónico só dá 6"
+     },
+     {
+      "id": "dividendos",
+      "rotulo": "Dividendos estáveis ou crescentes",
+      "estado": "sim",
+      "detalhe": "pagou em 5 de 5 anos; 0 queda(s) superior(es) a 10%; último ≥ primeiro"
+     },
+     {
+      "id": "divida",
+      "rotulo": "Baixo endividamento",
+      "estado": "sim",
+      "detalhe": "dívida líquida/EBITDA 0.5x em 2025 (limite de estudo: 2x)"
+     },
+     {
+      "id": "roic",
+      "rotulo": "ROIC alto (média ≥ 10%)",
+      "estado": "nao",
+      "detalhe": "média de 6 anos: 9.9% (de 7.1% a 12.5%); ROIC aproximado"
+     },
+     {
+      "id": "vantagem",
+      "rotulo": "Vantagem competitiva",
+      "estado": "nd",
+      "detalhe": "avaliação qualitativa, fora do cálculo automático"
+     }
+    ],
+    "atendidos": 3,
+    "avaliaveis": 4,
+    "anos": [
+     {
+      "ano": 2020,
+      "lucro": 64326000.0,
+      "roic": 10.7,
+      "dl_ebitda": 0.9
+     },
+     {
+      "ano": 2021,
+      "lucro": 74755000.0,
+      "roic": 11.4,
+      "dl_ebitda": 0.36
+     },
+     {
+      "ano": 2022,
+      "lucro": 98395000.0,
+      "roic": 12.5,
+      "dl_ebitda": 0.79
+     },
+     {
+      "ano": 2023,
+      "lucro": 88897000.0,
+      "roic": 9.9,
+      "dl_ebitda": 1.36
+     },
+     {
+      "ano": 2024,
+      "lucro": 69699000.0,
+      "roic": 8.0,
+      "dl_ebitda": 1.24
+     },
+     {
+      "ano": 2025,
+      "lucro": 55567000.0,
+      "roic": 7.1,
+      "dl_ebitda": 0.54
+     }
+    ]
+   },
    "controlo": {
     "categoria": "privada",
     "estrutura": "controlo_maioritario",
@@ -944,6 +1166,80 @@
      "info:locacoes_nao_identificadas"
     ],
     "erro": null
+   },
+   "perfil": {
+    "criterios": [
+     {
+      "id": "lucros",
+      "rotulo": "Lucros todos os anos",
+      "estado": "sim",
+      "detalhe": "6 de 6 anos com lucro (2020–2025); o pedido é de 10 anos, o relatório eletrónico só dá 6"
+     },
+     {
+      "id": "dividendos",
+      "rotulo": "Dividendos estáveis ou crescentes",
+      "estado": "sim",
+      "detalhe": "pagou em 5 de 5 anos; 0 queda(s) superior(es) a 10%; último ≥ primeiro"
+     },
+     {
+      "id": "divida",
+      "rotulo": "Baixo endividamento",
+      "estado": "sim",
+      "detalhe": "caixa líquida em 2025"
+     },
+     {
+      "id": "roic",
+      "rotulo": "ROIC alto (média ≥ 10%)",
+      "estado": "sim",
+      "detalhe": "média de 3 anos: 31.6% (de 21.7% a 44.8%); ROIC aproximado"
+     },
+     {
+      "id": "vantagem",
+      "rotulo": "Vantagem competitiva",
+      "estado": "nd",
+      "detalhe": "avaliação qualitativa, fora do cálculo automático"
+     }
+    ],
+    "atendidos": 4,
+    "avaliaveis": 4,
+    "anos": [
+     {
+      "ano": 2020,
+      "lucro": 16669309.0,
+      "roic": null,
+      "dl_ebitda": -3.22
+     },
+     {
+      "ano": 2021,
+      "lucro": 38404113.0,
+      "roic": null,
+      "dl_ebitda": -5.65
+     },
+     {
+      "ano": 2022,
+      "lucro": 36406519.0,
+      "roic": null,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2023,
+      "lucro": 60511368.0,
+      "roic": 44.8,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2024,
+      "lucro": 45536317.0,
+      "roic": 28.2,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2025,
+      "lucro": 50709394.0,
+      "roic": 21.7,
+      "dl_ebitda": null
+     }
+    ]
    },
    "controlo": {
     "categoria": "privada",
@@ -1162,6 +1458,80 @@
      "info:locacoes_nao_identificadas"
     ],
     "erro": null
+   },
+   "perfil": {
+    "criterios": [
+     {
+      "id": "lucros",
+      "rotulo": "Lucros todos os anos",
+      "estado": "sim",
+      "detalhe": "6 de 6 anos com lucro (2020–2025); o pedido é de 10 anos, o relatório eletrónico só dá 6"
+     },
+     {
+      "id": "dividendos",
+      "rotulo": "Dividendos estáveis ou crescentes",
+      "estado": "sim",
+      "detalhe": "pagou em 5 de 5 anos; 0 queda(s) superior(es) a 10%; último ≥ primeiro"
+     },
+     {
+      "id": "divida",
+      "rotulo": "Baixo endividamento",
+      "estado": "nd",
+      "detalhe": "dívida líquida não calculável"
+     },
+     {
+      "id": "roic",
+      "rotulo": "ROIC alto (média ≥ 10%)",
+      "estado": "nd",
+      "detalhe": "menos de 3 anos calculáveis"
+     },
+     {
+      "id": "vantagem",
+      "rotulo": "Vantagem competitiva",
+      "estado": "nd",
+      "detalhe": "avaliação qualitativa, fora do cálculo automático"
+     }
+    ],
+    "atendidos": 2,
+    "avaliaveis": 2,
+    "anos": [
+     {
+      "ano": 2020,
+      "lucro": 800692000.0,
+      "roic": null,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2021,
+      "lucro": 656717000.0,
+      "roic": null,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2022,
+      "lucro": 679001000.0,
+      "roic": null,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2023,
+      "lucro": 952348000.0,
+      "roic": null,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2024,
+      "lucro": 800980000.0,
+      "roic": null,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2025,
+      "lucro": 1149726000.0,
+      "roic": null,
+      "dl_ebitda": null
+     }
+    ]
    },
    "controlo": {
     "categoria": "participacao_estatal_relevante",
@@ -1390,6 +1760,74 @@
     ],
     "erro": null
    },
+   "perfil": {
+    "criterios": [
+     {
+      "id": "lucros",
+      "rotulo": "Lucros todos os anos",
+      "estado": "nd",
+      "detalhe": "histórico de contas insuficiente no relatório eletrónico"
+     },
+     {
+      "id": "dividendos",
+      "rotulo": "Dividendos estáveis ou crescentes",
+      "estado": "nao",
+      "detalhe": "pagou em 5 de 5 anos; 2 queda(s) superior(es) a 10%; último ≥ primeiro"
+     },
+     {
+      "id": "divida",
+      "rotulo": "Baixo endividamento",
+      "estado": "nao",
+      "detalhe": "dívida líquida/EBITDA 4.2x em 2025 (limite de estudo: 2x)"
+     },
+     {
+      "id": "roic",
+      "rotulo": "ROIC alto (média ≥ 10%)",
+      "estado": "nao",
+      "detalhe": "média de 3 anos: 5.5% (de 3.5% a 6.5%); ROIC aproximado"
+     },
+     {
+      "id": "vantagem",
+      "rotulo": "Vantagem competitiva",
+      "estado": "nd",
+      "detalhe": "avaliação qualitativa, fora do cálculo automático"
+     }
+    ],
+    "atendidos": 0,
+    "avaliaveis": 3,
+    "anos": [
+     {
+      "ano": 2020,
+      "lucro": 555680000.0,
+      "roic": 6.5,
+      "dl_ebitda": 2.1
+     },
+     {
+      "ano": 2021,
+      "lucro": 655443000.0,
+      "roic": 6.5,
+      "dl_ebitda": 1.73
+     },
+     {
+      "ano": 2023,
+      "lucro": null,
+      "roic": null,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2024,
+      "lucro": null,
+      "roic": null,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2025,
+      "lucro": 215801000.0,
+      "roic": 3.5,
+      "dl_ebitda": 4.2
+     }
+    ]
+   },
    "controlo": {
     "categoria": "privada",
     "estrutura": "controlo_maioritario",
@@ -1611,6 +2049,80 @@
     ],
     "erro": null
    },
+   "perfil": {
+    "criterios": [
+     {
+      "id": "lucros",
+      "rotulo": "Lucros todos os anos",
+      "estado": "nao",
+      "detalhe": "4 de 5 anos com lucro (2020–2025); o pedido é de 10 anos, o relatório eletrónico só dá 6"
+     },
+     {
+      "id": "dividendos",
+      "rotulo": "Dividendos estáveis ou crescentes",
+      "estado": "sim",
+      "detalhe": "pagou em 4 de 5 anos; 0 queda(s) superior(es) a 10%; último ≥ primeiro"
+     },
+     {
+      "id": "divida",
+      "rotulo": "Baixo endividamento",
+      "estado": "sim",
+      "detalhe": "caixa líquida em 2025"
+     },
+     {
+      "id": "roic",
+      "rotulo": "ROIC alto (média ≥ 10%)",
+      "estado": "sim",
+      "detalhe": "média de 3 anos: 68.2% (de 59.1% a 74.0%); ROIC aproximado"
+     },
+     {
+      "id": "vantagem",
+      "rotulo": "Vantagem competitiva",
+      "estado": "nd",
+      "detalhe": "avaliação qualitativa, fora do cálculo automático"
+     }
+    ],
+    "atendidos": 3,
+    "avaliaveis": 4,
+    "anos": [
+     {
+      "ano": 2020,
+      "lucro": -19944000.0,
+      "roic": null,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2021,
+      "lucro": 21641000.0,
+      "roic": null,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2022,
+      "lucro": null,
+      "roic": null,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2023,
+      "lucro": 113153000.0,
+      "roic": 71.4,
+      "dl_ebitda": -0.24
+     },
+     {
+      "ano": 2024,
+      "lucro": 122688000.0,
+      "roic": 59.1,
+      "dl_ebitda": -0.08
+     },
+     {
+      "ano": 2025,
+      "lucro": 133121000.0,
+      "roic": 74.0,
+      "dl_ebitda": -0.41
+     }
+    ]
+   },
    "controlo": {
     "categoria": "participacao_estatal_relevante",
     "estrutura": "acionista_de_referencia",
@@ -1781,6 +2293,80 @@
      "sem_nota:indicadores_insuficientes"
     ],
     "erro": null
+   },
+   "perfil": {
+    "criterios": [
+     {
+      "id": "lucros",
+      "rotulo": "Lucros todos os anos",
+      "estado": "nao",
+      "detalhe": "3 de 6 anos com lucro (2020–2025); o pedido é de 10 anos, o relatório eletrónico só dá 6"
+     },
+     {
+      "id": "dividendos",
+      "rotulo": "Dividendos estáveis ou crescentes",
+      "estado": "nd",
+      "detalhe": "cadastro de proventos ainda pendente"
+     },
+     {
+      "id": "divida",
+      "rotulo": "Baixo endividamento",
+      "estado": "sim",
+      "detalhe": "caixa líquida em 2025"
+     },
+     {
+      "id": "roic",
+      "rotulo": "ROIC alto (média ≥ 10%)",
+      "estado": "sim",
+      "detalhe": "média de 6 anos: 34.1% (de -84.0% a 192.5%); ROIC aproximado"
+     },
+     {
+      "id": "vantagem",
+      "rotulo": "Vantagem competitiva",
+      "estado": "nd",
+      "detalhe": "avaliação qualitativa, fora do cálculo automático"
+     }
+    ],
+    "atendidos": 2,
+    "avaliaveis": 3,
+    "anos": [
+     {
+      "ano": 2020,
+      "lucro": -20328108.0,
+      "roic": -28.4,
+      "dl_ebitda": -8.09
+     },
+     {
+      "ano": 2021,
+      "lucro": 11162223.0,
+      "roic": 55.5,
+      "dl_ebitda": -2.41
+     },
+     {
+      "ano": 2022,
+      "lucro": 32848885.0,
+      "roic": 192.5,
+      "dl_ebitda": -2.42
+     },
+     {
+      "ano": 2023,
+      "lucro": 5653829.0,
+      "roic": 57.9,
+      "dl_ebitda": -2.27
+     },
+     {
+      "ano": 2024,
+      "lucro": -12061366.0,
+      "roic": 10.8,
+      "dl_ebitda": -3.94
+     },
+     {
+      "ano": 2025,
+      "lucro": -25252467.0,
+      "roic": -84.0,
+      "dl_ebitda": -9.53
+     }
+    ]
    }
   },
   {
@@ -1938,6 +2524,68 @@
      "sem_nota:lucro_indisponivel"
     ],
     "erro": null
+   },
+   "perfil": {
+    "criterios": [
+     {
+      "id": "lucros",
+      "rotulo": "Lucros todos os anos",
+      "estado": "nd",
+      "detalhe": "histórico de contas insuficiente no relatório eletrónico"
+     },
+     {
+      "id": "dividendos",
+      "rotulo": "Dividendos estáveis ou crescentes",
+      "estado": "nd",
+      "detalhe": "cadastro de proventos ainda pendente"
+     },
+     {
+      "id": "divida",
+      "rotulo": "Baixo endividamento",
+      "estado": "nd",
+      "detalhe": "dívida líquida não calculável"
+     },
+     {
+      "id": "roic",
+      "rotulo": "ROIC alto (média ≥ 10%)",
+      "estado": "nd",
+      "detalhe": "menos de 3 anos calculáveis"
+     },
+     {
+      "id": "vantagem",
+      "rotulo": "Vantagem competitiva",
+      "estado": "nd",
+      "detalhe": "avaliação qualitativa, fora do cálculo automático"
+     }
+    ],
+    "atendidos": 0,
+    "avaliaveis": 0,
+    "anos": [
+     {
+      "ano": 2022,
+      "lucro": null,
+      "roic": null,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2023,
+      "lucro": null,
+      "roic": null,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2024,
+      "lucro": null,
+      "roic": null,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2025,
+      "lucro": null,
+      "roic": null,
+      "dl_ebitda": null
+     }
+    ]
    }
   },
   {
@@ -2156,6 +2804,62 @@
      "verificar:div_liq_ebitda=-3.43"
     ],
     "erro": null
+   },
+   "perfil": {
+    "criterios": [
+     {
+      "id": "lucros",
+      "rotulo": "Lucros todos os anos",
+      "estado": "nd",
+      "detalhe": "histórico de contas insuficiente no relatório eletrónico"
+     },
+     {
+      "id": "dividendos",
+      "rotulo": "Dividendos estáveis ou crescentes",
+      "estado": "nao",
+      "detalhe": "pagou em 5 de 5 anos; 1 queda(s) superior(es) a 10%; último ≥ primeiro"
+     },
+     {
+      "id": "divida",
+      "rotulo": "Baixo endividamento",
+      "estado": "sim",
+      "detalhe": "caixa líquida em 2025"
+     },
+     {
+      "id": "roic",
+      "rotulo": "ROIC alto (média ≥ 10%)",
+      "estado": "nd",
+      "detalhe": "menos de 3 anos calculáveis"
+     },
+     {
+      "id": "vantagem",
+      "rotulo": "Vantagem competitiva",
+      "estado": "nd",
+      "detalhe": "avaliação qualitativa, fora do cálculo automático"
+     }
+    ],
+    "atendidos": 1,
+    "avaliaveis": 2,
+    "anos": [
+     {
+      "ano": 2023,
+      "lucro": null,
+      "roic": null,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2024,
+      "lucro": null,
+      "roic": null,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2025,
+      "lucro": 976552.0,
+      "roic": 8.0,
+      "dl_ebitda": -3.43
+     }
+    ]
    }
   },
   {
@@ -2417,6 +3121,80 @@
     "flags": [],
     "erro": null
    },
+   "perfil": {
+    "criterios": [
+     {
+      "id": "lucros",
+      "rotulo": "Lucros todos os anos",
+      "estado": "nao",
+      "detalhe": "5 de 6 anos com lucro (2020–2025); o pedido é de 10 anos, o relatório eletrónico só dá 6"
+     },
+     {
+      "id": "dividendos",
+      "rotulo": "Dividendos estáveis ou crescentes",
+      "estado": "nao",
+      "detalhe": "pagou em 5 de 5 anos; 1 queda(s) superior(es) a 10%; último ≥ primeiro"
+     },
+     {
+      "id": "divida",
+      "rotulo": "Baixo endividamento",
+      "estado": "nd",
+      "detalhe": "dívida líquida não calculável"
+     },
+     {
+      "id": "roic",
+      "rotulo": "ROIC alto (média ≥ 10%)",
+      "estado": "nd",
+      "detalhe": "menos de 3 anos calculáveis"
+     },
+     {
+      "id": "vantagem",
+      "rotulo": "Vantagem competitiva",
+      "estado": "nd",
+      "detalhe": "avaliação qualitativa, fora do cálculo automático"
+     }
+    ],
+    "atendidos": 0,
+    "avaliaveis": 2,
+    "anos": [
+     {
+      "ano": 2020,
+      "lucro": -551000000.0,
+      "roic": null,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2021,
+      "lucro": 4000000.0,
+      "roic": null,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2022,
+      "lucro": 1475000000.0,
+      "roic": null,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2023,
+      "lucro": 1242000000.0,
+      "roic": null,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2024,
+      "lucro": 1040000000.0,
+      "roic": null,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2025,
+      "lucro": 1120000000.0,
+      "roic": null,
+      "dl_ebitda": null
+     }
+    ]
+   },
    "controlo": {
     "categoria": "participacao_estatal_relevante",
     "estrutura": "acionista_de_referencia",
@@ -2580,6 +3358,80 @@
      "info:sem_dividendo_cadastrado_para_o_exercicio"
     ],
     "erro": null
+   },
+   "perfil": {
+    "criterios": [
+     {
+      "id": "lucros",
+      "rotulo": "Lucros todos os anos",
+      "estado": "sim",
+      "detalhe": "6 de 6 anos com lucro (2020–2025); o pedido é de 10 anos, o relatório eletrónico só dá 6"
+     },
+     {
+      "id": "dividendos",
+      "rotulo": "Dividendos estáveis ou crescentes",
+      "estado": "nd",
+      "detalhe": "cadastro de proventos ainda pendente"
+     },
+     {
+      "id": "divida",
+      "rotulo": "Baixo endividamento",
+      "estado": "sim",
+      "detalhe": "dívida líquida/EBITDA 1.4x em 2025 (limite de estudo: 2x)"
+     },
+     {
+      "id": "roic",
+      "rotulo": "ROIC alto (média ≥ 10%)",
+      "estado": "nao",
+      "detalhe": "média de 6 anos: 6.2% (de 3.5% a 8.8%); ROIC aproximado"
+     },
+     {
+      "id": "vantagem",
+      "rotulo": "Vantagem competitiva",
+      "estado": "nd",
+      "detalhe": "avaliação qualitativa, fora do cálculo automático"
+     }
+    ],
+    "atendidos": 2,
+    "avaliaveis": 3,
+    "anos": [
+     {
+      "ano": 2020,
+      "lucro": 1262466.0,
+      "roic": 3.5,
+      "dl_ebitda": 3.46
+     },
+     {
+      "ano": 2021,
+      "lucro": 1604232.0,
+      "roic": 4.7,
+      "dl_ebitda": 3.03
+     },
+     {
+      "ano": 2022,
+      "lucro": 3216639.0,
+      "roic": 6.3,
+      "dl_ebitda": 2.21
+     },
+     {
+      "ano": 2023,
+      "lucro": 4030231.0,
+      "roic": 7.0,
+      "dl_ebitda": 1.99
+     },
+     {
+      "ano": 2024,
+      "lucro": 5038453.0,
+      "roic": 7.0,
+      "dl_ebitda": 1.61
+     },
+     {
+      "ano": 2025,
+      "lucro": 7729335.0,
+      "roic": 8.8,
+      "dl_ebitda": 1.38
+     }
+    ]
    }
   },
   {
@@ -2784,6 +3636,80 @@
     ],
     "erro": null
    },
+   "perfil": {
+    "criterios": [
+     {
+      "id": "lucros",
+      "rotulo": "Lucros todos os anos",
+      "estado": "nao",
+      "detalhe": "5 de 6 anos com lucro (2020–2025); o pedido é de 10 anos, o relatório eletrónico só dá 6"
+     },
+     {
+      "id": "dividendos",
+      "rotulo": "Dividendos estáveis ou crescentes",
+      "estado": "nao",
+      "detalhe": "pagou em 4 de 5 anos; 1 queda(s) superior(es) a 10%; último ≥ primeiro"
+     },
+     {
+      "id": "divida",
+      "rotulo": "Baixo endividamento",
+      "estado": "sim",
+      "detalhe": "dívida líquida/EBITDA 1.3x em 2025 (limite de estudo: 2x)"
+     },
+     {
+      "id": "roic",
+      "rotulo": "ROIC alto (média ≥ 10%)",
+      "estado": "nao",
+      "detalhe": "média de 6 anos: 3.7% (de -6.4% a 10.5%); ROIC aproximado"
+     },
+     {
+      "id": "vantagem",
+      "rotulo": "Vantagem competitiva",
+      "estado": "nd",
+      "detalhe": "avaliação qualitativa, fora do cálculo automático"
+     }
+    ],
+    "atendidos": 1,
+    "avaliaveis": 4,
+    "anos": [
+     {
+      "ano": 2020,
+      "lucro": -55197249.0,
+      "roic": -6.4,
+      "dl_ebitda": 10.18
+     },
+     {
+      "ano": 2021,
+      "lucro": 31379907.0,
+      "roic": 10.5,
+      "dl_ebitda": 1.57
+     },
+     {
+      "ano": 2022,
+      "lucro": 159873193.0,
+      "roic": 5.4,
+      "dl_ebitda": -1.25
+     },
+     {
+      "ano": 2023,
+      "lucro": 15413686.0,
+      "roic": 4.1,
+      "dl_ebitda": 0.94
+     },
+     {
+      "ano": 2024,
+      "lucro": 13822465.0,
+      "roic": 4.2,
+      "dl_ebitda": 1.86
+     },
+     {
+      "ano": 2025,
+      "lucro": 15173400.0,
+      "roic": 4.6,
+      "dl_ebitda": 1.27
+     }
+    ]
+   },
    "controlo": {
     "categoria": "privada",
     "estrutura": "controlo_maioritario",
@@ -2943,6 +3869,74 @@
      "verificar:emprestimos_nao_identificados:extensoes"
     ],
     "erro": null
+   },
+   "perfil": {
+    "criterios": [
+     {
+      "id": "lucros",
+      "rotulo": "Lucros todos os anos",
+      "estado": "nao",
+      "detalhe": "4 de 5 anos com lucro (2020–2025); o pedido é de 10 anos, o relatório eletrónico só dá 6"
+     },
+     {
+      "id": "dividendos",
+      "rotulo": "Dividendos estáveis ou crescentes",
+      "estado": "nd",
+      "detalhe": "cadastro de proventos ainda pendente"
+     },
+     {
+      "id": "divida",
+      "rotulo": "Baixo endividamento",
+      "estado": "sim",
+      "detalhe": "caixa líquida em 2025"
+     },
+     {
+      "id": "roic",
+      "rotulo": "ROIC alto (média ≥ 10%)",
+      "estado": "sim",
+      "detalhe": "média de 5 anos: 10.5% (de 5.7% a 14.1%); ROIC aproximado"
+     },
+     {
+      "id": "vantagem",
+      "rotulo": "Vantagem competitiva",
+      "estado": "nd",
+      "detalhe": "avaliação qualitativa, fora do cálculo automático"
+     }
+    ],
+    "atendidos": 2,
+    "avaliaveis": 3,
+    "anos": [
+     {
+      "ano": 2020,
+      "lucro": 11220238.0,
+      "roic": 12.8,
+      "dl_ebitda": -0.28
+     },
+     {
+      "ano": 2021,
+      "lucro": 12623649.0,
+      "roic": 14.1,
+      "dl_ebitda": -0.78
+     },
+     {
+      "ano": 2022,
+      "lucro": 1136068.0,
+      "roic": 6.5,
+      "dl_ebitda": -1.27
+     },
+     {
+      "ano": 2023,
+      "lucro": -1994933.0,
+      "roic": 5.7,
+      "dl_ebitda": -0.86
+     },
+     {
+      "ano": 2025,
+      "lucro": 1153017.0,
+      "roic": 13.6,
+      "dl_ebitda": -0.66
+     }
+    ]
    }
   },
   {
@@ -3155,6 +4149,80 @@
     "flags": [],
     "erro": null
    },
+   "perfil": {
+    "criterios": [
+     {
+      "id": "lucros",
+      "rotulo": "Lucros todos os anos",
+      "estado": "sim",
+      "detalhe": "6 de 6 anos com lucro (2020–2025); o pedido é de 10 anos, o relatório eletrónico só dá 6"
+     },
+     {
+      "id": "dividendos",
+      "rotulo": "Dividendos estáveis ou crescentes",
+      "estado": "nao",
+      "detalhe": "pagou em 5 de 5 anos; 1 queda(s) superior(es) a 10%; último ≥ primeiro"
+     },
+     {
+      "id": "divida",
+      "rotulo": "Baixo endividamento",
+      "estado": "sim",
+      "detalhe": "dívida líquida/EBITDA 1.4x em 2025 (limite de estudo: 2x)"
+     },
+     {
+      "id": "roic",
+      "rotulo": "ROIC alto (média ≥ 10%)",
+      "estado": "sim",
+      "detalhe": "média de 6 anos: 14.7% (de 11.2% a 18.4%); ROIC aproximado"
+     },
+     {
+      "id": "vantagem",
+      "rotulo": "Vantagem competitiva",
+      "estado": "nd",
+      "detalhe": "avaliação qualitativa, fora do cálculo automático"
+     }
+    ],
+    "atendidos": 3,
+    "avaliaveis": 4,
+    "anos": [
+     {
+      "ano": 2020,
+      "lucro": 312000000.0,
+      "roic": 11.2,
+      "dl_ebitda": 1.28
+     },
+     {
+      "ano": 2021,
+      "lucro": 463000000.0,
+      "roic": 15.4,
+      "dl_ebitda": 0.87
+     },
+     {
+      "ano": 2022,
+      "lucro": 590000000.0,
+      "roic": 18.4,
+      "dl_ebitda": 0.78
+     },
+     {
+      "ano": 2023,
+      "lucro": 756000000.0,
+      "roic": 17.2,
+      "dl_ebitda": 1.06
+     },
+     {
+      "ano": 2024,
+      "lucro": 599000000.0,
+      "roic": 12.7,
+      "dl_ebitda": 1.47
+     },
+     {
+      "ano": 2025,
+      "lucro": 646000000.0,
+      "roic": 13.2,
+      "dl_ebitda": 1.41
+     }
+    ]
+   },
    "controlo": {
     "categoria": "privada",
     "estrutura": "controlo_maioritario",
@@ -3335,6 +4403,80 @@
     "relatorio_url": "https://filings.xbrl.org/959800HYZFJ73QZQLS50/2025-12-31/ESEF/PT/0/063783-2025-12-31/reports/ixbrlviewer.html",
     "flags": [],
     "erro": null
+   },
+   "perfil": {
+    "criterios": [
+     {
+      "id": "lucros",
+      "rotulo": "Lucros todos os anos",
+      "estado": "sim",
+      "detalhe": "6 de 6 anos com lucro (2020–2025); o pedido é de 10 anos, o relatório eletrónico só dá 6"
+     },
+     {
+      "id": "dividendos",
+      "rotulo": "Dividendos estáveis ou crescentes",
+      "estado": "nao",
+      "detalhe": "pagou em 1 de 5 anos; 0 queda(s) superior(es) a 10%; último ≥ primeiro"
+     },
+     {
+      "id": "divida",
+      "rotulo": "Baixo endividamento",
+      "estado": "nao",
+      "detalhe": "dívida líquida/EBITDA 2.8x em 2025 (limite de estudo: 2x)"
+     },
+     {
+      "id": "roic",
+      "rotulo": "ROIC alto (média ≥ 10%)",
+      "estado": "sim",
+      "detalhe": "média de 6 anos: 22.4% (de 10.1% a 34.2%); ROIC aproximado"
+     },
+     {
+      "id": "vantagem",
+      "rotulo": "Vantagem competitiva",
+      "estado": "nd",
+      "detalhe": "avaliação qualitativa, fora do cálculo automático"
+     }
+    ],
+    "atendidos": 2,
+    "avaliaveis": 4,
+    "anos": [
+     {
+      "ano": 2020,
+      "lucro": 6298203.0,
+      "roic": 15.5,
+      "dl_ebitda": 3.84
+     },
+     {
+      "ano": 2021,
+      "lucro": 11266885.0,
+      "roic": 20.8,
+      "dl_ebitda": 2.89
+     },
+     {
+      "ano": 2022,
+      "lucro": 13340204.0,
+      "roic": 23.2,
+      "dl_ebitda": 2.13
+     },
+     {
+      "ano": 2023,
+      "lucro": 19695658.0,
+      "roic": 30.5,
+      "dl_ebitda": 1.0
+     },
+     {
+      "ano": 2024,
+      "lucro": 22997919.0,
+      "roic": 34.2,
+      "dl_ebitda": 0.12
+     },
+     {
+      "ano": 2025,
+      "lucro": 9465840.0,
+      "roic": 10.1,
+      "dl_ebitda": 2.82
+     }
+    ]
    }
   },
   {
@@ -3550,6 +4692,80 @@
      "info:sem_dividendo_cadastrado_para_o_exercicio"
     ],
     "erro": null
+   },
+   "perfil": {
+    "criterios": [
+     {
+      "id": "lucros",
+      "rotulo": "Lucros todos os anos",
+      "estado": "nao",
+      "detalhe": "4 de 6 anos com lucro (2020–2025); o pedido é de 10 anos, o relatório eletrónico só dá 6"
+     },
+     {
+      "id": "dividendos",
+      "rotulo": "Dividendos estáveis ou crescentes",
+      "estado": "nao",
+      "detalhe": "pagou em 3 de 5 anos; 1 queda(s) superior(es) a 10%; último < primeiro"
+     },
+     {
+      "id": "divida",
+      "rotulo": "Baixo endividamento",
+      "estado": "nao",
+      "detalhe": "dívida líquida/EBITDA 2.0x em 2025 (limite de estudo: 2x)"
+     },
+     {
+      "id": "roic",
+      "rotulo": "ROIC alto (média ≥ 10%)",
+      "estado": "nao",
+      "detalhe": "média de 6 anos: -0.3% (de -6.7% a 8.9%); ROIC aproximado"
+     },
+     {
+      "id": "vantagem",
+      "rotulo": "Vantagem competitiva",
+      "estado": "nd",
+      "detalhe": "avaliação qualitativa, fora do cálculo automático"
+     }
+    ],
+    "atendidos": 0,
+    "avaliaveis": 4,
+    "anos": [
+     {
+      "ano": 2020,
+      "lucro": -11095716.0,
+      "roic": -6.7,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2021,
+      "lucro": -4079657.0,
+      "roic": -3.9,
+      "dl_ebitda": 271.27
+     },
+     {
+      "ano": 2022,
+      "lucro": 36686838.0,
+      "roic": -5.9,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2023,
+      "lucro": 319308.0,
+      "roic": 1.2,
+      "dl_ebitda": 2.22
+     },
+     {
+      "ano": 2024,
+      "lucro": 9260021.0,
+      "roic": 8.9,
+      "dl_ebitda": 1.29
+     },
+     {
+      "ano": 2025,
+      "lucro": 3705900.0,
+      "roic": 4.5,
+      "dl_ebitda": 2.02
+     }
+    ]
    }
   },
   {
@@ -3784,6 +5000,80 @@
      "info:locacoes_nao_identificadas"
     ],
     "erro": null
+   },
+   "perfil": {
+    "criterios": [
+     {
+      "id": "lucros",
+      "rotulo": "Lucros todos os anos",
+      "estado": "sim",
+      "detalhe": "6 de 6 anos com lucro (2020–2025); o pedido é de 10 anos, o relatório eletrónico só dá 6"
+     },
+     {
+      "id": "dividendos",
+      "rotulo": "Dividendos estáveis ou crescentes",
+      "estado": "nao",
+      "detalhe": "pagou em 3 de 5 anos; 1 queda(s) superior(es) a 10%; último ≥ primeiro"
+     },
+     {
+      "id": "divida",
+      "rotulo": "Baixo endividamento",
+      "estado": "sim",
+      "detalhe": "caixa líquida em 2025"
+     },
+     {
+      "id": "roic",
+      "rotulo": "ROIC alto (média ≥ 10%)",
+      "estado": "sim",
+      "detalhe": "média de 6 anos: 19.7% (de 13.2% a 30.0%); ROIC aproximado"
+     },
+     {
+      "id": "vantagem",
+      "rotulo": "Vantagem competitiva",
+      "estado": "nd",
+      "detalhe": "avaliação qualitativa, fora do cálculo automático"
+     }
+    ],
+    "atendidos": 3,
+    "avaliaveis": 4,
+    "anos": [
+     {
+      "ano": 2020,
+      "lucro": 7486000.0,
+      "roic": 19.1,
+      "dl_ebitda": -3.47
+     },
+     {
+      "ano": 2021,
+      "lucro": 8706000.0,
+      "roic": 30.0,
+      "dl_ebitda": -3.67
+     },
+     {
+      "ano": 2022,
+      "lucro": 8917000.0,
+      "roic": 19.1,
+      "dl_ebitda": -1.96
+     },
+     {
+      "ano": 2023,
+      "lucro": 47058000.0,
+      "roic": 16.2,
+      "dl_ebitda": -4.8
+     },
+     {
+      "ano": 2024,
+      "lucro": 6420000.0,
+      "roic": 13.2,
+      "dl_ebitda": -3.77
+     },
+     {
+      "ano": 2025,
+      "lucro": 5485000.0,
+      "roic": 20.8,
+      "dl_ebitda": -0.99
+     }
+    ]
    }
   },
   {
@@ -3992,6 +5282,80 @@
      "info:locacoes_nao_identificadas"
     ],
     "erro": null
+   },
+   "perfil": {
+    "criterios": [
+     {
+      "id": "lucros",
+      "rotulo": "Lucros todos os anos",
+      "estado": "sim",
+      "detalhe": "6 de 6 anos com lucro (2020–2025); o pedido é de 10 anos, o relatório eletrónico só dá 6"
+     },
+     {
+      "id": "dividendos",
+      "rotulo": "Dividendos estáveis ou crescentes",
+      "estado": "nao",
+      "detalhe": "pagou em 5 de 5 anos; 1 queda(s) superior(es) a 10%; último ≥ primeiro"
+     },
+     {
+      "id": "divida",
+      "rotulo": "Baixo endividamento",
+      "estado": "nao",
+      "detalhe": "dívida líquida/EBITDA 2.1x em 2025 (limite de estudo: 2x)"
+     },
+     {
+      "id": "roic",
+      "rotulo": "ROIC alto (média ≥ 10%)",
+      "estado": "nao",
+      "detalhe": "média de 6 anos: 8.7% (de 4.9% a 12.5%); ROIC aproximado"
+     },
+     {
+      "id": "vantagem",
+      "rotulo": "Vantagem competitiva",
+      "estado": "nd",
+      "detalhe": "avaliação qualitativa, fora do cálculo automático"
+     }
+    ],
+    "atendidos": 1,
+    "avaliaveis": 4,
+    "anos": [
+     {
+      "ano": 2020,
+      "lucro": 92000000.0,
+      "roic": 4.9,
+      "dl_ebitda": 2.52
+     },
+     {
+      "ano": 2021,
+      "lucro": 144159000.0,
+      "roic": 6.9,
+      "dl_ebitda": 2.57
+     },
+     {
+      "ano": 2022,
+      "lucro": 224574000.0,
+      "roic": 8.8,
+      "dl_ebitda": 2.16
+     },
+     {
+      "ano": 2023,
+      "lucro": 180995000.0,
+      "roic": 8.8,
+      "dl_ebitda": 2.29
+     },
+     {
+      "ano": 2024,
+      "lucro": 272259000.0,
+      "roic": 12.5,
+      "dl_ebitda": 1.75
+     },
+     {
+      "ano": 2025,
+      "lucro": 245875000.0,
+      "roic": 10.4,
+      "dl_ebitda": 2.06
+     }
+    ]
    },
    "controlo": {
     "categoria": "privada",
@@ -4240,6 +5604,80 @@
     "flags": [],
     "erro": null
    },
+   "perfil": {
+    "criterios": [
+     {
+      "id": "lucros",
+      "rotulo": "Lucros todos os anos",
+      "estado": "sim",
+      "detalhe": "6 de 6 anos com lucro (2020–2025); o pedido é de 10 anos, o relatório eletrónico só dá 6"
+     },
+     {
+      "id": "dividendos",
+      "rotulo": "Dividendos estáveis ou crescentes",
+      "estado": "nao",
+      "detalhe": "pagou em 5 de 5 anos; 2 queda(s) superior(es) a 10%; último ≥ primeiro"
+     },
+     {
+      "id": "divida",
+      "rotulo": "Baixo endividamento",
+      "estado": "nao",
+      "detalhe": "dívida líquida/EBITDA 2.2x em 2025 (limite de estudo: 2x)"
+     },
+     {
+      "id": "roic",
+      "rotulo": "ROIC alto (média ≥ 10%)",
+      "estado": "sim",
+      "detalhe": "média de 6 anos: 13.6% (de 6.9% a 25.6%); ROIC aproximado"
+     },
+     {
+      "id": "vantagem",
+      "rotulo": "Vantagem competitiva",
+      "estado": "nd",
+      "detalhe": "avaliação qualitativa, fora do cálculo automático"
+     }
+    ],
+    "atendidos": 2,
+    "avaliaveis": 4,
+    "anos": [
+     {
+      "ano": 2020,
+      "lucro": 109213720.0,
+      "roic": 6.9,
+      "dl_ebitda": 2.59
+     },
+     {
+      "ano": 2021,
+      "lucro": 171411455.0,
+      "roic": 11.0,
+      "dl_ebitda": 1.84
+     },
+     {
+      "ano": 2022,
+      "lucro": 392537070.0,
+      "roic": 25.6,
+      "dl_ebitda": 0.6
+     },
+     {
+      "ano": 2023,
+      "lucro": 274923820.0,
+      "roic": 15.5,
+      "dl_ebitda": 1.11
+     },
+     {
+      "ano": 2024,
+      "lucro": 286948195.0,
+      "roic": 14.8,
+      "dl_ebitda": 1.33
+     },
+     {
+      "ano": 2025,
+      "lucro": 144667435.0,
+      "roic": 7.6,
+      "dl_ebitda": 2.2
+     }
+    ]
+   },
    "controlo": {
     "categoria": "privada",
     "estrutura": "controlo_maioritario",
@@ -4401,6 +5839,80 @@
      "sem_nota:metrica_fora_da_faixa_plausivel"
     ],
     "erro": null
+   },
+   "perfil": {
+    "criterios": [
+     {
+      "id": "lucros",
+      "rotulo": "Lucros todos os anos",
+      "estado": "nao",
+      "detalhe": "2 de 6 anos com lucro (2020–2025); o pedido é de 10 anos, o relatório eletrónico só dá 6"
+     },
+     {
+      "id": "dividendos",
+      "rotulo": "Dividendos estáveis ou crescentes",
+      "estado": "nd",
+      "detalhe": "cadastro de proventos ainda pendente"
+     },
+     {
+      "id": "divida",
+      "rotulo": "Baixo endividamento",
+      "estado": "sim",
+      "detalhe": "caixa líquida em 2025"
+     },
+     {
+      "id": "roic",
+      "rotulo": "ROIC alto (média ≥ 10%)",
+      "estado": "nao",
+      "detalhe": "média de 6 anos: 3.4% (de -3.5% a 29.6%); ROIC aproximado"
+     },
+     {
+      "id": "vantagem",
+      "rotulo": "Vantagem competitiva",
+      "estado": "nd",
+      "detalhe": "avaliação qualitativa, fora do cálculo automático"
+     }
+    ],
+    "atendidos": 1,
+    "avaliaveis": 3,
+    "anos": [
+     {
+      "ano": 2020,
+      "lucro": -14315915.0,
+      "roic": -1.6,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2021,
+      "lucro": -2361092.0,
+      "roic": -2.3,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2022,
+      "lucro": -2510290.0,
+      "roic": -3.4,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2023,
+      "lucro": -967192.0,
+      "roic": -3.5,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2024,
+      "lucro": 24224749.0,
+      "roic": 29.6,
+      "dl_ebitda": -0.67
+     },
+     {
+      "ano": 2025,
+      "lucro": 2100757.0,
+      "roic": 1.3,
+      "dl_ebitda": -13.49
+     }
+    ]
    }
   },
   {
@@ -4633,6 +6145,80 @@
      "verificar:ebit_reconstruido_lucro_impostos_financeiro"
     ],
     "erro": null
+   },
+   "perfil": {
+    "criterios": [
+     {
+      "id": "lucros",
+      "rotulo": "Lucros todos os anos",
+      "estado": "sim",
+      "detalhe": "6 de 6 anos com lucro (2020–2025); o pedido é de 10 anos, o relatório eletrónico só dá 6"
+     },
+     {
+      "id": "dividendos",
+      "rotulo": "Dividendos estáveis ou crescentes",
+      "estado": "nao",
+      "detalhe": "pagou em 5 de 5 anos; 1 queda(s) superior(es) a 10%; último ≥ primeiro"
+     },
+     {
+      "id": "divida",
+      "rotulo": "Baixo endividamento",
+      "estado": "sim",
+      "detalhe": "caixa líquida em 2025"
+     },
+     {
+      "id": "roic",
+      "rotulo": "ROIC alto (média ≥ 10%)",
+      "estado": "nao",
+      "detalhe": "média de 4 anos: 9.5% (de 5.6% a 13.1%); ROIC aproximado"
+     },
+     {
+      "id": "vantagem",
+      "rotulo": "Vantagem competitiva",
+      "estado": "nd",
+      "detalhe": "avaliação qualitativa, fora do cálculo automático"
+     }
+    ],
+    "atendidos": 2,
+    "avaliaveis": 4,
+    "anos": [
+     {
+      "ano": 2020,
+      "lucro": 6988597.0,
+      "roic": 5.6,
+      "dl_ebitda": 0.88
+     },
+     {
+      "ano": 2021,
+      "lucro": 15088651.0,
+      "roic": 11.2,
+      "dl_ebitda": 0.52
+     },
+     {
+      "ano": 2022,
+      "lucro": 20033547.0,
+      "roic": 13.1,
+      "dl_ebitda": 0.89
+     },
+     {
+      "ano": 2023,
+      "lucro": 10413341.0,
+      "roic": 8.1,
+      "dl_ebitda": 1.7
+     },
+     {
+      "ano": 2024,
+      "lucro": 28820557.0,
+      "roic": null,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2025,
+      "lucro": 8813576.0,
+      "roic": null,
+      "dl_ebitda": null
+     }
+    ]
    }
   },
   {
@@ -4878,6 +6464,80 @@
     ],
     "erro": null
    },
+   "perfil": {
+    "criterios": [
+     {
+      "id": "lucros",
+      "rotulo": "Lucros todos os anos",
+      "estado": "sim",
+      "detalhe": "6 de 6 anos com lucro (2020–2025); o pedido é de 10 anos, o relatório eletrónico só dá 6"
+     },
+     {
+      "id": "dividendos",
+      "rotulo": "Dividendos estáveis ou crescentes",
+      "estado": "nao",
+      "detalhe": "pagou em 5 de 5 anos; 1 queda(s) superior(es) a 10%; último < primeiro"
+     },
+     {
+      "id": "divida",
+      "rotulo": "Baixo endividamento",
+      "estado": "nao",
+      "detalhe": "dívida líquida/EBITDA 4.8x em 2025 (limite de estudo: 2x)"
+     },
+     {
+      "id": "roic",
+      "rotulo": "ROIC alto (média ≥ 10%)",
+      "estado": "nao",
+      "detalhe": "média de 6 anos: 4.6% (de 4.1% a 5.2%); ROIC aproximado"
+     },
+     {
+      "id": "vantagem",
+      "rotulo": "Vantagem competitiva",
+      "estado": "nd",
+      "detalhe": "avaliação qualitativa, fora do cálculo automático"
+     }
+    ],
+    "atendidos": 1,
+    "avaliaveis": 4,
+    "anos": [
+     {
+      "ano": 2020,
+      "lucro": 109249000.0,
+      "roic": 4.1,
+      "dl_ebitda": 5.88
+     },
+     {
+      "ano": 2021,
+      "lucro": 97153000.0,
+      "roic": 4.3,
+      "dl_ebitda": 5.14
+     },
+     {
+      "ano": 2022,
+      "lucro": 111771000.0,
+      "roic": 5.2,
+      "dl_ebitda": 4.03
+     },
+     {
+      "ano": 2023,
+      "lucro": 149236000.0,
+      "roic": 4.7,
+      "dl_ebitda": 5.21
+     },
+     {
+      "ano": 2024,
+      "lucro": 152512000.0,
+      "roic": 4.6,
+      "dl_ebitda": 4.97
+     },
+     {
+      "ano": 2025,
+      "lucro": 159813000.0,
+      "roic": 4.7,
+      "dl_ebitda": 4.83
+     }
+    ]
+   },
    "controlo": {
     "categoria": "participacao_estatal_relevante",
     "estrutura": "acionistas_de_referencia",
@@ -5043,6 +6703,43 @@
      "sem_nota:lucro_indisponivel"
     ],
     "erro": null
+   },
+   "perfil": {
+    "criterios": [
+     {
+      "id": "lucros",
+      "rotulo": "Lucros todos os anos",
+      "estado": "nd",
+      "detalhe": "histórico de contas insuficiente no relatório eletrónico"
+     },
+     {
+      "id": "dividendos",
+      "rotulo": "Dividendos estáveis ou crescentes",
+      "estado": "nd",
+      "detalhe": "cadastro de proventos ainda pendente"
+     },
+     {
+      "id": "divida",
+      "rotulo": "Baixo endividamento",
+      "estado": "nd",
+      "detalhe": "dívida líquida não calculável"
+     },
+     {
+      "id": "roic",
+      "rotulo": "ROIC alto (média ≥ 10%)",
+      "estado": "nd",
+      "detalhe": "menos de 3 anos calculáveis"
+     },
+     {
+      "id": "vantagem",
+      "rotulo": "Vantagem competitiva",
+      "estado": "nd",
+      "detalhe": "avaliação qualitativa, fora do cálculo automático"
+     }
+    ],
+    "atendidos": 0,
+    "avaliaveis": 0,
+    "anos": []
    }
   },
   {
@@ -5261,6 +6958,80 @@
      "info:locacoes_nao_identificadas"
     ],
     "erro": null
+   },
+   "perfil": {
+    "criterios": [
+     {
+      "id": "lucros",
+      "rotulo": "Lucros todos os anos",
+      "estado": "sim",
+      "detalhe": "6 de 6 anos com lucro (2020–2025); o pedido é de 10 anos, o relatório eletrónico só dá 6"
+     },
+     {
+      "id": "dividendos",
+      "rotulo": "Dividendos estáveis ou crescentes",
+      "estado": "nao",
+      "detalhe": "pagou em 5 de 5 anos; 1 queda(s) superior(es) a 10%; último ≥ primeiro"
+     },
+     {
+      "id": "divida",
+      "rotulo": "Baixo endividamento",
+      "estado": "sim",
+      "detalhe": "dívida líquida/EBITDA 0.4x em 2025 (limite de estudo: 2x)"
+     },
+     {
+      "id": "roic",
+      "rotulo": "ROIC alto (média ≥ 10%)",
+      "estado": "nao",
+      "detalhe": "média de 5 anos: 10.0% (de 3.4% a 15.5%); ROIC aproximado"
+     },
+     {
+      "id": "vantagem",
+      "rotulo": "Vantagem competitiva",
+      "estado": "nd",
+      "detalhe": "avaliação qualitativa, fora do cálculo automático"
+     }
+    ],
+    "atendidos": 2,
+    "avaliaveis": 4,
+    "anos": [
+     {
+      "ano": 2020,
+      "lucro": 4644726.0,
+      "roic": 3.4,
+      "dl_ebitda": 1.12
+     },
+     {
+      "ano": 2021,
+      "lucro": 11695005.0,
+      "roic": 7.8,
+      "dl_ebitda": 0.64
+     },
+     {
+      "ano": 2022,
+      "lucro": 14701869.0,
+      "roic": 8.2,
+      "dl_ebitda": 1.09
+     },
+     {
+      "ano": 2023,
+      "lucro": 17467624.0,
+      "roic": null,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2024,
+      "lucro": 27790475.0,
+      "roic": 15.0,
+      "dl_ebitda": 0.68
+     },
+     {
+      "ano": 2025,
+      "lucro": 25082171.0,
+      "roic": 15.5,
+      "dl_ebitda": 0.4
+     }
+    ]
    }
   },
   {
@@ -5482,6 +7253,80 @@
     "flags": [],
     "erro": null
    },
+   "perfil": {
+    "criterios": [
+     {
+      "id": "lucros",
+      "rotulo": "Lucros todos os anos",
+      "estado": "sim",
+      "detalhe": "6 de 6 anos com lucro (2020–2025); o pedido é de 10 anos, o relatório eletrónico só dá 6"
+     },
+     {
+      "id": "dividendos",
+      "rotulo": "Dividendos estáveis ou crescentes",
+      "estado": "nao",
+      "detalhe": "pagou em 5 de 5 anos; 2 queda(s) superior(es) a 10%; último ≥ primeiro"
+     },
+     {
+      "id": "divida",
+      "rotulo": "Baixo endividamento",
+      "estado": "nao",
+      "detalhe": "dívida líquida/EBITDA 3.0x em 2025 (limite de estudo: 2x)"
+     },
+     {
+      "id": "roic",
+      "rotulo": "ROIC alto (média ≥ 10%)",
+      "estado": "sim",
+      "detalhe": "média de 6 anos: 10.9% (de 3.5% a 19.2%); ROIC aproximado"
+     },
+     {
+      "id": "vantagem",
+      "rotulo": "Vantagem competitiva",
+      "estado": "nd",
+      "detalhe": "avaliação qualitativa, fora do cálculo automático"
+     }
+    ],
+    "atendidos": 2,
+    "avaliaveis": 4,
+    "anos": [
+     {
+      "ano": 2020,
+      "lucro": 106588079.0,
+      "roic": 7.3,
+      "dl_ebitda": 3.13
+     },
+     {
+      "ano": 2021,
+      "lucro": 198128028.0,
+      "roic": 11.8,
+      "dl_ebitda": 2.21
+     },
+     {
+      "ano": 2022,
+      "lucro": 307089834.0,
+      "roic": 19.2,
+      "dl_ebitda": 1.01
+     },
+     {
+      "ano": 2023,
+      "lucro": 244507409.0,
+      "roic": 12.5,
+      "dl_ebitda": 1.68
+     },
+     {
+      "ano": 2024,
+      "lucro": 232735949.0,
+      "roic": 11.2,
+      "dl_ebitda": 1.79
+     },
+     {
+      "ano": 2025,
+      "lucro": 156599440.0,
+      "roic": 3.5,
+      "dl_ebitda": 2.97
+     }
+    ]
+   },
    "controlo": {
     "categoria": "privada",
     "estrutura": "controlo_maioritario",
@@ -5642,6 +7487,68 @@
      "sem_nota:lucro_indisponivel"
     ],
     "erro": null
+   },
+   "perfil": {
+    "criterios": [
+     {
+      "id": "lucros",
+      "rotulo": "Lucros todos os anos",
+      "estado": "nd",
+      "detalhe": "histórico de contas insuficiente no relatório eletrónico"
+     },
+     {
+      "id": "dividendos",
+      "rotulo": "Dividendos estáveis ou crescentes",
+      "estado": "nd",
+      "detalhe": "cadastro de proventos ainda pendente"
+     },
+     {
+      "id": "divida",
+      "rotulo": "Baixo endividamento",
+      "estado": "nd",
+      "detalhe": "dívida líquida não calculável"
+     },
+     {
+      "id": "roic",
+      "rotulo": "ROIC alto (média ≥ 10%)",
+      "estado": "nd",
+      "detalhe": "menos de 3 anos calculáveis"
+     },
+     {
+      "id": "vantagem",
+      "rotulo": "Vantagem competitiva",
+      "estado": "nd",
+      "detalhe": "avaliação qualitativa, fora do cálculo automático"
+     }
+    ],
+    "atendidos": 0,
+    "avaliaveis": 0,
+    "anos": [
+     {
+      "ano": 2022,
+      "lucro": null,
+      "roic": null,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2023,
+      "lucro": null,
+      "roic": null,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2024,
+      "lucro": null,
+      "roic": null,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2025,
+      "lucro": null,
+      "roic": null,
+      "dl_ebitda": null
+     }
+    ]
    }
   },
   {
@@ -5861,6 +7768,80 @@
      "verificar:emprestimos_nao_identificados"
     ],
     "erro": null
+   },
+   "perfil": {
+    "criterios": [
+     {
+      "id": "lucros",
+      "rotulo": "Lucros todos os anos",
+      "estado": "sim",
+      "detalhe": "6 de 6 anos com lucro (2020–2025); o pedido é de 10 anos, o relatório eletrónico só dá 6"
+     },
+     {
+      "id": "dividendos",
+      "rotulo": "Dividendos estáveis ou crescentes",
+      "estado": "nao",
+      "detalhe": "pagou em 5 de 5 anos; 2 queda(s) superior(es) a 10%; último < primeiro"
+     },
+     {
+      "id": "divida",
+      "rotulo": "Baixo endividamento",
+      "estado": "sim",
+      "detalhe": "caixa líquida em 2025"
+     },
+     {
+      "id": "roic",
+      "rotulo": "ROIC alto (média ≥ 10%)",
+      "estado": "nao",
+      "detalhe": "média de 6 anos: 5.0% (de 0.3% a 12.2%); ROIC aproximado"
+     },
+     {
+      "id": "vantagem",
+      "rotulo": "Vantagem competitiva",
+      "estado": "nd",
+      "detalhe": "avaliação qualitativa, fora do cálculo automático"
+     }
+    ],
+    "atendidos": 2,
+    "avaliaveis": 4,
+    "anos": [
+     {
+      "ano": 2020,
+      "lucro": 60125890.0,
+      "roic": 4.5,
+      "dl_ebitda": -3.43
+     },
+     {
+      "ano": 2021,
+      "lucro": 120725659.0,
+      "roic": 12.2,
+      "dl_ebitda": -1.89
+     },
+     {
+      "ano": 2022,
+      "lucro": 143082957.0,
+      "roic": 8.3,
+      "dl_ebitda": -4.55
+     },
+     {
+      "ano": 2023,
+      "lucro": 43785889.0,
+      "roic": 2.0,
+      "dl_ebitda": -3.86
+     },
+     {
+      "ano": 2024,
+      "lucro": 17340777.0,
+      "roic": 0.3,
+      "dl_ebitda": -25.64
+     },
+     {
+      "ano": 2025,
+      "lucro": 51630951.0,
+      "roic": 2.5,
+      "dl_ebitda": -5.07
+     }
+    ]
    }
   },
   {
@@ -6070,6 +8051,80 @@
     ],
     "erro": null
    },
+   "perfil": {
+    "criterios": [
+     {
+      "id": "lucros",
+      "rotulo": "Lucros todos os anos",
+      "estado": "sim",
+      "detalhe": "6 de 6 anos com lucro (2020–2025); o pedido é de 10 anos, o relatório eletrónico só dá 6"
+     },
+     {
+      "id": "dividendos",
+      "rotulo": "Dividendos estáveis ou crescentes",
+      "estado": "sim",
+      "detalhe": "pagou em 5 de 5 anos; 0 queda(s) superior(es) a 10%; último ≥ primeiro"
+     },
+     {
+      "id": "divida",
+      "rotulo": "Baixo endividamento",
+      "estado": "nao",
+      "detalhe": "dívida líquida/EBITDA 2.8x em 2025 (limite de estudo: 2x)"
+     },
+     {
+      "id": "roic",
+      "rotulo": "ROIC alto (média ≥ 10%)",
+      "estado": "nao",
+      "detalhe": "média de 6 anos: 7.1% (de 3.0% a 10.3%); ROIC aproximado"
+     },
+     {
+      "id": "vantagem",
+      "rotulo": "Vantagem competitiva",
+      "estado": "nd",
+      "detalhe": "avaliação qualitativa, fora do cálculo automático"
+     }
+    ],
+    "atendidos": 2,
+    "avaliaveis": 4,
+    "anos": [
+     {
+      "ano": 2020,
+      "lucro": 70944578.0,
+      "roic": 3.0,
+      "dl_ebitda": 4.78
+     },
+     {
+      "ano": 2021,
+      "lucro": 267652127.0,
+      "roic": 7.6,
+      "dl_ebitda": 2.36
+     },
+     {
+      "ano": 2022,
+      "lucro": 341554000.0,
+      "roic": 8.8,
+      "dl_ebitda": 2.09
+     },
+     {
+      "ano": 2023,
+      "lucro": 357062000.0,
+      "roic": 10.3,
+      "dl_ebitda": 2.05
+     },
+     {
+      "ano": 2024,
+      "lucro": 222665000.0,
+      "roic": 6.3,
+      "dl_ebitda": 3.28
+     },
+     {
+      "ano": 2025,
+      "lucro": 199222000.0,
+      "roic": 6.4,
+      "dl_ebitda": 2.82
+     }
+    ]
+   },
    "controlo": {
     "categoria": "privada",
     "estrutura": "controlo_maioritario",
@@ -6223,6 +8278,80 @@
      "info:sem_dividendo_cadastrado_para_o_exercicio"
     ],
     "erro": null
+   },
+   "perfil": {
+    "criterios": [
+     {
+      "id": "lucros",
+      "rotulo": "Lucros todos os anos",
+      "estado": "nao",
+      "detalhe": "3 de 6 anos com lucro (2020–2025); o pedido é de 10 anos, o relatório eletrónico só dá 6"
+     },
+     {
+      "id": "dividendos",
+      "rotulo": "Dividendos estáveis ou crescentes",
+      "estado": "nao",
+      "detalhe": "sem proventos nos anos analisados"
+     },
+     {
+      "id": "divida",
+      "rotulo": "Baixo endividamento",
+      "estado": "nao",
+      "detalhe": "dívida líquida/EBITDA 5.7x em 2025 (limite de estudo: 2x)"
+     },
+     {
+      "id": "roic",
+      "rotulo": "ROIC alto (média ≥ 10%)",
+      "estado": "nao",
+      "detalhe": "média de 6 anos: 2.0% (de -8.5% a 6.1%); ROIC aproximado"
+     },
+     {
+      "id": "vantagem",
+      "rotulo": "Vantagem competitiva",
+      "estado": "nd",
+      "detalhe": "avaliação qualitativa, fora do cálculo automático"
+     }
+    ],
+    "atendidos": 0,
+    "avaliaveis": 4,
+    "anos": [
+     {
+      "ano": 2020,
+      "lucro": 3558000.0,
+      "roic": 4.2,
+      "dl_ebitda": 7.02
+     },
+     {
+      "ano": 2021,
+      "lucro": -119140000.0,
+      "roic": -8.5,
+      "dl_ebitda": null
+     },
+     {
+      "ano": 2022,
+      "lucro": -13267000.0,
+      "roic": 1.5,
+      "dl_ebitda": 11.87
+     },
+     {
+      "ano": 2023,
+      "lucro": -11750000.0,
+      "roic": 3.6,
+      "dl_ebitda": 9.09
+     },
+     {
+      "ano": 2024,
+      "lucro": 25641000.0,
+      "roic": 6.1,
+      "dl_ebitda": 6.05
+     },
+     {
+      "ano": 2025,
+      "lucro": 50031000.0,
+      "roic": 5.1,
+      "dl_ebitda": 5.65
+     }
+    ]
    },
    "controlo": {
     "categoria": "privada",

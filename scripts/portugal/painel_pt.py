@@ -187,6 +187,55 @@ def regra_grupo(grupo, liq, liq_revisao_anterior, universo):
     return grupo
 
 
+def montar_perfil(l, serie):
+    """Quadro de perfil (critérios de estudo do dono). Informativo: não é nota nem recomendação.
+    Lucros e ROIC vêm das séries ESEF 2020–2025; dividendos do cadastro oficial; vantagem competitiva é qualitativa."""
+    anos = (serie or {}).get("anos") or []
+    banco = (l.get("qualidade") or {}).get("regra") == "Bancos"
+    c = []
+    luc = [(a["ano"], a["lucro"]) for a in anos if a.get("lucro") is not None]
+    if len(luc) >= 4:
+        pos = sum(1 for _, v in luc if v > 0)
+        c.append(("lucros", "Lucros todos os anos", "sim" if pos == len(luc) else "nao",
+                  f"{pos} de {len(luc)} anos com lucro ({luc[0][0]}–{luc[-1][0]}); o pedido é de 10 anos, o relatório eletrónico só dá 6"))
+    else:
+        c.append(("lucros", "Lucros todos os anos", "nd", "histórico de contas insuficiente no relatório eletrónico"))
+    if l.get("cadastro_completo"):
+        pa = l.get("proventos_por_ano") or {}
+        v = [pa[a] for a in sorted(pa)]
+        pagos = [x for x in v if x > 0]
+        quedas = sum(1 for x, y in zip(pagos, pagos[1:]) if y < 0.9 * x)
+        ok = len(pagos) >= 4 and quedas == 0 and pagos[-1] >= pagos[0]
+        c.append(("dividendos", "Dividendos estáveis ou crescentes", "sim" if ok else "nao",
+                  f"pagou em {len(pagos)} de {len(v)} anos; {quedas} queda(s) superior(es) a 10%; último {'≥' if pagos and pagos[-1] >= pagos[0] else '<'} primeiro" if pagos else "sem proventos nos anos analisados"))
+    else:
+        c.append(("dividendos", "Dividendos estáveis ou crescentes", "nd", "cadastro de proventos ainda pendente"))
+    if banco:
+        c.append(("divida", "Baixo endividamento", "nd", "não se aplica a bancos"))
+        c.append(("roic", "ROIC alto (média ≥ 10%)", "nd", "não se aplica a bancos"))
+    else:
+        ult = anos[-1] if anos else {}
+        dl, de = ult.get("divida_liquida"), ult.get("dl_ebitda")
+        if dl is not None and dl <= 0:
+            c.append(("divida", "Baixo endividamento", "sim", f"caixa líquida em {ult['ano']}"))
+        elif de is not None:
+            c.append(("divida", "Baixo endividamento", "sim" if de <= 2 else "nao", f"dívida líquida/EBITDA {de:.1f}x em {ult['ano']} (limite de estudo: 2x)"))
+        else:
+            c.append(("divida", "Baixo endividamento", "nd", "dívida líquida não calculável"))
+        r = [a["roic"] for a in anos if a.get("roic") is not None]
+        if len(r) >= 3:
+            m = sum(r) / len(r)
+            c.append(("roic", "ROIC alto (média ≥ 10%)", "sim" if m >= 10 else "nao",
+                      f"média de {len(r)} anos: {m:.1f}% (de {min(r):.1f}% a {max(r):.1f}%); ROIC aproximado"))
+        else:
+            c.append(("roic", "ROIC alto (média ≥ 10%)", "nd", "menos de 3 anos calculáveis"))
+    c.append(("vantagem", "Vantagem competitiva", "nd", "avaliação qualitativa, fora do cálculo automático"))
+    crit = [{"id": i, "rotulo": r, "estado": e, "detalhe": d} for i, r, e, d in c]
+    return {"criterios": crit, "atendidos": sum(1 for x in crit if x["estado"] == "sim"),
+            "avaliaveis": sum(1 for x in crit if x["estado"] != "nd"),
+            "anos": [{k: a.get(k) for k in ("ano", "lucro", "roic", "dl_ebitda")} for a in anos]}
+
+
 def calcular(universo, params, eventos, brutos, agora):
     hoje = agora.date()
     ano_fim = hoje.year - 1
@@ -391,6 +440,11 @@ def main():
                                                     "payout_caixa", "div_liq_ebitda", "divida_liquida", "ebitda", "ll", "lpa",
                                                     "dpa_exercicio", "exercicio", "regra", "semaforo", "relatorio", "relatorio_url",
                                                     "flags", "erro")}
+    ps_arq = DADOS / "perfil_series.json"
+    ps = json.loads(ps_arq.read_text(encoding="utf-8")) if ps_arq.exists() else {}
+    if ps:
+        for l in res["linhas"]:
+            l["perfil"] = montar_perfil(l, (ps.get("papeis") or {}).get(l["papel"]))
     ctrl_arq = DADOS / "controlo.json"
     ctrl = json.loads(ctrl_arq.read_text(encoding="utf-8")) if ctrl_arq.exists() else {}
     cmap = {c["papel"]: c for c in ctrl.get("empresas", [])}
