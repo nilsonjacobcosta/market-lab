@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-11-07T02:54+00:00",
+ "gerado_em": "2026-11-07T03:00+00:00",
  "precos_coletados_em": "2026-11-07T00:06+00:00",
  "autor": "market-lab — projeto pessoal de estudo de nilsonjacobcosta (GitHub)",
  "aviso": "Material educativo, não é recomendação de investimento.",
@@ -2916,26 +2916,33 @@
     "2026-11": 0.1905
    },
    "qualidade": {
-    "nota": null,
-    "nota_provisoria": null,
-    "motivo_sem_nota": "falha ao ler a fonte",
-    "roe": null,
+    "nota": 1,
+    "nota_provisoria": true,
+    "motivo_sem_nota": null,
+    "roe": 1.3,
     "roe_medio_2a": null,
-    "payout": null,
+    "payout": 0.0,
     "payout_caixa": null,
     "div_liq_ebitda": null,
     "divida_liquida": null,
-    "ebitda": null,
-    "ll": null,
-    "lpa": null,
-    "dpa_exercicio": null,
-    "exercicio": null,
-    "regra": null,
-    "semaforo": null,
-    "relatorio": null,
-    "relatorio_url": null,
-    "flags": null,
-    "erro": "falha: can only concatenate str (not \"NoneType\") to str"
+    "ebitda": 18560380.0,
+    "ll": 1153017.0,
+    "lpa": 0.0069,
+    "dpa_exercicio": 0.0,
+    "exercicio": 2025,
+    "regra": "Geral",
+    "semaforo": {
+     "roe": "vermelho",
+     "div_liq_ebitda": "cinza",
+     "payout": "amarelo"
+    },
+    "relatorio": "2138004YHORSLQZKAL65-2025-12-31-ESEF-PT-0",
+    "relatorio_url": "https://filings.xbrl.org/2138004YHORSLQZKAL65/2025-12-31/ESEF/PT/0/000646-2025-12-31/reports/ixbrlviewer.html",
+    "flags": [
+     "info:sem_dividendo_cadastrado_para_o_exercicio",
+     "verificar:emprestimos_nao_identificados:extensoes"
+    ],
+    "erro": null
    }
   },
   {
@@ -6689,13 +6696,13 @@
   "criterio": "Participações qualificadas (art. 16.º e 20.º do Código dos Valores Mobiliários) segundo a página de investidores ou o relatório de governo societário mais recente da empresa; imprensa reconhecida só para mudanças posteriores ao último documento oficial. 'estatal' = o Estado português controla; 'estatal_estrangeira' = estatal de outro país controla; 'participacao_estatal_relevante' = um Estado (português ou estrangeiro) tem 5% ou mais sem controlar; 'privada' = restantes. 'estrutura' descreve se há maioria (controlo), um acionista de referência sem maioria, ou capital disperso."
  },
  "qualidade_meta": {
-  "gerado_em": "2026-11-07 02:53",
+  "gerado_em": "2026-11-07 02:57",
   "fonte": "Relatórios anuais ESEF (iXBRL) via filings.xbrl.org; LEI via GLEIF",
   "aceite": {
    "com_relatorio_pct (meta >=90)": 100.0,
    "com_nota_pct (meta >=75)": 87.5,
    "lucro_encontrado_pct (meta >=90)": 100.0,
-   "observacao_com_nota": "8 de 14",
+   "observacao_com_nota": "9 de 14",
    "conferencia_lucro_2025": {
     "BCP": "1018.6 vs 1018.6 M€ (0.00%) — Millennium bcp, resultados de 2025 (Forbes Portugal, 2026)",
     "GALP": "1120.0 vs 1120.0 M€ (0.00%) — Galp, resultados de 2025 (Forbes España, 2026)",

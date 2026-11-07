@@ -1,6 +1,6 @@
 {
  "beta": true,
- "gerado_em": "2026-11-07 02:53",
+ "gerado_em": "2026-11-07 02:57",
  "fonte": "Relatórios anuais ESEF (iXBRL) via filings.xbrl.org; LEI via GLEIF",
  "aviso": "Material educativo, não é recomendação de investimento. Faixas são convenções do painel.",
  "papeis": {
@@ -887,9 +887,65 @@
    }
   },
   "IPR": {
-   "erro": "falha: can only concatenate str (not \"NoneType\") to str",
-   "nota": null,
-   "motivo_sem_nota": "falha ao ler a fonte"
+   "regra": "Geral",
+   "exercicio": 2025,
+   "ll": 1153017.0,
+   "roe": 1.3,
+   "dpa_exercicio": 0.0,
+   "lpa": 0.0069,
+   "payout": 0.0,
+   "ebitda": 18560380.0,
+   "semaforo": {
+    "roe": "vermelho",
+    "div_liq_ebitda": "cinza",
+    "payout": "amarelo"
+   },
+   "nota": 1,
+   "nota_provisoria": true,
+   "flags": [
+    "info:sem_dividendo_cadastrado_para_o_exercicio",
+    "verificar:emprestimos_nao_identificados:extensoes"
+   ],
+   "lei": "2138004YHORSLQZKAL65",
+   "relatorio": "2138004YHORSLQZKAL65-2025-12-31-ESEF-PT-0",
+   "relatorio_url": "https://filings.xbrl.org/2138004YHORSLQZKAL65/2025-12-31/ESEF/PT/0/000646-2025-12-31/reports/ixbrlviewer.html",
+   "publicado": "2026-10-22 15:08:46.737727",
+   "origem_rubricas": {
+    "ll": "ifrs-full:ProfitLoss",
+    "ll_total": "ifrs-full:ProfitLoss",
+    "ir": "ifrs-full:IncomeTaxExpenseContinuingOperations",
+    "lpa": "ifrs-full:BasicEarningsLossPerShare",
+    "op": "ifrs-full:ProfitLossFromOperatingActivities",
+    "lai": "ifrs-full:ProfitLossBeforeTax",
+    "desp_fin": "ifrs-full:FinanceCosts",
+    "rec_fin": "ifrs-full:FinanceIncome",
+    "fin_liq": null,
+    "da": "ifrs-full:DepreciationAndAmortisationExpense",
+    "div_pagos": null,
+    "pl": "ifrs-full:Equity",
+    "pl_ini": "ifrs-full:Equity",
+    "caixa": "ifrs-full:CashAndCashEquivalents",
+    "divida": {}
+   },
+   "componentes": {
+    "ll": 1153017.0,
+    "ll_total": 1153017.0,
+    "ir": 2054362.0,
+    "pl": 91559692.0,
+    "pl_ini": 89692861.0,
+    "lpa": 0.0069,
+    "op": 14345600.0,
+    "lai": 3207379.0,
+    "fin_liq": null,
+    "desp_fin": 11307639.0,
+    "rec_fin": 169418.0,
+    "da": 4214780.0,
+    "ebitda": null,
+    "caixa": 12200746.0,
+    "emprestimos": null,
+    "locacoes": null,
+    "div_pagos": null
+   }
   },
   "JMT": {
    "regra": "Geral",
@@ -1977,7 +2033,7 @@
   "com_relatorio_pct (meta >=90)": 100.0,
   "com_nota_pct (meta >=75)": 87.5,
   "lucro_encontrado_pct (meta >=90)": 100.0,
-  "observacao_com_nota": "8 de 14",
+  "observacao_com_nota": "9 de 14",
   "conferencia_lucro_2025": {
    "BCP": "1018.6 vs 1018.6 M€ (0.00%) — Millennium bcp, resultados de 2025 (Forbes Portugal, 2026)",
    "GALP": "1120.0 vs 1120.0 M€ (0.00%) — Galp, resultados de 2025 (Forbes España, 2026)",
