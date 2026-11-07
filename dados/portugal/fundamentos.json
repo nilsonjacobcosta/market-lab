@@ -1,6 +1,6 @@
 {
  "beta": true,
- "gerado_em": "2026-11-04 09:54",
+ "gerado_em": "2026-11-07 02:53",
  "fonte": "Relatórios anuais ESEF (iXBRL) via filings.xbrl.org; LEI via GLEIF",
  "aviso": "Material educativo, não é recomendação de investimento. Faixas são convenções do painel.",
  "papeis": {
@@ -483,6 +483,201 @@
     "div_pagos": 58799000.0
    }
   },
+  "ESON": {
+   "regra": "Geral",
+   "exercicio": 2025,
+   "ll": -25252467.0,
+   "roe": -25.2,
+   "roe_medio_2a": -17.6,
+   "dpa_exercicio": 0.0,
+   "lpa": -2.12,
+   "ebitda": 9009800.0,
+   "semaforo": {
+    "roe": "vermelho",
+    "div_liq_ebitda": "cinza",
+    "payout": "cinza"
+   },
+   "nota": null,
+   "nota_provisoria": false,
+   "motivo_sem_nota": "há menos de dois indicadores disponíveis",
+   "flags": [
+    "info:sem_dividendo_cadastrado_para_o_exercicio",
+    "verificar:emprestimos_nao_identificados",
+    "sem_nota:indicadores_insuficientes"
+   ],
+   "lei": "529900CYU630FHT7UL18",
+   "relatorio": "529900CYU630FHT7UL18-2025-12-31-ESEF-PT-1",
+   "relatorio_url": "https://filings.xbrl.org/529900CYU630FHT7UL18/2025-12-31/ESEF/PT/1/529900CYU630FHT7UL18-2025-12-31/reports/ixbrlviewer.html",
+   "publicado": "2026-10-22 15:08:51.795337",
+   "origem_rubricas": {
+    "ll": "ifrs-full:ProfitLossAttributableToOwnersOfParent",
+    "ll_total": "ifrs-full:ProfitLoss",
+    "ir": "ifrs-full:IncomeTaxExpenseContinuingOperations",
+    "lpa": "ifrs-full:BasicEarningsLossPerShare",
+    "op": "ifrs-full:ProfitLossFromOperatingActivities",
+    "lai": "ifrs-full:ProfitLossBeforeTax",
+    "desp_fin": "ifrs-full:FinanceCosts",
+    "rec_fin": "ifrs-full:FinanceIncome",
+    "fin_liq": "ifrs-full:FinanceIncomeCost",
+    "da": "ifrs-full:DepreciationAndAmortisationExpense",
+    "div_pagos": "ifrs-full:DividendsPaidClassifiedAsFinancingActivities",
+    "pl": "ifrs-full:EquityAttributableToOwnersOfParent",
+    "pl_ini": "ifrs-full:EquityAttributableToOwnersOfParent",
+    "caixa": "ifrs-full:CashAndCashEquivalents",
+    "divida": {
+     "locacoes_nc": "ifrs-full:NoncurrentLeaseLiabilities",
+     "locacoes_c": "ifrs-full:CurrentLeaseLiabilities"
+    }
+   },
+   "componentes": {
+    "ll": -25252467.0,
+    "ll_total": -17852299.0,
+    "ir": 20812.0,
+    "pl": 87464360.0,
+    "pl_ini": 113012827.0,
+    "lpa": -2.12,
+    "op": -8597735.0,
+    "lai": -17831487.0,
+    "fin_liq": -9233752.0,
+    "desp_fin": 9739096.0,
+    "rec_fin": 505344.0,
+    "da": 17607535.0,
+    "ebitda": null,
+    "caixa": 86818435.0,
+    "emprestimos": null,
+    "locacoes": 920906.0,
+    "div_pagos": 9850000.0
+   }
+  },
+  "FCP": {
+   "regra": "Geral",
+   "exercicio": 2026,
+   "ll": null,
+   "dpa_exercicio": null,
+   "lpa": null,
+   "ebitda": null,
+   "semaforo": {
+    "roe": "cinza",
+    "div_liq_ebitda": "cinza",
+    "payout": "cinza"
+   },
+   "nota": null,
+   "nota_provisoria": false,
+   "motivo_sem_nota": "o lucro do exercício não foi encontrado no relatório eletrónico",
+   "flags": [
+    "payout:dpa_do_exercicio_nao_cadastrado",
+    "verificar:emprestimos_nao_identificados",
+    "sem_nota:lucro_indisponivel"
+   ],
+   "lei": "549300H3W4IIDNIV6I38",
+   "relatorio": "549300H3W4IIDNIV6I38-2026-06-30-ESEF-PT-0",
+   "relatorio_url": "https://filings.xbrl.org/549300H3W4IIDNIV6I38/2026-06-30/ESEF/PT/0/549300H3W4IIDNIV6I38-2026-06-30/reports/ixbrlviewer.html",
+   "publicado": "2026-10-22 15:09:37.749593",
+   "origem_rubricas": {
+    "ll": null,
+    "ll_total": null,
+    "ir": null,
+    "lpa": null,
+    "op": null,
+    "lai": null,
+    "desp_fin": null,
+    "rec_fin": null,
+    "fin_liq": null,
+    "da": null,
+    "div_pagos": null,
+    "pl": null,
+    "pl_ini": null,
+    "caixa": null,
+    "divida": {}
+   },
+   "componentes": {
+    "ll": null,
+    "ll_total": null,
+    "ir": null,
+    "pl": null,
+    "pl_ini": null,
+    "lpa": null,
+    "op": null,
+    "lai": null,
+    "fin_liq": null,
+    "desp_fin": null,
+    "rec_fin": null,
+    "da": null,
+    "ebitda": null,
+    "caixa": null,
+    "emprestimos": null,
+    "locacoes": null,
+    "div_pagos": null
+   }
+  },
+  "FLEXD": {
+   "regra": "Geral",
+   "exercicio": 2025,
+   "ll": 976552.0,
+   "roe": 4.7,
+   "dpa_exercicio": 0.2004,
+   "lpa": 0.27,
+   "payout": 74.2,
+   "payout_caixa": 65.1,
+   "ebitda": 1650485.0,
+   "divida_liquida": -5659593.0,
+   "div_liq_ebitda": -3.43,
+   "semaforo": {
+    "roe": "vermelho",
+    "div_liq_ebitda": "verde",
+    "payout": "verde"
+   },
+   "nota": 1,
+   "nota_provisoria": true,
+   "flags": [
+    "verificar:div_liq_ebitda=-3.43"
+   ],
+   "lei": "529900WSOSCVTSE4F530",
+   "relatorio": "529900WSOSCVTSE4F530-2025-12-31-ESEF-PT-0",
+   "relatorio_url": "https://filings.xbrl.org/529900WSOSCVTSE4F530/2025-12-31/ESEF/PT/0/145973-2025-12-31/reports/ixbrlviewer.html",
+   "publicado": "2026-10-22 15:08:03.150823",
+   "origem_rubricas": {
+    "ll": "ifrs-full:ProfitLossAttributableToOwnersOfParent",
+    "ll_total": "ifrs-full:ProfitLoss",
+    "ir": "ifrs-full:IncomeTaxExpenseContinuingOperations",
+    "lpa": "ifrs-full:BasicEarningsLossPerShare",
+    "op": "ifrs-full:ProfitLossFromOperatingActivities",
+    "lai": "ifrs-full:ProfitLossBeforeTax",
+    "desp_fin": "ifrs-full:FinanceCosts",
+    "rec_fin": null,
+    "fin_liq": null,
+    "da": "ifrs-full:DepreciationAndAmortisationExpense",
+    "div_pagos": "ifrs-full:DividendsPaidClassifiedAsFinancingActivities",
+    "pl": "ifrs-full:EquityAttributableToOwnersOfParent",
+    "pl_ini": "ifrs-full:EquityAttributableToOwnersOfParent",
+    "caixa": "ifrs-full:CashAndCashEquivalents",
+    "divida": {
+     "emprestimos_nc": "ifrs-full:LongtermBorrowings",
+     "emprestimos_c": "ifrs-full:CurrentBorrowingsAndCurrentPortionOfNoncurrentBorrowings",
+     "locacoes_nc": "ifrs-full:NoncurrentLeaseLiabilities",
+     "locacoes_c": "ifrs-full:CurrentLeaseLiabilities"
+    }
+   },
+   "componentes": {
+    "ll": 976552.0,
+    "ll_total": 986279.0,
+    "ir": 10054.0,
+    "pl": 21193664.0,
+    "pl_ini": 20412321.0,
+    "lpa": 0.27,
+    "op": 1438844.0,
+    "lai": 996333.0,
+    "fin_liq": null,
+    "desp_fin": 442511.0,
+    "rec_fin": null,
+    "da": 211641.0,
+    "ebitda": null,
+    "caixa": 9326065.0,
+    "emprestimos": 3477311.0,
+    "locacoes": 189161.0,
+    "div_pagos": 636199.0
+   }
+  },
   "GALP": {
    "regra": "Energia",
    "exercicio": 2025,
@@ -547,6 +742,74 @@
     "emprestimos": 3682000000.0,
     "locacoes": 1217000000.0,
     "div_pagos": 480000000.0
+   }
+  },
+  "GLINT": {
+   "regra": "Geral",
+   "exercicio": 2025,
+   "ll": 7729335.0,
+   "roe": 9.1,
+   "roe_medio_2a": 7.6,
+   "dpa_exercicio": 0.0,
+   "lpa": null,
+   "payout_caixa": 48.5,
+   "ebitda": 19667519.0,
+   "divida_liquida": 27090731.0,
+   "div_liq_ebitda": 1.38,
+   "semaforo": {
+    "roe": "amarelo",
+    "div_liq_ebitda": "verde",
+    "payout": "cinza"
+   },
+   "nota": 2,
+   "nota_provisoria": false,
+   "flags": [
+    "info:sem_dividendo_cadastrado_para_o_exercicio"
+   ],
+   "lei": "9598003URM2KB8KRKA46",
+   "relatorio": "9598003URM2KB8KRKA46-2025-12-31-ESEF-PT-0",
+   "relatorio_url": "https://filings.xbrl.org/9598003URM2KB8KRKA46/2025-12-31/ESEF/PT/0/9598003URM2KB8KRKA46-2025-12-31-1-pt/reports/ixbrlviewer.html",
+   "publicado": "2026-10-22 15:08:32.721038",
+   "origem_rubricas": {
+    "ll": "ifrs-full:ProfitLossAttributableToOwnersOfParent",
+    "ll_total": "ifrs-full:ProfitLoss",
+    "ir": "ifrs-full:IncomeTaxExpenseContinuingOperations",
+    "lpa": null,
+    "op": "ifrs-full:ProfitLossFromOperatingActivities",
+    "lai": "ifrs-full:ProfitLossBeforeTax",
+    "desp_fin": null,
+    "rec_fin": null,
+    "fin_liq": "ifrs-full:FinanceIncomeCost",
+    "da": "ifrs-full:DepreciationAndAmortisationExpense",
+    "div_pagos": "ifrs-full:DividendsPaidClassifiedAsFinancingActivities",
+    "pl": "ifrs-full:EquityAttributableToOwnersOfParent",
+    "pl_ini": "ifrs-full:EquityAttributableToOwnersOfParent",
+    "caixa": "ifrs-full:CashAndCashEquivalents",
+    "divida": {
+     "emprestimos_nc": "ifrs-full:LongtermBorrowings",
+     "emprestimos_c": "ifrs-full:CurrentBorrowingsAndCurrentPortionOfNoncurrentBorrowings",
+     "locacoes_nc": "ifrs-full:NoncurrentLeaseLiabilities",
+     "locacoes_c": "ifrs-full:CurrentLeaseLiabilities"
+    }
+   },
+   "componentes": {
+    "ll": 7729335.0,
+    "ll_total": 8588101.0,
+    "ir": 3229696.0,
+    "pl": 86893520.0,
+    "pl_ini": 82671789.0,
+    "lpa": null,
+    "op": 14113282.0,
+    "lai": 11612339.0,
+    "fin_liq": -2500943.0,
+    "desp_fin": null,
+    "rec_fin": null,
+    "da": 5554237.0,
+    "ebitda": null,
+    "caixa": 14885243.0,
+    "emprestimos": 36095026.0,
+    "locacoes": 5880948.0,
+    "div_pagos": 3749802.0
    }
   },
   "IBS": {
@@ -623,6 +886,11 @@
     "div_pagos": 28539062.0
    }
   },
+  "IPR": {
+   "erro": "falha: can only concatenate str (not \"NoneType\") to str",
+   "nota": null,
+   "motivo_sem_nota": "falha ao ler a fonte"
+  },
   "JMT": {
    "regra": "Geral",
    "exercicio": 2025,
@@ -688,6 +956,210 @@
     "emprestimos": 1250000000.0,
     "locacoes": 4322000000.0,
     "div_pagos": 388000000.0
+   }
+  },
+  "MAR": {
+   "regra": "Geral",
+   "exercicio": 2025,
+   "ll": 9465840.0,
+   "roe": 12.2,
+   "roe_medio_2a": 23.2,
+   "dpa_exercicio": 0.093,
+   "lpa": 0.0968,
+   "payout": 96.1,
+   "payout_caixa": 127.0,
+   "ebitda": 24399992.0,
+   "divida_liquida": 68927579.0,
+   "div_liq_ebitda": 2.82,
+   "semaforo": {
+    "roe": "verde",
+    "div_liq_ebitda": "amarelo",
+    "payout": "amarelo"
+   },
+   "nota": 2,
+   "nota_provisoria": false,
+   "flags": [],
+   "lei": "959800HYZFJ73QZQLS50",
+   "relatorio": "959800HYZFJ73QZQLS50-2025-12-31-ESEF-PT-0",
+   "relatorio_url": "https://filings.xbrl.org/959800HYZFJ73QZQLS50/2025-12-31/ESEF/PT/0/063783-2025-12-31/reports/ixbrlviewer.html",
+   "publicado": "2026-10-22 15:07:48.240188",
+   "origem_rubricas": {
+    "ll": "ifrs-full:ProfitLossAttributableToOwnersOfParent",
+    "ll_total": "ifrs-full:ProfitLoss",
+    "ir": "ifrs-full:IncomeTaxExpenseContinuingOperations",
+    "lpa": "ifrs-full:BasicEarningsLossPerShare",
+    "op": "ifrs-full:ProfitLossFromOperatingActivities",
+    "lai": "ifrs-full:ProfitLossBeforeTax",
+    "desp_fin": "ifrs-full:FinanceCosts",
+    "rec_fin": "ifrs-full:FinanceIncome",
+    "fin_liq": null,
+    "da": "ifrs-full:DepreciationAndAmortisationExpense",
+    "div_pagos": "ifrs-full:DividendsPaidClassifiedAsFinancingActivities",
+    "pl": "ifrs-full:EquityAttributableToOwnersOfParent",
+    "pl_ini": "ifrs-full:EquityAttributableToOwnersOfParent",
+    "caixa": "ifrs-full:CashAndCashEquivalents",
+    "divida": {
+     "emprestimos_c": "ifrs-full:CurrentBorrowingsAndCurrentPortionOfNoncurrentBorrowings",
+     "locacoes_nc": "ifrs-full:NoncurrentLeaseLiabilities",
+     "locacoes_c": "ifrs-full:CurrentLeaseLiabilities",
+     "outros_emprestimos_nc": "ifrs-full:NoncurrentPortionOfOtherNoncurrentBorrowings"
+    }
+   },
+   "componentes": {
+    "ll": 9465840.0,
+    "ll_total": 9512415.0,
+    "ir": 1623974.0,
+    "pl": 75436477.0,
+    "pl_ini": 79223004.0,
+    "lpa": 0.0968,
+    "op": 17481973.0,
+    "lai": 11136389.0,
+    "fin_liq": null,
+    "desp_fin": 8069907.0,
+    "rec_fin": 1679746.0,
+    "da": 6918019.0,
+    "ebitda": null,
+    "caixa": 40227613.0,
+    "emprestimos": 87515228.0,
+    "locacoes": 21639964.0,
+    "div_pagos": 12018512.0
+   }
+  },
+  "MCP": {
+   "regra": "Geral",
+   "exercicio": 2025,
+   "ll": 3705900.0,
+   "roe": 3.7,
+   "roe_medio_2a": 6.5,
+   "dpa_exercicio": 0.0,
+   "lpa": 0.0438,
+   "payout": 0.0,
+   "payout_caixa": 95.8,
+   "ebitda": 14182489.0,
+   "divida_liquida": 28694695.0,
+   "div_liq_ebitda": 2.02,
+   "semaforo": {
+    "roe": "vermelho",
+    "div_liq_ebitda": "verde",
+    "payout": "amarelo"
+   },
+   "nota": 1,
+   "nota_provisoria": false,
+   "flags": [
+    "info:sem_dividendo_cadastrado_para_o_exercicio"
+   ],
+   "lei": "959800ZHXLTEGNEFL383",
+   "relatorio": "959800ZHXLTEGNEFL383-2025-12-31-ESEF-PT-0",
+   "relatorio_url": "https://filings.xbrl.org/959800ZHXLTEGNEFL383/2025-12-31/ESEF/PT/0/006235-2025-12-31/reports/ixbrlviewer.html",
+   "publicado": "2026-10-22 15:07:55.841972",
+   "origem_rubricas": {
+    "ll": "ifrs-full:ProfitLossAttributableToOwnersOfParent",
+    "ll_total": "ifrs-full:ProfitLoss",
+    "ir": "ifrs-full:IncomeTaxExpenseContinuingOperations",
+    "lpa": "ifrs-full:BasicEarningsLossPerShare",
+    "op": "ifrs-full:ProfitLossFromOperatingActivities",
+    "lai": "ifrs-full:ProfitLossBeforeTax",
+    "desp_fin": "ifrs-full:FinanceCosts",
+    "rec_fin": "ifrs-full:FinanceIncome",
+    "fin_liq": "ifrs-full:FinanceIncomeCost",
+    "da": "ifrs-full:DepreciationAndAmortisationExpense",
+    "div_pagos": "ifrs-full:DividendsPaidClassifiedAsFinancingActivities",
+    "pl": "ifrs-full:EquityAttributableToOwnersOfParent",
+    "pl_ini": "ifrs-full:EquityAttributableToOwnersOfParent",
+    "caixa": "ifrs-full:CashAndCashEquivalents",
+    "divida": {
+     "emprestimos_nc": "ifrs-full:LongtermBorrowings",
+     "emprestimos_c": "ifrs-full:CurrentBorrowingsAndCurrentPortionOfNoncurrentBorrowings",
+     "locacoes_nc": "ifrs-full:NoncurrentLeaseLiabilities",
+     "locacoes_c": "ifrs-full:CurrentLeaseLiabilities"
+    }
+   },
+   "componentes": {
+    "ll": 3705900.0,
+    "ll_total": 3699499.0,
+    "ir": 515412.0,
+    "pl": 99985076.0,
+    "pl_ini": 99835131.0,
+    "lpa": 0.0438,
+    "op": 6660916.0,
+    "lai": 4214911.0,
+    "fin_liq": -2446005.0,
+    "desp_fin": 2446013.0,
+    "rec_fin": 8.0,
+    "da": 7521573.0,
+    "ebitda": null,
+    "caixa": 1898304.0,
+    "emprestimos": 22917901.0,
+    "locacoes": 7675098.0,
+    "div_pagos": 3549554.0
+   }
+  },
+  "NBA": {
+   "regra": "Geral",
+   "exercicio": 2025,
+   "ll": 5485000.0,
+   "roe": 8.8,
+   "roe_medio_2a": 8.7,
+   "dpa_exercicio": 0.0,
+   "lpa": 0.15,
+   "payout": 0.0,
+   "payout_caixa": 862.6,
+   "ebitda": 15386000.0,
+   "divida_liquida": -15209000.0,
+   "div_liq_ebitda": -0.99,
+   "semaforo": {
+    "roe": "amarelo",
+    "div_liq_ebitda": "verde",
+    "payout": "amarelo"
+   },
+   "nota": 2,
+   "nota_provisoria": false,
+   "flags": [
+    "info:sem_dividendo_cadastrado_para_o_exercicio",
+    "info:locacoes_nao_identificadas"
+   ],
+   "lei": "549300J0TPYCTYE0CL94",
+   "relatorio": "549300J0TPYCTYE0CL94-2025-12-31-ESEF-PT-0",
+   "relatorio_url": "https://filings.xbrl.org/549300J0TPYCTYE0CL94/2025-12-31/ESEF/PT/0/005515-2025-12-31/reports/ixbrlviewer.html",
+   "publicado": "2026-10-22 15:08:27.660005",
+   "origem_rubricas": {
+    "ll": "ifrs-full:ProfitLossAttributableToOwnersOfParent",
+    "ll_total": "ifrs-full:ProfitLoss",
+    "ir": "ifrs-full:IncomeTaxExpenseContinuingOperations",
+    "lpa": "ifrs-full:BasicEarningsLossPerShare",
+    "op": "ifrs-full:ProfitLossFromOperatingActivities",
+    "lai": "ifrs-full:ProfitLossBeforeTax",
+    "desp_fin": "ifrs-full:FinanceCosts",
+    "rec_fin": "ifrs-full:FinanceIncome",
+    "fin_liq": null,
+    "da": "ifrs-full:DepreciationAndAmortisationExpense",
+    "div_pagos": "ifrs-full:DividendsPaidClassifiedAsFinancingActivities",
+    "pl": "ifrs-full:EquityAttributableToOwnersOfParent",
+    "pl_ini": "ifrs-full:EquityAttributableToOwnersOfParent",
+    "caixa": "ifrs-full:CashAndCashEquivalents",
+    "divida": {
+     "emprestimos_nc": "ifrs-full:LongtermBorrowings",
+     "emprestimos_c": "ifrs-full:CurrentBorrowingsAndCurrentPortionOfNoncurrentBorrowings"
+    }
+   },
+   "componentes": {
+    "ll": 5485000.0,
+    "ll_total": 8281000.0,
+    "ir": 2485000.0,
+    "pl": 50379000.0,
+    "pl_ini": 73941000.0,
+    "lpa": 0.15,
+    "op": 11562000.0,
+    "lai": 14998000.0,
+    "fin_liq": null,
+    "desp_fin": 2061000.0,
+    "rec_fin": 5497000.0,
+    "da": 3824000.0,
+    "ebitda": null,
+    "caixa": 30693000.0,
+    "emprestimos": 15484000.0,
+    "locacoes": null,
+    "div_pagos": 47312000.0
    }
   },
   "NOS": {
@@ -824,6 +1296,151 @@
     "div_pagos": 174993706.0
    }
   },
+  "PHR": {
+   "regra": "Geral",
+   "exercicio": 2025,
+   "ll": 2100757.0,
+   "roe": 2.3,
+   "roe_medio_2a": 16.3,
+   "dpa_exercicio": 0.0,
+   "lpa": 0.0026,
+   "payout": 0.0,
+   "ebitda": 1110039.0,
+   "divida_liquida": -14971834.0,
+   "div_liq_ebitda": -13.49,
+   "descartados": [
+    "div_liq_ebitda"
+   ],
+   "semaforo": {
+    "roe": "vermelho",
+    "div_liq_ebitda": "cinza",
+    "payout": "amarelo"
+   },
+   "nota": null,
+   "nota_provisoria": false,
+   "motivo_sem_nota": "um indicador ficou fora da faixa plausível e precisa de conferência",
+   "flags": [
+    "info:sem_dividendo_cadastrado_para_o_exercicio",
+    "info:locacoes_nao_identificadas",
+    "descartado:div_liq_ebitda=-13.49",
+    "sem_nota:metrica_fora_da_faixa_plausivel"
+   ],
+   "lei": "549300JNP3LA8FWLU630",
+   "relatorio": "549300JNP3LA8FWLU630-2025-12-31-ESEF-PT-0",
+   "relatorio_url": "https://filings.xbrl.org/549300JNP3LA8FWLU630/2025-12-31/ESEF/PT/0/009560-2025-12-31/reports/ixbrlviewer.html",
+   "publicado": "2026-10-22 15:03:53.411457",
+   "origem_rubricas": {
+    "ll": "ifrs-full:ProfitLossAttributableToOwnersOfParent",
+    "ll_total": "ifrs-full:ProfitLoss",
+    "ir": "ifrs-full:IncomeTaxExpenseContinuingOperations",
+    "lpa": "ifrs-full:BasicEarningsLossPerShare",
+    "op": "ifrs-full:ProfitLossFromOperatingActivities",
+    "lai": "ifrs-full:ProfitLossBeforeTax",
+    "desp_fin": null,
+    "rec_fin": null,
+    "fin_liq": null,
+    "da": "ifrs-full:DepreciationAndAmortisationExpense",
+    "div_pagos": null,
+    "pl": "ifrs-full:Equity",
+    "pl_ini": "ifrs-full:Equity",
+    "caixa": "ifrs-full:CashAndCashEquivalents",
+    "divida": {
+     "emprestimos_nc": "ifrs-full:LongtermBorrowings"
+    }
+   },
+   "componentes": {
+    "ll": 2100757.0,
+    "ll_total": 2100757.0,
+    "ir": 50498.0,
+    "pl": 94280806.0,
+    "pl_ini": 92201331.0,
+    "lpa": 0.0026,
+    "op": 1080423.0,
+    "lai": 2151255.0,
+    "fin_liq": null,
+    "desp_fin": null,
+    "rec_fin": null,
+    "da": 29616.0,
+    "ebitda": null,
+    "caixa": 14972647.0,
+    "emprestimos": 813.0,
+    "locacoes": null,
+    "div_pagos": null
+   }
+  },
+  "RAM": {
+   "regra": "Geral",
+   "exercicio": 2025,
+   "ll": 8813576.0,
+   "roe": 8.1,
+   "roe_medio_2a": 16.0,
+   "dpa_exercicio": 0.24,
+   "lpa": 0.25,
+   "payout": 96.0,
+   "payout_caixa": 305.5,
+   "ebitda": 11277972.0,
+   "divida_liquida": -1109853.0,
+   "div_liq_ebitda": -0.1,
+   "semaforo": {
+    "roe": "amarelo",
+    "div_liq_ebitda": "verde",
+    "payout": "amarelo"
+   },
+   "nota": 2,
+   "nota_provisoria": true,
+   "flags": [
+    "verificar:ebit_reconstruido_lucro_impostos_financeiro"
+   ],
+   "lei": "213800CQ272Y7QY2HL36",
+   "relatorio": "213800CQ272Y7QY2HL36-2025-12-31-ESEF-PT-0",
+   "relatorio_url": "https://filings.xbrl.org/213800CQ272Y7QY2HL36/2025-12-31/ESEF/PT/0/072660-2025-12-31/reports/ixbrlviewer.html",
+   "publicado": "2026-10-22 15:04:18.369412",
+   "origem_rubricas": {
+    "ll": "ifrs-full:ProfitLoss",
+    "ll_total": "ifrs-full:ProfitLoss",
+    "ir": "ifrs-full:IncomeTaxExpenseContinuingOperations",
+    "lpa": "ifrs-full:BasicEarningsLossPerShareFromContinuingOperations",
+    "op": null,
+    "lai": null,
+    "desp_fin": "ifrs-full:FinanceCosts",
+    "rec_fin": "ifrs-full:FinanceIncome",
+    "fin_liq": null,
+    "da": "ifrs-full:DepreciationAndAmortisationExpense",
+    "div_pagos": "ifrs-full:DividendsPaidClassifiedAsFinancingActivities",
+    "pl": "ifrs-full:EquityAttributableToOwnersOfParent",
+    "pl_ini": "ifrs-full:EquityAttributableToOwnersOfParent",
+    "caixa": "ifrs-full:CashAndCashEquivalents",
+    "divida_detalhe": {
+     "outros_nc": "ifrs-full:NoncurrentPortionOfNoncurrentLoansReceived",
+     "outros_c": "ifrs-full:CurrentLoansReceivedAndCurrentPortionOfNoncurrentLoansReceived"
+    },
+    "divida": {
+     "locacoes_nc": "ifrs-full:NoncurrentLeaseLiabilities",
+     "locacoes_c": "ifrs-full:CurrentLeaseLiabilities",
+     "outros_emprestimos_nc": "ifrs-full:NoncurrentPortionOfOtherNoncurrentBorrowings",
+     "outros_emprestimos_c": "ifrs-full:OtherCurrentBorrowingsAndCurrentPortionOfOtherNoncurrentBorrowings"
+    }
+   },
+   "componentes": {
+    "ll": 8813576.0,
+    "ll_total": 8813576.0,
+    "ir": 2131751.0,
+    "pl": 99623297.0,
+    "pl_ini": 117733251.0,
+    "lpa": 0.25,
+    "op": null,
+    "lai": null,
+    "fin_liq": null,
+    "desp_fin": 195793.0,
+    "rec_fin": 111945.0,
+    "da": 248797.0,
+    "ebitda": null,
+    "caixa": 1170370.0,
+    "emprestimos": 0,
+    "locacoes": 60517.0,
+    "div_pagos": 26923530.0
+   }
+  },
   "RENE": {
    "regra": "Energia",
    "exercicio": 2025,
@@ -891,6 +1508,133 @@
     "div_pagos": 104140000.0
    }
   },
+  "SCP": {
+   "regra": "Geral",
+   "exercicio": 2026,
+   "ll": null,
+   "dpa_exercicio": null,
+   "lpa": null,
+   "ebitda": null,
+   "semaforo": {
+    "roe": "cinza",
+    "div_liq_ebitda": "cinza",
+    "payout": "cinza"
+   },
+   "nota": null,
+   "nota_provisoria": false,
+   "motivo_sem_nota": "o lucro do exercício não foi encontrado no relatório eletrónico",
+   "flags": [
+    "payout:dpa_do_exercicio_nao_cadastrado",
+    "verificar:emprestimos_nao_identificados",
+    "sem_nota:lucro_indisponivel"
+   ],
+   "lei": "529900VEXUYO06HWF729",
+   "relatorio": "529900VEXUYO06HWF729-2026-06-30-ESEF-PT-0",
+   "relatorio_url": "https://filings.xbrl.org/529900VEXUYO06HWF729/2026-06-30/ESEF/PT/0/529900VEXUYO06HWF729-2026-06-30/reports/ixbrlviewer.html",
+   "publicado": "2026-10-22 15:09:13.564910",
+   "origem_rubricas": {
+    "ll": null,
+    "ll_total": null,
+    "ir": null,
+    "lpa": null,
+    "op": null,
+    "lai": null,
+    "desp_fin": null,
+    "rec_fin": null,
+    "fin_liq": null,
+    "da": null,
+    "div_pagos": null,
+    "pl": null,
+    "pl_ini": null,
+    "caixa": null,
+    "divida": {}
+   },
+   "componentes": {
+    "ll": null,
+    "ll_total": null,
+    "ir": null,
+    "pl": null,
+    "pl_ini": null,
+    "lpa": null,
+    "op": null,
+    "lai": null,
+    "fin_liq": null,
+    "desp_fin": null,
+    "rec_fin": null,
+    "da": null,
+    "ebitda": null,
+    "caixa": null,
+    "emprestimos": null,
+    "locacoes": null,
+    "div_pagos": null
+   }
+  },
+  "SCT": {
+   "regra": "Geral",
+   "exercicio": 2025,
+   "ll": 25082171.0,
+   "roe": 13.0,
+   "roe_medio_2a": 14.3,
+   "dpa_exercicio": 0.35,
+   "lpa": 0.733,
+   "payout": 47.7,
+   "payout_caixa": 48.8,
+   "ebitda": 66187019.0,
+   "divida_liquida": 26654447.0,
+   "div_liq_ebitda": 0.4,
+   "semaforo": {
+    "roe": "verde",
+    "div_liq_ebitda": "verde",
+    "payout": "verde"
+   },
+   "nota": 3,
+   "nota_provisoria": false,
+   "flags": [
+    "info:locacoes_nao_identificadas"
+   ],
+   "lei": "213800NI6JNPX5F44U15",
+   "relatorio": "213800NI6JNPX5F44U15-2025-12-31-ESEF-PT-0",
+   "relatorio_url": "https://filings.xbrl.org/213800NI6JNPX5F44U15/2025-12-31/ESEF/PT/0/213800NI6JNPX5F44U15-2025-12-31/reports/ixbrlviewer.html",
+   "publicado": "2026-10-22 15:08:49.606079",
+   "origem_rubricas": {
+    "ll": "ifrs-full:ProfitLossAttributableToOwnersOfParent",
+    "ll_total": null,
+    "ir": "ifrs-full:IncomeTaxExpenseContinuingOperations",
+    "lpa": "ifrs-full:BasicEarningsLossPerShare",
+    "op": "ifrs-full:ProfitLossFromOperatingActivities",
+    "lai": "ifrs-full:ProfitLossBeforeTax",
+    "desp_fin": "ifrs-full:FinanceCosts",
+    "rec_fin": "ifrs-full:FinanceIncome",
+    "fin_liq": null,
+    "da": "ifrs-full:DepreciationAndAmortisationExpense",
+    "div_pagos": "ifrs-full:DividendsPaidClassifiedAsFinancingActivities",
+    "pl": "ifrs-full:EquityAttributableToOwnersOfParent",
+    "pl_ini": "ifrs-full:EquityAttributableToOwnersOfParent",
+    "caixa": "ifrs-full:CashAndCashEquivalents",
+    "divida": {
+     "emprestimos_c": "ifrs-full:CurrentBorrowingsAndCurrentPortionOfNoncurrentBorrowings"
+    }
+   },
+   "componentes": {
+    "ll": 25082171.0,
+    "ll_total": null,
+    "ir": 8765487.0,
+    "pl": 200031070.0,
+    "pl_ini": 186178992.0,
+    "lpa": 0.733,
+    "op": 47570492.0,
+    "lai": 34426096.0,
+    "fin_liq": null,
+    "desp_fin": 8070339.0,
+    "rec_fin": 439774.0,
+    "da": 18616527.0,
+    "ebitda": null,
+    "caixa": 16570589.0,
+    "emprestimos": 43225036.0,
+    "locacoes": null,
+    "div_pagos": 12234538.0
+   }
+  },
   "SEM": {
    "regra": "Geral",
    "exercicio": 2025,
@@ -956,6 +1700,133 @@
     "emprestimos": 1163517751.0,
     "locacoes": 136293749.0,
     "div_pagos": 102443982.0
+   }
+  },
+  "SLBEN": {
+   "regra": "Geral",
+   "exercicio": 2026,
+   "ll": null,
+   "dpa_exercicio": null,
+   "lpa": null,
+   "ebitda": null,
+   "semaforo": {
+    "roe": "cinza",
+    "div_liq_ebitda": "cinza",
+    "payout": "cinza"
+   },
+   "nota": null,
+   "nota_provisoria": false,
+   "motivo_sem_nota": "o lucro do exercício não foi encontrado no relatório eletrónico",
+   "flags": [
+    "payout:dpa_do_exercicio_nao_cadastrado",
+    "verificar:emprestimos_nao_identificados",
+    "sem_nota:lucro_indisponivel"
+   ],
+   "lei": "213800EDIKU4Z4I1R529",
+   "relatorio": "213800EDIKU4Z4I1R529-2026-06-30-ESEF-PT-0",
+   "relatorio_url": "https://filings.xbrl.org/213800EDIKU4Z4I1R529/2026-06-30/ESEF/PT/0/213800EDIKU4Z4I1R529-2026-06-30/reports/ixbrlviewer.html",
+   "publicado": "2026-10-22 15:08:57.906979",
+   "origem_rubricas": {
+    "ll": null,
+    "ll_total": null,
+    "ir": null,
+    "lpa": null,
+    "op": null,
+    "lai": null,
+    "desp_fin": null,
+    "rec_fin": null,
+    "fin_liq": null,
+    "da": null,
+    "div_pagos": null,
+    "pl": null,
+    "pl_ini": null,
+    "caixa": null,
+    "divida": {}
+   },
+   "componentes": {
+    "ll": null,
+    "ll_total": null,
+    "ir": null,
+    "pl": null,
+    "pl_ini": null,
+    "lpa": null,
+    "op": null,
+    "lai": null,
+    "fin_liq": null,
+    "desp_fin": null,
+    "rec_fin": null,
+    "da": null,
+    "ebitda": null,
+    "caixa": null,
+    "emprestimos": null,
+    "locacoes": null,
+    "div_pagos": null
+   }
+  },
+  "SNC": {
+   "regra": "Geral",
+   "exercicio": 2025,
+   "ll": 51630951.0,
+   "roe": 3.9,
+   "roe_medio_2a": 2.6,
+   "dpa_exercicio": 0.083,
+   "lpa": 0.17,
+   "payout": 48.8,
+   "payout_caixa": 16.6,
+   "ebitda": 40629259.0,
+   "semaforo": {
+    "roe": "vermelho",
+    "div_liq_ebitda": "cinza",
+    "payout": "verde"
+   },
+   "nota": 1,
+   "nota_provisoria": true,
+   "flags": [
+    "info:ebit_reconstruido_resultado_financeiro",
+    "verificar:emprestimos_nao_identificados"
+   ],
+   "lei": "549300WZEEMSSMZ1MP04",
+   "relatorio": "549300WZEEMSSMZ1MP04-2025-12-31-ESEF-PT-0",
+   "relatorio_url": "https://filings.xbrl.org/549300WZEEMSSMZ1MP04/2025-12-31/ESEF/PT/0/008352-2025-12-31/reports/ixbrlviewer.html",
+   "publicado": "2026-10-22 15:05:45.113791",
+   "origem_rubricas": {
+    "ll": "ifrs-full:ProfitLossAttributableToOwnersOfParent",
+    "ll_total": "ifrs-full:ProfitLoss",
+    "ir": "ifrs-full:IncomeTaxExpenseContinuingOperations",
+    "lpa": "ifrs-full:BasicEarningsLossPerShare",
+    "op": null,
+    "lai": "ifrs-full:ProfitLossBeforeTax",
+    "desp_fin": "ifrs-full:FinanceCosts",
+    "rec_fin": "ifrs-full:FinanceIncome",
+    "fin_liq": null,
+    "da": "ifrs-full:DepreciationAndAmortisationExpense",
+    "div_pagos": "ifrs-full:DividendsPaidClassifiedAsFinancingActivities",
+    "pl": "ifrs-full:EquityAttributableToOwnersOfParent",
+    "pl_ini": "ifrs-full:EquityAttributableToOwnersOfParent",
+    "caixa": "ifrs-full:CashAndCashEquivalents",
+    "divida": {
+     "locacoes_nc": "ifrs-full:NoncurrentLeaseLiabilities",
+     "locacoes_c": "ifrs-full:CurrentLeaseLiabilities"
+    }
+   },
+   "componentes": {
+    "ll": 51630951.0,
+    "ll_total": 51630049.0,
+    "ir": -8424885.0,
+    "pl": 1341724297.0,
+    "pl_ini": 1301875168.0,
+    "lpa": 0.17,
+    "op": null,
+    "lai": 43205164.0,
+    "fin_liq": null,
+    "desp_fin": 1858902.0,
+    "rec_fin": 6854841.0,
+    "da": 2420034.0,
+    "ebitda": null,
+    "caixa": 208729355.0,
+    "emprestimos": null,
+    "locacoes": 2923424.0,
+    "div_pagos": 8561533.0
    }
   },
   "SON": {
@@ -1106,6 +1977,7 @@
   "com_relatorio_pct (meta >=90)": 100.0,
   "com_nota_pct (meta >=75)": 87.5,
   "lucro_encontrado_pct (meta >=90)": 100.0,
+  "observacao_com_nota": "8 de 14",
   "conferencia_lucro_2025": {
    "BCP": "1018.6 vs 1018.6 M€ (0.00%) — Millennium bcp, resultados de 2025 (Forbes Portugal, 2026)",
    "GALP": "1120.0 vs 1120.0 M€ (0.00%) — Galp, resultados de 2025 (Forbes España, 2026)",
