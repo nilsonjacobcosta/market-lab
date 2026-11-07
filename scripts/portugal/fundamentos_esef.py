@@ -425,6 +425,8 @@ def main():
             dados, usado = {}, {}
             for ano in anos[:2]:
                 for cand in escolher(rel, ano):
+                    if not cand.get("json_url"):
+                        continue  # relatório sem xBRL-JSON publicado
                     doc = get_json(FXO + cand["json_url"])
                     idx = indexar(doc)
                     d = extrair(idx, ano, t)
@@ -433,7 +435,11 @@ def main():
                     if d["_origem"].get("ll") == "ifrs-full:ProfitLossAttributableToOwnersOfParent":
                         break  # consolidado encontrado
                     time.sleep(0.5)
-            ano = anos[0]
+            if not dados:
+                saida["papeis"][t] = {"erro": "relatório sem xBRL-JSON", "lei": lei, "nota": None,
+                                      "motivo_sem_nota": MOTIVO["sem_relatorio"]}
+                continue
+            ano = max(dados)
             m = metricas(t, p["setor"], dados[ano], dados.get(ano - 1), ano, hoje)
             m.update({"lei": lei, "relatorio": usado[ano]["fxo_id"],
                       "relatorio_url": FXO + (usado[ano].get("viewer_url") or usado[ano].get("report_url") or ""),
