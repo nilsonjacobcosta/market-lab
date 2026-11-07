@@ -117,7 +117,11 @@ NOMES = {  # padrões do nome registado no filings.xbrl.org (normalizado, maiús
     "EDP": r"^EDP[ ,-]+(S\.?A|ENERGIAS)", "EDPR": r"EDP RENEWABLES|EDP RENOVAVEIS", "EGL": r"MOTA\s*-?\s*ENGIL",
     "GALP": r"\bGALP\b", "IBS": r"IBERSOL", "JMT": r"JERONIMO MARTINS", "NOS": r"^NOS[ ,]+S\.?G\.?P\.?S",
     "NVG": r"NAVIGATOR", "RENE": r"REDES ENERGETICAS|^REN\b", "SEM": r"SEMAPA", "SON": r"^SONAE[ ,-]+S\.?G\.?P\.?S",
-    "TDSA": r"TEIXEIRA DUARTE"}
+    "TDSA": r"TEIXEIRA DUARTE",
+    # em observação (alguns podem não ter relatório ESEF no filings.xbrl.org: ficam "sem LEI" sem derrubar o aceite)
+    "PHR": r"PHAROL", "IPR": r"^IMPRESA", "NBA": r"NOVABASE", "GLINT": r"GLINTT", "RAM": r"RAMADA",
+    "SLBEN": r"BENFICA", "MAR": r"MARTIFER", "SNC": r"SONAECOM", "FCP": r"FUTEBOL CLUBE DO PORTO",
+    "SCP": r"SPORTING", "SCT": r"TOYOTA CAETANO", "ESON": r"ESTORIL.SOL", "FLEXD": r"FLEXDEAL", "MCP": r"MEDIA CAPITAL"}
 
 
 def _norm(s):
@@ -155,7 +159,7 @@ def casar(papel, base, mapa):
     lei = (mapa.get(papel) or {}).get("lei")
     if lei and lei in base:
         return lei
-    rx = re.compile(NOMES[papel])
+    rx = re.compile(NOMES.get(papel) or r"(?!)")
     achados = [k for k, g in base.items() if rx.search(_norm(g["nome"]))]
     return achados[0] if len(achados) == 1 else (lei or None)
 
@@ -446,13 +450,17 @@ def main():
             print(t, "ERRO", e)
         time.sleep(0.5)
     # aceite resumido (o teste formal fica em tests/test_portugal.py)
-    vals = list(saida["papeis"].values())
+    # metas medidas só no núcleo; a observação é reportada à parte (não bloqueia a publicação)
+    grupo = {p["papel"]: p.get("grupo", "nucleo") for p in universo["papeis"]}
+    vals = [v for t, v in saida["papeis"].items() if grupo.get(t) == "nucleo"]
+    obs = [v for t, v in saida["papeis"].items() if grupo.get(t) != "nucleo"]
     n = len(vals)
     saida["aceite"] = {
         "com_relatorio_pct (meta >=90)": round(100 * sum(1 for v in vals if "erro" not in v) / n, 1),
         "com_nota_pct (meta >=75)": round(100 * sum(1 for v in vals if v.get("nota") is not None) / n, 1),
         "lucro_encontrado_pct (meta >=90)": round(100 * sum(1 for v in vals if v.get("ll") is not None) / n, 1),
     }
+    saida["aceite"]["observacao_com_nota"] = f"{sum(1 for v in obs if v.get('nota') is not None)} de {len(obs)}"
     Path(a.saida).write_text(json.dumps(saida, ensure_ascii=False, indent=1), encoding="utf-8")
     if not mapa_arq.exists() or a.descobrir:
         with open(mapa_arq if not mapa_arq.exists() else Path(a.saida).with_name("mapa_lei_descoberto.csv"), "w",
