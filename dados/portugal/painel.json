@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-11-07T03:12+00:00",
+ "gerado_em": "2026-11-09T16:54+00:00",
  "precos_coletados_em": "2026-11-07T03:12+00:00",
  "autor": "market-lab — projeto pessoal de estudo de nilsonjacobcosta (GitHub)",
  "aviso": "Material educativo, não é recomendação de investimento.",
@@ -8825,7 +8825,7 @@
   "criterio": "Participações qualificadas (art. 16.º e 20.º do Código dos Valores Mobiliários) segundo a página de investidores ou o relatório de governo societário mais recente da empresa; imprensa reconhecida só para mudanças posteriores ao último documento oficial. 'estatal' = o Estado português controla; 'estatal_estrangeira' = estatal de outro país controla; 'participacao_estatal_relevante' = um Estado (português ou estrangeiro) tem 5% ou mais sem controlar; 'privada' = restantes. 'estrutura' descreve se há maioria (controlo), um acionista de referência sem maioria, ou capital disperso."
  },
  "qualidade_meta": {
-  "gerado_em": "2026-11-07 02:57",
+  "gerado_em": "2026-11-09 16:51",
   "fonte": "Relatórios anuais ESEF (iXBRL) via filings.xbrl.org; LEI via GLEIF",
   "aceite": {
    "com_relatorio_pct (meta >=90)": 100.0,
