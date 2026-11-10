@@ -1,0 +1,778 @@
+{
+ "gerado_utc": "2026-11-10T22:23+00:00",
+ "gerado_brt": "10/11/2026 19:23",
+ "fonte": "Yahoo Finance (endpoint chart), atraso variável; captura de 10/11/2026 onde não há fonte",
+ "cotacoes_ok": 78,
+ "destaques": [
+  {
+   "nome": "Índice Futuro (Ibovespa)",
+   "ticker": "WIN=F",
+   "valor": 174900.0,
+   "var": 0.42,
+   "hora": null,
+   "status": "captura"
+  },
+  {
+   "nome": "Índice DX (dólar)",
+   "ticker": "DX-Y.NYB",
+   "valor": 102.238,
+   "var": 0.6774987690792766,
+   "hora": "2026-11-10T22:13:00+00:00",
+   "status": "ok"
+  },
+  {
+   "nome": "S&P 500 Futuro",
+   "ticker": "ES=F",
+   "valor": 7555.0,
+   "var": 2.3296762833536544,
+   "hora": "2026-11-10T21:59:58+00:00",
+   "status": "ok"
+  },
+  {
+   "nome": "Petróleo WTI (US$)",
+   "ticker": "CL=F",
+   "valor": 86.44,
+   "var": -4.507291206363229,
+   "hora": "2026-11-10T21:59:59+00:00",
+   "status": "ok"
+  },
+  {
+   "nome": "BCOM (Bloomberg Commodity)",
+   "ticker": null,
+   "valor": 131.9261,
+   "var": -1.31,
+   "hora": null,
+   "status": "captura"
+  },
+  {
+   "nome": "CME FedWatch (faixa de juros)",
+   "ticker": null,
+   "valor": null,
+   "var": null,
+   "hora": null,
+   "status": "sem fonte"
+  }
+ ],
+ "secoes": [
+  {
+   "titulo": "Índices americanos",
+   "itens": [
+    {
+     "nome": "Ibovespa",
+     "ticker": "^BVSP",
+     "valor": 171336.98,
+     "var": 3.5087386500250783,
+     "hora": "2026-11-10T21:18:00+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "S&P/TSX",
+     "ticker": "^GSPTSE",
+     "valor": 36170.45,
+     "var": 1.7959715526436382,
+     "hora": "2026-11-10T21:20:01+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "Dow Jones",
+     "ticker": "^DJI",
+     "valor": 52231.89,
+     "var": 0.859621926239007,
+     "hora": "2026-11-10T22:00:40+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "Nasdaq Composto",
+     "ticker": "^IXIC",
+     "valor": 25065.875,
+     "var": -1.2065855247573976,
+     "hora": "2026-11-10T22:15:59+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "Russell 2000",
+     "ticker": "^RUT",
+     "valor": 2821.3755,
+     "var": 0.31735675300894606,
+     "hora": "2026-11-10T21:30:04+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "S&P 500",
+     "ticker": "^GSPC",
+     "valor": 7520.93,
+     "var": -0.6340402593765004,
+     "hora": "2026-11-10T22:00:31+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "S&P 500 VIX",
+     "ticker": "^VIX",
+     "valor": 19.46,
+     "var": 17.158338350391332,
+     "hora": "2026-11-10T21:15:01+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "S&P/BMV IPC",
+     "ticker": "^MXX",
+     "valor": 71893.88,
+     "var": 1.516638002366566,
+     "hora": "2026-11-10T21:26:08+00:00",
+     "status": "ok"
+    }
+   ]
+  },
+  {
+   "titulo": "Índices europeus",
+   "itens": [
+    {
+     "nome": "DAX",
+     "ticker": "^GDAXI",
+     "valor": 26347.45,
+     "var": 1.8667585296053169,
+     "hora": "2026-11-10T17:00:00+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "IBEX 35",
+     "ticker": "^IBEX",
+     "valor": 19936.4,
+     "var": 2.9193274447754103,
+     "hora": "2026-11-10T16:35:30+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "CAC 40",
+     "ticker": "^FCHI",
+     "valor": 8278.59,
+     "var": 1.231368971702973,
+     "hora": "2026-11-10T17:05:02+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "FTSE MIB",
+     "ticker": "FTSEMIB.MI",
+     "valor": 51755.08,
+     "var": 3.630371230627527,
+     "hora": "2026-11-10T16:35:29+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "WIG20",
+     "ticker": "^WIG20",
+     "valor": 4180.4,
+     "var": 0.36,
+     "hora": null,
+     "status": "captura"
+    },
+    {
+     "nome": "FTSE 100",
+     "ticker": "^FTSE",
+     "valor": 10751.59,
+     "var": 1.0639757858324606,
+     "hora": "2026-11-10T16:35:30+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "MOEX",
+     "ticker": "IMOEX.ME",
+     "valor": 2459.12,
+     "var": -0.57,
+     "hora": null,
+     "status": "captura"
+    },
+    {
+     "nome": "OMXS30",
+     "ticker": "^OMXS30",
+     "valor": 3327.7544,
+     "var": 0.5409915451112468,
+     "hora": "2026-11-10T16:34:59+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "SMI",
+     "ticker": "^SSMI",
+     "valor": 15037.94,
+     "var": 0.10044698575837341,
+     "hora": "2026-11-10T16:30:57+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "Euro Stoxx 50",
+     "ticker": "^STOXX50E",
+     "valor": 6327.87,
+     "var": 0.9920663420426301,
+     "hora": "2026-11-10T17:00:00+00:00",
+     "status": "ok"
+    }
+   ]
+  },
+  {
+   "titulo": "Índices asiáticos",
+   "itens": [
+    {
+     "nome": "Tadawul All Share",
+     "ticker": "^TASI.SR",
+     "valor": 10168.1,
+     "var": 0.6073186948881704,
+     "hora": "2026-11-10T12:20:00+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "S&P/ASX 200",
+     "ticker": "^AXJO",
+     "valor": 9129.0,
+     "var": 2.725390466759703,
+     "hora": "2026-11-10T06:12:14+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "Shanghai",
+     "ticker": "000001.SS",
+     "valor": 3663.723,
+     "var": -0.6090327285235841,
+     "hora": "2026-11-10T07:00:29+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "SZSE Component",
+     "ticker": "399001.SZ",
+     "valor": 11241.536,
+     "var": -0.8305978727364716,
+     "hora": "2026-11-10T08:29:28+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "KOSPI",
+     "ticker": "^KS11",
+     "valor": 5239.13,
+     "var": -7.252172589173966,
+     "hora": "2026-11-10T11:05:40+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "Hang Seng",
+     "ticker": "^HSI",
+     "valor": 24557.04,
+     "var": 4.3826885777717095,
+     "hora": "2026-11-10T08:08:58+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "BSE Sensex",
+     "ticker": "^BSESN",
+     "valor": 81106.65,
+     "var": 5.445810042792387,
+     "hora": "2026-11-09T10:02:31+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "Nikkei 225",
+     "ticker": "^N225",
+     "valor": 60459.58,
+     "var": -2.7803313885512493,
+     "hora": "2026-11-10T06:45:03+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "BIST 100",
+     "ticker": "XU100.IS",
+     "valor": 11661.86,
+     "var": 1.6009618316620289,
+     "hora": "2026-11-10T15:10:11+00:00",
+     "status": "ok"
+    }
+   ]
+  },
+  {
+   "titulo": "Cesta DX",
+   "itens": [
+    {
+     "nome": "DX",
+     "ticker": "DX-Y.NYB",
+     "valor": 102.238,
+     "var": 0.6774987690792766,
+     "hora": "2026-11-10T22:13:10+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "USD/EUR",
+     "ticker": "EURUSD=X",
+     "valor": 0.8955758552749418,
+     "var": 0.36718610066273083,
+     "hora": "2026-11-10T22:22:31+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "USD/JPY",
+     "ticker": "JPY=X",
+     "valor": 158.71,
+     "var": 0.15208021758199575,
+     "hora": "2026-11-10T22:23:08+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "USD/GBP",
+     "ticker": "GBPUSD=X",
+     "valor": 0.7495689978262499,
+     "var": 0.6970991679783989,
+     "hora": "2026-11-10T22:22:31+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "USD/CAD",
+     "ticker": "CAD=X",
+     "valor": 1.4186,
+     "var": 1.2923955730096415,
+     "hora": "2026-11-10T22:23:11+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "USD/SEK",
+     "ticker": "SEK=X",
+     "valor": 9.869,
+     "var": 0.9946990319081417,
+     "hora": "2026-11-10T21:59:59+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "USD/CHF",
+     "ticker": "CHF=X",
+     "valor": 0.8246,
+     "var": 0.6346106907493265,
+     "hora": "2026-11-10T22:23:10+00:00",
+     "status": "ok"
+    }
+   ]
+  },
+  {
+   "titulo": "Commodities",
+   "itens": [
+    {
+     "nome": "Minério de ferro",
+     "ticker": null,
+     "valor": 684.0,
+     "var": -0.29,
+     "hora": null,
+     "status": "captura"
+    },
+    {
+     "nome": "Cobre",
+     "ticker": "HG=F",
+     "valor": 6.27,
+     "var": 0.336053768602973,
+     "hora": "2026-11-10T21:59:58+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "Prata",
+     "ticker": "SI=F",
+     "valor": 51.53,
+     "var": -1.345892443474428,
+     "hora": "2026-11-10T21:59:56+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "Ouro",
+     "ticker": "GC=F",
+     "valor": 4040.5,
+     "var": -1.7746444633523817,
+     "hora": "2026-11-10T21:59:59+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "Petróleo Brent",
+     "ticker": "BZ=F",
+     "valor": 92.06,
+     "var": -6.338386407569441,
+     "hora": "2026-11-10T21:59:58+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "Petróleo WTI",
+     "ticker": "CL=F",
+     "valor": 86.44,
+     "var": -4.507291206363229,
+     "hora": "2026-11-10T21:59:59+00:00",
+     "status": "ok"
+    }
+   ]
+  },
+  {
+   "titulo": "Outros ativos",
+   "itens": [
+    {
+     "nome": "S&P 500 Futuro",
+     "ticker": "ES=F",
+     "valor": 7555.0,
+     "var": 2.3296762833536544,
+     "hora": "2026-11-10T21:59:58+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "Nasdaq 100 Futuro",
+     "ticker": "NQ=F",
+     "valor": 27900.75,
+     "var": 4.29407147129186,
+     "hora": "2026-11-10T21:59:58+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "Dow Futuro",
+     "ticker": "YM=F",
+     "valor": 52374.0,
+     "var": 1.470502760825343,
+     "hora": "2026-11-10T21:59:57+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "Russell 2000 Futuro",
+     "ticker": "RTY=F",
+     "valor": 2832.4,
+     "var": 3.546099290780136,
+     "hora": "2026-11-10T21:59:57+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "US 2 anos (%)",
+     "ticker": null,
+     "valor": 4.63,
+     "var": 1.83,
+     "hora": null,
+     "status": "captura"
+    },
+    {
+     "nome": "US 10 anos (%)",
+     "ticker": "^TNX",
+     "valor": 4.983,
+     "var": 1.8185533306088963,
+     "hora": "2026-11-10T19:59:54+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "GB 10 anos (%)",
+     "ticker": null,
+     "valor": 5.113,
+     "var": -0.35,
+     "hora": null,
+     "status": "captura"
+    },
+    {
+     "nome": "DE 10 anos (%)",
+     "ticker": null,
+     "valor": 3.2412,
+     "var": -0.8,
+     "hora": null,
+     "status": "captura"
+    },
+    {
+     "nome": "JP 10 anos (%)",
+     "ticker": null,
+     "valor": 2.695,
+     "var": 1.13,
+     "hora": null,
+     "status": "captura"
+    },
+    {
+     "nome": "CN 10 anos (%)",
+     "ticker": null,
+     "valor": 1.584,
+     "var": -1.0,
+     "hora": null,
+     "status": "captura"
+    },
+    {
+     "nome": "EWZ (ETF Brasil)",
+     "ticker": "EWZ",
+     "valor": 32.15,
+     "var": 1.3236684525685494,
+     "hora": "2026-11-10T21:00:00+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "Índice Futuro (Ibovespa)",
+     "ticker": "WIN=F",
+     "valor": 174900.0,
+     "var": 0.42,
+     "hora": null,
+     "status": "captura"
+    },
+    {
+     "nome": "CDS Brasil 5 anos (pb)",
+     "ticker": null,
+     "valor": 145.6,
+     "var": -1.71,
+     "hora": null,
+     "status": "captura"
+    },
+    {
+     "nome": "Bitcoin",
+     "ticker": "BTC-USD",
+     "valor": 73709.17,
+     "var": -2.690221240649615,
+     "hora": "2026-11-10T22:23:14+00:00",
+     "status": "ok"
+    }
+   ]
+  },
+  {
+   "titulo": "Mundo (USD contra moedas)",
+   "itens": [
+    {
+     "nome": "NIO",
+     "ticker": "USDNIO=X",
+     "valor": 36.6243,
+     "var": 0.06639344262293623,
+     "hora": "2026-11-10T22:00:10+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "DOP",
+     "ticker": "USDDOP=X",
+     "valor": 60.46,
+     "var": -0.06611570247934129,
+     "hora": "2026-11-10T21:41:10+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "UYU",
+     "ticker": "USDUYU=X",
+     "valor": 40.431,
+     "var": 3.7849909514458435,
+     "hora": "2026-11-10T21:40:58+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "CRC",
+     "ticker": "USDCRC=X",
+     "valor": 445.62,
+     "var": 1.3547399978665497,
+     "hora": "2026-11-10T21:40:58+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "PEN",
+     "ticker": "USDPEN=X",
+     "valor": 3.4062,
+     "var": -1.5264527320034693,
+     "hora": "2026-11-10T21:55:34+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "JMD",
+     "ticker": "USDJMD=X",
+     "valor": 157.69,
+     "var": 2.604043649500043,
+     "hora": "2026-11-10T21:41:14+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "PYG",
+     "ticker": "USDPYG=X",
+     "valor": 6196.21,
+     "var": 7.075468193045209,
+     "hora": "2026-11-10T21:40:58+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "CZK",
+     "ticker": "USDCZK=X",
+     "valor": 21.7865,
+     "var": 0.33203772611722915,
+     "hora": "2026-11-10T22:23:15+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "DKK",
+     "ticker": "USDDKK=X",
+     "valor": 6.6941,
+     "var": 0.39142171565687,
+     "hora": "2026-11-10T22:23:13+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "HUF",
+     "ticker": "USDHUF=X",
+     "valor": 326.35,
+     "var": 0.4302173859523917,
+     "hora": "2026-11-10T22:23:19+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "NOK",
+     "ticker": "USDNOK=X",
+     "valor": 9.4859,
+     "var": 2.3290183387270957,
+     "hora": "2026-11-10T22:22:43+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "NGN",
+     "ticker": "USDNGN=X",
+     "valor": 1348.2,
+     "var": 0.35356730805016223,
+     "hora": "2026-11-10T21:40:58+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "EGP",
+     "ticker": "USDEGP=X",
+     "valor": 53.27,
+     "var": -3.628712745903262,
+     "hora": "2026-11-10T21:40:58+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "PHP",
+     "ticker": "USDPHP=X",
+     "valor": 63.06,
+     "var": -0.47662636911713907,
+     "hora": "2026-11-10T19:39:33+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "ILS",
+     "ticker": "USDILS=X",
+     "valor": 3.1721,
+     "var": 0.31941808981656994,
+     "hora": "2026-11-10T22:00:02+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "TWD",
+     "ticker": "USDTWD=X",
+     "valor": 32.937,
+     "var": 0.6232242690862533,
+     "hora": "2026-11-10T22:18:55+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "HKD",
+     "ticker": "USDHKD=X",
+     "valor": 7.8469,
+     "var": 0.00892151614795278,
+     "hora": "2026-11-10T22:23:20+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "NZD",
+     "ticker": "USDNZD=X",
+     "valor": 1.7849,
+     "var": -0.1677946193858748,
+     "hora": "2026-11-10T22:21:31+00:00",
+     "status": "ok"
+    }
+   ]
+  },
+  {
+   "titulo": "Emergentes (USD contra moedas)",
+   "itens": [
+    {
+     "nome": "ARS",
+     "ticker": "USDARS=X",
+     "valor": 1545.25,
+     "var": -0.35218674474180034,
+     "hora": "2026-11-10T21:40:58+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "AUD",
+     "ticker": "USDAUD=X",
+     "valor": 1.4556,
+     "var": 1.4284718834924437,
+     "hora": "2026-11-10T22:21:31+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "BRL",
+     "ticker": "USDBRL=X",
+     "valor": 5.5803,
+     "var": 1.700382722799354,
+     "hora": "2026-11-10T22:07:51+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "CLP",
+     "ticker": "USDCLP=X",
+     "valor": 983.69,
+     "var": 0.2343614668989913,
+     "hora": "2026-11-10T22:07:51+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "CNY",
+     "ticker": "USDCNY=X",
+     "valor": 6.6698,
+     "var": -0.004497683692883392,
+     "hora": "2026-11-10T21:40:58+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "COP",
+     "ticker": "USDCOP=X",
+     "valor": 3292.49,
+     "var": 1.2946059112542763,
+     "hora": "2026-11-10T21:40:58+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "INR",
+     "ticker": "USDINR=X",
+     "valor": 93.918,
+     "var": -0.8764264093113927,
+     "hora": "2026-11-10T21:40:58+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "KRW",
+     "ticker": "USDKRW=X",
+     "valor": 1343.09,
+     "var": 0.014148484622822366,
+     "hora": "2026-11-10T22:23:13+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "MXN",
+     "ticker": "USDMXN=X",
+     "valor": 18.602,
+     "var": -1.1452105752623787,
+     "hora": "2026-11-10T22:23:21+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "RUB",
+     "ticker": "USDRUB=X",
+     "valor": 83.035,
+     "var": 1.67372572644644,
+     "hora": "2026-11-10T21:40:58+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "SAR",
+     "ticker": "USDSAR=X",
+     "valor": 3.7532,
+     "var": 2.897875257025362,
+     "hora": "2026-11-10T22:00:18+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "TRY",
+     "ticker": "USDTRY=X",
+     "valor": 50.2183,
+     "var": 0.4161151125170459,
+     "hora": "2026-11-10T22:23:24+00:00",
+     "status": "ok"
+    },
+    {
+     "nome": "ZAR",
+     "ticker": "USDZAR=X",
+     "valor": 16.5193,
+     "var": -0.44776299296112043,
+     "hora": "2026-11-10T22:23:24+00:00",
+     "status": "ok"
+    }
+   ]
+  }
+ ]
+}
