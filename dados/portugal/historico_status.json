@@ -138,6 +138,13 @@
    "rotulo": "Abaixo do teto calculado",
    "preco": 5.44,
    "teto": 5.4911
+  },
+  {
+   "data": "2026-11-10",
+   "status": "acima",
+   "rotulo": "Acima do teto calculado",
+   "preco": 5.61,
+   "teto": 5.4911
   }
  ],
  "NVG": [
