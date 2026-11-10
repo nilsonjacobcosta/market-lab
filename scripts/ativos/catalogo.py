@@ -19,7 +19,7 @@ SECOES = [
 
 ITENS = [
     # Destaques (cartões) -- entradas de "Outros ativos"/"Commodities"/"Cesta DX" marcadas com destaque=True
-    ("Destaques", "Índice Futuro (Ibovespa)", "WIN=F", 174900.0, 0.42, False, True),
+    ("Destaques", "Ibovespa (à vista)", "^BVSP", 172817, 0.34, False, True),
     ("Destaques", "Índice DX (dólar)", "DX-Y.NYB", 101.698, 0.18, False, True),
     ("Destaques", "S&P 500 Futuro", "ES=F", 7554.0, 0.06, False, True),
     ("Destaques", "Petróleo WTI (US$)", "CL=F", 84.78, -2.36, False, True),
@@ -88,7 +88,6 @@ ITENS = [
     ("Outros ativos", "JP 10 anos (%)", None, 2.695, 1.13, False, False),
     ("Outros ativos", "CN 10 anos (%)", None, 1.584, -1.00, False, False),
     ("Outros ativos", "EWZ (ETF Brasil)", "EWZ", 32.64, 0.09, False, False),
-    ("Outros ativos", "Índice Futuro (Ibovespa)", "WIN=F", 174900.0, 0.42, False, False),
     ("Outros ativos", "CDS Brasil 5 anos (pb)", None, 145.6, -1.71, False, False),
     ("Outros ativos", "Bitcoin", "BTC-USD", 74304.8, -0.54, False, False),
 
