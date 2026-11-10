@@ -1,0 +1,58 @@
+name: Atualizar Tendências (matriz porte x estilo)
+
+on:
+  schedule:
+    # Dias úteis às 22h30 UTC: depois do fechamento de Nova York tanto no horário de verão (20h UTC)
+    # quanto no de inverno (21h UTC). A segunda execução (10h30 UTC, terça a sábado) recupera uma
+    # execução perdida; o GitHub pode atrasar ou descartar execuções agendadas.
+    - cron: "30 22 * * 1-5"
+    - cron: "30 10 * * 2-6"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tendencias
+  cancel-in-progress: false
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Código do projeto (main)
+        uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Testes unitários (bloqueiam a atualização se falharem)
+        run: python3 -m unittest tests/test_tendencias.py -v
+      - name: Preparar branch de dados (dados-tendencias)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          URL="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          if git ls-remote --exit-code --heads "$URL" dados-tendencias >/dev/null 2>&1; then
+            git clone --quiet --depth 1 --branch dados-tendencias "$URL" _dados
+          else
+            mkdir _dados
+            git -C _dados init -q -b dados-tendencias
+            git -C _dados remote add origin "$URL"
+          fi
+      - name: Coletar e calcular
+        env:
+          TENDENCIAS_SAIDA: ${{ github.workspace }}/_dados/tendencias.json
+        run: python3 scripts/tendencias/coletar_tendencias.py
+        continue-on-error: true   # falha de rede mantém o arquivo anterior; a página avisa se ficar velho
+      - name: Publicar na branch dados-tendencias se houve mudança
+        working-directory: _dados
+        run: |
+          git config user.name "market-lab bot"
+          git config user.email "actions@users.noreply.github.com"
+          [ -f tendencias.json ] || { echo "Sem arquivo para publicar"; exit 0; }
+          git add tendencias.json
+          if git diff --cached --quiet; then echo "Sem mudanças"; exit 0; fi
+          git commit -m "Tendências: atualização automática $(date -u +'%Y-%m-%d %H:%M') UTC"
+          git pull --rebase origin dados-tendencias || true
+          git push origin HEAD:dados-tendencias

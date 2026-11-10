@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tendências de mercado · market-lab</title>
+<meta name="description" content="Matriz porte × estilo das ações americanas: quanto cada grupo rendeu a mais ou a menos que o mercado amplo. Material educativo.">
+<style>
+:root{
+  --bg:#f2f4f7; --surface:#ffffff; --surface-2:#e9edf2;
+  --ink:#152131; --ink-2:#465567; --muted:#5f6d7d; --line:#d9e0e8;
+  --accent:#b86e0c; --warn:#8a5a00; --warn-bg:#fbefdc;
+  --a1:#d6e6fa; --a2:#a9cbf3; --a3:#74a9e8; --n0:#e9edf2; --o1:#fbe0d0; --o2:#f6bd9a; --o3:#ee9966;
+  --f-body:"IBM Plex Sans","Helvetica Neue",Arial,system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#0d131a; --surface:#141c26; --surface-2:#1b2532;
+  --ink:#e5ecf3; --ink-2:#aab6c3; --muted:#8e9bab; --line:#263241;
+  --accent:#e9a443; --warn:#f0c36a; --warn-bg:#2c2213;
+  --a1:#1d3a5c; --a2:#255290; --a3:#2a63ab; --n0:#1b2532; --o1:#4a2a1a; --o2:#7d4020; --o3:#9a4d1a;
+  color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5}
+.wrap{max-width:1040px;margin:0 auto;padding:24px max(16px,env(safe-area-inset-right,0px)) 56px max(16px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;gap:20px}
+.eyebrow{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+h1{font-size:clamp(1.5rem,4.5vw,2.1rem);margin:4px 0 6px;letter-spacing:-.01em;line-height:1.15}
+h2{font-size:1.05rem;margin:0 0 8px}
+p{margin:0;color:var(--ink-2);max-width:68ch}
+a{color:inherit}
+.status{font-size:.82rem;color:var(--muted)}
+.status.alerta{color:var(--warn);background:var(--warn-bg);border-radius:6px;padding:8px 10px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+.controls{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--surface-2)}
+.seg button{font:inherit;font-size:.86rem;color:var(--ink-2);background:transparent;border:0;padding:8px 14px;cursor:pointer;min-height:40px}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg);font-weight:600}
+.seg button:focus-visible,.cell:focus-visible,th button:focus-visible,.dl:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.lbl{font-size:.78rem;color:var(--muted);display:block;margin-bottom:4px}
+.matrix{display:grid;grid-template-columns:minmax(68px,.6fr) repeat(3,1fr);gap:6px}
+.ch,.rh{font-size:.76rem;color:var(--ink-2);display:flex;flex-direction:column;justify-content:center}
+.ch{text-align:center;align-items:center;padding-bottom:2px}
+.rh b{font-size:.84rem;color:var(--ink)}
+.sub{font-size:.68rem;color:var(--muted)}
+.cell{font:inherit;color:var(--ink);text-align:center;border:1px solid var(--line);border-radius:8px;padding:10px 4px;min-height:96px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:default;position:relative}
+.cell .v{font-size:clamp(1.05rem,3.4vw,1.45rem);font-weight:600;font-variant-numeric:tabular-nums}
+.cell .t{font-family:var(--f-mono);font-size:.7rem;color:var(--ink-2)}
+.cell .m{font-size:.7rem;color:var(--ink-2)}
+.cell.nodata{background:repeating-linear-gradient(45deg,var(--surface-2),var(--surface-2) 6px,var(--surface) 6px,var(--surface) 12px)}
+.s-a1{background:var(--a1)}.s-a2{background:var(--a2)}.s-a3{background:var(--a3)}.s-n0{background:var(--n0)}
+.s-o1{background:var(--o1)}.s-o2{background:var(--o2)}.s-o3{background:var(--o3)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;font-size:.76rem;color:var(--ink-2);margin-top:12px}
+.legend .sw{display:inline-flex;border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.legend .sw i{display:block;width:26px;height:14px}
+.how{display:grid;gap:12px}
+@media(min-width:760px){.how{grid-template-columns:1.1fr .9fr}}
+.box{background:var(--surface-2);border-radius:8px;padding:12px 14px;font-size:.88rem;color:var(--ink-2)}
+.box b{color:var(--ink)}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.82rem;font-variant-numeric:tabular-nums}
+th,td{padding:7px 9px;border-bottom:1px solid var(--line);white-space:nowrap;text-align:right}
+th:first-child,td:first-child,th.l,td.l{text-align:left}
+th{font-weight:600;color:var(--ink-2);font-size:.74rem;position:sticky;top:0;background:var(--surface)}
+th button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0;font-weight:inherit}
+.dl{font:inherit;font-size:.82rem;color:var(--ink);background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:8px 12px;cursor:pointer;min-height:40px}
+details{border-top:1px solid var(--line);padding:8px 0}
+summary{cursor:pointer;font-weight:600;font-size:.9rem}
+details p,details li{font-size:.86rem}
+dl{margin:6px 0 0;display:grid;grid-template-columns:max-content 1fr;gap:4px 12px;font-size:.86rem;color:var(--ink-2)}
+dt{font-weight:600;color:var(--ink)}dd{margin:0}
+.tip{position:fixed;z-index:50;max-width:290px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:9px 11px;font-size:.78rem;line-height:1.4;box-shadow:0 8px 22px rgba(0,0,0,.25);pointer-events:none}
+.tip b{display:block;font-size:.84rem;margin-bottom:2px}
+.tip .r{display:flex;justify-content:space-between;gap:16px;font-variant-numeric:tabular-nums}
+footer{font-size:.78rem;color:var(--muted);display:flex;flex-direction:column;gap:6px}
+.hide{display:none!important}
+@media(max-width:560px){.rh b{font-size:.78rem}.rh .sub{font-size:.62rem}dl{grid-template-columns:1fr}dd{margin:0 0 8px}}
+@media(prefers-reduced-motion:no-preference){.cell{transition:transform .08s}.cell:hover{transform:translateY(-1px)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">market-lab · tendências · EUA</div>
+    <h1>Quem está rendendo mais que o mercado?</h1>
+    <p>Nove grupos de ações americanas (porte × estilo), cada um representado por um ETF público, comparados com o mercado amplo (IWV, Russell 3000).</p>
+    <div class="status" id="status" role="status" aria-live="polite">Carregando dados…</div>
+  </header>
+
+  <section class="panel" aria-label="Controles">
+    <div class="controls">
+      <div><span class="lbl" id="lbl-modo">Modo</span>
+        <div class="seg" role="group" aria-labelledby="lbl-modo">
+          <button type="button" data-modo="iniciante" aria-pressed="true">Iniciante</button>
+          <button type="button" data-modo="completo" aria-pressed="false">Completo</button>
+        </div></div>
+      <div><span class="lbl" id="lbl-prazo">Período de comparação</span>
+        <div class="seg" role="group" aria-labelledby="lbl-prazo" id="prazos"></div></div>
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="h-matriz">
+    <h2 id="h-matriz">Matriz porte × estilo — <span id="titulo-prazo"></span></h2>
+    <div class="matrix" id="matriz"></div>
+    <div class="legend" id="legenda"></div>
+  </section>
+
+  <section class="how" aria-label="Como ler">
+    <div class="box" id="como-ler"></div>
+    <div class="box"><b>O que este painel não diz.</b> Quem rendeu mais num período não necessariamente vai render mais no seguinte. Um mês forte não é tendência. Não é recomendação de compra ou venda, e rentabilidade passada não garante resultado futuro.</div>
+  </section>
+
+  <section class="panel hide" id="completo" aria-labelledby="h-tab">
+    <h2 id="h-tab">Tabela completa</h2>
+    <p style="margin-bottom:10px">Clique no título de uma coluna para ordenar. A posição (1 a 9) refere-se ao período escolhido acima: 1 = maior rendimento relativo ao mercado amplo.</p>
+    <div class="tbl"><table id="tabela"><caption class="hide">Métricas dos nove ETFs</caption><thead></thead><tbody></tbody></table></div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:12px">
+      <button type="button" class="dl" id="csv">Baixar tabela (CSV)</button>
+      <span class="status" id="ref-info"></span>
+    </div>
+    <details><summary>Como cada número é calculado</summary>
+      <p>Preços ajustados por dividendos e desdobramentos (Yahoo Finance), alinhados ao IWV pelas datas em comum. Janelas em pregões: 1 mês = 21, 3 = 63, 6 = 126, 12 = 252.</p>
+      <ul>
+        <li><b>Retorno:</b> preço hoje ÷ preço N pregões atrás − 1.</li>
+        <li><b>Relativo ao mercado:</b> (1 + retorno do ETF) ÷ (1 + retorno do IWV) − 1.</li>
+        <li><b>Média de 50 e 200 dias:</b> média simples dos últimos 50 e 200 pregões.</li>
+        <li><b>Volatilidade (12m):</b> desvio-padrão dos retornos diários dos últimos 252 pregões × √252.</li>
+        <li><b>Queda máxima (12m):</b> maior queda do pico ao vale nos últimos 252 pregões.</li>
+      </ul>
+      <p>Não incluídos: taxas de administração e liquidez dos ETFs (ainda sem fonte conferida), corretagem, impostos e câmbio.</p>
+    </details>
+  </section>
+
+  <section class="panel" aria-labelledby="h-gl">
+    <h2 id="h-gl">Glossário rápido</h2>
+    <dl>
+      <dt>ETF</dt><dd>Fundo negociado em bolsa que replica um índice. Aqui, cada ETF representa um grupo de ações.</dd>
+      <dt>Grandes, médias, pequenas</dt><dd>Porte (valor de mercado) das empresas: índices Russell 1000, Russell Midcap e Russell 2000.</dd>
+      <dt>Valor (Value)</dt><dd>Empresas negociadas mais barato em relação a lucros e patrimônio.</dd>
+      <dt>Crescimento (Growth)</dt><dd>Empresas com expectativa de lucros crescendo mais que a média.</dd>
+      <dt>Misto (Core)</dt><dd>O índice amplo daquele porte, que reúne valor e crescimento.</dd>
+      <dt>Mercado amplo</dt><dd>O IWV (Russell 3000), usado como régua de comparação.</dd>
+      <dt>Média de 200 dias</dt><dd>Média do preço nos últimos 200 pregões. Preço acima dela indica tendência de alta no longo prazo; abaixo, o contrário. É uma descrição, não uma previsão.</dd>
+    </dl>
+    <p style="margin-top:10px;font-size:.82rem">Os grupos de valor e crescimento se sobrepõem: a mesma ação pode mudar de grupo conforme a classificação do índice.</p>
+  </section>
+
+  <footer>
+    <div>Fonte: preços do Yahoo Finance (endpoint não oficial, pode atrasar ou mudar); nomes e índices dos ETFs conforme páginas de produto da iShares. Cálculos do market-lab, com código e testes no <a href="https://github.com/nilsonjacobcosta/market-lab">GitHub</a> (<a href="README.md">metodologia</a>).</div>
+    <div>Material educativo. Não é recomendação de investimento. Rentabilidade passada não garante resultado futuro. Os ETFs são negociados nos EUA; para investidores no Brasil, o acesso é por corretoras internacionais.</div>
+  </footer>
+</div>
+<div class="tip hide" id="tip" role="tooltip"></div>
+
+<script>
+// Dados ficam na branch dados-tendencias (histórico separado da main).
+const DADOS_URL = "https://raw.githubusercontent.com/nilsonjacobcosta/market-lab/dados-tendencias/tendencias.json";
+const PRAZOS = [["1m","1 mês"],["3m","3 meses"],["6m","6 meses"],["12m","12 meses"]];
+// Limite da escala de cor por prazo (% relativo). Passos em cap/6, cap/3 e 2·cap/3.
+const CAP = {"1m":3, "3m":6, "6m":12, "12m":18};
+const PORTE = [["Large","Grandes","Russell 1000"],["Mid","Médias","Russell Midcap"],["Small","Pequenas","Russell 2000"]];
+const ESTILO = [["Value","Valor"],["Core","Misto (core)"],["Growth","Crescimento"]];
+const state = {modo:"iniciante", prazo:"3m", dados:null, ordem:null, desc:true};
+
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const num = (v, d=1) => v == null ? "—" : Math.abs(v).toLocaleString("pt-BR",{minimumFractionDigits:d,maximumFractionDigits:d});
+const pct = (v, d=1) => { if (v == null) return "—"; const t = num(v*100, d); return (/^[0,.]+$/.test(t) ? "" : v > 0 ? "+" : "−") + t + "%"; };
+const pctAbs = (v, d=1) => v == null ? "—" : num(v*100, d) + "%";
+const preco = (v) => v == null ? "—" : v.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
+const dataBR = (iso) => iso ? iso.split("-").reverse().join("/") : "—";
+
+function passo(rel, prazo) {
+  if (rel == null) return null;
+  const cap = CAP[prazo] / 100, x = Math.abs(rel);
+  const n = x < cap/6 ? 0 : x < cap/3 ? 1 : x < 2*cap/3 ? 2 : 3;
+  return n === 0 ? "n0" : (rel > 0 ? "a" : "o") + n;
+}
+const celulaDe = (d, porte, estilo) => d.celulas.find(c => c.porte === porte && c.estilo === estilo);
+const rotulo = (c) => `${PORTE.find(p=>p[0]===c.porte)[1]} · ${ESTILO.find(e=>e[0]===c.estilo)[1]}`;
+const ok = (c) => c && c.status === "ok";
+
+function renderStatus(d) {
+  const el = document.getElementById("status");
+  const dias = d.ultimo_pregao ? Math.floor((Date.now() - new Date(d.ultimo_pregao + "T12:00:00Z")) / 86400000) : null;
+  const atrasado = dias == null || dias > 4;
+  el.className = "status" + (atrasado ? " alerta" : "");
+  el.textContent = `Último pregão usado: ${dataBR(d.ultimo_pregao)} (fechamento) · atualizado em ${d.gerado_brt} (Brasília) · ${d.celulas_ok} de 9 grupos com dados`
+    + (atrasado ? " — dados atrasados: a atualização automática pode ter falhado." : "");
+}
+
+function renderPrazos() {
+  document.getElementById("prazos").innerHTML = PRAZOS.map(([k,t]) =>
+    `<button type="button" data-prazo="${k}" aria-pressed="${k===state.prazo}">${t}</button>`).join("");
+  document.getElementById("titulo-prazo").textContent = "últimos " + PRAZOS.find(p=>p[0]===state.prazo)[1];
+}
+
+function renderMatriz() {
+  const d = state.dados, k = state.prazo;
+  let h = `<div></div>` + ESTILO.map(e => `<div class="ch">${e[1]}</div>`).join("");
+  PORTE.forEach(([p, nome, idx]) => {
+    h += `<div class="rh"><b>${nome}</b><span class="sub">${idx}</span></div>`;
+    ESTILO.forEach(([e]) => {
+      const c = celulaDe(d, p, e);
+      if (!ok(c)) { h += `<div class="cell nodata" tabindex="0" data-p="${p}" data-e="${e}" role="group" aria-label="${esc(p)} ${esc(e)}: sem dados"><span class="v">—</span><span class="t">${esc(c?.ticker || "")}</span><span class="m">sem dados</span></div>`; return; }
+      const rel = c["relativo_" + k], mm = c.acima_mm200;
+      const mmTxt = mm == null ? "" : mm ? "▲ acima da média 200d" : "▼ abaixo da média 200d";
+      const aria = `${rotulo(c)} (${c.ticker}): ${pct(rel)} frente ao mercado amplo em ${PRAZOS.find(x=>x[0]===k)[1]}; ${mm == null ? "média de 200 dias indisponível" : mm ? "preço acima da média de 200 dias" : "preço abaixo da média de 200 dias"}`;
+      h += `<button type="button" class="cell s-${passo(rel,k) || "n0"}" data-p="${p}" data-e="${e}" aria-label="${esc(aria)}">
+        <span class="v">${pct(rel)}</span><span class="t">${esc(c.ticker)}</span>
+        <span class="m">${mm == null ? "" : mm ? "▲ 200d" : "▼ 200d"}</span></button>`;
+    });
+  });
+  document.getElementById("matriz").innerHTML = h;
+  const cap = CAP[k];
+  const f = (x) => (x % 1 ? x.toFixed(1).replace(".", ",") : x);
+  document.getElementById("legenda").innerHTML =
+    `<span>Abaixo do mercado</span><span class="sw" aria-hidden="true"><i style="background:var(--o3)"></i><i style="background:var(--o2)"></i><i style="background:var(--o1)"></i><i style="background:var(--n0)"></i><i style="background:var(--a1)"></i><i style="background:var(--a2)"></i><i style="background:var(--a3)"></i></span><span>Acima do mercado</span>
+     <span>· neutro: entre −${f(cap/6)}% e +${f(cap/6)}% · cores mais fortes a partir de ±${f(cap/6)}%, ±${f(cap/3)}% e ±${f(2*cap/3)}%</span>
+     <span>· ▲/▼ 200d: preço acima/abaixo da média dos últimos 200 pregões</span>`;
+}
+
+function renderComoLer() {
+  document.getElementById("como-ler").innerHTML = state.modo === "iniciante"
+    ? `<b>Como ler.</b> Cada quadrado é um grupo de empresas. O número mostra quanto o grupo rendeu <b>a mais (+) ou a menos (−)</b> que o mercado amplo americano no período escolhido; a cor repete esse sinal (azul = acima, laranja = abaixo). Linhas: tamanho da empresa. Colunas: estilo (valor, misto ou crescimento). Passe o mouse ou toque num quadrado para ver mais detalhes.`
+    : `<b>Modo completo.</b> Além da matriz, a tabela abaixo traz retornos absolutos e relativos em quatro prazos, médias de 50 e 200 dias, volatilidade e queda máxima dos últimos 12 meses, e permite baixar os dados em CSV. A metodologia está logo abaixo da tabela.`;
+}
+
+const COLS = [
+  ["pos","Posição",c=>c._pos,v=>v==null?"—":v+"º"],
+  ["ticker","ETF",c=>c.ticker,v=>v,"l"],
+  ["grupo","Grupo",c=>rotulo(c),v=>v,"l"],
+  ["relativo_1m","Rel. 1m",c=>c.relativo_1m,pct,"c"],["relativo_3m","Rel. 3m",c=>c.relativo_3m,pct,"c"],
+  ["relativo_6m","Rel. 6m",c=>c.relativo_6m,pct,"c"],["relativo_12m","Rel. 12m",c=>c.relativo_12m,pct,"c"],
+  ["retorno_1m","Ret. 1m",c=>c.retorno_1m,pct],["retorno_3m","Ret. 3m",c=>c.retorno_3m,pct],
+  ["retorno_6m","Ret. 6m",c=>c.retorno_6m,pct],["retorno_12m","Ret. 12m",c=>c.retorno_12m,pct],
+  ["mm50","Média 50d",c=>c.mm50,preco],["mm200","Média 200d",c=>c.mm200,preco],
+  ["acima","vs. média 200d",c=>c.acima_mm200==null?null:(c.acima_mm200?"acima":"abaixo"),v=>v??"—"],
+  ["vol","Volatilidade 12m",c=>c.volatilidade_12m,v=>pctAbs(v)],["dd","Queda máx. 12m",c=>c.queda_maxima_12m,pct],
+  ["preco","Último preço",c=>c.ultimo_preco,preco],
+];
+
+function linhasOrdenadas() {
+  const d = state.dados, k = "relativo_" + state.prazo;
+  const validos = d.celulas.filter(ok).map(c => ({...c}));
+  [...validos].sort((a,b)=>(b[k]??-Infinity)-(a[k]??-Infinity)).forEach((c,i)=>{ c._pos = c[k]==null?null:i+1; });
+  const sem = d.celulas.filter(c=>!ok(c)).map(c=>({...c,_pos:null}));
+  let linhas = validos.concat(sem);
+  if (state.ordem) {
+    const col = COLS.find(c=>c[0]===state.ordem), dir = state.desc ? -1 : 1;
+    linhas.sort((a,b)=>{ const x=col[2](a), y=col[2](b);
+      if (x==null) return 1; if (y==null) return -1;
+      return (typeof x === "string" ? x.localeCompare(y,"pt-BR") : x-y) * dir; });
+  }
+  return linhas;
+}
+
+function renderTabela() {
+  const linhas = linhasOrdenadas();
+  document.querySelector("#tabela thead").innerHTML = "<tr>" + COLS.map(([id,t,,,al]) =>
+    `<th scope="col" class="${al==="l"?"l":""}" aria-sort="${state.ordem===id?(state.desc?"descending":"ascending"):"none"}"><button type="button" data-ord="${id}">${t}${state.ordem===id?(state.desc?" ↓":" ↑"):""}</button></th>`).join("") + "</tr>";
+  document.querySelector("#tabela tbody").innerHTML = linhas.map(c => "<tr>" + COLS.map(([id,,get,fmt,al]) => {
+    if (!ok(c) && id !== "ticker" && id !== "grupo") return `<td>${id==="pos"?"—":""}</td>`;
+    const v = get(c), p = id.startsWith("relativo_") && v != null ? passo(v, id.slice(9)) : null, cls = p && p !== "n0" ? "s-" + p : "";
+    return `<td class="${al==="l"?"l ":""}${cls}">${esc(fmt(v))}</td>`; }).join("") + "</tr>").join("");
+  const r = state.dados.referencia;
+  document.getElementById("ref-info").textContent = r.retornos
+    ? `Referência ${r.ticker}: ` + PRAZOS.map(([k,t])=>`${t} ${pct(r.retornos[k])}`).join(" · ") : "";
+}
+
+function baixarCSV() {
+  const linhas = linhasOrdenadas();
+  const cab = ["ticker","porte","estilo","posicao_periodo","ultimo_pregao","ultimo_preco","retorno_1m","retorno_3m","retorno_6m","retorno_12m","relativo_1m","relativo_3m","relativo_6m","relativo_12m","mm50","mm200","acima_mm200","volatilidade_12m","queda_maxima_12m"];
+  const lin = linhas.map(c => cab.map(k => { const v = k==="posicao_periodo" ? c._pos : c[k]; return v == null ? "" : v; }).join(","));
+  const blob = new Blob([cab.join(",") + "\n" + lin.join("\n") + "\n"], {type:"text/csv;charset=utf-8"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob); a.download = `tendencias_${state.dados.ultimo_pregao || "dados"}_${state.prazo}.csv`;
+  document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href), 1000);
+}
+
+function renderTudo() {
+  renderPrazos(); renderMatriz(); renderComoLer();
+  document.getElementById("completo").classList.toggle("hide", state.modo !== "completo");
+  if (state.modo === "completo") renderTabela();
+  document.querySelectorAll("[data-modo]").forEach(b => b.setAttribute("aria-pressed", b.dataset.modo === state.modo));
+}
+
+// Tooltip por célula (hover e foco)
+const tip = document.getElementById("tip");
+function mostrarTip(el) {
+  const c = celulaDe(state.dados, el.dataset.p, el.dataset.e);
+  if (!c) return;
+  const linhas = ok(c) ? PRAZOS.map(([k,t]) => `<div class="r"><span>${t}</span><span>${pct(c["retorno_"+k])} (rel. ${pct(c["relativo_"+k])})</span></div>`).join("") : "<div>Sem dados suficientes.</div>";
+  tip.innerHTML = `<b>${esc(c.ticker)} · ${esc(c.nome)}</b><div style="color:var(--muted);margin-bottom:4px">Índice: ${esc(c.indice)}</div>${linhas}`;
+  tip.classList.remove("hide");
+  const r = el.getBoundingClientRect(), w = tip.offsetWidth, h = tip.offsetHeight;
+  let x = Math.min(Math.max(8, r.left + r.width/2 - w/2), innerWidth - w - 8);
+  let y = r.bottom + 6; if (y + h > innerHeight - 8) y = Math.max(8, r.top - h - 6);
+  tip.style.left = x + "px"; tip.style.top = y + "px";
+}
+const esconderTip = () => tip.classList.add("hide");
+const matrizEl = document.getElementById("matriz");
+matrizEl.addEventListener("mouseover", e => { const c = e.target.closest(".cell"); c ? mostrarTip(c) : esconderTip(); });
+matrizEl.addEventListener("mouseleave", esconderTip);
+matrizEl.addEventListener("focusin", e => { const c = e.target.closest(".cell"); if (c) mostrarTip(c); });
+matrizEl.addEventListener("focusout", esconderTip);
+document.addEventListener("keydown", e => { if (e.key === "Escape") esconderTip(); });
+addEventListener("scroll", esconderTip, {passive:true});
+
+document.addEventListener("click", e => {
+  const m = e.target.closest("[data-modo]"), p = e.target.closest("[data-prazo]"), o = e.target.closest("[data-ord]");
+  if (!state.dados) return;
+  if (m) { state.modo = m.dataset.modo; renderTudo(); }
+  else if (p) { state.prazo = p.dataset.prazo; renderTudo(); }
+  else if (o) { const id = o.dataset.ord; state.desc = state.ordem === id ? !state.desc : !["pos", "ticker", "grupo"].includes(id); state.ordem = id; renderTabela(); }
+  else if (e.target.id === "csv") baixarCSV();
+});
+
+fetch(DADOS_URL + "?v=" + Date.now(), {cache:"no-store"})
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(d => { state.dados = d; renderStatus(d); renderTudo(); })
+  .catch(() => {
+    document.getElementById("status").className = "status alerta";
+    document.getElementById("status").textContent = "Não foi possível carregar os dados (branch dados-tendencias). Se o painel acabou de ser criado, a primeira atualização automática ainda não rodou.";
+    document.getElementById("matriz").innerHTML = "";
+  });
+</script>
+</body>
+</html>
