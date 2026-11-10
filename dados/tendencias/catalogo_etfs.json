@@ -1,0 +1,21 @@
+{
+  "versao": "1.0",
+  "data_revisao": "2026-11-10",
+  "referencia": {"ticker": "IWV", "nome": "iShares Russell 3000 ETF", "indice": "Russell 3000", "papel": "mercado amplo (base de comparação)"},
+  "fonte_catalogo": "Páginas de produto da iShares (ishares.com) para os nomes e índices de referência de cada fundo",
+  "celulas": [
+    {"porte": "Large", "estilo": "Value",  "ticker": "IWD", "nome": "iShares Russell 1000 Value ETF",   "indice": "Russell 1000 Value"},
+    {"porte": "Large", "estilo": "Core",   "ticker": "IWB", "nome": "iShares Russell 1000 ETF",         "indice": "Russell 1000"},
+    {"porte": "Large", "estilo": "Growth", "ticker": "IWF", "nome": "iShares Russell 1000 Growth ETF",  "indice": "Russell 1000 Growth"},
+    {"porte": "Mid",   "estilo": "Value",  "ticker": "IWS", "nome": "iShares Russell Mid-Cap Value ETF", "indice": "Russell Midcap Value"},
+    {"porte": "Mid",   "estilo": "Core",   "ticker": "IWR", "nome": "iShares Russell Mid-Cap ETF",      "indice": "Russell Midcap"},
+    {"porte": "Mid",   "estilo": "Growth", "ticker": "IWP", "nome": "iShares Russell Mid-Cap Growth ETF", "indice": "Russell Midcap Growth"},
+    {"porte": "Small", "estilo": "Value",  "ticker": "IWN", "nome": "iShares Russell 2000 Value ETF",   "indice": "Russell 2000 Value"},
+    {"porte": "Small", "estilo": "Core",   "ticker": "IWM", "nome": "iShares Russell 2000 ETF",         "indice": "Russell 2000"},
+    {"porte": "Small", "estilo": "Growth", "ticker": "IWO", "nome": "iShares Russell 2000 Growth ETF",  "indice": "Russell 2000 Growth"}
+  ],
+  "avisos": [
+    "Os fundos de estilo se sobrepõem: uma mesma ação pode aparecer em Value ou Growth conforme a classificação do índice.",
+    "Os ETFs são negociados nos EUA; para investidores no Brasil o acesso se dá por corretoras internacionais. O painel é material educativo, não recomendação."
+  ]
+}
