@@ -1,6 +1,6 @@
 """Coleta as cotações (Yahoo Finance, endpoint chart) e grava dados/cotacoes.json.
 
-Uso: python3 scripts/ativos/coletar_ativos.py
+Uso: python3 scripts/ativos/coletar_ativos.py [COTACOES_SAIDA=caminho/cotacoes.json]
 Sem dependências externas (biblioteca padrão).
 
 Regras:
@@ -21,7 +21,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from catalogo import ITENS, SECOES  # noqa: E402
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-SAIDA = os.path.join(RAIZ, "monitor", "ativos", "dados", "cotacoes.json")
+SAIDA = os.environ.get("COTACOES_SAIDA") or os.path.join(RAIZ, "monitor", "ativos", "dados", "cotacoes.json")
 BRT = ZoneInfo("America/Sao_Paulo")
 URL = "https://query1.finance.yahoo.com/v8/finance/chart/{}?interval=1d&range=5d"
 UA = "Mozilla/5.0 (X11; Linux x86_64) painel-ativos/1.0"

@@ -19,19 +19,28 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - name: Código do projeto (main)
+        uses: actions/checkout@v4
+      - name: Branch de dados (dados-ativos)
+        uses: actions/checkout@v4
+        with:
+          ref: dados-ativos
+          path: _dados
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - name: Coletar cotações
+        env:
+          COTACOES_SAIDA: ${{ github.workspace }}/_dados/cotacoes.json
         run: python3 scripts/ativos/coletar_ativos.py
         continue-on-error: true   # falha de rede mantém o arquivo anterior
-      - name: Publicar se houve mudança
+      - name: Publicar na branch dados-ativos se houve mudança
+        working-directory: _dados
         run: |
           git config user.name "market-lab bot"
           git config user.email "actions@users.noreply.github.com"
-          git add monitor/ativos/dados/cotacoes.json
+          git add cotacoes.json
           if git diff --cached --quiet; then echo "Sem mudanças"; exit 0; fi
-          git commit -m "Painel de ativos: atualização automática $(date -u +'%Y-%m-%d %H:%M') UTC"
-          git pull --rebase
-          git push
+          git commit -m "Cotações: atualização automática $(date -u +'%Y-%m-%d %H:%M') UTC"
+          git pull --rebase origin dados-ativos
+          git push origin HEAD:dados-ativos

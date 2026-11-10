@@ -47,6 +47,9 @@
 </div>
 
 <script>
+// Dados ficam na branch dados-ativos (histórico separado da main).
+const DADOS_URL = "https://raw.githubusercontent.com/nilsonjacobcosta/market-lab/dados-ativos/cotacoes.json";
+
 const fmt = (v) => v === null || v === undefined ? "—" : (Math.abs(v) >= 1000
   ? v.toLocaleString("pt-BR", {maximumFractionDigits: 2})
   : v.toLocaleString("pt-BR", {maximumFractionDigits: 4}));
@@ -86,10 +89,10 @@ function render(d) {
     </div>`).join("");
 }
 
-fetch("dados/cotacoes.json?v=" + Date.now(), {cache: "no-store"})
+fetch(DADOS_URL + "?v=" + Date.now(), {cache: "no-store"})
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
   .then(render)
-  .catch(() => { document.getElementById("status").textContent = "Não foi possível carregar dados/cotacoes.json."; });
+  .catch(() => { document.getElementById("status").textContent = "Não foi possível carregar as cotações (branch dados-ativos)."; });
 </script>
 </body>
 </html>
