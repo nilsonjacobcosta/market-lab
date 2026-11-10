@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel de Ativos · market-lab</title>
+<style>
+  :root { --bg:#0b0d10; --card:#14181d; --line:#232a32; --txt:#e6edf3; --mut:#8b98a5; --up:#2ecc71; --dn:#e74c3c; --acc:#4fd1c5; --warn:#f0b429; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--txt); font:13px/1.35 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  header { padding:14px 18px 6px; }
+  h1 { font-size:16px; margin:0 0 6px; font-weight:600; }
+  .status { color:var(--mut); font-size:12px; }
+  .status.alerta { color:var(--warn); }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:10px; padding:12px 18px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:10px 12px; }
+  .card .nome { color:var(--mut); font-size:12px; }
+  .card .val { font-size:20px; font-weight:600; margin-top:4px; }
+  .card .var { font-size:12px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:12px; padding:0 18px 18px; align-items:start; }
+  .bloco { background:var(--card); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+  .bloco h2 { margin:0; padding:9px 12px; font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--mut); border-bottom:1px solid var(--line); }
+  table { width:100%; border-collapse:collapse; }
+  td { padding:5px 10px; border-bottom:1px solid var(--line); white-space:nowrap; }
+  td.n { text-align:left; }
+  td.v, td.p, td.h { text-align:right; font-variant-numeric:tabular-nums; }
+  td.h { color:var(--mut); font-size:11px; }
+  tr:last-child td { border-bottom:none; }
+  .up { color:var(--up); } .dn { color:var(--dn); } .flat { color:var(--mut); }
+  .tag { font-size:10px; color:var(--warn); margin-left:4px; }
+  .rodape { color:var(--mut); font-size:11px; padding:0 18px 18px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Painel de Ativos</h1>
+  <div class="status" id="status">Carregando dados…</div>
+</header>
+
+<section class="cards" id="cards"></section>
+<section class="grid" id="grid"></section>
+<div class="rodape">
+  Material educativo, não é recomendação de investimento. Cotações de fonte gratuita podem ter atraso de alguns minutos.
+  A coluna "hora" mostra o horário de cada cotação. <b>captura</b> = valor da captura de 10/11/2026 (sem fonte automática).
+  <b>anterior</b> = última cotação obtida antes de uma falha da coleta.
+  Yields em %, CDS em pontos-base. Dados atualizados pelo workflow do GitHub Actions (cerca de a cada 30 min, quando a fonte responde).
+</div>
+
+<script>
+const fmt = (v) => v === null || v === undefined ? "—" : (Math.abs(v) >= 1000
+  ? v.toLocaleString("pt-BR", {maximumFractionDigits: 2})
+  : v.toLocaleString("pt-BR", {maximumFractionDigits: 4}));
+const cls = (p) => p === null || p === undefined ? "flat" : (p > 0 ? "up" : p < 0 ? "dn" : "flat");
+const pct = (p) => p === null || p === undefined ? "—" : (p > 0 ? "+" : "") + p.toFixed(2).replace(".", ",") + "%";
+const hora = (iso) => iso ? new Date(iso).toLocaleTimeString("pt-BR", {hour:"2-digit", minute:"2-digit", timeZone:"America/Sao_Paulo"}) : "";
+const tag = (s) => s === "captura" ? '<span class="tag">captura</span>' : s === "anterior" ? '<span class="tag">anterior</span>' : s === "sem fonte" ? '<span class="tag">sem fonte</span>' : "";
+
+function renderStatus(d) {
+  const gerado = new Date(d.gerado_utc);
+  const minutos = Math.round((Date.now() - gerado) / 60000);
+  const el = document.getElementById("status");
+  const aviso = minutos > 90 ? " — atualização atrasada; confira se o workflow está rodando." : "";
+  el.className = "status" + (minutos > 90 ? " alerta" : "");
+  el.textContent = `Atualizado em ${d.gerado_brt} (horário de Brasília), há ${minutos} min · ${d.cotacoes_ok} cotações da fonte${aviso}`;
+}
+
+function render(d) {
+  renderStatus(d);
+  document.getElementById("cards").innerHTML = d.destaques.map(c => `
+    <div class="card">
+      <div class="nome">${c.nome}${tag(c.status)}</div>
+      <div class="val">${c.valor === null ? "—" : fmt(c.valor)}</div>
+      <div class="var ${cls(c.var)}">${c.var === null ? (c.status === "sem fonte" ? "sem cotação automática" : "") : pct(c.var)}</div>
+    </div>`).join("");
+  document.getElementById("grid").innerHTML = d.secoes.map(s => `
+    <div class="bloco">
+      <h2>${s.titulo}</h2>
+      <table>${s.itens.map(i => `
+        <tr>
+          <td class="n">${i.nome}${tag(i.status)}</td>
+          <td class="v">${fmt(i.valor)}</td>
+          <td class="p ${cls(i.var)}">${pct(i.var)}</td>
+          <td class="h">${hora(i.hora)}</td>
+        </tr>`).join("")}
+      </table>
+    </div>`).join("");
+}
+
+fetch("dados/cotacoes.json?v=" + Date.now(), {cache: "no-store"})
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(render)
+  .catch(() => { document.getElementById("status").textContent = "Não foi possível carregar dados/cotacoes.json."; });
+</script>
+</body>
+</html>
