@@ -126,3 +126,119 @@ ITENS = [
     ("Emergentes (USD contra moedas)", "TRY", "USDTRY=X", 50.2326, 0.12, False, False),
     ("Emergentes (USD contra moedas)", "ZAR", "USDZAR=X", 16.3922, 0.13, False, False),
 ]
+
+
+# Descrição de cada ativo, mostrada no balão ao passar o mouse (ou tocar).
+def _m(pais, moeda, codigo):
+    return f"{pais} · {moeda} ({codigo}). Quantas unidades da moeda valem 1 dólar americano."
+
+
+DETALHES = {
+    # Destaques
+    "Ibovespa (à vista)": "Brasil · principal índice da B3 (Bolsa de São Paulo), pontos. Reúne as ações mais negociadas.",
+    "Índice DX (dólar)": "EUA · índice do dólar contra uma cesta de 6 moedas (euro, iene, libra, dólar canadense, coroa sueca, franco suíço). Sobe quando o dólar se valoriza.",
+    "S&P 500 Futuro": "EUA · contrato futuro do S&P 500 (500 maiores empresas listadas nos EUA). Negocia quase 24 horas.",
+    "Petróleo WTI (US$)": "EUA · petróleo West Texas Intermediate, referência americana. Unidade: US$ por barril.",
+    "BCOM (Bloomberg Commodity)": "Índice de uma cesta de commodities (energia, metais, agropecuária) calculado pela Bloomberg.",
+    "CME FedWatch (faixa de juros)": "EUA · probabilidades que o mercado atribui às decisões de juros do Federal Reserve (banco central americano), calculadas a partir de contratos da CME. Sem fonte automática.",
+
+    # Índices americanos
+    "Ibovespa": "Brasil · índice da B3, pontos. Versão à vista do índice principal.",
+    "S&P/TSX": "Canadá · índice da Bolsa de Toronto (TSX), das maiores empresas do país.",
+    "Dow Jones": "EUA · índice de 30 grandes empresas americanas (Dow Jones Industrial Average), pontos.",
+    "Nasdaq Composto": "EUA · índice de quase todas as ações da Nasdaq, com peso forte em tecnologia.",
+    "Russell 2000": "EUA · índice de 2.000 empresas de porte pequeno dos EUA.",
+    "S&P 500": "EUA · índice das 500 maiores empresas listadas nos EUA, pontos.",
+    "S&P 500 VIX": "EUA · índice de volatilidade implícita do S&P 500, conhecido como 'índice do medo'. Sobe quando há mais receio no mercado.",
+    "S&P/BMV IPC": "México · índice da Bolsa Mexicana de Valores (BMV), pontos.",
+
+    # Índices europeus
+    "DAX": "Alemanha · índice das 40 maiores empresas listadas em Frankfurt.",
+    "IBEX 35": "Espanha · índice das 35 maiores empresas da Bolsa de Madri.",
+    "CAC 40": "França · índice das 40 maiores empresas da Bolsa de Paris.",
+    "FTSE MIB": "Itália · índice das principais empresas da Bolsa de Milão.",
+    "WIG20": "Polônia · índice das 20 maiores empresas da Bolsa de Varsóvia.",
+    "FTSE 100": "Reino Unido · índice das 100 maiores empresas da Bolsa de Londres.",
+    "MOEX": "Rússia · índice da Bolsa de Moscou (MOEX), em rublos.",
+    "OMXS30": "Suécia · índice das 30 empresas mais negociadas da Bolsa de Estocolmo.",
+    "SMI": "Suíça · índice das maiores empresas da Bolsa de Zurique.",
+    "Euro Stoxx 50": "Zona do euro · índice das 50 maiores empresas da região.",
+
+    # Índices asiáticos
+    "Tadawul All Share": "Arábia Saudita · índice de todas as ações da Bolsa de Riad (Tadawul).",
+    "S&P/ASX 200": "Austrália · índice das 200 maiores empresas da Bolsa de Sydney (ASX).",
+    "Shanghai": "China · índice composto da Bolsa de Xangai.",
+    "SZSE Component": "China · índice de empresas da Bolsa de Shenzhen.",
+    "KOSPI": "Coreia do Sul · índice da Bolsa de Seul.",
+    "Hang Seng": "Hong Kong · índice das maiores empresas da Bolsa de Hong Kong.",
+    "BSE Sensex": "Índia · índice de 30 empresas da Bolsa de Bombaim (BSE).",
+    "Nikkei 225": "Japão · índice de 225 empresas da Bolsa de Tóquio.",
+    "BIST 100": "Turquia · índice das 100 maiores empresas da Bolsa de Istambul.",
+
+    # Cesta DX
+    "DX": "EUA · índice do dólar contra uma cesta de 6 moedas. Sobe quando o dólar se valoriza.",
+    "USD/EUR": "Zona do euro · quantos euros valem 1 dólar americano.",
+    "USD/JPY": "Japão · quantos ienes valem 1 dólar americano.",
+    "USD/GBP": "Reino Unido · quantas libras valem 1 dólar americano.",
+    "USD/CAD": "Canadá · quantos dólares canadenses valem 1 dólar americano.",
+    "USD/SEK": "Suécia · quantas coroas suecas valem 1 dólar americano.",
+    "USD/CHF": "Suíça · quantos francos suíços valem 1 dólar americano.",
+
+    # Commodities
+    "Minério de ferro": "Referência de preço do minério de ferro, matéria-prima da siderurgia. Unidade não identificada na captura; sem fonte automática.",
+    "Cobre": "Metal industrial, referência da bolsa de Nova York (COMEX). Unidade: US$ por libra-peso.",
+    "Prata": "Metal precioso, referência da COMEX. Unidade: US$ por onça troy.",
+    "Ouro": "Metal precioso, referência da COMEX. Unidade: US$ por onça troy.",
+    "Petróleo Brent": "Referência internacional de petróleo, do Mar do Norte. Unidade: US$ por barril.",
+    "Petróleo WTI": "Referência americana de petróleo. Unidade: US$ por barril.",
+
+    # Outros ativos
+    "S&P 500 Futuro": "EUA · contrato futuro do S&P 500, negocia quase 24 horas.",
+    "Nasdaq 100 Futuro": "EUA · contrato futuro do Nasdaq-100 (100 maiores empresas não financeiras da Nasdaq). Costuma ter valor diferente do Nasdaq Composto.",
+    "Dow Futuro": "EUA · contrato futuro do Dow Jones (30 grandes empresas).",
+    "Russell 2000 Futuro": "EUA · contrato futuro do Russell 2000 (empresas de porte pequeno).",
+    "US 2 anos (%)": "EUA · rendimento do título do Tesouro americano de 2 anos, em % ao ano. Reflete expectativas de juros de curto prazo.",
+    "US 10 anos (%)": "EUA · rendimento do título do Tesouro americano de 10 anos, em % ao ano. Referência de juros longos.",
+    "GB 10 anos (%)": "Reino Unido · rendimento do título do governo britânico (gilt) de 10 anos, em % ao ano.",
+    "DE 10 anos (%)": "Alemanha · rendimento do título do governo alemão (Bund) de 10 anos, em % ao ano.",
+    "JP 10 anos (%)": "Japão · rendimento do título do governo japonês de 10 anos, em % ao ano.",
+    "CN 10 anos (%)": "China · rendimento do título do governo chinês de 10 anos, em % ao ano.",
+    "EWZ (ETF Brasil)": "EUA · fundo negociado em Nova York que replica ações brasileiras. Preço em dólares.",
+    "CDS Brasil 5 anos (pb)": "Brasil · custo de seguro contra calote da dívida pública brasileira em 5 anos, em pontos-base. Quanto maior, maior o risco percebido. Sem fonte automática para este valor específico.",
+    "Bitcoin": "Criptomoeda descentralizada. Preço em dólares americanos por unidade.",
+
+    # Mundo (USD contra moedas)
+    "NIO": _m("Nicarágua", "córdoba nicaraguense", "NIO"),
+    "DOP": _m("República Dominicana", "peso dominicano", "DOP"),
+    "UYU": _m("Uruguai", "peso uruguaio", "UYU"),
+    "CRC": _m("Costa Rica", "colón costarriquenho", "CRC"),
+    "PEN": _m("Peru", "sol peruano", "PEN"),
+    "JMD": _m("Jamaica", "dólar jamaicano", "JMD"),
+    "PYG": _m("Paraguai", "guarani paraguaio", "PYG"),
+    "CZK": _m("República Tcheca", "coroa tcheca", "CZK"),
+    "DKK": _m("Dinamarca", "coroa dinamarquesa", "DKK"),
+    "HUF": _m("Hungria", "florim húngaro", "HUF"),
+    "NOK": _m("Noruega", "coroa norueguesa", "NOK"),
+    "NGN": _m("Nigéria", "naira", "NGN"),
+    "EGP": _m("Egito", "libra egípcia", "EGP"),
+    "PHP": _m("Filipinas", "peso filipino", "PHP"),
+    "ILS": _m("Israel", "novo shekel israelense", "ILS"),
+    "TWD": _m("Taiwan", "novo dólar taiwanês", "TWD"),
+    "HKD": _m("Hong Kong", "dólar de Hong Kong", "HKD"),
+    "NZD": _m("Nova Zelândia", "dólar neozelandês", "NZD"),
+
+    # Emergentes (USD contra moedas)
+    "ARS": _m("Argentina", "peso argentino", "ARS"),
+    "AUD": _m("Austrália", "dólar australiano", "AUD"),
+    "BRL": _m("Brasil", "real", "BRL"),
+    "CLP": _m("Chile", "peso chileno", "CLP"),
+    "CNY": _m("China", "yuan chinês", "CNY"),
+    "COP": _m("Colômbia", "peso colombiano", "COP"),
+    "INR": _m("Índia", "rúpia indiana", "INR"),
+    "KRW": _m("Coreia do Sul", "won sul-coreano", "KRW"),
+    "MXN": _m("México", "peso mexicano", "MXN"),
+    "RUB": _m("Rússia", "rublo russo", "RUB"),
+    "SAR": _m("Arábia Saudita", "riyal saudita", "SAR"),
+    "TRY": _m("Turquia", "lira turca", "TRY"),
+    "ZAR": _m("África do Sul", "rand sul-africano", "ZAR"),
+}

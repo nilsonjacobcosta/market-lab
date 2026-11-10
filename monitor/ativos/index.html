@@ -18,7 +18,7 @@
   .card .val { font-size:20px; font-weight:600; margin-top:4px; }
   .card .var { font-size:12px; }
   .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:12px; padding:0 18px 18px; align-items:start; }
-  .bloco { background:var(--card); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+  .bloco { background:var(--card); border:1px solid var(--line); border-radius:8px; }
   .bloco h2 { margin:0; padding:9px 12px; font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--mut); border-bottom:1px solid var(--line); }
   table { width:100%; border-collapse:collapse; }
   td { padding:5px 10px; border-bottom:1px solid var(--line); white-space:nowrap; }
@@ -29,6 +29,11 @@
   .up { color:var(--up); } .dn { color:var(--dn); } .flat { color:var(--mut); }
   .tag { font-size:10px; color:var(--warn); margin-left:4px; }
   .rodape { color:var(--mut); font-size:11px; padding:0 18px 18px; }
+  .tip { position:relative; cursor:help; border-bottom:1px dotted var(--mut); outline:none; }
+  .tip .bal { display:none; position:absolute; left:0; top:100%; margin-top:4px; z-index:20; width:270px; white-space:normal; font-size:12px; line-height:1.4; color:var(--txt); background:#1f262e; border:1px solid var(--line); border-radius:6px; padding:8px 10px; box-shadow:0 6px 18px rgba(0,0,0,.45); }
+  .tip:hover .bal, .tip:focus .bal { display:block; }
+  .bloco { overflow:visible; }
+  .bloco h2 { border-radius:8px 8px 0 0; }
 </style>
 </head>
 <body>
@@ -56,6 +61,7 @@ const fmt = (v) => v === null || v === undefined ? "—" : (Math.abs(v) >= 1000
 const cls = (p) => p === null || p === undefined ? "flat" : (p > 0 ? "up" : p < 0 ? "dn" : "flat");
 const pct = (p) => p === null || p === undefined ? "—" : (p > 0 ? "+" : "") + p.toFixed(2).replace(".", ",") + "%";
 const hora = (iso) => iso ? new Date(iso).toLocaleTimeString("pt-BR", {hour:"2-digit", minute:"2-digit", timeZone:"America/Sao_Paulo"}) : "";
+const nomeTip = (i) => `<span class="tip" tabindex="0">${i.nome}${tag(i.status)}${i.detalhe ? `<span class="bal">${i.detalhe}</span>` : ""}</span>`;
 const tag = (s) => s === "captura" ? '<span class="tag">captura</span>' : s === "anterior" ? '<span class="tag">anterior</span>' : s === "sem fonte" ? '<span class="tag">sem fonte</span>' : "";
 
 function renderStatus(d) {
@@ -71,7 +77,7 @@ function render(d) {
   renderStatus(d);
   document.getElementById("cards").innerHTML = d.destaques.map(c => `
     <div class="card">
-      <div class="nome">${c.nome}${tag(c.status)}</div>
+      <div class="nome">${nomeTip(c)}</div>
       <div class="val">${c.valor === null ? "—" : fmt(c.valor)}</div>
       <div class="var ${cls(c.var)}">${c.var === null ? (c.status === "sem fonte" ? "sem cotação automática" : "") : pct(c.var)}</div>
     </div>`).join("");
@@ -80,7 +86,7 @@ function render(d) {
       <h2>${s.titulo}</h2>
       <table>${s.itens.map(i => `
         <tr>
-          <td class="n">${i.nome}${tag(i.status)}</td>
+          <td class="n">${nomeTip(i)}</td>
           <td class="v">${fmt(i.valor)}</td>
           <td class="p ${cls(i.var)}">${pct(i.var)}</td>
           <td class="h">${hora(i.hora)}</td>

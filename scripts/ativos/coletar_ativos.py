@@ -18,7 +18,7 @@ import urllib.request
 from zoneinfo import ZoneInfo
 
 sys.path.insert(0, os.path.dirname(__file__))
-from catalogo import ITENS, SECOES  # noqa: E402
+from catalogo import DETALHES, ITENS, SECOES  # noqa: E402
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 SAIDA = os.environ.get("COTACOES_SAIDA") or os.path.join(RAIZ, "monitor", "ativos", "dados", "cotacoes.json")
@@ -62,7 +62,7 @@ def main():
     ok = 0
 
     for secao, nome, ticker, captura_v, captura_p, inverter, destaque in ITENS:
-        item = {"nome": nome, "ticker": ticker, "valor": captura_v, "var": captura_p,
+        item = {"nome": nome, "ticker": ticker, "detalhe": DETALHES.get(nome, ""), "valor": captura_v, "var": captura_p,
                 "hora": None, "status": "captura" if captura_v is not None else "sem fonte"}
         if ticker:
             try:
