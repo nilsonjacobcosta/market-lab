@@ -1,6 +1,6 @@
 {
- "gerado_utc": "2026-11-14T16:13+00:00",
- "gerado_brt": "14/11/2026 13:13",
+ "gerado_utc": "2026-11-14T20:50+00:00",
+ "gerado_brt": "14/11/2026 17:50",
  "fonte": "Yahoo Finance (endpoint chart), atraso variável; captura de 10/11/2026 onde não há fonte",
  "cotacoes_ok": 79,
  "destaques": [
@@ -381,7 +381,7 @@
      "detalhe": "Suíça · quantos francos suíços valem 1 dólar americano.",
      "valor": 0.8382,
      "var": 2.281879194630876,
-     "hora": "2026-11-14T09:59:47+00:00",
+     "hora": "2026-11-14T20:15:17+00:00",
      "status": "ok"
     }
    ]
@@ -560,9 +560,9 @@
      "nome": "Bitcoin",
      "ticker": "BTC-USD",
      "detalhe": "Criptomoeda descentralizada. Preço em dólares americanos por unidade.",
-     "valor": 65287.22,
-     "var": -11.439075248385377,
-     "hora": "2026-11-14T16:13:49+00:00",
+     "valor": 65372.1,
+     "var": -11.323937074437751,
+     "hora": "2026-11-14T20:50:27+00:00",
      "status": "ok"
     }
    ]
@@ -576,7 +576,7 @@
      "detalhe": "Nicarágua · córdoba nicaraguense (NIO). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 36.6243,
      "var": 2.5304867806631437,
-     "hora": "2026-11-14T16:00:07+00:00",
+     "hora": "2026-11-14T20:00:07+00:00",
      "status": "ok"
     },
     {
@@ -729,7 +729,7 @@
      "detalhe": "Nova Zelândia · dólar neozelandês (NZD). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 1.8099,
      "var": 0.6003001500750393,
-     "hora": "2026-11-14T10:27:48+00:00",
+     "hora": "2026-11-14T19:29:47+00:00",
      "status": "ok"
     }
    ]
