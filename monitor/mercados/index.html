@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mercados e ciclos · market-lab</title>
+<meta name="description" content="Painel educativo com onze conjuntos de gráficos: ações, juros, inflação, liquidez, risco, câmbio, commodities e Bitcoin. Material educativo, não é recomendação de investimento.">
+<style>
+:root{
+  --bg:#0b0d10; --card:#14181d; --card-2:#1a2027; --line:#28313b; --txt:#e6edf3; --txt-2:#b6c2cf; --mut:#93a1af;
+  --acc:#4fd1c5; --warn:#f0b429; --warn-bg:#2b2210; --grid:#222a33; --eixo:#9aa7b4;
+  --s1:#56B4E9; --s2:#E69F00; --s3:#CC79A7; --s4:#F0E442;
+  --f:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --f-mono:ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.5 var(--f)}
+.wrap{max-width:1180px;margin:0 auto;padding:20px max(16px,env(safe-area-inset-right,0px)) 56px max(16px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;gap:18px}
+a{color:var(--acc)}
+h1{font-size:clamp(1.45rem,4.4vw,2rem);margin:4px 0 6px;line-height:1.15;letter-spacing:-.01em}
+h2{font-size:1.2rem;margin:0 0 4px}
+h3{font-size:1rem;margin:0;line-height:1.3}
+p{margin:0;color:var(--txt-2)}
+.eyebrow{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--mut)}
+.eyebrow a{color:inherit}
+.status{font-size:.84rem;color:var(--mut);margin-top:8px}
+.status.alerta{color:var(--warn);background:var(--warn-bg);border:1px solid #5a4514;border-radius:6px;padding:8px 10px}
+.aviso{margin-top:10px;border-left:3px solid var(--warn);background:var(--card);padding:8px 12px;font-size:.88rem;color:var(--txt);border-radius:0 6px 6px 0}
+.amostra{background:#7a1f1f;color:#fff;font-weight:700;letter-spacing:.06em;text-align:center;padding:10px 12px;border-radius:6px;border:2px dashed #ffb4b4;font-size:.95rem}
+.painel{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.controles{display:flex;flex-direction:column;gap:12px}
+.lbl{font-size:.78rem;color:var(--mut);display:block;margin-bottom:4px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card-2);max-width:100%}
+.seg button{font:inherit;font-size:.84rem;color:var(--txt-2);background:transparent;border:0;border-right:1px solid var(--line);padding:6px 12px;cursor:pointer;min-height:36px}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:var(--txt);color:var(--bg);font-weight:600}
+.seg.mini button{font-size:.78rem;padding:4px 9px;min-height:32px}
+button:focus-visible,select:focus-visible,summary:focus-visible,a:focus-visible,.plot:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:3px 3px 8px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.tabs button{flex:none;font:inherit;font-size:.86rem;color:var(--txt-2);background:var(--card-2);border:1px solid var(--line);border-radius:999px;padding:7px 13px;cursor:pointer;min-height:38px;white-space:nowrap}
+.tabs button[aria-selected="true"]{background:var(--acc);border-color:var(--acc);color:#04201d;font-weight:700}
+.tabs button .n{font-family:var(--f-mono);font-size:.72rem;opacity:.8;margin-right:5px}
+.sel{display:none}
+.sel select{font:inherit;width:100%;background:var(--card-2);color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:9px 10px;min-height:42px}
+@media(max-width:599px){.tabs{display:none}.sel{display:block}}
+.cab-conj{display:flex;flex-direction:column;gap:10px}
+.naodiz{background:var(--card-2);border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:0 8px 8px 0;padding:10px 14px;font-size:.9rem;color:var(--txt-2)}
+.naodiz b{color:var(--txt);display:block;margin-bottom:2px}
+.grade{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
+@media(max-width:699px){.grade{grid-template-columns:minmax(0,1fr)}}
+.cartao{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.termos{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+button.termo{font:inherit;font-size:.76rem;color:var(--txt-2);background:var(--card-2);border:1px solid var(--line);border-radius:999px;padding:3px 5px 3px 10px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;min-height:30px}
+button.termo .qm{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;border:1px solid var(--mut);font-weight:700;font-size:.72rem;color:var(--txt)}
+button.termo[aria-expanded="true"]{background:var(--txt);color:var(--bg)}
+button.termo[aria-expanded="true"] .qm{color:var(--bg);border-color:var(--bg)}
+.ferr{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center}
+.ferr .rot{font-size:.74rem;color:var(--mut)}
+.meta{font-size:.78rem;color:var(--mut)}
+.legenda{display:flex;flex-direction:column;gap:2px;font-size:.8rem;color:var(--txt-2);margin:0;padding:0;list-style:none}
+.legenda li{display:flex;align-items:center;gap:8px;min-width:0}
+.legenda svg{flex:none}
+.legenda .nm{color:var(--txt)}
+.plot{position:relative;width:100%;height:270px;touch-action:pan-y;border-radius:6px;cursor:crosshair}
+@media(max-width:699px){.plot{height:230px}}
+.plot canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.leitura{font-size:.8rem;color:var(--txt);background:var(--card-2);border-radius:6px;padding:6px 9px;min-height:2.4em;font-variant-numeric:tabular-nums}
+.leitura.vazia{color:var(--mut)}
+.fontes{font-size:.76rem;color:var(--mut);margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:2px}
+.tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#1b1400;background:var(--warn);border-radius:4px;padding:0 6px;margin-left:6px}
+.nota{font-size:.78rem;color:var(--mut)}
+.nota.alerta{color:var(--warn)}
+.txt{display:flex;flex-direction:column;gap:8px;font-size:.88rem}
+.txt p b{color:var(--txt)}
+details{border-top:1px solid var(--line);padding-top:8px}
+summary{cursor:pointer;font-weight:600;font-size:.86rem;color:var(--txt)}
+details > *:not(summary){margin-top:8px}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;font-size:.78rem;font-variant-numeric:tabular-nums;min-width:100%}
+th,td{padding:4px 8px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{color:var(--txt-2);font-weight:600;white-space:normal;vertical-align:bottom}
+caption{text-align:left;color:var(--mut);font-size:.76rem;padding-bottom:4px}
+.tvbox{height:240px;width:100%;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card-2);position:relative}
+.tvbox.av{height:460px}
+@media(max-width:699px){.tvbox.av{height:400px}}
+.tradingview-widget-container{height:100%;width:100%}
+.tradingview-widget-container__widget{height:calc(100% - 32px);width:100%}
+.tradingview-widget-copyright{font-size:13px;line-height:32px;text-align:center;color:var(--txt-2);height:32px;overflow:hidden}
+.tradingview-widget-copyright a{text-decoration:none}
+.tradingview-widget-copyright .blue-text{color:#7fb0ff}
+.tradingview-widget-copyright .trademark{color:var(--txt-2)}
+.carregando{position:absolute;left:0;right:0;top:40%;text-align:center;font-size:.82rem;color:var(--mut);pointer-events:none}
+.reserva{border:1px dashed var(--warn);background:var(--warn-bg);border-radius:8px;padding:10px 12px;font-size:.86rem;color:var(--txt)}
+.reserva a{font-weight:600}
+.vazio{border:1px dashed var(--line);border-radius:8px;padding:18px 12px;text-align:center;color:var(--mut);font-size:.88rem}
+.gloss dl{margin:10px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.gloss dl > div{background:var(--card-2);border:1px solid var(--line);border-radius:8px;padding:10px 12px;min-width:0}
+.gloss dt{font-weight:600}
+.gloss dd{margin:2px 0 0;font-size:.86rem;color:var(--txt-2)}
+@media(max-width:699px){.gloss dl{grid-template-columns:minmax(0,1fr)}}
+#pop{position:fixed;z-index:60;max-width:min(320px,calc(100vw - 16px));background:#202833;color:var(--txt);border:1px solid #3a4654;border-radius:8px;padding:10px 12px;font-size:.84rem;line-height:1.45;box-shadow:0 10px 26px rgba(0,0,0,.55)}
+#pop b{display:block;margin-bottom:3px}
+#pop .fechar{display:block;margin-top:6px;font-size:.72rem;color:var(--mut)}
+footer{font-size:.8rem;color:var(--mut);display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--line);padding-top:14px}
+footer p{color:var(--mut);max-width:90ch}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow"><a href="../../">market-lab</a> · monitor · mercados</div>
+    <h1>Mercados e ciclos</h1>
+    <p>Onze conjuntos de gráficos para aprender a ler ações, juros, inflação, liquidez, risco, câmbio, commodities e Bitcoin. Cada gráfico explica o que é, como ler e o que já se observou.</p>
+    <div class="status" id="status" role="status" aria-live="polite">Carregando dados…</div>
+    <div class="aviso" id="aviso"><b>Material educativo.</b> Não é recomendação de investimento. Rentabilidade passada não garante resultado futuro.</div>
+  </header>
+
+  <div class="amostra" id="amostra" role="alert" hidden>DADOS SINTÉTICOS DE TESTE — os números abaixo são inventados e não representam o mercado.</div>
+
+  <section class="painel controles" aria-label="Controles do painel">
+    <div>
+      <span class="lbl" id="lbl-modo">Modo</span>
+      <div class="seg" role="group" aria-labelledby="lbl-modo">
+        <button type="button" data-modo="iniciante" aria-pressed="true">Iniciante</button>
+        <button type="button" data-modo="avancado" aria-pressed="false">Avançado</button>
+      </div>
+    </div>
+    <div>
+      <span class="lbl" id="lbl-conj">Conjunto de gráficos</span>
+      <div class="tabs" id="tabs" role="tablist" aria-labelledby="lbl-conj"></div>
+      <div class="sel"><label class="sr" for="sel-conj">Conjunto de gráficos</label><select id="sel-conj"></select></div>
+    </div>
+  </section>
+
+  <main id="painel" role="tabpanel" tabindex="-1" aria-live="off">
+    <div class="vazio">Carregando conjuntos…</div>
+  </main>
+
+  <section class="painel gloss" aria-labelledby="h-gloss">
+    <h2 id="h-gloss">Glossário</h2>
+    <p>Os mesmos termos dos botões “?” dos gráficos, com as variantes usadas em Portugal quando existem.</p>
+    <dl id="gloss"></dl>
+  </section>
+
+  <footer>
+    <p id="rod-fontes">Fontes: indicadas em cada gráfico, com link.</p>
+    <p><b>Widgets do TradingView.</b> Os gráficos de câmbio e de criptoativos marcados como “TradingView” carregam scripts de terceiros (tradingview.com). Segundo a documentação do TradingView, esses widgets registram o endereço da página, o tipo de widget, o símbolo exibido e o endereço IP do visitante, e não gravam cookies. O botão “Gráfico próprio” de cada cartão mostra a série coletada pelo painel, sem scripts de terceiros.</p>
+    <p><b>Atraso das cotações.</b> As séries próprias são semanais ou mensais e são coletadas uma vez por dia útil; a data do último dado aparece em cada gráfico e pode ter semanas de defasagem nas séries mensais. Nos widgets, a documentação do TradingView informa dados em tempo real para forex e criptoativos e dados atrasados para ações.</p>
+    <p>Metodologia, lista de séries, símbolos e limitações: <a href="README.md">README deste painel</a> · código no <a href="https://github.com/nilsonjacobcosta/market-lab">GitHub</a>.</p>
+    <p>Material educativo. Não é recomendação de investimento. Rentabilidade passada não garante resultado futuro.</p>
+  </footer>
+</div>
+<div id="pop" role="tooltip" hidden></div>
+
+<script>
+"use strict";
+// Dados ficam na branch dados-mercados (histórico separado da main). Em localhost usa a amostra sintética.
+const LOCAL = ["localhost", "127.0.0.1"].includes(location.hostname);
+const DADOS_URL = LOCAL ? "./_amostra/mercados.json"
+  : "https://raw.githubusercontent.com/nilsonjacobcosta/market-lab/dados-mercados/mercados.json";
+const CONJ_URL = "./conjuntos.json";
+const MODOS = ["iniciante", "avancado"];
+const JANELAS = [["1a", "1 ano", 1], ["5a", "5 anos", 5], ["10a", "10 anos", 10], ["tudo", "Tudo", null]];
+const CORES = ["#56B4E9", "#E69F00", "#CC79A7", "#F0E442"];
+const TRACOS = [[], [7, 4], [2, 3], [9, 3, 2, 3]];
+const TRACO_NOME = ["linha contínua", "linha tracejada", "linha pontilhada", "traço e ponto"];
+const MM = [{n: 10, rot: "Média móvel de 10 semanas (aprox. 50 dias)", cor: "#F0E442", traco: [2, 3], nome: "linha pontilhada"},
+            {n: 40, rot: "Média móvel de 40 semanas (aprox. 200 dias)", cor: "#CC79A7", traco: [7, 4], nome: "linha tracejada"}];
+const MESES = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
+const TV_BASE = "https://s3.tradingview.com/external-embedding/";
+const LIM_INICIANTE = 4, LIM_TOTAL = 6, LIM_SERIES = 4, ESPERA_TV_MS = 8000;
+
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
+const guardar = (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} };
+const ler = (k) => { try { return localStorage.getItem(k); } catch (e) { return null; } };
+const dataBR = (iso) => iso ? String(iso).slice(0, 10).split("-").reverse().join("/") : "—";
+const tDe = (iso) => Date.UTC(+iso.slice(0, 4), +iso.slice(5, 7) - 1, +iso.slice(8, 10));
+const isoDe = (t) => new Date(t).toISOString().slice(0, 10);
+
+const estado = {conjunto: null, modo: "iniciante", cfg: null, dados: null, erroDados: false,
+  fonte: {}, janela: {}, escala: {}, mm: {}};
+let limpezas = [];   // funções chamadas antes de redesenhar o painel (timers, observers)
+
+/* ---------- formatação ---------- */
+function casasDe(passo) {
+  if (!isFinite(passo) || passo <= 0) return 2;
+  if (passo >= 1) return 0;
+  return Math.min(6, Math.ceil(-Math.log10(passo) - 1e-9));
+}
+const fmtN = (v, casas) => v == null || !isFinite(v) ? "—" : v.toLocaleString("pt-BR", {minimumFractionDigits: casas, maximumFractionDigits: casas});
+function fmtValor(v) {            // valor de leitura (tabela, legenda): casas conforme a grandeza
+  if (v == null || !isFinite(v)) return "—";
+  const a = Math.abs(v);
+  return fmtN(v, a >= 1000 ? 0 : a >= 100 ? 1 : a >= 1 ? 2 : 4);
+}
+
+/* ---------- estado na URL ---------- */
+function lerURL() {
+  const p = new URLSearchParams(location.search);
+  return {conjunto: p.get("conjunto"), modo: p.get("modo")};
+}
+function normalizar(c, m) {
+  const ids = estado.cfg.conjuntos.map(x => x.id);
+  return {conjunto: ids.includes(c) ? c : ids[0], modo: MODOS.includes(m) ? m : "iniciante"};
+}
+function gravarURL(empilhar) {
+  const p = new URLSearchParams(location.search);
+  p.set("conjunto", estado.conjunto); p.set("modo", estado.modo);
+  const url = location.pathname + "?" + p.toString() + location.hash;
+  if (empilhar) history.pushState(null, "", url); else history.replaceState(null, "", url);
+  guardar("mercados-conjunto", estado.conjunto); guardar("mercados-modo", estado.modo);
+}
+function irPara(conjunto, modo, empilhar = true) {
+  const n = normalizar(conjunto ?? estado.conjunto, modo ?? estado.modo);
+  const mudou = n.conjunto !== estado.conjunto || n.modo !== estado.modo;
+  estado.conjunto = n.conjunto; estado.modo = n.modo;
+  if (mudou && empilhar) gravarURL(true);
+  desenharTudo();
+}
+
+/* ---------- cabeçalho de status ---------- */
+function desenharStatus() {
+  const el = $("status"), d = estado.dados;
+  if (estado.erroDados || !d) {
+    el.className = "status alerta";
+    el.textContent = "Não foi possível carregar os dados coletados (branch dados-mercados). Se o painel acabou de ser criado, a primeira coleta automática ainda não rodou. Os gráficos próprios ficam vazios; os widgets do TradingView continuam disponíveis.";
+    return;
+  }
+  const dias = d.gerado_utc ? Math.floor((Date.now() - new Date(d.gerado_utc)) / 86400000) : null;
+  const atrasado = dias == null || dias > 4;
+  el.className = "status" + (atrasado ? " alerta" : "");
+  el.textContent = `Coleta de ${d.gerado_brt || "data não informada"} (horário de Brasília) · ${d.series_ok ?? "?"} de ${d.series_total ?? "?"} séries atualizadas na fonte`
+    + (atrasado ? ` — ATENÇÃO: a última coleta tem ${dias == null ? "idade desconhecida" : dias + " dias"}; a atualização automática pode ter falhado e os dados podem estar desatualizados.` : "");
+  $("amostra").hidden = d.amostra_sintetica !== true;
+}
+
+/* ---------- seletores ---------- */
+function desenharSeletores() {
+  const cs = estado.cfg.conjuntos;
+  $("tabs").innerHTML = cs.map((c, i) => {
+    const sel = c.id === estado.conjunto;
+    return `<button type="button" role="tab" id="tab-${esc(c.id)}" data-conj="${esc(c.id)}" aria-selected="${sel}" aria-controls="painel" tabindex="${sel ? 0 : -1}"><span class="n">${i + 1}</span>${esc(c.nome)}</button>`;
+  }).join("");
+  $("sel-conj").innerHTML = cs.map((c, i) => `<option value="${esc(c.id)}"${c.id === estado.conjunto ? " selected" : ""}>${i + 1}. ${esc(c.nome)}</option>`).join("");
+  document.querySelectorAll("[data-modo]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.modo === estado.modo)));
+  $("painel").setAttribute("aria-labelledby", "tab-" + estado.conjunto);
+  const ativa = $("tab-" + estado.conjunto);
+  if (ativa && ativa.scrollIntoView) { const t = $("tabs"); t.scrollLeft = Math.max(0, ativa.offsetLeft - t.offsetLeft - 40); }
+}
+
+/* ---------- séries ---------- */
+function pontosDe(s) {            // [[t, v], ...] ordenado, sem nulos; guardado na própria série
+  if (!s._p) {
+    s._p = (s.pontos || []).filter(p => p && p[0] && typeof p[1] === "number" && isFinite(p[1]))
+      .map(p => [tDe(p[0]), p[1]]).sort((a, b) => a[0] - b[0]);
+  }
+  return s._p;
+}
+function mediaMovel(p, n) {
+  const out = []; let soma = 0;
+  for (let i = 0; i < p.length; i++) {
+    soma += p[i][1]; if (i >= n) soma -= p[i - n][1];
+    if (i >= n - 1) out.push([p[i][0], soma / n]);
+  }
+  return out;
+}
+function recorte(p, t0, t1) {
+  let a = 0, b = p.length;
+  while (a < b) { const m = (a + b) >> 1; if (p[m][0] < t0) a = m + 1; else b = m; }
+  const ini = a; b = p.length;
+  while (a < b) { const m = (a + b) >> 1; if (p[m][0] <= t1) a = m + 1; else b = m; }
+  return p.slice(ini, a);
+}
+function maisProximo(p, t) {
+  if (!p.length) return null;
+  let a = 0, b = p.length - 1;
+  while (b - a > 1) { const m = (a + b) >> 1; if (p[m][0] < t) a = m; else b = m; }
+  return Math.abs(p[a][0] - t) <= Math.abs(p[b][0] - t) ? p[a] : p[b];
+}
+
+/* ---------- escalas e marcas dos eixos ---------- */
+function marcasLineares(min, max, alvo) {
+  const bruto = (max - min) / Math.max(1, alvo), pot = Math.pow(10, Math.floor(Math.log10(bruto))), f = bruto / pot;
+  const passo = (f <= 1 ? 1 : f <= 2 ? 2 : f <= 5 ? 5 : 10) * pot, out = [];
+  for (let v = Math.ceil(min / passo - 1e-9) * passo; v <= max + passo * 1e-9; v += passo) out.push(Math.abs(v) < passo * 1e-9 ? 0 : v);
+  return {marcas: out, passo};
+}
+function marcasLog(min, max, alvo) {
+  const out = [];
+  for (let k = Math.floor(Math.log10(min)); k <= Math.ceil(Math.log10(max)); k++)
+    for (const m of [1, 2, 5]) { const v = m * Math.pow(10, k); if (v >= min * 0.999 && v <= max * 1.001) out.push(v); }
+  if (out.length > alvo + 3) return {marcas: out.filter(v => Math.abs(Math.log10(v) - Math.round(Math.log10(v))) < 1e-9), log: true};
+  if (out.length < 3) return marcasLineares(min, max, alvo);
+  return {marcas: out, log: true};
+}
+function marcasTempo(t0, t1, larg) {
+  const anos = (t1 - t0) / (365.25 * 864e5), cabem = Math.max(2, Math.floor(larg / 58)), out = [];
+  const d0 = new Date(t0), d1 = new Date(t1);
+  if (anos > 2.2) {
+    const passo = [1, 2, 5, 10, 20].find(p => anos / p <= cabem) || 20;
+    for (let a = Math.ceil((d0.getUTCFullYear() + (d0.getUTCMonth() > 0 || d0.getUTCDate() > 1 ? 1 : 0)) / passo) * passo; a <= d1.getUTCFullYear(); a += passo)
+      out.push([Date.UTC(a, 0, 1), String(a)]);
+  } else {
+    const meses = anos * 12, passo = [1, 2, 3, 6].find(p => meses / p <= cabem) || 6;
+    let a = d0.getUTCFullYear(), m = d0.getUTCMonth() + 1;
+    while (m % passo) m++;
+    for (;;) { if (m > 11) { a += Math.floor(m / 12); m %= 12; } const t = Date.UTC(a, m, 1); if (t > t1) break; out.push([t, `${MESES[m]}/${String(a).slice(2)}`]); m += passo; }
+  }
+  return out;
+}
+
+/* ---------- gráfico próprio (canvas, sem biblioteca) ---------- */
+function criarGrafico(host, g, ids) {
+  const D = estado.dados, avanc = estado.modo === "avancado";
+  const faltam = [], series = [], semPontos = [];
+  (ids || []).slice(0, LIM_SERIES).forEach(id => {
+    const s = D && D.series ? D.series[id] : null;
+    if (!s || pontosDe(s).length < 2) { faltam.push(s ? (s.nome || id) : id); if (s) semPontos.push(s); return; }
+    series.push({id, s, p: pontosDe(s)});
+  });
+  if (!series.length) {
+    host.innerHTML = `<div class="vazio"><b>Sem dados para este gráfico.</b> <span class="tag">sem dados</span><br>${D ? "A coleta ainda não trouxe " + esc(faltam.join(", ") || "esta série") + "." : "Os dados coletados não foram carregados."}${semPontos.map(s => s.url_fonte ? ` <a href="${esc(s.url_fonte)}" rel="noopener">Página da fonte: ${esc(s.fonte || s.nome)}</a>.` : "").join("")}</div>`;
+    return;
+  }
+  // Séries de unidades diferentes nunca dividem o mesmo eixo: ficam só as da unidade da primeira.
+  // Exceção declarada em conjuntos.json (unidade_eixo: "%"): séries todas em porcentagem, com rótulos diferentes.
+  const u0 = series[0].s.unidade || "", eixoPct = String(g.unidade_eixo || "").trim().startsWith("%");
+  const cabe = (x) => { const u = x.s.unidade || ""; return u === u0 || (eixoPct && u0.trim().startsWith("%") && u.trim().startsWith("%")); };
+  const vis = series.filter(cabe), fora = series.filter(x => !cabe(x));
+  const unidades = [...new Set(vis.map(x => x.s.unidade || ""))];
+  const unidade = unidades.length > 1 ? `${g.unidade_eixo} (${unidades.join("; ")})` : u0;
+  vis.forEach((x, i) => { x.cor = CORES[i]; x.traco = TRACOS[i]; x.tracoNome = TRACO_NOME[i]; });
+  const precoUnico = !!g.preco && vis.length === 1;
+  const podeMM = avanc && precoUnico && vis[0].s.periodicidade === "semanal";
+  let janela = avanc ? (estado.janela[g.id] || g.janela_padrao || "10a") : (g.janela_padrao || "10a");
+  let escala = avanc && estado.escala[g.id] ? estado.escala[g.id] : (g.escala || "linear");
+  let comMM = podeMM && estado.mm[g.id] !== false;
+  const halv = g.marcadores === "halvings" && estado.cfg.eventos && estado.cfg.eventos.halvings ? estado.cfg.eventos.halvings : null;
+
+  const uid = "gr-" + g.id;
+  host.innerHTML = `
+    ${avanc ? `<div class="ferr">
+      <div><span class="rot" id="${uid}-lj">Janela</span><br><div class="seg mini" role="group" aria-labelledby="${uid}-lj">${JANELAS.map(([k, t]) => `<button type="button" data-jan="${k}">${t}</button>`).join("")}</div></div>
+      ${g.preco ? `<div><span class="rot" id="${uid}-le">Escala</span><br><div class="seg mini" role="group" aria-labelledby="${uid}-le"><button type="button" data-esc="linear">Linear</button><button type="button" data-esc="log">Logarítmica</button></div></div>` : ""}
+      ${podeMM ? `<div><span class="rot" id="${uid}-lm">Médias móveis</span><br><div class="seg mini" role="group" aria-labelledby="${uid}-lm"><button type="button" data-mm="1">Mostrar</button><button type="button" data-mm="0">Ocultar</button></div></div>` : ""}
+    </div>` : ""}
+    <div class="meta" data-r="meta"></div>
+    <ul class="legenda" data-r="leg" aria-label="Legenda"></ul>
+    <div class="plot" role="img" tabindex="0" data-r="plot"><canvas aria-hidden="true"></canvas></div>
+    <div class="leitura vazia" data-r="leitura" aria-live="polite"></div>
+    <div class="nota" data-r="notas"></div>
+    <ul class="fontes" data-r="fontes"></ul>
+    <details><summary>Ver dados em tabela</summary><div class="tbl" data-r="tabela"></div></details>`;
+  const R = (k) => host.querySelector(`[data-r="${k}"]`);
+  const plot = R("plot"), canvas = plot.querySelector("canvas"), ctx = canvas.getContext("2d");
+  const DICA = "Passe o ponteiro ou toque no gráfico para ler data e valor. No teclado: foco no gráfico e setas ← →.";
+  let V = null, cursor = null;   // V = dados da vista atual
+
+  function prepararVista() {
+    const tFim = Math.max(...vis.map(x => x.p[x.p.length - 1][0]));
+    const tIniTudo = Math.min(...vis.map(x => x.p[0][0]));
+    const anos = (JANELAS.find(j => j[0] === janela) || JANELAS[2])[2];
+    const tIni = anos ? Math.max(tIniTudo, tFim - anos * 365.25 * 864e5) : tIniTudo;
+    const linhas = vis.map(x => ({...x, q: recorte(x.p, tIni, tFim), nome: x.s.nome || x.id, larg: 1.8}));
+    if (comMM) MM.forEach(m => linhas.push({id: "mm" + m.n, nome: m.rot, cor: m.cor, traco: m.traco, tracoNome: m.nome, larg: 1.2, mm: true,
+      q: recorte(mediaMovel(vis[0].p, m.n), tIni, tFim)}));
+    let min = Infinity, max = -Infinity;
+    linhas.forEach(l => l.q.forEach(([, v]) => { if (v < min) min = v; if (v > max) max = v; }));
+    const logOk = escala === "log" && min > 0;
+    if (min === max) { min -= 1; max += 1; }
+    V = {tIni, tFim, linhas, min, max, log: logOk, logRecusado: escala === "log" && !logOk};
+  }
+
+  function desenhar() {
+    const cssW = plot.clientWidth, cssH = plot.clientHeight;
+    if (!cssW || !cssH || !V) return;
+    const dpr = Math.max(1, window.devicePixelRatio || 1);
+    if (canvas.width !== Math.round(cssW * dpr) || canvas.height !== Math.round(cssH * dpr)) { canvas.width = Math.round(cssW * dpr); canvas.height = Math.round(cssH * dpr); }
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, cssW, cssH);
+    const cs = getComputedStyle(document.documentElement), cGrade = cs.getPropertyValue("--grid").trim(), cEixo = cs.getPropertyValue("--eixo").trim(), cTxt = cs.getPropertyValue("--txt").trim();
+    ctx.font = `11px ${cs.getPropertyValue("--f").trim()}`;
+    // domínio vertical com folga
+    let lo, hi;
+    if (V.log) { const f = Math.pow(V.max / V.min, 0.05) || 1.05; lo = V.min / f; hi = V.max * f; }
+    else { const f = (V.max - V.min) * 0.06; lo = V.min - f; hi = V.max + f; if (V.min >= 0 && lo < 0) lo = 0; }
+    const alvoY = Math.max(3, Math.floor(cssH / 48));
+    const my = V.log ? marcasLog(lo, hi, alvoY) : marcasLineares(lo, hi, alvoY);
+    let casas = my.log ? 0 : casasDe(my.passo);
+    if (my.log) my.marcas.forEach(v => { if (v < 1) casas = Math.max(casas, casasDe(v)); });
+    const rotY = my.marcas.map(v => fmtN(v, casas));
+    const mEsq = Math.ceil(Math.max(28, ...rotY.map(r => ctx.measureText(r).width)) + 12), mDir = 12, mTopo = halvNaVista().length ? 30 : 10, mBase = 24;
+    const pw = cssW - mEsq - mDir, ph = cssH - mTopo - mBase;
+    if (pw < 40 || ph < 40) return;
+    const X = (t) => mEsq + (V.tFim === V.tIni ? 0 : (t - V.tIni) / (V.tFim - V.tIni)) * pw;
+    const Y = V.log ? (v) => mTopo + (1 - (Math.log(v) - Math.log(lo)) / (Math.log(hi) - Math.log(lo))) * ph
+                    : (v) => mTopo + (1 - (v - lo) / (hi - lo)) * ph;
+    V.geo = {X, Y, mEsq, mTopo, pw, ph};
+    // grade horizontal e rótulos
+    ctx.lineWidth = 1; ctx.textBaseline = "middle"; ctx.textAlign = "right";
+    my.marcas.forEach((v, i) => {
+      const y = Math.round(Y(v)) + 0.5; if (y < mTopo - 1 || y > mTopo + ph + 1) return;
+      ctx.strokeStyle = cGrade; ctx.setLineDash([]); ctx.beginPath(); ctx.moveTo(mEsq, y); ctx.lineTo(mEsq + pw, y); ctx.stroke();
+      ctx.fillStyle = cEixo; ctx.fillText(rotY[i], mEsq - 7, y);
+    });
+    // linha do zero em destaque quando o eixo cruza o zero
+    if (!V.log && lo < 0 && hi > 0) {
+      const y = Math.round(Y(0)) + 0.5; ctx.strokeStyle = cEixo; ctx.lineWidth = 1.2; ctx.setLineDash([]);
+      ctx.beginPath(); ctx.moveTo(mEsq, y); ctx.lineTo(mEsq + pw, y); ctx.stroke();
+    }
+    // eixo do tempo
+    ctx.textBaseline = "top"; ctx.textAlign = "center"; ctx.lineWidth = 1;
+    let ultX = -Infinity;
+    marcasTempo(V.tIni, V.tFim, pw).forEach(([t, rot]) => {
+      const x = Math.round(X(t)) + 0.5; if (x < mEsq || x > mEsq + pw) return;
+      ctx.strokeStyle = cGrade; ctx.setLineDash([]); ctx.beginPath(); ctx.moveTo(x, mTopo + ph); ctx.lineTo(x, mTopo + ph + 4); ctx.stroke();
+      const w = ctx.measureText(rot).width; if (x - w / 2 < ultX + 6 || x + w / 2 > cssW - 2) return;
+      ctx.fillStyle = cEixo; ctx.fillText(rot, x, mTopo + ph + 7); ultX = x + w / 2;
+    });
+    ctx.strokeStyle = cEixo; ctx.beginPath(); ctx.moveTo(mEsq + 0.5, mTopo); ctx.lineTo(mEsq + 0.5, mTopo + ph + 0.5); ctx.lineTo(mEsq + pw, mTopo + ph + 0.5); ctx.stroke();
+    // halvings: linhas verticais tracejadas com rótulo
+    halvNaVista().forEach((h, i) => {
+      const x = Math.round(X(h.t)) + 0.5;
+      ctx.strokeStyle = cTxt; ctx.globalAlpha = 0.75; ctx.lineWidth = 1; ctx.setLineDash([5, 4]);
+      ctx.beginPath(); ctx.moveTo(x, mTopo - 2); ctx.lineTo(x, mTopo + ph); ctx.stroke(); ctx.globalAlpha = 1; ctx.setLineDash([]);
+      ctx.font = `600 10.5px ${cs.getPropertyValue("--f").trim()}`;
+      const w = ctx.measureText(h.rotulo).width, yy = 2 + (i % 2) * 13;
+      const xx = Math.min(Math.max(mEsq + w / 2, x), mEsq + pw - w / 2);
+      ctx.fillStyle = cTxt; ctx.textAlign = "center"; ctx.textBaseline = "top"; ctx.fillText(h.rotulo, xx, yy);
+      ctx.font = `11px ${cs.getPropertyValue("--f").trim()}`;
+    });
+    // séries
+    ctx.save(); ctx.beginPath(); ctx.rect(mEsq, mTopo - 2, pw + 1, ph + 4); ctx.clip();
+    [...V.linhas].reverse().forEach(l => {
+      if (!l.q.length) return;
+      ctx.strokeStyle = l.cor; ctx.lineWidth = l.larg; ctx.setLineDash(l.traco); ctx.lineJoin = "round"; ctx.beginPath();
+      l.q.forEach(([t, v], i) => { const x = X(t), y = Y(v); if (i) ctx.lineTo(x, y); else ctx.moveTo(x, y); });
+      ctx.stroke();
+    });
+    ctx.restore(); ctx.setLineDash([]);
+    // cursor de leitura
+    if (cursor != null) {
+      const x = X(cursor);
+      ctx.strokeStyle = cTxt; ctx.globalAlpha = 0.6; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(x, mTopo); ctx.lineTo(x, mTopo + ph); ctx.stroke(); ctx.globalAlpha = 1;
+      V.linhas.forEach(l => { const pt = maisProximo(l.q, cursor); if (!pt) return;
+        ctx.fillStyle = l.cor; ctx.strokeStyle = "#0b0d10"; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(X(pt[0]), Y(pt[1]), 3.6, 0, 6.2832); ctx.fill(); ctx.stroke(); });
+    }
+  }
+  function halvNaVista() {
+    if (!halv || !V) return [];
+    return (halv.itens || []).map(h => ({...h, t: tDe(h.data)})).filter(h => h.t >= V.tIni && h.t <= V.tFim);
+  }
+
+  function textos() {
+    const amostra = (l) => `<svg width="30" height="10" viewBox="0 0 30 10" aria-hidden="true"><line x1="1" y1="5" x2="29" y2="5" stroke="${l.cor}" stroke-width="${l.mm ? 2 : 2.6}" stroke-dasharray="${l.traco.join(" ")}"/></svg>`;
+    R("meta").innerHTML = `Unidade: <b>${esc(unidade || "não informada")}</b> · Escala ${V.log ? "logarítmica" : "linear"} · Janela: ${esc((JANELAS.find(j => j[0] === janela) || [])[1] || janela)} (${dataBR(isoDe(V.tIni))} a ${dataBR(isoDe(V.tFim))})`;
+    R("leg").innerHTML = V.linhas.map(l => { const u = l.q[l.q.length - 1];
+      return `<li>${amostra(l)}<span><span class="nm">${esc(l.nome)}</span> <span class="sr">(${l.tracoNome})</span>${u ? ` — último: ${fmtValor(u[1])} em ${dataBR(isoDe(u[0]))}${l.s && l.s.ultimo_parcial ? " (semana em andamento)" : ""}` : " — sem pontos nesta janela"}</span></li>`; }).join("");
+    const notas = [];
+    if (V.logRecusado) notas.push("A escala logarítmica não foi aplicada porque a série tem valores zero ou negativos nesta janela.");
+    if (comMM) notas.push("Médias móveis: média aritmética dos últimos 10 fechamentos semanais (aprox. 50 dias) e dos últimos 40 (aprox. 200 dias), recalculada a cada semana. Descrevem o passado; não são sinal de compra ou venda.");
+    if (halv) { const hv = halvNaVista();
+      notas.push(`Linhas verticais tracejadas: halvings do Bitcoin (${(halv.itens || []).map(h => dataBR(h.data)).join(", ")}); ${hv.length} dentro desta janela. `
+        + (halv.verificado ? `Fonte das datas: ${halv.url_fonte ? `<a href="${esc(halv.url_fonte)}" rel="noopener">${esc(halv.fonte)}</a>` : esc(halv.fonte)}.` : "Datas ainda não conferidas em fonte primária.")); }
+    if (fora.length) notas.push(`<span class="nota alerta">Não exibidas por terem unidade diferente de “${esc(unidade)}”: ${esc(fora.map(x => x.s.nome || x.id).join(", "))}.</span>`);
+    if (faltam.length) notas.push(`Ainda sem dados na coleta: ${esc(faltam.join(", "))}.`);
+    R("notas").innerHTML = notas.map(n => `<div>${n}</div>`).join(""); R("notas").hidden = !notas.length;
+    R("fontes").innerHTML = vis.map(x => { const s = x.s;
+      const tag = s.status === "anterior" ? '<span class="tag" title="Valor da coleta anterior: a fonte não respondeu na última tentativa">anterior</span>' : s.status === "sem dados" ? '<span class="tag">sem dados</span>' : "";
+      const fonte = s.url_fonte ? `<a href="${esc(s.url_fonte)}" rel="noopener">${esc(s.fonte || "fonte")}</a>` : esc(s.fonte || "fonte não informada");
+      return `<li>${esc(s.nome || x.id)}: fonte ${fonte}${s.codigo ? ` (código ${esc(s.codigo)})` : ""} · último dado ${dataBR(s.ultimo_dado)}${s.ultimo_parcial ? " (semana em andamento: valor parcial)" : ""} · periodicidade ${esc(s.periodicidade || "não informada")}${s.ajuste_sazonal && !/^n/i.test(String(s.ajuste_sazonal)) ? " · dessazonalizada" : ""}${tag}</li>`; }).join("");
+    // resumo acessível
+    const partes = vis.map((x, i) => { const q = V.linhas[i].q; if (!q.length) return `${x.s.nome || x.id}: sem pontos na janela`;
+      return `${x.s.nome || x.id} (${x.tracoNome}): de ${dataBR(isoDe(q[0][0]))} a ${dataBR(isoDe(q[q.length - 1][0]))}, primeiro valor ${fmtValor(q[0][1])}, último valor ${fmtValor(q[q.length - 1][1])}`; });
+    plot.setAttribute("aria-label", `Gráfico de linha: ${g.titulo}. Unidade: ${unidade || "não informada"}, escala ${V.log ? "logarítmica" : "linear"}. ${partes.join(". ")}.${halv ? " Linhas verticais tracejadas marcam os halvings." : ""} A tabela logo abaixo traz os últimos 12 pontos.`);
+    // tabela com os últimos 12 pontos
+    const datas = [...new Set(vis.flatMap(x => x.p.slice(-12).map(q => q[0])))].sort((a, b) => a - b).slice(-12);
+    const mapa = vis.map(x => new Map(x.p.slice(-40).map(q => [q[0], q[1]])));
+    R("tabela").innerHTML = `<table><caption>Últimos 12 pontos · unidade: ${esc(unidade || "não informada")}</caption><thead><tr><th scope="col">Data</th>${vis.map(x => `<th scope="col">${esc(x.s.nome || x.id)}</th>`).join("")}</tr></thead><tbody>`
+      + datas.map(t => `<tr><td>${dataBR(isoDe(t))}</td>${mapa.map(m => `<td>${m.has(t) ? fmtValor(m.get(t)) : "—"}</td>`).join("")}</tr>`).join("") + "</tbody></table>";
+    host.querySelectorAll("[data-jan]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.jan === janela)));
+    host.querySelectorAll("[data-esc]").forEach(b => { b.setAttribute("aria-pressed", String(b.dataset.esc === escala)); });
+    host.querySelectorAll("[data-mm]").forEach(b => b.setAttribute("aria-pressed", String((b.dataset.mm === "1") === comMM)));
+    leitura();
+  }
+  function leitura() {
+    const el = R("leitura");
+    if (cursor == null) { el.textContent = DICA; el.classList.add("vazia"); return; }
+    const itens = V.linhas.map(l => { const pt = maisProximo(l.q, cursor); return pt ? {nome: l.nome, pt} : null; }).filter(Boolean);
+    if (!itens.length) { el.textContent = DICA; el.classList.add("vazia"); return; }
+    const mesmaData = itens.every(i => i.pt[0] === itens[0].pt[0]);
+    el.classList.remove("vazia");
+    el.textContent = mesmaData
+      ? `${dataBR(isoDe(itens[0].pt[0]))} — ` + itens.map(i => `${i.nome}: ${fmtValor(i.pt[1])}`).join(" · ") + (unidade ? ` (${unidade})` : "")
+      : itens.map(i => `${i.nome}: ${fmtValor(i.pt[1])} em ${dataBR(isoDe(i.pt[0]))}`).join(" · ") + (unidade ? ` (${unidade})` : "");
+  }
+  function atualizar() { cursor = null; prepararVista(); textos(); desenhar(); }
+
+  // interação
+  const tDoEvento = (e) => { if (!V || !V.geo) return null; const r = plot.getBoundingClientRect(), gx = V.geo;
+    const f = Math.min(1, Math.max(0, (e.clientX - r.left - gx.mEsq) / gx.pw)); return V.tIni + f * (V.tFim - V.tIni); };
+  const mover = (e) => { const t = tDoEvento(e); if (t == null) return; const pt = maisProximo(V.linhas[0].q, t); cursor = pt ? pt[0] : t; leitura(); desenhar(); };
+  plot.addEventListener("pointermove", mover);
+  plot.addEventListener("pointerdown", mover);
+  plot.addEventListener("pointerleave", (e) => { if (e.pointerType === "mouse") { cursor = null; leitura(); desenhar(); } });
+  plot.addEventListener("keydown", (e) => {
+    if (!["ArrowLeft", "ArrowRight", "Home", "End", "Escape"].includes(e.key)) return;
+    const q = V.linhas[0].q; if (!q.length) return; e.preventDefault();
+    if (e.key === "Escape") { cursor = null; leitura(); desenhar(); return; }
+    let i = cursor == null ? q.length - 1 : q.findIndex(p => p[0] >= cursor); if (i < 0) i = q.length - 1;
+    if (cursor != null) i += e.key === "ArrowLeft" ? -1 : e.key === "ArrowRight" ? 1 : 0;
+    if (e.key === "Home") i = 0; if (e.key === "End") i = q.length - 1;
+    cursor = q[Math.min(q.length - 1, Math.max(0, i))][0]; leitura(); desenhar();
+  });
+  host.addEventListener("click", (e) => {
+    const j = e.target.closest("[data-jan]"), s = e.target.closest("[data-esc]"), m = e.target.closest("[data-mm]");
+    if (j) { janela = j.dataset.jan; estado.janela[g.id] = janela; atualizar(); }
+    else if (s) { escala = s.dataset.esc; estado.escala[g.id] = escala; atualizar(); }
+    else if (m) { comMM = m.dataset.mm === "1"; estado.mm[g.id] = comMM; atualizar(); }
+  });
+  let quadro = 0;
+  const ro = new ResizeObserver(() => { cancelAnimationFrame(quadro); quadro = requestAnimationFrame(desenhar); });
+  ro.observe(plot);
+  const mq = window.matchMedia ? matchMedia(`(resolution: ${window.devicePixelRatio || 1}dppx)`) : null;
+  const aoMudarDPR = () => desenhar();
+  if (mq && mq.addEventListener) mq.addEventListener("change", aoMudarDPR);
+  limpezas.push(() => { ro.disconnect(); cancelAnimationFrame(quadro); if (mq && mq.removeEventListener) mq.removeEventListener("change", aoMudarDPR); });
+  atualizar();
+}
+
+/* ---------- widgets do TradingView ---------- */
+function urlSimbolo(simbolo) {
+  const [bolsa, codigo] = String(simbolo).split(":");
+  return `https://www.tradingview.com/symbols/${encodeURIComponent(codigo ? bolsa + "-" + codigo : bolsa)}/`;
+}
+function montarTV(host, g, aoFalhar) {
+  const avanc = estado.modo === "avancado";
+  const nomeWidget = avanc ? "Advanced Chart" : "Mini Symbol Overview";
+  const codigo = String(g.simbolo_tv).split(":").pop();
+  const caixa = document.createElement("div"); caixa.className = "tvbox" + (avanc ? " av" : "");
+  const cont = document.createElement("div"); cont.className = "tradingview-widget-container";
+  cont.title = `Widget do TradingView (${nomeWidget}): ${g.titulo}, símbolo ${g.simbolo_tv}`;
+  cont.innerHTML = `<div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright"><a href="${esc(urlSimbolo(g.simbolo_tv))}" rel="noopener nofollow" target="_blank"><span class="blue-text">Cotação de ${esc(codigo)}</span></a><span class="trademark"> by TradingView</span></div>`;
+  const aguarde = document.createElement("div"); aguarde.className = "carregando"; aguarde.textContent = "Carregando widget do TradingView…";
+  const cfg = avanc
+    ? {autosize: true, symbol: g.simbolo_tv, interval: "D", timezone: "America/Sao_Paulo", theme: "dark", style: "1", locale: "br",
+       allow_symbol_change: false, hide_side_toolbar: true, save_image: false, calendar: false,
+       studies: ["MASimple@tv-basicstudies", "RSI@tv-basicstudies"], support_host: "https://www.tradingview.com"}
+    : {symbol: g.simbolo_tv, width: "100%", height: "100%", locale: "br", dateRange: "12M", colorTheme: "dark", isTransparent: true,
+       autosize: true, largeChartUrl: "", chartOnly: false, noTimeScale: false};
+  const s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+  s.src = TV_BASE + (avanc ? "embed-widget-advanced-chart.js" : "embed-widget-mini-symbol-overview.js");
+  s.text = JSON.stringify(cfg);
+  let encerrado = false;
+  const falhar = () => { if (encerrado) return; encerrado = true; clearTimeout(timer); clearInterval(olho); aoFalhar(); };
+  const olho = setInterval(() => { if (cont.querySelector("iframe")) { aguarde.remove(); clearInterval(olho); } }, 400);
+  const timer = setTimeout(() => { if (!cont.querySelector("iframe")) falhar(); }, ESPERA_TV_MS);
+  s.addEventListener("error", () => { clearInterval(olho); /* o cartão de reserva entra ao fim da espera */ });
+  limpezas.push(() => { encerrado = true; clearTimeout(timer); clearInterval(olho); });
+  caixa.append(cont, aguarde); host.replaceChildren(caixa); cont.appendChild(s);
+  const nota = document.createElement("div"); nota.className = "nota";
+  nota.innerHTML = `Widget ${nomeWidget} do TradingView, símbolo <b>${esc(g.simbolo_tv)}</b>. Cotações fornecidas pelo TradingView.`
+    + (avanc ? " Indicadores do widget: uma média móvel simples (média aritmética dos últimos fechamentos, no período padrão do widget) e o RSI (número de 0 a 100 calculado da razão entre a média das altas e a média das baixas em 14 períodos). Descrevem o passado; não são sinal de compra ou venda." : "")
+    + (g.serie_alternativa ? " Se o quadro mostrar “Permissão negada” ou “símbolo disponível somente no TradingView”, o botão “Gráfico próprio” acima exibe a série coletada pelo painel." : ` Se o quadro não mostrar o gráfico: <a href="${esc(urlSimbolo(g.simbolo_tv))}" rel="noopener nofollow" target="_blank">abrir ${esc(g.simbolo_tv)} no TradingView</a>.`);
+  host.appendChild(nota);
+}
+
+/* ---------- cartões ---------- */
+function htmlTermos(g) {
+  const G = estado.cfg.glossario || {};
+  const ts = (g.termos || []).filter(t => G[t]);
+  if (!ts.length) return "";
+  return `<div class="termos" aria-label="Termos deste gráfico">${ts.map(t => `<button type="button" class="termo" data-termo="${esc(t)}" aria-expanded="false" aria-label="O que é ${esc(G[t].termo)}?">${esc(G[t].termo)}<span class="qm" aria-hidden="true">?</span></button>`).join("")}</div>`;
+}
+function htmlTextos(g) {
+  const blocos = `<p><b>O que é.</b> ${esc(g.o_que_e)}</p><p><b>Como ler.</b> ${esc(g.como_ler)}</p><p><b>O que já se observou.</b> ${esc(g.ja_se_observou)}</p>`;
+  return estado.modo === "iniciante" ? `<div class="txt">${blocos}</div>`
+    : `<details><summary>O que é, como ler e o que já se observou</summary><div class="txt">${blocos}</div></details>`;
+}
+function montarCartao(g) {
+  const art = document.createElement("article"); art.className = "cartao"; art.dataset.grafico = g.id; art.dataset.tipo = g.tipo;
+  art.setAttribute("aria-labelledby", "t-" + g.id);
+  const ehTV = g.tipo === "tv" && g.simbolo_tv;
+  const temAlt = ehTV && !!g.serie_alternativa;
+  art.innerHTML = `<div><h3 id="t-${esc(g.id)}">${esc(g.titulo)}</h3>${htmlTermos(g)}</div>
+    ${temAlt ? `<div class="ferr"><div><span class="rot" id="f-${esc(g.id)}">Origem do gráfico</span><br><div class="seg mini" role="group" aria-labelledby="f-${esc(g.id)}"><button type="button" data-fonte="tv">TradingView</button><button type="button" data-fonte="proprio">Gráfico próprio</button></div></div></div>` : ""}
+    <div class="reserva" data-r="reserva" hidden></div>
+    <div class="corpo" data-r="corpo"></div>
+    ${htmlTextos(g)}`;
+  const corpo = art.querySelector('[data-r="corpo"]'), reserva = art.querySelector('[data-r="reserva"]');
+  const marcar = (f) => { art.dataset.origem = f; art.querySelectorAll("[data-fonte]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.fonte === f))); };
+  const mostrarProprio = () => { marcar("proprio"); criarGrafico(corpo, g, temAlt ? [g.serie_alternativa] : g.series); };
+  const mostrarTV = () => {
+    marcar("tv"); reserva.hidden = true;
+    montarTV(corpo, g, () => {
+      reserva.hidden = false;
+      reserva.innerHTML = `<b>O widget do TradingView não carregou.</b> Causas possíveis: bloqueador de conteúdo, rede ou símbolo indisponível no widget. <a href="${esc(urlSimbolo(g.simbolo_tv))}" rel="noopener nofollow" target="_blank">Abrir ${esc(g.simbolo_tv)} no TradingView</a>.`
+        + (temAlt ? " Abaixo está o gráfico próprio, com a série coletada pelo painel." : " Não há série própria equivalente para este gráfico.");
+      if (temAlt) mostrarProprio(); else { corpo.replaceChildren(); art.dataset.origem = "reserva"; }
+    });
+  };
+  if (ehTV) {
+    const pref = temAlt ? (estado.fonte[g.id] || g.padrao || "tv") : "tv";
+    if (pref === "proprio") mostrarProprio(); else mostrarTV();
+    art.addEventListener("click", (e) => { const b = e.target.closest("[data-fonte]"); if (!b) return;
+      estado.fonte[g.id] = b.dataset.fonte; guardar("mercados-fonte", JSON.stringify(estado.fonte));
+      // esvazia antes de trocar, para não deixar iframe órfão
+      corpo.replaceChildren(); reserva.hidden = true;
+      if (b.dataset.fonte === "proprio") mostrarProprio(); else mostrarTV(); });
+  } else mostrarProprio();
+  return art;
+}
+
+function desenharPainel() {
+  limpezas.forEach(f => { try { f(); } catch (e) {} }); limpezas = [];
+  fecharPop();
+  const painel = $("painel");
+  painel.replaceChildren();          // remove iframes e scripts do conjunto anterior
+  const c = estado.cfg.conjuntos.find(x => x.id === estado.conjunto);
+  const inic = estado.modo === "iniciante";
+  let graficos = (c.graficos || []).slice(0, LIM_TOTAL);
+  if (inic) graficos = graficos.filter(g => g.iniciante).slice(0, LIM_INICIANTE);
+  const cab = document.createElement("div"); cab.className = "cab-conj"; cab.style.marginBottom = "14px";
+  const total = (c.graficos || []).length;
+  cab.innerHTML = `<div><h2 id="h-conj">${esc(c.nome)}</h2><p>${esc(c.subtitulo || "")}</p></div>
+    <div class="naodiz"><b>O que este conjunto não diz</b>${esc(c.nao_diz || "")}</div>
+    ${(c.notas || []).map(n => `<p class="nota">${esc(n.texto)}${n.link_url ? ` <a href="${esc(n.link_url)}" rel="noopener">${esc(n.link_rotulo || n.link_url)}</a>.` : ""}</p>`).join("")}
+    <p class="meta">${inic ? `Modo Iniciante: ${graficos.length} de ${Math.min(total, LIM_TOTAL)} gráficos, com os textos abertos. O modo Avançado mostra todos e acrescenta janela de tempo, escala e médias móveis.`
+      : `Modo Avançado: ${graficos.length} gráficos, com seletor de janela, escala linear ou logarítmica nos gráficos de preço e médias móveis. Os textos ficam recolhidos em cada cartão.`}</p>`;
+  const grade = document.createElement("div"); grade.className = "grade"; grade.id = "grade";
+  painel.append(cab, grade);
+  graficos.forEach(g => grade.appendChild(montarCartao(g)));
+  document.title = `${c.nome} · Mercados e ciclos · market-lab`;
+}
+function desenharTudo() { desenharSeletores(); desenharPainel(); }
+
+/* ---------- glossário: popover e lista completa ---------- */
+let popBtn = null, popEm = 0;
+function fecharPop() { const p = $("pop"); p.hidden = true; if (popBtn) { popBtn.setAttribute("aria-expanded", "false"); popBtn.removeAttribute("aria-describedby"); popBtn = null; } }
+function abrirPop(btn) {
+  const G = estado.cfg.glossario || {}, d = G[btn.dataset.termo], p = $("pop");
+  if (popBtn === btn) { fecharPop(); return; }
+  fecharPop(); if (!d) return;
+  p.innerHTML = `<b>${esc(d.termo)}</b>${esc(d.definicao)}<span class="fechar">Esc ou toque fora para fechar</span>`;
+  p.hidden = false; popEm = Date.now(); popBtn = btn; btn.setAttribute("aria-expanded", "true"); btn.setAttribute("aria-describedby", "pop");
+  const r = btn.getBoundingClientRect(), w = p.offsetWidth, h = p.offsetHeight;
+  p.style.left = Math.max(8, Math.min(r.left + r.width / 2 - w / 2, innerWidth - w - 8)) + "px";
+  p.style.top = (r.bottom + 6 + h > innerHeight - 8 ? Math.max(8, r.top - 6 - h) : r.bottom + 6) + "px";
+}
+function desenharGlossario() {
+  const itens = Object.values(estado.cfg.glossario || {}).sort((a, b) => a.termo.localeCompare(b.termo, "pt-BR"));
+  $("gloss").innerHTML = itens.map(d => `<div><dt>${esc(d.termo)}</dt><dd>${esc(d.definicao)}</dd></div>`).join("");
+}
+function desenharRodapeFontes() {
+  const d = estado.dados; if (!d || !d.series) return;
+  const mapa = new Map();
+  Object.values(d.series).forEach(s => { if (s.fonte && !mapa.has(s.fonte)) mapa.set(s.fonte, s.url_fonte || ""); });
+  $("rod-fontes").innerHTML = "<b>Fontes das séries próprias.</b> " + [...mapa].map(([f, u]) => u ? `<a href="${esc(u)}" rel="noopener">${esc(f)}</a>` : esc(f)).join(" · ")
+    + ". Cada gráfico traz o link da sua série, o código e a data do último dado.";
+}
+
+/* ---------- eventos globais ---------- */
+document.addEventListener("click", (e) => {
+  const t = e.target.closest("button.termo");
+  if (t) { e.stopPropagation(); abrirPop(t); return; }
+  if (!e.target.closest("#pop")) fecharPop();
+  if (!estado.cfg) return;
+  const m = e.target.closest("[data-modo]"), c = e.target.closest("[data-conj]");
+  if (m) irPara(null, m.dataset.modo);
+  else if (c) irPara(c.dataset.conj, null);
+});
+document.addEventListener("keydown", (e) => { if (e.key === "Escape" && popBtn) { const b = popBtn; fecharPop(); b.focus(); } });
+addEventListener("scroll", () => { if (Date.now() - popEm > 400) fecharPop(); }, {passive: true});
+$("sel-conj").addEventListener("change", (e) => irPara(e.target.value, null));
+$("tabs").addEventListener("keydown", (e) => {
+  if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(e.key) || !estado.cfg) return;
+  const ids = estado.cfg.conjuntos.map(c => c.id); let i = ids.indexOf(estado.conjunto);
+  i = e.key === "Home" ? 0 : e.key === "End" ? ids.length - 1 : (i + (e.key === "ArrowRight" ? 1 : -1) + ids.length) % ids.length;
+  e.preventDefault(); irPara(ids[i], null); const b = $("tab-" + ids[i]); if (b) b.focus();
+});
+addEventListener("popstate", () => { if (!estado.cfg) return; const u = lerURL(), n = normalizar(u.conjunto, u.modo);
+  estado.conjunto = n.conjunto; estado.modo = n.modo; desenharTudo(); });
+
+/* ---------- carga ---------- */
+const buscar = (url) => fetch(url + (url.includes("?") ? "&" : "?") + "v=" + Date.now(), {cache: "no-store"})
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); });
+function validarCfg(cfg) {
+  (cfg.conjuntos || []).forEach(c => {
+    const n = (c.graficos || []).length, ni = (c.graficos || []).filter(g => g.iniciante).length;
+    if (n > LIM_TOTAL || ni > LIM_INICIANTE) console.warn(`conjuntos.json: "${c.id}" tem ${n} gráficos (${ni} no Iniciante); o painel exibe até ${LIM_TOTAL} e ${LIM_INICIANTE}.`);
+  });
+}
+Promise.all([buscar(CONJ_URL), buscar(DADOS_URL).catch(() => null)]).then(([cfg, dados]) => {
+  estado.cfg = cfg; estado.dados = dados; estado.erroDados = !dados;
+  validarCfg(cfg);
+  try { estado.fonte = JSON.parse(ler("mercados-fonte") || "{}") || {}; } catch (e) { estado.fonte = {}; }
+  const u = lerURL();
+  const n = normalizar(u.conjunto || ler("mercados-conjunto"), u.modo || ler("mercados-modo"));
+  estado.conjunto = n.conjunto; estado.modo = n.modo;
+  gravarURL(false);
+  desenharStatus(); desenharGlossario(); desenharRodapeFontes(); desenharTudo();
+}).catch(() => {
+  $("status").className = "status alerta";
+  $("status").textContent = "Não foi possível carregar a lista de conjuntos (conjuntos.json). O painel não pode ser exibido.";
+  $("painel").innerHTML = '<div class="vazio">Painel indisponível no momento.</div>';
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,1378 @@
+{
+ "versao": 1,
+ "nota": "Arquivo lido por index.html. Para acrescentar um conjunto, basta acrescentar um item em 'conjuntos' (ver README.md). Limites: até 6 gráficos por conjunto, até 4 com iniciante=true, até 4 séries da mesma unidade por gráfico. Campo opcional 'unidade_eixo' (ex.: \"%\"): permite sobrepor séries cujas unidades são todas em porcentagem com rótulos diferentes (\"% a.a.\" e \"% em 12 meses\"). Campo opcional 'notas' no conjunto: frases extras com link.",
+ "eventos": {
+  "halvings": {
+   "nome": "Halvings do Bitcoin",
+   "verificado": true,
+   "conferido_em": "2026-11-16",
+   "fonte": "Kraken, Bitcoin halving history (datas) e CoinGecko (números dos blocos); copiado de scripts/mercados/eventos.json",
+   "url_fonte": "https://www.kraken.com/en-gb/learn/bitcoin-halving-history",
+   "pendencia": "A data de 2012 diverge em um dia entre as fontes (27 ou 28 de novembro, provável diferença de fuso horário); nenhuma data foi conferida em explorador de blocos.",
+   "itens": [
+    {
+     "data": "2012-11-28",
+     "rotulo": "Halving 2012",
+     "bloco": 210000
+    },
+    {
+     "data": "2016-07-09",
+     "rotulo": "Halving 2016",
+     "bloco": 420000
+    },
+    {
+     "data": "2020-05-11",
+     "rotulo": "Halving 2020",
+     "bloco": 630000
+    },
+    {
+     "data": "2024-04-20",
+     "rotulo": "Halving 2024",
+     "bloco": 840000
+    }
+   ]
+  }
+ },
+ "simbolos_tv": {
+  "nota": "Teste feito no navegador do dono em 16/11/2026, só com o widget Mini Symbol Overview (modo Iniciante). O Advanced Chart (modo Avançado) ainda NÃO foi testado com nenhum destes símbolos. SP:SPX foi recusado pelo widget (\"Permissão negada\"), o que confirmou o uso de gráficos próprios para índices.",
+  "FX_IDC:USDBRL": {
+   "mini_symbol_overview": "testado no Mini Symbol Overview em 16/11/2026",
+   "advanced_chart": "não testado"
+  },
+  "FX_IDC:EURBRL": {
+   "mini_symbol_overview": "testado no Mini Symbol Overview em 16/11/2026",
+   "advanced_chart": "não testado"
+  },
+  "FX:EURUSD": {
+   "mini_symbol_overview": "testado no Mini Symbol Overview em 16/11/2026",
+   "advanced_chart": "não testado"
+  },
+  "FX:USDJPY": {
+   "mini_symbol_overview": "testado no Mini Symbol Overview em 16/11/2026",
+   "advanced_chart": "não testado"
+  },
+  "FX:GBPUSD": {
+   "mini_symbol_overview": "testado no Mini Symbol Overview em 16/11/2026",
+   "advanced_chart": "não testado"
+  },
+  "BITSTAMP:BTCUSD": {
+   "mini_symbol_overview": "testado no Mini Symbol Overview em 16/11/2026",
+   "advanced_chart": "não testado"
+  },
+  "BINANCE:ETHBTC": {
+   "mini_symbol_overview": "testado no Mini Symbol Overview em 16/11/2026",
+   "advanced_chart": "não testado"
+  },
+  "CRYPTOCAP:BTC.D": {
+   "mini_symbol_overview": "testado no Mini Symbol Overview em 16/11/2026",
+   "advanced_chart": "não testado"
+  },
+  "CRYPTOCAP:TOTAL": {
+   "mini_symbol_overview": "testado no Mini Symbol Overview em 16/11/2026",
+   "advanced_chart": "não testado"
+  }
+ },
+ "conjuntos": [
+  {
+   "id": "visao-geral",
+   "nome": "Visão geral",
+   "subtitulo": "Um gráfico de cada grande tema: ações, juros, câmbio e Bitcoin.",
+   "nao_diz": "Estes gráficos mostram o que já aconteceu com cada mercado, e não o que acontecerá. Mercados que subiram ou caíram juntos em um período andaram separados em outros. Cada gráfico está na sua própria moeda e unidade, por isso as alturas das linhas não são comparáveis entre si.",
+   "graficos": [
+    {
+     "id": "vg-sp500",
+     "titulo": "Ações dos EUA: S&P 500",
+     "tipo": "proprio",
+     "series": [
+      "idx_sp500"
+     ],
+     "preco": true,
+     "escala": "log",
+     "janela_padrao": "10a",
+     "iniciante": true,
+     "o_que_e": "O S&P 500 é um índice de ações: um número que resume o preço das ações de cerca de 500 grandes empresas listadas nos Estados Unidos, com peso maior para as empresas de maior valor de mercado. Está em pontos, calculados a partir de preços em dólares.",
+     "como_ler": "Cada ponto da linha é o fechamento de uma semana. A linha subindo mostra que o conjunto dessas ações ficou mais valioso no período; descendo, menos valioso. O índice não inclui os dividendos pagos pelas empresas.",
+     "ja_se_observou": "Entre 2007 e 2009 e no início de 2020 o índice teve quedas fortes, seguidas de recuperações com durações bem diferentes. Em 2022 o índice caiu no mesmo ano em que o banco central dos EUA elevou os juros; a alta dos juros foi um dos fatores apontados na época. São três episódios: pouco para formar regra, e o padrão pode não se repetir.",
+     "termos": [
+      "indice_acoes",
+      "acoes",
+      "escala_log",
+      "media_movel"
+     ]
+    },
+    {
+     "id": "vg-juro10",
+     "titulo": "Juros dos EUA: título de 10 anos",
+     "tipo": "proprio",
+     "series": [
+      "juros_eua_10a"
+     ],
+     "escala": "linear",
+     "janela_padrao": "10a",
+     "iniciante": true,
+     "o_que_e": "É o rendimento (yield) do título de 10 anos do Tesouro dos EUA: a taxa anual que o governo americano paga a quem lhe empresta dinheiro por dez anos, calculada a partir do preço do título no mercado.",
+     "como_ler": "O eixo vertical está em porcentagem ao ano. Quando o preço do título cai no mercado, o rendimento sobe, e o inverso também vale. Essa taxa serve de referência para muitos outros juros do mundo, como os de financiamentos imobiliários americanos.",
+     "ja_se_observou": "Em 2020 a taxa esteve entre as mais baixas da série; entre 2022 e 2023 subiu depressa, período em que a inflação americana esteve alta e o banco central dos EUA elevou o juro de curto prazo. Foi um episódio, com vários fatores atuando ao mesmo tempo, e nada garante que se repita da mesma forma.",
+     "termos": [
+      "yield",
+      "taxa_de_juro"
+     ]
+    },
+    {
+     "id": "vg-usdbrl",
+     "titulo": "Câmbio: dólar em reais (USD/BRL)",
+     "tipo": "tv",
+     "simbolo_tv": "FX_IDC:USDBRL",
+     "serie_alternativa": "fx_usdbrl",
+     "padrao": "tv",
+     "series": [
+      "fx_usdbrl"
+     ],
+     "escala": "linear",
+     "janela_padrao": "10a",
+     "iniciante": true,
+     "o_que_e": "USD/BRL é um par de moedas: mostra quantos reais custa um dólar americano. O mercado em que moedas são trocadas umas pelas outras chama-se forex (de foreign exchange, câmbio em inglês).",
+     "como_ler": "A linha subindo significa que foram necessários mais reais para cada dólar, ou seja, o real ficou mais fraco frente ao dólar. A linha descendo significa real mais forte. O par não mostra, sozinho, se o movimento veio do real ou do dólar.",
+     "ja_se_observou": "Em 2002, em 2015 e em 2020 o dólar subiu com força frente ao real; cada episódio coincidiu com um contexto diferente (eleição, recessão e pandemia, respectivamente), sempre com mais de um fator em jogo. Três episódios não formam regra e o padrão pode não se repetir.",
+     "termos": [
+      "forex",
+      "par_de_moedas"
+     ]
+    },
+    {
+     "id": "vg-btc",
+     "titulo": "Bitcoin em dólares",
+     "tipo": "tv",
+     "simbolo_tv": "BITSTAMP:BTCUSD",
+     "serie_alternativa": "btc_usd",
+     "padrao": "tv",
+     "series": [
+      "btc_usd"
+     ],
+     "preco": true,
+     "escala": "log",
+     "janela_padrao": "tudo",
+     "iniciante": true,
+     "o_que_e": "É o preço de um bitcoin em dólares. O Bitcoin é um ativo digital criado em 2009, sem emissor, sem lucro e sem juros próprios: o preço resulta apenas de quanto compradores e vendedores aceitaram pagar e receber.",
+     "como_ler": "A linha mostra o preço ao longo do tempo. As oscilações são muito maiores do que as de índices de ações ou moedas: quedas de mais da metade do valor já ocorreram mais de uma vez. O gráfico próprio deste painel começa em 2014.",
+     "ja_se_observou": "Entre 2014 e hoje, o preço passou por fases de alta rápida seguidas de quedas profundas, como em 2018 e em 2022. O histórico é curto e o ativo tem riscos específicos (falha ou fraude em corretoras, mudanças de regulação, perda de chaves de acesso). O que ocorreu nesses anos pode não se repetir.",
+     "termos": [
+      "escala_log",
+      "halving",
+      "volatilidade"
+     ]
+    },
+    {
+     "id": "vg-ibov",
+     "titulo": "Ações do Brasil: Ibovespa",
+     "tipo": "proprio",
+     "series": [
+      "idx_ibovespa"
+     ],
+     "preco": true,
+     "escala": "log",
+     "janela_padrao": "10a",
+     "iniciante": false,
+     "o_que_e": "O Ibovespa é o índice de ações mais acompanhado da bolsa brasileira (B3). Reúne as ações mais negociadas e está em pontos, calculados a partir de preços em reais.",
+     "como_ler": "Cada ponto é o fechamento de uma semana, em pontos. Como está em reais, não é diretamente comparável ao S&P 500, que está em dólares: parte da diferença entre os dois vem do câmbio.",
+     "ja_se_observou": "Em 2008 e em março de 2020 o Ibovespa teve quedas fortes, nos mesmos períodos em que os índices americanos caíram. Duas ocorrências; em outros períodos os dois mercados andaram em direções diferentes, e o padrão pode não se repetir.",
+     "termos": [
+      "indice_acoes",
+      "escala_log",
+      "media_movel"
+     ]
+    },
+    {
+     "id": "vg-dxy",
+     "titulo": "Dólar frente a outras moedas: DXY",
+     "tipo": "proprio",
+     "series": [
+      "fx_dxy"
+     ],
+     "escala": "linear",
+     "janela_padrao": "10a",
+     "iniciante": false,
+     "o_que_e": "O DXY é um índice que compara o dólar americano com uma cesta de seis moedas: euro, iene, libra esterlina, dólar canadense, coroa sueca e franco suíço. O euro tem o maior peso. O real brasileiro e o yuan chinês não fazem parte da cesta.",
+     "como_ler": "A linha subindo mostra o dólar mais forte frente à cesta; descendo, mais fraco. Como o real não está na cesta, o DXY pode subir em um período em que o dólar caiu frente ao real, e o inverso.",
+     "ja_se_observou": "Em 2022 o DXY subiu no mesmo período em que os juros americanos subiram mais depressa do que os de outras economias da cesta; a diferença de juros foi um dos fatores apontados. Um episódio não forma regra e pode não se repetir.",
+     "termos": [
+      "dxy",
+      "forex"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eua-europa",
+   "nome": "EUA e Europa",
+   "subtitulo": "Índices de ações dos Estados Unidos e da Europa, cada um na sua moeda.",
+   "nao_diz": "Um índice de ações mostra o preço de um grupo de empresas, e não a saúde da economia do país nem o resultado de uma carteira real, que tem custos, impostos e câmbio. Os índices estão em moedas diferentes (dólar, euro, libra) e alguns incluem dividendos e outros não; por isso não é correto comparar os pontos de um com os de outro.",
+   "graficos": [
+    {
+     "id": "ee-sp500",
+     "titulo": "S&P 500 (EUA)",
+     "tipo": "proprio",
+     "series": [
+      "idx_sp500"
+     ],
+     "preco": true,
+     "escala": "log",
+     "janela_padrao": "10a",
+     "iniciante": true,
+     "o_que_e": "Índice de ações que resume o preço de cerca de 500 grandes empresas listadas nos Estados Unidos, com peso proporcional ao valor de mercado de cada uma. Em pontos, a partir de preços em dólares.",
+     "como_ler": "Cada ponto é o fechamento de uma semana. Poucas empresas muito grandes respondem por uma parte grande do índice; por isso o índice pode subir mesmo quando a maioria das 500 ações caiu.",
+     "ja_se_observou": "Entre 2007 e 2009 e no início de 2020 houve quedas fortes, com recuperações de durações bem diferentes. Em 2022 o índice caiu no ano em que os juros americanos subiram, um dos fatores apontados na época. Três episódios não formam regra e podem não se repetir.",
+     "termos": [
+      "indice_acoes",
+      "acoes",
+      "escala_log",
+      "media_movel"
+     ]
+    },
+    {
+     "id": "ee-nasdaq",
+     "titulo": "Nasdaq 100 (EUA)",
+     "tipo": "proprio",
+     "series": [
+      "idx_nasdaq100"
+     ],
+     "preco": true,
+     "escala": "log",
+     "janela_padrao": "10a",
+     "iniciante": true,
+     "o_que_e": "Índice das 100 maiores empresas não financeiras listadas na bolsa Nasdaq, com forte presença de empresas de tecnologia. Em pontos, a partir de preços em dólares.",
+     "como_ler": "Lê-se como o S&P 500, mas a concentração em tecnologia fez o Nasdaq 100 oscilar mais do que o S&P 500 em vários períodos, para cima e para baixo.",
+     "ja_se_observou": "Em 2022 o Nasdaq 100 caiu mais do que o S&P 500, e nos anos seguintes subiu mais. Foi um ciclo observado; a relação entre os dois índices mudou em outros períodos e pode não se repetir.",
+     "termos": [
+      "indice_acoes",
+      "escala_log",
+      "media_movel"
+     ]
+    },
+    {
+     "id": "ee-dax",
+     "titulo": "DAX (Alemanha)",
+     "tipo": "proprio",
+     "series": [
+      "idx_dax"
+     ],
+     "preco": true,
+     "escala": "log",
+     "janela_padrao": "10a",
+     "iniciante": true,
+     "o_que_e": "Índice das maiores empresas listadas na bolsa de Frankfurt. Em pontos, a partir de preços em euros. A versão mais divulgada do DAX considera os dividendos reinvestidos, ao contrário da maioria dos índices deste painel.",
+     "como_ler": "Cada ponto é o fechamento de uma semana. Por incluir dividendos, a linha do DAX sobe mais ao longo de muitos anos do que subiria um índice só de preços das mesmas empresas; isso atrapalha a comparação direta com os demais.",
+     "ja_se_observou": "Em 2008, em 2020 e em 2022 o DAX caiu nos mesmos períodos em que os índices americanos caíram. Três ocorrências; em outros períodos os índices andaram separados, e o padrão pode não se repetir.",
+     "termos": [
+      "indice_acoes",
+      "escala_log",
+      "media_movel"
+     ]
+    },
+    {
+     "id": "ee-stoxx",
+     "titulo": "Euro Stoxx 50 (zona do euro)",
+     "tipo": "proprio",
+     "series": [
+      "idx_eurostoxx50"
+     ],
+     "preco": true,
+     "escala": "log",
+     "janela_padrao": "10a",
+     "iniciante": true,
+     "o_que_e": "Índice de 50 grandes empresas de países da zona do euro (os países que usam o euro como moeda). Em pontos, a partir de preços em euros, sem incluir dividendos.",
+     "como_ler": "Cada ponto é o fechamento de uma semana. O índice reúne empresas de vários países, mas com peso maior de França e Alemanha; empresas portuguesas raramente estiveram entre as 50.",
+     "ja_se_observou": "Entre 2011 e 2012, durante a crise das dívidas de países da zona do euro, o índice caiu enquanto o S&P 500 se manteve mais estável. Um episódio, com vários fatores ao mesmo tempo, que pode não se repetir.",
+     "termos": [
+      "indice_acoes",
+      "escala_log",
+      "media_movel"
+     ]
+    },
+    {
+     "id": "ee-dow",
+     "titulo": "Dow Jones Industrial (EUA)",
+     "tipo": "proprio",
+     "series": [
+      "idx_dow"
+     ],
+     "preco": true,
+     "escala": "log",
+     "janela_padrao": "10a",
+     "iniciante": false,
+     "o_que_e": "Índice de 30 grandes empresas americanas. Diferentemente do S&P 500, o peso de cada empresa depende do preço de uma ação, e não do valor de mercado da empresa.",
+     "como_ler": "Cada ponto é o fechamento de uma semana. Por ter só 30 empresas e ponderar pelo preço da ação, o Dow Jones pode se mover de forma diferente do S&P 500 no mesmo período.",
+     "ja_se_observou": "Entre 2007 e 2009 e no início de 2020 o Dow Jones caiu junto com o S&P 500. Duas ocorrências, que podem não se repetir.",
+     "termos": [
+      "indice_acoes",
+      "escala_log",
+      "media_movel"
+     ]
+    },
+    {
+     "id": "ee-ftse",
+     "titulo": "FTSE 100 (Reino Unido)",
+     "tipo": "proprio",
+     "series": [
+      "idx_ftse100"
+     ],
+     "preco": true,
+     "escala": "log",
+     "janela_padrao": "10a",
+     "iniciante": false,
+     "o_que_e": "Índice das 100 maiores empresas listadas na bolsa de Londres. Em pontos, a partir de preços em libras esterlinas, sem incluir dividendos.",
+     "como_ler": "Cada ponto é o fechamento de uma semana. Muitas empresas do índice têm a maior parte da receita fora do Reino Unido, por isso o índice reflete também o câmbio da libra e a economia global.",
+     "ja_se_observou": "Em 2016, depois do referendo sobre a saída do Reino Unido da União Europeia, a libra caiu e o FTSE 100 em libras subiu nos meses seguintes; o câmbio foi um dos fatores apontados. Um episódio, que pode não se repetir.",
+     "termos": [
+      "indice_acoes",
+      "escala_log",
+      "media_movel"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "brasil-portugal-asia",
+   "nome": "Brasil, Portugal e Ásia",
+   "subtitulo": "Índices de ações do Brasil, de Portugal e de três mercados asiáticos, cada um na sua moeda.",
+   "nao_diz": "Cada índice está na moeda do seu país (real, euro, iene, yuan, dólar de Hong Kong), sem conversão. Um índice que subiu em moeda local pode ter rendido menos, ou mais, para quem mede o resultado em outra moeda. Os gráficos também não mostram dividendos, custos nem impostos.",
+   "graficos": [
+    {
+     "id": "bpa-ibov",
+     "titulo": "Ibovespa (Brasil)",
+     "tipo": "proprio",
+     "series": [
+      "idx_ibovespa"
+     ],
+     "preco": true,
+     "escala": "log",
+     "janela_padrao": "10a",
+     "iniciante": true,
+     "o_que_e": "Índice de ações mais acompanhado da bolsa brasileira (B3). Reúne as ações mais negociadas, com peso relevante de bancos e de empresas de petróleo e mineração. Em pontos, a partir de preços em reais.",
+     "como_ler": "Cada ponto é o fechamento de uma semana. O índice está em reais e em valores nominais, isto é, sem descontar a inflação do período.",
+     "ja_se_observou": "Em 2008 e em março de 2020 o Ibovespa teve quedas fortes, nos mesmos períodos em que os índices americanos caíram. Duas ocorrências; o padrão pode não se repetir.",
+     "termos": [
+      "indice_acoes",
+      "acoes",
+      "escala_log",
+      "media_movel"
+     ]
+    },
+    {
+     "id": "bpa-psi",
+     "titulo": "PSI (Portugal)",
+     "tipo": "proprio",
+     "series": [
+      "idx_psi"
+     ],
+     "preco": true,
+     "escala": "log",
+     "janela_padrao": "10a",
+     "iniciante": true,
+     "o_que_e": "Principal índice de ações da bolsa de Lisboa (Euronext Lisbon), antes chamado PSI-20. Reúne um número pequeno de empresas, em pontos calculados a partir de preços em euros.",
+     "como_ler": "Cada ponto é o fechamento de uma semana. Por ter poucas empresas, o movimento de uma única empresa grande pesa bastante no índice.",
+     "ja_se_observou": "Em 2014 o índice caiu no mesmo ano do colapso do Banco Espírito Santo, um dos fatores daquele período. Um episódio, que pode não se repetir.",
+     "termos": [
+      "indice_acoes",
+      "acoes",
+      "escala_log",
+      "media_movel"
+     ]
+    },
+    {
+     "id": "bpa-nikkei",
+     "titulo": "Nikkei 225 (Japão)",
+     "tipo": "proprio",
+     "series": [
+      "idx_nikkei"
+     ],
+     "preco": true,
+     "escala": "log",
+     "janela_padrao": "tudo",
+     "iniciante": true,
+     "o_que_e": "Índice de 225 empresas listadas na bolsa de Tóquio, em pontos calculados a partir de preços em ienes. Como no Dow Jones, o peso de cada empresa depende do preço da ação.",
+     "como_ler": "Cada ponto é o fechamento de uma semana, em ienes. A janela longa ajuda a ver que um índice pode passar muitos anos abaixo de um pico anterior.",
+     "ja_se_observou": "O Nikkei 225 atingiu um pico no fim de 1989 e só voltou a superá-lo em 2024, mais de três décadas depois. É um caso, de um país, que mostra que a recuperação de um índice não tem prazo garantido.",
+     "termos": [
+      "indice_acoes",
+      "escala_log",
+      "media_movel"
+     ]
+    },
+    {
+     "id": "bpa-xangai",
+     "titulo": "Xangai Composto (China)",
+     "tipo": "proprio",
+     "series": [
+      "idx_xangai"
+     ],
+     "preco": true,
+     "escala": "log",
+     "janela_padrao": "10a",
+     "iniciante": true,
+     "o_que_e": "Índice que reúne as ações listadas na bolsa de Xangai, em pontos calculados a partir de preços em yuans.",
+     "como_ler": "Cada ponto é o fechamento de uma semana. O acesso de estrangeiros a esse mercado tem regras próprias, por isso o índice reflete sobretudo investidores locais.",
+     "ja_se_observou": "Em 2007 e em 2015 o índice subiu depressa e depois caiu com força em poucos meses. Dois episódios, com contextos diferentes, que podem não se repetir.",
+     "termos": [
+      "indice_acoes",
+      "escala_log",
+      "media_movel"
+     ]
+    },
+    {
+     "id": "bpa-hsi",
+     "titulo": "Hang Seng (Hong Kong)",
+     "tipo": "proprio",
+     "series": [
+      "idx_hangseng"
+     ],
+     "preco": true,
+     "escala": "log",
+     "janela_padrao": "10a",
+     "iniciante": false,
+     "o_que_e": "Índice das maiores empresas listadas na bolsa de Hong Kong, muitas delas da China continental. Em pontos, a partir de preços em dólares de Hong Kong.",
+     "como_ler": "Cada ponto é o fechamento de uma semana. O dólar de Hong Kong tem câmbio atrelado ao dólar americano, o que diferencia este índice do de Xangai.",
+     "ja_se_observou": "Entre 2021 e 2022 o Hang Seng caiu, período que coincidiu com mudanças de regulação sobre empresas chinesas de tecnologia e com restrições da pandemia na China. Um episódio, com mais de um fator, que pode não se repetir.",
+     "termos": [
+      "indice_acoes",
+      "escala_log",
+      "media_movel"
+     ]
+    },
+    {
+     "id": "bpa-eem",
+     "titulo": "Mercados emergentes (ETF EEM)",
+     "tipo": "proprio",
+     "series": [
+      "idx_emergentes"
+     ],
+     "preco": true,
+     "escala": "log",
+     "janela_padrao": "10a",
+     "iniciante": false,
+     "o_que_e": "Preço da cota do EEM, um ETF (fundo negociado em bolsa) americano que acompanha um índice de ações de países emergentes, como China, Índia, Taiwan e Brasil. Em dólares.",
+     "como_ler": "A linha é o preço da cota, e não o índice em si. Por estar em dólares, mistura o desempenho das ações com o câmbio das moedas desses países frente ao dólar.",
+     "ja_se_observou": "Entre 2011 e 2015 a cota caiu em um período em que o dólar se fortaleceu frente a moedas de países emergentes; o câmbio foi um dos fatores. Um episódio, que pode não se repetir.",
+     "termos": [
+      "etf",
+      "indice_acoes",
+      "escala_log",
+      "media_movel"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "juros-eua",
+   "nome": "Juros (EUA)",
+   "subtitulo": "Rendimento dos títulos do Tesouro americano de 2 e de 10 anos e a diferença entre eles.",
+   "nao_diz": "Os gráficos mostram taxas que já foram negociadas, e não as taxas futuras. A diferença entre os juros de 10 e de 2 anos não informa se haverá recessão nem quando. Os juros americanos também não determinam sozinhos o que acontece com ações, câmbio ou juros de outros países.",
+   "graficos": [
+    {
+     "id": "je-2a10a",
+     "titulo": "Juros de 2 anos e de 10 anos",
+     "tipo": "proprio",
+     "series": [
+      "juros_eua_2a",
+      "juros_eua_10a"
+     ],
+     "escala": "linear",
+     "janela_padrao": "10a",
+     "iniciante": true,
+     "o_que_e": "São os rendimentos (yields) dos títulos do Tesouro dos EUA com prazo de 2 anos e de 10 anos: a taxa anual recebida por quem empresta ao governo americano por esses prazos. O conjunto das taxas dos vários prazos chama-se curva de juros.",
+     "como_ler": "Duas linhas no mesmo eixo, em porcentagem ao ano; a legenda e o estilo do traço identificam cada prazo. A taxa de 2 anos acompanha mais de perto o juro de curto prazo definido pelo banco central dos EUA; a de 10 anos reflete também expectativas de inflação e de crescimento para um horizonte mais longo.",
+     "ja_se_observou": "Entre 2022 e 2023 as duas taxas subiram, e a de 2 anos ficou acima da de 10 anos por um longo período. Em 2020 as duas estiveram entre as mais baixas da série. São dois períodos descritos, que podem não se repetir.",
+     "termos": [
+      "yield",
+      "curva_de_juros",
+      "taxa_de_juro"
+     ]
+    },
+    {
+     "id": "je-10a2a",
+     "titulo": "Diferença entre 10 anos e 2 anos",
+     "tipo": "proprio",
+     "series": [
+      "juros_eua_10a2a"
+     ],
+     "escala": "linear",
+     "janela_padrao": "tudo",
+     "iniciante": true,
+     "o_que_e": "É a taxa do título de 10 anos menos a taxa do título de 2 anos, em pontos percentuais. Uma diferença entre duas taxas chama-se spread. Quando o resultado é negativo, diz-se que a curva de juros está invertida.",
+     "como_ler": "Acima de zero: o prazo longo pagou mais do que o curto, a situação mais frequente na série. Abaixo de zero: o prazo curto pagou mais. A linha horizontal do zero aparece marcada no gráfico.",
+     "ja_se_observou": "A curva invertida antecedeu várias recessões nos EUA, com prazos muito variáveis e alarmes falsos. Entre 2022 e 2024 a diferença ficou negativa por um longo período sem que uma recessão fosse declarada nesse intervalo. Poucas ocorrências, e o padrão pode não se repetir.",
+     "termos": [
+      "spread",
+      "curva_de_juros"
+     ]
+    },
+    {
+     "id": "je-10a-infl",
+     "titulo": "Juro de 10 anos e inflação em 12 meses (EUA)",
+     "tipo": "proprio",
+     "series": [
+      "juros_eua_10a",
+      "infl_eua_12m"
+     ],
+     "escala": "linear",
+     "janela_padrao": "tudo",
+     "iniciante": false,
+     "o_que_e": "Sobrepõe a taxa do título de 10 anos (% ao ano) e a inflação americana acumulada em 12 meses, medida pelo CPI, o índice de preços ao consumidor dos EUA. As duas séries estão em porcentagem.",
+     "como_ler": "Quando a linha da inflação ficou acima da linha do juro, quem recebeu aquela taxa perdeu poder de compra naquele período. A comparação é aproximada: a inflação olha os 12 meses passados e o juro vale para os dez anos seguintes.",
+     "ja_se_observou": "Entre 2021 e 2022 a inflação em 12 meses esteve acima da taxa de 10 anos; a partir de 2023 a relação se inverteu. Um ciclo observado, com vários fatores, que pode não se repetir.",
+     "termos": [
+      "yield",
+      "cpi",
+      "inflacao_12m"
+     ],
+     "unidade_eixo": "%"
+    }
+   ]
+  },
+  {
+   "id": "juros-brasil",
+   "nome": "Juros Brasil",
+   "subtitulo": "A taxa Selic, a inflação e o juro real brasileiro.",
+   "nao_diz": "A Selic é a taxa básica definida pelo Banco Central, e não o rendimento líquido de uma aplicação específica, que depende de prazo, impostos e taxas. O juro real mostrado aqui é uma aproximação com a inflação passada; ele não informa o ganho real futuro de nenhum investimento.",
+   "graficos": [
+    {
+     "id": "jb-selic",
+     "titulo": "Selic (meta)",
+     "tipo": "proprio",
+     "series": [
+      "juros_br_selic"
+     ],
+     "escala": "linear",
+     "janela_padrao": "tudo",
+     "iniciante": true,
+     "o_que_e": "A Selic é a taxa básica de juros do Brasil, definida pelo Comitê de Política Monetária (Copom) do Banco Central. O CDI, taxa dos empréstimos de um dia entre bancos que serve de referência para aplicações de renda fixa, fica muito próximo da Selic e não é coletado por este painel. Em Portugal diz-se «taxa de juro».",
+     "como_ler": "A linha tem formato de degraus porque a meta só muda nas reuniões do Copom, que ocorrem a cada 45 dias, aproximadamente. O eixo vertical está em porcentagem ao ano.",
+     "ja_se_observou": "Entre 2020 e o início de 2021 a Selic esteve no nível mais baixo da série; a partir de 2021 subiu por várias reuniões seguidas, período em que a inflação brasileira também subiu. Um ciclo descrito, que pode não se repetir.",
+     "termos": [
+      "selic",
+      "cdi",
+      "taxa_de_juro"
+     ]
+    },
+    {
+     "id": "jb-selic-ipca",
+     "titulo": "Selic e IPCA em 12 meses",
+     "tipo": "proprio",
+     "series": [
+      "juros_br_selic",
+      "infl_br_12m"
+     ],
+     "escala": "linear",
+     "janela_padrao": "tudo",
+     "iniciante": true,
+     "o_que_e": "Sobrepõe a Selic (% ao ano) e a inflação brasileira acumulada em 12 meses medida pelo IPCA, o índice oficial de preços ao consumidor do Brasil, calculado pelo IBGE. As duas séries estão em porcentagem.",
+     "como_ler": "A distância vertical entre as duas linhas é, aproximadamente, o juro real mostrado no gráfico ao lado. Quando a linha do IPCA ficou acima da Selic, o juro básico perdeu para a inflação naquele período.",
+     "ja_se_observou": "Em 2020 e 2021 o IPCA em 12 meses ficou acima da Selic; de 2022 em diante a Selic ficou acima do IPCA. Um ciclo observado, com vários fatores, que pode não se repetir.",
+     "termos": [
+      "selic",
+      "ipca",
+      "inflacao_12m"
+     ],
+     "unidade_eixo": "%"
+    },
+    {
+     "id": "jb-real",
+     "titulo": "Juro real aproximado (Selic menos IPCA)",
+     "tipo": "proprio",
+     "series": [
+      "juros_br_real"
+     ],
+     "escala": "linear",
+     "janela_padrao": "tudo",
+     "iniciante": true,
+     "o_que_e": "É a Selic menos o IPCA acumulado nos 12 meses anteriores. Chama-se juro real ex-post: uma conta feita com a inflação que já aconteceu. É uma aproximação simples, por subtração.",
+     "como_ler": "Acima de zero: a Selic superou a inflação passada. Abaixo de zero: ficou atrás dela. A linha do zero aparece marcada. O número não desconta impostos nem taxas de nenhuma aplicação.",
+     "ja_se_observou": "Entre 2020 e 2021 essa conta ficou negativa; nos anos seguintes voltou a ficar positiva. Um ciclo observado, que pode não se repetir.",
+     "termos": [
+      "juro_real",
+      "selic",
+      "ipca"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "inflacao",
+   "nome": "Inflação",
+   "subtitulo": "Variação dos preços ao consumidor em 12 meses no Brasil, nos EUA, na zona do euro e em Portugal.",
+   "nao_diz": "Cada índice mede uma cesta de consumo média do seu país; a inflação sentida por uma família pode ser diferente. As quatro séries usam metodologias distintas: só o HICP da zona do euro e o de Portugal são diretamente comparáveis entre si. O CPI dos EUA usado aqui é dessazonalizado e os demais não. A taxa em 12 meses descreve o passado e não informa a inflação futura.",
+   "graficos": [
+    {
+     "id": "inf-quatro",
+     "titulo": "Inflação em 12 meses: quatro economias",
+     "tipo": "proprio",
+     "series": [
+      "infl_br_12m",
+      "infl_eua_12m",
+      "infl_ea_12m",
+      "infl_pt_12m"
+     ],
+     "escala": "linear",
+     "janela_padrao": "10a",
+     "iniciante": true,
+     "o_que_e": "Mostra quanto os preços ao consumidor subiram em 12 meses em cada economia: IPCA (Brasil), CPI (EUA) e HICP, o índice harmonizado de preços no consumidor, para a zona do euro e para Portugal (em Portugal a sigla é IHPC).",
+     "como_ler": "Quatro linhas no mesmo eixo, em porcentagem em 12 meses; a legenda e o estilo do traço identificam cada economia. A comparação entre Brasil, EUA e Europa é só aproximada, porque as cestas e os métodos diferem. O CPI americano é dessazonalizado (tem os efeitos típicos de cada época do ano removidos) e os outros três não.",
+     "ja_se_observou": "Entre 2021 e 2022 as quatro taxas subiram ao mesmo tempo, período que coincidiu com a reabertura das economias depois da pandemia e com a alta dos preços de energia. Foi um episódio, com vários fatores, e o movimento conjunto pode não se repetir.",
+     "termos": [
+      "inflacao_12m",
+      "ipca",
+      "cpi",
+      "hicp",
+      "dessazonalizado"
+     ]
+    },
+    {
+     "id": "inf-pt-ea",
+     "titulo": "Portugal e zona do euro (HICP)",
+     "tipo": "proprio",
+     "series": [
+      "infl_pt_12m",
+      "infl_ea_12m"
+     ],
+     "escala": "linear",
+     "janela_padrao": "10a",
+     "iniciante": true,
+     "o_que_e": "Compara a inflação em 12 meses de Portugal com a média da zona do euro, as duas medidas pelo HICP (IHPC em Portugal), índice calculado com o mesmo método em todos os países da União Europeia e publicado pelo Eurostat.",
+     "como_ler": "Por usarem o mesmo método, estas duas linhas são diretamente comparáveis. Quando a linha de Portugal ficou acima, os preços portugueses subiram mais do que a média da zona do euro naquele período.",
+     "ja_se_observou": "Em 2022 as duas linhas subiram juntas para os níveis mais altos da série mostrada. Em outros anos, Portugal esteve ora acima, ora abaixo da média. Um episódio descrito, que pode não se repetir.",
+     "termos": [
+      "hicp",
+      "inflacao_12m"
+     ]
+    },
+    {
+     "id": "inf-br",
+     "titulo": "Brasil: IPCA em 12 meses",
+     "tipo": "proprio",
+     "series": [
+      "infl_br_12m"
+     ],
+     "escala": "linear",
+     "janela_padrao": "tudo",
+     "iniciante": true,
+     "o_que_e": "É a variação acumulada em 12 meses do IPCA, o índice de preços ao consumidor calculado pelo IBGE e usado pelo Banco Central como referência para a meta de inflação do Brasil.",
+     "como_ler": "Cada ponto mostra quanto os preços subiram nos 12 meses terminados naquele mês. A série tem um ponto por mês e é publicada com algumas semanas de defasagem.",
+     "ja_se_observou": "Entre 2015 e 2016 e entre 2021 e 2022 a taxa em 12 meses subiu bem acima da meta de inflação da época, e recuou nos anos seguintes. Dois episódios, com contextos diferentes, que podem não se repetir.",
+     "termos": [
+      "ipca",
+      "inflacao_12m"
+     ]
+    },
+    {
+     "id": "inf-eua",
+     "titulo": "EUA: CPI em 12 meses",
+     "tipo": "proprio",
+     "series": [
+      "infl_eua_12m"
+     ],
+     "escala": "linear",
+     "janela_padrao": "tudo",
+     "iniciante": false,
+     "o_que_e": "É a variação em 12 meses do CPI, o índice de preços ao consumidor dos EUA, na versão dessazonalizada publicada pelo órgão de estatísticas do trabalho americano e distribuída pelo FRED (banco de dados do Fed de St. Louis).",
+     "como_ler": "Cada ponto mostra a variação dos preços nos 12 meses terminados naquele mês. Por usar a série dessazonalizada, o número pode diferir um pouco da taxa divulgada na imprensa, calculada com a série sem ajuste.",
+     "ja_se_observou": "Em 2022 a taxa chegou ao nível mais alto em várias décadas e recuou nos anos seguintes. Um episódio, que pode não se repetir.",
+     "termos": [
+      "cpi",
+      "inflacao_12m",
+      "dessazonalizado"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "liquidez-moeda",
+   "nome": "Liquidez e moeda",
+   "subtitulo": "A chamada “impressão de moeda” em três camadas: balanço do banco central, base monetária e M2/M3.",
+   "nao_diz": "O balanço de um banco central não é dinheiro na mão do público: é a soma dos ativos que o banco central detém. Entre ele e o dinheiro que circula há três camadas — balanço do banco central, base monetária e os agregados M2 e M3 —, e uma camada pode crescer sem que a seguinte cresça na mesma proporção. Os valores estão em moedas diferentes e nunca são somados. Portugal usa o euro e não tem agregado monetário próprio: aparece dentro dos números da zona do euro. Estes gráficos não explicam sozinhos a inflação nem o preço de ações ou do Bitcoin.",
+   "graficos": [
+    {
+     "id": "liq-balancos-var",
+     "titulo": "Balanços do Fed e do BCE: variação em 12 meses",
+     "tipo": "proprio",
+     "series": [
+      "liq_fed_balanco_var12m",
+      "liq_bce_balanco_var12m"
+     ],
+     "escala": "linear",
+     "janela_padrao": "tudo",
+     "iniciante": true,
+     "o_que_e": "O balanço de um banco central é o total de ativos que ele detém, como títulos públicos comprados no mercado e empréstimos a bancos. O gráfico mostra quanto esse total variou, em porcentagem, em relação a 12 meses antes, para o Federal Reserve (Fed, EUA) e para o Eurosistema (o Banco Central Europeu, BCE, mais os bancos centrais nacionais do euro).",
+     "como_ler": "Acima de zero: o balanço cresceu em 12 meses. Abaixo de zero: encolheu. A variação percentual permite pôr no mesmo eixo balanços que estão em moedas diferentes. Essa é a primeira das três camadas e fica dentro do sistema bancário.",
+     "ja_se_observou": "Em 2008–2009 e em 2020 os dois balanços cresceram depressa, períodos em que os bancos centrais compraram grandes volumes de títulos. A partir de 2022 passaram a encolher. Foram dois episódios de expansão, com contextos diferentes, que podem não se repetir.",
+     "termos": [
+      "balanco_bc",
+      "base_monetaria",
+      "m2_m3"
+     ]
+    },
+    {
+     "id": "liq-m2m3-var",
+     "titulo": "M2 e M3: variação em 12 meses",
+     "tipo": "proprio",
+     "series": [
+      "liq_eua_m2_var12m",
+      "liq_ea_m3_var12m",
+      "liq_br_m2_var12m"
+     ],
+     "escala": "linear",
+     "janela_padrao": "tudo",
+     "iniciante": true,
+     "o_que_e": "M2 e M3 são agregados monetários: somas do dinheiro em circulação com depósitos e aplicações de fácil resgate do público. São a terceira camada, a mais próxima do dinheiro que as pessoas e as empresas usam. O gráfico mostra a variação percentual em 12 meses do M2 dos EUA, do M3 da zona do euro e do M2 do Brasil.",
+     "como_ler": "Três linhas no mesmo eixo, em porcentagem em 12 meses. As definições de M2 e M3 mudam de país para país, por isso a comparação é só aproximada. A variação é nominal: não desconta a inflação de cada economia.",
+     "ja_se_observou": "Entre 2020 e 2021 o M2 dos EUA cresceu no ritmo mais rápido da série mostrada; entre 2022 e 2023 a variação em 12 meses ficou negativa. Um ciclo observado, com vários fatores, que pode não se repetir.",
+     "termos": [
+      "m2_m3",
+      "balanco_bc",
+      "base_monetaria"
+     ]
+    },
+    {
+     "id": "liq-br-var",
+     "titulo": "Brasil: base monetária e M2, variação em 12 meses",
+     "tipo": "proprio",
+     "series": [
+      "liq_br_base_var12m",
+      "liq_br_m2_var12m"
+     ],
+     "escala": "linear",
+     "janela_padrao": "tudo",
+     "iniciante": true,
+     "o_que_e": "A base monetária é a segunda camada: o papel-moeda emitido mais as reservas que os bancos mantêm no banco central. O gráfico compara a variação em 12 meses da base monetária restrita do Brasil com a do M2 brasileiro, as duas publicadas pelo Banco Central do Brasil.",
+     "como_ler": "Duas linhas em porcentagem em 12 meses. Quando andaram em ritmos diferentes, a base e o dinheiro amplo cresceram de forma desigual: os bancos, ao conceder mais ou menos crédito, fazem a ligação entre as duas camadas.",
+     "ja_se_observou": "Em 2020 as duas séries cresceram mais depressa do que nos anos anteriores, período que coincidiu com as medidas adotadas na pandemia. Um episódio, que pode não se repetir.",
+     "termos": [
+      "base_monetaria",
+      "m2_m3"
+     ]
+    },
+    {
+     "id": "liq-fed",
+     "titulo": "Balanço do Federal Reserve (nível)",
+     "tipo": "proprio",
+     "series": [
+      "liq_fed_balanco"
+     ],
+     "escala": "linear",
+     "janela_padrao": "tudo",
+     "iniciante": true,
+     "o_que_e": "Total de ativos do Federal Reserve, o banco central dos EUA, em dólares, publicado toda semana.",
+     "como_ler": "O eixo mostra o valor em dólares, na unidade indicada acima do gráfico. Os trechos de subida rápida correspondem a períodos de compra de títulos pelo Fed; os de descida, a períodos em que o Fed deixou títulos vencerem sem repor.",
+     "ja_se_observou": "O balanço cresceu em degraus depois de 2008 e de novo em 2020, e encolheu entre 2018 e 2019 e a partir de 2022. Poucos ciclos, cada um com contexto próprio, que podem não se repetir.",
+     "termos": [
+      "balanco_bc"
+     ]
+    },
+    {
+     "id": "liq-bce",
+     "titulo": "Ativos do Eurosistema / BCE (nível)",
+     "tipo": "proprio",
+     "series": [
+      "liq_bce_balanco"
+     ],
+     "escala": "linear",
+     "janela_padrao": "tudo",
+     "iniciante": false,
+     "o_que_e": "Total de ativos do Eurosistema — o BCE mais os bancos centrais nacionais dos países do euro, entre eles o Banco de Portugal —, em euros, publicado toda semana.",
+     "como_ler": "O eixo mostra o valor em euros, na unidade indicada acima do gráfico. Portugal está incluído neste total; não existe um balanço monetário separado que funcione como política própria do país.",
+     "ja_se_observou": "O total cresceu entre 2015 e 2018 e de novo entre 2020 e 2022, períodos de programas de compra de títulos, e encolheu nos anos seguintes. Dois ciclos de expansão, que podem não se repetir.",
+     "termos": [
+      "balanco_bc"
+     ]
+    },
+    {
+     "id": "liq-m2-eua",
+     "titulo": "M2 dos EUA (nível)",
+     "tipo": "proprio",
+     "series": [
+      "liq_eua_m2"
+     ],
+     "escala": "log",
+     "janela_padrao": "tudo",
+     "iniciante": false,
+     "o_que_e": "Soma do dinheiro em circulação, dos depósitos à vista e de aplicações de fácil resgate nos EUA, em dólares, publicada mensalmente pelo Federal Reserve em versão dessazonalizada.",
+     "como_ler": "A série cresce ao longo das décadas junto com a economia e os preços; por isso a escala logarítmica ajuda a comparar ritmos de crescimento em épocas diferentes.",
+     "ja_se_observou": "Entre 2020 e 2021 o M2 subiu depressa; em 2022 e 2023 recuou, algo raro na série mostrada. Um episódio, que pode não se repetir.",
+     "termos": [
+      "m2_m3",
+      "escala_log",
+      "dessazonalizado"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "risco-credito",
+   "nome": "Risco e crédito",
+   "subtitulo": "Quatro termômetros de tensão nos mercados: o VIX, a curva de juros americana, o dólar e o ouro.",
+   "nao_diz": "Estes indicadores mostram o que os preços embutiam em cada momento, e não o que aconteceu depois. Níveis altos ou baixos não informam a direção seguinte das ações. Cada gráfico tem unidade própria e eixo próprio; as alturas das linhas não são comparáveis entre si. O VIX e a curva de juros se referem ao mercado americano.",
+   "graficos": [
+    {
+     "id": "rc-vix",
+     "titulo": "VIX",
+     "tipo": "proprio",
+     "series": [
+      "risco_vix"
+     ],
+     "escala": "linear",
+     "janela_padrao": "tudo",
+     "iniciante": true,
+     "o_que_e": "O VIX é um índice calculado pela bolsa de opções de Chicago a partir dos preços de opções sobre o S&P 500. Expressa, em pontos, a oscilação anualizada do S&P 500 que esses preços embutiam para os 30 dias seguintes.",
+     "como_ler": "Valores mais altos indicam que as opções estavam mais custosas, o que acontece quando os participantes do mercado pagaram mais por proteção. O VIX não tem direção: sobe tanto com medo de queda quanto com incerteza em geral.",
+     "ja_se_observou": "Em 2008 e em março de 2020 o VIX subiu de forma abrupta enquanto o S&P 500 caía, e recuou nos meses seguintes. Dois episódios extremos; em outros momentos o VIX subiu sem queda grande das ações, e o padrão pode não se repetir.",
+     "termos": [
+      "vix",
+      "volatilidade",
+      "high_yield"
+     ]
+    },
+    {
+     "id": "rc-curva",
+     "titulo": "Curva de juros dos EUA: 10 anos menos 2 anos",
+     "tipo": "proprio",
+     "series": [
+      "juros_eua_10a2a"
+     ],
+     "escala": "linear",
+     "janela_padrao": "tudo",
+     "iniciante": true,
+     "o_que_e": "É a taxa do título de 10 anos do Tesouro dos EUA menos a taxa do título de 2 anos, em pontos percentuais. Uma diferença entre duas taxas chama-se spread. Quando o resultado é negativo, diz-se que a curva de juros está invertida.",
+     "como_ler": "Acima de zero: o prazo longo pagou mais do que o curto, a situação mais frequente na série. Abaixo de zero: o prazo curto pagou mais. A linha do zero aparece em destaque no gráfico.",
+     "ja_se_observou": "A curva invertida antecedeu várias recessões nos EUA, com prazos muito variáveis e alarmes falsos. Entre 2022 e 2024 a diferença ficou negativa por um longo período sem que uma recessão fosse declarada nesse intervalo. Poucas ocorrências, e o padrão pode não se repetir.",
+     "termos": [
+      "spread",
+      "curva_de_juros",
+      "yield"
+     ]
+    },
+    {
+     "id": "rc-dxy",
+     "titulo": "Índice do dólar (DXY)",
+     "tipo": "proprio",
+     "series": [
+      "fx_dxy"
+     ],
+     "escala": "linear",
+     "janela_padrao": "tudo",
+     "iniciante": true,
+     "o_que_e": "O DXY compara o dólar americano com uma cesta de seis moedas (euro, iene, libra esterlina, dólar canadense, coroa sueca e franco suíço). Não inclui o real nem o yuan.",
+     "como_ler": "A linha subindo mostra dólar mais forte frente à cesta. Em alguns períodos de tensão, investidores procuraram ativos em dólar e o índice subiu; em outros, isso não ocorreu.",
+     "ja_se_observou": "Em 2008 e em março de 2020 o DXY subiu nas mesmas semanas em que o VIX subiu e as ações caíram. Duas ocorrências; em outros períodos de queda das ações o dólar não subiu, e o padrão pode não se repetir.",
+     "termos": [
+      "dxy",
+      "forex"
+     ]
+    },
+    {
+     "id": "rc-ouro",
+     "titulo": "Ouro",
+     "tipo": "proprio",
+     "series": [
+      "com_ouro"
+     ],
+     "preco": true,
+     "escala": "log",
+     "janela_padrao": "tudo",
+     "iniciante": true,
+     "o_que_e": "Preço do ouro em dólares por onça troy (pouco mais de 31 gramas), a partir de contratos negociados em bolsa nos EUA. O ouro não paga juros nem dividendos.",
+     "como_ler": "Cada ponto é o fechamento de uma semana, em dólares. O ouro é muitas vezes descrito como reserva de valor, mas o seu preço também teve quedas longas.",
+     "ja_se_observou": "Entre 2008 e 2011 o preço em dólares subiu, período de tensão financeira e de juros baixos; entre 2013 e 2015 caiu. Poucos ciclos, cada um com vários fatores, que podem não se repetir.",
+     "termos": [
+      "commodities",
+      "escala_log",
+      "media_movel"
+     ]
+    },
+    {
+     "id": "rc-sp500",
+     "titulo": "S&P 500, para comparação",
+     "tipo": "proprio",
+     "series": [
+      "idx_sp500"
+     ],
+     "preco": true,
+     "escala": "log",
+     "janela_padrao": "tudo",
+     "iniciante": false,
+     "o_que_e": "O índice de cerca de 500 grandes empresas americanas, repetido aqui para comparar as datas dos picos do VIX com o movimento das ações.",
+     "como_ler": "Usando a mesma janela de tempo nos gráficos deste conjunto, é possível ver em que datas os movimentos coincidiram e em que datas não coincidiram.",
+     "ja_se_observou": "Em 2008 e em 2020 as quedas do índice coincidiram com altas do VIX. Duas ocorrências, que podem não se repetir.",
+     "termos": [
+      "indice_acoes",
+      "escala_log",
+      "media_movel"
+     ]
+    }
+   ],
+   "notas": [
+    {
+     "texto": "O spread de crédito high yield (prêmio de juros de empresas de maior risco) ficou fora deste conjunto por restrição de licença da fonte: a página da série informa que a reprodução dos dados exige autorização por escrito da ICE.",
+     "link_rotulo": "Página da série BAMLH0A0HYM2 no FRED",
+     "link_url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
+    }
+   ]
+  },
+  {
+   "id": "forex",
+   "nome": "Forex",
+   "subtitulo": "Câmbio: quanto vale uma moeda em relação a outra.",
+   "nao_diz": "Um par de moedas mostra só a relação entre duas moedas: não informa qual das duas causou o movimento nem o poder de compra dentro de cada país. As cotações dos widgets são de mercado interbancário ou de corretoras e podem diferir da taxa cobrada em bancos, cartões e casas de câmbio, que inclui custos e impostos.",
+   "graficos": [
+    {
+     "id": "fx-usdbrl",
+     "titulo": "Dólar em reais (USD/BRL)",
+     "tipo": "tv",
+     "simbolo_tv": "FX_IDC:USDBRL",
+     "serie_alternativa": "fx_usdbrl",
+     "padrao": "tv",
+     "series": [
+      "fx_usdbrl"
+     ],
+     "escala": "linear",
+     "janela_padrao": "10a",
+     "iniciante": true,
+     "o_que_e": "Forex é o mercado em que moedas são trocadas umas pelas outras. Um par de moedas, como USD/BRL, mostra quantas unidades da segunda moeda (real) custa uma unidade da primeira (dólar americano).",
+     "como_ler": "USD/BRL subindo significa real mais fraco: foram necessários mais reais para cada dólar. USD/BRL descendo significa real mais forte. O gráfico não mostra se o movimento veio do Brasil ou dos EUA.",
+     "ja_se_observou": "Em 2002, em 2015 e em 2020 o dólar subiu com força frente ao real, em contextos diferentes e sempre com mais de um fator. Três episódios não formam regra e o padrão pode não se repetir.",
+     "termos": [
+      "forex",
+      "par_de_moedas",
+      "cfd"
+     ]
+    },
+    {
+     "id": "fx-eurbrl",
+     "titulo": "Euro em reais (EUR/BRL)",
+     "tipo": "tv",
+     "simbolo_tv": "FX_IDC:EURBRL",
+     "serie_alternativa": "fx_eurbrl",
+     "padrao": "tv",
+     "series": [
+      "fx_eurbrl"
+     ],
+     "escala": "linear",
+     "janela_padrao": "10a",
+     "iniciante": true,
+     "o_que_e": "Mostra quantos reais custa um euro. É o par de quem vive, trabalha ou tem contas entre o Brasil e Portugal ou outro país do euro.",
+     "como_ler": "EUR/BRL subindo significa real mais fraco frente ao euro. Este par resulta de dois outros: o euro frente ao dólar e o dólar frente ao real; por isso pode se mexer mesmo quando nada mudou no Brasil.",
+     "ja_se_observou": "Em 2020 o euro subiu frente ao real no mesmo período em que o dólar também subiu frente ao real. Um episódio, que pode não se repetir.",
+     "termos": [
+      "par_de_moedas",
+      "forex"
+     ]
+    },
+    {
+     "id": "fx-eurusd",
+     "titulo": "Euro em dólares (EUR/USD)",
+     "tipo": "tv",
+     "simbolo_tv": "FX:EURUSD",
+     "serie_alternativa": "fx_eurusd",
+     "padrao": "tv",
+     "series": [
+      "fx_eurusd"
+     ],
+     "escala": "linear",
+     "janela_padrao": "10a",
+     "iniciante": true,
+     "o_que_e": "Mostra quantos dólares americanos custa um euro. É o par de moedas mais negociado do mundo.",
+     "como_ler": "EUR/USD subindo significa euro mais forte frente ao dólar; descendo, euro mais fraco. Atenção à ordem: aqui o dólar é a segunda moeda, ao contrário do USD/BRL.",
+     "ja_se_observou": "Em 2022 o euro chegou a valer menos de um dólar por algumas semanas, período em que os juros americanos subiram mais depressa do que os da zona do euro; a diferença de juros foi um dos fatores apontados. Um episódio, que pode não se repetir.",
+     "termos": [
+      "par_de_moedas",
+      "forex"
+     ]
+    },
+    {
+     "id": "fx-dxy",
+     "titulo": "Índice do dólar (DXY)",
+     "tipo": "proprio",
+     "series": [
+      "fx_dxy"
+     ],
+     "escala": "linear",
+     "janela_padrao": "10a",
+     "iniciante": true,
+     "o_que_e": "O DXY compara o dólar americano com uma cesta de seis moedas: euro, iene, libra esterlina, dólar canadense, coroa sueca e franco suíço, com o euro pesando mais. O DXY não inclui o real brasileiro nem o yuan chinês.",
+     "como_ler": "A linha subindo mostra dólar mais forte frente à cesta. Como o real e o yuan estão fora, o DXY não descreve o dólar frente a todas as moedas: ele pode subir enquanto o USD/BRL cai, e o inverso.",
+     "ja_se_observou": "Em 2022 o DXY subiu no período em que os juros americanos subiram mais depressa do que os das outras economias da cesta, um dos fatores apontados. Um episódio, que pode não se repetir.",
+     "termos": [
+      "dxy",
+      "forex"
+     ]
+    },
+    {
+     "id": "fx-usdjpy",
+     "titulo": "Dólar em ienes (USD/JPY)",
+     "tipo": "tv",
+     "simbolo_tv": "FX:USDJPY",
+     "serie_alternativa": "fx_usdjpy",
+     "padrao": "tv",
+     "series": [
+      "fx_usdjpy"
+     ],
+     "escala": "linear",
+     "janela_padrao": "10a",
+     "iniciante": false,
+     "o_que_e": "Mostra quantos ienes japoneses custa um dólar americano.",
+     "como_ler": "USD/JPY subindo significa iene mais fraco frente ao dólar; descendo, iene mais forte.",
+     "ja_se_observou": "Entre 2022 e 2024 o iene se enfraqueceu frente ao dólar, período em que os juros americanos subiram e os japoneses ficaram perto de zero; a diferença de juros foi um dos fatores apontados. Um episódio, que pode não se repetir.",
+     "termos": [
+      "par_de_moedas",
+      "forex",
+      "rsi",
+      "media_movel"
+     ]
+    },
+    {
+     "id": "fx-gbpusd",
+     "titulo": "Libra em dólares (GBP/USD)",
+     "tipo": "tv",
+     "simbolo_tv": "FX:GBPUSD",
+     "serie_alternativa": "fx_gbpusd",
+     "padrao": "tv",
+     "series": [
+      "fx_gbpusd"
+     ],
+     "escala": "linear",
+     "janela_padrao": "10a",
+     "iniciante": false,
+     "o_que_e": "Mostra quantos dólares americanos custa uma libra esterlina, a moeda do Reino Unido.",
+     "como_ler": "GBP/USD subindo significa libra mais forte frente ao dólar; descendo, libra mais fraca.",
+     "ja_se_observou": "Em 2016, logo depois do referendo sobre a saída do Reino Unido da União Europeia, a libra caiu frente ao dólar. Um episódio, que pode não se repetir.",
+     "termos": [
+      "par_de_moedas",
+      "forex",
+      "rsi",
+      "media_movel"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "commodities",
+   "nome": "Commodities",
+   "subtitulo": "Matérias-primas negociadas no mundo todo: ouro, prata, petróleo e cobre.",
+   "nao_diz": "Os preços são de contratos negociados em bolsas dos EUA, em dólares, e não o preço pago por consumidores ou empresas no Brasil ou em Portugal, que inclui câmbio, impostos, transporte e refino. Cada matéria-prima tem oferta e demanda próprias; os quatro gráficos não formam um indicador único da economia.",
+   "graficos": [
+    {
+     "id": "com-ouro",
+     "titulo": "Ouro",
+     "tipo": "proprio",
+     "series": [
+      "com_ouro"
+     ],
+     "preco": true,
+     "escala": "log",
+     "janela_padrao": "tudo",
+     "iniciante": true,
+     "o_que_e": "Preço do ouro em dólares por onça troy (uma medida de peso de pouco mais de 31 gramas). Commodities são matérias-primas padronizadas, negociadas em bolsas no mundo todo.",
+     "como_ler": "Cada ponto é o fechamento de uma semana, em dólares. Para quem mede em reais ou euros, o resultado depende também do câmbio do período.",
+     "ja_se_observou": "Entre 2008 e 2011 o preço em dólares subiu; entre 2013 e 2015 caiu; depois voltou a subir. O ouro não paga juros nem dividendos. Poucos ciclos, cada um com contexto próprio, que podem não se repetir.",
+     "termos": [
+      "commodities",
+      "escala_log",
+      "media_movel"
+     ]
+    },
+    {
+     "id": "com-wti",
+     "titulo": "Petróleo WTI",
+     "tipo": "proprio",
+     "series": [
+      "com_wti"
+     ],
+     "preco": true,
+     "escala": "linear",
+     "janela_padrao": "tudo",
+     "iniciante": true,
+     "o_que_e": "Preço do barril de petróleo do tipo WTI (West Texas Intermediate), a referência dos EUA, em dólares por barril. A outra referência muito usada no mundo é o Brent, que não aparece neste painel.",
+     "como_ler": "Cada ponto é o fechamento de uma semana. O preço do barril é só um dos componentes do preço dos combustíveis, que inclui refino, impostos, câmbio e distribuição.",
+     "ja_se_observou": "Em 2008 o preço subiu e caiu com força no mesmo ano. Em abril de 2020 um contrato futuro de WTI chegou a ser negociado a preço negativo por um dia, com a demanda reduzida pela pandemia e os estoques cheios entre os fatores. Dois episódios extremos, que podem não se repetir.",
+     "termos": [
+      "commodities",
+      "media_movel"
+     ]
+    },
+    {
+     "id": "com-cobre",
+     "titulo": "Cobre",
+     "tipo": "proprio",
+     "series": [
+      "com_cobre"
+     ],
+     "preco": true,
+     "escala": "log",
+     "janela_padrao": "tudo",
+     "iniciante": true,
+     "o_que_e": "Preço do cobre em dólares por libra-peso (cerca de 454 gramas). O cobre é usado em construção, redes elétricas e equipamentos eletrônicos.",
+     "como_ler": "Cada ponto é o fechamento de uma semana. Por estar ligado à construção e à indústria, o preço do cobre costuma ser acompanhado junto com dados de atividade econômica, em especial da China, grande consumidora.",
+     "ja_se_observou": "Em 2008 e no início de 2020, períodos de retração da economia mundial, o preço do cobre caiu e depois se recuperou. Duas ocorrências, que podem não se repetir.",
+     "termos": [
+      "commodities",
+      "escala_log",
+      "media_movel"
+     ]
+    },
+    {
+     "id": "com-prata",
+     "titulo": "Prata",
+     "tipo": "proprio",
+     "series": [
+      "com_prata"
+     ],
+     "preco": true,
+     "escala": "log",
+     "janela_padrao": "tudo",
+     "iniciante": true,
+     "o_que_e": "Preço da prata em dólares por onça troy. A prata tem uso como reserva de valor, como o ouro, e também uso industrial.",
+     "como_ler": "Cada ponto é o fechamento de uma semana. Em vários períodos a prata oscilou mais do que o ouro, para cima e para baixo.",
+     "ja_se_observou": "Em 2011 o preço atingiu um pico e caiu nos anos seguintes, mais do que o ouro no mesmo período. Um episódio, que pode não se repetir.",
+     "termos": [
+      "commodities",
+      "escala_log",
+      "media_movel"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bitcoin-ciclos",
+   "nome": "Bitcoin e ciclos",
+   "subtitulo": "O preço do Bitcoin em escala logarítmica, com as datas dos halvings marcadas.",
+   "nao_diz": "O Bitcoin é um ativo muito volátil e de histórico curto. Só houve quatro halvings, e os dados deste gráfico começam em 2014: é uma amostra pequena demais para afirmar que existe um ciclo fixo. O que se viu depois dos halvings anteriores pode não se repetir, e outros fatores atuaram nos mesmos períodos. O gráfico não mostra riscos específicos: falha ou fraude em corretoras, perda de chaves de acesso, mudanças de regulação e falta de qualquer garantia de valor.",
+   "graficos": [
+    {
+     "id": "btc-ciclos",
+     "titulo": "Bitcoin em dólares e os halvings",
+     "tipo": "proprio",
+     "series": [
+      "btc_usd"
+     ],
+     "preco": true,
+     "escala": "log",
+     "janela_padrao": "tudo",
+     "iniciante": true,
+     "marcadores": "halvings",
+     "o_que_e": "Preço de um bitcoin em dólares, em escala logarítmica (escala em que distâncias iguais no eixo vertical representam variações percentuais iguais). As linhas verticais tracejadas marcam os halvings: as datas em que a quantidade de bitcoins novos criados a cada bloco caiu pela metade, o que está previsto no código do Bitcoin a cada 210 mil blocos, cerca de quatro anos.",
+     "como_ler": "Na escala logarítmica, ir de 100 para 1.000 ocupa a mesma altura que ir de 1.000 para 10.000. Isso permite ver no mesmo gráfico fases em que o preço era muito diferente. As linhas tracejadas têm rótulo com o ano de cada halving; os dados começam em 2014, então o halving de 2012 fica fora do gráfico.",
+     "ja_se_observou": "Nos períodos seguintes aos halvings de 2012, 2016 e 2020, o preço em dólares atingiu novos máximos e depois teve quedas de mais da metade do valor. São três ciclos completos e quatro halvings ao todo: quatro ocorrências não são regra, outros fatores atuaram nos mesmos períodos (juros, liquidez, regulação) e o padrão pode não se repetir.",
+     "termos": [
+      "halving",
+      "escala_log",
+      "volatilidade",
+      "media_movel"
+     ]
+    },
+    {
+     "id": "btc-tv",
+     "titulo": "Bitcoin em dólares (cotação recente)",
+     "tipo": "tv",
+     "simbolo_tv": "BITSTAMP:BTCUSD",
+     "serie_alternativa": "btc_usd",
+     "padrao": "tv",
+     "series": [
+      "btc_usd"
+     ],
+     "preco": true,
+     "escala": "log",
+     "janela_padrao": "1a",
+     "iniciante": true,
+     "o_que_e": "Cotação do bitcoin em dólares na corretora Bitstamp, exibida por um widget do TradingView. O Bitcoin é negociado sem parar, inclusive em fins de semana, e o preço varia um pouco de uma corretora para outra.",
+     "como_ler": "O widget mostra o período recente. Oscilações de vários por cento em um único dia foram comuns no histórico do Bitcoin.",
+     "ja_se_observou": "Em 2018 e em 2022 o preço caiu mais da metade em relação ao pico anterior. Dois episódios dentro de um histórico curto, que podem não se repetir.",
+     "termos": [
+      "volatilidade",
+      "rsi",
+      "media_movel"
+     ]
+    },
+    {
+     "id": "btc-ethbtc",
+     "titulo": "Ether em bitcoins (ETH/BTC)",
+     "tipo": "tv",
+     "simbolo_tv": "BINANCE:ETHBTC",
+     "serie_alternativa": "eth_btc",
+     "padrao": "tv",
+     "series": [
+      "eth_btc"
+     ],
+     "escala": "linear",
+     "janela_padrao": "tudo",
+     "iniciante": true,
+     "o_que_e": "Mostra quantos bitcoins custa um ether, a moeda da rede Ethereum e o segundo maior criptoativo em valor de mercado. É um par entre dois criptoativos, sem dólar no meio.",
+     "como_ler": "A linha subindo significa que o ether se valorizou mais (ou caiu menos) do que o bitcoin no período; descendo, o contrário. O par não mostra se os dois subiram ou caíram em dólares.",
+     "ja_se_observou": "Em 2017 e em 2021 o par subiu em fases em que criptoativos menores se valorizaram mais do que o bitcoin, e recuou depois. Dois episódios em um histórico curto, que podem não se repetir.",
+     "termos": [
+      "par_de_moedas",
+      "dominancia"
+     ]
+    },
+    {
+     "id": "btc-dominancia",
+     "titulo": "Dominância do Bitcoin",
+     "tipo": "tv",
+     "simbolo_tv": "CRYPTOCAP:BTC.D",
+     "padrao": "tv",
+     "series": [],
+     "escala": "linear",
+     "janela_padrao": "tudo",
+     "iniciante": false,
+     "o_que_e": "Dominância é a parcela, em porcentagem, que o valor de mercado do Bitcoin representa no valor de mercado somado de todos os criptoativos acompanhados pelo TradingView. Este gráfico existe só como widget: não há série própria equivalente neste painel.",
+     "como_ler": "A linha subindo significa que o Bitcoin ganhou participação no total; descendo, que os demais criptoativos ganharam participação. A dominância pode subir com o preço do Bitcoin caindo, se os outros caírem mais.",
+     "ja_se_observou": "Em 2017 e em 2021 a dominância caiu em fases de alta acelerada de criptoativos menores. Dois episódios, que podem não se repetir.",
+     "termos": [
+      "dominancia"
+     ]
+    },
+    {
+     "id": "btc-total",
+     "titulo": "Valor de mercado de todos os criptoativos",
+     "tipo": "tv",
+     "simbolo_tv": "CRYPTOCAP:TOTAL",
+     "padrao": "tv",
+     "series": [],
+     "escala": "log",
+     "janela_padrao": "tudo",
+     "iniciante": false,
+     "o_que_e": "Soma, em dólares, do valor de mercado (preço multiplicado pela quantidade em circulação) dos criptoativos acompanhados pelo TradingView. Este gráfico existe só como widget: não há série própria equivalente neste painel.",
+     "como_ler": "A linha mostra o tamanho do mercado de criptoativos como um todo. A soma inclui ativos de pouca negociação, cujo valor de mercado calculado pode não ser realizável na prática.",
+     "ja_se_observou": "Em 2018 e em 2022 o total caiu mais da metade em relação ao pico anterior. Dois episódios em um histórico curto, que podem não se repetir.",
+     "termos": [
+      "dominancia",
+      "volatilidade"
+     ]
+    }
+   ]
+  }
+ ],
+ "glossario": {
+  "acoes": {
+   "termo": "Ações",
+   "definicao": "Pequenas partes do capital de uma empresa, negociadas em bolsa. A palavra é a mesma no Brasil e em Portugal (em textos portugueses mais antigos, «acções»); em Portugal também se diz «títulos» e «cotadas» para as empresas listadas em bolsa."
+  },
+  "indice_acoes": {
+   "termo": "Índice de ações",
+   "definicao": "Número que resume o preço de um grupo de ações segundo uma regra fixa de pesos (por exemplo, S&P 500, Ibovespa, PSI). Está em pontos, e não em dinheiro."
+  },
+  "etf": {
+   "termo": "ETF",
+   "definicao": "Fundo negociado em bolsa cuja cota acompanha um índice. O preço da cota inclui os custos do fundo e, quando o fundo é de outro país, o câmbio."
+  },
+  "forex": {
+   "termo": "Forex",
+   "definicao": "Abreviação de foreign exchange: o mercado em que moedas são trocadas umas pelas outras. Em português, mercado de câmbio."
+  },
+  "par_de_moedas": {
+   "termo": "Par de moedas",
+   "definicao": "Cotação que mostra quantas unidades da segunda moeda custa uma unidade da primeira. Em USD/BRL, quantos reais custa um dólar; se o número sobe, o real ficou mais fraco."
+  },
+  "dxy": {
+   "termo": "DXY (índice do dólar)",
+   "definicao": "Índice que compara o dólar americano com uma cesta de seis moedas (euro, iene, libra esterlina, dólar canadense, coroa sueca e franco suíço), com peso maior do euro. Não inclui o real nem o yuan."
+  },
+  "yield": {
+   "termo": "Yield / rendimento",
+   "definicao": "Taxa anual que um título de dívida rende a quem o detém até o vencimento, calculada a partir do preço do título no mercado. Quando o preço do título cai, o rendimento sobe, e o inverso."
+  },
+  "taxa_de_juro": {
+   "termo": "Taxa de juros / taxa de juro",
+   "definicao": "Preço do dinheiro emprestado, em porcentagem por período. No Brasil diz-se «taxa de juros»; em Portugal, «taxa de juro»."
+  },
+  "curva_de_juros": {
+   "termo": "Curva de juros",
+   "definicao": "Conjunto das taxas de juros de títulos do mesmo emissor para prazos diferentes (por exemplo, 2 e 10 anos). Diz-se invertida quando o prazo curto paga mais do que o longo. Em Portugal, «curva de rendimentos»."
+  },
+  "spread": {
+   "termo": "Spread",
+   "definicao": "Diferença entre duas taxas ou dois preços. Neste painel: a diferença entre os juros de 10 e de 2 anos, e a diferença entre o rendimento de títulos de empresas e o de títulos do Tesouro."
+  },
+  "selic": {
+   "termo": "Selic",
+   "definicao": "Taxa básica de juros do Brasil. A meta é definida pelo Copom, comitê do Banco Central do Brasil, em reuniões periódicas."
+  },
+  "cdi": {
+   "termo": "CDI",
+   "definicao": "Taxa média dos empréstimos de um dia entre bancos no Brasil. Fica muito próxima da Selic e serve de referência para aplicações de renda fixa."
+  },
+  "juro_real": {
+   "termo": "Juro real",
+   "definicao": "Taxa de juros descontada a inflação. Ex-post: calculado com a inflação que já ocorreu (aqui, Selic menos IPCA de 12 meses, por subtração simples). Ex-ante: calculado com a inflação esperada, que este painel não mostra."
+  },
+  "inflacao_12m": {
+   "termo": "Inflação em 12 meses",
+   "definicao": "Variação percentual de um índice de preços entre um mês e o mesmo mês do ano anterior. Em Portugal, «taxa de variação homóloga»."
+  },
+  "hicp": {
+   "termo": "HICP / IHPC",
+   "definicao": "Índice Harmonizado de Preços no Consumidor (HICP na sigla em inglês, IHPC em Portugal). Calculado com o mesmo método em todos os países da União Europeia e publicado pelo Eurostat, o que permite comparar Portugal com a zona do euro."
+  },
+  "ipca": {
+   "termo": "IPCA",
+   "definicao": "Índice Nacional de Preços ao Consumidor Amplo, calculado pelo IBGE. É o índice usado na meta de inflação do Brasil. Não é dessazonalizado."
+  },
+  "cpi": {
+   "termo": "CPI",
+   "definicao": "Consumer Price Index, o índice de preços ao consumidor dos EUA. A série usada neste painel (CPIAUCSL) é dessazonalizada."
+  },
+  "dessazonalizado": {
+   "termo": "Dessazonalizado",
+   "definicao": "Série da qual foram removidos, por método estatístico, os efeitos que se repetem em cada época do ano (por exemplo, preços que sobem sempre no mesmo mês). Em Portugal, «corrigido de sazonalidade»."
+  },
+  "balanco_bc": {
+   "termo": "Balanço do banco central",
+   "definicao": "Total de ativos que um banco central detém, como títulos públicos e empréstimos a bancos. É a primeira das três camadas da liquidez e não equivale a dinheiro na mão do público."
+  },
+  "base_monetaria": {
+   "termo": "Base monetária",
+   "definicao": "Papel-moeda emitido mais as reservas que os bancos mantêm no banco central. É a segunda camada, entre o balanço do banco central e os agregados M2 e M3."
+  },
+  "m2_m3": {
+   "termo": "M2 / M3",
+   "definicao": "Agregados monetários: somas do dinheiro em circulação com depósitos e aplicações de fácil resgate. O M3 é mais amplo que o M2. As definições variam por país; a zona do euro acompanha sobretudo o M3."
+  },
+  "vix": {
+   "termo": "VIX",
+   "definicao": "Índice calculado pela bolsa de opções de Chicago (Cboe) a partir dos preços de opções sobre o S&P 500. Expressa a oscilação anualizada que esses preços embutiam para os 30 dias seguintes."
+  },
+  "volatilidade": {
+   "termo": "Volatilidade",
+   "definicao": "Medida do tamanho das oscilações de um preço em um período, em geral o desvio-padrão dos retornos. Não tem direção: mede oscilações para cima e para baixo."
+  },
+  "high_yield": {
+   "termo": "High yield",
+   "definicao": "Títulos de dívida de empresas com nota de crédito abaixo do grau de investimento. Pagam juros mais altos porque o risco de a empresa não pagar é maior."
+  },
+  "commodities": {
+   "termo": "Commodities",
+   "definicao": "Matérias-primas padronizadas (ouro, petróleo, cobre, grãos) negociadas em bolsas, em geral em dólares. Em Portugal também se diz «matérias-primas»."
+  },
+  "halving": {
+   "termo": "Halving",
+   "definicao": "Redução pela metade da quantidade de bitcoins novos criados a cada bloco, prevista no código do Bitcoin a cada 210 mil blocos (cerca de quatro anos). Houve quatro até hoje."
+  },
+  "dominancia": {
+   "termo": "Dominância",
+   "definicao": "Parcela, em porcentagem, que o valor de mercado do Bitcoin representa no valor de mercado somado de todos os criptoativos."
+  },
+  "escala_log": {
+   "termo": "Escala logarítmica",
+   "definicao": "Escala em que distâncias iguais no eixo vertical representam variações percentuais iguais: de 10 para 100 ocupa a mesma altura que de 100 para 1.000. Na escala linear, distâncias iguais representam diferenças iguais em pontos."
+  },
+  "media_movel": {
+   "termo": "Média móvel",
+   "definicao": "Média aritmética dos últimos N fechamentos, recalculada a cada novo ponto. Neste painel: 10 semanas (aproximadamente 50 dias úteis) e 40 semanas (aproximadamente 200 dias úteis). É um resumo do passado e não é sinal de compra ou venda."
+  },
+  "rsi": {
+   "termo": "RSI",
+   "definicao": "Índice de Força Relativa. Número de 0 a 100 calculado a partir da razão entre a média das altas e a média das baixas de preço em um número fixo de períodos (14 no padrão). Descreve o ritmo recente das variações; não prevê a direção seguinte."
+  },
+  "cfd": {
+   "termo": "CFD",
+   "definicao": "Contrato por diferença: contrato com uma corretora que acompanha o preço de um ativo sem que o ativo seja entregue. Algumas cotações de widgets do TradingView são de CFDs de corretoras, e não da bolsa de origem do ativo."
+  }
+ }
+}

@@ -1,0 +1,10 @@
+{
+ "descricao": "Eventos marcados nos gráficos do painel Mercados e ciclos. Datas em UTC.",
+ "conferido_em": "2026-11-16",
+ "halvings": [
+  {"data": "2012-11-28", "bloco": 210000, "fonte": "https://www.kraken.com/en-gb/learn/bitcoin-halving-history", "fonte_bloco": "https://www.coingecko.com/explain/bitcoin_halving", "observacao": "A tabela da CoinGecko traz 2012-11-27 e o texto da mesma página traz 28 de novembro de 2012; a Kraken traz 28 de novembro de 2012. Diferença de fuso horário provável; não conferido em explorador de blocos."},
+  {"data": "2016-07-09", "bloco": 420000, "fonte": "https://www.kraken.com/en-gb/learn/bitcoin-halving-history", "fonte_bloco": "https://www.coingecko.com/explain/bitcoin_halving"},
+  {"data": "2020-05-11", "bloco": 630000, "fonte": "https://www.kraken.com/en-gb/learn/bitcoin-halving-history", "fonte_bloco": "https://www.coingecko.com/explain/bitcoin_halving"},
+  {"data": "2024-04-20", "bloco": 840000, "fonte": "https://www.kraken.com/en-gb/learn/bitcoin-halving-history", "fonte_bloco": "https://www.coingecko.com/explain/bitcoin_halving"}
+ ]
+}

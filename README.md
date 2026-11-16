@@ -14,7 +14,7 @@ Laboratório de painéis e estudos sobre mercado financeiro: sazonalidade, ciclo
 | Monitor de Dividendos Lisboa | [`portugal/monitor`](portugal/monitor/) | Publicado (estudo), atualização automática | 16 ações da Euronext Lisbon para residentes em Portugal: proventos do cadastro oficial, preço-teto com juro das OT a 10 anos (BCE), alertas; manutenção em [`manutencao/portugal`](manutencao/portugal/) |
 | Painel de Ativos | [`monitor/ativos`](monitor/ativos/) | Atualização automática (cerca de 30 min) | Índices, moedas, commodities, juros e cripto organizados como um painel de mercado; cada cotação com hora e fonte, itens sem fonte automática marcados |
 | Tendências de mercado (EUA) | [`tendencias`](tendencias/) | Em construção (página pronta; aguardando a primeira coleta automática) | Matriz porte × estilo (9 ETFs Russell) contra o mercado amplo (IWV): retorno relativo em 1, 3, 6 e 12 meses e posição frente à média de 200 dias; modos Iniciante e Completo |
-| Monitor multi-gráficos | [`monitor/`](monitor/) | Planejado | Vários gráficos de mercado na mesma tela (widgets do TradingView) |
+| Mercados e ciclos | [`monitor/mercados`](monitor/mercados/) | Em construção (página, coleta e testes prontos; aguardando a primeira coleta automática) | Onze conjuntos de gráficos (índices, juros, inflação, liquidez, risco, câmbio, commodities, Bitcoin) com modos Iniciante e Avançado; gráficos próprios com dados de fontes oficiais e widgets do TradingView em forex e cripto |
 
 ## Estrutura
 
