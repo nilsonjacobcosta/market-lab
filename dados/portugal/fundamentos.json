@@ -1,6 +1,6 @@
 {
  "beta": true,
- "gerado_em": "2026-11-09 16:51",
+ "gerado_em": "2026-11-16 16:26",
  "fonte": "Relatórios anuais ESEF (iXBRL) via filings.xbrl.org; LEI via GLEIF",
  "aviso": "Material educativo, não é recomendação de investimento. Faixas são convenções do painel.",
  "papeis": {
@@ -570,9 +570,9 @@
     "sem_nota:lucro_indisponivel"
    ],
    "lei": "549300H3W4IIDNIV6I38",
-   "relatorio": "549300H3W4IIDNIV6I38-2026-06-30-ESEF-PT-0",
-   "relatorio_url": "https://filings.xbrl.org/549300H3W4IIDNIV6I38/2026-06-30/ESEF/PT/0/549300H3W4IIDNIV6I38-2026-06-30/reports/ixbrlviewer.html",
-   "publicado": "2026-10-22 15:09:37.749593",
+   "relatorio": "549300H3W4IIDNIV6I38-2026-06-30-ESEF-PT-1",
+   "relatorio_url": "https://filings.xbrl.org/549300H3W4IIDNIV6I38/2026-06-30/ESEF/PT/1/549300H3W4IIDNIV6I38-2026-06-30/reports/ixbrlviewer.html",
+   "publicado": "2026-11-04 13:31:20.081160",
    "origem_rubricas": {
     "ll": null,
     "ll_total": null,
