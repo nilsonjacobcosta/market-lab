@@ -166,7 +166,10 @@ def main(argv: list[str] | None = None) -> int:
     print(f"séries por status: {cont}")
     for b_id, b in ((dados.get("series") or {}).items() if isinstance(dados, dict) else []):
         if b.get("status") == "anterior":
-            print(f"[aviso] {b_id}: mantido da coleta anterior (último dado {b.get('ultimo_dado')})")
+            desde = b.get("anterior_desde")
+            dias = (dt.date.today() - dt.date.fromisoformat(desde)).days if desde else None
+            extra = f"; há {dias} dia(s) sem coleta nova" + (" (ver runbook RB 10)" if dias >= 3 else "") if dias is not None else ""
+            print(f"[aviso] {b_id}: mantido da coleta anterior (último dado {b.get('ultimo_dado')}{extra})")
     if erros:
         print(f"REPROVADO: {len(erros)} problema(s)")
         for e in erros:

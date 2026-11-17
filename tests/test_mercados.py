@@ -480,6 +480,18 @@ class ColetaTests(unittest.TestCase):
         self.assertEqual(s["series"]["liq_eua_m2_var12m"]["status"], "ok")
         self.assertEqual(s["series_ok"], len(CATALOGO) - 3)
 
+    def test_anterior_desde_marca_o_primeiro_dia_e_e_mantido(self):
+        dia1 = AGORA + dt.timedelta(days=1)
+        s1 = col.coletar(CATALOGO, busca_falsa(falhar=("CPIAUCSL",)), self.completa, dia1)
+        self.assertEqual(s1["series"]["cpi_eua"]["anterior_desde"], dia1.date().isoformat())
+        self.assertNotIn("anterior_desde", s1["series"]["liq_eua_m2"])
+        dia4 = AGORA + dt.timedelta(days=4)
+        s4 = col.coletar(CATALOGO, busca_falsa(falhar=("CPIAUCSL",)), s1, dia4)
+        self.assertEqual(s4["series"]["cpi_eua"]["anterior_desde"], dia1.date().isoformat())
+        # Voltando a responder, o bloco novo não carrega a marca.
+        s5 = col.coletar(CATALOGO, busca_falsa(), s4, AGORA + dt.timedelta(days=5))
+        self.assertNotIn("anterior_desde", s5["series"]["cpi_eua"])
+
     def test_falha_sem_arquivo_anterior_vira_sem_dados(self):
         s = col.coletar(CATALOGO, busca_falsa(falhar=("sgs.432/",)), None, AGORA)
         self.assertEqual(s["series"]["juros_br_selic"]["status"], "sem dados")
