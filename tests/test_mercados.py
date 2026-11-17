@@ -61,9 +61,12 @@ def ts(ano, mes, dia, hora=0):
     return int(dt.datetime(ano, mes, dia, hora, tzinfo=dt.timezone.utc).timestamp())
 
 
-def yahoo_json(pares, desloc=0, granularidade="1wk"):
+def yahoo_json(pares, desloc=0, granularidade="1wk", fuso=None):
+    meta = {"symbol": "X", "gmtoffset": desloc, "dataGranularity": granularidade}
+    if fuso:
+        meta["exchangeTimezoneName"] = fuso
     return json.dumps({"chart": {"result": [{
-        "meta": {"symbol": "X", "gmtoffset": desloc, "dataGranularity": granularidade},
+        "meta": meta,
         "timestamp": [t for t, _ in pares],
         "indicators": {"quote": [{"close": [p for _, p in pares]}]}}], "error": None}})
 
@@ -129,6 +132,21 @@ class LeitoresTests(unittest.TestCase):
         txt = yahoo_json([(ts(2026, 11, 1, 16), 3600.5), (ts(2026, 11, 8, 16), None),
                           (ts(2026, 11, 15, 16), 3663.72)], desloc=8 * 3600)
         self.assertEqual(fontes.ler_yahoo(txt), [("2026-11-02", 3600.5), ("2026-11-16", 3663.72)])
+
+    def test_yahoo_horario_de_verao_usa_o_fuso_de_cada_data(self):
+        # Segunda 00h em Nova York: verão (UTC-4) = 04h UTC; inverno (UTC-5) = 05h UTC.
+        # O gmtoffset da resposta é o do dia da coleta (inverno, -18000) e erraria o verão.
+        txt = yahoo_json([(ts(2026, 7, 6, 4), 1.0), (ts(2026, 11, 2, 5), 2.0), (ts(2026, 11, 9, 5), 3.0)],
+                         desloc=-5 * 3600, fuso="America/New_York")
+        self.assertEqual(fontes.ler_yahoo(txt), [("2026-07-06", 1.0), ("2026-11-02", 2.0), ("2026-11-09", 3.0)])
+        # Sem o nome do fuso (reserva), o deslocamento fixo de inverno joga a barra de verão no domingo.
+        sem_nome = yahoo_json([(ts(2026, 7, 6, 4), 1.0)], desloc=-5 * 3600)
+        self.assertEqual(fontes.ler_yahoo(sem_nome), [("2026-07-05", 1.0)])
+
+    def test_yahoo_lisboa_no_verao(self):
+        # Segunda 00h em Lisboa no verão (UTC+1) = domingo 23h UTC.
+        txt = yahoo_json([(ts(2026, 7, 5, 23), 9.0)], desloc=0, fuso="Europe/Lisbon")
+        self.assertEqual(fontes.ler_yahoo(txt), [("2026-07-06", 9.0)])
 
     def test_yahoo_granularidade_trocada_falha(self):
         with self.assertRaises(ValueError):

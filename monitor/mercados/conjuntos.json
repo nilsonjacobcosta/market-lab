@@ -500,7 +500,7 @@
      "iniciante": true,
      "o_que_e": "É a taxa do título de 10 anos menos a taxa do título de 2 anos, em pontos percentuais. Uma diferença entre duas taxas chama-se spread. Quando o resultado é negativo, diz-se que a curva de juros está invertida.",
      "como_ler": "Acima de zero: o prazo longo pagou mais do que o curto, a situação mais frequente na série. Abaixo de zero: o prazo curto pagou mais. A linha horizontal do zero aparece marcada no gráfico.",
-     "ja_se_observou": "A curva ficou invertida antes das recessões de 2001 e de 2008–2009 nos EUA, com intervalos diferentes entre a inversão e a recessão. Entre 2022 e 2024 a diferença ficou negativa por um longo período sem que uma recessão fosse declarada nesse intervalo. São três episódios neste gráfico: poucos casos, e uma inversão não garante que uma recessão virá.",
+     "ja_se_observou": "Desde 2000, a diferença ficou negativa por períodos longos em três ocasiões: de fevereiro a dezembro de 2000, de janeiro de 2006 a junho de 2007 (com interrupções) e de julho de 2022 a agosto de 2024; em agosto de 2019 ficou negativa por apenas três dias, com valores muito pequenos (dados diários do FRED). Pela datação do NBER, as recessões nos EUA começaram em março de 2001, dezembro de 2007 e fevereiro de 2020, esta última associada à pandemia. Houve recessão depois das duas primeiras ocasiões, com intervalos diferentes; depois da terceira, o NBER não havia datado nova recessão até 16/11/2026. Três casos longos são poucos, e uma inversão não garante que uma recessão virá.",
      "termos": [
       "spread",
       "curva_de_juros"
@@ -761,7 +761,7 @@
      "janela_padrao": "tudo",
      "iniciante": true,
      "o_que_e": "Total de ativos do Federal Reserve, o banco central dos EUA, em dólares, publicado toda semana.",
-     "como_ler": "O eixo mostra o valor em dólares, na unidade indicada acima do gráfico. Os trechos de subida rápida correspondem a períodos de compra de títulos pelo Fed; os de descida, a períodos em que o Fed deixou títulos vencerem sem repor.",
+     "como_ler": "O eixo mostra o valor em dólares, na unidade indicada acima do gráfico. Nos períodos de subida mais rápida houve compras de títulos pelo Fed, entre outras operações, como empréstimos a bancos em 2008 e em 2023; nos de descida, o Fed deixou títulos vencerem sem repor.",
      "ja_se_observou": "O balanço cresceu em degraus depois de 2008 e de novo em 2020, e encolheu entre 2018 e 2019 e a partir de 2022. Poucos ciclos, cada um com contexto próprio, que podem não se repetir.",
      "termos": [
       "balanco_bc"
@@ -827,7 +827,7 @@
      "termos": [
       "vix",
       "volatilidade",
-      "high_yield"
+      "opcoes"
      ]
     },
     {
@@ -842,7 +842,7 @@
      "iniciante": true,
      "o_que_e": "É a taxa do título de 10 anos do Tesouro dos EUA menos a taxa do título de 2 anos, em pontos percentuais. Uma diferença entre duas taxas chama-se spread. Quando o resultado é negativo, diz-se que a curva de juros está invertida.",
      "como_ler": "Acima de zero: o prazo longo pagou mais do que o curto, a situação mais frequente na série. Abaixo de zero: o prazo curto pagou mais. A linha do zero aparece em destaque no gráfico.",
-     "ja_se_observou": "A curva ficou invertida antes das recessões de 2001 e de 2008–2009 nos EUA, com intervalos diferentes entre a inversão e a recessão. Entre 2022 e 2024 a diferença ficou negativa por um longo período sem que uma recessão fosse declarada nesse intervalo. São três episódios neste gráfico: poucos casos, e uma inversão não garante que uma recessão virá.",
+     "ja_se_observou": "Desde 2000, a diferença ficou negativa por períodos longos em três ocasiões: de fevereiro a dezembro de 2000, de janeiro de 2006 a junho de 2007 (com interrupções) e de julho de 2022 a agosto de 2024; em agosto de 2019 ficou negativa por apenas três dias, com valores muito pequenos (dados diários do FRED). Pela datação do NBER, as recessões nos EUA começaram em março de 2001, dezembro de 2007 e fevereiro de 2020, esta última associada à pandemia. Houve recessão depois das duas primeiras ocasiões, com intervalos diferentes; depois da terceira, o NBER não havia datado nova recessão até 16/11/2026. Três casos longos são poucos, e uma inversão não garante que uma recessão virá.",
      "termos": [
       "spread",
       "curva_de_juros",
@@ -1109,7 +1109,7 @@
      "janela_padrao": "tudo",
      "iniciante": true,
      "o_que_e": "Preço do cobre em dólares por libra-peso (cerca de 454 gramas). O cobre é usado em construção, redes elétricas e equipamentos eletrônicos.",
-     "como_ler": "Cada ponto é o fechamento de uma semana. Por estar ligado à construção e à indústria, o preço do cobre costuma ser acompanhado junto com dados de atividade econômica, em especial da China, grande consumidora.",
+     "como_ler": "Cada ponto é o fechamento de uma semana. O cobre é usado na construção e na indústria, e o preço dele já foi comparado com indicadores de atividade econômica, em especial da China, grande consumidora; a comparação não é prevista nem regra.",
      "ja_se_observou": "Em 2008 e no início de 2020, períodos de retração da economia mundial, o preço do cobre caiu e depois se recuperou. Duas ocorrências, que podem não se repetir.",
      "termos": [
       "commodities",
@@ -1128,7 +1128,7 @@
      "escala": "log",
      "janela_padrao": "tudo",
      "iniciante": true,
-     "o_que_e": "Preço da prata em dólares por onça troy. A prata tem uso como reserva de valor, como o ouro, e também uso industrial.",
+     "o_que_e": "Preço da prata em dólares por onça troy. A prata é usada na indústria e em joias e, como o ouro, é por vezes descrita como reserva de valor; o preço de ambos já teve quedas longas.",
      "como_ler": "Cada ponto é o fechamento de uma semana. Em vários períodos a prata oscilou mais do que o ouro, para cima e para baixo.",
      "ja_se_observou": "Em 2011 o preço atingiu um pico e caiu nos anos seguintes, mais do que o ouro no mesmo período. Um episódio, que pode não se repetir.",
      "termos": [
@@ -1159,7 +1159,7 @@
      "marcadores": "halvings",
      "o_que_e": "Preço de um bitcoin em dólares, em escala logarítmica (escala em que distâncias iguais no eixo vertical representam variações percentuais iguais). As linhas verticais tracejadas marcam os halvings: as datas em que a quantidade de bitcoins novos criados a cada bloco caiu pela metade, o que está previsto no código do Bitcoin a cada 210 mil blocos, cerca de quatro anos.",
      "como_ler": "Na escala logarítmica, ir de 100 para 1.000 ocupa a mesma altura que ir de 1.000 para 10.000. Isso permite ver no mesmo gráfico fases em que o preço era muito diferente. As linhas tracejadas têm rótulo com o ano de cada halving; os dados começam em 2014, então o halving de 2012 fica fora do gráfico.",
-     "ja_se_observou": "Nos períodos seguintes aos halvings de 2012, 2016 e 2020, o preço em dólares atingiu novos máximos e depois teve quedas de mais da metade do valor. São três ciclos completos e quatro halvings ao todo: quatro ocorrências não são regra, outros fatores atuaram nos mesmos períodos (juros, liquidez, regulação) e o padrão pode não se repetir.",
+     "ja_se_observou": "Nos períodos seguintes aos halvings de 2012, 2016 e 2020, o preço em dólares atingiu novos máximos e depois teve quedas de mais da metade do valor. São três sequências de alta e queda e quatro halvings ao todo: quatro ocorrências não são regra, outros fatores atuaram nos mesmos períodos (juros, liquidez, regulação) e o padrão pode não se repetir.",
      "termos": [
       "halving",
       "escala_log",
@@ -1288,7 +1288,7 @@
   },
   "spread": {
    "termo": "Spread",
-   "definicao": "Diferença entre duas taxas ou dois preços. Neste painel: a diferença entre os juros de 10 e de 2 anos, e a diferença entre o rendimento de títulos de empresas e o de títulos do Tesouro."
+   "definicao": "Diferença entre duas taxas ou dois preços. Neste painel: a diferença entre os juros de 10 e de 2 anos do Tesouro dos EUA."
   },
   "selic": {
    "termo": "Selic",
@@ -1373,6 +1373,10 @@
   "cfd": {
    "termo": "CFD",
    "definicao": "Contrato por diferença: contrato com uma corretora que acompanha o preço de um ativo sem que o ativo seja entregue. Algumas cotações de widgets do TradingView são de CFDs de corretoras, e não da bolsa de origem do ativo."
+  },
+  "opcoes": {
+   "termo": "Opções",
+   "definicao": "Contratos que dão o direito, sem a obrigação, de comprar ou vender um ativo a um preço combinado até uma data. O preço desses contratos é a base do cálculo do VIX."
   }
  }
 }

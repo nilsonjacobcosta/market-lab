@@ -548,7 +548,7 @@ function montarTV(host, g, aoFalhar) {
   const codigo = String(g.simbolo_tv).split(":").pop();
   const caixa = document.createElement("div"); caixa.className = "tvbox" + (avanc ? " av" : "");
   const cont = document.createElement("div"); cont.className = "tradingview-widget-container";
-  cont.title = `Widget do TradingView (${nomeWidget}): ${g.titulo}, símbolo ${g.simbolo_tv}`;
+  cont.title = `Widget do TradingView (${nomeWidget}): ${g.titulo}, símbolo ${codigo}`;
   cont.innerHTML = `<div class="tradingview-widget-container__widget"></div>
     <div class="tradingview-widget-copyright"><a href="${esc(urlSimbolo(g.simbolo_tv))}" rel="noopener nofollow" target="_blank"><span class="blue-text">Cotação de ${esc(codigo)}</span></a><span class="trademark"> by TradingView</span></div>`;
   const aguarde = document.createElement("div"); aguarde.className = "carregando"; aguarde.textContent = "Carregando widget do TradingView…";
@@ -569,7 +569,7 @@ function montarTV(host, g, aoFalhar) {
   limpezas.push(() => { encerrado = true; clearTimeout(timer); clearInterval(olho); });
   caixa.append(cont, aguarde); host.replaceChildren(caixa); cont.appendChild(s);
   const nota = document.createElement("div"); nota.className = "nota";
-  nota.innerHTML = `Widget ${nomeWidget} do TradingView, símbolo <b>${esc(g.simbolo_tv)}</b>. Cotações fornecidas pelo TradingView.`
+  nota.innerHTML = `Widget ${nomeWidget} do TradingView, símbolo <b>${esc(String(g.simbolo_tv).split(":").pop())}</b>. Cotações fornecidas pelo TradingView. Se o widget exibir o nome de uma bolsa ou plataforma, ele só identifica a origem da cotação e não indica serviço nem produto.`
     + (avanc ? " Indicadores do widget: uma média móvel simples (média aritmética dos últimos fechamentos, no período padrão do widget) e o RSI (número de 0 a 100 calculado da razão entre a média das altas e a média das baixas em 14 períodos). Descrevem o passado; não são sinal de compra ou venda." : "")
     + (g.serie_alternativa ? " Se o quadro mostrar “Permissão negada” ou “símbolo disponível somente no TradingView”, o botão “Gráfico próprio” acima exibe a série coletada pelo painel." : ` Se o quadro não mostrar o gráfico: <a href="${esc(urlSimbolo(g.simbolo_tv))}" rel="noopener nofollow" target="_blank">abrir ${esc(g.simbolo_tv)} no TradingView</a>.`);
   host.appendChild(nota);
@@ -604,7 +604,7 @@ function montarCartao(g) {
     marcar("tv"); reserva.hidden = true;
     montarTV(corpo, g, () => {
       reserva.hidden = false;
-      reserva.innerHTML = `<b>O widget do TradingView não carregou.</b> Causas possíveis: bloqueador de conteúdo, rede ou símbolo indisponível no widget. <a href="${esc(urlSimbolo(g.simbolo_tv))}" rel="noopener nofollow" target="_blank">Abrir ${esc(g.simbolo_tv)} no TradingView</a>.`
+      reserva.innerHTML = `<b>O widget do TradingView não carregou.</b> Causas possíveis: bloqueador de conteúdo, rede ou símbolo indisponível no widget. <a href="${esc(urlSimbolo(g.simbolo_tv))}" rel="noopener nofollow" target="_blank">Abrir ${esc(String(g.simbolo_tv).split(":").pop())} no TradingView</a>.`
         + (temAlt ? " Abaixo está o gráfico próprio, com a série coletada pelo painel." : " Não há série própria equivalente para este gráfico.");
       if (temAlt) mostrarProprio(); else { corpo.replaceChildren(); art.dataset.origem = "reserva"; }
     });

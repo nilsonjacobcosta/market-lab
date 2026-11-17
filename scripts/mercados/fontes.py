@@ -14,6 +14,7 @@ import io
 import json
 import math
 import re
+from zoneinfo import ZoneInfo
 
 # ---------------------------------------------------------------- utilidades
 
@@ -66,8 +67,10 @@ def ler_yahoo(texto: str, granularidade: str | None = "1wk") -> list[tuple[str, 
     Fechamentos nulos são descartados. Se a resposta informar granularidade diferente da
     pedida (o Yahoo troca semanal por mensal/trimestral em certos pedidos), a leitura falha.
 
-    A data é calculada no fuso da bolsa (meta.gmtoffset), para que a barra semanal de
-    bolsas asiáticas não caia no domingo da semana anterior."""
+    A data é calculada no fuso da bolsa (meta.exchangeTimezoneName, que respeita o horário
+    de verão de cada data). Só se não houver nome de fuso usa-se meta.gmtoffset, que é o
+    deslocamento do momento da coleta e erra uma hora metade do ano; sem isso, a barra
+    semanal de Nova York ou Lisboa cairia no domingo da semana anterior."""
     dados = json.loads(texto)
     res = dados["chart"]["result"][0]
     meta = res.get("meta") or {}
@@ -75,13 +78,23 @@ def ler_yahoo(texto: str, granularidade: str | None = "1wk") -> list[tuple[str, 
     if granularidade and recebida and recebida != granularidade:
         raise ValueError(f"Yahoo: granularidade {recebida!r}, esperada {granularidade!r}")
     desloc = int(meta.get("gmtoffset") or 0)
+    fuso = None
+    nome_fuso = meta.get("exchangeTimezoneName")
+    if nome_fuso:
+        try:
+            fuso = ZoneInfo(nome_fuso)
+        except Exception:  # noqa: BLE001 - nome desconhecido: cai no deslocamento fixo
+            fuso = None
     fechamentos = res["indicators"]["quote"][0]["close"]
     pontos = []
     for t, p in zip(res["timestamp"], fechamentos):
         v = _numero(p)
         if v is None:
             continue
-        data = dt.datetime.fromtimestamp(t + desloc, dt.timezone.utc).date().isoformat()
+        if fuso is not None:
+            data = dt.datetime.fromtimestamp(t, fuso).date().isoformat()
+        else:
+            data = dt.datetime.fromtimestamp(t + desloc, dt.timezone.utc).date().isoformat()
         pontos.append((data, v))
     if not pontos:
         raise ValueError("Yahoo: resposta sem preços")
