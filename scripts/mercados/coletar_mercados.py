@@ -153,6 +153,9 @@ def _reaproveitar(serie: dict, catalogo: list[dict], anterior: dict | None, hoje
     if antigo and antigo.get("pontos"):
         novo = dict(antigo)
         novo["status"] = "anterior"
+        # Dia da primeira falha seguida: mantido enquanto a série seguir em "anterior".
+        desde = antigo.get("anterior_desde") if antigo.get("status") == "anterior" else None
+        novo["anterior_desde"] = desde or (hoje.isoformat() if hoje else None)
         if "ultimo_parcial" in novo:
             novo["ultimo_parcial"] = bool(hoje and semana_corrente(novo.get("ultimo_dado"), hoje))
         return novo

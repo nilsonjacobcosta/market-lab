@@ -27,11 +27,11 @@ Observação de método: J1 e J2 rodaram no modelo Fable 5.2; a primeira tentati
 ## Ressalvas não bloqueantes que seguem abertas
 
 - Série "ok" com dado velho reprova o arquivo inteiro (`aceite.py`); considerar rebaixar essa série a "anterior" no coletor.
-- Séries "anterior" por muitos dias não geram aviso próprio; o banner só dispara quando todas as fontes falham por 5 dias ou mais.
+- Série "anterior" por 3 dias ou mais: resolvido em 17/11/2026 (campo `anterior_desde`; aviso no log do aceite e nota na página).
 - O passo de coleta usa `continue-on-error`: falha geral não deixa o job vermelho. O runbook RB 10 descreve a conferência.
 - Se o Yahoo bloquear o Actions no primeiro dia, restam 23 de 48 séries e o aceite reprova (limite de 60%).
 - A comparação de 3 pontos por série com a fonte oficial foi feita em 17/11/2026 depois da 1.ª coleta real: coincidem, salvo o último ponto de VIX e WTI (barra semanal em curso, moveu entre coleta e conferência). Séries derivadas não conferidas contra fonte externa.
-- O widget Advanced Chart (modo Avançado) não foi testado com os símbolos; "RSI@tv-basicstudies" e locale/timezone não foram confirmados na documentação.
+- Widget Advanced Chart: os 9 símbolos abriram em 17/11/2026 (com RSI e média móvel); "RSI@tv-basicstudies" e locale/timezone seguem sem confirmação na documentação do TradingView.
 - Textos com afirmações factuais sem fonte (composição do DXY, Nikkei 1989, WTI negativo em 2020, par mais negociado, entre outras listadas por J1 e J2) a revisar com fonte ou a retirar.
 - `innerHTML` com `dataBR(s.ultimo_dado)` sem escape e `url_fonte` sem validação de esquema (risco baixo, dados da própria conta).
 - Série ausente do JSON aparece com o id cru na nota do gráfico.

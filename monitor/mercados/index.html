@@ -473,6 +473,8 @@ function criarGrafico(host, g, ids) {
         + (halv.verificado ? `Fonte das datas: ${halv.url_fonte ? `<a href="${esc(halv.url_fonte)}" rel="noopener">${esc(halv.fonte)}</a>` : esc(halv.fonte)}.` : "Datas ainda não conferidas em fonte primária.")); }
     if (fora.length) notas.push(`<span class="nota alerta">Não exibidas por terem unidade diferente de “${esc(unidade)}”: ${esc(fora.map(x => x.s.nome || x.id).join(", "))}.</span>`);
     if (faltam.length) notas.push(`Ainda sem dados na coleta: ${esc(faltam.join(", "))}.`);
+    const velhas = vis.filter(x => x.s.status === "anterior" && /^\d{4}-\d{2}-\d{2}$/.test(x.s.anterior_desde || "") && (Date.now() - Date.parse(x.s.anterior_desde)) / 864e5 >= 3);
+    if (velhas.length) notas.push(`<span class="nota alerta">Sem atualização da fonte há 3 dias ou mais (valor da última coleta bem-sucedida): ${esc(velhas.map(x => x.s.nome || x.id).join(", "))}.</span>`);
     R("notas").innerHTML = notas.map(n => `<div>${n}</div>`).join(""); R("notas").hidden = !notas.length;
     R("fontes").innerHTML = vis.map(x => { const s = x.s;
       const tag = s.status === "anterior" ? '<span class="tag" title="Valor da coleta anterior: a fonte não respondeu na última tentativa">anterior</span>' : s.status === "sem dados" ? '<span class="tag">sem dados</span>' : "";
