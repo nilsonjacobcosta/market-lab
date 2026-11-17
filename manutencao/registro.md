@@ -75,3 +75,8 @@ Reconstituído em 03/11/2026 a partir de `git log`, `gh run list` e dos document
 - Painel em `monitor/mercados/` (11 conjuntos, modos Iniciante e Avançado), coleta em `scripts/mercados/`, workflow `atualizar-mercados.yml`, testes em `tests/test_mercados.py`. Status "Em construção" até a 1.ª coleta real.
 - Seis bloqueantes de J1, J2 e J3 corrigidos (fuso das barras do Yahoo, tabela de verificação, nomes de plataforma, curva de juros, `min_pontos` de Portugal); pareceres em `docs/monitor-mercados/pareceres-juizes.md`.
 - Novo runbook: `manutencao/runbooks/10-falha-coleta-mercados.md`.
+
+## 17/11/2026 — Mercados e ciclos: primeira coleta real e saída de "Em construção"
+- 1.ª execução do workflow deixou `infl_br_12m` e `juros_br_real` sem dados: a API do SGS não devolve a série 13522 sem janela de datas (PR #3: `janela_anos: 30`, links de conferência com `ultimos/20`). 2.ª execução: 47 de 48 séries ok; `risco_hy` segue sem coleta por licença.
+- 3 pontos por série coletada conferidos com BCB, BCE, Eurostat, FRED e Yahoo; 9 símbolos do Advanced Chart abriram no Chrome.
+- Status trocado de "Em construção" para "Atualização automática" (índice, README raiz e README do painel).

@@ -1,6 +1,6 @@
 # Mercados e ciclos
 
-**Status:** em construção. Página, coleta, workflow e testes prontos. Faltam a primeira coleta real pelo GitHub Actions e o teste do widget Advanced Chart em navegador. Até a primeira coleta, a página não mostra números.
+**Status:** atualização automática. A primeira coleta real rodou em 17/11/2026 (47 de 48 séries; `risco_hy` não é coletada por licença) e 3 pontos de cada série coletada foram conferidos com a fonte oficial. Os 9 símbolos do widget Advanced Chart abriram no navegador. Ressalvas não bloqueantes dos juízes seguem em `docs/monitor-mercados/pareceres-juizes.md`.
 
 ## O que mostra
 
