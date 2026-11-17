@@ -571,7 +571,7 @@ function montarTV(host, g, aoFalhar) {
   const nota = document.createElement("div"); nota.className = "nota";
   nota.innerHTML = `Widget ${nomeWidget} do TradingView, símbolo <b>${esc(String(g.simbolo_tv).split(":").pop())}</b>. Cotações fornecidas pelo TradingView. Se o widget exibir o nome de uma bolsa ou plataforma, ele só identifica a origem da cotação e não indica serviço nem produto.`
     + (avanc ? " Indicadores do widget: uma média móvel simples (média aritmética dos últimos fechamentos, no período padrão do widget) e o RSI (número de 0 a 100 calculado da razão entre a média das altas e a média das baixas em 14 períodos). Descrevem o passado; não são sinal de compra ou venda." : "")
-    + (g.serie_alternativa ? " Se o quadro mostrar “Permissão negada” ou “símbolo disponível somente no TradingView”, o botão “Gráfico próprio” acima exibe a série coletada pelo painel." : ` Se o quadro não mostrar o gráfico: <a href="${esc(urlSimbolo(g.simbolo_tv))}" rel="noopener nofollow" target="_blank">abrir ${esc(g.simbolo_tv)} no TradingView</a>.`);
+    + (g.serie_alternativa ? " Se o quadro mostrar “Permissão negada” ou “símbolo disponível somente no TradingView”, o botão “Gráfico próprio” acima exibe a série coletada pelo painel." : ` Se o quadro não mostrar o gráfico: <a href="${esc(urlSimbolo(g.simbolo_tv))}" rel="noopener nofollow" target="_blank">abrir ${esc(String(g.simbolo_tv).split(":").pop())} no TradingView</a>.`);
   host.appendChild(nota);
 }
 

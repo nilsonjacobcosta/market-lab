@@ -499,8 +499,8 @@
      "janela_padrao": "tudo",
      "iniciante": true,
      "o_que_e": "É a taxa do título de 10 anos menos a taxa do título de 2 anos, em pontos percentuais. Uma diferença entre duas taxas chama-se spread. Quando o resultado é negativo, diz-se que a curva de juros está invertida.",
-     "como_ler": "Acima de zero: o prazo longo pagou mais do que o curto, a situação mais frequente na série. Abaixo de zero: o prazo curto pagou mais. A linha horizontal do zero aparece marcada no gráfico.",
-     "ja_se_observou": "Desde 2000, a diferença ficou negativa por períodos longos em três ocasiões: de fevereiro a dezembro de 2000, de janeiro de 2006 a junho de 2007 (com interrupções) e de julho de 2022 a agosto de 2024; em agosto de 2019 ficou negativa por apenas três dias, com valores muito pequenos (dados diários do FRED). Pela datação do NBER, as recessões nos EUA começaram em março de 2001, dezembro de 2007 e fevereiro de 2020, esta última associada à pandemia. Houve recessão depois das duas primeiras ocasiões, com intervalos diferentes; depois da terceira, o NBER não havia datado nova recessão até 16/11/2026. Três casos longos são poucos, e uma inversão não garante que uma recessão virá.",
+     "como_ler": "Acima de zero: o prazo longo pagou mais do que o curto. Abaixo de zero: o prazo curto pagou mais. A linha horizontal do zero aparece marcada no gráfico.",
+     "ja_se_observou": "Desde 2000, a diferença ficou negativa por períodos longos em três ocasiões: de fevereiro a dezembro de 2000, de janeiro de 2006 a junho de 2007 (com interrupções) e de julho de 2022 a agosto de 2024; em agosto de 2019 ficou negativa por apenas três dias, com valores muito pequenos (dados diários do FRED). Pela datação do NBER, as recessões nos EUA começaram em março de 2001, dezembro de 2007 e fevereiro de 2020. Houve recessão depois das duas primeiras ocasiões, com intervalos diferentes; na tabela do NBER consultada em 16/11/2026, a última recessão listada é a de 2020. Três casos longos são poucos, e uma inversão não garante que uma recessão virá.",
      "termos": [
       "spread",
       "curva_de_juros"
@@ -761,7 +761,7 @@
      "janela_padrao": "tudo",
      "iniciante": true,
      "o_que_e": "Total de ativos do Federal Reserve, o banco central dos EUA, em dólares, publicado toda semana.",
-     "como_ler": "O eixo mostra o valor em dólares, na unidade indicada acima do gráfico. Nos períodos de subida mais rápida houve compras de títulos pelo Fed, entre outras operações, como empréstimos a bancos em 2008 e em 2023; nos de descida, o Fed deixou títulos vencerem sem repor.",
+     "como_ler": "O eixo mostra o valor em dólares, na unidade indicada acima do gráfico. Nos períodos de subida mais rápida houve compras de títulos pelo Fed, entre outras operações, como empréstimos a bancos; nos de descida, o Fed deixou títulos vencerem sem repor.",
      "ja_se_observou": "O balanço cresceu em degraus depois de 2008 e de novo em 2020, e encolheu entre 2018 e 2019 e a partir de 2022. Poucos ciclos, cada um com contexto próprio, que podem não se repetir.",
      "termos": [
       "balanco_bc"
@@ -841,8 +841,8 @@
      "janela_padrao": "tudo",
      "iniciante": true,
      "o_que_e": "É a taxa do título de 10 anos do Tesouro dos EUA menos a taxa do título de 2 anos, em pontos percentuais. Uma diferença entre duas taxas chama-se spread. Quando o resultado é negativo, diz-se que a curva de juros está invertida.",
-     "como_ler": "Acima de zero: o prazo longo pagou mais do que o curto, a situação mais frequente na série. Abaixo de zero: o prazo curto pagou mais. A linha do zero aparece em destaque no gráfico.",
-     "ja_se_observou": "Desde 2000, a diferença ficou negativa por períodos longos em três ocasiões: de fevereiro a dezembro de 2000, de janeiro de 2006 a junho de 2007 (com interrupções) e de julho de 2022 a agosto de 2024; em agosto de 2019 ficou negativa por apenas três dias, com valores muito pequenos (dados diários do FRED). Pela datação do NBER, as recessões nos EUA começaram em março de 2001, dezembro de 2007 e fevereiro de 2020, esta última associada à pandemia. Houve recessão depois das duas primeiras ocasiões, com intervalos diferentes; depois da terceira, o NBER não havia datado nova recessão até 16/11/2026. Três casos longos são poucos, e uma inversão não garante que uma recessão virá.",
+     "como_ler": "Acima de zero: o prazo longo pagou mais do que o curto. Abaixo de zero: o prazo curto pagou mais. A linha do zero aparece em destaque no gráfico.",
+     "ja_se_observou": "Desde 2000, a diferença ficou negativa por períodos longos em três ocasiões: de fevereiro a dezembro de 2000, de janeiro de 2006 a junho de 2007 (com interrupções) e de julho de 2022 a agosto de 2024; em agosto de 2019 ficou negativa por apenas três dias, com valores muito pequenos (dados diários do FRED). Pela datação do NBER, as recessões nos EUA começaram em março de 2001, dezembro de 2007 e fevereiro de 2020. Houve recessão depois das duas primeiras ocasiões, com intervalos diferentes; na tabela do NBER consultada em 16/11/2026, a última recessão listada é a de 2020. Três casos longos são poucos, e uma inversão não garante que uma recessão virá.",
      "termos": [
       "spread",
       "curva_de_juros",
@@ -1109,7 +1109,7 @@
      "janela_padrao": "tudo",
      "iniciante": true,
      "o_que_e": "Preço do cobre em dólares por libra-peso (cerca de 454 gramas). O cobre é usado em construção, redes elétricas e equipamentos eletrônicos.",
-     "como_ler": "Cada ponto é o fechamento de uma semana. O cobre é usado na construção e na indústria, e o preço dele já foi comparado com indicadores de atividade econômica, em especial da China, grande consumidora; a comparação não é prevista nem regra.",
+     "como_ler": "Cada ponto é o fechamento de uma semana. O cobre é usado na construção e na indústria; o preço dele foi comparado a indicadores de atividade econômica, em especial da China, sem relação estável ou regra.",
      "ja_se_observou": "Em 2008 e no início de 2020, períodos de retração da economia mundial, o preço do cobre caiu e depois se recuperou. Duas ocorrências, que podem não se repetir.",
      "termos": [
       "commodities",
@@ -1159,7 +1159,7 @@
      "marcadores": "halvings",
      "o_que_e": "Preço de um bitcoin em dólares, em escala logarítmica (escala em que distâncias iguais no eixo vertical representam variações percentuais iguais). As linhas verticais tracejadas marcam os halvings: as datas em que a quantidade de bitcoins novos criados a cada bloco caiu pela metade, o que está previsto no código do Bitcoin a cada 210 mil blocos, cerca de quatro anos.",
      "como_ler": "Na escala logarítmica, ir de 100 para 1.000 ocupa a mesma altura que ir de 1.000 para 10.000. Isso permite ver no mesmo gráfico fases em que o preço era muito diferente. As linhas tracejadas têm rótulo com o ano de cada halving; os dados começam em 2014, então o halving de 2012 fica fora do gráfico.",
-     "ja_se_observou": "Nos períodos seguintes aos halvings de 2012, 2016 e 2020, o preço em dólares atingiu novos máximos e depois teve quedas de mais da metade do valor. São três sequências de alta e queda e quatro halvings ao todo: quatro ocorrências não são regra, outros fatores atuaram nos mesmos períodos (juros, liquidez, regulação) e o padrão pode não se repetir.",
+     "ja_se_observou": "Nos períodos seguintes aos halvings de 2012, 2016 e 2020, o preço em dólares atingiu novos máximos e depois teve quedas de mais da metade do valor; o gráfico começa em 2014, então o de 2012 não aparece nos dados. São três sequências completas de alta e queda; o halving de 2024 ainda não completou uma. Três casos não são regra, outros fatores atuaram nos mesmos períodos (juros, liquidez, regulação) e o padrão pode não se repetir.",
      "termos": [
       "halving",
       "escala_log",
