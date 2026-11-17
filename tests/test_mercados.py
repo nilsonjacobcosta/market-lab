@@ -301,7 +301,10 @@ class CatalogoTests(unittest.TestCase):
         self.assertIn("geo=PT", col.enderecos(por_id["infl_pt_12m"], HOJE)[0])
         self.assertEqual(col.enderecos(por_id["liq_ea_m3"], HOJE)[0],
                          "https://data-api.ecb.europa.eu/service/data/BSI/M.U2.Y.V.M30.X.1.U2.2300.Z01.E?format=csvdata")
-        self.assertEqual(len(col.enderecos(por_id["infl_br_12m"], HOJE)), 1)
+        ipca = col.enderecos(por_id["infl_br_12m"], HOJE)
+        self.assertEqual(len(ipca), 1)
+        # A API do SGS não devolve a série 13522 sem janela de datas (visto na 1a coleta real, 17/11/2026).
+        self.assertIn("dataInicial=01/01/2000", ipca[0])
 
     def test_selic_em_janelas_de_ate_10_anos(self):
         selic = next(s for s in CATALOGO if s["id"] == "juros_br_selic")
