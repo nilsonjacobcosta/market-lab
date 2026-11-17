@@ -539,7 +539,8 @@
       "verificado": "Chamada real à API em 16/11/2026 com sinceTimePeriod (parâmetro aceito): geo=PT devolveu 2025-06 a 2026-10 (3,9, estimativa); histórico desde 2000 não conferido para PT. Endereço do navegador de dados (url_fonte) não conferido.",
       "defasagem_max_dias": 100,
       "inicio": "2000-01-01",
-      "observacao": "O último mês pode ser estimativa preliminar do Eurostat."
+      "observacao": "O último mês pode ser estimativa preliminar do Eurostat. O conjunto prc_hicp_minr traz para Portugal apenas desde 2025-06 (17 meses na consulta de 16/11/2026); por isso o aceite exige no mínimo 12 pontos nesta série, e o gráfico de inflação mostra uma janela curta para Portugal.",
+      "min_pontos": 12
     },
     {
       "id": "liq_ea_m3",
