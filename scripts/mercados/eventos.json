@@ -1,0 +1,31 @@
+{
+ "descricao": "Eventos marcados nos gráficos do painel Mercados e ciclos. Datas em UTC.",
+ "conferido_em": "2026-11-16",
+ "halvings": [
+  {
+   "data": "2012-11-28",
+   "bloco": 210000,
+   "fonte": "https://mempool.space/block/210000",
+   "horario_utc": "2012-11-28T15:24:38Z"
+  },
+  {
+   "data": "2016-07-09",
+   "bloco": 420000,
+   "fonte": "https://mempool.space/block/420000",
+   "horario_utc": "2016-07-09T16:46:13Z"
+  },
+  {
+   "data": "2020-05-11",
+   "bloco": 630000,
+   "fonte": "https://mempool.space/block/630000",
+   "horario_utc": "2020-05-11T19:23:43Z"
+  },
+  {
+   "data": "2024-04-20",
+   "bloco": 840000,
+   "fonte": "https://mempool.space/block/840000",
+   "horario_utc": "2024-04-20T00:09:27Z"
+  }
+ ],
+ "verificacao": "Horário de cada bloco lido na API do explorador mempool.space em 16/11/2026 (navegador do dono)."
+}

@@ -1,0 +1,68 @@
+name: Atualizar Mercados e ciclos (séries de mercado e macro)
+
+on:
+  schedule:
+    # Dias úteis às 23h10 UTC: depois do fechamento de Nova York no horário de verão (20h UTC) e no
+    # de inverno (21h UTC). A segunda execução (11h10 UTC, terça a sábado) recupera uma execução
+    # perdida; o GitHub pode atrasar ou descartar execuções agendadas. As séries são semanais ou
+    # mensais, então uma coleta por dia útil basta.
+    - cron: "10 23 * * 1-5"
+    - cron: "10 11 * * 2-6"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mercados
+  cancel-in-progress: false
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Código do projeto (main)
+        uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Testes unitários (bloqueiam a atualização se falharem)
+        run: python3 -m unittest tests/test_mercados.py -v
+      - name: Preparar branch de dados (dados-mercados)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          URL="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          if git ls-remote --exit-code --heads "$URL" dados-mercados >/dev/null 2>&1; then
+            git clone --quiet --depth 1 --branch dados-mercados "$URL" _dados
+          else
+            mkdir _dados
+            git -C _dados init -q -b dados-mercados
+            git -C _dados remote add origin "$URL"
+          fi
+          mkdir -p _novo
+      - name: Coletar séries
+        id: coleta
+        env:
+          # Grava em _novo; o arquivo publicado (_dados) só é trocado depois do aceite.
+          MERCADOS_SAIDA: ${{ github.workspace }}/_novo/mercados.json
+          MERCADOS_ANTERIOR: ${{ github.workspace }}/_dados/mercados.json
+        run: python3 scripts/mercados/coletar_mercados.py
+        continue-on-error: true   # falha geral de rede mantém o arquivo anterior; a página avisa se ficar velho
+      - name: Aceite (trava da publicação)
+        id: aceite
+        if: steps.coleta.outcome == 'success'
+        run: python3 scripts/mercados/aceite.py _novo/mercados.json --anterior _dados/mercados.json
+      - name: Publicar na branch dados-mercados se houve mudança
+        if: steps.coleta.outcome == 'success' && steps.aceite.outcome == 'success'
+        working-directory: _dados
+        run: |
+          cp ../_novo/mercados.json mercados.json
+          git config user.name "market-lab bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add mercados.json
+          if git diff --cached --quiet; then echo "Sem mudanças"; exit 0; fi
+          git commit -m "Mercados: atualização automática $(date -u +'%Y-%m-%d %H:%M') UTC"
+          git pull --rebase origin dados-mercados || true
+          git push origin HEAD:dados-mercados
