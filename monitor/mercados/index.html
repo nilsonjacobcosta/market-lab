@@ -194,10 +194,14 @@ function casasDe(passo) {
   return Math.min(6, Math.ceil(-Math.log10(passo) - 1e-9));
 }
 const fmtN = (v, casas) => v == null || !isFinite(v) ? "—" : v.toLocaleString("pt-BR", {minimumFractionDigits: casas, maximumFractionDigits: casas});
-function fmtValor(v) {            // valor de leitura (tabela, legenda): casas conforme a grandeza
+function casasSerie(p) {           // casas decimais de leitura conforme a grandeza típica da série
+  let m = 0; for (let i = Math.max(0, p.length - 520); i < p.length; i++) m = Math.max(m, Math.abs(p[i][1]));
+  return m >= 1000 ? 0 : m >= 100 ? 1 : m >= 1 ? 2 : 4;
+}
+function fmtValor(v, casas = 2) {  // valor de leitura (tabela, legenda), com sinal de menos tipográfico
   if (v == null || !isFinite(v)) return "—";
-  const a = Math.abs(v);
-  return fmtN(v, a >= 1000 ? 0 : a >= 100 ? 1 : a >= 1 ? 2 : 4);
+  const t = fmtN(Math.abs(v), casas);
+  return (v < 0 && /[1-9]/.test(t) ? "−" : "") + t;
 }
 
 /* ---------- estado na URL ---------- */
@@ -335,7 +339,7 @@ function criarGrafico(host, g, ids) {
   const vis = series.filter(cabe), fora = series.filter(x => !cabe(x));
   const unidades = [...new Set(vis.map(x => x.s.unidade || ""))];
   const unidade = unidades.length > 1 ? `${g.unidade_eixo} (${unidades.join("; ")})` : u0;
-  vis.forEach((x, i) => { x.cor = CORES[i]; x.traco = TRACOS[i]; x.tracoNome = TRACO_NOME[i]; });
+  vis.forEach((x, i) => { x.casas = casasSerie(x.p); x.cor = CORES[i]; x.traco = TRACOS[i]; x.tracoNome = TRACO_NOME[i]; });
   const precoUnico = !!g.preco && vis.length === 1;
   const podeMM = avanc && precoUnico && vis[0].s.periodicidade === "semanal";
   let janela = avanc ? (estado.janela[g.id] || g.janela_padrao || "10a") : (g.janela_padrao || "10a");
@@ -368,7 +372,7 @@ function criarGrafico(host, g, ids) {
     const anos = (JANELAS.find(j => j[0] === janela) || JANELAS[2])[2];
     const tIni = anos ? Math.max(tIniTudo, tFim - anos * 365.25 * 864e5) : tIniTudo;
     const linhas = vis.map(x => ({...x, q: recorte(x.p, tIni, tFim), nome: x.s.nome || x.id, larg: 1.8}));
-    if (comMM) MM.forEach(m => linhas.push({id: "mm" + m.n, nome: m.rot, cor: m.cor, traco: m.traco, tracoNome: m.nome, larg: 1.2, mm: true,
+    if (comMM) MM.forEach(m => linhas.push({id: "mm" + m.n, nome: m.rot, cor: m.cor, traco: m.traco, tracoNome: m.nome, larg: 1.2, mm: true, casas: vis[0].casas,
       q: recorte(mediaMovel(vis[0].p, m.n), tIni, tFim)}));
     let min = Infinity, max = -Infinity;
     linhas.forEach(l => l.q.forEach(([, v]) => { if (v < min) min = v; if (v > max) max = v; }));
@@ -460,7 +464,7 @@ function criarGrafico(host, g, ids) {
     const amostra = (l) => `<svg width="30" height="10" viewBox="0 0 30 10" aria-hidden="true"><line x1="1" y1="5" x2="29" y2="5" stroke="${l.cor}" stroke-width="${l.mm ? 2 : 2.6}" stroke-dasharray="${l.traco.join(" ")}"/></svg>`;
     R("meta").innerHTML = `Unidade: <b>${esc(unidade || "não informada")}</b> · Escala ${V.log ? "logarítmica" : "linear"} · Janela: ${esc((JANELAS.find(j => j[0] === janela) || [])[1] || janela)} (${dataBR(isoDe(V.tIni))} a ${dataBR(isoDe(V.tFim))})`;
     R("leg").innerHTML = V.linhas.map(l => { const u = l.q[l.q.length - 1];
-      return `<li>${amostra(l)}<span><span class="nm">${esc(l.nome)}</span> <span class="sr">(${l.tracoNome})</span>${u ? ` — último: ${fmtValor(u[1])} em ${dataBR(isoDe(u[0]))}${l.s && l.s.ultimo_parcial ? " (semana em andamento)" : ""}` : " — sem pontos nesta janela"}</span></li>`; }).join("");
+      return `<li>${amostra(l)}<span><span class="nm">${esc(l.nome)}</span> <span class="sr">(${l.tracoNome})</span>${u ? ` — último: ${fmtValor(u[1], l.casas)} em ${dataBR(isoDe(u[0]))}${l.s && l.s.ultimo_parcial ? " (semana em andamento)" : ""}` : " — sem pontos nesta janela"}</span></li>`; }).join("");
     const notas = [];
     if (V.logRecusado) notas.push("A escala logarítmica não foi aplicada porque a série tem valores zero ou negativos nesta janela.");
     if (comMM) notas.push("Médias móveis: média aritmética dos últimos 10 fechamentos semanais (aprox. 50 dias) e dos últimos 40 (aprox. 200 dias), recalculada a cada semana. Descrevem o passado; não são sinal de compra ou venda.");
@@ -476,13 +480,13 @@ function criarGrafico(host, g, ids) {
       return `<li>${esc(s.nome || x.id)}: fonte ${fonte}${s.codigo ? ` (código ${esc(s.codigo)})` : ""} · último dado ${dataBR(s.ultimo_dado)}${s.ultimo_parcial ? " (semana em andamento: valor parcial)" : ""} · periodicidade ${esc(s.periodicidade || "não informada")}${s.ajuste_sazonal && !/^n/i.test(String(s.ajuste_sazonal)) ? " · dessazonalizada" : ""}${tag}</li>`; }).join("");
     // resumo acessível
     const partes = vis.map((x, i) => { const q = V.linhas[i].q; if (!q.length) return `${x.s.nome || x.id}: sem pontos na janela`;
-      return `${x.s.nome || x.id} (${x.tracoNome}): de ${dataBR(isoDe(q[0][0]))} a ${dataBR(isoDe(q[q.length - 1][0]))}, primeiro valor ${fmtValor(q[0][1])}, último valor ${fmtValor(q[q.length - 1][1])}`; });
+      return `${x.s.nome || x.id} (${x.tracoNome}): de ${dataBR(isoDe(q[0][0]))} a ${dataBR(isoDe(q[q.length - 1][0]))}, primeiro valor ${fmtValor(q[0][1], x.casas)}, último valor ${fmtValor(q[q.length - 1][1], x.casas)}`; });
     plot.setAttribute("aria-label", `Gráfico de linha: ${g.titulo}. Unidade: ${unidade || "não informada"}, escala ${V.log ? "logarítmica" : "linear"}. ${partes.join(". ")}.${halv ? " Linhas verticais tracejadas marcam os halvings." : ""} A tabela logo abaixo traz os últimos 12 pontos.`);
     // tabela com os últimos 12 pontos
     const datas = [...new Set(vis.flatMap(x => x.p.slice(-12).map(q => q[0])))].sort((a, b) => a - b).slice(-12);
     const mapa = vis.map(x => new Map(x.p.slice(-40).map(q => [q[0], q[1]])));
     R("tabela").innerHTML = `<table><caption>Últimos 12 pontos · unidade: ${esc(unidade || "não informada")}</caption><thead><tr><th scope="col">Data</th>${vis.map(x => `<th scope="col">${esc(x.s.nome || x.id)}</th>`).join("")}</tr></thead><tbody>`
-      + datas.map(t => `<tr><td>${dataBR(isoDe(t))}</td>${mapa.map(m => `<td>${m.has(t) ? fmtValor(m.get(t)) : "—"}</td>`).join("")}</tr>`).join("") + "</tbody></table>";
+      + datas.map(t => `<tr><td>${dataBR(isoDe(t))}</td>${mapa.map((m, i) => `<td>${m.has(t) ? fmtValor(m.get(t), vis[i].casas) : "—"}</td>`).join("")}</tr>`).join("") + "</tbody></table>";
     host.querySelectorAll("[data-jan]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.jan === janela)));
     host.querySelectorAll("[data-esc]").forEach(b => { b.setAttribute("aria-pressed", String(b.dataset.esc === escala)); });
     host.querySelectorAll("[data-mm]").forEach(b => b.setAttribute("aria-pressed", String((b.dataset.mm === "1") === comMM)));
@@ -491,13 +495,13 @@ function criarGrafico(host, g, ids) {
   function leitura() {
     const el = R("leitura");
     if (cursor == null) { el.textContent = DICA; el.classList.add("vazia"); return; }
-    const itens = V.linhas.map(l => { const pt = maisProximo(l.q, cursor); return pt ? {nome: l.nome, pt} : null; }).filter(Boolean);
+    const itens = V.linhas.map(l => { const pt = maisProximo(l.q, cursor); return pt ? {nome: l.nome, pt, casas: l.casas} : null; }).filter(Boolean);
     if (!itens.length) { el.textContent = DICA; el.classList.add("vazia"); return; }
     const mesmaData = itens.every(i => i.pt[0] === itens[0].pt[0]);
     el.classList.remove("vazia");
     el.textContent = mesmaData
-      ? `${dataBR(isoDe(itens[0].pt[0]))} — ` + itens.map(i => `${i.nome}: ${fmtValor(i.pt[1])}`).join(" · ") + (unidade ? ` (${unidade})` : "")
-      : itens.map(i => `${i.nome}: ${fmtValor(i.pt[1])} em ${dataBR(isoDe(i.pt[0]))}`).join(" · ") + (unidade ? ` (${unidade})` : "");
+      ? `${dataBR(isoDe(itens[0].pt[0]))} — ` + itens.map(i => `${i.nome}: ${fmtValor(i.pt[1], i.casas)}`).join(" · ") + (unidade ? ` (${unidade})` : "")
+      : itens.map(i => `${i.nome}: ${fmtValor(i.pt[1], i.casas)} em ${dataBR(isoDe(i.pt[0]))}`).join(" · ") + (unidade ? ` (${unidade})` : "");
   }
   function atualizar() { cursor = null; prepararVista(); textos(); desenhar(); }
 
@@ -660,8 +664,11 @@ function desenharGlossario() {
 function desenharRodapeFontes() {
   const d = estado.dados; if (!d || !d.series) return;
   const mapa = new Map();
-  Object.values(d.series).forEach(s => { if (s.fonte && !mapa.has(s.fonte)) mapa.set(s.fonte, s.url_fonte || ""); });
-  $("rod-fontes").innerHTML = "<b>Fontes das séries próprias.</b> " + [...mapa].map(([f, u]) => u ? `<a href="${esc(u)}" rel="noopener">${esc(f)}</a>` : esc(f)).join(" · ")
+  // agrupa por instituição: "Yahoo Finance (^GSPC)" e "Yahoo Finance (^NDX)" viram uma entrada só
+  Object.values(d.series).forEach(s => { if (!s.fonte) return;
+    const f = /^Cálculo do market-lab/i.test(s.fonte) ? "cálculos do market-lab sobre essas séries" : s.fonte.split(" (")[0].trim();
+    mapa.set(f, (mapa.get(f) || 0) + 1); });
+  $("rod-fontes").innerHTML = "<b>Fontes das séries próprias.</b> " + [...mapa].map(([f, n]) => `${esc(f)} (${n} ${n === 1 ? "série" : "séries"})`).join(" · ")
     + ". Cada gráfico traz o link da sua série, o código e a data do último dado.";
 }
 

@@ -85,7 +85,7 @@ Coleta por `scripts/mercados/coletar_mercados.py`, a partir de `scripts/mercados
 
 Endereços das APIs: BCB `https://api.bcb.gov.br/dados/serie/bcdata.sgs.{codigo}/dados?formato=json`; FRED `https://fred.stlouisfed.org/graph/fredgraph.csv?id={codigo}`; Eurostat `https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr`; BCE `https://data-api.ecb.europa.eu/service/data/{chave}?format=csvdata`; Yahoo Finance, endpoint `chart`, como nos outros painéis.
 
-Halvings do Bitcoin: datas em `scripts/mercados/eventos.json`, com fonte. A data de 2012 diverge em um dia entre as fontes consultadas (27 ou 28 de novembro) e nenhuma foi conferida em explorador de blocos.
+Halvings do Bitcoin: datas em `scripts/mercados/eventos.json`, copiadas para `conjuntos.json`. Foram conferidas em 16/11/2026 pelo horário (UTC) dos blocos 210000, 420000, 630000 e 840000 no explorador [mempool.space](https://mempool.space/block/840000). Fontes secundárias divergem em um dia na data de 2012 (27 ou 28 de novembro); vale a do explorador, 28/11/2012 em UTC.
 
 ## Atualização e travas
 
@@ -114,7 +114,7 @@ Os widgets do TradingView carregam scripts de terceiros. Segundo a [documentaç�
 
 ## Como acrescentar um conjunto
 
-Edite `monitor/mercados/conjuntos.json` e acrescente um item em `conjuntos`: até 6 gráficos, até 4 com `iniciante: true`, até 4 séries da mesma unidade por gráfico. Série nova entra antes em `scripts/mercados/catalogo_series.json`, com o código conferido na fonte. Os textos seguem as regras de redação de `docs/monitor-mercados/avaliacao-proposta.md`.
+Edite `monitor/mercados/conjuntos.json` e acrescente um item em `conjuntos`: até 6 gráficos, até 4 com `iniciante: true`, até 4 séries da mesma unidade por gráfico. Séries de unidades diferentes nunca dividem o eixo: a página exibe só as da unidade da primeira e avisa em texto. A exceção é declarada com `unidade_eixo: "%"`, para sobrepor séries todas em porcentagem com rótulos diferentes (`% a.a.` e `% em 12 meses`). Campos opcionais: `preco: true` (liga escala linear/log e médias móveis de 10 e 40 semanas no Avançado), `marcadores: "halvings"`, `notas` no conjunto (frase com link) e, nos gráficos `tipo: "tv"`, `simbolo_tv`, `serie_alternativa` e `padrao`. Série nova entra antes em `scripts/mercados/catalogo_series.json`, com o código conferido na fonte. Os textos seguem as regras de redação de `docs/monitor-mercados/avaliacao-proposta.md`.
 
 ## Como testar localmente
 

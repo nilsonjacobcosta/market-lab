@@ -6,9 +6,9 @@
    "nome": "Halvings do Bitcoin",
    "verificado": true,
    "conferido_em": "2026-11-16",
-   "fonte": "Kraken, Bitcoin halving history (datas) e CoinGecko (números dos blocos); copiado de scripts/mercados/eventos.json",
-   "url_fonte": "https://www.kraken.com/en-gb/learn/bitcoin-halving-history",
-   "pendencia": "A data de 2012 diverge em um dia entre as fontes (27 ou 28 de novembro, provável diferença de fuso horário); nenhuma data foi conferida em explorador de blocos.",
+   "fonte": "mempool.space, explorador de blocos do Bitcoin (data e hora de cada bloco, em UTC)",
+   "url_fonte": "https://mempool.space/block/840000",
+   "pendencia": "Datas conferidas em 16/11/2026 pelo horário dos blocos 210000, 420000, 630000 e 840000 no explorador mempool.space (UTC). No horário de Brasília, o halving de 2024 caiu em 19/04/2024.",
    "itens": [
     {
      "data": "2012-11-28",
@@ -133,7 +133,7 @@
      "iniciante": true,
      "o_que_e": "USD/BRL é um par de moedas: mostra quantos reais custa um dólar americano. O mercado em que moedas são trocadas umas pelas outras chama-se forex (de foreign exchange, câmbio em inglês).",
      "como_ler": "A linha subindo significa que foram necessários mais reais para cada dólar, ou seja, o real ficou mais fraco frente ao dólar. A linha descendo significa real mais forte. O par não mostra, sozinho, se o movimento veio do real ou do dólar.",
-     "ja_se_observou": "Em 2002, em 2015 e em 2020 o dólar subiu com força frente ao real; cada episódio coincidiu com um contexto diferente (eleição, recessão e pandemia, respectivamente), sempre com mais de um fator em jogo. Três episódios não formam regra e o padrão pode não se repetir.",
+     "ja_se_observou": "Em 2015 e em 2020 o dólar subiu com força frente ao real; cada episódio coincidiu com um contexto diferente (recessão e pandemia, respectivamente), sempre com mais de um fator em jogo. Houve outra alta forte em 2002, antes do início da série deste gráfico. Poucos episódios não formam regra e o padrão pode não se repetir.",
      "termos": [
       "forex",
       "par_de_moedas"
@@ -335,7 +335,7 @@
    "id": "brasil-portugal-asia",
    "nome": "Brasil, Portugal e Ásia",
    "subtitulo": "Índices de ações do Brasil, de Portugal e de três mercados asiáticos, cada um na sua moeda.",
-   "nao_diz": "Cada índice está na moeda do seu país (real, euro, iene, yuan, dólar de Hong Kong), sem conversão. Um índice que subiu em moeda local pode ter rendido menos, ou mais, para quem mede o resultado em outra moeda. Os gráficos também não mostram dividendos, custos nem impostos.",
+   "nao_diz": "Cada índice está na moeda do seu país (real, euro, iene, yuan, dólar de Hong Kong), sem conversão. Um índice que subiu em moeda local pode ter rendido menos, ou mais, para quem mede o resultado em outra moeda. Alguns índices incluem dividendos (o Ibovespa, por exemplo) e outros não; nenhum mostra custos nem impostos.",
    "graficos": [
     {
      "id": "bpa-ibov",
@@ -500,7 +500,7 @@
      "iniciante": true,
      "o_que_e": "É a taxa do título de 10 anos menos a taxa do título de 2 anos, em pontos percentuais. Uma diferença entre duas taxas chama-se spread. Quando o resultado é negativo, diz-se que a curva de juros está invertida.",
      "como_ler": "Acima de zero: o prazo longo pagou mais do que o curto, a situação mais frequente na série. Abaixo de zero: o prazo curto pagou mais. A linha horizontal do zero aparece marcada no gráfico.",
-     "ja_se_observou": "A curva invertida antecedeu várias recessões nos EUA, com prazos muito variáveis e alarmes falsos. Entre 2022 e 2024 a diferença ficou negativa por um longo período sem que uma recessão fosse declarada nesse intervalo. Poucas ocorrências, e o padrão pode não se repetir.",
+     "ja_se_observou": "A curva ficou invertida antes das recessões de 2001 e de 2008–2009 nos EUA, com intervalos diferentes entre a inversão e a recessão. Entre 2022 e 2024 a diferença ficou negativa por um longo período sem que uma recessão fosse declarada nesse intervalo. São três episódios neste gráfico: poucos casos, e uma inversão não garante que uma recessão virá.",
      "termos": [
       "spread",
       "curva_de_juros"
@@ -567,7 +567,7 @@
      "iniciante": true,
      "o_que_e": "Sobrepõe a Selic (% ao ano) e a inflação brasileira acumulada em 12 meses medida pelo IPCA, o índice oficial de preços ao consumidor do Brasil, calculado pelo IBGE. As duas séries estão em porcentagem.",
      "como_ler": "A distância vertical entre as duas linhas é, aproximadamente, o juro real mostrado no gráfico ao lado. Quando a linha do IPCA ficou acima da Selic, o juro básico perdeu para a inflação naquele período.",
-     "ja_se_observou": "Em 2020 e 2021 o IPCA em 12 meses ficou acima da Selic; de 2022 em diante a Selic ficou acima do IPCA. Um ciclo observado, com vários fatores, que pode não se repetir.",
+     "ja_se_observou": "Entre o fim de 2020 e o início de 2022 o IPCA em 12 meses ficou acima da Selic na maior parte dos meses; da metade de 2022 em diante a Selic ficou acima do IPCA. Um ciclo observado, com vários fatores, que pode não se repetir.",
      "termos": [
       "selic",
       "ipca",
@@ -587,7 +587,7 @@
      "iniciante": true,
      "o_que_e": "É a Selic menos o IPCA acumulado nos 12 meses anteriores. Chama-se juro real ex-post: uma conta feita com a inflação que já aconteceu. É uma aproximação simples, por subtração.",
      "como_ler": "Acima de zero: a Selic superou a inflação passada. Abaixo de zero: ficou atrás dela. A linha do zero aparece marcada. O número não desconta impostos nem taxas de nenhuma aplicação.",
-     "ja_se_observou": "Entre 2020 e 2021 essa conta ficou negativa; nos anos seguintes voltou a ficar positiva. Um ciclo observado, que pode não se repetir.",
+     "ja_se_observou": "Entre o fim de 2020 e o início de 2022 essa conta ficou negativa na maior parte dos meses; da metade de 2022 em diante voltou a ficar positiva. Um ciclo observado, que pode não se repetir.",
      "termos": [
       "juro_real",
       "selic",
@@ -703,7 +703,7 @@
      "iniciante": true,
      "o_que_e": "O balanço de um banco central é o total de ativos que ele detém, como títulos públicos comprados no mercado e empréstimos a bancos. O gráfico mostra quanto esse total variou, em porcentagem, em relação a 12 meses antes, para o Federal Reserve (Fed, EUA) e para o Eurosistema (o Banco Central Europeu, BCE, mais os bancos centrais nacionais do euro).",
      "como_ler": "Acima de zero: o balanço cresceu em 12 meses. Abaixo de zero: encolheu. A variação percentual permite pôr no mesmo eixo balanços que estão em moedas diferentes. Essa é a primeira das três camadas e fica dentro do sistema bancário.",
-     "ja_se_observou": "Em 2008–2009 e em 2020 os dois balanços cresceram depressa, períodos em que os bancos centrais compraram grandes volumes de títulos. A partir de 2022 passaram a encolher. Foram dois episódios de expansão, com contextos diferentes, que podem não se repetir.",
+     "ja_se_observou": "Em 2008–2009 e em 2020 os dois balanços cresceram depressa, períodos em que os bancos centrais ampliaram empréstimos a bancos e compras de títulos (no Eurosistema, em 2008–2009, sobretudo empréstimos a bancos). A partir de 2022 passaram a encolher. Foram dois episódios de expansão, com contextos diferentes, que podem não se repetir.",
      "termos": [
       "balanco_bc",
       "base_monetaria",
@@ -808,7 +808,7 @@
   {
    "id": "risco-credito",
    "nome": "Risco e crédito",
-   "subtitulo": "Quatro termômetros de tensão nos mercados: o VIX, a curva de juros americana, o dólar e o ouro.",
+   "subtitulo": "Quatro indicadores acompanhados em períodos de tensão nos mercados: o VIX, a curva de juros americana, o dólar e o ouro.",
    "nao_diz": "Estes indicadores mostram o que os preços embutiam em cada momento, e não o que aconteceu depois. Níveis altos ou baixos não informam a direção seguinte das ações. Cada gráfico tem unidade própria e eixo próprio; as alturas das linhas não são comparáveis entre si. O VIX e a curva de juros se referem ao mercado americano.",
    "graficos": [
     {
@@ -842,7 +842,7 @@
      "iniciante": true,
      "o_que_e": "É a taxa do título de 10 anos do Tesouro dos EUA menos a taxa do título de 2 anos, em pontos percentuais. Uma diferença entre duas taxas chama-se spread. Quando o resultado é negativo, diz-se que a curva de juros está invertida.",
      "como_ler": "Acima de zero: o prazo longo pagou mais do que o curto, a situação mais frequente na série. Abaixo de zero: o prazo curto pagou mais. A linha do zero aparece em destaque no gráfico.",
-     "ja_se_observou": "A curva invertida antecedeu várias recessões nos EUA, com prazos muito variáveis e alarmes falsos. Entre 2022 e 2024 a diferença ficou negativa por um longo período sem que uma recessão fosse declarada nesse intervalo. Poucas ocorrências, e o padrão pode não se repetir.",
+     "ja_se_observou": "A curva ficou invertida antes das recessões de 2001 e de 2008–2009 nos EUA, com intervalos diferentes entre a inversão e a recessão. Entre 2022 e 2024 a diferença ficou negativa por um longo período sem que uma recessão fosse declarada nesse intervalo. São três episódios neste gráfico: poucos casos, e uma inversão não garante que uma recessão virá.",
      "termos": [
       "spread",
       "curva_de_juros",
@@ -937,7 +937,7 @@
      "iniciante": true,
      "o_que_e": "Forex é o mercado em que moedas são trocadas umas pelas outras. Um par de moedas, como USD/BRL, mostra quantas unidades da segunda moeda (real) custa uma unidade da primeira (dólar americano).",
      "como_ler": "USD/BRL subindo significa real mais fraco: foram necessários mais reais para cada dólar. USD/BRL descendo significa real mais forte. O gráfico não mostra se o movimento veio do Brasil ou dos EUA.",
-     "ja_se_observou": "Em 2002, em 2015 e em 2020 o dólar subiu com força frente ao real, em contextos diferentes e sempre com mais de um fator. Três episódios não formam regra e o padrão pode não se repetir.",
+     "ja_se_observou": "Em 2015 e em 2020 o dólar subiu com força frente ao real, em contextos diferentes e sempre com mais de um fator. Houve outra alta forte em 2002, antes do início da série própria deste painel. Poucos episódios não formam regra e o padrão pode não se repetir.",
      "termos": [
       "forex",
       "par_de_moedas",
@@ -1181,7 +1181,7 @@
      "escala": "log",
      "janela_padrao": "1a",
      "iniciante": true,
-     "o_que_e": "Cotação do bitcoin em dólares na corretora Bitstamp, exibida por um widget do TradingView. O Bitcoin é negociado sem parar, inclusive em fins de semana, e o preço varia um pouco de uma corretora para outra.",
+     "o_que_e": "Cotação do bitcoin em dólares em uma plataforma de negociação, exibida por um widget do TradingView. O Bitcoin é negociado sem parar, inclusive em fins de semana, e o preço varia um pouco de uma plataforma para outra.",
      "como_ler": "O widget mostra o período recente. Oscilações de vários por cento em um único dia foram comuns no histórico do Bitcoin.",
      "ja_se_observou": "Em 2018 e em 2022 o preço caiu mais da metade em relação ao pico anterior. Dois episódios dentro de um histórico curto, que podem não se repetir.",
      "termos": [

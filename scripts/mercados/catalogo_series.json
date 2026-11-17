@@ -11,7 +11,7 @@
    "periodicidade": "semanal",
    "unidade": "pontos",
    "ajuste_sazonal": null,
-   "verificado": "Ticker em uso no painel de ativos (scripts/ativos/catalogo.py).",
+   "verificado": "Resposta da API do Yahoo conferida em 16/11/2026 (navegador do dono): HTTP 200, nome do instrumento \"S&P 500\", granularidade semanal com period1/period2. Valores não comparados com a bolsa de origem.",
    "defasagem_max_dias": 12,
    "inicio": "2000-01-01",
    "observacao": "Barra semanal do Yahoo: a data é o início da semana e o valor é o último fechamento dela; a semana em curso traz a cotação mais recente e é parcial (campo ultimo_parcial). A coleta usa period1/period2 com interval=1wk, porque range=max devolve granularidade mensal ou trimestral (teste real de 16/11/2026)."
@@ -39,7 +39,7 @@
    "periodicidade": "semanal",
    "unidade": "pontos",
    "ajuste_sazonal": null,
-   "verificado": "Ticker em uso no painel de ativos (scripts/ativos/catalogo.py).",
+   "verificado": "Resposta da API do Yahoo conferida em 16/11/2026 (navegador do dono): HTTP 200, nome do instrumento \"Dow Jones Industrial Average\", granularidade semanal com period1/period2. Valores não comparados com a bolsa de origem.",
    "defasagem_max_dias": 12,
    "inicio": "2000-01-01",
    "observacao": "Barra semanal do Yahoo: a data é o início da semana e o valor é o último fechamento dela; a semana em curso traz a cotação mais recente e é parcial (campo ultimo_parcial). A coleta usa period1/period2 com interval=1wk, porque range=max devolve granularidade mensal ou trimestral (teste real de 16/11/2026)."
@@ -53,7 +53,7 @@
    "periodicidade": "semanal",
    "unidade": "pontos",
    "ajuste_sazonal": null,
-   "verificado": "Ticker em uso no painel de ativos (scripts/ativos/catalogo.py).",
+   "verificado": "Resposta da API do Yahoo conferida em 16/11/2026 (navegador do dono): HTTP 200, nome do instrumento \"DAX P\", granularidade semanal com period1/period2. Valores não comparados com a bolsa de origem.",
    "defasagem_max_dias": 12,
    "inicio": "2000-01-01",
    "observacao": "O DAX é um índice de retorno total (inclui dividendos), diferente dos demais índices de preço. Barra semanal do Yahoo: a data é o início da semana e o valor é o último fechamento dela; a semana em curso traz a cotação mais recente e é parcial (campo ultimo_parcial). A coleta usa period1/period2 com interval=1wk, porque range=max devolve granularidade mensal ou trimestral (teste real de 16/11/2026)."
@@ -67,7 +67,7 @@
    "periodicidade": "semanal",
    "unidade": "pontos",
    "ajuste_sazonal": null,
-   "verificado": "Ticker em uso no painel de ativos (scripts/ativos/catalogo.py). Resposta da API em 16/11/2026 (navegador do dono): 1027 pontos semanais desde 2007-03-25.",
+   "verificado": "Resposta da API do Yahoo conferida em 16/11/2026 (navegador do dono): HTTP 200, nome do instrumento \"EURO STOXX 50 I\", granularidade semanal com period1/period2. Valores não comparados com a bolsa de origem.",
    "defasagem_max_dias": 12,
    "inicio": "2000-01-01",
    "observacao": "Histórico disponível na fonte a partir de março de 2007. Barra semanal do Yahoo: a data é o início da semana e o valor é o último fechamento dela; a semana em curso traz a cotação mais recente e é parcial (campo ultimo_parcial). A coleta usa period1/period2 com interval=1wk, porque range=max devolve granularidade mensal ou trimestral (teste real de 16/11/2026)."
@@ -81,7 +81,7 @@
    "periodicidade": "semanal",
    "unidade": "pontos",
    "ajuste_sazonal": null,
-   "verificado": "Ticker em uso no painel de ativos (scripts/ativos/catalogo.py).",
+   "verificado": "Resposta da API do Yahoo conferida em 16/11/2026 (navegador do dono): HTTP 200, nome do instrumento \"FTSE 100\", granularidade semanal com period1/period2. Valores não comparados com a bolsa de origem.",
    "defasagem_max_dias": 12,
    "inicio": "2000-01-01",
    "observacao": "Barra semanal do Yahoo: a data é o início da semana e o valor é o último fechamento dela; a semana em curso traz a cotação mais recente e é parcial (campo ultimo_parcial). A coleta usa period1/period2 com interval=1wk, porque range=max devolve granularidade mensal ou trimestral (teste real de 16/11/2026)."
@@ -95,7 +95,7 @@
    "periodicidade": "semanal",
    "unidade": "pontos",
    "ajuste_sazonal": null,
-   "verificado": "Ticker em uso no painel de ativos (scripts/ativos/catalogo.py).",
+   "verificado": "Resposta da API do Yahoo conferida em 16/11/2026 (navegador do dono): HTTP 200, nome do instrumento \"IBOVESPA\", granularidade semanal com period1/period2. Valores não comparados com a bolsa de origem.",
    "defasagem_max_dias": 12,
    "inicio": "2000-01-01",
    "observacao": "Barra semanal do Yahoo: a data é o início da semana e o valor é o último fechamento dela; a semana em curso traz a cotação mais recente e é parcial (campo ultimo_parcial). A coleta usa period1/period2 com interval=1wk, porque range=max devolve granularidade mensal ou trimestral (teste real de 16/11/2026)."
@@ -123,7 +123,7 @@
    "periodicidade": "semanal",
    "unidade": "pontos",
    "ajuste_sazonal": null,
-   "verificado": "Ticker em uso no painel de ativos (scripts/ativos/catalogo.py).",
+   "verificado": "Resposta da API do Yahoo conferida em 16/11/2026 (navegador do dono): HTTP 200, nome do instrumento \"Nikkei 225\", granularidade semanal com period1/period2. Valores não comparados com a bolsa de origem.",
    "defasagem_max_dias": 12,
    "inicio": "2000-01-01",
    "observacao": "Barra semanal do Yahoo: a data é o início da semana e o valor é o último fechamento dela; a semana em curso traz a cotação mais recente e é parcial (campo ultimo_parcial). A coleta usa period1/period2 com interval=1wk, porque range=max devolve granularidade mensal ou trimestral (teste real de 16/11/2026)."
@@ -137,7 +137,7 @@
    "periodicidade": "semanal",
    "unidade": "pontos",
    "ajuste_sazonal": null,
-   "verificado": "Ticker em uso no painel de ativos (scripts/ativos/catalogo.py).",
+   "verificado": "Resposta da API do Yahoo conferida em 16/11/2026 (navegador do dono): HTTP 200, nome do instrumento \"HANG SENG INDEX\", granularidade semanal com period1/period2. Valores não comparados com a bolsa de origem.",
    "defasagem_max_dias": 12,
    "inicio": "2000-01-01",
    "observacao": "Barra semanal do Yahoo: a data é o início da semana e o valor é o último fechamento dela; a semana em curso traz a cotação mais recente e é parcial (campo ultimo_parcial). A coleta usa period1/period2 com interval=1wk, porque range=max devolve granularidade mensal ou trimestral (teste real de 16/11/2026)."
@@ -151,7 +151,7 @@
    "periodicidade": "semanal",
    "unidade": "pontos",
    "ajuste_sazonal": null,
-   "verificado": "Ticker em uso no painel de ativos (scripts/ativos/catalogo.py).",
+   "verificado": "Resposta da API do Yahoo conferida em 16/11/2026 (navegador do dono): HTTP 200, nome do instrumento \"SSE Composite Index\", granularidade semanal com period1/period2. Valores não comparados com a bolsa de origem.",
    "defasagem_max_dias": 12,
    "inicio": "2000-01-01",
    "observacao": "Barra semanal do Yahoo: a data é o início da semana e o valor é o último fechamento dela; a semana em curso traz a cotação mais recente e é parcial (campo ultimo_parcial). A coleta usa period1/period2 com interval=1wk, porque range=max devolve granularidade mensal ou trimestral (teste real de 16/11/2026)."
@@ -179,7 +179,7 @@
    "periodicidade": "semanal",
    "unidade": "pontos",
    "ajuste_sazonal": null,
-   "verificado": "Ticker em uso no painel de ativos (scripts/ativos/catalogo.py).",
+   "verificado": "Resposta da API do Yahoo conferida em 16/11/2026 (navegador do dono): HTTP 200, nome do instrumento \"CBOE Volatility Index\", granularidade semanal com period1/period2. Valores não comparados com a bolsa de origem.",
    "defasagem_max_dias": 12,
    "inicio": "2000-01-01",
    "observacao": "Barra semanal do Yahoo: a data é o início da semana e o valor é o último fechamento dela; a semana em curso traz a cotação mais recente e é parcial (campo ultimo_parcial). A coleta usa period1/period2 com interval=1wk, porque range=max devolve granularidade mensal ou trimestral (teste real de 16/11/2026)."
@@ -193,7 +193,7 @@
    "periodicidade": "semanal",
    "unidade": "pontos",
    "ajuste_sazonal": null,
-   "verificado": "Ticker em uso no painel de ativos (scripts/ativos/catalogo.py).",
+   "verificado": "Resposta da API do Yahoo conferida em 16/11/2026 (navegador do dono): HTTP 200, nome do instrumento \"US Dollar Index\", granularidade semanal com period1/period2. Valores não comparados com a bolsa de origem.",
    "defasagem_max_dias": 12,
    "inicio": "2000-01-01",
    "observacao": "Barra semanal do Yahoo: a data é o início da semana e o valor é o último fechamento dela; a semana em curso traz a cotação mais recente e é parcial (campo ultimo_parcial). A coleta usa period1/period2 com interval=1wk, porque range=max devolve granularidade mensal ou trimestral (teste real de 16/11/2026)."
@@ -207,7 +207,7 @@
    "periodicidade": "semanal",
    "unidade": "US$ por €",
    "ajuste_sazonal": null,
-   "verificado": "Ticker em uso no painel de ativos (scripts/ativos/catalogo.py).",
+   "verificado": "Resposta da API do Yahoo conferida em 16/11/2026 (navegador do dono): HTTP 200, nome do instrumento \"EUR/USD\", granularidade semanal com period1/period2. Valores não comparados com a bolsa de origem.",
    "defasagem_max_dias": 12,
    "inicio": "2000-01-01",
    "observacao": "Barra semanal do Yahoo: a data é o início da semana e o valor é o último fechamento dela; a semana em curso traz a cotação mais recente e é parcial (campo ultimo_parcial). A coleta usa period1/period2 com interval=1wk, porque range=max devolve granularidade mensal ou trimestral (teste real de 16/11/2026)."
@@ -221,7 +221,7 @@
    "periodicidade": "semanal",
    "unidade": "R$ por US$",
    "ajuste_sazonal": null,
-   "verificado": "Respondeu na API do Yahoo em 16/11/2026 (navegador do dono): 1199 pontos semanais desde 2003-12-01, com fechamentos nulos descartados. Nome do instrumento na resposta não registrado; o painel de ativos usa USDBRL=X.",
+   "verificado": "Resposta da API do Yahoo conferida em 16/11/2026 (navegador do dono): HTTP 200, nome do instrumento \"USD/BRL\", granularidade semanal com period1/period2. Valores não comparados com a bolsa de origem.",
    "defasagem_max_dias": 12,
    "inicio": "2000-01-01",
    "observacao": "Histórico disponível na fonte a partir de dezembro de 2003. Barra semanal do Yahoo: a data é o início da semana e o valor é o último fechamento dela; a semana em curso traz a cotação mais recente e é parcial (campo ultimo_parcial). A coleta usa period1/period2 com interval=1wk, porque range=max devolve granularidade mensal ou trimestral (teste real de 16/11/2026)."
@@ -249,7 +249,7 @@
    "periodicidade": "semanal",
    "unidade": "¥ por US$",
    "ajuste_sazonal": null,
-   "verificado": "Ticker em uso no painel de ativos (scripts/ativos/catalogo.py).",
+   "verificado": "Resposta da API do Yahoo conferida em 16/11/2026 (navegador do dono): HTTP 200, nome do instrumento \"USD/JPY\", granularidade semanal com period1/period2. Valores não comparados com a bolsa de origem.",
    "defasagem_max_dias": 12,
    "inicio": "2000-01-01",
    "observacao": "Barra semanal do Yahoo: a data é o início da semana e o valor é o último fechamento dela; a semana em curso traz a cotação mais recente e é parcial (campo ultimo_parcial). A coleta usa period1/period2 com interval=1wk, porque range=max devolve granularidade mensal ou trimestral (teste real de 16/11/2026)."
@@ -263,7 +263,7 @@
    "periodicidade": "semanal",
    "unidade": "US$ por £",
    "ajuste_sazonal": null,
-   "verificado": "Ticker em uso no painel de ativos (scripts/ativos/catalogo.py).",
+   "verificado": "Resposta da API do Yahoo conferida em 16/11/2026 (navegador do dono): HTTP 200, nome do instrumento \"GBP/USD\", granularidade semanal com period1/period2. Valores não comparados com a bolsa de origem.",
    "defasagem_max_dias": 12,
    "inicio": "2000-01-01",
    "observacao": "Barra semanal do Yahoo: a data é o início da semana e o valor é o último fechamento dela; a semana em curso traz a cotação mais recente e é parcial (campo ultimo_parcial). A coleta usa period1/period2 com interval=1wk, porque range=max devolve granularidade mensal ou trimestral (teste real de 16/11/2026)."
@@ -277,7 +277,7 @@
    "periodicidade": "semanal",
    "unidade": "US$ por onça",
    "ajuste_sazonal": null,
-   "verificado": "Ticker em uso no painel de ativos (scripts/ativos/catalogo.py).",
+   "verificado": "Resposta da API do Yahoo conferida em 16/11/2026 (navegador do dono): HTTP 200, nome do instrumento \"Gold (contrato futuro)\", granularidade semanal com period1/period2. Valores não comparados com a bolsa de origem.",
    "defasagem_max_dias": 12,
    "inicio": "2000-01-01",
    "observacao": "Barra semanal do Yahoo: a data é o início da semana e o valor é o último fechamento dela; a semana em curso traz a cotação mais recente e é parcial (campo ultimo_parcial). A coleta usa period1/period2 com interval=1wk, porque range=max devolve granularidade mensal ou trimestral (teste real de 16/11/2026)."
@@ -291,7 +291,7 @@
    "periodicidade": "semanal",
    "unidade": "US$ por onça",
    "ajuste_sazonal": null,
-   "verificado": "Ticker em uso no painel de ativos (scripts/ativos/catalogo.py).",
+   "verificado": "Resposta da API do Yahoo conferida em 16/11/2026 (navegador do dono): HTTP 200, nome do instrumento \"Silver (contrato futuro)\", granularidade semanal com period1/period2. Valores não comparados com a bolsa de origem.",
    "defasagem_max_dias": 12,
    "inicio": "2000-01-01",
    "observacao": "Barra semanal do Yahoo: a data é o início da semana e o valor é o último fechamento dela; a semana em curso traz a cotação mais recente e é parcial (campo ultimo_parcial). A coleta usa period1/period2 com interval=1wk, porque range=max devolve granularidade mensal ou trimestral (teste real de 16/11/2026)."
@@ -305,7 +305,7 @@
    "periodicidade": "semanal",
    "unidade": "US$ por barril",
    "ajuste_sazonal": null,
-   "verificado": "Ticker em uso no painel de ativos (scripts/ativos/catalogo.py).",
+   "verificado": "Resposta da API do Yahoo conferida em 16/11/2026 (navegador do dono): HTTP 200, nome do instrumento \"Crude Oil (contrato futuro)\", granularidade semanal com period1/period2. Valores não comparados com a bolsa de origem.",
    "defasagem_max_dias": 12,
    "inicio": "2000-01-01",
    "observacao": "Barra semanal do Yahoo: a data é o início da semana e o valor é o último fechamento dela; a semana em curso traz a cotação mais recente e é parcial (campo ultimo_parcial). A coleta usa period1/period2 com interval=1wk, porque range=max devolve granularidade mensal ou trimestral (teste real de 16/11/2026)."
@@ -319,7 +319,7 @@
    "periodicidade": "semanal",
    "unidade": "US$ por libra-peso",
    "ajuste_sazonal": null,
-   "verificado": "Ticker em uso no painel de ativos (scripts/ativos/catalogo.py).",
+   "verificado": "Resposta da API do Yahoo conferida em 16/11/2026 (navegador do dono): HTTP 200, nome do instrumento \"Copper (contrato futuro)\", granularidade semanal com period1/period2. Valores não comparados com a bolsa de origem.",
    "defasagem_max_dias": 12,
    "inicio": "2000-01-01",
    "observacao": "Barra semanal do Yahoo: a data é o início da semana e o valor é o último fechamento dela; a semana em curso traz a cotação mais recente e é parcial (campo ultimo_parcial). A coleta usa period1/period2 com interval=1wk, porque range=max devolve granularidade mensal ou trimestral (teste real de 16/11/2026)."
