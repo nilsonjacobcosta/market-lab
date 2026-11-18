@@ -37,3 +37,19 @@ Observação de método: J1 e J2 rodaram no modelo Fable 5.2; a primeira tentati
 - Série ausente do JSON aparece com o id cru na nota do gráfico.
 - A branch `dados-mercados` cresce (cerca de 1 MB por atualização); fazer squash periódico.
 - Glossário: variantes de Portugal e termos faltantes (obrigações do Tesouro, unidade de participação, recessão, contrato futuro).
+
+## Rodada 2 — razão XLP/XLK e média de 200 semanas do Bitcoin (18/11/2026)
+
+Escopo: PR #12 (faixa da razão e episódios dos cartões `rc-xlp-xlk` e `btc-ciclos`). Juízes independentes e só de leitura.
+
+| Juiz | Nota | Veredito | Bloqueantes |
+|---|---|---|---|
+| J1 dados e fontes | 8,5 | Aprovado com ressalvas | 0 |
+| J2 regulatório e comunicação | 7,0 | Aprovado com ressalvas | 1 (corrigido; reconferido por revisor independente: resolvido, nota 9) |
+| J3 engenharia e operabilidade | 9,0 | Aprovado com ressalvas | 0 |
+
+**J2-B1.** Episódios do cartão XLP/XLK sem critério de escolha e sem datas/valores em 2022 e 2023; texto do desdobramento do XLK confuso. Reescrito com datas e valores, "trechos escolhidos como exemplo" e explicação do desdobramento.
+
+Ressalvas tratadas: "cerca de 27 anos"; semana parcial na contagem do Bitcoin; data de março de 2020; "cerca de 32% abaixo"; `observacao` de `rel_xlp_xlk` sem "indica" nem "defensivo".
+
+Ressalvas abertas: último valor da razão repetido em 14/11 e 17/11/2026 (barra parcial com o mesmo fechamento; sem efeito no aceite); exemplo numérico no `como_ler` da razão; texto do `como_ler` do cartão do Bitcoin com repetição (herdado); o workflow roda só `unittest tests/test_mercados.py`; valores de `btc_usd` sem comparação com a bolsa de origem.
