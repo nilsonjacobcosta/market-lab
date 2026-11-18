@@ -926,7 +926,7 @@
      "iniciante": false,
      "o_que_e": "É a razão entre o preço do ETF de bens de consumo básico dos EUA (XLP) e o preço do ETF de tecnologia dos EUA (XLK), semana a semana. Cada ETF reúne ações de empresas de um mesmo setor da bolsa americana.",
      "como_ler": "Quando a linha sobe, o setor de consumo básico ganhou preço em relação ao de tecnologia no período; quando desce, ocorreu o contrário. Valores são razões, sem unidade. A linha não mostra a causa do movimento nem o que vem depois.",
-     "ja_se_observou": "Este cartão não descreve episódios passados. Antes de 5 de dezembro de 2025, data do desdobramento 2:1 do XLK, o Yahoo mostra o preço do XLK pela metade do valor da época. Por isso, nesse período a razão aparece com o dobro do valor calculado com os preços do dia. A forma da curva é preservada.",
+     "ja_se_observou": "Na série, a razão foi de 0,64 na semana iniciada em 18/03/2000 para 3,36 na semana iniciada em 28/09/2002, alta de 5,2 vezes. Em 2008, foi de 2,25 (semana de 10/05) para 3,31 (semana de 15/11), alta de 47%. Entre a semana de 06/02/2016 (2,55) e a de 26/09/2026 (0,40), a razão caiu 84%, com altas e quedas no meio do caminho, como a alta de 31% em 2022 e a queda de 35% em 2023. São três períodos em um histórico de cerca de 26 anos, e podem não se repetir. Antes de 5 de dezembro de 2025, data do desdobramento 2:1 do XLK, o Yahoo mostra o preço do XLK pela metade do valor da época, e por isso os valores da razão nesse período aparecem com o dobro do calculado com os preços do dia; as variações em porcentagem não mudam.",
      "termos": [
       "etf",
       "acoes",
