@@ -759,7 +759,7 @@
       "periodicidade": "semanal",
       "unidade": "US$ por cota",
       "ajuste_sazonal": null,
-      "verificado": "Resposta da API do Yahoo conferida em 17/11/2026 (Chrome do dono): symbol XLK, moeda USD, bolsa NYSEArca. Comparação de 3 pontos com o histórico do emissor (NAV, navhist-us-en-xlk.xlsx): 13/11/2026 +0,03%; 16/11/2026 +0,04%. Em 05/12/2003 e 22/05/2015 o Yahoo mostra metade do NAV, porque a série do Yahoo é ajustada por um desdobramento posterior (split 2:1, data não identificada) e o NAV do emissor não é. Pendente: data de início (2000-01-01) e convenção de barra semanal.",
+      "verificado": "Resposta da API do Yahoo conferida em 17/11/2026 (Chrome do dono): symbol XLK, moeda USD, bolsa NYSEArca. Comparação de 3 pontos com o histórico do emissor (NAV, navhist-us-en-xlk.xlsx): 13/11/2026 +0,03%; 16/11/2026 +0,04%. Em 05/12/2003 e 22/05/2015 o Yahoo mostra metade do NAV, porque a série do Yahoo é ajustada por um desdobramento posterior (split 2:1 em 05/12/2025, segundo o Yahoo) e o NAV do emissor não é. Pendente: data de início (2000-01-01) e convenção de barra semanal.",
       "defasagem_max_dias": 12,
       "inicio": "2000-01-01",
       "observacao": "ETF setorial de tecnologia dos EUA (Select Sector SPDR). A convenção de barra semanal (data de início da semana e fechamento) ainda não foi conferida para este ticker."
@@ -773,14 +773,14 @@
       "periodicidade": "semanal",
       "unidade": "razão (XLP ÷ XLK)",
       "ajuste_sazonal": null,
-      "verificado": "Cálculo do market-lab coberto por tests/test_mercados.py. Séries-base conferidas em 3 pontos cada (ver idx_xlp e idx_xlk). Como o XLK do Yahoo é ajustado por desdobramento, antes dessa data a razão fica na metade do valor histórico por preço do dia; a forma da curva é preservada, mas há um salto de nível na data do desdobramento.",
+      "verificado": "Cálculo do market-lab coberto por tests/test_mercados.py. Séries-base conferidas em 3 pontos cada (ver idx_xlp e idx_xlk). Como o XLK do Yahoo é ajustado por desdobramento, antes de 05/12/2025 a razão fica no dobro do valor calculado com os preços do dia; a forma da curva é preservada, mas há um salto de nível na data do desdobramento.",
       "defasagem_max_dias": 12,
       "derivada_de": [
         "idx_xlp",
         "idx_xlk"
       ],
       "calculo": "razao",
-      "observacao": "Razão entre os dois ETFs na mesma semana. Subir indica que o setor defensivo ganhou preço em relação ao de tecnologia; descer indica o contrário. Não diz a causa, nem prevê o movimento seguinte. Antes do desdobramento do XLK a razão está ajustada (aprox. o dobro do valor por preço do dia). Faixa de conferência provisória.",
+      "observacao": "Razão entre os dois ETFs na mesma semana. Subir indica que o setor defensivo ganhou preço em relação ao de tecnologia; descer indica o contrário. Não diz a causa, nem prevê o movimento seguinte. Antes de 05/12/2025 (desdobramento 2:1 do XLK) a razão aparece com o dobro do valor calculado com os preços do dia. Faixa de conferência provisória.",
       "faixa": [
         0.05,
         10
