@@ -28,7 +28,7 @@ Observação de método: J1 e J2 rodaram no modelo Fable 5.2; a primeira tentati
 
 - Série "ok" com dado velho reprova o arquivo inteiro (`aceite.py`); considerar rebaixar essa série a "anterior" no coletor.
 - Série "anterior" por 3 dias ou mais: resolvido em 17/11/2026 (campo `anterior_desde`; aviso no log do aceite e nota na página).
-- O passo de coleta usa `continue-on-error`: falha geral não deixa o job vermelho. O runbook RB 10 descreve a conferência.
+- Resolvido em 18/11/2026: o passo de coleta não usa mais `continue-on-error`; falha geral deixa o job vermelho e não publica.
 - Se o Yahoo bloquear o Actions no primeiro dia, restam 23 de 48 séries e o aceite reprova (limite de 60%).
 - A comparação de 3 pontos por série com a fonte oficial foi feita em 17/11/2026 depois da 1.ª coleta real: coincidem, salvo o último ponto de VIX e WTI (barra semanal em curso, moveu entre coleta e conferência). Séries derivadas não conferidas contra fonte externa.
 - Widget Advanced Chart: os 9 símbolos abriram em 17/11/2026 (com RSI e média móvel); "RSI@tv-basicstudies" e locale/timezone seguem sem confirmação na documentação do TradingView.

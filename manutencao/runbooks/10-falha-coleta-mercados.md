@@ -11,7 +11,7 @@ Manter o `mercados.json` da branch `dados-mercados` atualizado, ou deixar a pág
 - Periódico: nos primeiros dias depois de ligar o painel, conferir a aba Actions → "Atualizar Mercados e ciclos"; depois, a cada semana.
 - Por evento: workflow vermelho; faixa de aviso de coleta atrasada na página; muitas séries com a etiqueta "anterior".
 - Sinal de atraso: a página mostra "ATENÇÃO: a última coleta tem N dias" (a partir de 5 dias).
-- Atenção: o passo de coleta usa `continue-on-error`, então uma falha geral **não** deixa o job vermelho por si só; o aviso vem da página e do passo de aceite.
+- Falha geral (nenhuma série coletada) ou reprovação no aceite deixa o job vermelho e a publicação não roda; o arquivo publicado antes fica como está e a página avisa quando ele passa de 5 dias. Falha de algumas séries não deixa o job vermelho: elas saem com a etiqueta "anterior" (ver o aviso de 3 dias ou mais).
 
 ## 3. Arquivos afetados
 | Arquivo | Campos que mudam | Quem lê |
