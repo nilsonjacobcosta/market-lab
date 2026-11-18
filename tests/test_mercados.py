@@ -284,7 +284,7 @@ class CatalogoTests(unittest.TestCase):
             if s["fonte"] != "derivada":
                 self.assertNotIn("derivada_de", s, s["id"])
                 continue
-            self.assertIn(s["calculo"], ("variacao_12m", "juro_real"), s["id"])
+            self.assertIn(s["calculo"], ("variacao_12m", "juro_real", "razao", "media_movel_200"), s["id"])
             self.assertTrue(s["derivada_de"], s["id"])
             for base in s["derivada_de"]:
                 self.assertIn(base, ids, f"{s['id']} aponta para {base}")
@@ -351,7 +351,7 @@ def busca_falsa(falhar=()):
             raise OSError("falha forçada")
         if "finance.yahoo.com" in url:
             return yahoo_json([(int(dt.datetime.combine(d, dt.time(), dt.timezone.utc).timestamp()), v)
-                               for d, v in semanas(60, 100.0)])
+                               for d, v in semanas(260, 100.0)])
         if "fred.stlouisfed.org" in url:
             cod = url.split("id=")[1]
             if cod in ("CPIAUCSL", "M2SL"):
@@ -642,6 +642,33 @@ class AceiteTests(unittest.TestCase):
             Path(ruim).write_text("{", encoding="utf-8")
             self.assertEqual(aceite.main([ruim]), 1)
             self.assertEqual(aceite.main([os.path.join(pasta, "nao_existe.json")]), 1)
+
+
+class RazaoEMediaMovelTests(unittest.TestCase):
+    def test_razao_so_nas_datas_em_comum(self):
+        num = [("2026-01-02", 50.0), ("2026-01-09", 60.0), ("2026-01-16", 70.0)]
+        den = [("2026-01-02", 25.0), ("2026-01-16", 35.0), ("2026-01-23", 40.0)]
+        self.assertEqual(fontes.razao(num, den), [("2026-01-02", 2.0), ("2026-01-16", 2.0)])
+
+    def test_razao_ignora_denominador_zero_ou_negativo(self):
+        num = [("2026-01-02", 5.0), ("2026-01-09", 6.0)]
+        den = [("2026-01-02", 0.0), ("2026-01-09", -1.0)]
+        self.assertEqual(fontes.razao(num, den), [])
+
+    def test_media_movel_so_com_janela_completa(self):
+        pontos = [(f"2026-01-{i:02d}", float(i)) for i in range(1, 5)]
+        self.assertEqual(fontes.media_movel(pontos, 3), [("2026-01-03", 2.0), ("2026-01-04", 3.0)])
+
+    def test_media_movel_200_pela_derivada(self):
+        pontos = [(f"2020-01-{i:02d}", 10.0) for i in range(1, 202)]
+        resultado = fontes.calcular_derivada("media_movel_200", [pontos])
+        self.assertEqual(len(resultado), 2)
+        self.assertEqual(resultado[0][1], 10.0)
+
+    def test_razao_pela_derivada(self):
+        num = [("2026-01-02", 4.0)]
+        den = [("2026-01-02", 2.0)]
+        self.assertEqual(fontes.calcular_derivada("razao", [num, den]), [("2026-01-02", 2.0)])
 
 
 if __name__ == "__main__":
