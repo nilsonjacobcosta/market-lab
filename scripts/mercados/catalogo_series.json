@@ -745,10 +745,10 @@
       "periodicidade": "semanal",
       "unidade": "US$ por cota",
       "ajuste_sazonal": null,
-      "verificado": "Resposta da API do Yahoo conferida em 17/11/2026 (Chrome do dono): symbol XLP, moeda USD, bolsa NYSEArca, fuso America/New_York, tipo ETF, nome 'State Street Consumer Staples Select Sector SPDR ETF'. Comparação de 3 pontos com o histórico do emissor (NAV, navhist-us-en-xlp.xlsx): 05/12/2003 −0,19%; 22/05/2015 +0,03%; 16/11/2026 +0,04% (diferença entre NAV e preço de mercado). Pendente: data de início (2000-01-01) e convenção de barra semanal.",
+      "verificado": "Resposta da API do Yahoo conferida em 17/11/2026 (Chrome do dono): symbol XLP, moeda USD, bolsa NYSEArca, fuso America/New_York, tipo ETF, nome 'State Street Consumer Staples Select Sector SPDR ETF'. Comparação de 3 pontos com o histórico do emissor (NAV, navhist-us-en-xlp.xlsx): 05/12/2003 −0,19%; 22/05/2015 +0,03%; 16/11/2026 +0,04% (diferença entre NAV e preço de mercado). Convenção de barra conferida em 18/11/2026 na resposta bruta do Yahoo: a data é o sábado de início de um bloco de 7 dias contado a partir de 01/01/2000 (período pedido) e o valor é o último fechamento do bloco (sexta-feira); a última barra é parcial. Conferido: bloco de 07/11/2026 = fechamento de 13/11/2026 (XLP 92,35; XLK 170,3). A data de início (2000-01-01) é a escolhida para o período pedido, não o início do fundo (negocia desde 1998).",
       "defasagem_max_dias": 12,
       "inicio": "2000-01-01",
-      "observacao": "ETF setorial de bens de consumo básico dos EUA (Select Sector SPDR). A convenção de barra semanal (data de início da semana e fechamento) ainda não foi conferida para este ticker."
+      "observacao": "ETF setorial de bens de consumo básico dos EUA (Select Sector SPDR). A data de cada ponto é o sábado de início do bloco semanal, e o valor é o fechamento da sexta-feira do bloco; a última barra é parcial."
     },
     {
       "id": "idx_xlk",
@@ -759,10 +759,10 @@
       "periodicidade": "semanal",
       "unidade": "US$ por cota",
       "ajuste_sazonal": null,
-      "verificado": "Resposta da API do Yahoo conferida em 17/11/2026 (Chrome do dono): symbol XLK, moeda USD, bolsa NYSEArca. Comparação de 3 pontos com o histórico do emissor (NAV, navhist-us-en-xlk.xlsx): 13/11/2026 +0,03%; 16/11/2026 +0,04%. Em 05/12/2003 e 22/05/2015 o Yahoo mostra metade do NAV, porque a série do Yahoo é ajustada por um desdobramento posterior (split 2:1 em 05/12/2025, segundo o Yahoo) e o NAV do emissor não é. Pendente: data de início (2000-01-01) e convenção de barra semanal.",
+      "verificado": "Resposta da API do Yahoo conferida em 17/11/2026 (Chrome do dono): symbol XLK, moeda USD, bolsa NYSEArca. Comparação de 3 pontos com o histórico do emissor (NAV, navhist-us-en-xlk.xlsx): 13/11/2026 +0,03%; 16/11/2026 +0,04%. Em 05/12/2003 e 22/05/2015 o Yahoo mostra metade do NAV, porque a série do Yahoo é ajustada por um desdobramento posterior (split 2:1 em 05/12/2025, segundo o Yahoo) e o NAV do emissor não é. Convenção de barra conferida em 18/11/2026 na resposta bruta do Yahoo: a data é o sábado de início de um bloco de 7 dias contado a partir de 01/01/2000 (período pedido) e o valor é o último fechamento do bloco (sexta-feira); a última barra é parcial. Conferido: bloco de 07/11/2026 = fechamento de 13/11/2026 (XLP 92,35; XLK 170,3). A data de início (2000-01-01) é a escolhida para o período pedido, não o início do fundo (negocia desde 1998).",
       "defasagem_max_dias": 12,
       "inicio": "2000-01-01",
-      "observacao": "ETF setorial de tecnologia dos EUA (Select Sector SPDR). A convenção de barra semanal (data de início da semana e fechamento) ainda não foi conferida para este ticker."
+      "observacao": "ETF setorial de tecnologia dos EUA (Select Sector SPDR). A data de cada ponto é o sábado de início do bloco semanal, e o valor é o fechamento da sexta-feira do bloco; a última barra é parcial."
     },
     {
       "id": "rel_xlp_xlk",
@@ -773,7 +773,7 @@
       "periodicidade": "semanal",
       "unidade": "razão (XLP ÷ XLK)",
       "ajuste_sazonal": null,
-      "verificado": "Cálculo do market-lab coberto por tests/test_mercados.py. Séries-base conferidas em 3 pontos cada (ver idx_xlp e idx_xlk). Como o XLK do Yahoo é ajustado por desdobramento, antes de 05/12/2025 a razão fica no dobro do valor calculado com os preços do dia; a forma da curva é preservada, mas há um salto de nível na data do desdobramento.",
+      "verificado": "Cálculo do market-lab coberto por tests/test_mercados.py. Séries-base conferidas em 3 pontos cada (ver idx_xlp e idx_xlk). Como o XLK do Yahoo é ajustado por desdobramento, antes de 05/12/2025 a razão fica no dobro do valor calculado com os preços do dia; a forma da curva é preservada, e não há salto na série, só diferença de nível em relação à razão pelos preços do dia.",
       "defasagem_max_dias": 12,
       "derivada_de": [
         "idx_xlp",
