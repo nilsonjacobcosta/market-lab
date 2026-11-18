@@ -262,6 +262,38 @@ def juro_real(taxa, inflacao_12m) -> list[tuple[str, float]]:
     return [(d, taxa_mes[d[:7]] - v) for d, v in _ordenar(inflacao_12m) if d[:7] in taxa_mes]
 
 
+def razao(numerador, denominador) -> list[tuple[str, float]]:
+    """Razão entre duas séries, nas datas em que as duas têm ponto (mesma data exata).
+
+    Usada para comparar dois preços de ativos (ex.: setor defensivo sobre setor de
+    crescimento): valor > 1 significa que o numerador custa mais que o denominador."""
+    den = dict(_ordenar(denominador))
+    saida = []
+    for d, v in _ordenar(numerador):
+        w = den.get(d)
+        if w is None or w <= 0:
+            continue
+        saida.append((d, v / w))
+    return saida
+
+
+def media_movel(pontos, janela: int = 200) -> list[tuple[str, float]]:
+    """Média simples dos últimos `janela` pontos, emitida só quando a janela está completa.
+
+    Para dados semanais, janela=200 é a média de 200 semanas. Data do ponto = data do
+    fechamento da última semana da janela."""
+    pontos = _ordenar(pontos)
+    saida = []
+    soma = 0.0
+    for i, (d, v) in enumerate(pontos):
+        soma += v
+        if i >= janela:
+            soma -= pontos[i - janela][1]
+        if i >= janela - 1:
+            saida.append((d, soma / janela))
+    return saida
+
+
 def calcular_derivada(calculo: str, bases: list[list]) -> list[tuple[str, float]]:
     """Aplica o cálculo do catálogo às séries-base (na ordem de derivada_de)."""
     bases = [[(d, v) for d, v in b] for b in bases]
@@ -269,4 +301,8 @@ def calcular_derivada(calculo: str, bases: list[list]) -> list[tuple[str, float]
         return variacao_12m(bases[0])
     if calculo == "juro_real":
         return juro_real(bases[0], bases[1])
+    if calculo == "razao":
+        return razao(bases[0], bases[1])
+    if calculo == "media_movel_200":
+        return media_movel(bases[0], 200)
     raise ValueError(f"cálculo desconhecido: {calculo}")
