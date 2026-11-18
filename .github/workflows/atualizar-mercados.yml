@@ -43,19 +43,16 @@ jobs:
           fi
           mkdir -p _novo
       - name: Coletar séries
-        id: coleta
         env:
           # Grava em _novo; o arquivo publicado (_dados) só é trocado depois do aceite.
           MERCADOS_SAIDA: ${{ github.workspace }}/_novo/mercados.json
           MERCADOS_ANTERIOR: ${{ github.workspace }}/_dados/mercados.json
+        # Sem continue-on-error: falha geral (nenhuma série coletada) deixa o job vermelho, o GitHub avisa o
+        # dono e os passos seguintes não rodam; o arquivo publicado anterior fica como está.
         run: python3 scripts/mercados/coletar_mercados.py
-        continue-on-error: true   # falha geral de rede mantém o arquivo anterior; a página avisa se ficar velho
       - name: Aceite (trava da publicação)
-        id: aceite
-        if: steps.coleta.outcome == 'success'
         run: python3 scripts/mercados/aceite.py _novo/mercados.json --anterior _dados/mercados.json
       - name: Publicar na branch dados-mercados se houve mudança
-        if: steps.coleta.outcome == 'success' && steps.aceite.outcome == 'success'
         working-directory: _dados
         run: |
           cp ../_novo/mercados.json mercados.json

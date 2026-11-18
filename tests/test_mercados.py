@@ -659,5 +659,15 @@ class AceiteTests(unittest.TestCase):
             self.assertEqual(aceite.main([os.path.join(pasta, "nao_existe.json")]), 1)
 
 
+class WorkflowTests(unittest.TestCase):
+    def test_coleta_nao_esconde_falha_geral(self):
+        """Falha geral da coleta deve deixar o job vermelho (sem continue-on-error nem if por outcome)."""
+        wf = (Path(__file__).resolve().parent.parent / ".github" / "workflows" / "atualizar-mercados.yml").read_text(encoding="utf-8")
+        linhas = [l.split("#")[0] for l in wf.splitlines()]
+        texto = "\n".join(linhas)
+        self.assertNotIn("continue-on-error", texto)
+        self.assertNotIn(".outcome", texto)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -80,3 +80,7 @@ Reconstituído em 03/11/2026 a partir de `git log`, `gh run list` e dos document
 - 1.ª execução do workflow deixou `infl_br_12m` e `juros_br_real` sem dados: a API do SGS não devolve a série 13522 sem janela de datas (PR #3: `janela_anos: 30`, links de conferência com `ultimos/20`). 2.ª execução: 47 de 48 séries ok; `risco_hy` segue sem coleta por licença.
 - 3 pontos por série coletada conferidos com BCB, BCE, Eurostat, FRED e Yahoo; 9 símbolos do Advanced Chart abriram no Chrome.
 - Status trocado de "Em construção" para "Atualização automática" (índice, README raiz e README do painel).
+
+## 18/11/2026 — Mercados e ciclos: falha geral da coleta fica visível
+- Coletas agendadas de 17/11 (19:46 UTC) e 18/11 (04:14 UTC) rodaram sozinhas e publicaram (47 de 48 séries; `risco_hy` sem coleta por licença).
+- Workflow `atualizar-mercados.yml`: removido `continue-on-error` do passo de coleta e as condições `if` dos passos seguintes; falha geral agora deixa o job vermelho e interrompe antes do aceite e da publicação. Runbook RB 10 atualizado.
