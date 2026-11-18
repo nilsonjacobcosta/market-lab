@@ -1,6 +1,6 @@
 {
   "descricao": "Catálogo de séries do painel Mercados e ciclos. Um item por série; ids fixos, usados pela página.",
-  "atualizado_em": "2026-11-16",
+  "atualizado_em": "2026-11-17",
   "series": [
     {
       "id": "idx_sp500",
@@ -734,6 +734,77 @@
       "faixa": [
         -60,
         300
+      ]
+    },
+    {
+      "id": "idx_xlp",
+      "nome": "Consumo básico, ETF XLP (EUA)",
+      "fonte": "yahoo",
+      "codigo": "XLP",
+      "url_fonte": "https://finance.yahoo.com/quote/XLP/",
+      "periodicidade": "semanal",
+      "unidade": "US$ por cota",
+      "ajuste_sazonal": null,
+      "verificado": "Resposta da API do Yahoo conferida em 17/11/2026 (Chrome do dono): symbol XLP, moeda USD, bolsa NYSEArca, fuso America/New_York, tipo ETF, nome 'State Street Consumer Staples Select Sector SPDR ETF', barras semanais desde 2000. Pendente: comparar 3 pontos com a página do emissor antes de publicar.",
+      "defasagem_max_dias": 12,
+      "inicio": "2000-01-01",
+      "observacao": "ETF setorial de bens de consumo básico dos EUA (Select Sector SPDR). Barra semanal do Yahoo: a data é o início da semana e o valor é o último fechamento dela."
+    },
+    {
+      "id": "idx_xlk",
+      "nome": "Tecnologia, ETF XLK (EUA)",
+      "fonte": "yahoo",
+      "codigo": "XLK",
+      "url_fonte": "https://finance.yahoo.com/quote/XLK/",
+      "periodicidade": "semanal",
+      "unidade": "US$ por cota",
+      "ajuste_sazonal": null,
+      "verificado": "Resposta da API do Yahoo conferida em 17/11/2026 (Chrome do dono): symbol XLK, moeda USD, bolsa NYSEArca. Pendente: barras semanais desde 2000 e comparação de 3 pontos com a página do emissor antes de publicar.",
+      "defasagem_max_dias": 12,
+      "inicio": "2000-01-01",
+      "observacao": "ETF setorial de tecnologia dos EUA (Select Sector SPDR). Barra semanal do Yahoo: a data é o início da semana e o valor é o último fechamento dela."
+    },
+    {
+      "id": "rel_xlp_xlk",
+      "nome": "Consumo básico sobre tecnologia (XLP ÷ XLK)",
+      "fonte": "derivada",
+      "codigo": "razao(idx_xlp, idx_xlk)",
+      "url_fonte": "https://finance.yahoo.com/quote/XLP/",
+      "periodicidade": "semanal",
+      "unidade": "razão (XLP ÷ XLK)",
+      "ajuste_sazonal": null,
+      "verificado": "Cálculo do market-lab coberto por tests/test_mercados.py; a verificação das séries-base está nas entradas delas.",
+      "defasagem_max_dias": 12,
+      "derivada_de": [
+        "idx_xlp",
+        "idx_xlk"
+      ],
+      "calculo": "razao",
+      "observacao": "Razão entre os dois ETFs na mesma semana. Subir indica que o setor defensivo ganhou preço em relação ao de tecnologia; descer indica o contrário. Não diz a causa, nem prevê o movimento seguinte. Faixa de conferência provisória: será ajustada depois da conferência com a fonte real.",
+      "faixa": [
+        0.05,
+        10
+      ]
+    },
+    {
+      "id": "btc_media_200s",
+      "nome": "Bitcoin: média de 200 semanas",
+      "fonte": "derivada",
+      "codigo": "media_movel_200(btc_usd)",
+      "url_fonte": "https://finance.yahoo.com/quote/BTC-USD/",
+      "periodicidade": "semanal",
+      "unidade": "US$",
+      "ajuste_sazonal": null,
+      "verificado": "Cálculo do market-lab coberto por tests/test_mercados.py; a verificação da série-base está na entrada btc_usd.",
+      "defasagem_max_dias": 12,
+      "derivada_de": [
+        "btc_usd"
+      ],
+      "calculo": "media_movel_200",
+      "observacao": "Média simples dos fechamentos semanais dos últimos 200 semanas. Só aparece quando há 200 semanas de histórico, por isso começa alguns anos após 2014.",
+      "faixa": [
+        0,
+        300000
       ]
     }
   ]
