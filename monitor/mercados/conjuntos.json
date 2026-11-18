@@ -1186,7 +1186,7 @@
      "marcadores": "halvings",
      "o_que_e": "Preço de um bitcoin em dólares, em escala logarítmica (escala em que distâncias iguais no eixo vertical representam variações percentuais iguais). As linhas verticais tracejadas marcam os halvings: as datas em que a quantidade de bitcoins novos criados a cada bloco caiu pela metade, o que está previsto no código do Bitcoin a cada 210 mil blocos, cerca de quatro anos.",
      "como_ler": "Na escala logarítmica, ir de 100 para 1.000 ocupa a mesma altura que ir de 1.000 para 10.000. Isso permite ver no mesmo gráfico fases em que o preço era muito diferente. As linhas verticais tracejadas têm rótulo com o ano de cada halving; os dados começam em 2014, então o halving de 2012 fica fora do gráfico. A média de 200 semanas é a segunda linha do gráfico, em laranja; as linhas verticais são só os halvings. Ela é a média simples dos fechamentos semanais das últimas 200 semanas. Em cada semana, o gráfico mostra se o preço está acima ou abaixo dessa média, sem indicar o que vem depois.",
-     "ja_se_observou": "Nos períodos seguintes aos halvings de 2012, 2016 e 2020, o preço em dólares atingiu novos máximos e depois teve quedas de mais da metade do valor; o gráfico começa em 2014, então o de 2012 não aparece nos dados. São três sequências completas de alta e queda; o halving de 2024 ainda não completou uma. Três casos não são regra, outros fatores atuaram nos mesmos períodos (juros, liquidez, regulação) e o padrão pode não se repetir.",
+     "ja_se_observou": "Os ciclos anteriores ao período disponível serão descritos com datas e valores depois que a série for comparada com a fonte. Até lá, este cartão não descreve episódios passados.",
      "termos": [
       "halving",
       "escala_log",
