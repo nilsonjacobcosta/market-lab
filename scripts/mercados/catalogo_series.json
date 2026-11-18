@@ -748,7 +748,7 @@
       "verificado": "Resposta da API do Yahoo conferida em 17/11/2026 (Chrome do dono): symbol XLP, moeda USD, bolsa NYSEArca, fuso America/New_York, tipo ETF, nome 'State Street Consumer Staples Select Sector SPDR ETF', barras semanais desde 2000. Pendente: comparar 3 pontos com a página do emissor antes de publicar.",
       "defasagem_max_dias": 12,
       "inicio": "2000-01-01",
-      "observacao": "ETF setorial de bens de consumo básico dos EUA (Select Sector SPDR). Barra semanal do Yahoo: a data é o início da semana e o valor é o último fechamento dela."
+      "observacao": "ETF setorial de bens de consumo básico dos EUA (Select Sector SPDR). A convenção de barra semanal é a mesma das séries de Yahoo já conferidas; a data de início foi vista na resposta de 17/11/2026."
     },
     {
       "id": "idx_xlk",
@@ -759,10 +759,10 @@
       "periodicidade": "semanal",
       "unidade": "US$ por cota",
       "ajuste_sazonal": null,
-      "verificado": "Resposta da API do Yahoo conferida em 17/11/2026 (Chrome do dono): symbol XLK, moeda USD, bolsa NYSEArca. Pendente: barras semanais desde 2000 e comparação de 3 pontos com a página do emissor antes de publicar.",
+      "verificado": "Resposta da API do Yahoo conferida em 17/11/2026 (Chrome do dono): symbol XLK, moeda USD, bolsa NYSEArca. Pendente: confirmar a data de início (2000-01-01) com uma chamada de histórico completo e comparar 3 pontos com a página do emissor antes de publicar.",
       "defasagem_max_dias": 12,
       "inicio": "2000-01-01",
-      "observacao": "ETF setorial de tecnologia dos EUA (Select Sector SPDR). Barra semanal do Yahoo: a data é o início da semana e o valor é o último fechamento dela."
+      "observacao": "ETF setorial de tecnologia dos EUA (Select Sector SPDR). A convenção de barra semanal é a mesma das séries de Yahoo já conferidas; a data de início ainda não foi conferida para este ticker."
     },
     {
       "id": "rel_xlp_xlk",
@@ -773,7 +773,7 @@
       "periodicidade": "semanal",
       "unidade": "razão (XLP ÷ XLK)",
       "ajuste_sazonal": null,
-      "verificado": "Cálculo do market-lab coberto por tests/test_mercados.py; a verificação das séries-base está nas entradas delas.",
+      "verificado": "Cálculo do market-lab coberto por tests/test_mercados.py. As séries-base idx_xlp e idx_xlk têm conferência pendente, e a razão herda essa pendência.",
       "defasagem_max_dias": 12,
       "derivada_de": [
         "idx_xlp",
@@ -795,13 +795,13 @@
       "periodicidade": "semanal",
       "unidade": "US$",
       "ajuste_sazonal": null,
-      "verificado": "Cálculo do market-lab coberto por tests/test_mercados.py; a verificação da série-base está na entrada btc_usd.",
+      "verificado": "Cálculo do market-lab coberto por tests/test_mercados.py. A série-base btc_usd teve a resposta da API conferida em 16/11/2026, mas os valores não foram comparados com a bolsa de origem; esta pendência vale também para a média.",
       "defasagem_max_dias": 12,
       "derivada_de": [
         "btc_usd"
       ],
       "calculo": "media_movel_200",
-      "observacao": "Média simples dos fechamentos semanais dos últimos 200 semanas. Só aparece quando há 200 semanas de histórico, por isso começa alguns anos após 2014.",
+      "observacao": "Média simples dos fechamentos semanais das últimas 200 semanas. Só aparece quando há 200 semanas de histórico. Se a semana em curso estiver presente, ela é parcial e entra na média.",
       "faixa": [
         0,
         300000
