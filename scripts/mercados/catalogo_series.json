@@ -744,10 +744,10 @@
       "periodicidade": "semanal",
       "unidade": "US$ por cota",
       "ajuste_sazonal": null,
-      "verificado": "Resposta da API do Yahoo conferida em 17/11/2026 (Chrome do dono): symbol XLP, moeda USD, bolsa NYSEArca, fuso America/New_York, tipo ETF, nome 'State Street Consumer Staples Select Sector SPDR ETF', barras semanais desde 2000. Pendente: comparar 3 pontos com a página do emissor antes de publicar.",
+      "verificado": "Resposta da API do Yahoo conferida em 17/11/2026 (Chrome do dono): symbol XLP, moeda USD, bolsa NYSEArca, fuso America/New_York, tipo ETF, nome 'State Street Consumer Staples Select Sector SPDR ETF'. Pendente: data de início (2000-01-01), convenção de barra semanal e comparação de 3 pontos com a página do emissor antes de publicar.",
       "defasagem_max_dias": 12,
       "inicio": "2000-01-01",
-      "observacao": "ETF setorial de bens de consumo básico dos EUA (Select Sector SPDR). A convenção de barra semanal é a mesma das séries de Yahoo já conferidas; a data de início foi vista na resposta de 17/11/2026."
+      "observacao": "ETF setorial de bens de consumo básico dos EUA (Select Sector SPDR). A convenção de barra semanal (data de início da semana e fechamento) ainda não foi conferida para este ticker."
     },
     {
       "id": "idx_xlk",
@@ -758,10 +758,10 @@
       "periodicidade": "semanal",
       "unidade": "US$ por cota",
       "ajuste_sazonal": null,
-      "verificado": "Resposta da API do Yahoo conferida em 17/11/2026 (Chrome do dono): symbol XLK, moeda USD, bolsa NYSEArca. Pendente: confirmar a data de início (2000-01-01) com uma chamada de histórico completo e comparar 3 pontos com a página do emissor antes de publicar.",
+      "verificado": "Resposta da API do Yahoo conferida em 17/11/2026 (Chrome do dono): symbol XLK, moeda USD, bolsa NYSEArca. Pendente: data de início (2000-01-01), convenção de barra semanal e comparação de 3 pontos com a página do emissor antes de publicar.",
       "defasagem_max_dias": 12,
       "inicio": "2000-01-01",
-      "observacao": "ETF setorial de tecnologia dos EUA (Select Sector SPDR). A convenção de barra semanal é a mesma das séries de Yahoo já conferidas; a data de início ainda não foi conferida para este ticker."
+      "observacao": "ETF setorial de tecnologia dos EUA (Select Sector SPDR). A convenção de barra semanal (data de início da semana e fechamento) ainda não foi conferida para este ticker."
     },
     {
       "id": "rel_xlp_xlk",
