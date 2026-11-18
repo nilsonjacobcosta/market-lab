@@ -780,7 +780,7 @@
         "idx_xlk"
       ],
       "calculo": "razao",
-      "observacao": "Razão entre os dois ETFs na mesma semana. Subir indica que o setor defensivo ganhou preço em relação ao de tecnologia; descer indica o contrário. Não diz a causa, nem prevê o movimento seguinte. Antes de 05/12/2025 (desdobramento 2:1 do XLK) a razão aparece com o dobro do valor calculado com os preços do dia. Faixa de aceite [0,1; 8]: a série coletada em 18/11/2026 (1.404 semanas) vai de 0,40 a 3,36; a faixa só barra valores absurdos, e não é um limite de mercado.",
+      "observacao": "Razão entre os dois ETFs na mesma semana. Quando sobe, significa apenas que o setor de consumo básico ganhou preço em relação ao de tecnologia; quando desce, o contrário. Não diz a causa, nem prevê o movimento seguinte. Antes de 05/12/2025 (desdobramento 2:1 do XLK) a razão aparece com o dobro do valor calculado com os preços do dia. Faixa de aceite [0,1; 8]: a série coletada em 18/11/2026 (1.404 semanas) vai de 0,40 a 3,36; a faixa só barra valores absurdos, e não é um limite de mercado.",
       "faixa": [
         0.1,
         8
