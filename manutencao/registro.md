@@ -84,3 +84,12 @@ Reconstituído em 03/11/2026 a partir de `git log`, `gh run list` e dos document
 ## 18/11/2026 — Mercados e ciclos: falha geral da coleta fica visível
 - Coletas agendadas de 17/11 (19:46 UTC) e 18/11 (04:14 UTC) rodaram sozinhas e publicaram (47 de 48 séries; `risco_hy` sem coleta por licença).
 - Workflow `atualizar-mercados.yml`: removido `continue-on-error` do passo de coleta e as condições `if` dos passos seguintes; falha geral agora deixa o job vermelho e interrompe antes do aceite e da publicação. Runbook RB 10 atualizado.
+
+## 18/11/2026 — Revisão dos textos de `conjuntos.json` contra fontes oficiais
+
+Conferidos e mantidos (fonte primária): Nikkei 225, fechamento de 38.915,87 em 29/12/1989 e superado em 22/02/2024 (Reuters/AP/Nippon.com; nível D, imprensa); WTI de maio de 2020 a −37,63 USD em 20/04/2020 (CFTC, relatório de 23/11/2020; EIA, 27/04/2020; nível B); pesos do DXY (ICE, boletim mensal); EUR/USD como par mais negociado, 21,2% (BIS, Triennial Survey, 30/09/2025; nível B); Euro Stoxx 50 com 11 países (STOXX); PSI renomeado (Euronext, comunicado de 12/08/2021, vigente em março de 2022); resolução do BES em 03/08/2014 (Banco de Portugal); oito reuniões ordinárias do Copom por ano (Banco Central).
+
+Corrigidos: período IPCA acima da Selic (jul/2020 a abr/2022, 20 de 22 meses, dados do painel); halving de 2024 com data e porcentagem; DXY em março de 2020 (alta e queda em semanas seguidas); mínimo dos juros de 2 anos nos EUA (início de 2021); ETH/BTC, dominância e valor total (sem série própria, episódios retirados); cobre/China, FTSE 100 (receita no exterior), Xangai (investidores locais) e Euro Stoxx (empresas portuguesas), retirados por falta de fonte oficial; chip CFD removido do USD/BRL.
+
+Ainda não reconferidos nesta rodada (marcados como [referência não verificada]): composição do Ibovespa, regras do Hang Seng e do HKD, MSCI EM, datas de QE/runoff do Fed, referendo do Brexit, BoJ 2022–24, IPCA acima da meta em 2015–16 e 2021–22.
+Achado: barras semanais de índices do Yahoo são datadas no sábado (início da semana); o fechamento é o da sexta seguinte.
