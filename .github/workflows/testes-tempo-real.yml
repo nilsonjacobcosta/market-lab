@@ -1,0 +1,28 @@
+name: Testes do painel Mercados em tempo real
+
+on:
+  pull_request:
+    paths:
+      - "monitor/tempo-real/**"
+      - "tests/test_tempo_real.py"
+      - ".github/workflows/testes-tempo-real.yml"
+      - "manutencao/runbooks/11-*.md"
+  schedule:
+    # Mensal: pega contratos DI que passaram a vencer em menos de 90 dias (RB 11).
+    - cron: "17 11 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  testar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Testes (JSON e HTML, sem rede)
+        run: python3 -m unittest tests/test_tempo_real.py -v

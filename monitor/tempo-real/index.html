@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mercados em tempo real · market-lab</title>
+<meta name="description" content="Painel educativo com cotações atrasadas ou de referência de câmbio, ações, juros do Brasil e commodities, para aprender a ler o mercado. Não é recomendação de investimento.">
+<style>
+
+:root{
+  --bg:#0b0d10; --card:#14181d; --card-2:#1a2027; --line:#28313b; --txt:#e6edf3; --txt-2:#b6c2cf; --mut:#93a1af;
+  --acc:#4fd1c5; --warn:#f0b429; --warn-bg:#2b2210; --grid:#222a33; --eixo:#9aa7b4;
+  --s1:#56B4E9; --s2:#E69F00; --s3:#CC79A7; --s4:#F0E442;
+  --f:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --f-mono:ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.5 var(--f)}
+.wrap{max-width:1180px;margin:0 auto;padding:20px max(16px,env(safe-area-inset-right,0px)) 56px max(16px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;gap:18px}
+a{color:var(--acc)}
+h1{font-size:clamp(1.45rem,4.4vw,2rem);margin:4px 0 6px;line-height:1.15;letter-spacing:-.01em}
+h2{font-size:1.2rem;margin:0 0 4px}
+h3{font-size:1rem;margin:0;line-height:1.3}
+p{margin:0;color:var(--txt-2)}
+.eyebrow{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--mut)}
+.eyebrow a{color:inherit}
+.status{font-size:.84rem;color:var(--mut);margin-top:8px}
+.status.alerta{color:var(--warn);background:var(--warn-bg);border:1px solid #5a4514;border-radius:6px;padding:8px 10px}
+.aviso{margin-top:10px;border-left:3px solid var(--warn);background:var(--card);padding:8px 12px;font-size:.88rem;color:var(--txt);border-radius:0 6px 6px 0}
+.painel{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.controles{display:flex;flex-direction:column;gap:12px}
+.lbl{font-size:.78rem;color:var(--mut);display:block;margin-bottom:4px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card-2);max-width:100%}
+.seg button{font:inherit;font-size:.84rem;color:var(--txt-2);background:transparent;border:0;border-right:1px solid var(--line);padding:6px 12px;cursor:pointer;min-height:36px}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:var(--txt);color:var(--bg);font-weight:600}
+button:focus-visible,select:focus-visible,summary:focus-visible,a:focus-visible,.plot:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:3px 3px 8px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.tabs button{flex:none;font:inherit;font-size:.86rem;color:var(--txt-2);background:var(--card-2);border:1px solid var(--line);border-radius:999px;padding:7px 13px;cursor:pointer;min-height:38px;white-space:nowrap}
+.tabs button[aria-selected="true"]{background:var(--acc);border-color:var(--acc);color:#04201d;font-weight:700}
+.tabs button .n{font-family:var(--f-mono);font-size:.72rem;opacity:.8;margin-right:5px}
+.sel{display:none}
+.sel select{font:inherit;width:100%;background:var(--card-2);color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:9px 10px;min-height:42px}
+@media(max-width:599px){.tabs{display:none}.sel{display:block}}
+.cab-conj{display:flex;flex-direction:column;gap:10px}
+.naodiz{background:var(--card-2);border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:0 8px 8px 0;padding:10px 14px;font-size:.9rem;color:var(--txt-2)}
+.naodiz b{color:var(--txt);display:block;margin-bottom:2px}
+.grade{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
+@media(max-width:699px){.grade{grid-template-columns:minmax(0,1fr)}}
+.cartao{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.termos{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+button.termo{font:inherit;font-size:.76rem;color:var(--txt-2);background:var(--card-2);border:1px solid var(--line);border-radius:999px;padding:3px 5px 3px 10px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;min-height:30px}
+button.termo .qm{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;border:1px solid var(--mut);font-weight:700;font-size:.72rem;color:var(--txt)}
+button.termo[aria-expanded="true"]{background:var(--txt);color:var(--bg)}
+button.termo[aria-expanded="true"] .qm{color:var(--bg);border-color:var(--bg)}
+.nota{font-size:.78rem;color:var(--mut)}
+.nota.alerta{color:var(--warn)}
+.txt{display:flex;flex-direction:column;gap:8px;font-size:.88rem}
+.txt p b{color:var(--txt)}
+details{border-top:1px solid var(--line);padding-top:8px}
+summary{cursor:pointer;font-weight:600;font-size:.86rem;color:var(--txt)}
+details > *:not(summary){margin-top:8px}
+.tradingview-widget-container{height:100%;width:100%}
+.tradingview-widget-container__widget{height:calc(100% - 32px);width:100%}
+.tradingview-widget-copyright{font-size:13px;line-height:32px;text-align:center;color:var(--txt-2);height:32px;overflow:hidden}
+.tradingview-widget-copyright a{text-decoration:none}
+.tradingview-widget-copyright .blue-text{color:#7fb0ff}
+.tradingview-widget-copyright .trademark{color:var(--txt-2)}
+.carregando{position:absolute;left:0;right:0;top:40%;text-align:center;font-size:.82rem;color:var(--mut);pointer-events:none}
+.reserva{border:1px dashed var(--warn);background:var(--warn-bg);border-radius:8px;padding:10px 12px;font-size:.86rem;color:var(--txt)}
+.reserva a{font-weight:600}
+.vazio{border:1px dashed var(--line);border-radius:8px;padding:18px 12px;text-align:center;color:var(--mut);font-size:.88rem}
+.gloss dl{margin:10px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.gloss dl > div{background:var(--card-2);border:1px solid var(--line);border-radius:8px;padding:10px 12px;min-width:0}
+.gloss dt{font-weight:600}
+.gloss dd{margin:2px 0 0;font-size:.86rem;color:var(--txt-2)}
+@media(max-width:699px){.gloss dl{grid-template-columns:minmax(0,1fr)}}
+#pop{position:fixed;z-index:60;max-width:min(320px,calc(100vw - 16px));background:#202833;color:var(--txt);border:1px solid #3a4654;border-radius:8px;padding:10px 12px;font-size:.84rem;line-height:1.45;box-shadow:0 10px 26px rgba(0,0,0,.55)}
+#pop b{display:block;margin-bottom:3px}
+#pop .fechar{display:block;margin-top:6px;font-size:.72rem;color:var(--mut)}
+footer{font-size:.8rem;color:var(--mut);display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--line);padding-top:14px}
+footer p{color:var(--mut);max-width:90ch}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+[hidden]{display:none!important}
+
+.faixa{background:var(--warn-bg);border:1px solid #5a4514;border-left:3px solid var(--warn);border-radius:6px;padding:8px 12px;font-size:.9rem;color:var(--txt)}
+.privac{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font-size:.84rem;color:var(--txt-2)}
+.privac b{color:var(--txt)}
+.tira{display:flex;flex-direction:column;gap:6px}
+.tira .linha{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.tvtira{height:78px;width:100%;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card-2)}
+.tvbox{width:100%;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card-2);position:relative}
+.alt{font-size:.8rem;color:var(--txt-2)}
+.alt ul{margin:4px 0 0;padding-left:18px}
+.alt li{margin:2px 0}
+.pular{font-size:.85rem}
+.btn{font:inherit;font-size:.84rem;color:var(--txt);background:var(--card-2);border:1px solid var(--line);border-radius:8px;padding:6px 12px;min-height:36px;cursor:pointer}
+.btn[aria-pressed="true"]{background:var(--acc);border-color:var(--acc);color:#04201d;font-weight:700}
+.grade{grid-template-columns:minmax(0,1fr)!important}
+@media(min-width:900px){.grade{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow"><a href="../../">market-lab</a> · monitor · tempo real</div>
+    <h1>Mercados em tempo real</h1>
+    <p>Cotações do momento e atrasadas de câmbio, ações, juros do Brasil e commodities, com texto para aprender a ler cada uma. Você não precisa acompanhar isto durante o dia: para ver o que a série fez ao longo de anos, use o link do histórico em cada cartão.</p>
+    <div class="faixa" id="faixa" role="note">Para estudo. Não use para operar. Preços atrasados ou de referência podem diferir dos de uma corretora.</div>
+    <div class="aviso"><b>Material educativo.</b> Não é recomendação de investimento. Rentabilidade passada não garante resultado futuro.</div>
+  </header>
+
+  <section class="privac" aria-labelledby="h-priv">
+    <h2 id="h-priv" style="font-size:1rem">Privacidade</h2>
+    <p>Ao abrir esta página, seu navegador carrega widgets do TradingView (tradingview.com), que recebem dados técnicos da visita, como o endereço da página, o tipo de widget, os símbolos exibidos e o endereço IP. O TradingView pode usar cookies e identificadores conforme a política dele: <a href="https://www.tradingview.com/privacy-policy/" rel="noopener nofollow" target="_blank">tradingview.com/privacy-policy</a>. O market-lab não lê nem guarda os valores exibidos. Esta página guarda no seu navegador apenas suas escolhas de modo, conjunto e faixa. O servidor que hospeda a página também recebe a visita.</p>
+  </section>
+
+  <section class="painel" aria-labelledby="h-como">
+    <h2 id="h-como" style="font-size:1rem">Como usar este painel</h2>
+    <p>Cada cartão mostra uma cotação em um widget do TradingView, com o atraso escrito e um texto que explica o que ler. <span id="legenda-cores"></span> O modo Iniciante traz quatro conjuntos; o Avançado acrescenta contratos da B3, outros vencimentos de juros, dado diário dos EUA, prata, minério e cripto. Você não precisa acompanhar isto durante o dia.</p>
+  </section>
+
+  <section class="tira" aria-labelledby="h-tira">
+    <div class="linha"><h2 id="h-tira" style="font-size:1rem;margin:0">Faixa de cotações</h2>
+      <button type="button" class="btn" id="btn-ticker" aria-pressed="true">Faixa ligada</button>
+      </div>
+    <p class="nota" id="nota-ticker"></p>
+    <div id="tira"></div>
+  </section>
+
+  <section class="painel controles" aria-label="Controles do painel">
+    <div>
+      <span class="lbl" id="lbl-modo">Modo</span>
+      <div class="seg" role="group" aria-labelledby="lbl-modo">
+        <button type="button" data-modo="iniciante" aria-pressed="true">Iniciante</button>
+        <button type="button" data-modo="avancado" aria-pressed="false">Avançado</button>
+      </div>
+    </div>
+    <div>
+      <span class="lbl" id="lbl-conj">Conjunto</span>
+      <div class="tabs" id="tabs" role="tablist" aria-labelledby="lbl-conj"></div>
+      <div class="sel"><label class="sr" for="sel-conj">Conjunto</label><select id="sel-conj"></select></div>
+    </div>
+  </section>
+
+  <main><noscript><div class="vazio">Esta página precisa de JavaScript para mostrar os widgets do TradingView.</div></noscript><div id="painel" role="tabpanel" tabindex="-1" aria-live="off"><div class="vazio">Carregando conjuntos…</div></div></main>
+
+  <section class="painel gloss" aria-labelledby="h-gloss">
+    <h2 id="h-gloss">Glossário</h2>
+    <dl id="gloss"></dl>
+  </section>
+
+  <footer>
+    <p><b>Widgets do TradingView.</b> Todas as cotações desta página vêm de widgets do TradingView; este painel não coleta nem republica cotações. Cada widget traz a atribuição do TradingView. Algumas cotações têm origem em outras instituições (por exemplo, B3 e FRED), que têm licenças próprias; aqui apenas se exibe o que o widget mostra.</p>
+    <p><b>Limites.</b> Se um quadro ficar vazio ou mostrar erro dentro do widget, a página não consegue detectar: confira o símbolo no link do cartão. Preços atrasados ou de referência podem diferir dos de uma corretora.</p>
+    <p>Metodologia, símbolos e manutenção: <a href="README.md">README deste painel</a> · código no <a href="https://github.com/nilsonjacobcosta/market-lab">GitHub</a>.</p>
+    <p>Material educativo. Não é recomendação de investimento. Rentabilidade passada não garante resultado futuro.</p>
+  </footer>
+</div>
+<div id="pop" role="tooltip" hidden></div>
+<script>
+"use strict";
+const CONJ_URL = "./conjuntos.json";
+const MODOS = ["iniciante", "avancado"];
+const TV_BASE = "https://s3.tradingview.com/external-embedding/";
+const LIM_INICIANTE = 4, LIM_TOTAL = 6, ESPERA_TV_MS = 10000;
+const WIDGETS = {market_quotes: "embed-widget-market-quotes.js"};
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
+const guardar = (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} };
+const ler = (k) => { try { return localStorage.getItem(k); } catch (e) { return null; } };
+const estado = {conjunto: null, modo: "iniciante", cfg: null};
+let limpezas = [];
+
+function urlSimbolo(simbolo) {
+  const [bolsa, codigo] = String(simbolo).split(":");
+  return `https://www.tradingview.com/symbols/${encodeURIComponent(codigo ? bolsa + "-" + codigo : bolsa)}/`;
+}
+const visiveis = (c, modo) => (c.graficos || []).filter(g => modo === "avancado" || g.iniciante);
+const conjuntosDoModo = (modo) => estado.cfg.conjuntos.filter(c => visiveis(c, modo).length);
+
+/* ---------- URL e modo ---------- */
+function lerURL() { const p = new URLSearchParams(location.search); return {conjunto: p.get("conjunto"), modo: p.get("modo")}; }
+function normalizar(c, m) {
+  const modo = MODOS.includes(m) ? m : "iniciante";
+  const ids = conjuntosDoModo(modo).map(x => x.id);
+  return {conjunto: ids.includes(c) ? c : ids[0], modo};
+}
+function gravarURL(empilhar) {
+  const p = new URLSearchParams(location.search);
+  p.set("conjunto", estado.conjunto); p.set("modo", estado.modo);
+  const url = location.pathname + "?" + p.toString();
+  if (empilhar) history.pushState(null, "", url); else history.replaceState(null, "", url);
+  guardar("tempo-real-conjunto", estado.conjunto); guardar("tempo-real-modo", estado.modo);
+}
+function irPara(conjunto, modo, empilhar = true) {
+  const n = normalizar(conjunto ?? estado.conjunto, modo ?? estado.modo);
+  const mudou = n.conjunto !== estado.conjunto || n.modo !== estado.modo;
+  estado.conjunto = n.conjunto; estado.modo = n.modo;
+  if (!mudou) return;
+  if (empilhar) gravarURL(true);
+  desenharTudo();
+}
+
+/* ---------- seletores ---------- */
+function desenharSeletores() {
+  const cs = conjuntosDoModo(estado.modo);
+  $("tabs").innerHTML = cs.map((c, i) => {
+    const sel = c.id === estado.conjunto;
+    return `<button type="button" role="tab" id="tab-${esc(c.id)}" data-conj="${esc(c.id)}" aria-selected="${sel}" aria-controls="painel" tabindex="${sel ? 0 : -1}"><span class="n" aria-hidden="true">${i + 1}</span>${esc(c.nome)}</button>`;
+  }).join("");
+  $("sel-conj").innerHTML = cs.map((c, i) => `<option value="${esc(c.id)}"${c.id === estado.conjunto ? " selected" : ""}>${i + 1}. ${esc(c.nome)}</option>`).join("");
+  document.querySelectorAll("[data-modo]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.modo === estado.modo)));
+  $("painel").setAttribute("aria-labelledby", "tab-" + estado.conjunto);
+}
+
+/* ---------- widgets ---------- */
+function montarScript(cont, arquivo, cfg) {
+  const s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+  s.src = TV_BASE + arquivo; s.text = JSON.stringify(cfg); cont.appendChild(s);
+}
+function rotularIframe(cont, titulo) {
+  let n = 0; const t = setInterval(() => { const f = cont.querySelector("iframe"); if (f) { f.title = titulo; clearInterval(t); } else if (++n > 50) clearInterval(t); }, 400);
+  limpezas.push(() => clearInterval(t));
+}
+function atribuicao(texto, href) {
+  return `<div class="tradingview-widget-copyright"><a href="${esc(href)}" rel="noopener nofollow" target="_blank"><span class="blue-text">${esc(texto)}</span></a><span class="trademark"> by TradingView</span></div>`;
+}
+function listaAlternativa(g) {
+  return `<ul>${g.simbolos.map(x => `<li><a href="${esc(urlSimbolo(x.s))}" rel="noopener nofollow" target="_blank">${esc(x.rotulo)}</a> — ${esc(x.atraso)}</li>`).join("")}</ul>`;
+}
+function montarCotacoes(host, g, reserva) {
+  const n = g.simbolos.length, altura = 92 + 54 * n;
+  const caixa = document.createElement("div"); caixa.className = "tvbox"; caixa.style.height = altura + "px";
+  const cont = document.createElement("div"); cont.className = "tradingview-widget-container";
+  cont.setAttribute("role", "group"); cont.setAttribute("aria-label", `Widget do TradingView: ${g.titulo}`);
+  cont.innerHTML = `<div class="tradingview-widget-container__widget"></div>` + atribuicao("Cotações", urlSimbolo(g.simbolos[0].s));
+  const aguarde = document.createElement("div"); aguarde.className = "carregando"; aguarde.textContent = "Carregando widget do TradingView…";
+  caixa.append(cont, aguarde); host.replaceChildren(caixa);
+  montarScript(cont, WIDGETS[g.widget], {width: "100%", height: altura - 34, symbolsGroups: [{name: g.titulo, originalName: g.titulo,
+    symbols: g.simbolos.map(x => ({name: x.s, displayName: x.rotulo}))}], showSymbolLogo: false, isTransparent: true, colorTheme: "dark", locale: "br"});
+  rotularIframe(cont, `Cotações do TradingView: ${g.titulo}`);
+  let fim = false;
+  const olho = setInterval(() => { if (cont.querySelector("iframe")) { aguarde.remove(); clearInterval(olho); } }, 400);
+  const timer = setTimeout(() => { if (fim || cont.querySelector("iframe")) return; fim = true; clearInterval(olho);
+    host.replaceChildren(); reserva.hidden = false;
+    reserva.innerHTML = `<b>O widget do TradingView não carregou.</b> Causas possíveis: bloqueador de conteúdo ou rede. Abra cada símbolo no TradingView:` + listaAlternativa(g); }, ESPERA_TV_MS);
+  limpezas.push(() => { fim = true; clearTimeout(timer); clearInterval(olho); });
+}
+
+/* ---------- faixa de cotações (Ticker Tape) ---------- */
+const reduz = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
+function desenharTira() {
+  const t = estado.cfg.ticker, host = $("tira"), btn = $("btn-ticker"), nota = $("nota-ticker");
+  const pref = ler("tempo-real-ticker");
+  const ligada = pref ? pref === "ligado" : t.padrao === "ligado";
+  host.replaceChildren();
+  if (reduz()) {
+    btn.hidden = true; nota.textContent = "A faixa em movimento fica desligada porque seu sistema pede menos animação. Os cartões abaixo mostram as cotações do conjunto escolhido, sem movimento."; return;
+  }
+  btn.hidden = false; btn.setAttribute("aria-pressed", String(ligada)); btn.textContent = "Faixa em movimento";
+  nota.textContent = estado.cfg.ticker.nota + (ligada ? " A faixa rola sozinha; clique no botão para pausar e desligar." : " A faixa está desligada; clique no botão para ligar.");
+  if (!ligada) return;
+  const caixa = document.createElement("div"); caixa.className = "tvtira";
+  const cont = document.createElement("div"); cont.className = "tradingview-widget-container";
+  cont.setAttribute("role", "group"); cont.setAttribute("aria-label", "Widget do TradingView: faixa de cotações");
+  cont.innerHTML = `<div class="tradingview-widget-container__widget"></div>` + atribuicao("Cotações", "https://www.tradingview.com/");
+  caixa.appendChild(cont); host.appendChild(caixa);
+  montarScript(cont, "embed-widget-ticker-tape.js", {symbols: t.simbolos, showSymbolLogo: false, isTransparent: true, displayMode: "adaptive", colorTheme: "dark", locale: "br"});
+  rotularIframe(cont, "Faixa de cotações do TradingView");
+  const timer = setTimeout(() => { if (!cont.querySelector("iframe")) { host.replaceChildren(); nota.textContent = "A faixa de cotações não carregou (bloqueador de conteúdo ou rede). Os cartões abaixo não dependem dela."; } }, ESPERA_TV_MS);
+  limpezas.push(() => clearTimeout(timer));
+}
+
+/* ---------- cartões ---------- */
+function htmlTermos(g) {
+  const G = estado.cfg.glossario || {}, ts = (g.termos || []).filter(t => G[t]);
+  if (!ts.length) return "";
+  return `<div class="termos" role="group" aria-label="Termos deste cartão">${ts.map(t => `<button type="button" class="termo" data-termo="${esc(t)}" aria-expanded="false" aria-label="O que é ${esc(G[t].termo)}?">${esc(G[t].termo)}<span class="qm" aria-hidden="true">?</span></button>`).join("")}</div>`;
+}
+function htmlTextos(g) {
+  const blocos = `<p><b>O que é.</b> ${esc(g.o_que_e)}</p><p><b>Como ler.</b> ${esc(g.como_ler)}</p><p><b>O que já se observou.</b> ${esc(g.ja_se_observou)}</p>`;
+  return estado.modo === "iniciante" ? `<div class="txt">${blocos}</div>`
+    : `<details><summary>O que é, como ler e o que já se observou</summary><div class="txt">${blocos}</div></details>`;
+}
+function montarCartao(g, i) {
+  const art = document.createElement("article"); art.className = "cartao"; art.dataset.grafico = g.id;
+  art.setAttribute("aria-labelledby", "t-" + g.id);
+  art.innerHTML = `<div><h3 id="t-${esc(g.id)}">${esc(g.titulo)}</h3>${htmlTermos(g)}</div>
+    <a class="pular" href="#fim-${esc(g.id)}" aria-label="Pular o quadro de cotações: ${esc(g.titulo)}">Pular este quadro</a>
+    <div class="reserva" data-r="reserva" role="status" hidden></div>
+    <div class="corpo" data-r="corpo"></div>
+    <div id="fim-${esc(g.id)}" class="alt" tabindex="-1"><b>Símbolos e atraso</b>${listaAlternativa(g)}</div>
+    ${htmlTextos(g)}
+    ${g.historico ? `<p class="nota"><a href="${esc(g.historico)}">Ver o histórico no painel Mercados e ciclos</a></p>` : ""}`;
+  montarCotacoes(art.querySelector('[data-r="corpo"]'), g, art.querySelector('[data-r="reserva"]'));
+  return art;
+}
+function desenharPainel() {
+  limpezas.forEach(f => { try { f(); } catch (e) {} }); limpezas = [];
+  fecharPop();
+  const painel = $("painel"); painel.replaceChildren();
+  const c = estado.cfg.conjuntos.find(x => x.id === estado.conjunto);
+  const gs = visiveis(c, estado.modo).slice(0, estado.modo === "iniciante" ? LIM_INICIANTE : LIM_TOTAL);
+  const cab = document.createElement("div"); cab.className = "cab-conj"; cab.style.marginBottom = "14px";
+  cab.innerHTML = `<div><h2 id="h-conj">${esc(c.nome)}</h2><p>${esc(c.subtitulo || "")}</p></div>
+    <div class="naodiz"><b>O que este conjunto não diz</b>${esc(c.nao_diz || "")}</div>`;
+  const grade = document.createElement("div"); grade.className = "grade";
+  painel.append(cab, grade);
+  gs.forEach((g, i) => grade.appendChild(montarCartao(g, i)));
+  document.title = `${c.nome} · Mercados em tempo real · market-lab`;
+}
+function desenharTudo() { desenharSeletores(); desenharPainel(); }
+
+/* ---------- glossário ---------- */
+let popBtn = null, popEm = 0;
+function fecharPop() { const p = $("pop"); p.hidden = true; if (popBtn) { popBtn.setAttribute("aria-expanded", "false"); popBtn.removeAttribute("aria-describedby"); popBtn = null; } }
+function abrirPop(btn) {
+  const d = (estado.cfg.glossario || {})[btn.dataset.termo], p = $("pop");
+  if (popBtn === btn) { fecharPop(); return; }
+  fecharPop(); if (!d) return;
+  p.innerHTML = `<b>${esc(d.termo)}</b>${esc(d.definicao)}<span class="fechar">Esc ou toque fora para fechar</span>`;
+  p.hidden = false; popEm = Date.now(); popBtn = btn; btn.setAttribute("aria-expanded", "true"); btn.setAttribute("aria-describedby", "pop");
+  const r = btn.getBoundingClientRect(), w = p.offsetWidth, h = p.offsetHeight;
+  p.style.left = Math.max(8, Math.min(r.left + r.width / 2 - w / 2, innerWidth - w - 8)) + "px";
+  p.style.top = (r.bottom + 6 + h > innerHeight - 8 ? Math.max(8, r.top - 6 - h) : r.bottom + 6) + "px";
+}
+function desenharGlossario() {
+  const itens = Object.values(estado.cfg.glossario || {}).sort((a, b) => a.termo.localeCompare(b.termo, "pt-BR"));
+  $("gloss").innerHTML = itens.map(d => `<div><dt>${esc(d.termo)}</dt><dd>${esc(d.definicao)}</dd></div>`).join("");
+}
+
+/* ---------- eventos ---------- */
+document.addEventListener("click", (e) => {
+  const t = e.target.closest("button.termo");
+  if (t) { e.stopPropagation(); abrirPop(t); return; }
+  if (!e.target.closest("#pop")) fecharPop();
+  if (!estado.cfg) return;
+  if (e.target.closest("#btn-ticker")) {
+    const ligada = $("btn-ticker").getAttribute("aria-pressed") === "true";
+    guardar("tempo-real-ticker", ligada ? "desligado" : "ligado"); desenharTira(); return;
+  }
+  const m = e.target.closest("[data-modo]"), c = e.target.closest("[data-conj]");
+  if (m) irPara(null, m.dataset.modo);
+  else if (c) { irPara(c.dataset.conj, null); const b = $("tab-" + estado.conjunto); if (b) b.focus(); }
+});
+document.addEventListener("keydown", (e) => { if (e.key === "Escape" && popBtn) { const b = popBtn; fecharPop(); b.focus(); } });
+addEventListener("scroll", () => { if (Date.now() - popEm > 400) fecharPop(); }, {passive: true});
+$("sel-conj").addEventListener("change", (e) => irPara(e.target.value, null));
+$("tabs").addEventListener("keydown", (e) => {
+  if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(e.key) || !estado.cfg) return;
+  const ids = conjuntosDoModo(estado.modo).map(c => c.id); let i = ids.indexOf(estado.conjunto);
+  i = e.key === "Home" ? 0 : e.key === "End" ? ids.length - 1 : (i + (e.key === "ArrowRight" ? 1 : -1) + ids.length) % ids.length;
+  e.preventDefault(); irPara(ids[i], null); const b = $("tab-" + ids[i]); if (b) b.focus();
+});
+addEventListener("popstate", () => { if (!estado.cfg) return; const u = lerURL(), n = normalizar(u.conjunto, u.modo);
+  if (n.conjunto === estado.conjunto && n.modo === estado.modo) return;
+  estado.conjunto = n.conjunto; estado.modo = n.modo; desenharTudo(); });
+
+/* ---------- carga ---------- */
+fetch(CONJ_URL + "?v=" + Date.now(), {cache: "no-store"}).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .catch(() => { $("painel").innerHTML = '<div class="vazio">Painel indisponível no momento: não foi possível carregar conjuntos.json (rede ou arquivo).</div>'; return null; })
+  .then(cfg => {
+    if (!cfg) return;
+    try {
+      estado.cfg = cfg; $("faixa").textContent = cfg.faixa.texto; $("legenda-cores").textContent = cfg.legenda_cores;
+      const u = lerURL();
+      let modoIn = u.modo || ler("tempo-real-modo");
+      const conjIn = u.conjunto || ler("tempo-real-conjunto");
+      if (!u.modo && u.conjunto && !conjuntosDoModo("iniciante").some(c => c.id === u.conjunto) && conjuntosDoModo("avancado").some(c => c.id === u.conjunto)) modoIn = "avancado";
+      const n = normalizar(conjIn, modoIn);
+      estado.conjunto = n.conjunto; estado.modo = n.modo; gravarURL(false);
+      desenharGlossario(); desenharTira(); desenharTudo();
+    } catch (e) {
+      console.error(e);
+      $("painel").innerHTML = '<div class="vazio">Erro ao montar o painel (detalhes no console do navegador). Os dados foram carregados, mas a página falhou ao desenhá-los.</div>';
+    }
+  });
+</script>
+</body>
+</html>

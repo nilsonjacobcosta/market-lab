@@ -95,3 +95,7 @@ Ainda não reconferidos nesta rodada (marcados como [referência não verificada
 Achado: barras semanais de índices do Yahoo são datadas no sábado (início da semana); o fechamento é o da sexta seguinte.
 
 Reconferência J1 em 19/11/2026 (nota 7, um bloqueante corrigido: ETH/BTC tem série própria `eth_btc`). Conferidos: Nikkei (imprensa; fonte primária JPX/Nikkei não encontrada), WTI −37,63 em 20/04/2020 (CFTC 8315-20), Selic × IPCA (20 de 22 meses, dados do painel), DXY em março de 2020. Não conferidos na fonte primária: calendário do Copom (8 reuniões ordinárias por ano; página do BCB exige JavaScript: https://www.bcb.gov.br/controleinflacao/calendarioreunioes), percentual de EUR/USD na pesquisa do BIS de 2025 (21,2% só por fonte secundária), peso de França e Alemanha no Euro Stoxx 50 (só o top 10 do factsheet de 2023 lido). O verbete `cfd` do glossário ficou sem uso.
+
+19/11/2026 | sessão | RB 11 (criação) | Painel `monitor/tempo-real/` (Fase 1): 4 conjuntos no Iniciante, widget Market Quotes por cartão, faixa Ticker Tape ligada com botão; `testes-tempo-real.yml` e `tests/test_tempo_real.py` (23 testes); símbolos só da matriz testada em 19/11/2026; consulta ao TradingView autorizada, ainda não enviada (formulário pede dados pessoais) | `docs/monitor-tempo-real/fase0.md` | —
+
+19/11/2026 | sessão | RB 11 | Juízes da Fase 1 (J1 7,0; J2 7,0; J3 6,5), correções aplicadas; 32 testes, 7 mutações pegas; runbook passa a pedir troca dos DI em setembro | `docs/monitor-tempo-real/pareceres-fase1.md` | —
