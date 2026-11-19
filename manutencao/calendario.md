@@ -45,6 +45,7 @@ Dados Abertos da CVM são atualizados **semanalmente**, por isso a conferência 
 | **Setembro** | Painel em tempo real: trocar os contratos DI que passam a vencer em menos de 90 dias (o primeiro é o DI1F2028, em 03/10/2027), reconferir símbolos | RB 11 |
 | **Dia 1º de cada mês** | Workflow `testes-tempo-real.yml` confere vencimentos DI (> 90 dias) | RB 11 |
 | **Trimestral** | Reler os termos do TradingView e registrar a data | RB 11 |
+| **Trimestral** | Cotações do BESST: rodar `teste-simbolos.html` para papéis novos do universo e reler os termos do TradingView | RB 12 |
 | Abril (com a DFP) | Revisar faixas do semáforo da qualidade financeira (Selic/custo de capital) — decisão do dono, ver `docs/monitor-besst/fase2-fundamentos.md` §5 | RB 08 §5.6 |
 | Abril (com a DFP) | Revisão completa do universo (novas listagens nos 5 setores, deslistagens) | RB 03 |
 

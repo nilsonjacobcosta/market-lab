@@ -101,3 +101,5 @@ Reconferência J1 em 19/11/2026 (nota 7, um bloqueante corrigido: ETH/BTC tem s�
 19/11/2026 | sessão | RB 11 | Juízes da Fase 1 (J1 7,0; J2 7,0; J3 6,5), correções aplicadas; 32 testes, 7 mutações pegas; runbook passa a pedir troca dos DI em setembro | `docs/monitor-tempo-real/pareceres-fase1.md` | —
 
 19/11/2026 | sessão / Nilson | RB 11 | Teste do dono em `teste-simbolos.html`: 27 símbolos e a faixa abriram com valores; variação do DI (pontos e %) e do FRED (arredondado, só pontos) registrada; cartões em largura total | `docs/monitor-tempo-real/fase0.md` §8.10 | —
+
+19/11/2026 | sessão | RB 12 (criação) | Página `carteiras/besst-cotacoes/` (Cotações do BESST): ordem de leitura em `ordem.js`, widgets só após clique, tabela acessível, `teste-simbolos.html`; testes `tests/test_besst_cotacoes.py` (31) e `tests/ordem.test.js` (14); símbolos ainda sem teste no widget | `docs/besst-cotacoes/fase0.md` | —
