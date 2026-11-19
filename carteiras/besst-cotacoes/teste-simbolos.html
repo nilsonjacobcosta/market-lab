@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Teste de símbolos · Cotações do BESST</title>
+<style>
+body{margin:0;background:#0b0d10;color:#e6edf3;font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:16px;max-width:1100px;margin:0 auto}
+a{color:#4fd1c5} h1{font-size:1.4rem} h2{font-size:1.05rem;margin:0 0 6px}
+.g{background:#14181d;border:1px solid #28313b;border-radius:10px;padding:12px;margin:12px 0}
+.box{height:470px;border:1px solid #28313b;border-radius:8px;margin:8px 0;position:relative;background:#1a2027}
+.btn{font:inherit;color:#e6edf3;background:#1a2027;border:1px solid #28313b;border-radius:8px;padding:6px 12px;cursor:pointer}
+.marc{display:flex;flex-wrap:wrap;gap:10px;font-size:.86rem}.marc label{display:flex;gap:4px;align-items:center}
+select{font:inherit;background:#1a2027;color:#e6edf3;border:1px solid #28313b;border-radius:6px}
+textarea{width:100%;height:160px;background:#14181d;color:#e6edf3;border:1px solid #28313b;border-radius:8px;font-family:ui-monospace,monospace}
+.nota{color:#93a1af;font-size:.85rem}
+</style>
+</head>
+<body>
+<h1>Teste de símbolos do Cotações do BESST</h1>
+<p class="nota">Uso do dono. Cada grupo tem até 8 papéis. Clique em "Carregar", veja se cada papel aparece com valor e marque "abriu" ou "não abriu". No fim, "Gerar JSON" cria o trecho para colar em <code>matriz_teste</code> de <code>conjuntos.json</code>. No máximo 3 grupos ficam carregados ao mesmo tempo (o mais antigo é descarregado). Nenhum script lê o conteúdo dos widgets.</p>
+<div id="grupos">Carregando…</div>
+<p><button class="btn" id="gerar" type="button">Gerar JSON</button></p>
+<textarea id="saida" readonly aria-label="JSON gerado"></textarea>
+<script src="ordem.js"></script>
+<script>
+"use strict";
+const O = window.OrdemBESST, TV = "https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js", PREF = "BMFBOVESPA:";
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
+const SETORES = ["Bancos", "Energia", "Seguros", "Saneamento", "Telecomunicações"];
+let ativos = [];
+Promise.all([fetch("../../dados/besst/painel.json?t=" + Date.now(), {cache: "no-store"}).then(r => r.json())]).then(([painel]) => {
+  const v = O.validar(painel), grupos = [];
+  for (const s of SETORES) {
+    const r = O.ordenar(v.papeis, s), comPreco = r.fora.filter(i => i.motivo !== "sem_cotacao");
+    O.paginas(r.principal, 8).forEach((pg, i) => grupos.push({nome: `${s}: lista principal, página ${i + 1}`, itens: pg}));
+    O.paginas(comPreco, 8).forEach((pg, i) => grupos.push({nome: `${s}: fora dos critérios (com preço), página ${i + 1}`, itens: pg}));
+  }
+  document.getElementById("grupos").innerHTML = grupos.map((g, k) => `<section class="g" data-k="${k}"><h2>${esc(g.nome)}</h2>
+    <button class="btn" type="button" data-carregar="${k}">Carregar</button> <button class="btn" type="button" data-descarregar="${k}">Descarregar</button>
+    <div class="box" id="box-${k}" hidden></div>
+    <div class="marc">${g.itens.map(i => `<label>${esc(i.p.ticker)} <select data-t="${esc(i.p.ticker)}"><option value="">—</option><option value="ok">abriu</option><option value="no">não abriu</option></select></label>`).join("")}</div></section>`).join("");
+  document.addEventListener("click", (e) => {
+    const c = e.target.closest("[data-carregar]"), d = e.target.closest("[data-descarregar]");
+    if (c) { const k = +c.dataset.carregar; if (!ativos.includes(k)) { ativos.push(k); while (ativos.length > 3) limpar(ativos.shift()); montar(k, grupos[k]); } }
+    if (d) { const k = +d.dataset.descarregar; ativos = ativos.filter(x => x !== k); limpar(k); }
+  });
+  document.getElementById("gerar").addEventListener("click", () => {
+    const ok = [], no = [];
+    document.querySelectorAll("select[data-t]").forEach(s => { if (s.value === "ok") ok.push(s.dataset.t); if (s.value === "no") no.push(s.dataset.t); });
+    document.getElementById("saida").value = JSON.stringify({data_teste: new Date().toISOString().slice(0, 10), simbolos_aprovados: ok.sort(), reprovados: no.sort()}, null, 1);
+  });
+});
+function limpar(k) { const b = document.getElementById("box-" + k); b.replaceChildren(); b.hidden = true; }
+function montar(k, g) {
+  const b = document.getElementById("box-" + k); b.hidden = false; b.replaceChildren();
+  const cont = document.createElement("div"); cont.className = "tradingview-widget-container"; cont.style.height = "100%";
+  cont.innerHTML = '<div class="tradingview-widget-container__widget" style="height:calc(100% - 32px)"></div>';
+  const s = document.createElement("script"); s.async = true; s.src = TV;
+  s.text = JSON.stringify({width: "100%", height: 436, symbolsGroups: [{name: g.nome, originalName: g.nome, symbols: g.itens.map(i => ({name: PREF + i.p.ticker, displayName: i.p.ticker}))}], showSymbolLogo: false, isTransparent: true, colorTheme: "dark", locale: "br"});
+  cont.appendChild(s); b.appendChild(cont);
+}
+</script>
+</body>
+</html>

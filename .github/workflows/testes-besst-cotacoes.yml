@@ -1,0 +1,34 @@
+name: Testes da página Cotações do BESST
+
+on:
+  pull_request:
+    paths:
+      - "carteiras/besst-cotacoes/**"
+      - "tests/test_besst_cotacoes.py"
+      - "tests/ordem.test.js"
+      - ".github/workflows/testes-besst-cotacoes.yml"
+      - "manutencao/runbooks/12-*.md"
+  schedule:
+    # Semanal (segunda): pega mudança de formato do painel.json e papéis novos sem teste (RB 12).
+    - cron: "23 11 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  testar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Testes textuais (JSON, HTML e JS, sem rede)
+        run: python3 -m unittest tests/test_besst_cotacoes.py -v
+      - name: Testes da ordem (node)
+        run: node --test tests/ordem.test.js

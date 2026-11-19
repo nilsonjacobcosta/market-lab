@@ -19,6 +19,7 @@ um atraso real.
 ## 3. Arquivos afetados
 | Arquivo | Trecho | Quem lê |
 |---|---|---|
+| `carteiras/besst-cotacoes/ordem.js` | `const FERIADOS = [...]` (mesma lista; o teste `tests/ordem.test.js` falha se divergir) | pregão esperado e aviso de atraso da página Cotações do BESST |
 | `carteiras/monitor-besst/index.html` | linha ~342 (comentário com a fonte) e ~343–344 (`const FERIADOS=new Set([...])`, datas `"AAAA-MM-DD"`) | selo de atualização |
 
 Estado em 03/11/2026: 2026 com 14 datas oficiais; 2027 com 12 datas **provisórias** (feriados nacionais + 24/12 e 31/12).
