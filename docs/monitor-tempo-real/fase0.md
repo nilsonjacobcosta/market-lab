@@ -125,3 +125,5 @@ Variação do DI e do FRED sem afirmar o que o widget mostra (não verificado); 
 
 ### 8.10 Teste do dono em 19/11/2026 (PR #15 já na `main`)
 Feito em `teste-simbolos.html`, Chrome do dono, PDFs enviados na conversa. Resultados: (1) a faixa rola com valores; (2) todos os 27 símbolos dos cartões e os 6 da faixa abriram; (3) DI: o widget mostra duas colunas de variação, em pontos (diferença entre taxas) e em porcentagem relativa; FRED: valor arredondado a uma casa, variação em pontos, variação percentual em branco, abertura/máxima/mínima iguais ao valor; (4) natureza dos feeds TVC e CAPITALCOM não consultada. Achado: no cartão em meia largura o widget mostra só nome e valor; por isso os cartões passam a ocupar a largura inteira e os textos dizem que a variação aparece quando há espaço. Também se observou, nos PDFs, o widget em fundo claro: pode ser efeito da impressão em PDF; conferir na tela.
+
+Atualização (19/11/2026, 17:11): o dono clicou em cobre no TradingView: XCUUSD, Capital.com, "Commodity • Cfd", CAPITALCOM. Cobre confirmado como CFD de corretora. Minério (`CAPITALCOM:IRON`) e os `TVC:*` seguem não conferidos.

@@ -91,7 +91,7 @@
    "resultado": "todos os 27 símbolos dos cartões e os 6 da faixa abriram com valores; nenhum com linha vazia ou erro",
    "variacao_di": "colunas Variação (em pontos) e Var% (relativa à taxa)",
    "variacao_fred": "Variação em pontos; Var% em branco; valor arredondado a uma casa; abertura, máxima e mínima iguais ao valor",
-   "nao_respondido": "natureza dos feeds TVC e CAPITALCOM (página do símbolo no TradingView) não foi consultada"
+   "nao_respondido": "natureza dos feeds TVC e de CAPITALCOM:IRON não consultada; CAPITALCOM:COPPER confirmado como CFD da Capital.com (captura do dono, 19/11/2026)"
   }
  },
  "conjuntos": [
@@ -367,7 +367,7 @@
    "id": "commodities",
    "nome": "Commodities",
    "subtitulo": "Ouro, petróleo e cobre em dólares.",
-   "nao_diz": "Preço de commodity vem de oferta, demanda, estoques, câmbio e eventos, e nunca de uma causa única. Ouro, petróleo e prata são cotações de referência do TradingView; cobre e minério vêm de uma corretora e podem diferir de contratos de bolsa.",
+   "nao_diz": "Preço de commodity vem de oferta, demanda, estoques, câmbio e eventos, e nunca de uma causa única. Ouro, petróleo e prata são cotações de referência do TradingView; o cobre é um CFD de corretora e o minério vem da mesma corretora, e ambos podem diferir de contratos de bolsa.",
    "graficos": [
     {
      "id": "tr-commodities-principais",
@@ -393,11 +393,11 @@
       {
        "s": "CAPITALCOM:COPPER",
        "rotulo": "Cobre",
-       "atraso": "cotação da corretora Capital.com (provável CFD, pode diferir da bolsa; natureza não verificada por nós); atraso não informado pela fonte"
+       "atraso": "CFD da corretora Capital.com (página do símbolo no TradingView, conferida em 19/11/2026); pode diferir da bolsa; atraso não informado pela fonte"
       }
      ],
      "o_que_e": "Brent e WTI são duas referências diferentes de petróleo: o Brent vem do Mar do Norte e o WTI, dos EUA; costumam ter preços próximos, mas não iguais. Ouro e cobre estão cotados em dólares; a unidade (onça, libra ou outra) aparece no widget.",
-     "como_ler": "Ouro, Brent e WTI são cotações de referência do TradingView, e o cobre vem de uma corretora (provável CFD). Nenhuma é, para nós, um contrato de bolsa verificado. A variação é em relação ao fechamento anterior da própria cotação.",
+     "como_ler": "Ouro, Brent e WTI são cotações de referência do TradingView (composição não verificada por nós). O cobre é um CFD da corretora Capital.com, e o valor pode diferir do de uma bolsa. A variação é em relação ao fechamento anterior da própria cotação.",
      "ja_se_observou": "Ainda sem observação registrada neste painel.",
      "termos": [
       "commodities",
@@ -424,7 +424,7 @@
        "atraso": "cotação da corretora Capital.com (provável CFD, pode diferir da bolsa; natureza não verificada por nós); atraso não informado pela fonte; o widget não informa qual referência de minério é usada"
       }
      ],
-     "o_que_e": "Cotações de prata (referência do TradingView) e de minério de ferro (de uma corretora, provável CFD). Para o minério, o widget não informa o índice de referência (há mais de um no mercado).",
+     "o_que_e": "Cotações de prata (referência do TradingView) e de minério de ferro (do mesmo fornecedor do cobre, a corretora Capital.com; provável CFD, ainda não conferido). Para o minério, o widget não informa o índice de referência (há mais de um no mercado).",
      "como_ler": "Trate a cotação do minério como indicação geral até confirmar a referência no TradingView.",
      "ja_se_observou": "Ainda sem observação registrada neste painel.",
      "termos": [
