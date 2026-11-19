@@ -30,13 +30,9 @@
    {
     "proName": "TVC:UKOIL",
     "title": "Brent"
-   },
-   {
-    "proName": "BITSTAMP:BTCUSD",
-    "title": "Bitcoin"
    }
   ],
-  "nota": "Origem e atraso de cada símbolo estão nos cartões; os nomes da faixa são curtos."
+  "nota": "Cotações de fontes e atrasos diferentes (referência, CFD, B3 atrasada). Verde e vermelho só indicam acima ou abaixo do fechamento anterior; não significa bom nem ruim. O atraso de cada símbolo está nos cartões."
  },
  "matriz_teste": {
   "data_teste": "2026-11-19",
@@ -95,7 +91,7 @@
    "id": "cambio",
    "nome": "Câmbio",
    "subtitulo": "Quanto vale uma moeda em outra, no momento.",
-   "nao_diz": "Uma cotação de agora não diz se a moeda está cara ou barata, nem para onde vai. O dólar que você vê aqui é uma cotação de câmbio do TradingView; o dólar futuro da B3 e a PTAX do Banco Central são outros números, calculados de outro modo e em outros horários, e podem diferir.",
+   "nao_diz": "Uma cotação de agora não diz se a moeda está cara ou barata, nem para onde vai. O dólar que você vê aqui é uma cotação de câmbio do TradingView; o dólar futuro da B3 e a PTAX do Banco Central (veja o glossário) são outros números, calculados de outro modo e em outros horários, e podem diferir.",
    "graficos": [
     {
      "id": "tr-cambio-pares",
@@ -121,13 +117,14 @@
      ],
      "o_que_e": "Uma cotação de câmbio diz quantas unidades da segunda moeda são necessárias para comprar uma unidade da primeira. No par USD/BRL, o número é quantos reais custam um dólar.",
      "como_ler": "Leia o par da esquerda para a direita: em USD/BRL, o valor é em reais por dólar; em EUR/USD, é em dólares por euro. Cada linha mostra a variação em relação ao fechamento anterior, não um julgamento sobre a moeda: a cor do widget indica apenas acima ou abaixo desse fechamento, e não significa bom nem ruim.",
-     "ja_se_observou": "Este quadro mostra o valor do momento e não guarda histórico: ainda sem observação registrada neste painel. Para ver como a série se comportou ao longo de anos, use o link do histórico no painel Mercados e ciclos.",
+     "ja_se_observou": "Ainda sem observação registrada neste painel.",
      "termos": [
       "tempo_real",
       "cotacao",
       "variacao_dia",
       "par_de_moedas",
-      "fechamento"
+      "fechamento",
+      "ptax"
      ],
      "historico": "../mercados/?modo=iniciante&conjunto=forex"
     },
@@ -145,7 +142,7 @@
      ],
      "o_que_e": "Cotação da libra esterlina em dólares americanos.",
      "como_ler": "Mesma leitura do par EUR/USD: dólares por libra.",
-     "ja_se_observou": "Este quadro mostra o valor do momento e não guarda histórico: ainda sem observação registrada neste painel. Para ver como a série se comportou ao longo de anos, use o link do histórico no painel Mercados e ciclos.",
+     "ja_se_observou": "Ainda sem observação registrada neste painel.",
      "termos": [
       "par_de_moedas",
       "cotacao"
@@ -183,10 +180,11 @@
       }
      ],
      "o_que_e": "São cotações em CFD, um contrato oferecido por corretoras que acompanha o índice; o valor pode diferir do índice oficial da bolsa. Os índices resumem o preço de grandes empresas dos EUA e estão em pontos.",
-     "como_ler": "A variação mostrada é em relação ao fechamento anterior desse CFD. Fora do horário da bolsa dos EUA, o CFD pode continuar variando ou ficar parado, pois o horário é o da corretora. Não use este quadro para operar.",
-     "ja_se_observou": "Este quadro mostra o valor do momento e não guarda histórico: ainda sem observação registrada neste painel. Para ver como a série se comportou ao longo de anos, use o link do histórico no painel Mercados e ciclos.",
+     "como_ler": "A variação mostrada é em relação ao fechamento anterior desse CFD. Fora do horário da bolsa dos EUA, o CFD pode continuar variando ou ficar parado; não é o fechamento oficial da bolsa. Não use este quadro para operar.",
+     "ja_se_observou": "Ainda sem observação registrada neste painel.",
      "termos": [
       "cfd",
+      "alavancagem",
       "indice_acoes",
       "variacao_dia",
       "pregao",
@@ -207,13 +205,14 @@
       }
      ],
      "o_que_e": "O Ibovespa é o principal índice de ações da B3, em pontos. A cotação do widget é atrasada.",
-     "como_ler": "Compare o horário do pregão da B3 com o horário em que você olha: fora do pregão, o número é o do último momento negociado. A variação é em relação ao fechamento anterior.",
-     "ja_se_observou": "Este quadro mostra o valor do momento e não guarda histórico: ainda sem observação registrada neste painel. Para ver como a série se comportou ao longo de anos, use o link do histórico no painel Mercados e ciclos.",
+     "como_ler": "Compare o horário do pregão da B3 com o horário em que você olha: fora do pregão, o número é o do último negócio registrado. A variação é em relação ao fechamento anterior.",
+     "ja_se_observou": "Ainda sem observação registrada neste painel.",
      "termos": [
       "indice_acoes",
       "pregao",
       "tempo_real",
-      "fechamento"
+      "fechamento",
+      "b3"
      ],
      "historico": "../mercados/?modo=iniciante&conjunto=brasil-portugal-asia"
     },
@@ -245,14 +244,15 @@
       }
      ],
      "o_que_e": "Contratos futuros negociados na B3 que acompanham o Ibovespa e o dólar. Têm vencimento, e o código com \"1!\" aponta para o contrato mais próximo, que muda ao longo do tempo.",
-     "como_ler": "Contratos futuros têm alavancagem: pequenas variações do índice ou do dólar geram variações maiores no resultado de quem opera. Este painel é para estudo e não ensina nem recomenda operar.",
-     "ja_se_observou": "Este quadro mostra o valor do momento e não guarda histórico: ainda sem observação registrada neste painel. Para ver como a série se comportou ao longo de anos, use o link do histórico no painel Mercados e ciclos.",
+     "como_ler": "Contratos futuros têm alavancagem: pequenas variações do índice ou do dólar geram variações maiores no resultado de quem opera, e pode haver perda maior do que o valor aplicado. Este painel é para estudo e não ensina nem recomenda operar.",
+     "ja_se_observou": "Ainda sem observação registrada neste painel.",
      "termos": [
       "contrato_futuro",
       "vencimento",
       "minicontrato",
       "alavancagem",
-      "pregao"
+      "pregao",
+      "b3"
      ]
     }
    ]
@@ -285,15 +285,17 @@
        "atraso": "atrasado (cotação da B3 exibida com atraso pelo TradingView; o prazo exato não é informado aqui)"
       }
      ],
-     "o_que_e": "O DI futuro é um contrato da B3 cujo preço traz uma taxa de juros ao ano para o período até o vencimento (o primeiro dia útil de janeiro do ano do código). Aqui entram só contratos com mais de 90 dias até o vencimento.",
+     "o_que_e": "O DI futuro é um contrato da B3 cuja cotação é uma taxa de juros ao ano para o período até o vencimento (o primeiro dia útil de janeiro do ano do código). Mostramos só contratos que ainda têm mais de 90 dias, porque perto do vencimento o contrato perde o valor didático.",
      "como_ler": "A taxa é em porcentagem ao ano. Comparar vencimentos diferentes mostra o que o mercado negocia para prazos curtos e longos, sem dizer qual taxa vai ocorrer. Se o widget mostrar variação, cuidado: a diferença entre duas taxas se mede em pontos percentuais, e a variação em porcentagem é relativa à taxa (veja o termo Ponto percentual). Não verificamos qual das duas o widget exibe.",
-     "ja_se_observou": "Este quadro mostra o valor do momento e não guarda histórico: ainda sem observação registrada neste painel. Para ver como a série se comportou ao longo de anos, use o link do histórico no painel Mercados e ciclos.",
+     "ja_se_observou": "Ainda sem observação registrada neste painel.",
      "termos": [
       "di",
       "contrato_futuro",
       "vencimento",
       "ponto_percentual",
-      "taxa_de_juro"
+      "taxa_de_juro",
+      "b3",
+      "selic"
      ],
      "historico": "../mercados/?modo=iniciante&conjunto=juros-brasil"
     },
@@ -315,8 +317,8 @@
       }
      ],
      "o_que_e": "Mais dois vencimentos do contrato DI.",
-     "como_ler": "Mesma leitura do cartão anterior.",
-     "ja_se_observou": "Este quadro mostra o valor do momento e não guarda histórico: ainda sem observação registrada neste painel. Para ver como a série se comportou ao longo de anos, use o link do histórico no painel Mercados e ciclos.",
+     "como_ler": "A taxa é em porcentagem ao ano, como nos outros vencimentos do DI. Compare prazos diferentes sem concluir qual taxa vai ocorrer.",
+     "ja_se_observou": "Ainda sem observação registrada neste painel.",
      "termos": [
       "di",
       "vencimento"
@@ -342,11 +344,12 @@
      ],
      "o_que_e": "Taxas de mercado dos títulos do Tesouro dos EUA de vencimento constante de 2 e de 10 anos, em porcentagem ao ano, divulgadas pelo Federal Reserve (série H.15) e republicadas pelo FRED (Federal Reserve Bank of St. Louis). Não são um título específico.",
      "como_ler": "Estes são dados diários, não cotações ao vivo, com defasagem de cerca de um dia útil. O widget mostra o valor diário e pode não mostrar variação.",
-     "ja_se_observou": "Este quadro mostra o valor do momento e não guarda histórico: ainda sem observação registrada neste painel. Para ver como a série se comportou ao longo de anos, use o link do histórico no painel Mercados e ciclos.",
+     "ja_se_observou": "Ainda sem observação registrada neste painel.",
      "termos": [
       "dado_diario",
       "ponto_percentual",
-      "yield"
+      "yield",
+      "treasury"
      ],
      "historico": "../mercados/?modo=iniciante&conjunto=juros-eua"
     }
@@ -387,7 +390,7 @@
      ],
      "o_que_e": "Brent e WTI são duas referências diferentes de petróleo: o Brent vem do Mar do Norte e o WTI, dos EUA; costumam ter preços próximos, mas não iguais. Ouro e cobre estão cotados em dólares; a unidade (onça, libra ou outra) aparece no widget.",
      "como_ler": "Ouro, Brent e WTI são cotações de referência do TradingView, e o cobre vem de uma corretora (provável CFD). Nenhuma é, para nós, um contrato de bolsa verificado. A variação é em relação ao fechamento anterior da própria cotação.",
-     "ja_se_observou": "Este quadro mostra o valor do momento e não guarda histórico: ainda sem observação registrada neste painel. Para ver como a série se comportou ao longo de anos, use o link do histórico no painel Mercados e ciclos.",
+     "ja_se_observou": "Ainda sem observação registrada neste painel.",
      "termos": [
       "commodities",
       "cotacao",
@@ -415,7 +418,7 @@
      ],
      "o_que_e": "Cotações de prata (referência do TradingView) e de minério de ferro (de uma corretora, provável CFD). Para o minério, o widget não informa o índice de referência (há mais de um no mercado).",
      "como_ler": "Trate a cotação do minério como indicação geral até confirmar a referência no TradingView.",
-     "ja_se_observou": "Este quadro mostra o valor do momento e não guarda histórico: ainda sem observação registrada neste painel. Para ver como a série se comportou ao longo de anos, use o link do histórico no painel Mercados e ciclos.",
+     "ja_se_observou": "Ainda sem observação registrada neste painel.",
      "termos": [
       "commodities",
       "cotacao"
@@ -447,9 +450,9 @@
        "atraso": "cripto: o TradingView descreve cripto como tempo real; latência não verificada por nós"
       }
      ],
-     "o_que_e": "Cotações de duas criptomoedas muito conhecidas, em dólares, na bolsa Bitstamp. O mercado de cripto funciona sem pausa, inclusive em fins de semana.",
+     "o_que_e": "Cotações de duas das maiores criptomoedas por valor de mercado, em dólares, na bolsa Bitstamp. O mercado de cripto funciona sem pausa, inclusive em fins de semana.",
      "como_ler": "A variação do dia é calculada pelo widget com seu próprio horário de corte.",
-     "ja_se_observou": "Este quadro mostra o valor do momento e não guarda histórico: ainda sem observação registrada neste painel. Para ver como a série se comportou ao longo de anos, use o link do histórico no painel Mercados e ciclos.",
+     "ja_se_observou": "Ainda sem observação registrada neste painel.",
      "termos": [
       "tempo_real",
       "cotacao",
@@ -475,7 +478,7 @@
   },
   "variacao_dia": {
    "termo": "Variação do dia",
-   "definicao": "Diferença entre o preço atual e o fechamento anterior, que o widget mostra em valor e/ou em porcentagem. Verde e vermelho no widget só dizem acima ou abaixo desse fechamento: não significam bom nem ruim."
+   "definicao": "Diferença entre o preço atual e o fechamento anterior, que o widget mostra em valor e/ou em porcentagem. Verde e vermelho no widget só dizem acima ou abaixo desse fechamento: não significam bom nem ruim. Em câmbio e cripto, o horário de corte do dia é definido pelo widget."
   },
   "pregao": {
    "termo": "Pregão e horário",
@@ -503,7 +506,7 @@
   },
   "cfd": {
    "termo": "CFD",
-   "definicao": "Contrato por diferença: um contrato oferecido por corretoras que acompanha o preço de um ativo sem ser o próprio ativo. O valor pode diferir do da bolsa."
+   "definicao": "Contrato por diferença: um contrato oferecido por corretoras que acompanha o preço de um ativo sem ser o próprio ativo. O valor pode diferir do da bolsa, e costuma ser alavancado, o que pode gerar perda maior do que o valor aplicado."
   },
   "minicontrato": {
    "termo": "Minicontrato",
@@ -544,6 +547,23 @@
   "ruido": {
    "termo": "Ruído e tendência",
    "definicao": "Movimentos de minutos ou horas costumam ser ruído: variações pequenas e sem significado duradouro. Tendência é um movimento que persiste por semanas ou anos. Um painel ao vivo mostra principalmente ruído."
+  },
+  "b3": {
+   "termo": "B3",
+   "definicao": "A bolsa de valores do Brasil, onde são negociados ações, índices como o Ibovespa e contratos futuros como o DI e o dólar."
+  },
+  "ptax": {
+   "termo": "PTAX",
+   "definicao": "Taxa de câmbio calculada pelo Banco Central do Brasil a partir de consultas feitas durante o dia, usada como referência em contratos. Não é a cotação do momento."
+  },
+  "selic": {
+   "termo": "Selic",
+   "definicao": "Taxa básica de juros da economia brasileira, definida pelo Comitê de Política Monetária (Copom) do Banco Central."
+  },
+  "treasury": {
+   "termo": "Treasury",
+   "definicao": "Título de dívida do governo dos EUA. Os de 2 e de 10 anos são os mais citados para falar de juros nos EUA."
   }
- }
+ },
+ "legenda_cores": "Verde e vermelho nos widgets só indicam se a cotação está acima ou abaixo do fechamento anterior; não significam bom nem ruim."
 }

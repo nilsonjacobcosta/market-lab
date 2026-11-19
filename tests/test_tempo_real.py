@@ -141,7 +141,7 @@ class Textos(unittest.TestCase):
 
     def test_observacao_estatica_sem_valor(self):
         for c, g in graficos():
-            self.assertTrue(g["ja_se_observou"].startswith("Este quadro mostra o valor do momento"), g["id"])
+            self.assertEqual(g["ja_se_observou"], "Ainda sem observação registrada neste painel.", g["id"])
 
 
 class Pagina(unittest.TestCase):
@@ -164,8 +164,19 @@ class Pagina(unittest.TestCase):
         self.assertNotIn("contentDocument", HTML)
         self.assertNotIn("postMessage", HTML)
 
-    def test_iframe_com_titulo_no_contentor(self):
-        self.assertIn("cont.title", HTML)
+    def test_iframe_com_titulo_e_contentor_rotulado(self):
+        self.assertIn("rotularIframe", HTML)
+        self.assertIn("f.title = titulo", HTML)
+
+    def test_faixa_estatica_no_html_e_privacidade_sem_afirmar_cookies(self):
+        self.assertIn("Para estudo. Não use para operar.", HTML)
+        self.assertNotIn("não gravam cookies", HTML.lower())
+        self.assertIn("Como usar este painel", HTML)
+
+    def test_ticker_sem_cripto_e_com_legenda_de_cores(self):
+        self.assertNotIn("BITSTAMP", json.dumps(CFG["ticker"]))
+        self.assertIn("não significa bom nem ruim", CFG["ticker"]["nota"])
+        self.assertIn("não significam bom nem ruim", CFG["legenda_cores"])
 
     def test_usa_prefixo_proprio_de_armazenamento(self):
         for k in re.findall(r'(?:guardar|ler)\("([^"]+)"', HTML):

@@ -96,7 +96,7 @@ footer p{color:var(--mut);max-width:90ch}
 .alt{font-size:.8rem;color:var(--txt-2)}
 .alt ul{margin:4px 0 0;padding-left:18px}
 .alt li{margin:2px 0}
-.pular{font-size:.76rem}
+.pular{font-size:.85rem}
 .btn{font:inherit;font-size:.84rem;color:var(--txt);background:var(--card-2);border:1px solid var(--line);border-radius:8px;padding:6px 12px;min-height:36px;cursor:pointer}
 .btn[aria-pressed="true"]{background:var(--acc);border-color:var(--acc);color:#04201d;font-weight:700}
 .grade{grid-template-columns:minmax(0,1fr)!important}
@@ -109,19 +109,26 @@ footer p{color:var(--mut);max-width:90ch}
   <header>
     <div class="eyebrow"><a href="../../">market-lab</a> · monitor · tempo real</div>
     <h1>Mercados em tempo real</h1>
-    <p>Cotações do momento (algumas atrasadas) de câmbio, ações, juros do Brasil e commodities, com texto para aprender a ler cada uma. Você não precisa acompanhar isto durante o dia: para ver o que a série fez ao longo de anos, use o link do histórico em cada cartão.</p>
-    <div class="faixa" id="faixa" role="note"></div>
+    <p>Cotações do momento e atrasadas de câmbio, ações, juros do Brasil e commodities, com texto para aprender a ler cada uma. Você não precisa acompanhar isto durante o dia: para ver o que a série fez ao longo de anos, use o link do histórico em cada cartão.</p>
+    <div class="faixa" id="faixa" role="note">Para estudo. Não use para operar. Preços atrasados ou de referência podem diferir dos de uma corretora.</div>
     <div class="aviso"><b>Material educativo.</b> Não é recomendação de investimento. Rentabilidade passada não garante resultado futuro.</div>
   </header>
 
   <section class="privac" aria-labelledby="h-priv">
-    <b id="h-priv">Privacidade.</b> Ao abrir esta página, seu navegador carrega widgets do TradingView (tradingview.com). Segundo a documentação do TradingView, os widgets registram o endereço da página, o tipo de widget, os símbolos exibidos e o endereço IP do visitante, e não gravam cookies. O market-lab não lê nem guarda os valores exibidos. Política do TradingView: <a href="https://www.tradingview.com/privacy-policy/" rel="noopener nofollow" target="_blank">tradingview.com/privacy-policy</a>.
+    <h2 id="h-priv" style="font-size:1rem">Privacidade</h2>
+    <p>Ao abrir esta página, seu navegador carrega widgets do TradingView (tradingview.com), que recebem dados técnicos da visita, como o endereço da página, o tipo de widget, os símbolos exibidos e o endereço IP. O TradingView pode usar cookies e identificadores conforme a política dele: <a href="https://www.tradingview.com/privacy-policy/" rel="noopener nofollow" target="_blank">tradingview.com/privacy-policy</a>. O market-lab não lê nem guarda os valores exibidos. Esta página guarda no seu navegador apenas suas escolhas de modo, conjunto e faixa. O servidor que hospeda a página também recebe a visita.</p>
+  </section>
+
+  <section class="painel" aria-labelledby="h-como">
+    <h2 id="h-como" style="font-size:1rem">Como usar este painel</h2>
+    <p>Cada cartão mostra uma cotação em um widget do TradingView, com o atraso escrito e um texto que explica o que ler. <span id="legenda-cores"></span> O modo Iniciante traz quatro conjuntos; o Avançado acrescenta contratos da B3, outros vencimentos de juros, dado diário dos EUA, prata, minério e cripto. Você não precisa acompanhar isto durante o dia.</p>
   </section>
 
   <section class="tira" aria-labelledby="h-tira">
-    <div class="linha"><b id="h-tira">Faixa de cotações</b>
+    <div class="linha"><h2 id="h-tira" style="font-size:1rem;margin:0">Faixa de cotações</h2>
       <button type="button" class="btn" id="btn-ticker" aria-pressed="true">Faixa ligada</button>
-      <span class="nota" id="nota-ticker"></span></div>
+      </div>
+    <p class="nota" id="nota-ticker"></p>
     <div id="tira"></div>
   </section>
 
@@ -140,7 +147,7 @@ footer p{color:var(--mut);max-width:90ch}
     </div>
   </section>
 
-  <main id="painel" role="tabpanel" tabindex="-1" aria-live="off"><div class="vazio">Carregando conjuntos…</div></main>
+  <main><div id="painel" role="tabpanel" tabindex="-1" aria-live="off"><div class="vazio">Carregando conjuntos…</div></div></main>
 
   <section class="painel gloss" aria-labelledby="h-gloss">
     <h2 id="h-gloss">Glossário</h2>
@@ -215,6 +222,10 @@ function montarScript(cont, arquivo, cfg) {
   const s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
   s.src = TV_BASE + arquivo; s.text = JSON.stringify(cfg); cont.appendChild(s);
 }
+function rotularIframe(cont, titulo) {
+  let n = 0; const t = setInterval(() => { const f = cont.querySelector("iframe"); if (f) { f.title = titulo; clearInterval(t); } else if (++n > 50) clearInterval(t); }, 400);
+  limpezas.push(() => clearInterval(t));
+}
 function atribuicao(texto, href) {
   return `<div class="tradingview-widget-copyright"><a href="${esc(href)}" rel="noopener nofollow" target="_blank"><span class="blue-text">${esc(texto)}</span></a><span class="trademark"> by TradingView</span></div>`;
 }
@@ -225,12 +236,13 @@ function montarCotacoes(host, g, reserva) {
   const n = g.simbolos.length, altura = 92 + 54 * n;
   const caixa = document.createElement("div"); caixa.className = "tvbox"; caixa.style.height = altura + "px";
   const cont = document.createElement("div"); cont.className = "tradingview-widget-container";
-  cont.title = `Widget do TradingView (cotações): ${g.titulo}`;
+  cont.setAttribute("role", "group"); cont.setAttribute("aria-label", `Widget do TradingView: ${g.titulo}`);
   cont.innerHTML = `<div class="tradingview-widget-container__widget"></div>` + atribuicao("Cotações", urlSimbolo(g.simbolos[0].s));
   const aguarde = document.createElement("div"); aguarde.className = "carregando"; aguarde.textContent = "Carregando widget do TradingView…";
   caixa.append(cont, aguarde); host.replaceChildren(caixa);
   montarScript(cont, WIDGETS[g.widget], {width: "100%", height: altura - 34, symbolsGroups: [{name: g.titulo, originalName: g.titulo,
     symbols: g.simbolos.map(x => ({name: x.s, displayName: x.rotulo}))}], showSymbolLogo: false, isTransparent: true, colorTheme: "dark", locale: "br"});
+  rotularIframe(cont, `Cotações do TradingView: ${g.titulo}`);
   let fim = false;
   const olho = setInterval(() => { if (cont.querySelector("iframe")) { aguarde.remove(); clearInterval(olho); } }, 400);
   const timer = setTimeout(() => { if (fim || cont.querySelector("iframe")) return; fim = true; clearInterval(olho);
@@ -247,24 +259,27 @@ function desenharTira() {
   const ligada = pref ? pref === "ligado" : t.padrao === "ligado";
   host.replaceChildren();
   if (reduz()) {
-    btn.hidden = true; nota.textContent = "A faixa em movimento fica desligada porque seu sistema pede menos animação. Os cartões abaixo mostram as mesmas cotações sem movimento."; return;
+    btn.hidden = true; nota.textContent = "A faixa em movimento fica desligada porque seu sistema pede menos animação. Os cartões abaixo mostram as cotações do conjunto escolhido, sem movimento."; return;
   }
-  btn.hidden = false; btn.setAttribute("aria-pressed", String(ligada)); btn.textContent = ligada ? "Faixa ligada (clique para desligar)" : "Faixa desligada (clique para ligar)";
-  nota.textContent = ligada ? "A faixa rola sozinha; desligue se atrapalhar a leitura." : "";
+  btn.hidden = false; btn.setAttribute("aria-pressed", String(ligada)); btn.textContent = ligada ? "Pausar e desligar a faixa" : "Ligar a faixa";
+  nota.textContent = estado.cfg.ticker.nota + (ligada ? " A faixa rola sozinha; desligue se atrapalhar a leitura." : "");
   if (!ligada) return;
   const caixa = document.createElement("div"); caixa.className = "tvtira";
   const cont = document.createElement("div"); cont.className = "tradingview-widget-container";
-  cont.title = "Widget do TradingView (faixa de cotações)";
+  cont.setAttribute("role", "group"); cont.setAttribute("aria-label", "Widget do TradingView: faixa de cotações");
   cont.innerHTML = `<div class="tradingview-widget-container__widget"></div>` + atribuicao("Cotações", "https://www.tradingview.com/");
   caixa.appendChild(cont); host.appendChild(caixa);
   montarScript(cont, "embed-widget-ticker-tape.js", {symbols: t.simbolos, showSymbolLogo: false, isTransparent: true, displayMode: "adaptive", colorTheme: "dark", locale: "br"});
+  rotularIframe(cont, "Faixa de cotações do TradingView");
+  const timer = setTimeout(() => { if (!cont.querySelector("iframe")) { host.replaceChildren(); nota.textContent = "A faixa de cotações não carregou (bloqueador de conteúdo ou rede). Os cartões abaixo não dependem dela."; } }, ESPERA_TV_MS);
+  limpezas.push(() => clearTimeout(timer));
 }
 
 /* ---------- cartões ---------- */
 function htmlTermos(g) {
   const G = estado.cfg.glossario || {}, ts = (g.termos || []).filter(t => G[t]);
   if (!ts.length) return "";
-  return `<div class="termos" aria-label="Termos deste cartão">${ts.map(t => `<button type="button" class="termo" data-termo="${esc(t)}" aria-expanded="false" aria-label="O que é ${esc(G[t].termo)}?">${esc(G[t].termo)}<span class="qm" aria-hidden="true">?</span></button>`).join("")}</div>`;
+  return `<div class="termos" role="group" aria-label="Termos deste cartão">${ts.map(t => `<button type="button" class="termo" data-termo="${esc(t)}" aria-expanded="false" aria-label="O que é ${esc(G[t].termo)}?">${esc(G[t].termo)}<span class="qm" aria-hidden="true">?</span></button>`).join("")}</div>`;
 }
 function htmlTextos(g) {
   const blocos = `<p><b>O que é.</b> ${esc(g.o_que_e)}</p><p><b>Como ler.</b> ${esc(g.como_ler)}</p><p><b>O que já se observou.</b> ${esc(g.ja_se_observou)}</p>`;
@@ -275,10 +290,10 @@ function montarCartao(g, i) {
   const art = document.createElement("article"); art.className = "cartao"; art.dataset.grafico = g.id;
   art.setAttribute("aria-labelledby", "t-" + g.id);
   art.innerHTML = `<div><h3 id="t-${esc(g.id)}">${esc(g.titulo)}</h3>${htmlTermos(g)}</div>
-    <a class="pular" href="#fim-${esc(g.id)}">Pular este quadro</a>
-    <div class="reserva" data-r="reserva" hidden></div>
+    <a class="pular" href="#fim-${esc(g.id)}" aria-label="Pular o quadro de cotações: ${esc(g.titulo)}">Pular este quadro</a>
+    <div class="reserva" data-r="reserva" role="status" hidden></div>
     <div class="corpo" data-r="corpo"></div>
-    <div id="fim-${esc(g.id)}" class="alt"><b>Símbolos e atraso</b>${listaAlternativa(g)}</div>
+    <div id="fim-${esc(g.id)}" class="alt" tabindex="-1"><b>Símbolos e atraso</b>${listaAlternativa(g)}</div>
     ${htmlTextos(g)}
     ${g.historico ? `<p class="nota"><a href="${esc(g.historico)}">Ver o histórico no painel Mercados e ciclos</a></p>` : ""}`;
   montarCotacoes(art.querySelector('[data-r="corpo"]'), g, art.querySelector('[data-r="reserva"]'));
@@ -345,7 +360,7 @@ addEventListener("popstate", () => { if (!estado.cfg) return; const u = lerURL()
 
 /* ---------- carga ---------- */
 fetch(CONJ_URL + "?v=" + Date.now(), {cache: "no-store"}).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(cfg => {
-  estado.cfg = cfg; $("faixa").textContent = cfg.faixa.texto;
+  estado.cfg = cfg; $("faixa").textContent = cfg.faixa.texto; $("legenda-cores").textContent = cfg.legenda_cores;
   const u = lerURL(), n = normalizar(u.conjunto || ler("tempo-real-conjunto"), u.modo || ler("tempo-real-modo"));
   estado.conjunto = n.conjunto; estado.modo = n.modo; gravarURL(false);
   desenharGlossario(); desenharTira(); desenharTudo();
