@@ -286,7 +286,7 @@ function htmlTabela(itens, ref) {
   const av = estado.modo === "avancado", F = estado.cfg.faixas;
   const cab = `<th scope="col">Papel</th><th scope="col">Empresa</th><th scope="col">Faixa de margem (preço de ${esc(dcurta(ref))})</th>${av ? `<th scope="col">Margem (+ abaixo do teto, − acima) em ${esc(dcurta(ref))}</th><th scope="col">Liquidez (R$ mil por dia)</th><th scope="col">Data do preço</th><th scope="col">Controle</th>` : ""}<th scope="col">Alerta</th>`;
   const linhas = itens.map(it => {
-    const p = it.p, sem = aprovado(p.ticker) ? "" : ` <span class="sem-teste">· sem teste no widget</span>`;
+    const p = it.p, sem = aprovado(p.ticker) ? "" : ` <span class="sem-teste">· ${estado.cfg.matriz_teste.reprovados.includes(p.ticker) ? "não abre no widget" : "sem teste no widget"}</span>`;
     return `<tr><th scope="row"><a href="${esc(urlSimbolo(p.ticker))}" rel="noopener noreferrer nofollow" target="_blank">${esc(p.ticker)}</a>${sem}</th><td>${esc(p.empresa)}</td><td>${esc(F[it.faixa] || "")}</td>${av ? `<td class="n">${fmt1(p.margem_robusta)}%</td><td class="n">${fmtInt(p.liquidez_mil)}</td><td class="n">${esc(dcurta(p.data))}</td><td>${esc(CONTROLE[p.controle] || p.controle || "—")}${/PENDENTE|não conferid/i.test(p.controle_nota || "") ? ` (${esc(estado.cfg.controle_a_confirmar)})` : ""}</td>` : ""}<td>${htmlAlerta(p)}</td></tr>`;
   }).join("");
   return `<div class="tabwrap" tabindex="0" role="region" aria-label="Tabela dos papéis exibidos"><table><caption class="sr">Papéis desta página, na ordem de leitura</caption><thead><tr>${cab}</tr></thead><tbody>${linhas}</tbody></table></div>`;

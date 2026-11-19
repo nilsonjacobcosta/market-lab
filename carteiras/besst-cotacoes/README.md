@@ -26,6 +26,6 @@ Mudar a regra é decisão do dono.
 `python3 -m unittest tests/test_besst_cotacoes.py` (textual), `node --test tests/ordem.test.js` (ordem, calendário, invariantes sobre o `painel.json` real) e `tests/pagina.test.js` (executa a página em jsdom: carga por clique, paginação, XSS, painel malformado; precisa de `npm i --no-save jsdom`). Workflow: `.github/workflows/testes-besst-cotacoes.yml` (PR, semanal e manual). Os widgets em si (iframes do TradingView) só se conferem no navegador com `teste-simbolos.html`. O `painel.json` não dispara o workflow (o bot commita direto): ele é coberto pelo teste semanal.
 
 ## Pendências
-- Teste dos símbolos no widget (`teste-simbolos.html`).
+- Símbolos testados em 19/11/2026 no navegador embutido do app Claude: 105 de 107 abriram com valor; OIBR3 e OIBR4 ficaram sem valor (reprovados). Conferir de novo no Chrome do dono quando possível.
 - Consulta formal ao TradingView: autorizada pelo dono, ainda não enviada; enquanto isso os widgets carregam só por clique.
 - Medir o peso real no navegador e registrar aqui.
