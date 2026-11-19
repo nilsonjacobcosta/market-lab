@@ -105,8 +105,9 @@ class Simbolos(unittest.TestCase):
                 if x["s"].startswith("FRED:"):
                     self.assertIn("dado diário", x["atraso"])
 
-    def test_ticker_com_simbolos_aprovados_e_marcado_pendente(self):
-        self.assertIn("pendente", CFG["matriz_teste"]["ticker_tape"])
+    def test_ticker_testado_pelo_dono(self):
+        self.assertIn("testado em 19/11/2026", CFG["matriz_teste"]["ticker_tape"])
+        self.assertTrue(CFG["matriz_teste"]["teste_dono"]["data"])
         self.assertIn(CFG["ticker"]["padrao"], ("ligado", "desligado"))
 
 
