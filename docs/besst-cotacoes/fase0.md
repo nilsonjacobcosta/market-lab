@@ -1,4 +1,4 @@
-# Cotações do BESST — Fase 0 (proposta, versão 2)
+# Cotações do BESST — Fase 0 (proposta, versão 3)
 
 Data: 19/11/2026. Etapa anterior à construção. **Nenhuma página foi criada e nada será construído antes do "sim" do dono.**
 Esta versão incorpora os quatro pareceres (Mercados 6,5; Didática 6,5; Regulatório 6,5; Engenharia 6,5; todos "aprovar com ajustes"). Resumo dos pareceres em `pareceres-fase0.md`.
@@ -46,14 +46,15 @@ Página nova em "Carteiras de dividendos" com cotações atrasadas (widgets do T
 - Painel velho: usar o calendário de pregões do Monitor BESST (copiar FERIADOS; registrar no RB 04). Atrasado: aviso claro e mantém a ordem do arquivo; cai para ordem alfabética só com atraso ≥ 5 pregões ou JSON inválido. Falha de leitura: mensagem + link ao Monitor BESST.
 - Workflow como o do tempo real (PR, cron e dispatch; sem gatilho em `painel.json`, que o bot commita direto); runbook 12; ajustar RB 03 (34 sem cotação) e RB 04; `calendario.md` trimestral; cartão "Em construção" na página inicial.
 
-## 7. Decisões que dependem do dono
-- **D1 — Ordem:** (a) única, "abaixo do teto primeiro, por liquidez", como você pediu, com aviso reforçado; ou (b) alfabética por padrão com filtro opcional "abaixo do teto" ligado pelo leitor, que Didática e Regulatório sugerem por parecer menos com filtro de oportunidades. Recomendação dos especialistas: (b) ou (a) com seletor alfabético.
-- **D2 — Duplicidade por empresa:** no Iniciante, um papel por empresa (o de maior liquidez), para Santander, Bradesco, Taesa, Cemig etc. não ocuparem metade da página. Recomendado.
-- **D3 — Faixas de margem** em vez de corte binário, e `abaixo_teto_conferir` não vir à frente. Recomendado.
-- **D4 — Carregamento:** ao abrir (sua decisão no tempo real) ou após clique por setor (recomendação de Regulatório e Engenharia para esta página, por ter muitos símbolos). Recomendado: clique.
-- **D5 — Empregador:** resposta por escrito da conformidade do empregador e eventual parecer jurídico antes de publicar. Os especialistas tratam isso como pré-condição; a decisão é sua, e a avaliação jurídica não é nossa.
-- **D6 — TradingView:** resposta por escrito guardada no repositório, ou então carregamento por clique. A consulta está autorizada e não enviada (faltam e-mail, telefone e site; site sugerido: `https://nilsonjacobcosta.github.io/market-lab/`).
-- **D7 — Conflito de interesse** declarado na página (R-B9).
+## 7. Decisões do dono (19/11/2026, 17:50)
+- **D1 Ordem:** mantida a que o dono pediu: "abaixo do teto robusto primeiro, por liquidez". A página oferece também ordem alfabética (seletor do leitor).
+- **D2 Uma empresa por vez no Iniciante:** aprovado (o papel de maior liquidez de cada empresa).
+- **D3 Faixas de margem** descritivas, sem cortar a lista; `abaixo_teto_conferir` não vem à frente: aprovado.
+- **D4 Carregamento:** só após o clique.
+- **D5 Empregador:** não será feita consulta; o dono entende que, por ser conteúdo de estudo e sem consultoria, não é necessária, e a página explicita isso. (Os especialistas de Regulatório recomendaram a consulta como pré-condição; fica registrado que a decisão é do dono.)
+- **D6 TradingView:** carregamento com opção de ligar (botão "Carregar ao trocar de setor", desligado por padrão, guardado em `besst-cotacoes-auto`). A consulta formal segue autorizada e não enviada.
+- **D7 Conflito de interesse:** a página não faz declaração pessoal sobre o autor; reforça que é didática (teste automático impede declaração pessoal).
+- **Construção e publicação autorizadas** pelo dono (19/11/2026), com a rodada de juízes antes do merge.
 
 ## 8. O que esta proposta não resolve
 - Nenhum teste ao vivo no TradingView foi feito (sem acesso de rede neste ambiente); símbolos, peso e comportamento com 8 símbolos dependem do Chrome do dono.
