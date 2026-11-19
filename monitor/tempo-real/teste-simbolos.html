@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teste de símbolos · tempo real · market-lab</title>
+<style>body{font:15px/1.5 system-ui,sans-serif;background:#0b0d10;color:#e6edf3;margin:0;padding:16px;max-width:900px}
+a{color:#4fd1c5}.g{margin:18px 0;border:1px solid #28313b;border-radius:8px;padding:10px}.b{height:120px}</style></head><body>
+<h1>Teste de símbolos (uso do dono)</h1>
+<p>Página auxiliar, fora do índice. Abre cada símbolo do <code>conjuntos.json</code> em um widget Market Quotes isolado e a faixa de cotações, para você conferir no seu navegador se aparece valor ou linha vazia/erro, e registrar a data em <code>matriz_teste</code>. Os widgets carregam ao abrir (rede do TradingView).</p>
+<p id="msg">Carregando…</p><div id="lista"></div>
+<script>
+fetch("./conjuntos.json?v=" + Date.now(), {cache: "no-store"}).then(r => r.json()).then(cfg => {
+  const todos = new Map();
+  cfg.conjuntos.forEach(c => c.graficos.forEach(g => g.simbolos.forEach(x => todos.set(x.s, x.rotulo))));
+  document.getElementById("msg").textContent = todos.size + " símbolos de cartões + " + cfg.ticker.simbolos.length + " da faixa.";
+  const host = document.getElementById("lista");
+  const bloco = (titulo, arquivo, conf) => {
+    const d = document.createElement("div"); d.className = "g";
+    d.innerHTML = "<b></b><div class='b tradingview-widget-container'><div class='tradingview-widget-container__widget'></div></div>";
+    d.querySelector("b").textContent = titulo; host.appendChild(d);
+    const s = document.createElement("script"); s.async = true; s.src = "https://s3.tradingview.com/external-embedding/" + arquivo;
+    s.text = JSON.stringify(conf); d.querySelector(".tradingview-widget-container").appendChild(s);
+  };
+  bloco("Faixa de cotações (Ticker Tape)", "embed-widget-ticker-tape.js",
+    {symbols: cfg.ticker.simbolos, showSymbolLogo: false, isTransparent: true, displayMode: "adaptive", colorTheme: "dark", locale: "br"});
+  [...todos].forEach(([s, rot]) => bloco(s + " — " + rot, "embed-widget-market-quotes.js",
+    {width: "100%", height: 110, symbolsGroups: [{name: s, originalName: s, symbols: [{name: s, displayName: rot}]}], showSymbolLogo: false, isTransparent: true, colorTheme: "dark", locale: "br"}));
+});
+</script></body></html>
