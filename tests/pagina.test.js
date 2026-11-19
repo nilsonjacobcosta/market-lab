@@ -9,7 +9,7 @@ const painel0 = JSON.parse(fs.readFileSync(path.join(R, "dados/besst/painel.json
 const clone = (x) => JSON.parse(JSON.stringify(x));
 
 async function abrir({painel = painel0, aprovar = false, query = "?setor=energia&modo=avancado", agora} = {}) {
-  const cfg = clone(cfg0); if (aprovar) cfg.matriz_teste.simbolos_aprovados = painel.papeis.map(p => p.ticker).filter(Boolean).filter(t => typeof t === "string");
+  const cfg = clone(cfg0); cfg.matriz_teste.simbolos_aprovados = []; if (aprovar) cfg.matriz_teste.simbolos_aprovados = painel.papeis.map(p => p.ticker).filter(Boolean).filter(t => typeof t === "string");
   const erros = [];
   const dom = new JSDOM(html, {url: "https://x.test/carteiras/besst-cotacoes/" + query, runScripts: "dangerously", pretendToBeVisual: true,
     beforeParse(w) {

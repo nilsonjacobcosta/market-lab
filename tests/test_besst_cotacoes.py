@@ -100,6 +100,13 @@ class Simbolos(unittest.TestCase):
         self.assertEqual(CFG["tradingview"]["prefixo"], "BMFBOVESPA:")
         self.assertIn("atrasad", CFG["tradingview"]["atraso"].lower())
 
+    def test_matriz_registrada_em_19_11_2026(self):
+        m = CFG["matriz_teste"]
+        self.assertEqual(m["data_teste"], "2026-11-19")
+        self.assertEqual(len(m["simbolos_aprovados"]), 105)
+        self.assertEqual(m["reprovados"], ["OIBR3", "OIBR4"])
+        self.assertIn("BBAS3", m["simbolos_aprovados"])  # primeira ação da B3 registrada
+
     def test_aviso_de_papel_com_cotacao_sem_teste(self):
         # Não falha: o universo muda todo dia. A página só monta widget de papel aprovado (RB 12).
         testados = set(CFG["matriz_teste"]["simbolos_aprovados"]) | set(CFG["matriz_teste"]["reprovados"])
@@ -235,7 +242,7 @@ class Pagina(unittest.TestCase):
     EXATAS = {"abaixo", "abaixoFora", "cab", "comTeste.length", "fase", "fora.length", "li", "linhas", "pager", "resumo", "s.nome", "sel",
               "sem", "titulo", "total", "nTodos", "nEmp", "conferir", "abaixoFora", "gerado", "estado.carregadoEm", "sel ? 0 : -1"}
     SEGURAS = ("esc(", "fmt1(", "fmtInt(", "dbr(", "dcurta(", "s.slice(", "encodeURIComponent(", "htmlAlerta(", "htmlFora(", "htmlTabela(",
-               "estado.auto ?", "estado.cfg.limites", "pg ", "itens.length", "i + 1", "sit.atraso", '" selected"', '" disabled"')
+               "estado.auto ?", "estado.cfg.matriz_teste.reprovados.includes(", "estado.cfg.limites", "pg ", "itens.length", "i + 1", "sit.atraso", '" selected"', '" disabled"')
 
     def test_dados_do_json_passam_por_esc(self):
         for m in re.finditer(r"\$\{([^}]*)\}", HTML):
