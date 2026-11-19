@@ -281,7 +281,7 @@
      "janela_padrao": "10a",
      "iniciante": true,
      "o_que_e": "Índice de 50 grandes empresas de países da zona do euro (os países que usam o euro como moeda). Em pontos, a partir de preços em euros, sem incluir dividendos.",
-     "como_ler": "Cada ponto é o fechamento de uma semana. O índice reúne empresas de vários países, mas com peso maior de França e Alemanha; empresas portuguesas raramente estiveram entre as 50.",
+     "como_ler": "Cada ponto é o fechamento de uma semana. O índice reúne empresas de vários países da zona do euro, com os maiores pesos em França e Alemanha, segundo a STOXX.",
      "ja_se_observou": "Entre 2011 e 2012, durante a crise das dívidas de países da zona do euro, o índice caiu enquanto o S&P 500 se manteve mais estável. Um episódio, com vários fatores ao mesmo tempo, que pode não se repetir.",
      "termos": [
       "indice_acoes",
@@ -321,7 +321,7 @@
      "janela_padrao": "10a",
      "iniciante": false,
      "o_que_e": "Índice das 100 maiores empresas listadas na bolsa de Londres. Em pontos, a partir de preços em libras esterlinas, sem incluir dividendos.",
-     "como_ler": "Cada ponto é o fechamento de uma semana. Muitas empresas do índice têm a maior parte da receita fora do Reino Unido, por isso o índice reflete também o câmbio da libra e a economia global.",
+     "como_ler": "Cada ponto é o fechamento de uma semana. O índice está em libras esterlinas; por isso, comparar seus pontos com os de índices em outras moedas exige cuidado.",
      "ja_se_observou": "Em 2016, depois do referendo sobre a saída do Reino Unido da União Europeia, a libra caiu e o FTSE 100 em libras subiu nos meses seguintes; o câmbio foi um dos fatores apontados. Um episódio, que pode não se repetir.",
      "termos": [
       "indice_acoes",
@@ -392,7 +392,7 @@
      "iniciante": true,
      "o_que_e": "Índice de 225 empresas listadas na bolsa de Tóquio, em pontos calculados a partir de preços em ienes. Como no Dow Jones, o peso de cada empresa depende do preço da ação.",
      "como_ler": "Cada ponto é o fechamento de uma semana, em ienes. A janela longa ajuda a ver que um índice pode passar muitos anos abaixo de um pico anterior.",
-     "ja_se_observou": "O Nikkei 225 atingiu um pico no fim de 1989 e só voltou a superá-lo em 2024, mais de três décadas depois. É um caso, de um país, que mostra que a recuperação de um índice não tem prazo garantido.",
+     "ja_se_observou": "O Nikkei 225 fechou em 38.915,87 pontos em 29/12/1989 e só superou esse fechamento em 22/02/2024, mais de três décadas depois. É um caso, de um país, que mostra que a recuperação de um índice não tem prazo garantido.",
      "termos": [
       "indice_acoes",
       "escala_log",
@@ -411,7 +411,7 @@
      "janela_padrao": "10a",
      "iniciante": true,
      "o_que_e": "Índice que reúne as ações listadas na bolsa de Xangai, em pontos calculados a partir de preços em yuans.",
-     "como_ler": "Cada ponto é o fechamento de uma semana. O acesso de estrangeiros a esse mercado tem regras próprias, por isso o índice reflete sobretudo investidores locais.",
+     "como_ler": "Cada ponto é o fechamento de uma semana. O índice está em yuans e seus pontos não são comparáveis com os de índices em outras moedas.",
      "ja_se_observou": "Em 2007 e em 2015 o índice subiu depressa e depois caiu com força em poucos meses. Dois episódios, com contextos diferentes, que podem não se repetir.",
      "termos": [
       "indice_acoes",
@@ -481,7 +481,7 @@
      "iniciante": true,
      "o_que_e": "São os rendimentos (yields) dos títulos do Tesouro dos EUA com prazo de 2 anos e de 10 anos: a taxa anual recebida por quem empresta ao governo americano por esses prazos. O conjunto das taxas dos vários prazos chama-se curva de juros.",
      "como_ler": "Duas linhas no mesmo eixo, em porcentagem ao ano; a legenda e o estilo do traço identificam cada prazo. A taxa de 2 anos acompanha mais de perto o juro de curto prazo definido pelo banco central dos EUA; a de 10 anos reflete também expectativas de inflação e de crescimento para um horizonte mais longo.",
-     "ja_se_observou": "Entre 2022 e 2023 as duas taxas subiram, e a de 2 anos ficou acima da de 10 anos por um longo período. Em 2020 as duas estiveram entre as mais baixas da série. São dois períodos descritos, que podem não se repetir.",
+     "ja_se_observou": "Entre 2022 e 2023 as duas taxas subiram, e a de 2 anos ficou acima da de 10 anos por um longo período. De meados de 2020 ao início de 2021 as duas estiveram entre as mais baixas da série. São dois períodos descritos, que podem não se repetir.",
      "termos": [
       "yield",
       "curva_de_juros",
@@ -553,7 +553,7 @@
      "janela_padrao": "tudo",
      "iniciante": true,
      "o_que_e": "A Selic é a taxa básica de juros do Brasil, definida pelo Comitê de Política Monetária (Copom) do Banco Central. O CDI, taxa dos empréstimos de um dia entre bancos que serve de referência para aplicações de renda fixa, fica muito próximo da Selic e não é coletado por este painel. Em Portugal diz-se «taxa de juro».",
-     "como_ler": "A linha tem formato de degraus porque a meta só muda nas reuniões do Copom, que ocorrem a cada 45 dias, aproximadamente. O eixo vertical está em porcentagem ao ano.",
+     "como_ler": "A linha tem formato de degraus porque a meta só muda nas reuniões do Copom, que são oito reuniões ordinárias por ano, com cerca de 45 dias entre elas (calendário publicado pelo Banco Central). O eixo vertical está em porcentagem ao ano.",
      "ja_se_observou": "Entre 2020 e o início de 2021 a Selic esteve no nível mais baixo da série; a partir de 2021 subiu por várias reuniões seguidas, período em que a inflação brasileira também subiu. Um ciclo descrito, que pode não se repetir.",
      "termos": [
       "selic",
@@ -574,7 +574,7 @@
      "iniciante": true,
      "o_que_e": "Sobrepõe a Selic (% ao ano) e a inflação brasileira acumulada em 12 meses medida pelo IPCA, o índice oficial de preços ao consumidor do Brasil, calculado pelo IBGE. As duas séries estão em porcentagem.",
      "como_ler": "A distância vertical entre as duas linhas é, aproximadamente, o juro real mostrado no gráfico ao lado. Quando a linha do IPCA ficou acima da Selic, o juro básico perdeu para a inflação naquele período.",
-     "ja_se_observou": "Entre o fim de 2020 e o início de 2022 o IPCA em 12 meses ficou acima da Selic na maior parte dos meses; da metade de 2022 em diante a Selic ficou acima do IPCA. Um ciclo observado, com vários fatores, que pode não se repetir.",
+     "ja_se_observou": "De julho de 2020 a abril de 2022 o IPCA em 12 meses ficou acima da Selic em 20 dos 22 meses (dados coletados neste painel); de maio de 2022 em diante a Selic ficou acima do IPCA. Um ciclo observado, com vários fatores, que pode não se repetir.",
      "termos": [
       "selic",
       "ipca",
@@ -594,7 +594,7 @@
      "iniciante": true,
      "o_que_e": "É a Selic menos o IPCA acumulado nos 12 meses anteriores. Chama-se juro real ex-post: uma conta feita com a inflação que já aconteceu. É uma aproximação simples, por subtração.",
      "como_ler": "Acima de zero: a Selic superou a inflação passada. Abaixo de zero: ficou atrás dela. A linha do zero aparece marcada. O número não desconta impostos nem taxas de nenhuma aplicação.",
-     "ja_se_observou": "Entre o fim de 2020 e o início de 2022 essa conta ficou negativa na maior parte dos meses; da metade de 2022 em diante voltou a ficar positiva. Um ciclo observado, que pode não se repetir.",
+     "ja_se_observou": "De julho de 2020 a abril de 2022 essa conta ficou negativa em 20 dos 22 meses; de maio de 2022 em diante voltou a ficar positiva. Um ciclo observado, que pode não se repetir.",
      "termos": [
       "juro_real",
       "selic",
@@ -868,7 +868,7 @@
      "iniciante": true,
      "o_que_e": "O DXY compara o dólar americano com uma cesta de seis moedas (euro, iene, libra esterlina, dólar canadense, coroa sueca e franco suíço). Não inclui o real nem o yuan.",
      "como_ler": "A linha subindo mostra dólar mais forte frente à cesta. Em alguns períodos de tensão, investidores procuraram ativos em dólar e o índice subiu; em outros, isso não ocorreu.",
-     "ja_se_observou": "Em 2008 e em março de 2020 o DXY subiu nas mesmas semanas em que o VIX subiu e as ações caíram. Duas ocorrências; em outros períodos de queda das ações o dólar não subiu, e o padrão pode não se repetir.",
+     "ja_se_observou": "Em 2008 e em março de 2020 houve semanas de alta do DXY junto com alta do VIX e queda das ações; em março de 2020, porém, a alta de uma semana foi seguida de queda na semana seguinte. Duas ocorrências parciais; em outros períodos de queda das ações o dólar não subiu, e o padrão pode não se repetir.",
      "termos": [
       "dxy",
       "forex"
@@ -966,8 +966,7 @@
      "ja_se_observou": "Em 2015 e em 2020 o dólar subiu com força frente ao real, em contextos diferentes e sempre com mais de um fator. Houve outra alta forte em 2002, antes do início da série própria deste painel. Poucos episódios não formam regra e o padrão pode não se repetir.",
      "termos": [
       "forex",
-      "par_de_moedas",
-      "cfd"
+      "par_de_moedas"
      ]
     },
     {
@@ -1004,7 +1003,7 @@
      "escala": "linear",
      "janela_padrao": "10a",
      "iniciante": true,
-     "o_que_e": "Mostra quantos dólares americanos custa um euro. É o par de moedas mais negociado do mundo.",
+     "o_que_e": "Mostra quantos dólares americanos custa um euro. Na pesquisa trienal do BIS de abril de 2025, foi o par mais negociado do mundo (cerca de 21% do giro diário).",
      "como_ler": "EUR/USD subindo significa euro mais forte frente ao dólar; descendo, euro mais fraco. Atenção à ordem: aqui o dólar é a segunda moeda, ao contrário do USD/BRL.",
      "ja_se_observou": "Em 2022 o euro chegou a valer menos de um dólar por algumas semanas, período em que os juros americanos subiram mais depressa do que os da zona do euro; a diferença de juros foi um dos fatores apontados. Um episódio, que pode não se repetir.",
      "termos": [
@@ -1117,7 +1116,7 @@
      "iniciante": true,
      "o_que_e": "Preço do barril de petróleo do tipo WTI (West Texas Intermediate), a referência dos EUA, em dólares por barril. A outra referência muito usada no mundo é o Brent, que não aparece neste painel.",
      "como_ler": "Cada ponto é o fechamento de uma semana. O preço do barril é só um dos componentes do preço dos combustíveis, que inclui refino, impostos, câmbio e distribuição.",
-     "ja_se_observou": "Em 2008 o preço subiu e caiu com força no mesmo ano. Em abril de 2020 um contrato futuro de WTI chegou a ser negociado a preço negativo por um dia, com a demanda reduzida pela pandemia e os estoques cheios entre os fatores. Dois episódios extremos, que podem não se repetir.",
+     "ja_se_observou": "Em 2008 o preço subiu e caiu com força no mesmo ano. Em 20/04/2020 o contrato futuro de WTI para maio fechou a −37,63 dólares por barril, o primeiro preço negativo desde o início da negociação do contrato (CFTC); a demanda reduzida pela pandemia e a falta de armazenagem estiveram entre os fatores citados. Dois episódios extremos, que podem não se repetir.",
      "termos": [
       "commodities",
       "media_movel"
@@ -1135,7 +1134,7 @@
      "janela_padrao": "tudo",
      "iniciante": true,
      "o_que_e": "Preço do cobre em dólares por libra-peso (cerca de 454 gramas). O cobre é usado em construção, redes elétricas e equipamentos eletrônicos.",
-     "como_ler": "Cada ponto é o fechamento de uma semana. O cobre é usado na construção e na indústria; o preço dele foi comparado a indicadores de atividade econômica, em especial da China, sem relação estável ou regra.",
+     "como_ler": "Cada ponto é o fechamento de uma semana. O cobre é usado na construção e na indústria.",
      "ja_se_observou": "Em 2008 e no início de 2020, períodos de retração da economia mundial, o preço do cobre caiu e depois se recuperou. Duas ocorrências, que podem não se repetir.",
      "termos": [
       "commodities",
@@ -1230,9 +1229,9 @@
      "escala": "linear",
      "janela_padrao": "tudo",
      "iniciante": true,
-     "o_que_e": "Mostra quantos bitcoins custa um ether, a moeda da rede Ethereum e o segundo maior criptoativo em valor de mercado. É um par entre dois criptoativos, sem dólar no meio.",
+     "o_que_e": "Mostra quantos bitcoins custa um ether, a moeda da rede Ethereum. É um par entre dois criptoativos, sem dólar no meio.",
      "como_ler": "A linha subindo significa que o ether se valorizou mais (ou caiu menos) do que o bitcoin no período; descendo, o contrário. O par não mostra se os dois subiram ou caíram em dólares.",
-     "ja_se_observou": "Em 2017 e em 2021 o par subiu em fases em que criptoativos menores se valorizaram mais do que o bitcoin, e recuou depois. Dois episódios em um histórico curto, que podem não se repetir.",
+     "ja_se_observou": "O painel coleta a série própria deste par (Yahoo Finance, semanal, desde novembro de 2017), mas este texto não descreve episódios passados dele, porque os valores ainda não foram conferidos. Nenhum padrão é afirmado aqui, e nenhum padrão passado garante repetição.",
      "termos": [
       "par_de_moedas",
       "dominancia"
@@ -1250,7 +1249,7 @@
      "iniciante": false,
      "o_que_e": "Dominância é a parcela, em porcentagem, que o valor de mercado do Bitcoin representa no valor de mercado somado de todos os criptoativos acompanhados pelo TradingView. Este gráfico existe só como widget: não há série própria equivalente neste painel.",
      "como_ler": "A linha subindo significa que o Bitcoin ganhou participação no total; descendo, que os demais criptoativos ganharam participação. A dominância pode subir com o preço do Bitcoin caindo, se os outros caírem mais.",
-     "ja_se_observou": "Em 2017 e em 2021 a dominância caiu em fases de alta acelerada de criptoativos menores. Dois episódios, que podem não se repetir.",
+     "ja_se_observou": "Este gráfico existe só como widget: o painel não coleta série própria de dominância e, por isso, não descreve episódios passados dela. Nenhum padrão é afirmado aqui, e nenhum padrão passado garante repetição.",
      "termos": [
       "dominancia"
      ]
@@ -1267,7 +1266,7 @@
      "iniciante": false,
      "o_que_e": "Soma, em dólares, do valor de mercado (preço multiplicado pela quantidade em circulação) dos criptoativos acompanhados pelo TradingView. Este gráfico existe só como widget: não há série própria equivalente neste painel.",
      "como_ler": "A linha mostra o tamanho do mercado de criptoativos como um todo. A soma inclui ativos de pouca negociação, cujo valor de mercado calculado pode não ser realizável na prática.",
-     "ja_se_observou": "Em 2018 e em 2022 o total caiu mais da metade em relação ao pico anterior. Dois episódios em um histórico curto, que podem não se repetir.",
+     "ja_se_observou": "Este gráfico existe só como widget: o painel não coleta série própria do valor total e, por isso, não descreve episódios passados dele. Nenhum padrão é afirmado aqui, e nenhum padrão passado garante repetição.",
      "termos": [
       "dominancia",
       "volatilidade"
@@ -1399,7 +1398,7 @@
   },
   "cfd": {
    "termo": "CFD",
-   "definicao": "Contrato por diferença: contrato com uma corretora que acompanha o preço de um ativo sem que o ativo seja entregue. Algumas cotações de widgets do TradingView são de CFDs de corretoras, e não da bolsa de origem do ativo."
+   "definicao": "Contrato por diferença: contrato com uma corretora que acompanha o preço de um ativo sem que o ativo seja entregue. Cotações de widgets de terceiros podem vir de fontes diferentes da bolsa de origem do ativo."
   },
   "opcoes": {
    "termo": "Opções",
