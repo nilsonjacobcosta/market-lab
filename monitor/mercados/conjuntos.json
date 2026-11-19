@@ -481,7 +481,7 @@
      "iniciante": true,
      "o_que_e": "São os rendimentos (yields) dos títulos do Tesouro dos EUA com prazo de 2 anos e de 10 anos: a taxa anual recebida por quem empresta ao governo americano por esses prazos. O conjunto das taxas dos vários prazos chama-se curva de juros.",
      "como_ler": "Duas linhas no mesmo eixo, em porcentagem ao ano; a legenda e o estilo do traço identificam cada prazo. A taxa de 2 anos acompanha mais de perto o juro de curto prazo definido pelo banco central dos EUA; a de 10 anos reflete também expectativas de inflação e de crescimento para um horizonte mais longo.",
-     "ja_se_observou": "Entre 2022 e 2023 as duas taxas subiram, e a de 2 anos ficou acima da de 10 anos por um longo período. Em 2020 e no início de 2021 as duas estiveram entre as mais baixas da série. São dois períodos descritos, que podem não se repetir.",
+     "ja_se_observou": "Entre 2022 e 2023 as duas taxas subiram, e a de 2 anos ficou acima da de 10 anos por um longo período. De meados de 2020 ao início de 2021 as duas estiveram entre as mais baixas da série. São dois períodos descritos, que podem não se repetir.",
      "termos": [
       "yield",
       "curva_de_juros",
@@ -1231,7 +1231,7 @@
      "iniciante": true,
      "o_que_e": "Mostra quantos bitcoins custa um ether, a moeda da rede Ethereum. É um par entre dois criptoativos, sem dólar no meio.",
      "como_ler": "A linha subindo significa que o ether se valorizou mais (ou caiu menos) do que o bitcoin no período; descendo, o contrário. O par não mostra se os dois subiram ou caíram em dólares.",
-     "ja_se_observou": "Este gráfico existe só como widget: o painel não coleta série própria do par ETH/BTC e, por isso, não descreve episódios passados dele. Qualquer leitura histórica precisa ser conferida na fonte do widget; nenhum padrão é afirmado aqui, e nenhum padrão passado garante repetição.",
+     "ja_se_observou": "O painel coleta a série própria deste par (Yahoo Finance, semanal, desde novembro de 2017), mas este texto não descreve episódios passados dele, porque os valores ainda não foram conferidos. Nenhum padrão é afirmado aqui, e nenhum padrão passado garante repetição.",
      "termos": [
       "par_de_moedas",
       "dominancia"
