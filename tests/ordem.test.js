@@ -83,4 +83,10 @@ test("data predominante usa a data mais frequente, não a mais recente", () => {
   assert.equal(O.dataPredominante(l), "2026-11-17"); assert.equal(O.dataPredominante([]), null); assert.equal(O.dataPredominante([P({data: "lixo"})]), null);
   assert.equal(O.dataPredominante([P({data: "2026-11-17"}), P({data: "2026-11-19"})]), "2026-11-19"); /* empate: a mais recente */
 });
+test("calendário de feriados cobre o ano corrente e o seguinte (falha perto do fim da lista)", () => {
+  const ultimo = O.FERIADOS.slice().sort().pop(), limite = new Date(Date.now() + 90 * 864e5).toISOString().slice(0, 10);
+  assert.ok(ultimo.slice(0, 4) >= limite.slice(0, 4), `FERIADOS termina em ${ultimo}; atualizar (RB 04)`);
+});
+test("faixa: limites exatos", () => { assert.equal(O.faixa(P({margem_robusta: 10})), "10a30"); assert.equal(O.faixa(P({margem_robusta: 0})), "ate10"); });
+test("atraso máximo é 5 pregões", () => { assert.equal(O.ATRASO_MAX_PREGOES, 5); });
 test("constantes de segurança", () => { assert.equal(O.LIM_PAGINA, 8); assert.ok(O.LIM_IFRAMES <= 3); });

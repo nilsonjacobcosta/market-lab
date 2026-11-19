@@ -30,7 +30,7 @@ const O = window.OrdemBESST, TV = "https://s3.tradingview.com/external-embedding
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
 const SETORES = ["Bancos", "Energia", "Seguros", "Saneamento", "Telecomunicações"];
 let ativos = [];
-Promise.all([fetch("../../dados/besst/painel.json?t=" + Date.now(), {cache: "no-store"}).then(r => r.json())]).then(([painel]) => {
+Promise.all([fetch("../../dados/besst/painel.json?t=" + Date.now(), {cache: "no-store"}).then(r => r.json())]).catch(() => { document.getElementById("grupos").textContent = "Não foi possível carregar o painel.json."; return null; }).then((res) => { if (!res) return; const [painel] = res;
   const v = O.validar(painel), grupos = [];
   for (const s of SETORES) {
     const r = O.ordenar(v.papeis, s), comPreco = r.fora.filter(i => i.motivo !== "sem_cotacao");

@@ -128,7 +128,7 @@ tr:last-child td{border-bottom:0}
 
   <section class="privac" aria-labelledby="h-priv">
     <h2 id="h-priv" style="font-size:1rem">Privacidade</h2>
-    <p>Os widgets do TradingView (tradingview.com) <b>só carregam depois que você clicar</b> em "Carregar cotações" (ou se você ligar o carregamento automático). Quando carregam, o TradingView recebe dados técnicos da visita, como o endereço da página, os símbolos exibidos e o endereço IP, e pode usar cookies conforme a política dele: <a href="https://www.tradingview.com/privacy-policy/" rel="noopener nofollow" target="_blank">tradingview.com/privacy-policy</a>. Esta página não lê nem guarda os valores exibidos. Ela guarda no seu navegador apenas suas escolhas de modo, setor, ordem e carregamento automático. O servidor que hospeda a página também recebe a visita. O TradingView é uma empresa sediada fora do Brasil, então esses dados podem ser tratados no exterior.</p>
+    <p>Os widgets do TradingView (tradingview.com) <b>só carregam depois que você clicar</b> em "Carregar cotações" (ou se você ligar o carregamento automático). Quando carregam, o TradingView recebe dados técnicos da visita, como o endereço da página, os símbolos exibidos e o endereço IP, e pode usar cookies conforme a política dele: <a href="https://www.tradingview.com/privacy-policy/" rel="noopener noreferrer nofollow" target="_blank">tradingview.com/privacy-policy</a>. Esta página não lê nem guarda os valores exibidos. Ela guarda no seu navegador apenas suas escolhas de modo, setor, ordem e carregamento automático. O servidor que hospeda a página também recebe a visita. O TradingView é uma empresa sediada fora do Brasil, então esses dados podem ser tratados no exterior.</p>
   </section>
 
   <section class="painel" aria-labelledby="h-como">
@@ -199,8 +199,10 @@ const guardar = (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} };
 const ler = (k) => { try { return localStorage.getItem(k); } catch (e) { return null; } };
 const estado = {setor: null, modo: "iniciante", ordem: "criterio", pagina: 0, auto: false, cfg: null, painel: null, papeis: [], sit: null, carregadoEm: "", dataPreco: null};
 let limpezas = [];
-const dbr = (s) => `${s.slice(8, 10)}/${s.slice(5, 7)}/${s.slice(0, 4)}`;
-const dcurta = (s) => (s ? `${s.slice(8, 10)}/${s.slice(5, 7)}` : "—");
+const ehData = (s) => typeof s === "string" && /^\d{4}-\d{2}-\d{2}/.test(s);
+const dbr = (s) => (ehData(s) ? `${s.slice(8, 10)}/${s.slice(5, 7)}/${s.slice(0, 4)}` : "—");
+const dcurta = (s) => (ehData(s) ? `${s.slice(8, 10)}/${s.slice(5, 7)}` : "—");
+const lista = (x) => (Array.isArray(x) ? x : []);
 const fmt1 = (x) => (typeof x === "number" ? x.toFixed(1).replace(".", ",") : "—");
 const fmtInt = (x) => (typeof x === "number" ? Math.round(x).toLocaleString("pt-BR") : "—");
 
@@ -248,10 +250,10 @@ function rotularIframe(cont, titulo) {
   limpezas.push(() => clearInterval(t));
 }
 function atribuicao(texto, href) {
-  return `<div class="tradingview-widget-copyright"><a href="${esc(href)}" rel="noopener nofollow" target="_blank"><span class="blue-text">${esc(texto)}</span></a><span class="trademark"> by TradingView</span></div>`;
+  return `<div class="tradingview-widget-copyright"><a href="${esc(href)}" rel="noopener noreferrer nofollow" target="_blank"><span class="blue-text">${esc(texto)}</span></a><span class="trademark"> by TradingView</span></div>`;
 }
 function listaAlternativa(itens) {
-  return `<ul>${itens.map(it => `<li><a href="${esc(urlSimbolo(it.p.ticker))}" rel="noopener nofollow" target="_blank">${esc(it.p.ticker)}</a> — ${esc(estado.cfg.tradingview.atraso)}</li>`).join("")}</ul>`;
+  return `<ul>${itens.map(it => `<li><a href="${esc(urlSimbolo(it.p.ticker))}" rel="noopener noreferrer nofollow" target="_blank">${esc(it.p.ticker)}</a> — ${esc(estado.cfg.tradingview.atraso)}</li>`).join("")}</ul>`;
 }
 function montarWidget(host, reserva, itens, titulo) {
   if (document.querySelectorAll("#painel iframe").length >= O.LIM_IFRAMES) return;
@@ -277,7 +279,7 @@ function montarWidget(host, reserva, itens, titulo) {
 function htmlAlerta(p) {
   const nivel = {ok: "sem alerta", atencao: "atenção", grave: "grave"}[p.nivel_alerta] || "—";
   const I = estado.cfg.alertas_iniciante || {};
-  const t = estado.modo === "iniciante" ? (p.alertas || []).map(c => I[c] || "Alerta de dados; veja o Monitor BESST.").join(" ") : (p.alertas_texto || []).join(" ");
+  const t = estado.modo === "iniciante" ? lista(p.alertas).map(c => (Object.hasOwn(I, c) ? I[c] : "Alerta de dados; veja o Monitor BESST.")).join(" ") : lista(p.alertas_texto).map(String).join(" ");
   return `<b>${esc(nivel)}</b>${t ? ": " + esc(t) : ""}`;
 }
 function htmlTabela(itens, ref) {
@@ -285,14 +287,14 @@ function htmlTabela(itens, ref) {
   const cab = `<th scope="col">Papel</th><th scope="col">Empresa</th><th scope="col">Faixa de margem (preço de ${esc(dcurta(ref))})</th>${av ? `<th scope="col">Margem (+ abaixo do teto, − acima) em ${esc(dcurta(ref))}</th><th scope="col">Liquidez (R$ mil por dia)</th><th scope="col">Data do preço</th><th scope="col">Controle</th>` : ""}<th scope="col">Alerta</th>`;
   const linhas = itens.map(it => {
     const p = it.p, sem = aprovado(p.ticker) ? "" : ` <span class="sem-teste">· sem teste no widget</span>`;
-    return `<tr><th scope="row"><a href="${esc(urlSimbolo(p.ticker))}" rel="noopener nofollow" target="_blank">${esc(p.ticker)}</a>${sem}</th><td>${esc(p.empresa)}</td><td>${esc(F[it.faixa] || "")}</td>${av ? `<td class="n">${fmt1(p.margem_robusta)}%</td><td class="n">${fmtInt(p.liquidez_mil)}</td><td class="n">${esc(dcurta(p.data))}</td><td>${esc(CONTROLE[p.controle] || p.controle || "—")}${/PENDENTE|não conferid/i.test(p.controle_nota || "") ? ` (${esc(estado.cfg.controle_a_confirmar)})` : ""}</td>` : ""}<td>${htmlAlerta(p)}</td></tr>`;
+    return `<tr><th scope="row"><a href="${esc(urlSimbolo(p.ticker))}" rel="noopener noreferrer nofollow" target="_blank">${esc(p.ticker)}</a>${sem}</th><td>${esc(p.empresa)}</td><td>${esc(F[it.faixa] || "")}</td>${av ? `<td class="n">${fmt1(p.margem_robusta)}%</td><td class="n">${fmtInt(p.liquidez_mil)}</td><td class="n">${esc(dcurta(p.data))}</td><td>${esc(CONTROLE[p.controle] || p.controle || "—")}${/PENDENTE|não conferid/i.test(p.controle_nota || "") ? ` (${esc(estado.cfg.controle_a_confirmar)})` : ""}</td>` : ""}<td>${htmlAlerta(p)}</td></tr>`;
   }).join("");
   return `<div class="tabwrap" tabindex="0" role="region" aria-label="Tabela dos papéis exibidos"><table><caption class="sr">Papéis desta página, na ordem de leitura</caption><thead><tr>${cab}</tr></thead><tbody>${linhas}</tbody></table></div>`;
 }
 function htmlFora(fora) {
   if (!fora.length) return "";
   const M = estado.cfg.motivos_fora;
-  const li = fora.map(it => `<li><a href="${esc(urlSimbolo(it.p.ticker))}" rel="noopener nofollow" target="_blank">${esc(it.p.ticker)}</a> ${esc(it.p.empresa || "")} — ${esc(it.p.motivo_sem_teto || M[it.motivo] || "")}</li>`).join("");
+  const li = fora.map(it => `<li><a href="${esc(urlSimbolo(it.p.ticker))}" rel="noopener noreferrer nofollow" target="_blank">${esc(it.p.ticker)}</a> ${esc(it.p.empresa || "")} — ${esc(it.p.motivo_sem_teto || M[it.motivo] || "")}</li>`).join("");
   return `<details class="fora"><summary>Fora dos critérios (${fora.length} papéis)</summary><p class="nota">Lista só de texto, sem widget. O motivo vem do Monitor BESST.</p><ul>${li}</ul></details>`;
 }
 function desenharPainel() {
@@ -314,11 +316,11 @@ function desenharPainel() {
   if (estado.modo === "iniciante" && ordemEfetiva() === "alfabetica") resumo += " A ordem alfabética muda só a ordem dos papéis mostrados, não quais aparecem.";
   if (!total) resumo = `Nenhum papel de ${esc(s.nome)} passa pelos critérios no preço de ${esc(ref8)}; veja "Fora dos critérios".`;
   if (ordemEfetiva() !== estado.ordem) resumo += " A ordem está alfabética porque os dados do Monitor BESST estão muito velhos ou inválidos.";
-  const pager = estado.modo === "avancado" && nPag > 1 ? `<div class="pager"><button type="button" class="btn" id="btn-ant"${pg === 0 ? " disabled" : ""}>Anterior</button><button type="button" class="btn" id="btn-prox"${pg >= nPag - 1 ? " disabled" : ""}>Próximos ${estado.cfg.limites.pagina}</button><span class="nota" role="status">${pg * estado.cfg.limites.pagina + 1}–${pg * estado.cfg.limites.pagina + itens.length} de ${total}</span></div>` : "";
+  const pager = estado.modo === "avancado" && nPag > 1 ? `<div class="pager" role="group" aria-label="Páginas de papéis"><button type="button" class="btn" id="btn-ant"${pg === 0 ? " disabled" : ""}>Anterior</button><button type="button" class="btn" id="btn-prox"${pg >= nPag - 1 ? " disabled" : ""}>Próximos ${estado.cfg.limites.pagina}</button><span class="nota">${pg * estado.cfg.limites.pagina + 1}–${pg * estado.cfg.limites.pagina + itens.length} de ${total}</span></div>` : "";
   const comTeste = itens.filter(it => aprovado(it.p.ticker));
   const aviso = estado.cfg.aviso_fixo;
   painel.innerHTML = `<div class="cab-conj" style="margin-bottom:14px">
-    <div><h2 id="h-conj">${esc(s.nome)}</h2><p>${esc(s.o_que_e)}</p></div>
+    <div><h2 id="h-conj" tabindex="-1">${esc(s.nome)}</h2><p>${esc(s.o_que_e)}</p></div>
     <div class="aviso" style="margin:0">${esc(aviso)}</div>
     <div class="naodiz"><b>O que este setor não diz</b>${esc(s.nao_diz)}</div>
     <p class="resumo">${resumo}</p>
@@ -343,6 +345,8 @@ function desenharPainel() {
   document.title = `${s.nome} · Cotações do BESST · market-lab`;
 }
 
+function focarPainel() { const b = document.querySelector("#painel .pager .btn:not([disabled])") || $("h-conj"); if (b) b.focus(); }
+
 /* ---------- seletores e estado ---------- */
 function desenharSeletores() {
   const ss = estado.cfg.setores;
@@ -362,8 +366,10 @@ function desenharAuto() {
 }
 function desenharStatus() {
   const p = estado.painel, sit = estado.sit, fase = p.fase === "intradiario" ? "preços intradiários" : "fechamento";
-  let t = `Dados do Monitor BESST: ${fase} de ${dbr(estado.dataPreco)} (data do preço da maioria dos papéis; o arquivo indica ${dbr(p.pregao_referencia)}) · gerados em ${p.gerado_em ? dcurta(p.gerado_em.slice(0, 10)) + " às " + p.gerado_em.slice(11) : "—"} · carregados nesta página às ${estado.carregadoEm}. A data do preço de cada papel aparece na tabela do modo Avançado.`;
+  const gerado = typeof p.gerado_em === "string" && ehData(p.gerado_em) ? dcurta(p.gerado_em) + " às " + p.gerado_em.slice(11, 16) : "—";
+  let t = `Dados do Monitor BESST: ${fase} de ${dbr(estado.dataPreco)} (data do preço da maioria dos papéis; o arquivo indica ${dbr(p.pregao_referencia)}) · gerados em ${gerado} · carregados nesta página às ${estado.carregadoEm}. A data do preço de cada papel aparece na tabela do modo Avançado.`;
   const el = $("status"); el.className = "status";
+  if (sit.estado === "invalido") { t += " Atenção: a data dos preços não pôde ser lida; a ordem passou a ser alfabética."; el.classList.add("alerta"); }
   if (sit.estado === "atrasado") { t += ` Atenção: faltam ${sit.atraso} pregão(ões) de atualização; a ordem é a do último fechamento disponível.`; el.classList.add("alerta"); }
   if (sit.estado === "muito_atrasado") { t += ` Atenção: os dados têm ${sit.atraso} pregões de atraso; a ordem passou a ser alfabética.`; el.classList.add("alerta"); }
   el.textContent = t;
@@ -382,8 +388,8 @@ function desenharGlossario() {
 document.addEventListener("click", (e) => {
   if (!estado.cfg || !estado.painel) return;
   if (e.target.closest("#btn-auto")) { estado.auto = !estado.auto; guardar("besst-cotacoes-auto", estado.auto ? "ligado" : "desligado"); desenharAuto(); desenharPainel(); return; }
-  if (e.target.closest("#btn-prox")) { estado.pagina++; desenharPainel(); const b = $("btn-prox") || $("btn-ant"); if (b) b.focus(); return; }
-  if (e.target.closest("#btn-ant")) { estado.pagina = Math.max(0, estado.pagina - 1); desenharPainel(); const b = $("btn-ant") || $("btn-prox"); if (b) b.focus(); return; }
+  if (e.target.closest("#btn-prox")) { estado.pagina++; desenharPainel(); focarPainel(); return; }
+  if (e.target.closest("#btn-ant")) { estado.pagina = Math.max(0, estado.pagina - 1); desenharPainel(); focarPainel(); return; }
   const m = e.target.closest("[data-modo]"), o = e.target.closest("[data-ordem]"), c = e.target.closest("[data-setor]");
   if (m) irPara(null, m.dataset.modo, null);
   else if (o) irPara(null, null, o.dataset.ordem);
@@ -408,7 +414,7 @@ Promise.all([buscar(CONJ_URL), buscar(PAINEL_URL)]).catch(() => null).then(res =
     const [cfg, painel] = res, v = O.validar(painel);
     if (!v.ok) { $("painel").innerHTML = '<div class="vazio">Os dados do Monitor BESST vieram em formato inesperado. Abra o <a href="../monitor-besst/">Monitor BESST</a>.</div>'; return; }
     estado.cfg = cfg; estado.painel = painel; estado.papeis = v.papeis;
-    estado.dataPreco = O.dataPredominante(v.papeis) || painel.pregao_referencia;
+    estado.dataPreco = O.dataPredominante(v.papeis) || (ehData(painel.pregao_referencia) ? painel.pregao_referencia.slice(0, 10) : null);
     estado.sit = O.situacao(estado.dataPreco, Date.now());
     estado.carregadoEm = new Date().toLocaleTimeString("pt-BR", {hour: "2-digit", minute: "2-digit"});
     estado.auto = ler("besst-cotacoes-auto") === "ligado";

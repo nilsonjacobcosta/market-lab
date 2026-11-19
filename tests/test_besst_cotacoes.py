@@ -233,7 +233,7 @@ class Pagina(unittest.TestCase):
 
     # Expressões de ${...} que não precisam de esc(): números, textos fixos ou HTML já montado com esc().
     EXATAS = {"abaixo", "abaixoFora", "cab", "comTeste.length", "fase", "fora.length", "li", "linhas", "pager", "resumo", "s.nome", "sel",
-              "sem", "titulo", "total", "nTodos", "nEmp", "conferir", "abaixoFora", "estado.carregadoEm", "sel ? 0 : -1"}
+              "sem", "titulo", "total", "nTodos", "nEmp", "conferir", "abaixoFora", "gerado", "estado.carregadoEm", "sel ? 0 : -1"}
     SEGURAS = ("esc(", "fmt1(", "fmtInt(", "dbr(", "dcurta(", "s.slice(", "encodeURIComponent(", "htmlAlerta(", "htmlFora(", "htmlTabela(",
                "estado.auto ?", "estado.cfg.limites", "pg ", "itens.length", "i + 1", "sit.atraso", '" selected"', '" disabled"')
 
@@ -249,7 +249,7 @@ class Pagina(unittest.TestCase):
     def test_datas_em_html_sempre_com_esc_e_status_em_texto_puro(self):
         for m in re.finditer(r"(?<!esc\()\b(dbr|dcurta)\(", HTML):
             linha = HTML[HTML.rfind("\n", 0, m.start()) + 1:HTML.find("\n", m.end())]
-            self.assertTrue(linha.startswith(("const dbr", "const dcurta", "  const ref8", "  let t = ")), f"data sem esc(): {linha[:80]}")
+            self.assertTrue(linha.startswith(("const dbr", "const dcurta", "  const ref8", "  let t = ", "  const gerado")), f"data sem esc(): {linha[:80]}")
         self.assertIn("el.textContent = t", HTML)
         self.assertNotIn("el.innerHTML = t", HTML)
 

@@ -13,6 +13,7 @@ Uma aba por setor do Monitor BESST (Bancos, Energia, Seguros, Saneamento, Teleco
 3. Em cada grupo, liquidez em R$ mil por dia (decrescente) e, no empate, ticker (crescente).
 4. Faixas de margem (mais de 30%, 10% a 30%, até 10% abaixo; acima do teto) só descrevem; não mudam a ordem.
 5. O leitor pode trocar para ordem alfabética. Com dados de 5 ou mais pregões de atraso ou JSON inválido, a página usa a alfabética e avisa.
+6. No Iniciante o corte (até 6 papéis, um por empresa) é feito pela ordem de critério; a ordem alfabética só reordena os papéis mostrados. Decisão registrada em 19/11/2026.
 Mudar a regra é decisão do dono.
 
 ## Como funciona
@@ -22,7 +23,7 @@ Mudar a regra é decisão do dono.
 - Se o widget não carrega em 10 s, a página mostra os símbolos com link.
 
 ## Testes
-`python3 -m unittest tests/test_besst_cotacoes.py` (textual) e `node --test tests/ordem.test.js` (ordem, calendário, invariantes sobre o `painel.json` real). Workflow: `.github/workflows/testes-besst-cotacoes.yml` (PR, semanal e manual). Os testes não executam a página; a montagem dos widgets é conferida no navegador com `teste-simbolos.html`.
+`python3 -m unittest tests/test_besst_cotacoes.py` (textual), `node --test tests/ordem.test.js` (ordem, calendário, invariantes sobre o `painel.json` real) e `tests/pagina.test.js` (executa a página em jsdom: carga por clique, paginação, XSS, painel malformado; precisa de `npm i --no-save jsdom`). Workflow: `.github/workflows/testes-besst-cotacoes.yml` (PR, semanal e manual). Os widgets em si (iframes do TradingView) só se conferem no navegador com `teste-simbolos.html`. O `painel.json` não dispara o workflow (o bot commita direto): ele é coberto pelo teste semanal.
 
 ## Pendências
 - Teste dos símbolos no widget (`teste-simbolos.html`).
