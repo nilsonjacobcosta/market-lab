@@ -1,50 +1,61 @@
-# Cotações do BESST — Fase 0 (proposta, versão 1)
+# Cotações do BESST — Fase 0 (proposta, versão 2)
 
-Data: 19/11/2026. Etapa anterior à construção. Nenhuma página nova foi criada.
+Data: 19/11/2026. Etapa anterior à construção. **Nenhuma página foi criada e nada será construído antes do "sim" do dono.**
+Esta versão incorpora os quatro pareceres (Mercados 6,5; Didática 6,5; Regulatório 6,5; Engenharia 6,5; todos "aprovar com ajustes"). Resumo dos pareceres em `pareceres-fase0.md`.
 
 ## 1. Objetivo
-Página nova em "Carteiras de dividendos" com cotações atrasadas (widgets do TradingView) dos papéis do Monitor BESST (5 setores perenes: Bancos, Energia, Seguros, Saneamento, Telecomunicações), organizada por setor e ordenada por critério nosso, para iniciantes e completo, seguindo a estrutura dos painéis do market-lab (modo Iniciante/Avançado, glossário, "o que esta página não diz", juízes).
-
+Página nova em "Carteiras de dividendos" com cotações atrasadas (widgets do TradingView) dos papéis do Monitor BESST (Bancos, Energia, Seguros, Saneamento, Telecomunicações), uma aba por setor, no modelo Iniciante/Avançado dos painéis do market-lab.
 - Nome: **Cotações do BESST**. Pasta: `carteiras/besst-cotacoes/`. Link cruzado com `carteiras/monitor-besst/`.
-- Decisões do dono (19/11/2026): nome e pasta aprovados; critério de ordem: **primeiro os papéis abaixo do preço-teto robusto, e dentro deles por liquidez**; Fase 0 com quatro especialistas, sem construir antes do "sim".
+- Decisões já tomadas pelo dono (19/11/2026): nome e pasta; critério "abaixo do preço-teto robusto primeiro e, dentro deles, por liquidez"; Fase 0 com especialistas, sem construir antes do "sim".
 
-## 2. Origem dos dados e regra central
-- Universo e métricas: `dados/besst/painel.json` (141 papéis com cotação: Energia 69, Bancos 39, Seguros 13, Saneamento 10, Telecomunicações 10), atualizado por dia útil pelo workflow do Monitor BESST. Campos usados: `ticker`, `setor`, `status_robusto`, `margem_robusta`, `liquidez_mil`, `nivel_alerta`, `baixa_liquidez`, `pregao_referencia`.
-- A ordem é calculada **no navegador, com dados nossos** (fechamento do dia anterior). **Nenhum script lê valores dos widgets** (regra herdada do painel em tempo real e dos termos do TradingView). A página diz por extenso que a ordem vem do fechamento de DD/MM e que o widget mostra cotação atrasada, que pode estar em outro nível.
-- Widgets: Market Quotes, no máximo 8 símbolos por widget (várias páginas de 8 por setor). Só símbolos testados no widget real (matriz símbolo × widget, como no painel em tempo real). Símbolos que não abrirem ficam fora, com aviso.
+## 2. Dados (corrigido após os pareceres)
+- Fonte: `dados/besst/painel.json` (153 KB, ~23 KB comprimido). O arquivo tem 141 papéis, mas **só 107 têm preço**. Os outros 34 só têm `status = sem_cotacao` e nunca entram em widget (aparecem só como texto).
+- Com preço, por setor: Energia 50, Bancos 35, Saneamento 9, Telecomunicações 9, Seguros 4. (Sem filtro: 69/39/10/10/13.)
+- `pregao_referencia` e `fase` (fechamento ou intradiário) são campos do **topo** do arquivo; por papel existe `data` (hoje: 99 papéis com 17/11, 6 com 19/11, 2 com 22/09, estes OIBR3/OIBR4). O rótulo da página usa o topo e mostra `fase`, `gerado_em` e "carregado às HH:MM".
+- Margem: (teto − preço)/teto no fechamento; só aparece rotulada com a data. Liquidez: rótulo a confirmar em `scripts/besst_painel.py` antes de escrever "negociação diária" (pendência de Engenharia).
+- Leitura: `fetch("../../dados/besst/painel.json?t=...", {cache:"no-store"})`, padrão do Monitor BESST. Validar esquema (papeis é lista; cada item com ticker e setor; descartar sem preço; tratar liquidez e margem nulas sem deixar `null` virar zero na ordenação).
 
-## 3. Ordem dentro de cada setor
-1. Papéis com `status_robusto` = `abaixo_teto` (e `abaixo_teto_conferir`, marcados "conferir"), ordenados por `liquidez_mil` decrescente.
-2. Demais papéis com cotação e sem alerta grave, por `liquidez_mil` decrescente.
-3. Papéis com alerta grave, baixa liquidez, sem proventos, histórico curto ou sem teto: fora da lista principal, em seção recolhida "Fora dos critérios", com o motivo.
-Empate: ordem alfabética do ticker. A regra fica escrita na página e no README; mudar a regra é decisão do dono.
+## 3. Algoritmo de ordem (sem ambiguidade)
+1. **Excluir da lista principal** (vão para "Fora dos critérios", só texto e link, sem widget, com o motivo vindo dos campos de alerta, passando por `esc()`): sem preço, `nivel_alerta = grave`, `baixa_liquidez`, `sem_proventos`, `historico_curto`, `nao_se_aplica`, sem preço-teto robusto.
+2. Grupo A: `abaixo_teto` (e `abaixo_teto_conferir`, só com a marca "conferir", ver decisão D3). Grupo B: `acima_teto`.
+3. Dentro de cada grupo: `liquidez_mil` decrescente; empate por ticker crescente (comparador total, sem `localeCompare`).
+4. Resultado simulado hoje: **42 papéis na lista principal** (Energia 16, Bancos 15, Saneamento 5, Seguros 4, Telecomunicações 2); 65 fora com preço; 34 sem cotação. Dos 23 abaixo do teto, 19 entram (4 caem por baixa liquidez, e a página diz isso). Saneamento e Telecomunicações têm 0 papéis abaixo do teto e Seguros 2: a aba diz "N de M papéis abaixo do teto" e não mostra só o grupo B sem aviso.
+5. A ordem é uma "ordem de leitura" do fechamento, não ranking. A ordem **nunca** é recalculada com valores do widget.
 
-## 4. Modos
-- **Iniciante:** 5 abas (setores); em cada, a primeira página de 8 papéis (os primeiros pela ordem acima), textos abertos (o que é o preço-teto robusto, o que é liquidez, o que o widget mostra e não mostra), aviso de atraso por extenso, link para o Monitor BESST.
-- **Avançado:** todas as páginas de 8 do setor (botão "Próximos 8", máx. 3 iframes ativos por vez), seção "Fora dos critérios", coluna textual com margem e liquidez do Monitor BESST ao lado de cada widget (texto nosso, do fechamento, sem ler o widget).
+## 4. Modos e carga
+- **Iniciante:** 5 abas; em cada, 5–6 papéis (um por empresa, ver D2) em 1 widget; "O que esta página não diz" visível antes da lista; alerta de cada papel visível; textos abertos.
+- **Avançado:** páginas de 8 com "Anterior / Próximos 8" **substituindo** o widget atual (1 iframe por vez, no máximo 2 com pré-carga pedida; limite em constante testada); coluna textual com margem, liquidez, controle e alertas do Monitor BESST; seção "Fora dos critérios".
+- Tabela HTML acessível (texto nosso) como parte principal, widget como complemento; abas legíveis no celular; só se montam widgets para tickers **aprovados** na matriz de teste; os demais ficam na lista textual com "sem teste no widget".
+- Carregamento: ver decisão D4 (ao abrir ou após clique).
 
-## 5. Regras de redação (herdam R-TR1 a R-TR5 do painel em tempo real e acrescentam)
-- R-B1: nunca "barata", "oportunidade", "compre", "recomendada"; usar "abaixo do preço-teto robusto (método Bazin, 6%) no fechamento de DD/MM".
-- R-B2: aviso fixo no topo de cada aba: "Lista organizada por critério matemático sobre dividendos passados. Não é recomendação de investimento. O preço-teto depende de proventos passados, que podem não se repetir."
-- R-B3: a ordem não indica qualidade, risco nem preço justo.
-- R-B4: nenhuma frase liga o preço-teto à cotação do widget do momento.
-- R-B5: nenhum número de cotação em texto estático; margem e liquidez só como dados do Monitor BESST, rotulados com a data do fechamento.
+## 5. Regras de redação (herdam R-TR1 a R-TR5; R-B1 a R-B5 da v1 mantidas e acrescentadas)
+- R-B1 a R-B5 como na v1.
+- R-B6: proibido "melhores", "top", "destaque", "desconto", "oportunidade", "barata", "compre", "recomendada"; teste automático com radicais.
+- R-B7: critério único, mecânico, igual para todos os leitores; sem personalização, sem filtro por perfil.
+- R-B8: sem receita, anúncio, afiliado, doação ou captação de contato.
+- R-B9: declaração de conflito de interesse visível: o autor trabalha no mercado financeiro e pode ter posições nos papéis; sem nome, cargo ou logotipo do empregador.
+- R-B10: aviso de privacidade antes do primeiro widget (terceiro, TradingView, recebe dados de acesso).
+- R-B11: fórmula pública (método Bazin 6%, média aparada de 5 anos) e data do fechamento escritas na própria página.
 
 ## 6. Engenharia
-- `carteiras/besst-cotacoes/index.html` (cópia enxugada de `monitor/tempo-real/index.html`), lê `painel.json` de `../../dados/besst/painel.json`; `conjuntos.json` só com textos, glossário e limites (sem listas de papéis).
-- Prefixo de armazenamento `besst-cotacoes-*`; carga de um setor por vez; limite de iframes; tempo de espera e reserva (lista de símbolos com link).
-- `teste-simbolos.html` ampliado (lê `painel.json` e testa os 141 símbolos em páginas de 8) e `matriz_teste` com os símbolos aprovados e reprovados.
-- `tests/test_besst_cotacoes.py` (ordem, limites, textos proibidos, símbolos aprovados, sem leitura de widget, dados do painel); workflow como o do tempo real; runbook 12; cartão na página inicial em "Carteiras de dividendos" com "Em construção".
-- Se `painel.json` estiver velho (> 5 dias), a página avisa e usa a ordem alfabética.
+- `index.html` derivado de `monitor/tempo-real/index.html`; `conjuntos.json` só com textos, glossário, limites e `matriz_teste`; prefixo `besst-cotacoes-*`.
+- Ordenação em função pura `ordem.js` (sem DOM, sem `Date.now`), testada com `node --test` sobre fixtures (partição completa, resultado igual com entrada embaralhada, nenhum grave/baixa liquidez/sem teto na principal, abaixo antes de acima, liquidez não crescente) e teste vivo de invariantes sobre o `painel.json` real (avisa, não falha).
+- `tests/test_besst_cotacoes.py` adaptado de `test_tempo_real.py` (regex de números com lista permitida para margem e liquidez rotuladas; `rotularIframe` passa a 1 ocorrência).
+- `teste-simbolos.html` novo: 107 símbolos (não 141), em lotes de 3 iframes e grupos de 8, o dono marca aprovado/reprovado e exporta JSON para `matriz_teste`. Prioridade: os 42 da principal, AXIA3/AXIA7, units (…11) e uma amostra das classes 3, 4, 5, 6.
+- **Nenhuma ação da B3 está registrada como testada** no repositório; o formato `BMFBOVESPA:XXXX` é provável, mas o teste do dono é pré-condição.
+- Painel velho: usar o calendário de pregões do Monitor BESST (copiar FERIADOS; registrar no RB 04). Atrasado: aviso claro e mantém a ordem do arquivo; cai para ordem alfabética só com atraso ≥ 5 pregões ou JSON inválido. Falha de leitura: mensagem + link ao Monitor BESST.
+- Workflow como o do tempo real (PR, cron e dispatch; sem gatilho em `painel.json`, que o bot commita direto); runbook 12; ajustar RB 03 (34 sem cotação) e RB 04; `calendario.md` trimestral; cartão "Em construção" na página inicial.
 
-## 7. Riscos que a Fase 0 deve avaliar
-1. Parece "filtro de ações baratas" mesmo com aviso. Há risco regulatório de recomendação não autorizada? (CVM Res. 20/2021: análise de valores mobiliários.)
-2. Conflito de interesse e conduta: o dono trabalha em instituição financeira; a lista inclui papéis de empresas de interesse dela. Verificação com o empregador é decisão do dono.
-3. Os 141 símbolos podem não abrir todos no widget (alguns sem cotação ou com código diferente, como units).
-4. Peso da página e limite de iframes.
-5. A ordem pelo fechamento pode contradizer o widget do momento; como dizer isso para iniciantes.
-6. Licenças: exibição de cotações da B3 via TradingView; mesma consulta formal pendente (e-mail, telefone e site do dono ainda por definir).
+## 7. Decisões que dependem do dono
+- **D1 — Ordem:** (a) única, "abaixo do teto primeiro, por liquidez", como você pediu, com aviso reforçado; ou (b) alfabética por padrão com filtro opcional "abaixo do teto" ligado pelo leitor, que Didática e Regulatório sugerem por parecer menos com filtro de oportunidades. Recomendação dos especialistas: (b) ou (a) com seletor alfabético.
+- **D2 — Duplicidade por empresa:** no Iniciante, um papel por empresa (o de maior liquidez), para Santander, Bradesco, Taesa, Cemig etc. não ocuparem metade da página. Recomendado.
+- **D3 — Faixas de margem** em vez de corte binário, e `abaixo_teto_conferir` não vir à frente. Recomendado.
+- **D4 — Carregamento:** ao abrir (sua decisão no tempo real) ou após clique por setor (recomendação de Regulatório e Engenharia para esta página, por ter muitos símbolos). Recomendado: clique.
+- **D5 — Empregador:** resposta por escrito da conformidade do empregador e eventual parecer jurídico antes de publicar. Os especialistas tratam isso como pré-condição; a decisão é sua, e a avaliação jurídica não é nossa.
+- **D6 — TradingView:** resposta por escrito guardada no repositório, ou então carregamento por clique. A consulta está autorizada e não enviada (faltam e-mail, telefone e site; site sugerido: `https://nilsonjacobcosta.github.io/market-lab/`).
+- **D7 — Conflito de interesse** declarado na página (R-B9).
 
-## 8. Pendências
-- Consulta formal ao TradingView (autorizada, não enviada; faltam e-mail, telefone e URL).
-- Decisão do dono: política do empregador.
+## 8. O que esta proposta não resolve
+- Nenhum teste ao vivo no TradingView foi feito (sem acesso de rede neste ambiente); símbolos, peso e comportamento com 8 símbolos dependem do Chrome do dono.
+- Risco CVM 20/2021 avaliado como baixo a moderado por Regulatório, sem porto seguro textual; conclusão jurídica é de advogado.
+- Origem e licença do `painel.json` (preços e proventos) a registrar.
