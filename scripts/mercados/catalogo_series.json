@@ -336,7 +336,7 @@
       "verificado": "Resposta da API do Yahoo conferida em 16/11/2026 (navegador do dono): HTTP 200, granularidade 1wk com period1/period2; meta.longName = 'Bitcoin USD', meta.shortName = 'Bitcoin USD'; tipo CRYPTOCURRENCY; moeda USD; fuso UTC; 637 barras desde 2014-09-15. Valores não comparados com a bolsa de origem.",
       "defasagem_max_dias": 12,
       "inicio": null,
-      "observacao": "Histórico desde o início disponível na fonte. Barra semanal do Yahoo: a data é o início da semana e o valor é o último fechamento dela; a semana em curso traz a cotação mais recente e é parcial (campo ultimo_parcial). A coleta usa period1/period2 com interval=1wk, porque range=max devolve granularidade mensal ou trimestral (teste real de 16/11/2026)."
+      "observacao": "Histórico desde o início disponível na fonte (primeiro ponto coletado em 18/11/2026: semana de 15/09/2014). Barra semanal do Yahoo: a data é o início da semana e o valor é o último fechamento dela; a semana em curso traz a cotação mais recente e é parcial (campo ultimo_parcial). A coleta usa period1/period2 com interval=1wk, porque range=max devolve granularidade mensal ou trimestral (teste real de 16/11/2026)."
     },
     {
       "id": "eth_btc",
