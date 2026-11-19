@@ -393,7 +393,7 @@
       {
        "s": "CAPITALCOM:COPPER",
        "rotulo": "Cobre",
-       "atraso": "CFD da corretora Capital.com (página do símbolo no TradingView, conferida em 19/11/2026); pode diferir da bolsa; atraso não informado pela fonte"
+       "atraso": "CFD da corretora Capital.com (conferido na página do símbolo no TradingView); pode diferir da bolsa; atraso não informado pela fonte"
       }
      ],
      "o_que_e": "Brent e WTI são duas referências diferentes de petróleo: o Brent vem do Mar do Norte e o WTI, dos EUA; costumam ter preços próximos, mas não iguais. Ouro e cobre estão cotados em dólares; a unidade (onça, libra ou outra) aparece no widget.",
