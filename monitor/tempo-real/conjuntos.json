@@ -35,7 +35,8 @@
     "proName": "BITSTAMP:BTCUSD",
     "title": "Bitcoin"
    }
-  ]
+  ],
+  "nota": "Origem e atraso de cada símbolo estão nos cartões; os nomes da faixa são curtos."
  },
  "matriz_teste": {
   "data_teste": "2026-11-19",
@@ -94,7 +95,7 @@
    "id": "cambio",
    "nome": "Câmbio",
    "subtitulo": "Quanto vale uma moeda em outra, no momento.",
-   "nao_diz": "Uma cotação de agora não diz se a moeda está cara ou barata, nem para onde vai. O dólar que você vê aqui é uma cotação de referência do TradingView; o dólar futuro da B3 e a PTAX do Banco Central são outros números, calculados de outro modo e em outros horários, e podem diferir.",
+   "nao_diz": "Uma cotação de agora não diz se a moeda está cara ou barata, nem para onde vai. O dólar que você vê aqui é uma cotação de câmbio do TradingView; o dólar futuro da B3 e a PTAX do Banco Central são outros números, calculados de outro modo e em outros horários, e podem diferir.",
    "graficos": [
     {
      "id": "tr-cambio-pares",
@@ -105,17 +106,17 @@
       {
        "s": "FX_IDC:USDBRL",
        "rotulo": "Dólar em reais (USD/BRL)",
-       "atraso": "cotação de referência do TradingView (agregador de câmbio); atraso não informado pela fonte"
+       "atraso": "cotação de câmbio do TradingView (fonte indicada pelo prefixo FX_IDC ou FX; origem não verificada por nós); atraso não informado pela fonte"
       },
       {
        "s": "FX:EURUSD",
        "rotulo": "Euro em dólares (EUR/USD)",
-       "atraso": "cotação de referência do TradingView (agregador de câmbio); atraso não informado pela fonte"
+       "atraso": "cotação de câmbio do TradingView (fonte indicada pelo prefixo FX_IDC ou FX; origem não verificada por nós); atraso não informado pela fonte"
       },
       {
        "s": "FX:USDJPY",
        "rotulo": "Dólar em ienes (USD/JPY)",
-       "atraso": "cotação de referência do TradingView (agregador de câmbio); atraso não informado pela fonte"
+       "atraso": "cotação de câmbio do TradingView (fonte indicada pelo prefixo FX_IDC ou FX; origem não verificada por nós); atraso não informado pela fonte"
       }
      ],
      "o_que_e": "Uma cotação de câmbio diz quantas unidades da segunda moeda são necessárias para comprar uma unidade da primeira. No par USD/BRL, o número é quantos reais custam um dólar.",
@@ -139,7 +140,7 @@
       {
        "s": "FX:GBPUSD",
        "rotulo": "Libra em dólares (GBP/USD)",
-       "atraso": "cotação de referência do TradingView (agregador de câmbio); atraso não informado pela fonte"
+       "atraso": "cotação de câmbio do TradingView (fonte indicada pelo prefixo FX_IDC ou FX; origem não verificada por nós); atraso não informado pela fonte"
       }
      ],
      "o_que_e": "Cotação da libra esterlina em dólares americanos.",
@@ -182,7 +183,7 @@
       }
      ],
      "o_que_e": "São cotações em CFD, um contrato oferecido por corretoras que acompanha o índice; o valor pode diferir do índice oficial da bolsa. Os índices resumem o preço de grandes empresas dos EUA e estão em pontos.",
-     "como_ler": "A variação mostrada é em relação ao fechamento anterior desse CFD. Fora do horário da bolsa dos EUA, o valor pode parar ou refletir outro horário da corretora. Não use este quadro para operar.",
+     "como_ler": "A variação mostrada é em relação ao fechamento anterior desse CFD. Fora do horário da bolsa dos EUA, o CFD pode continuar variando ou ficar parado, pois o horário é o da corretora. Não use este quadro para operar.",
      "ja_se_observou": "Este quadro mostra o valor do momento e não guarda histórico: ainda sem observação registrada neste painel. Para ver como a série se comportou ao longo de anos, use o link do histórico no painel Mercados e ciclos.",
      "termos": [
       "cfd",
@@ -285,7 +286,7 @@
       }
      ],
      "o_que_e": "O DI futuro é um contrato da B3 cujo preço traz uma taxa de juros ao ano para o período até o vencimento (o primeiro dia útil de janeiro do ano do código). Aqui entram só contratos com mais de 90 dias até o vencimento.",
-     "como_ler": "A taxa mostrada é em porcentagem ao ano. Comparar vencimentos diferentes mostra o que o mercado negocia para prazos curtos e longos, sem dizer qual taxa vai ocorrer. A variação é em pontos percentuais, não em porcentagem da taxa.",
+     "como_ler": "A taxa é em porcentagem ao ano. Comparar vencimentos diferentes mostra o que o mercado negocia para prazos curtos e longos, sem dizer qual taxa vai ocorrer. Se o widget mostrar variação, cuidado: a diferença entre duas taxas se mede em pontos percentuais, e a variação em porcentagem é relativa à taxa (veja o termo Ponto percentual). Não verificamos qual das duas o widget exibe.",
      "ja_se_observou": "Este quadro mostra o valor do momento e não guarda histórico: ainda sem observação registrada neste painel. Para ver como a série se comportou ao longo de anos, use o link do histórico no painel Mercados e ciclos.",
      "termos": [
       "di",
@@ -330,17 +331,17 @@
      "simbolos": [
       {
        "s": "FRED:DGS2",
-       "rotulo": "Treasury de 2 anos (FRED)",
-       "atraso": "dado diário do dia útil anterior, publicado pelo FRED; não é cotação do momento"
+       "rotulo": "Taxa de 2 anos (FRED)",
+       "atraso": "dado diário do Federal Reserve (H.15) republicado pelo FRED, com defasagem de cerca de um dia útil; não é cotação do momento"
       },
       {
        "s": "FRED:DGS10",
-       "rotulo": "Treasury de 10 anos (FRED)",
-       "atraso": "dado diário do dia útil anterior, publicado pelo FRED; não é cotação do momento"
+       "rotulo": "Taxa de 10 anos (FRED)",
+       "atraso": "dado diário do Federal Reserve (H.15) republicado pelo FRED, com defasagem de cerca de um dia útil; não é cotação do momento"
       }
      ],
-     "o_que_e": "Taxas dos títulos do Tesouro dos EUA de 2 e de 10 anos, em porcentagem ao ano, publicadas pelo FRED (Federal Reserve Bank of St. Louis) para o dia útil anterior.",
-     "como_ler": "Estes são dados diários, não cotações ao vivo. A variação é em pontos percentuais.",
+     "o_que_e": "Taxas de mercado dos títulos do Tesouro dos EUA de vencimento constante de 2 e de 10 anos, em porcentagem ao ano, divulgadas pelo Federal Reserve (série H.15) e republicadas pelo FRED (Federal Reserve Bank of St. Louis). Não são um título específico.",
+     "como_ler": "Estes são dados diários, não cotações ao vivo, com defasagem de cerca de um dia útil. O widget mostra o valor diário e pode não mostrar variação.",
      "ja_se_observou": "Este quadro mostra o valor do momento e não guarda histórico: ainda sem observação registrada neste painel. Para ver como a série se comportou ao longo de anos, use o link do histórico no painel Mercados e ciclos.",
      "termos": [
       "dado_diario",
@@ -355,7 +356,7 @@
    "id": "commodities",
    "nome": "Commodities",
    "subtitulo": "Ouro, petróleo e cobre em dólares.",
-   "nao_diz": "Preço de commodity vem de oferta, demanda, estoques, câmbio e eventos, e nunca de uma causa única. Estas cotações são de referência do TradingView, não o preço de um contrato específico de bolsa.",
+   "nao_diz": "Preço de commodity vem de oferta, demanda, estoques, câmbio e eventos, e nunca de uma causa única. Ouro, petróleo e prata são cotações de referência do TradingView; cobre e minério vêm de uma corretora e podem diferir de contratos de bolsa.",
    "graficos": [
     {
      "id": "tr-commodities-principais",
@@ -366,26 +367,26 @@
       {
        "s": "TVC:GOLD",
        "rotulo": "Ouro",
-       "atraso": "cotação de referência do TradingView, não é o contrato de uma bolsa; atraso não informado pela fonte"
+       "atraso": "cotação de referência do TradingView (feed TVC; composição não verificada por nós); atraso não informado pela fonte"
       },
       {
        "s": "TVC:UKOIL",
        "rotulo": "Petróleo Brent",
-       "atraso": "cotação de referência do TradingView, não é o contrato de uma bolsa; atraso não informado pela fonte"
+       "atraso": "cotação de referência do TradingView (feed TVC; composição não verificada por nós); atraso não informado pela fonte"
       },
       {
        "s": "TVC:USOIL",
        "rotulo": "Petróleo WTI",
-       "atraso": "cotação de referência do TradingView, não é o contrato de uma bolsa; atraso não informado pela fonte"
+       "atraso": "cotação de referência do TradingView (feed TVC; composição não verificada por nós); atraso não informado pela fonte"
       },
       {
        "s": "CAPITALCOM:COPPER",
        "rotulo": "Cobre",
-       "atraso": "cotação de referência do TradingView, não é o contrato de uma bolsa; atraso não informado pela fonte"
+       "atraso": "cotação da corretora Capital.com (provável CFD, pode diferir da bolsa; natureza não verificada por nós); atraso não informado pela fonte"
       }
      ],
-     "o_que_e": "Brent e WTI são duas referências diferentes de petróleo: o Brent vem do Mar do Norte e o WTI, dos EUA; costumam ter preços próximos, mas não iguais. Ouro e cobre estão cotados em dólares.",
-     "como_ler": "As cotações são de referência e não de um contrato de bolsa com vencimento. A variação é em relação ao fechamento anterior da própria referência.",
+     "o_que_e": "Brent e WTI são duas referências diferentes de petróleo: o Brent vem do Mar do Norte e o WTI, dos EUA; costumam ter preços próximos, mas não iguais. Ouro e cobre estão cotados em dólares; a unidade (onça, libra ou outra) aparece no widget.",
+     "como_ler": "Ouro, Brent e WTI são cotações de referência do TradingView, e o cobre vem de uma corretora (provável CFD). Nenhuma é, para nós, um contrato de bolsa verificado. A variação é em relação ao fechamento anterior da própria cotação.",
      "ja_se_observou": "Este quadro mostra o valor do momento e não guarda histórico: ainda sem observação registrada neste painel. Para ver como a série se comportou ao longo de anos, use o link do histórico no painel Mercados e ciclos.",
      "termos": [
       "commodities",
@@ -404,15 +405,15 @@
       {
        "s": "TVC:SILVER",
        "rotulo": "Prata",
-       "atraso": "cotação de referência do TradingView, não é o contrato de uma bolsa; atraso não informado pela fonte"
+       "atraso": "cotação de referência do TradingView (feed TVC; composição não verificada por nós); atraso não informado pela fonte"
       },
       {
        "s": "CAPITALCOM:IRON",
        "rotulo": "Minério de ferro",
-       "atraso": "cotação de referência do TradingView, não é o contrato de uma bolsa; atraso não informado pela fonte; o widget não informa qual referência de minério é usada"
+       "atraso": "cotação da corretora Capital.com (provável CFD, pode diferir da bolsa; natureza não verificada por nós); atraso não informado pela fonte; o widget não informa qual referência de minério é usada"
       }
      ],
-     "o_que_e": "Cotações de prata e de minério de ferro. Para o minério, o widget não informa o índice de referência (há mais de um no mercado).",
+     "o_que_e": "Cotações de prata (referência do TradingView) e de minério de ferro (de uma corretora, provável CFD). Para o minério, o widget não informa o índice de referência (há mais de um no mercado).",
      "como_ler": "Trate a cotação do minério como indicação geral até confirmar a referência no TradingView.",
      "ja_se_observou": "Este quadro mostra o valor do momento e não guarda histórico: ainda sem observação registrada neste painel. Para ver como a série se comportou ao longo de anos, use o link do histórico no painel Mercados e ciclos.",
      "termos": [
@@ -446,7 +447,7 @@
        "atraso": "cripto: o TradingView descreve cripto como tempo real; latência não verificada por nós"
       }
      ],
-     "o_que_e": "Cotações das duas maiores criptomoedas em dólares, na bolsa Bitstamp. O mercado de cripto funciona sem pausa, inclusive em fins de semana.",
+     "o_que_e": "Cotações de duas criptomoedas muito conhecidas, em dólares, na bolsa Bitstamp. O mercado de cripto funciona sem pausa, inclusive em fins de semana.",
      "como_ler": "A variação do dia é calculada pelo widget com seu próprio horário de corte.",
      "ja_se_observou": "Este quadro mostra o valor do momento e não guarda histórico: ainda sem observação registrada neste painel. Para ver como a série se comportou ao longo de anos, use o link do histórico no painel Mercados e ciclos.",
      "termos": [
@@ -474,7 +475,7 @@
   },
   "variacao_dia": {
    "termo": "Variação do dia",
-   "definicao": "Diferença entre o preço atual e o fechamento anterior, em porcentagem. Verde e vermelho no widget só dizem acima ou abaixo desse fechamento: não significam bom nem ruim."
+   "definicao": "Diferença entre o preço atual e o fechamento anterior, que o widget mostra em valor e/ou em porcentagem. Verde e vermelho no widget só dizem acima ou abaixo desse fechamento: não significam bom nem ruim."
   },
   "pregao": {
    "termo": "Pregão e horário",

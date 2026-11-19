@@ -8,7 +8,7 @@ Decisões do dono: o monitor em tempo real é uma **página nova dentro do marke
 
 ## 1. Origem da ideia
 
-Um print de tela de um terminal de mercado (fonte e data não identificadas) mostrou blocos de dólar, commodities, futuros, juros dos EUA, curva DI do Brasil e notícias. Pelo teste desta fase, os valores do print **não são atuais**: o argumento que sustenta isso é que um DI1F26 vence em janeiro de 2026, e hoje é 19/11/2026. Os níveis que o widget mostrou nesse dia (por exemplo, DI1F2029 em 15,3% com a Selic meta em 13,75%) **não foram conferidos** (ticker, unidade e data) e não entram como argumento. O print serve só como referência de layout. Nenhum valor dele entra no painel.
+Um print de tela de um terminal de mercado (fonte e data não identificadas) mostrou blocos de dólar, commodities, futuros, juros dos EUA, curva DI do Brasil e notícias. Pelo teste desta fase, os valores do print **não são atuais**: o argumento que sustenta isso é que um DI1F26 vence em janeiro de 2026, e hoje é 19/11/2026. Valores que algum widget tenha mostrado nesse dia **não foram conferidos** (ticker, unidade e data) e não entram como argumento. O print serve só como referência de layout. Nenhum valor dele entra no painel.
 
 ## 2. Teste de símbolos em widgets reais
 
@@ -23,7 +23,7 @@ Feito em 19/11/2026, no Chrome do dono, com o widget Market Quotes do TradingVie
 | DI Brasil (marcados "D", atrasados) | `BMFBOVESPA:DI1F2027`, `DI1F2028`, `DI1F2029`, `DI1F2031`, `DI1F2033`, `DI1F2035`, `DI1F2036` | `BMFBOVESPA:DI1!` (contínuo, erro) |
 | Bolsa brasileira (marcados "D", atrasados) | `BMFBOVESPA:IBOV`, `WIN1!`, `WDO1!`, `PETR4`, `VALE3`, `DOL1!`, `IND1!` | — |
 
-Ressalvas do teste: o widget Market Quotes não foi usado na versão final da página; falta testar Symbol Overview, Mini Chart e Advanced Chart com cada símbolo aprovado; os nomes de contratos DI mudam a cada ano e precisam de rotina de atualização; `TVC:GOLD` e `TVC:UKOIL` são cotações de referência do TradingView e não o contrato de uma bolsa.
+Ressalvas do teste: o teste foi feito no widget Market Quotes, que é o usado na versão 1 da página (com `teste-simbolos.html` para repetir no Chrome do dono); falta testar Symbol Overview, Mini Chart e Advanced Chart com cada símbolo aprovado; os nomes de contratos DI mudam a cada ano e precisam de rotina de atualização; `TVC:GOLD` e `TVC:UKOIL` são cotações de referência do TradingView e não o contrato de uma bolsa.
 
 ## 3. Regras e limites dos dados
 
@@ -119,3 +119,6 @@ Primeiro bloco ensina a ler, não pisca. **Ticker Tape ligado por padrão (decis
 
 ### 8.8 Autorizações
 Merge do PR #14 e início da Fase 1 (construção de `monitor/tempo-real/`) autorizados, com rodada de juízes antes do merge da Fase 1.
+
+### 8.9 Correções após o juiz J1 (PR #15)
+Variação do DI e do FRED sem afirmar o que o widget mostra (não verificado); `TVC:*` como "feed TVC, composição não verificada"; `CAPITALCOM:*` como corretora (provável CFD); "agregador" removido; rótulo do FRED passa a citar o Federal Reserve (H.15). Pendente no Chrome do dono: ver o que a coluna de variação do Market Quotes exibe para DI e FRED e se os símbolos da faixa abrem no Ticker Tape.
