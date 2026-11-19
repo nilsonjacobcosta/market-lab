@@ -29,3 +29,4 @@ Mudar a regra é decisão do dono.
 - Símbolos testados em 19/11/2026 no navegador embutido do app Claude: 105 de 107 abriram com valor; OIBR3 e OIBR4 ficaram sem valor (reprovados). Conferir de novo no Chrome do dono quando possível.
 - Consulta formal ao TradingView: autorizada pelo dono, ainda não enviada; enquanto isso os widgets carregam só por clique.
 - Medir o peso real no navegador e registrar aqui.
+- Origem e licença dos preços (Yahoo Finance, via Monitor BESST) a registrar.
