@@ -9,7 +9,7 @@ Manter o `monitor/tempo-real/conjuntos.json` com símbolos que abrem nos widgets
 
 ## 2. Quando fazer
 - Todo dia 1º do mês: o workflow `testes-tempo-real.yml` roda e falha se um DI vence em menos de 90 dias.
-- Todo mês de dezembro, junto do RB 04 (feriados da B3): trocar os DI que vencem no janeiro seguinte.
+- Todo mês de setembro: trocar os DI que passarão a vencer em menos de 90 dias (o DI1F2028 cruza essa margem em 03/10/2027). O teste mensal falha no dia 1º se esquecer; em pull request ele só avisa.
 - Quando um quadro aparecer vazio, com erro ou sem atraso informado, ou o TradingView mudar um símbolo.
 - Todo trimestre: reler os termos do TradingView (seções de uso, atribuição e robôs) e registrar a data.
 

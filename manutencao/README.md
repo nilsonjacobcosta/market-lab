@@ -44,7 +44,7 @@ consiga repetir a manutenção **sem depender da memória de conversas anteriore
 | [runbooks/08-revisao-trimestral-balancos.md](runbooks/08-revisao-trimestral-balancos.md) | Conferência pós-ITR/DFP | 4×/ano | Não |
 | [runbooks/09-proventos-lacunas.md](runbooks/09-proventos-lacunas.md) | Proventos zerados/lacunas (CPFE3, ISAE3/4, CPLE3, BMEB3/4; AFLT3 e CBEE3 com prioridade baixa) | quando o alerta `lacuna_proventos` aparecer | Não |
 | [runbooks/10-falha-coleta-mercados.md](runbooks/10-falha-coleta-mercados.md) | Falha na coleta ou no aceite do painel Mercados e ciclos | quando o workflow falhar ou a página avisar atraso | Rotina diária automática |
-| [runbooks/11-simbolos-e-contratos-tempo-real.md](runbooks/11-simbolos-e-contratos-tempo-real.md) | Símbolos e contratos DI do painel Mercados em tempo real | mensal (teste automático) e todo dezembro | Teste mensal automático |
+| [runbooks/11-simbolos-e-contratos-tempo-real.md](runbooks/11-simbolos-e-contratos-tempo-real.md) | Símbolos e contratos DI do painel Mercados em tempo real | mensal (teste automático) e todo setembro | Teste mensal automático |
 
 ## Mapa rápido do sistema (o que é automático e o que não é)
 

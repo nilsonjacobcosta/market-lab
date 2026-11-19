@@ -42,7 +42,7 @@ Dados Abertos da CVM são atualizados **semanalmente**, por isso a conferência 
 | Quando | O quê | Runbook |
 |---|---|---|
 | **Dezembro** (a B3 publicou o calendário de 2026 em 04/12/2025) — a partir de ~05/12, concluir até 20/12 | Trocar os feriados provisórios do ano seguinte pelos oficiais da B3 e criar os provisórios do ano depois | RB 04 |
-| **Dezembro** (junto do RB 04) | Painel em tempo real: trocar os contratos DI que vencem em janeiro seguinte, reconferir símbolos | RB 11 |
+| **Setembro** | Painel em tempo real: trocar os contratos DI que passam a vencer em menos de 90 dias (o primeiro é o DI1F2028, em 03/10/2027), reconferir símbolos | RB 11 |
 | **Dia 1º de cada mês** | Workflow `testes-tempo-real.yml` confere vencimentos DI (> 90 dias) | RB 11 |
 | **Trimestral** | Reler os termos do TradingView e registrar a data | RB 11 |
 | Abril (com a DFP) | Revisar faixas do semáforo da qualidade financeira (Selic/custo de capital) — decisão do dono, ver `docs/monitor-besst/fase2-fundamentos.md` §5 | RB 08 §5.6 |

@@ -62,7 +62,6 @@ button.termo[aria-expanded="true"] .qm{color:var(--bg);border-color:var(--bg)}
 details{border-top:1px solid var(--line);padding-top:8px}
 summary{cursor:pointer;font-weight:600;font-size:.86rem;color:var(--txt)}
 details > *:not(summary){margin-top:8px}
-.tvbox{height:240px;width:100%;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card-2);position:relative}
 .tradingview-widget-container{height:100%;width:100%}
 .tradingview-widget-container__widget{height:calc(100% - 32px);width:100%}
 .tradingview-widget-copyright{font-size:13px;line-height:32px;text-align:center;color:var(--txt-2);height:32px;overflow:hidden}
@@ -147,7 +146,7 @@ footer p{color:var(--mut);max-width:90ch}
     </div>
   </section>
 
-  <main><div id="painel" role="tabpanel" tabindex="-1" aria-live="off"><div class="vazio">Carregando conjuntos…</div></div></main>
+  <main><noscript><div class="vazio">Esta página precisa de JavaScript para mostrar os widgets do TradingView.</div></noscript><div id="painel" role="tabpanel" tabindex="-1" aria-live="off"><div class="vazio">Carregando conjuntos…</div></div></main>
 
   <section class="painel gloss" aria-labelledby="h-gloss">
     <h2 id="h-gloss">Glossário</h2>
@@ -193,7 +192,7 @@ function normalizar(c, m) {
 function gravarURL(empilhar) {
   const p = new URLSearchParams(location.search);
   p.set("conjunto", estado.conjunto); p.set("modo", estado.modo);
-  const url = location.pathname + "?" + p.toString() + location.hash;
+  const url = location.pathname + "?" + p.toString();
   if (empilhar) history.pushState(null, "", url); else history.replaceState(null, "", url);
   guardar("tempo-real-conjunto", estado.conjunto); guardar("tempo-real-modo", estado.modo);
 }
@@ -201,7 +200,8 @@ function irPara(conjunto, modo, empilhar = true) {
   const n = normalizar(conjunto ?? estado.conjunto, modo ?? estado.modo);
   const mudou = n.conjunto !== estado.conjunto || n.modo !== estado.modo;
   estado.conjunto = n.conjunto; estado.modo = n.modo;
-  if (mudou && empilhar) gravarURL(true);
+  if (!mudou) return;
+  if (empilhar) gravarURL(true);
   desenharTudo();
 }
 
@@ -210,7 +210,7 @@ function desenharSeletores() {
   const cs = conjuntosDoModo(estado.modo);
   $("tabs").innerHTML = cs.map((c, i) => {
     const sel = c.id === estado.conjunto;
-    return `<button type="button" role="tab" id="tab-${esc(c.id)}" data-conj="${esc(c.id)}" aria-selected="${sel}" aria-controls="painel" tabindex="${sel ? 0 : -1}"><span class="n">${i + 1}</span>${esc(c.nome)}</button>`;
+    return `<button type="button" role="tab" id="tab-${esc(c.id)}" data-conj="${esc(c.id)}" aria-selected="${sel}" aria-controls="painel" tabindex="${sel ? 0 : -1}"><span class="n" aria-hidden="true">${i + 1}</span>${esc(c.nome)}</button>`;
   }).join("");
   $("sel-conj").innerHTML = cs.map((c, i) => `<option value="${esc(c.id)}"${c.id === estado.conjunto ? " selected" : ""}>${i + 1}. ${esc(c.nome)}</option>`).join("");
   document.querySelectorAll("[data-modo]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.modo === estado.modo)));
@@ -261,8 +261,8 @@ function desenharTira() {
   if (reduz()) {
     btn.hidden = true; nota.textContent = "A faixa em movimento fica desligada porque seu sistema pede menos animação. Os cartões abaixo mostram as cotações do conjunto escolhido, sem movimento."; return;
   }
-  btn.hidden = false; btn.setAttribute("aria-pressed", String(ligada)); btn.textContent = ligada ? "Pausar e desligar a faixa" : "Ligar a faixa";
-  nota.textContent = estado.cfg.ticker.nota + (ligada ? " A faixa rola sozinha; desligue se atrapalhar a leitura." : "");
+  btn.hidden = false; btn.setAttribute("aria-pressed", String(ligada)); btn.textContent = "Faixa em movimento";
+  nota.textContent = estado.cfg.ticker.nota + (ligada ? " A faixa rola sozinha; clique no botão para pausar e desligar." : " A faixa está desligada; clique no botão para ligar.");
   if (!ligada) return;
   const caixa = document.createElement("div"); caixa.className = "tvtira";
   const cont = document.createElement("div"); cont.className = "tradingview-widget-container";
@@ -344,7 +344,8 @@ document.addEventListener("click", (e) => {
     guardar("tempo-real-ticker", ligada ? "desligado" : "ligado"); desenharTira(); return;
   }
   const m = e.target.closest("[data-modo]"), c = e.target.closest("[data-conj]");
-  if (m) irPara(null, m.dataset.modo); else if (c) irPara(c.dataset.conj, null);
+  if (m) irPara(null, m.dataset.modo);
+  else if (c) { irPara(c.dataset.conj, null); const b = $("tab-" + estado.conjunto); if (b) b.focus(); }
 });
 document.addEventListener("keydown", (e) => { if (e.key === "Escape" && popBtn) { const b = popBtn; fecharPop(); b.focus(); } });
 addEventListener("scroll", () => { if (Date.now() - popEm > 400) fecharPop(); }, {passive: true});
@@ -356,17 +357,28 @@ $("tabs").addEventListener("keydown", (e) => {
   e.preventDefault(); irPara(ids[i], null); const b = $("tab-" + ids[i]); if (b) b.focus();
 });
 addEventListener("popstate", () => { if (!estado.cfg) return; const u = lerURL(), n = normalizar(u.conjunto, u.modo);
+  if (n.conjunto === estado.conjunto && n.modo === estado.modo) return;
   estado.conjunto = n.conjunto; estado.modo = n.modo; desenharTudo(); });
 
 /* ---------- carga ---------- */
-fetch(CONJ_URL + "?v=" + Date.now(), {cache: "no-store"}).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(cfg => {
-  estado.cfg = cfg; $("faixa").textContent = cfg.faixa.texto; $("legenda-cores").textContent = cfg.legenda_cores;
-  const u = lerURL(), n = normalizar(u.conjunto || ler("tempo-real-conjunto"), u.modo || ler("tempo-real-modo"));
-  estado.conjunto = n.conjunto; estado.modo = n.modo; gravarURL(false);
-  desenharGlossario(); desenharTira(); desenharTudo();
-}).catch(() => {
-  $("painel").innerHTML = '<div class="vazio">Painel indisponível no momento (não foi possível carregar conjuntos.json).</div>';
-});
+fetch(CONJ_URL + "?v=" + Date.now(), {cache: "no-store"}).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .catch(() => { $("painel").innerHTML = '<div class="vazio">Painel indisponível no momento: não foi possível carregar conjuntos.json (rede ou arquivo).</div>'; return null; })
+  .then(cfg => {
+    if (!cfg) return;
+    try {
+      estado.cfg = cfg; $("faixa").textContent = cfg.faixa.texto; $("legenda-cores").textContent = cfg.legenda_cores;
+      const u = lerURL();
+      let modoIn = u.modo || ler("tempo-real-modo");
+      const conjIn = u.conjunto || ler("tempo-real-conjunto");
+      if (!u.modo && u.conjunto && !conjuntosDoModo("iniciante").some(c => c.id === u.conjunto) && conjuntosDoModo("avancado").some(c => c.id === u.conjunto)) modoIn = "avancado";
+      const n = normalizar(conjIn, modoIn);
+      estado.conjunto = n.conjunto; estado.modo = n.modo; gravarURL(false);
+      desenharGlossario(); desenharTira(); desenharTudo();
+    } catch (e) {
+      console.error(e);
+      $("painel").innerHTML = '<div class="vazio">Erro ao montar o painel (detalhes no console do navegador). Os dados foram carregados, mas a página falhou ao desenhá-los.</div>';
+    }
+  });
 </script>
 </body>
 </html>

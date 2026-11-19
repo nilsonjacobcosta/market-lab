@@ -5,6 +5,8 @@ on:
     paths:
       - "monitor/tempo-real/**"
       - "tests/test_tempo_real.py"
+      - ".github/workflows/testes-tempo-real.yml"
+      - "manutencao/runbooks/11-*.md"
   schedule:
     # Mensal: pega contratos DI que passaram a vencer em menos de 90 dias (RB 11).
     - cron: "17 11 1 * *"
