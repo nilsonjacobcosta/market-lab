@@ -100,7 +100,7 @@ A seção 3 vale sem exceção: o painel não coleta nem republica cotação de 
 - Termos novos do glossário: tempo real e atraso, cotação, fechamento, variação do dia, pregão e horário, contrato futuro, vencimento, DI, ponto percentual, ticker, CFD (com "pode diferir da bolsa"), minicontrato e alavancagem (Avançado), widget de terceiros, ruído e tendência, calendário econômico, dado diário.
 
 ### 8.5 Ordem e ritmo
-Primeiro bloco ensina a ler, não pisca. **Sem Ticker Tape por padrão**; se for ligado pelo usuário, não monta com `prefers-reduced-motion` e tem botão "Pausar". Cada conjunto tem link para o histórico no painel Mercados e ciclos. Cartão "Como usar este painel" de poucas linhas no topo e a frase "você não precisa acompanhar isto durante o dia".
+Primeiro bloco ensina a ler, não pisca. **Ticker Tape ligado por padrão (decisão do dono, 8.7), com botão liga/desliga**; não monta com `prefers-reduced-motion` e tem botão "Pausar". Cada conjunto tem link para o histórico no painel Mercados e ciclos. Cartão "Como usar este painel" de poucas linhas no topo e a frase "você não precisa acompanhar isto durante o dia".
 
 ### 8.6 Engenharia
 - **Copiar e enxugar** `monitor/mercados/index.html` (sem canvas, sem coleta), registrando o commit de origem; extrair módulo comum só na terceira página parecida. Prefixo de armazenamento `tempo-real-*`.
@@ -110,9 +110,12 @@ Primeiro bloco ensina a ler, não pisca. **Sem Ticker Tape por padrão**; se for
 - **Matriz símbolo × widget como critério de aceite:** nenhum símbolo entra no JSON sem registro de teste para o widget em que será usado, com data. Página auxiliar `teste-simbolos.html` para o teste no Chrome do dono.
 - Teste automatizado `tests/test_tempo_real.py` (esquema, limites, widgets permitidos e nenhum de análise técnica, símbolos reprovados, matriz testada, termos no glossário, palavras proibidas, todo `BMFBOVESPA:*` como "atrasado", nenhum número de cotação no JSON) e teste de calendário dos contratos DI em workflow mensal. Workflow `testes-tempo-real.yml`. Runbook novo `11-simbolos-e-contratos-tempo-real.md`; rotina anual em dezembro junto do RB 04. Registros: README de manutenção, calendário, registro, `monitor/README.md`, `monitor/tempo-real/README.md` e cartão na página inicial com "Em construção".
 
-### 8.7 Decisões do dono antes da Fase 1
-1. Carregar os widgets só após clique (privacidade) ou ao abrir a página?
-2. Autoriza a consulta formal ao TradingView (e quem a envia)?
-3. Aceita Playwright com widgets simulados no CI (dependência fora da biblioteca padrão) ou só testes de JSON e HTML?
-4. Confirma a curva DI própria fora da versão 1?
-5. Confirma Ticker Tape desligado por padrão?
+### 8.7 Decisões do dono (19/11/2026)
+1. **Widgets carregam sempre ao abrir a página** (sem clique). O aviso de privacidade (8.3) continua obrigatório e fica visível antes do primeiro widget, e o texto não pode dizer que "nada é carregado antes de você aceitar".
+2. **Consulta formal ao TradingView autorizada**, com envio feito por Claude no canal oficial de contato, com texto sem dados pessoais além do necessário e resposta guardada no repositório. O envio por e-mail ou formulário em nome do dono segue o que ele autorizou aqui; endereço e canal serão os publicados pelo próprio TradingView.
+3. **CI: testes de JSON e HTML apenas (biblioteca padrão), sem Playwright.** Motivo: os widgets são iframes de terceiros, que um teste simulado não valida de verdade; a dependência nova só testaria nosso próprio código de montagem, que o teste manual no Chrome do dono (`teste-simbolos.html`) já cobre. Reavaliar se a montagem ficar complexa.
+4. **Curva DI própria fora da versão 1** (confirmado).
+5. **Ticker Tape ligado por padrão, com botão liga/desliga** que lembra a escolha (`tempo-real-ticker`). Fica sempre desligado com `prefers-reduced-motion`, tem botão "Pausar" e não ocupa o primeiro bloco: vai em faixa fina no topo, abaixo do aviso "Para estudo. Não use para operar.". Isso substitui a regra da seção 8.5 de que o Ticker Tape é desligado por padrão. Símbolos da faixa: só os já testados.
+
+### 8.8 Autorizações
+Merge do PR #14 e início da Fase 1 (construção de `monitor/tempo-real/`) autorizados, com rodada de juízes antes do merge da Fase 1.
