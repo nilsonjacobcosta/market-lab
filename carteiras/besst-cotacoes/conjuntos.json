@@ -3,9 +3,9 @@
   "texto": "Para estudo. Não use para operar. Preços atrasados podem diferir dos de uma corretora."
  },
  "aviso_fixo": "Lista organizada por critério matemático sobre dividendos passados. Não é recomendação de investimento. O preço-teto depende de proventos passados, que podem não se repetir.",
- "formula": "Preço-teto robusto (método Bazin, taxa de 6%): dividendo anual médio por ação, calculado sobre até 5 anos de proventos pagos (média sem o maior e o menor ano quando há 5 anos válidos), dividido por 0,06. A margem é a distância entre a cotação do fechamento e esse teto. Todos os dados vêm do Monitor BESST e usam o fechamento do pregão indicado na página.",
+ "formula": "Preço-teto robusto (método Bazin, taxa de 6%): dividendo anual por ação dividido por 0,06. O dividendo usa os últimos 5 anos completos, com proventos por data-ex: com 5 anos válidos, média sem o maior e o menor ano; com 3 ou 4 anos válidos, a mediana. O ano parcial de listagem e anos com lacuna na fonte ficam de fora. A margem é a distância entre a cotação do preço mais recente do Monitor BESST e esse teto. Preços de cerca de 15 minutos de atraso, do Yahoo Finance, ajustados por proventos.",
  "ordem_texto": "A ordem de leitura é sempre a mesma regra, igual para todos: primeiro os papéis com cotação abaixo do preço-teto robusto no fechamento, depois os demais; dentro de cada grupo, do que mais negocia para o que menos negocia (liquidez em R$ mil por dia). Quem preferir pode trocar para ordem alfabética. A ordem não indica qualidade, risco nem preço justo.",
- "nao_diz_geral": "Esta página não diz se um papel é bom, arriscado ou se vale a pena. O preço-teto depende de dividendos passados, que podem não se repetir. A ordem vem do fechamento do pregão indicado; o widget do TradingView mostra cotação atrasada, que pode estar em outro nível. Papéis com pouca negociação, alertas graves ou sem teto ficam fora da lista.",
+ "nao_diz_geral": "Esta página não diz se um papel é bom, arriscado ou se vale a pena. O preço-teto depende de dividendos passados, que podem não se repetir. A ordem vem do fechamento do pregão indicado; o widget do TradingView mostra cotação atrasada, que pode estar em outro nível. Papéis sem cotação, com pouca negociação, alerta grave, sem proventos, com histórico muito curto ou sem teto ficam fora da lista (veja \"Fora dos critérios\"); \"alerta grave\" é um alerta sobre os dados, não um julgamento da empresa. O corte do modo Iniciante (até 6 papéis por setor, um por empresa) segue a ordem de leitura e não é uma seleção de qualidade.",
  "limites": {
   "iniciante_max": 6,
   "pagina": 8,
@@ -36,7 +36,7 @@
   "baixa_liquidez": "pouca negociação (menos de R$ 500 mil por dia)",
   "sem_liquidez": "liquidez não informada",
   "sem_proventos": "sem proventos no período",
-  "historico_curto": "histórico curto de proventos",
+  "historico_curto": "menos de 3 anos completos de histórico de proventos",
   "nao_se_aplica": "preço-teto não se aplica",
   "sem_teto": "sem preço-teto robusto",
   "outro": "fora dos critérios"
@@ -47,15 +47,15 @@
    "nome": "Bancos",
    "setor": "Bancos",
    "o_que_e": "Bancos listados na B3, vários com mais de uma classe de ação (ON, PN, units).",
-   "como_ler": "Compare a faixa de margem com a liquidez: um papel pouco negociado pode ter cotação difícil de obter. Empresas com várias classes aparecem uma vez no modo Iniciante.",
+   "como_ler": "Compare a faixa de margem com a liquidez: pouca liquidez pode dificultar comprar ou vender pelo preço mostrado. Empresas com várias classes aparecem uma vez no modo Iniciante.",
    "nao_diz": "Não diz nada sobre a qualidade do crédito, o capital ou os resultados do banco."
   },
   {
    "id": "energia",
    "nome": "Energia",
    "setor": "Energia",
-   "o_que_e": "Geração, transmissão e distribuição de energia elétrica, o maior setor do Monitor BESST.",
-   "como_ler": "Muitas empresas do setor têm proventos que variam com regras de concessão e com resultados extraordinários; leia os alertas de cada papel.",
+   "o_que_e": "Energia, incluindo empresas de geração, transmissão e distribuição de energia elétrica e uma distribuidora de combustíveis. É o maior setor do Monitor BESST.",
+   "como_ler": "Os proventos do setor variam com ciclos de investimento, regulação e eventos extraordinários; leia os alertas de cada papel.",
    "nao_diz": "Não diz nada sobre concessões, tarifas, dívida ou investimentos da empresa."
   },
   {
@@ -86,15 +86,15 @@
  "glossario": {
   "preco_teto": {
    "termo": "Preço-teto robusto",
-   "definicao": "Valor calculado pelo método Bazin: dividendo anual médio por ação, de até 5 anos, dividido por 6%. É uma conta sobre o passado, não um preço justo nem uma previsão."
+   "definicao": "Valor calculado pelo método Bazin: dividendo anual por ação (média sem o maior e o menor ano com 5 anos válidos; mediana com 3 ou 4) dividido por 6%. É uma conta sobre o passado, não um preço justo nem uma previsão."
   },
   "bazin": {
    "termo": "Método Bazin",
-   "definicao": "Regra didática que liga o dividendo médio pago a uma taxa mínima (aqui, 6% ao ano) para chegar a um preço de referência. Depende de proventos passados, que podem não se repetir."
+   "definicao": "Regra didática que liga o dividendo pago a uma taxa mínima (aqui, 6% ao ano) para chegar a um preço de referência. Depende de proventos passados, que podem não se repetir."
   },
   "margem": {
    "termo": "Margem",
-   "definicao": "Distância entre a cotação do fechamento e o preço-teto robusto, em porcentagem do teto. Margem positiva quer dizer cotação abaixo do teto no fechamento indicado."
+   "definicao": "Distância entre a cotação do fechamento e o preço-teto robusto, em porcentagem do teto. Margem positiva quer dizer cotação abaixo do teto; margem negativa, acima do teto."
   },
   "faixa": {
    "termo": "Faixa de margem",
@@ -102,11 +102,11 @@
   },
   "liquidez": {
    "termo": "Liquidez",
-   "definicao": "Média do valor negociado por dia, em R$ mil, medida pelo Monitor BESST. Pouca liquidez pode dificultar comprar ou vender pelo preço mostrado."
+   "definicao": "Média do valor negociado por dia (preço vezes volume) nos últimos cerca de 3 meses, em R$ mil, medida pelo Monitor BESST. Pouca liquidez pode dificultar comprar ou vender pelo preço mostrado."
   },
   "conferir": {
    "termo": "Conferir",
-   "definicao": "Marca de papéis cujo dado de preço-teto pede verificação no Monitor BESST antes de qualquer leitura."
+   "definicao": "Marca de papéis cujo dado de preço-teto é um dado que pede verificação; o motivo está no Monitor BESST."
   },
   "atrasada": {
    "termo": "Cotação atrasada",
@@ -124,5 +124,26 @@
    "termo": "B3",
    "definicao": "A bolsa de valores do Brasil, onde esses papéis são negociados."
   }
- }
+ },
+ "aviso_ordem_tabela": "A ordem não indica qualidade, risco nem preço justo.",
+ "alertas_iniciante": {
+  "tendencia_queda": "Os proventos do último ano caíram bastante em relação à média; o passado pode não se repetir.",
+  "sem_proventos_12m": "Não houve proventos nos últimos 12 meses.",
+  "historico_curto": "Pouco histórico de proventos para calcular o teto.",
+  "baixa_liquidez": "Pouca negociação por dia: pode ser difícil comprar ou vender pelo preço mostrado.",
+  "sem_negociacao": "Quase não há negociação; o preço mostrado pode não ser real.",
+  "situacao_especial": "A empresa está em situação especial (por exemplo, reestruturação); proventos passados podem não servir de referência.",
+  "lacuna_proventos": "Há anos sem dados de proventos no histórico.",
+  "ajuste_suspeito": "Os dados de preço ou proventos têm um ajuste que pede verificação.",
+  "dy12m_atipico": "O rendimento dos últimos 12 meses está fora do padrão histórico.",
+  "dy12m_baixo": "O rendimento dos últimos 12 meses é baixo em relação à média.",
+  "divergencia_classes": "As classes de ação da mesma empresa têm tetos muito diferentes.",
+  "margem_negativa_extrema": "A cotação está muito acima do teto calculado.",
+  "margem_extrema": "A margem calculada é extrema; o teto pode não ser confiável.",
+  "proventos_esporadicos": "Proventos pagos de forma irregular.",
+  "preco_desabou": "O preço caiu muito em pouco tempo.",
+  "extraordinario": "Houve provento extraordinário que pode ter inflado a média."
+ },
+ "fonte_texto": "Preço-teto, margem, liquidez e alertas são calculados pelo Monitor BESST a partir de preços do Yahoo Finance (cerca de 15 minutos de atraso) e de proventos históricos.",
+ "controle_a_confirmar": "a confirmar"
 }

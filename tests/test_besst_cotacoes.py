@@ -115,7 +115,7 @@ class Simbolos(unittest.TestCase):
 
 
 class Textos(unittest.TestCase):
-    PERMITIDOS = [r"\b5 anos\b", r"\b6%", r"\b0,06\b", r"R\$ 500 mil", r"\b(10|30)%", r"\bB3\b", r"\bterminados em 11\b", r"\bat[ée] 5\b"]
+    PERMITIDOS = [r"\b5 anos\b", r"\b6%", r"\b0,06\b", r"R\$ 500 mil", r"\b(10|30)%", r"\bB3\b", r"\bterminados em 11\b", r"\bat[ée] [56]\b", r"\b\d+ (ou \d+ )?(anos|meses)\b", r"\b3 ou 4\b", r"\b15 minutos\b", r"\b12 meses\b", r"\b5 anos\b"]
 
     def test_sem_palavras_proibidas_no_json_e_no_html(self):
         for onde, t in textos_json():
@@ -153,8 +153,26 @@ class Textos(unittest.TestCase):
         self.assertIn("A ordem não indica qualidade, risco nem preço justo", CFG["ordem_texto"])
         self.assertIn("igual para todos", CFG["ordem_texto"])
         self.assertIn("Bazin", CFG["formula"])
-        self.assertIn("fechamento", CFG["formula"])
+        self.assertIn("preço mais recente", CFG["formula"])
         self.assertIn("pode estar em outro nível", CFG["nao_diz_geral"])
+
+    def test_origem_dos_dados_e_corte_declarados(self):
+        self.assertIn("Yahoo Finance", CFG["fonte_texto"])
+        self.assertIn("txt-fonte", HTML)
+        self.assertIn("fora do Brasil", HTML)
+        self.assertIn("O modo Iniciante mostra ${itens.length} de ${nEmp} empresas", HTML)
+        self.assertIn("mediana", CFG["formula"])
+        self.assertIn("data-ex", CFG["formula"])
+        self.assertIn("O corte do modo Iniciante", CFG["nao_diz_geral"])
+        self.assertIn("estado.dataPreco = O.dataPredominante(", HTML)  # data do preço, não a data mais recente do arquivo
+        self.assertNotIn("ref = estado.painel.pregao_referencia", HTML)
+
+    def test_alertas_do_iniciante_cobrem_todos_os_codigos_do_painel(self):
+        codigos = {c for p in PAINEL["papeis"] for c in (p.get("alertas") or [])}
+        faltam = codigos - set(CFG["alertas_iniciante"])
+        self.assertFalse(faltam, f"alertas sem texto de Iniciante: {faltam}")
+        for t in CFG["alertas_iniciante"].values():
+            self.assertNotRegex(t, r"\b(DY|Bazin)\b")
 
     def test_nao_diz_visivel_antes_das_listas(self):
         self.assertLess(HTML.index("O que esta página não diz"), HTML.index('id="painel"'))
@@ -215,7 +233,7 @@ class Pagina(unittest.TestCase):
 
     # Expressões de ${...} que não precisam de esc(): números, textos fixos ou HTML já montado com esc().
     EXATAS = {"abaixo", "abaixoFora", "cab", "comTeste.length", "fase", "fora.length", "li", "linhas", "pager", "resumo", "s.nome", "sel",
-              "sem", "titulo", "total", "estado.carregadoEm", "sel ? 0 : -1"}
+              "sem", "titulo", "total", "nTodos", "nEmp", "conferir", "abaixoFora", "estado.carregadoEm", "sel ? 0 : -1"}
     SEGURAS = ("esc(", "fmt1(", "fmtInt(", "dbr(", "dcurta(", "s.slice(", "encodeURIComponent(", "htmlAlerta(", "htmlFora(", "htmlTabela(",
                "estado.auto ?", "estado.cfg.limites", "pg ", "itens.length", "i + 1", "sit.atraso", '" selected"', '" disabled"')
 

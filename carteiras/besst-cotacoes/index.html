@@ -128,7 +128,7 @@ tr:last-child td{border-bottom:0}
 
   <section class="privac" aria-labelledby="h-priv">
     <h2 id="h-priv" style="font-size:1rem">Privacidade</h2>
-    <p>Os widgets do TradingView (tradingview.com) <b>só carregam depois que você clicar</b> em "Carregar cotações" (ou se você ligar o carregamento automático). Quando carregam, o TradingView recebe dados técnicos da visita, como o endereço da página, os símbolos exibidos e o endereço IP, e pode usar cookies conforme a política dele: <a href="https://www.tradingview.com/privacy-policy/" rel="noopener nofollow" target="_blank">tradingview.com/privacy-policy</a>. Esta página não lê nem guarda os valores exibidos. Ela guarda no seu navegador apenas suas escolhas de modo, setor, ordem e carregamento automático. O servidor que hospeda a página também recebe a visita.</p>
+    <p>Os widgets do TradingView (tradingview.com) <b>só carregam depois que você clicar</b> em "Carregar cotações" (ou se você ligar o carregamento automático). Quando carregam, o TradingView recebe dados técnicos da visita, como o endereço da página, os símbolos exibidos e o endereço IP, e pode usar cookies conforme a política dele: <a href="https://www.tradingview.com/privacy-policy/" rel="noopener nofollow" target="_blank">tradingview.com/privacy-policy</a>. Esta página não lê nem guarda os valores exibidos. Ela guarda no seu navegador apenas suas escolhas de modo, setor, ordem e carregamento automático. O servidor que hospeda a página também recebe a visita. O TradingView é uma empresa sediada fora do Brasil, então esses dados podem ser tratados no exterior.</p>
   </section>
 
   <section class="painel" aria-labelledby="h-como">
@@ -176,7 +176,8 @@ tr:last-child td{border-bottom:0}
   </section>
 
   <footer>
-    <p><b>Widgets do TradingView.</b> As cotações vêm de widgets do TradingView; esta página não coleta nem republica cotações. Cada widget traz a atribuição do TradingView. Cotações da B3 aparecem com atraso. Preço-teto, margem, liquidez e alertas vêm do <a href="../monitor-besst/">Monitor BESST</a> e usam o fechamento do pregão indicado no topo.</p>
+    <p><b>Widgets do TradingView.</b> As cotações dos widgets vêm do TradingView; esta página não as coleta nem as republica. Cada widget traz a atribuição do TradingView. Cotações da B3 aparecem com atraso.</p>
+    <p id="txt-fonte"><b>Dados do Monitor BESST.</b> </p>
     <p><b>Limites.</b> Se um quadro ficar vazio ou mostrar erro dentro do widget, a página não consegue detectar: confira o símbolo pelo link na tabela. Cotação do widget e fechamento usado na ordem podem diferir.</p>
     <p>Metodologia, símbolos e manutenção: <a href="README.md">README desta página</a> · código no <a href="https://github.com/nilsonjacobcosta/market-lab">GitHub</a>.</p>
     <p>Material educativo. Não é recomendação de investimento. Rentabilidade passada não garante resultado futuro.</p>
@@ -196,7 +197,7 @@ const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
 const guardar = (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} };
 const ler = (k) => { try { return localStorage.getItem(k); } catch (e) { return null; } };
-const estado = {setor: null, modo: "iniciante", ordem: "criterio", pagina: 0, auto: false, cfg: null, painel: null, papeis: [], sit: null, carregadoEm: ""};
+const estado = {setor: null, modo: "iniciante", ordem: "criterio", pagina: 0, auto: false, cfg: null, painel: null, papeis: [], sit: null, carregadoEm: "", dataPreco: null};
 let limpezas = [];
 const dbr = (s) => `${s.slice(8, 10)}/${s.slice(5, 7)}/${s.slice(0, 4)}`;
 const dcurta = (s) => (s ? `${s.slice(8, 10)}/${s.slice(5, 7)}` : "—");
@@ -275,15 +276,16 @@ function montarWidget(host, reserva, itens, titulo) {
 /* ---------- tabela e painel ---------- */
 function htmlAlerta(p) {
   const nivel = {ok: "sem alerta", atencao: "atenção", grave: "grave"}[p.nivel_alerta] || "—";
-  const t = (p.alertas_texto || []).join(" ");
+  const I = estado.cfg.alertas_iniciante || {};
+  const t = estado.modo === "iniciante" ? (p.alertas || []).map(c => I[c] || "Alerta de dados; veja o Monitor BESST.").join(" ") : (p.alertas_texto || []).join(" ");
   return `<b>${esc(nivel)}</b>${t ? ": " + esc(t) : ""}`;
 }
 function htmlTabela(itens, ref) {
   const av = estado.modo === "avancado", F = estado.cfg.faixas;
-  const cab = `<th scope="col">Papel</th><th scope="col">Empresa</th><th scope="col">Faixa de margem</th>${av ? `<th scope="col">Margem no fechamento de ${esc(dcurta(ref))}</th><th scope="col">Liquidez (R$ mil por dia)</th><th scope="col">Data do preço</th><th scope="col">Controle</th>` : ""}<th scope="col">Alerta</th>`;
+  const cab = `<th scope="col">Papel</th><th scope="col">Empresa</th><th scope="col">Faixa de margem (preço de ${esc(dcurta(ref))})</th>${av ? `<th scope="col">Margem (+ abaixo do teto, − acima) em ${esc(dcurta(ref))}</th><th scope="col">Liquidez (R$ mil por dia)</th><th scope="col">Data do preço</th><th scope="col">Controle</th>` : ""}<th scope="col">Alerta</th>`;
   const linhas = itens.map(it => {
     const p = it.p, sem = aprovado(p.ticker) ? "" : ` <span class="sem-teste">· sem teste no widget</span>`;
-    return `<tr><th scope="row"><a href="${esc(urlSimbolo(p.ticker))}" rel="noopener nofollow" target="_blank">${esc(p.ticker)}</a>${sem}</th><td>${esc(p.empresa)}</td><td>${esc(F[it.faixa] || "")}</td>${av ? `<td class="n">${fmt1(p.margem_robusta)}%</td><td class="n">${fmtInt(p.liquidez_mil)}</td><td class="n">${esc(dcurta(p.data))}</td><td>${esc(CONTROLE[p.controle] || p.controle || "—")}</td>` : ""}<td>${htmlAlerta(p)}</td></tr>`;
+    return `<tr><th scope="row"><a href="${esc(urlSimbolo(p.ticker))}" rel="noopener nofollow" target="_blank">${esc(p.ticker)}</a>${sem}</th><td>${esc(p.empresa)}</td><td>${esc(F[it.faixa] || "")}</td>${av ? `<td class="n">${fmt1(p.margem_robusta)}%</td><td class="n">${fmtInt(p.liquidez_mil)}</td><td class="n">${esc(dcurta(p.data))}</td><td>${esc(CONTROLE[p.controle] || p.controle || "—")}${/PENDENTE|não conferid/i.test(p.controle_nota || "") ? ` (${esc(estado.cfg.controle_a_confirmar)})` : ""}</td>` : ""}<td>${htmlAlerta(p)}</td></tr>`;
   }).join("");
   return `<div class="tabwrap" tabindex="0" role="region" aria-label="Tabela dos papéis exibidos"><table><caption class="sr">Papéis desta página, na ordem de leitura</caption><thead><tr>${cab}</tr></thead><tbody>${linhas}</tbody></table></div>`;
 }
@@ -296,16 +298,21 @@ function htmlFora(fora) {
 function desenharPainel() {
   limpezas.forEach(f => { try { f(); } catch (e) {} }); limpezas = [];
   fecharPop();
-  const painel = $("painel"), s = setorAtual(), ref = estado.painel.pregao_referencia;
+  const painel = $("painel"), s = setorAtual(), ref = estado.dataPreco;
   const d = listaDoSetor(), nPag = d.paginas.length, pg = Math.min(estado.pagina, Math.max(0, nPag - 1)); estado.pagina = pg;
   const itens = d.paginas[pg] || [];
   const abaixo = d.todos.principal.filter(i => i.grupo === "abaixo").length, total = d.todos.principal.length;
-  const abaixoFora = d.todos.fora.filter(i => i.p.status_robusto === "abaixo_teto").length;
+  const nTodos = O.ordenar(estado.papeis, s.setor).principal.length, nEmp = O.umPorEmpresa(d.todos.principal).length;
+  const conferir = d.todos.principal.filter(i => i.faixa === "conferir").length;
+  const abaixoFora = d.todos.fora.filter(i => i.motivo === "baixa_liquidez" && (i.p.status_robusto === "abaixo_teto" || i.p.status_robusto === "abaixo_teto_conferir")).length;
   const ref8 = dbr(ref);
-  let resumo = `<b>${abaixo} de ${total}</b> papéis da lista de ${esc(s.nome)} estão abaixo do preço-teto robusto no fechamento de ${esc(ref8)}.`;
-  if (abaixo === 0) resumo += " Nenhum papel do setor passa pelos critérios abaixo do teto hoje; a lista abaixo traz os demais, por liquidez.";
-  if (abaixoFora) resumo += ` Outros ${abaixoFora} abaixo do teto ficaram de fora da lista (por baixa liquidez ou alerta grave; veja "Fora dos critérios").`;
-  if (!total) resumo = `Nenhum papel de ${esc(s.nome)} passa pelos critérios no fechamento de ${esc(ref8)}; veja "Fora dos critérios".`;
+  let resumo = `<b>${abaixo} de ${total}</b> papéis da lista de ${esc(s.nome)} estão abaixo do preço-teto robusto no preço de ${esc(ref8)} (contando todas as classes de ação).`;
+  if (abaixo === 0) resumo += " Nenhum papel do setor passa pelos critérios abaixo do teto; a lista traz os demais, por liquidez.";
+  if (conferir) resumo += ` Outros ${conferir} marcados "conferir" aparecem depois, com dado a verificar.`;
+  if (abaixoFora) resumo += ` Mais ${abaixoFora} com preço abaixo do teto ficaram de fora por baixa liquidez (veja "Fora dos critérios").`;
+  if (estado.modo === "iniciante" && itens.length < total) resumo += ` O modo Iniciante mostra ${itens.length} de ${nEmp} empresas (um papel por empresa, o de maior liquidez, na ordem de leitura); não aparecer aqui não significa pior nem melhor. O modo Avançado traz todos os ${total} papéis.`;
+  if (estado.modo === "iniciante" && ordemEfetiva() === "alfabetica") resumo += " A ordem alfabética muda só a ordem dos papéis mostrados, não quais aparecem.";
+  if (!total) resumo = `Nenhum papel de ${esc(s.nome)} passa pelos critérios no preço de ${esc(ref8)}; veja "Fora dos critérios".`;
   if (ordemEfetiva() !== estado.ordem) resumo += " A ordem está alfabética porque os dados do Monitor BESST estão muito velhos ou inválidos.";
   const pager = estado.modo === "avancado" && nPag > 1 ? `<div class="pager"><button type="button" class="btn" id="btn-ant"${pg === 0 ? " disabled" : ""}>Anterior</button><button type="button" class="btn" id="btn-prox"${pg >= nPag - 1 ? " disabled" : ""}>Próximos ${estado.cfg.limites.pagina}</button><span class="nota" role="status">${pg * estado.cfg.limites.pagina + 1}–${pg * estado.cfg.limites.pagina + itens.length} de ${total}</span></div>` : "";
   const comTeste = itens.filter(it => aprovado(it.p.ticker));
@@ -318,7 +325,7 @@ function desenharPainel() {
     <p class="nota"><b>Como ler.</b> ${esc(s.como_ler)}</p></div>
     ${pager}
     <div class="carga" id="carga"><div class="reserva" id="reserva" role="status" hidden></div><div id="host"></div></div>
-    <div style="margin-top:12px">${itens.length ? htmlTabela(itens, ref) : '<div class="vazio">Nenhum papel para mostrar nesta página.</div>'}</div>
+    <div style="margin-top:12px">${itens.length ? `<p class="nota">${esc(estado.cfg.aviso_ordem_tabela)}</p>` + htmlTabela(itens, ref) : '<div class="vazio">Nenhum papel para mostrar nesta página.</div>'}</div>
     <div style="margin-top:12px">${htmlFora(d.todos.fora)}</div>`;
   const carga = $("carga"), host = $("host"), reserva = $("reserva");
   const titulo = `${s.nome}: ${itens.length ? itens[0].p.ticker + " a " + itens[itens.length - 1].p.ticker : ""}`;
@@ -355,7 +362,7 @@ function desenharAuto() {
 }
 function desenharStatus() {
   const p = estado.painel, sit = estado.sit, fase = p.fase === "intradiario" ? "preços intradiários" : "fechamento";
-  let t = `Dados do Monitor BESST: ${fase} do pregão de ${dbr(p.pregao_referencia)} · gerados em ${p.gerado_em ? dcurta(p.gerado_em.slice(0, 10)) + " às " + p.gerado_em.slice(11) : "—"} · carregados nesta página às ${estado.carregadoEm}. A data do preço de cada papel aparece na tabela do modo Avançado.`;
+  let t = `Dados do Monitor BESST: ${fase} de ${dbr(estado.dataPreco)} (data do preço da maioria dos papéis; o arquivo indica ${dbr(p.pregao_referencia)}) · gerados em ${p.gerado_em ? dcurta(p.gerado_em.slice(0, 10)) + " às " + p.gerado_em.slice(11) : "—"} · carregados nesta página às ${estado.carregadoEm}. A data do preço de cada papel aparece na tabela do modo Avançado.`;
   const el = $("status"); el.className = "status";
   if (sit.estado === "atrasado") { t += ` Atenção: faltam ${sit.atraso} pregão(ões) de atualização; a ordem é a do último fechamento disponível.`; el.classList.add("alerta"); }
   if (sit.estado === "muito_atrasado") { t += ` Atenção: os dados têm ${sit.atraso} pregões de atraso; a ordem passou a ser alfabética.`; el.classList.add("alerta"); }
@@ -401,10 +408,11 @@ Promise.all([buscar(CONJ_URL), buscar(PAINEL_URL)]).catch(() => null).then(res =
     const [cfg, painel] = res, v = O.validar(painel);
     if (!v.ok) { $("painel").innerHTML = '<div class="vazio">Os dados do Monitor BESST vieram em formato inesperado. Abra o <a href="../monitor-besst/">Monitor BESST</a>.</div>'; return; }
     estado.cfg = cfg; estado.painel = painel; estado.papeis = v.papeis;
-    estado.sit = O.situacao(painel.pregao_referencia, Date.now());
+    estado.dataPreco = O.dataPredominante(v.papeis) || painel.pregao_referencia;
+    estado.sit = O.situacao(estado.dataPreco, Date.now());
     estado.carregadoEm = new Date().toLocaleTimeString("pt-BR", {hour: "2-digit", minute: "2-digit"});
     estado.auto = ler("besst-cotacoes-auto") === "ligado";
-    $("faixa").textContent = cfg.faixa.texto; $("txt-ordem").textContent = cfg.ordem_texto; $("txt-formula").textContent = cfg.formula; $("txt-nao-diz").textContent = cfg.nao_diz_geral;
+    $("faixa").textContent = cfg.faixa.texto; $("txt-fonte").append(cfg.fonte_texto); $("txt-ordem").textContent = cfg.ordem_texto; $("txt-formula").textContent = cfg.formula; $("txt-nao-diz").textContent = cfg.nao_diz_geral;
     const u = lerURL(), n = normalizar(u.setor || ler("besst-cotacoes-setor"), u.modo || ler("besst-cotacoes-modo"), u.ordem || ler("besst-cotacoes-ordem"));
     estado.setor = n.setor; estado.modo = n.modo; estado.ordem = n.ordem; gravarURL(false);
     desenharStatus(); desenharGlossario(); desenharTudo();

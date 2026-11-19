@@ -78,4 +78,9 @@ test("feriados iguais aos do Monitor BESST", () => {
   const m = h.match(/const FERIADOS=new Set\(\[([^\]]*)\]/s), lista = m[1].match(/\d{4}-\d{2}-\d{2}/g);
   assert.deepEqual([...O.FERIADOS].sort(), [...lista].sort());
 });
+test("data predominante usa a data mais frequente, não a mais recente", () => {
+  const l = [P({data: "2026-11-17"}), P({data: "2026-11-17"}), P({data: "2026-11-19"}), P({data: "2026-09-22"}), P({data: "2026-11-17", preco: null})];
+  assert.equal(O.dataPredominante(l), "2026-11-17"); assert.equal(O.dataPredominante([]), null); assert.equal(O.dataPredominante([P({data: "lixo"})]), null);
+  assert.equal(O.dataPredominante([P({data: "2026-11-17"}), P({data: "2026-11-19"})]), "2026-11-19"); /* empate: a mais recente */
+});
 test("constantes de segurança", () => { assert.equal(O.LIM_PAGINA, 8); assert.ok(O.LIM_IFRAMES <= 3); });

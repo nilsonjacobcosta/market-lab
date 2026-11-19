@@ -104,6 +104,15 @@
     return {estado, atraso, esperado};
   }
 
-  const API = {LIM_PAGINA, LIM_IFRAMES, ATRASO_MAX_PREGOES, FERIADOS, classificar, faixa, ordenar, alfabetica, umPorEmpresa, paginas, validar, ehPregao, pregaoAnterior, pregaoEsperado, situacao};
+  /* Data do preço mais frequente entre os papéis com cotação (a referência do arquivo é a data mais recente e pode ser de poucos papéis). */
+  function dataPredominante(papeis) {
+    const c = {};
+    for (const p of papeis) if (num(p.preco) !== null && typeof p.data === "string" && /^\d{4}-\d{2}-\d{2}$/.test(p.data)) c[p.data] = (c[p.data] || 0) + 1;
+    let melhor = null;
+    for (const d of Object.keys(c).sort()) if (melhor === null || c[d] >= c[melhor]) melhor = d;
+    return melhor;
+  }
+
+  const API = {dataPredominante, LIM_PAGINA, LIM_IFRAMES, ATRASO_MAX_PREGOES, FERIADOS, classificar, faixa, ordenar, alfabetica, umPorEmpresa, paginas, validar, ehPregao, pregaoAnterior, pregaoEsperado, situacao};
   if (typeof module !== "undefined" && module.exports) module.exports = API; else root.OrdemBESST = API;
 })(typeof self !== "undefined" ? self : this);
