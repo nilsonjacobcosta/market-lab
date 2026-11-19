@@ -527,6 +527,13 @@
      ],
      "unidade_eixo": "%"
     }
+   ],
+   "notas": [
+    {
+     "texto": "Calendário oficial do Comitê de Política Monetária do Fed (FOMC). Em 2026 a última reunião é em 8 e 9 de dezembro, com projeções econômicas. As datas de 2027 publicadas pelo Fed são tentativas até serem confirmadas na reunião anterior. Página consultada em 17/11/2026, atualizada pelo Fed em 12/11/2026.",
+     "link_rotulo": "Calendário de reuniões do FOMC no site do Fed",
+     "link_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    }
    ]
   },
   {
@@ -906,6 +913,25 @@
       "escala_log",
       "media_movel"
      ]
+    },
+    {
+     "id": "rc-xlp-xlk",
+     "titulo": "Consumo básico sobre tecnologia (XLP ÷ XLK)",
+     "tipo": "proprio",
+     "series": [
+      "rel_xlp_xlk"
+     ],
+     "escala": "linear",
+     "janela_padrao": "tudo",
+     "iniciante": false,
+     "o_que_e": "É a razão entre o preço do ETF de bens de consumo básico dos EUA (XLP) e o preço do ETF de tecnologia dos EUA (XLK), semana a semana. Cada ETF reúne ações de empresas de um mesmo setor da bolsa americana.",
+     "como_ler": "Quando a linha sobe, o setor de consumo básico ganhou preço em relação ao de tecnologia no período; quando desce, ocorreu o contrário. Valores são razões, sem unidade: se a razão vai de 1,0 para 2,0, o XLP passou a custar o dobro do XLK. A linha não mostra a causa do movimento nem o que vem depois.",
+     "ja_se_observou": "Na série, a razão subiu de 0,64 (semana de 18/03/2000) para 3,36 (semana de 28/09/2002), alta de 5,2 vezes. Em 2008, subiu de 2,25 (semana de 10/05) para 3,31 (semana de 15/11), alta de 47%. Entre a semana de 06/02/2016 (2,55) e a de 26/09/2026 (0,40), caiu 84%, com altas e quedas no meio do caminho: de 0,93 (semana de 08/01/2022) a 1,22 (semana de 31/12/2022), alta de 31%, e de 1,15 (semana de 07/01/2023) a 0,74 (semana de 16/12/2023), queda de 35%. Esses são trechos escolhidos como exemplo entre os cerca de 27 anos da série, e podem não se repetir. Em 5 de dezembro de 2025, o XLK passou por um desdobramento: cada cota virou duas, e o preço de cada uma caiu pela metade. A fonte de dados ajustou os preços anteriores do XLK para a metade, e por isso a razão antes dessa data aparece com o dobro do valor calculado com os preços da época. A série continua comparável de ponta a ponta, e as variações em porcentagem não mudam.",
+     "termos": [
+      "etf",
+      "acoes",
+      "indice_acoes"
+     ]
     }
    ],
    "notas": [
@@ -1149,7 +1175,8 @@
      "titulo": "Bitcoin em dólares e os halvings",
      "tipo": "proprio",
      "series": [
-      "btc_usd"
+      "btc_usd",
+      "btc_media_200s"
      ],
      "preco": true,
      "escala": "log",
@@ -1157,8 +1184,8 @@
      "iniciante": true,
      "marcadores": "halvings",
      "o_que_e": "Preço de um bitcoin em dólares, em escala logarítmica (escala em que distâncias iguais no eixo vertical representam variações percentuais iguais). As linhas verticais tracejadas marcam os halvings: as datas em que a quantidade de bitcoins novos criados a cada bloco caiu pela metade, o que está previsto no código do Bitcoin a cada 210 mil blocos, cerca de quatro anos.",
-     "como_ler": "Na escala logarítmica, ir de 100 para 1.000 ocupa a mesma altura que ir de 1.000 para 10.000. Isso permite ver no mesmo gráfico fases em que o preço era muito diferente. As linhas tracejadas têm rótulo com o ano de cada halving; os dados começam em 2014, então o halving de 2012 fica fora do gráfico.",
-     "ja_se_observou": "Nos períodos seguintes aos halvings de 2012, 2016 e 2020, o preço em dólares atingiu novos máximos e depois teve quedas de mais da metade do valor; o gráfico começa em 2014, então o de 2012 não aparece nos dados. São três sequências completas de alta e queda; após o halving de 2024 o preço chegou a um máximo semanal em setembro de 2025 e, em 18/11/2026, estava cerca de 48% abaixo dele, ainda sem queda de mais da metade. Três casos não são regra, outros fatores atuaram nos mesmos períodos (juros, liquidez, regulação) e o padrão pode não se repetir.",
+     "como_ler": "Na escala logarítmica, ir de 100 para 1.000 ocupa a mesma altura que ir de 1.000 para 10.000. Isso permite ver no mesmo gráfico fases em que o preço era muito diferente. As linhas verticais tracejadas são os halvings, cada uma com o ano; os dados começam em 2014, então o halving de 2012 fica fora do gráfico. A linha laranja é a média de 200 semanas: a média simples dos preços de fechamento de cada semana, nas últimas 200 semanas. Em cada semana, o gráfico mostra se o preço está acima ou abaixo dessa média, sem indicar o que vem depois.",
+     "ja_se_observou": "Desde a primeira semana com a média disponível (09/07/2018), a série tem 437 semanas, e em 52 delas o preço ficou abaixo da média de 200 semanas; a contagem inclui a semana em curso, ainda parcial. A sequência mais longa foi de 15/08/2022 a 06/03/2023, com 30 semanas seguidas, e o preço chegou a ficar em cerca de 68% do valor da média, ou seja, cerca de 32% abaixo dela. Na semana de 09/03/2020 o preço ficou abaixo por uma semana, a cerca de 97% da média. São poucos episódios em um histórico curto, e podem não se repetir. O período anterior a 2018 não entra, porque a média precisa de 200 semanas de histórico.",
      "termos": [
       "halving",
       "escala_log",

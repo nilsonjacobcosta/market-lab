@@ -30,6 +30,7 @@ SERIE_ANTERIOR, SERIE_SEM_DADOS = "idx_psi", "risco_hy"
 # id -> (valor final aproximado, volatilidade por passo, tipo). "nivel": passeio multiplicativo
 # com tendência; "taxa": passeio aditivo com retorno à média, dentro de [mín, máx].
 PERFIS = {
+    "idx_xlp": (80, 0.02, "nivel"), "idx_xlk": (200, 0.02, "nivel"),
     "idx_sp500": (7500, 0.022, "nivel"), "idx_nasdaq100": (27000, 0.028, "nivel"),
     "idx_dow": (52000, 0.021, "nivel"), "idx_dax": (26500, 0.026, "nivel"),
     "idx_eurostoxx50": (6300, 0.026, "nivel"), "idx_ftse100": (10800, 0.02, "nivel"),
