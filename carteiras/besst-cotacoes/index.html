@@ -265,7 +265,7 @@ function montarWidget(host, reserva, itens, titulo) {
   const aguarde = document.createElement("div"); aguarde.className = "carregando"; aguarde.textContent = "Carregando widget do TradingView…";
   caixa.append(cont, aguarde); host.replaceChildren(caixa);
   montarScript(cont, WIDGETS.market_quotes, {width: "100%", height: altura - 34, symbolsGroups: [{name: titulo, originalName: titulo,
-    symbols: itens.map(it => ({name: estado.cfg.tradingview.prefixo + it.p.ticker, displayName: it.p.ticker}))}], showSymbolLogo: false, isTransparent: true, colorTheme: "dark", locale: "br"});
+    symbols: itens.map(it => ({name: estado.cfg.tradingview.prefixo + it.p.ticker, displayName: it.p.ticker}))}], showSymbolLogo: false, isTransparent: false, colorTheme: "dark", locale: "br"});
   rotularIframe(cont, `Cotações do TradingView: ${titulo}`);
   let fim = false;
   const olho = setInterval(() => { if (cont.querySelector("iframe")) { aguarde.remove(); clearInterval(olho); } }, 400);

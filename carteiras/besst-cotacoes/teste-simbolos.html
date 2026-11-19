@@ -58,7 +58,7 @@ function montar(k, g) {
   const cont = document.createElement("div"); cont.className = "tradingview-widget-container"; cont.style.height = "100%";
   cont.innerHTML = '<div class="tradingview-widget-container__widget" style="height:calc(100% - 32px)"></div>';
   const s = document.createElement("script"); s.async = true; s.src = TV;
-  s.text = JSON.stringify({width: "100%", height: 436, symbolsGroups: [{name: g.nome, originalName: g.nome, symbols: g.itens.map(i => ({name: PREF + i.p.ticker, displayName: i.p.ticker}))}], showSymbolLogo: false, isTransparent: true, colorTheme: "dark", locale: "br"});
+  s.text = JSON.stringify({width: "100%", height: 436, symbolsGroups: [{name: g.nome, originalName: g.nome, symbols: g.itens.map(i => ({name: PREF + i.p.ticker, displayName: i.p.ticker}))}], showSymbolLogo: false, isTransparent: false, colorTheme: "dark", locale: "br"});
   cont.appendChild(s); b.appendChild(cont);
 }
 </script>
