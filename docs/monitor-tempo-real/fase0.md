@@ -122,3 +122,6 @@ Merge do PR #14 e início da Fase 1 (construção de `monitor/tempo-real/`) auto
 
 ### 8.9 Correções após o juiz J1 (PR #15)
 Variação do DI e do FRED sem afirmar o que o widget mostra (não verificado); `TVC:*` como "feed TVC, composição não verificada"; `CAPITALCOM:*` como corretora (provável CFD); "agregador" removido; rótulo do FRED passa a citar o Federal Reserve (H.15). Pendente no Chrome do dono: ver o que a coluna de variação do Market Quotes exibe para DI e FRED e se os símbolos da faixa abrem no Ticker Tape.
+
+### 8.10 Teste do dono em 19/11/2026 (PR #15 já na `main`)
+Feito em `teste-simbolos.html`, Chrome do dono, PDFs enviados na conversa. Resultados: (1) a faixa rola com valores; (2) todos os 27 símbolos dos cartões e os 6 da faixa abriram; (3) DI: o widget mostra duas colunas de variação, em pontos (diferença entre taxas) e em porcentagem relativa; FRED: valor arredondado a uma casa, variação em pontos, variação percentual em branco, abertura/máxima/mínima iguais ao valor; (4) natureza dos feeds TVC e CAPITALCOM não consultada. Achado: no cartão em meia largura o widget mostra só nome e valor; por isso os cartões passam a ocupar a largura inteira e os textos dizem que a variação aparece quando há espaço. Também se observou, nos PDFs, o widget em fundo claro: pode ser efeito da impressão em PDF; conferir na tela.

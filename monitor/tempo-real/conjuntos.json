@@ -38,7 +38,7 @@
   "data_teste": "2026-11-19",
   "widget": "market_quotes",
   "origem": "Fase 0, Chrome do dono, docs/monitor-tempo-real/fase0.md seção 2",
-  "ticker_tape": "pendente: símbolos do Ticker Tape estão na lista aprovada no Market Quotes; conferir no Chrome do dono com teste-simbolos.html",
+  "ticker_tape": "testado em 19/11/2026 no Chrome do dono: a faixa rola com valores para todos os símbolos usados",
   "simbolos_aprovados": [
    "FX:EURUSD",
    "FX:USDJPY",
@@ -84,7 +84,15 @@
    "TVC:US30Y",
    "ECONOMICS:USINTR",
    "BMFBOVESPA:DI1!"
-  ]
+  ],
+  "teste_dono": {
+   "data": "2026-11-19",
+   "pagina": "monitor/tempo-real/teste-simbolos.html",
+   "resultado": "todos os 27 símbolos dos cartões e os 6 da faixa abriram com valores; nenhum com linha vazia ou erro",
+   "variacao_di": "colunas Variação (em pontos) e Var% (relativa à taxa)",
+   "variacao_fred": "Variação em pontos; Var% em branco; valor arredondado a uma casa; abertura, máxima e mínima iguais ao valor",
+   "nao_respondido": "natureza dos feeds TVC e CAPITALCOM (página do símbolo no TradingView) não foi consultada"
+  }
  },
  "conjuntos": [
   {
@@ -116,7 +124,7 @@
       }
      ],
      "o_que_e": "Uma cotação de câmbio diz quantas unidades da segunda moeda são necessárias para comprar uma unidade da primeira. No par USD/BRL, o número é quantos reais custam um dólar.",
-     "como_ler": "Leia o par da esquerda para a direita: em USD/BRL, o valor é em reais por dólar; em EUR/USD, é em dólares por euro. Cada linha mostra a variação em relação ao fechamento anterior, não um julgamento sobre a moeda: a cor do widget indica apenas acima ou abaixo desse fechamento, e não significa bom nem ruim.",
+     "como_ler": "Leia o par da esquerda para a direita: em USD/BRL, o valor é em reais por dólar; em EUR/USD, é em dólares por euro. Quando há espaço, o widget mostra a variação em relação ao fechamento anterior, não um julgamento sobre a moeda: a cor indica apenas acima ou abaixo desse fechamento, e não significa bom nem ruim. Em tela estreita o widget mostra só o nome e o valor; a variação e as demais colunas aparecem quando há espaço.",
      "ja_se_observou": "Ainda sem observação registrada neste painel.",
      "termos": [
       "tempo_real",
@@ -201,7 +209,7 @@
       {
        "s": "BMFBOVESPA:IBOV",
        "rotulo": "Ibovespa",
-       "atraso": "atrasado (cotação da B3 exibida com atraso pelo TradingView; o prazo exato não é informado aqui)"
+       "atraso": "atrasado (o widget marca \"D\"; o prazo exato do atraso não é informado por ele)"
       }
      ],
      "o_que_e": "O Ibovespa é o principal índice de ações da B3, em pontos. A cotação do widget é atrasada.",
@@ -225,22 +233,22 @@
       {
        "s": "BMFBOVESPA:WIN1!",
        "rotulo": "Minicontrato de Ibovespa (WIN)",
-       "atraso": "atrasado (cotação da B3 exibida com atraso pelo TradingView; o prazo exato não é informado aqui)"
+       "atraso": "atrasado (o widget marca \"D\"; o prazo exato do atraso não é informado por ele)"
       },
       {
        "s": "BMFBOVESPA:IND1!",
        "rotulo": "Contrato de Ibovespa (IND)",
-       "atraso": "atrasado (cotação da B3 exibida com atraso pelo TradingView; o prazo exato não é informado aqui)"
+       "atraso": "atrasado (o widget marca \"D\"; o prazo exato do atraso não é informado por ele)"
       },
       {
        "s": "BMFBOVESPA:WDO1!",
        "rotulo": "Minicontrato de dólar (WDO)",
-       "atraso": "atrasado (cotação da B3 exibida com atraso pelo TradingView; o prazo exato não é informado aqui)"
+       "atraso": "atrasado (o widget marca \"D\"; o prazo exato do atraso não é informado por ele)"
       },
       {
        "s": "BMFBOVESPA:DOL1!",
        "rotulo": "Contrato de dólar (DOL)",
-       "atraso": "atrasado (cotação da B3 exibida com atraso pelo TradingView; o prazo exato não é informado aqui)"
+       "atraso": "atrasado (o widget marca \"D\"; o prazo exato do atraso não é informado por ele)"
       }
      ],
      "o_que_e": "Contratos futuros negociados na B3 que acompanham o Ibovespa e o dólar. Têm vencimento, e o código com \"1!\" aponta para o contrato mais próximo, que muda ao longo do tempo.",
@@ -272,21 +280,21 @@
       {
        "s": "BMFBOVESPA:DI1F2028",
        "rotulo": "DI janeiro de 2028",
-       "atraso": "atrasado (cotação da B3 exibida com atraso pelo TradingView; o prazo exato não é informado aqui)"
+       "atraso": "atrasado (o widget marca \"D\"; o prazo exato do atraso não é informado por ele)"
       },
       {
        "s": "BMFBOVESPA:DI1F2031",
        "rotulo": "DI janeiro de 2031",
-       "atraso": "atrasado (cotação da B3 exibida com atraso pelo TradingView; o prazo exato não é informado aqui)"
+       "atraso": "atrasado (o widget marca \"D\"; o prazo exato do atraso não é informado por ele)"
       },
       {
        "s": "BMFBOVESPA:DI1F2035",
        "rotulo": "DI janeiro de 2035",
-       "atraso": "atrasado (cotação da B3 exibida com atraso pelo TradingView; o prazo exato não é informado aqui)"
+       "atraso": "atrasado (o widget marca \"D\"; o prazo exato do atraso não é informado por ele)"
       }
      ],
      "o_que_e": "O DI futuro é um contrato da B3 cuja cotação é uma taxa de juros ao ano para o período até o vencimento (o primeiro dia útil de janeiro do ano do código). Mostramos só contratos que ainda têm mais de 90 dias, porque perto do vencimento o contrato perde o valor didático.",
-     "como_ler": "A taxa é em porcentagem ao ano. Comparar vencimentos diferentes mostra o que o mercado negocia para prazos curtos e longos, sem dizer qual taxa vai ocorrer. Se o widget mostrar variação, cuidado: a diferença entre duas taxas se mede em pontos percentuais, e a variação em porcentagem é relativa à taxa (veja o termo Ponto percentual). Não verificamos qual das duas o widget exibe.",
+     "como_ler": "A taxa é em porcentagem ao ano. Comparar vencimentos diferentes mostra o que o mercado negocia para prazos curtos e longos, sem dizer qual taxa vai ocorrer. Quando há espaço, o widget mostra a variação de duas formas: em pontos (a diferença entre as duas taxas, em pontos percentuais) e em porcentagem relativa à taxa. As duas descrevem o mesmo movimento por escalas diferentes (veja o termo Ponto percentual). Em tela estreita o widget mostra só o nome e o valor; a variação e as demais colunas aparecem quando há espaço.",
      "ja_se_observou": "Ainda sem observação registrada neste painel.",
      "termos": [
       "di",
@@ -308,12 +316,12 @@
       {
        "s": "BMFBOVESPA:DI1F2029",
        "rotulo": "DI janeiro de 2029",
-       "atraso": "atrasado (cotação da B3 exibida com atraso pelo TradingView; o prazo exato não é informado aqui)"
+       "atraso": "atrasado (o widget marca \"D\"; o prazo exato do atraso não é informado por ele)"
       },
       {
        "s": "BMFBOVESPA:DI1F2033",
        "rotulo": "DI janeiro de 2033",
-       "atraso": "atrasado (cotação da B3 exibida com atraso pelo TradingView; o prazo exato não é informado aqui)"
+       "atraso": "atrasado (o widget marca \"D\"; o prazo exato do atraso não é informado por ele)"
       }
      ],
      "o_que_e": "Mais dois vencimentos do contrato DI.",
@@ -343,7 +351,7 @@
       }
      ],
      "o_que_e": "Taxas de mercado dos títulos do Tesouro dos EUA de vencimento constante de 2 e de 10 anos, em porcentagem ao ano, divulgadas pelo Federal Reserve (série H.15) e republicadas pelo FRED (Federal Reserve Bank of St. Louis). Não são um título específico.",
-     "como_ler": "Estes são dados diários, não cotações ao vivo, com defasagem de cerca de um dia útil. O widget mostra o valor diário e pode não mostrar variação.",
+     "como_ler": "Estes são dados diários, não cotações ao vivo, com defasagem de cerca de um dia útil. O widget arredonda o valor a uma casa decimal, mostra a variação em pontos e deixa em branco a variação em porcentagem; abertura, máxima e mínima repetem o valor, porque o dado é um só por dia. Em tela estreita o widget mostra só o nome e o valor; a variação e as demais colunas aparecem quando há espaço.",
      "ja_se_observou": "Ainda sem observação registrada neste painel.",
      "termos": [
       "dado_diario",

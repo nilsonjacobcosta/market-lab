@@ -99,3 +99,5 @@ Reconferência J1 em 19/11/2026 (nota 7, um bloqueante corrigido: ETH/BTC tem s�
 19/11/2026 | sessão | RB 11 (criação) | Painel `monitor/tempo-real/` (Fase 1): 4 conjuntos no Iniciante, widget Market Quotes por cartão, faixa Ticker Tape ligada com botão; `testes-tempo-real.yml` e `tests/test_tempo_real.py` (23 testes); símbolos só da matriz testada em 19/11/2026; consulta ao TradingView autorizada, ainda não enviada (formulário pede dados pessoais) | `docs/monitor-tempo-real/fase0.md` | —
 
 19/11/2026 | sessão | RB 11 | Juízes da Fase 1 (J1 7,0; J2 7,0; J3 6,5), correções aplicadas; 32 testes, 7 mutações pegas; runbook passa a pedir troca dos DI em setembro | `docs/monitor-tempo-real/pareceres-fase1.md` | —
+
+19/11/2026 | sessão / Nilson | RB 11 | Teste do dono em `teste-simbolos.html`: 27 símbolos e a faixa abriram com valores; variação do DI (pontos e %) e do FRED (arredondado, só pontos) registrada; cartões em largura total | `docs/monitor-tempo-real/fase0.md` §8.10 | —
