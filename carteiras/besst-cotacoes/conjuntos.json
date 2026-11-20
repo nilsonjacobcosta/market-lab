@@ -254,6 +254,6 @@
   "preco_desabou": "O preço caiu muito em pouco tempo.",
   "extraordinario": "Houve provento extraordinário que pode ter inflado a média."
  },
- "fonte_texto": "Preço-teto, margem, liquidez e alertas são calculados pelo Monitor BESST a partir de preços do Yahoo Finance (cerca de 15 minutos de atraso) e de proventos históricos.",
+ "fonte_texto": "Preço-teto, margem, liquidez e alertas são calculados pelo Monitor BESST a partir de preços do Yahoo Finance (cerca de 15 minutos de atraso) e de proventos históricos. Créditos: preços e proventos de origem Yahoo Finance; widgets de cotação do TradingView, de propriedade de seus respectivos titulares; cálculos do Monitor BESST (Market Lab).",
  "controle_a_confirmar": "a confirmar"
 }
