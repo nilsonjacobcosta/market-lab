@@ -8,13 +8,13 @@ const cfg0 = JSON.parse(fs.readFileSync(path.join(R, "carteiras/besst-cotacoes/c
 const painel0 = JSON.parse(fs.readFileSync(path.join(R, "dados/besst/painel.json"), "utf8"));
 const clone = (x) => JSON.parse(JSON.stringify(x));
 
-async function abrir({painel = painel0, aprovar = false, query = "?setor=energia&modo=avancado", agora} = {}) {
+async function abrir({painel = painel0, aprovar = false, query = "?setor=energia&modo=avancado", agora, escuro = false} = {}) {
   const cfg = clone(cfg0); cfg.matriz_teste.simbolos_aprovados = []; if (aprovar) cfg.matriz_teste.simbolos_aprovados = painel.papeis.map(p => p.ticker).filter(Boolean).filter(t => typeof t === "string");
   const erros = [];
   const dom = new JSDOM(html, {url: "https://x.test/carteiras/besst-cotacoes/" + query, runScripts: "dangerously", pretendToBeVisual: true,
     beforeParse(w) {
       w.fetch = (u) => Promise.resolve({ok: true, json: () => Promise.resolve(clone(u.includes("painel.json") ? painel : cfg))});
-      w.matchMedia = () => ({matches: false}); w.eval(ordemJs);
+      w.matchMedia = (q) => ({matches: escuro && /dark/.test(q)}); w.eval(ordemJs);
       if (agora) { const D = w.Date; w.Date = class extends D { constructor(...a) { super(...(a.length ? a : [agora])); } static now() { return agora; } }; }
       w.addEventListener("error", (e) => erros.push(e.message));
     }});
@@ -84,4 +84,25 @@ test("carregamento automático guarda só chave com prefixo e monta ao abrir", a
   d.getElementById("btn-auto").click();
   assert.equal(w.localStorage.getItem("besst-cotacoes-auto"), "ligado"); assert.equal(widgets(d).length, 1);
   for (let i = 0; i < w.localStorage.length; i++) assert.ok(w.localStorage.key(i).startsWith("besst-cotacoes-")); fechar();
+});
+
+test("tema do widget segue o sistema: claro por padrão, escuro quando o sistema é escuro", async () => {
+  for (const [escuro, esperado] of [[false, "light"], [true, "dark"]]) {
+    const {d, erros, fechar} = await abrir({aprovar: true, escuro});
+    d.getElementById("btn-carregar").click();
+    assert.equal(erros.length, 0);
+    assert.equal(JSON.parse(widgets(d)[0].textContent).colorTheme, esperado);
+    fechar();
+  }
+});
+test("página sem matchMedia usa tema escuro no widget e não quebra", async () => {
+  const {d, w, erros, fechar} = await abrir({aprovar: true});
+  w.matchMedia = undefined; d.getElementById("btn-carregar").click();
+  assert.equal(erros.length, 0); assert.equal(JSON.parse(widgets(d)[0].textContent).colorTheme, "dark"); fechar();
+});
+test("CSS: cores só nas variáveis (nenhuma cor fixa fora dos blocos :root)", () => {
+  const css = html.slice(html.indexOf("<style>"), html.indexOf("</style>"));
+  const fora = css.replace(/:root\{[^}]*\}/g, "").replace(/@media \(prefers-color-scheme: dark\)\{\}/g, "");
+  const fixas = fora.match(/#[0-9a-fA-F]{3,8}\b|rgba?\([^)]*\)/g) || [];
+  assert.deepEqual(fixas, []);
 });

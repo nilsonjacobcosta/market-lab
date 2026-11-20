@@ -44,3 +44,7 @@ O que os textos oficiais dizem (lidos em legal.yahoo.com, 20/11/2026; nível B, 
 - Não foi encontrada API pública oficial de cotações do Yahoo Finance **[referência não verificada: apontada só por fontes secundárias]**.
 
 Leitura prática (análise, não decisão): a coleta automatizada feita pelo Monitor BESST e a exibição dos números derivados em página pública são o ponto sensível. A dispensa do TradingView não cobre isso. Se o dono quiser reduzir o risco: (a) buscar licença ou fonte oficial (B3, provedor autorizado); (b) manter só o derivado (teto, margem, faixa) e nunca o preço bruto do Yahoo; (c) pedir parecer de advogado. A decisão (seguir como está, 20/11/2026) e a avaliação jurídica são do dono.
+
+## Tema claro e escuro
+
+A página segue a configuração de aparência do sistema (`prefers-color-scheme`), como a página inicial do market-lab: claro por padrão e escuro quando o sistema está escuro. Não segue a hora do dia por conta própria; se o sistema alterna sozinho entre claro e escuro (por exemplo, no macOS, em Aparência: Automática), a página acompanha. O widget do TradingView também usa o tema do sistema (`colorTheme`) e, se o tema mudar com o widget aberto, é montado de novo. Razões de contraste do tema claro conferidas por cálculo (todas ≥ 4,5:1; texto principal ≈ 16:1). Os testes impedem cores fixas fora das variáveis do `:root`.
