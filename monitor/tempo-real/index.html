@@ -240,7 +240,7 @@ function montarCotacoes(host, g, reserva) {
   const aguarde = document.createElement("div"); aguarde.className = "carregando"; aguarde.textContent = "Carregando widget do TradingView…";
   caixa.append(cont, aguarde); host.replaceChildren(caixa);
   montarScript(cont, WIDGETS[g.widget], {width: "100%", height: altura - 34, symbolsGroups: [{name: g.titulo, originalName: g.titulo,
-    symbols: g.simbolos.map(x => ({name: x.s, displayName: x.rotulo}))}], showSymbolLogo: false, isTransparent: true, colorTheme: "dark", locale: "br"});
+    symbols: g.simbolos.map(x => ({name: x.s, displayName: x.rotulo}))}], showSymbolLogo: false, isTransparent: false, colorTheme: "dark", locale: "br"});
   rotularIframe(cont, `Cotações do TradingView: ${g.titulo}`);
   let fim = false;
   const olho = setInterval(() => { if (cont.querySelector("iframe")) { aguarde.remove(); clearInterval(olho); } }, 400);
@@ -268,7 +268,7 @@ function desenharTira() {
   cont.setAttribute("role", "group"); cont.setAttribute("aria-label", "Widget do TradingView: faixa de cotações");
   cont.innerHTML = `<div class="tradingview-widget-container__widget"></div>` + atribuicao("Cotações", "https://www.tradingview.com/");
   caixa.appendChild(cont); host.appendChild(caixa);
-  montarScript(cont, "embed-widget-ticker-tape.js", {symbols: t.simbolos, showSymbolLogo: false, isTransparent: true, displayMode: "adaptive", colorTheme: "dark", locale: "br"});
+  montarScript(cont, "embed-widget-ticker-tape.js", {symbols: t.simbolos, showSymbolLogo: false, isTransparent: false, displayMode: "adaptive", colorTheme: "dark", locale: "br"});
   rotularIframe(cont, "Faixa de cotações do TradingView");
   const timer = setTimeout(() => { if (!cont.querySelector("iframe")) { host.replaceChildren(); nota.textContent = "A faixa de cotações não carregou (bloqueador de conteúdo ou rede). Os cartões abaixo não dependem dela."; } }, ESPERA_TV_MS);
   limpezas.push(() => clearTimeout(timer));

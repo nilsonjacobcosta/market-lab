@@ -247,6 +247,11 @@ class Pagina(unittest.TestCase):
         for k in re.findall(r'(?:guardar|ler)\("([^"]+)"', HTML):
             self.assertTrue(k.startswith("tempo-real-"), k)
 
+    def test_widgets_nao_sao_transparentes(self):
+        # Com isTransparent: true o widget sai com fundo branco em página escura (visto no Chrome em 20/11/2026).
+        self.assertNotIn("isTransparent: true", HTML)
+        self.assertGreaterEqual(HTML.count("isTransparent: false"), 2)
+
 
 if __name__ == "__main__":
     unittest.main()
