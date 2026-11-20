@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Painel de Ativos · market-lab</title>
 <style>
-  :root { --bg:#0b0d10; --card:#14181d; --line:#232a32; --txt:#e6edf3; --mut:#8b98a5; --up:#2ecc71; --dn:#e74c3c; --acc:#4fd1c5; --warn:#f0b429; }
+  :root { --bg:#f2f4f7; --card:#ffffff; --line:#cbd5e0; --txt:#152131; --mut:#566577; --up:#1d7f55; --dn:#b3261e; --acc:#0b6e66; --warn:#7a4f00;
+          --bal-bg:#ffffff; --sombra:rgba(21,33,49,.20); color-scheme:light; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0b0d10; --card:#14181d; --line:#232a32; --txt:#e6edf3; --mut:#8b98a5; --up:#2ecc71; --dn:#e74c3c; --acc:#4fd1c5; --warn:#f0b429;
+          --bal-bg:#1f262e; --sombra:var(--sombra); color-scheme:dark; } }
   * { box-sizing:border-box; }
   body { margin:0; background:var(--bg); color:var(--txt); font:13px/1.35 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
   header { padding:14px 18px 6px; }
@@ -30,7 +33,7 @@
   .tag { font-size:10px; color:var(--warn); margin-left:4px; }
   .rodape { color:var(--mut); font-size:11px; padding:0 18px 18px; }
   .tip { position:relative; cursor:help; border-bottom:1px dotted var(--mut); outline:none; }
-  .tip .bal { display:none; position:absolute; left:0; top:100%; margin-top:4px; z-index:20; width:270px; white-space:normal; font-size:12px; line-height:1.4; color:var(--txt); background:#1f262e; border:1px solid var(--line); border-radius:6px; padding:8px 10px; box-shadow:0 6px 18px rgba(0,0,0,.45); }
+  .tip .bal { display:none; position:absolute; left:0; top:100%; margin-top:4px; z-index:20; width:270px; white-space:normal; font-size:12px; line-height:1.4; color:var(--txt); background:var(--bal-bg); border:1px solid var(--line); border-radius:6px; padding:8px 10px; box-shadow:0 6px 18px var(--sombra); }
   .tip:hover .bal, .tip:focus .bal { display:block; }
   .bloco { overflow:visible; }
   .bloco h2 { border-radius:8px 8px 0 0; }

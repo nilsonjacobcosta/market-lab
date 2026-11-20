@@ -22,3 +22,7 @@ Painel de mercado organizado em blocos: índices americanos, europeus e asiátic
 Edite `scripts/ativos/catalogo.py`. Para testar localmente: `COTACOES_SAIDA=/tmp/cotacoes.json python3 scripts/ativos/coletar_ativos.py`.
 
 Material educativo. Não é recomendação de investimento.
+
+## Tema claro e escuro
+
+A página segue a aparência do sistema (`prefers-color-scheme`): claro por padrão, escuro quando o sistema está escuro. O escuro mantém as cores de antes. As cores vivem só nas variáveis do `:root` (testes em `tests/test_ativos_tema.py`).
