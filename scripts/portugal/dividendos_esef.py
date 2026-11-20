@@ -16,7 +16,7 @@ RAIZ = Path(__file__).resolve().parents[2]
 spec = importlib.util.spec_from_file_location("fe", RAIZ / "scripts/portugal/fundamentos_esef.py")
 fe = importlib.util.module_from_spec(spec); spec.loader.exec_module(fe)
 
-PAPEIS = {"GLINT": r"GLINTT", "ESON": r"ESTORIL.SOL", "RAM": r"RAMADA", "FLEXD": r"FLEXDEAL"}
+PAPEIS = {"PHR": r"PHAROL", "IPR": r"^IMPRESA", "ESON": r"ESTORIL.SOL"}
 RX = re.compile(r"dividend|distribu", re.I)
 
 
