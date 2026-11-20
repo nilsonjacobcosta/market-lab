@@ -32,8 +32,8 @@ Mudar a regra é decisão do dono.
 Procedimento: abrir `teste-simbolos.html`, carregar cada grupo, marcar "abriu" ou "não abriu" por papel, clicar em "Gerar JSON" e colar em `conjuntos.json › matriz_teste`. Um papel que não abre fica sem widget e com link.
 
 ## Pendências
-- Testar os 30 símbolos `EURONEXT:` no navegador do dono (teste em 20/11/2026 com `teste-simbolos.html`: ver registro em `matriz_teste`).
-- Idioma do widget (`locale: "pt"`): conferir se o TradingView aceita e mostra em português.
+- Símbolos: os 30 `EURONEXT:` abriram com valor no Chrome do dono em 20/11/2026 (registro em `conjuntos.json › matriz_teste`). Foi conferido que abriram, não o valor de cada um contra o painel.
+- Idioma: o widget foi configurado com `locale: "pt"`, mas no teste os cabeçalhos das colunas saíram em inglês. Decidir se fica assim ou se se usa outro código de idioma.
 - Parecer jurídico (MAR art. 20.º; Reg. CMVM 2/2007) registrado como pendência do Monitor Portugal; a publicação desta página segue a decisão do dono de 20/11/2026.
 - Juízes (J1 dados, J2 regulatório/comunicação, J3 engenharia) antes do merge, como nos outros painéis.
 - Origem dos preços (Yahoo Finance) segue a decisão de 20/11/2026 do dono, a mesma do Monitor BESST.

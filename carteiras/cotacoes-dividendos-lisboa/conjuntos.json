@@ -18,9 +18,41 @@
  },
  "matriz_teste": {
   "regra": "Só entra em widget o papel com teste registrado no Market Quotes. Os demais aparecem na tabela com link para o TradingView e o aviso 'sem teste no widget'.",
-  "data_teste": null,
-  "simbolos_aprovados": [],
-  "reprovados": []
+  "data_teste": "2026-11-20",
+  "simbolos_aprovados": [
+   "ALTR",
+   "BCP",
+   "COR",
+   "CTT",
+   "EDP",
+   "EDPR",
+   "EGL",
+   "ESON",
+   "FCP",
+   "FLEXD",
+   "GALP",
+   "GLINT",
+   "IBS",
+   "IPR",
+   "JMT",
+   "MAR",
+   "MCP",
+   "NBA",
+   "NOS",
+   "NVG",
+   "PHR",
+   "RAM",
+   "RENE",
+   "SCP",
+   "SCT",
+   "SEM",
+   "SLBEN",
+   "SNC",
+   "SON",
+   "TDSA"
+  ],
+  "reprovados": [],
+  "nota": "Teste visual no Chrome do dono (20/11/2026): os 30 papéis abriram com valor no Market Quotes (EURONEXT:), em 5 widgets de até 8. Não foi conferido valor a valor contra o painel."
  },
  "grupos": [
   {
@@ -53,12 +85,33 @@
  "aviso_ordem_tabela": "A tabela segue a ordem de leitura. Cada linha traz a faixa de margem, a liquidez e os alertas de dados.",
  "fonte_texto": "<b>Dados do Monitor Portugal.</b> Proventos do cadastro oficial (relatórios ESEF e comunicados); cotações de fonte pública com atraso, usadas só para cálculo e alerta. O painel é público e de estudo.",
  "glossario": {
-  "teto": {"termo": "Preço-teto", "definicao": "Preço em que os proventos médios de 5 anos renderiam a taxa exigida. Estar abaixo é um primeiro filtro, não um sinal de compra."},
-  "taxa": {"termo": "Taxa exigida", "definicao": "Obrigação do Tesouro a 10 anos (média de 12 meses, BCE) mais 3 pontos, com mínimo de 5%."},
-  "liquidez": {"termo": "Liquidez", "definicao": "Mediana do volume negociado por dia nos últimos 12 meses, em euros. Quanto menor, mais difícil comprar ou vender ao preço mostrado."},
-  "margem": {"termo": "Margem", "definicao": "Quanto o teto está acima (+) ou abaixo (−) do preço, em % do preço. Margens enormes costumam indicar problema nos dados, não pechincha."},
-  "scrip": {"termo": "Scrip", "definicao": "Provento pago em ações novas. Conta-se o valor de referência por ação indicado pela empresa."},
-  "devolucao": {"termo": "Devolução de capital", "definicao": "Retorno de capital aos acionistas, que não entra nos proventos da página."},
-  "cadastro": {"termo": "Cadastro de proventos", "definicao": "Lista de proventos conferida com documento oficial. Sem cadastro conferido, a empresa aparece sem teto."}
+  "teto": {
+   "termo": "Preço-teto",
+   "definicao": "Preço em que os proventos médios de 5 anos renderiam a taxa exigida. Estar abaixo é um primeiro filtro, não um sinal de compra."
+  },
+  "taxa": {
+   "termo": "Taxa exigida",
+   "definicao": "Obrigação do Tesouro a 10 anos (média de 12 meses, BCE) mais 3 pontos, com mínimo de 5%."
+  },
+  "liquidez": {
+   "termo": "Liquidez",
+   "definicao": "Mediana do volume negociado por dia nos últimos 12 meses, em euros. Quanto menor, mais difícil comprar ou vender ao preço mostrado."
+  },
+  "margem": {
+   "termo": "Margem",
+   "definicao": "Quanto o teto está acima (+) ou abaixo (−) do preço, em % do preço. Margens enormes costumam indicar problema nos dados, não pechincha."
+  },
+  "scrip": {
+   "termo": "Scrip",
+   "definicao": "Provento pago em ações novas. Conta-se o valor de referência por ação indicado pela empresa."
+  },
+  "devolucao": {
+   "termo": "Devolução de capital",
+   "definicao": "Retorno de capital aos acionistas, que não entra nos proventos da página."
+  },
+  "cadastro": {
+   "termo": "Cadastro de proventos",
+   "definicao": "Lista de proventos conferida com documento oficial. Sem cadastro conferido, a empresa aparece sem teto."
+  }
  }
 }
