@@ -106,3 +106,7 @@ test("CSS: cores só nas variáveis (nenhuma cor fixa fora dos blocos :root)", (
   const fixas = fora.match(/#[0-9a-fA-F]{3,8}\b|rgba?\([^)]*\)/g) || [];
   assert.deepEqual(fixas, []);
 });
+
+test("CSS: o contêiner do widget ocupa a largura toda (não encolhe ao conteúdo)", () => {
+  assert.match(html, /\.carga #host\{[^}]*align-self:stretch[^}]*width:100%/);
+});
