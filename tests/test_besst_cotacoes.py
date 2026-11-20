@@ -206,7 +206,7 @@ class Pagina(unittest.TestCase):
         chamadas = re.findall(r"montarWidget\(", HTML)
         self.assertEqual(len(chamadas), 3, "definição, carregamento automático e clique")
         self.assertIn('b.addEventListener("click", () => { b.remove(); montarWidget(', HTML)
-        self.assertIn("} else if (estado.auto) {", HTML)
+        self.assertIn("} else if (estado.auto || estado.remontar) {", HTML)
 
     def test_widgets_so_de_dominio_do_tradingview_e_um_arquivo(self):
         self.assertNotIn("http://", HTML)
