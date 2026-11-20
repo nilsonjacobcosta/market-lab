@@ -252,6 +252,17 @@ class Pagina(unittest.TestCase):
         self.assertNotIn("isTransparent: true", HTML)
         self.assertGreaterEqual(HTML.count("isTransparent: false"), 2)
 
+    def test_tema_segue_o_sistema(self):
+        self.assertIn("prefers-color-scheme: dark", HTML)
+        self.assertNotIn('colorTheme: "dark"', HTML)
+        self.assertEqual(HTML.count("colorTheme: temaSistema()"), 2)
+
+    def test_cores_so_nas_variaveis(self):
+        css = HTML[HTML.index("<style>"):HTML.index("</style>")]
+        fora = re.sub(r":root\{[^}]*\}", "", css)
+        fora = re.sub(r"@media \(prefers-color-scheme: dark\)\{\}", "", fora)
+        self.assertEqual(re.findall(r"#[0-9a-fA-F]{3,8}\b|rgba?\([^)]*\)", fora), [])
+
 
 if __name__ == "__main__":
     unittest.main()

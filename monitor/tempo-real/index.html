@@ -8,13 +8,22 @@
 <style>
 
 :root{
-  --bg:#0b0d10; --card:#14181d; --card-2:#1a2027; --line:#28313b; --txt:#e6edf3; --txt-2:#b6c2cf; --mut:#93a1af;
-  --acc:#4fd1c5; --warn:#f0b429; --warn-bg:#2b2210; --grid:#222a33; --eixo:#9aa7b4;
-  --s1:#56B4E9; --s2:#E69F00; --s3:#CC79A7; --s4:#F0E442;
+  --bg:#f2f4f7; --card:#ffffff; --card-2:#e9edf2; --line:#cbd5e0; --txt:#152131; --txt-2:#3d4b5c; --mut:#566577;
+  --acc:#0b6e66; --on-acc:#ffffff; --warn:#7a4f00; --warn-bg:#fff3d6; --warn-bd:#d9bb70; --lnk:#1a56b8;
+  --pop-bg:#ffffff; --pop-bd:#aab8c6; --sombra:rgba(21,33,49,.20);
+  --grid:#d9e0e8; --eixo:#566577;
+  --s1:#0072B2; --s2:#B35900; --s3:#A33E7E; --s4:#8A7B00;
   --f:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   --f-mono:ui-monospace,Menlo,Consolas,monospace;
-  color-scheme:dark;
+  color-scheme:light;
 }
+@media (prefers-color-scheme: dark){:root{
+  --bg:#0b0d10; --card:#14181d; --card-2:#1a2027; --line:#28313b; --txt:#e6edf3; --txt-2:#b6c2cf; --mut:#93a1af;
+  --acc:#4fd1c5; --on-acc:#04201d; --warn:#f0b429; --warn-bg:#2b2210; --warn-bd:#5a4514; --lnk:#7fb0ff;
+  --pop-bg:#202833; --pop-bd:#3a4654; --sombra:rgba(0,0,0,.55);
+  --grid:#222a33; --eixo:#9aa7b4;
+  --s1:#56B4E9; --s2:#E69F00; --s3:#CC79A7; --s4:#F0E442;
+  color-scheme:dark}}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.5 var(--f)}
@@ -27,7 +36,7 @@ p{margin:0;color:var(--txt-2)}
 .eyebrow{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--mut)}
 .eyebrow a{color:inherit}
 .status{font-size:.84rem;color:var(--mut);margin-top:8px}
-.status.alerta{color:var(--warn);background:var(--warn-bg);border:1px solid #5a4514;border-radius:6px;padding:8px 10px}
+.status.alerta{color:var(--warn);background:var(--warn-bg);border:1px solid var(--warn-bd);border-radius:6px;padding:8px 10px}
 .aviso{margin-top:10px;border-left:3px solid var(--warn);background:var(--card);padding:8px 12px;font-size:.88rem;color:var(--txt);border-radius:0 6px 6px 0}
 .painel{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
 .controles{display:flex;flex-direction:column;gap:12px}
@@ -39,7 +48,7 @@ p{margin:0;color:var(--txt-2)}
 button:focus-visible,select:focus-visible,summary:focus-visible,a:focus-visible,.plot:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
 .tabs{display:flex;gap:6px;overflow-x:auto;padding:3px 3px 8px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
 .tabs button{flex:none;font:inherit;font-size:.86rem;color:var(--txt-2);background:var(--card-2);border:1px solid var(--line);border-radius:999px;padding:7px 13px;cursor:pointer;min-height:38px;white-space:nowrap}
-.tabs button[aria-selected="true"]{background:var(--acc);border-color:var(--acc);color:#04201d;font-weight:700}
+.tabs button[aria-selected="true"]{background:var(--acc);border-color:var(--acc);color:var(--on-acc);font-weight:700}
 .tabs button .n{font-family:var(--f-mono);font-size:.72rem;opacity:.8;margin-right:5px}
 .sel{display:none}
 .sel select{font:inherit;width:100%;background:var(--card-2);color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:9px 10px;min-height:42px}
@@ -66,7 +75,7 @@ details > *:not(summary){margin-top:8px}
 .tradingview-widget-container__widget{height:calc(100% - 32px);width:100%}
 .tradingview-widget-copyright{font-size:13px;line-height:32px;text-align:center;color:var(--txt-2);height:32px;overflow:hidden}
 .tradingview-widget-copyright a{text-decoration:none}
-.tradingview-widget-copyright .blue-text{color:#7fb0ff}
+.tradingview-widget-copyright .blue-text{color:var(--lnk)}
 .tradingview-widget-copyright .trademark{color:var(--txt-2)}
 .carregando{position:absolute;left:0;right:0;top:40%;text-align:center;font-size:.82rem;color:var(--mut);pointer-events:none}
 .reserva{border:1px dashed var(--warn);background:var(--warn-bg);border-radius:8px;padding:10px 12px;font-size:.86rem;color:var(--txt)}
@@ -77,7 +86,7 @@ details > *:not(summary){margin-top:8px}
 .gloss dt{font-weight:600}
 .gloss dd{margin:2px 0 0;font-size:.86rem;color:var(--txt-2)}
 @media(max-width:699px){.gloss dl{grid-template-columns:minmax(0,1fr)}}
-#pop{position:fixed;z-index:60;max-width:min(320px,calc(100vw - 16px));background:#202833;color:var(--txt);border:1px solid #3a4654;border-radius:8px;padding:10px 12px;font-size:.84rem;line-height:1.45;box-shadow:0 10px 26px rgba(0,0,0,.55)}
+#pop{position:fixed;z-index:60;max-width:min(320px,calc(100vw - 16px));background:var(--pop-bg);color:var(--txt);border:1px solid var(--pop-bd);border-radius:8px;padding:10px 12px;font-size:.84rem;line-height:1.45;box-shadow:0 10px 26px var(--sombra)}
 #pop b{display:block;margin-bottom:3px}
 #pop .fechar{display:block;margin-top:6px;font-size:.72rem;color:var(--mut)}
 footer{font-size:.8rem;color:var(--mut);display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--line);padding-top:14px}
@@ -85,7 +94,7 @@ footer p{color:var(--mut);max-width:90ch}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 [hidden]{display:none!important}
 
-.faixa{background:var(--warn-bg);border:1px solid #5a4514;border-left:3px solid var(--warn);border-radius:6px;padding:8px 12px;font-size:.9rem;color:var(--txt)}
+.faixa{background:var(--warn-bg);border:1px solid var(--warn-bd);border-left:3px solid var(--warn);border-radius:6px;padding:8px 12px;font-size:.9rem;color:var(--txt)}
 .privac{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font-size:.84rem;color:var(--txt-2)}
 .privac b{color:var(--txt)}
 .tira{display:flex;flex-direction:column;gap:6px}
@@ -97,7 +106,7 @@ footer p{color:var(--mut);max-width:90ch}
 .alt li{margin:2px 0}
 .pular{font-size:.85rem}
 .btn{font:inherit;font-size:.84rem;color:var(--txt);background:var(--card-2);border:1px solid var(--line);border-radius:8px;padding:6px 12px;min-height:36px;cursor:pointer}
-.btn[aria-pressed="true"]{background:var(--acc);border-color:var(--acc);color:#04201d;font-weight:700}
+.btn[aria-pressed="true"]{background:var(--acc);border-color:var(--acc);color:var(--on-acc);font-weight:700}
 .grade{grid-template-columns:minmax(0,1fr)!important}
 
 </style>
@@ -217,6 +226,7 @@ function desenharSeletores() {
 }
 
 /* ---------- widgets ---------- */
+function temaSistema() { try { return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; } catch (e) { return "dark"; } }
 function montarScript(cont, arquivo, cfg) {
   const s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
   s.src = TV_BASE + arquivo; s.text = JSON.stringify(cfg); cont.appendChild(s);
@@ -240,7 +250,7 @@ function montarCotacoes(host, g, reserva) {
   const aguarde = document.createElement("div"); aguarde.className = "carregando"; aguarde.textContent = "Carregando widget do TradingView…";
   caixa.append(cont, aguarde); host.replaceChildren(caixa);
   montarScript(cont, WIDGETS[g.widget], {width: "100%", height: altura - 34, symbolsGroups: [{name: g.titulo, originalName: g.titulo,
-    symbols: g.simbolos.map(x => ({name: x.s, displayName: x.rotulo}))}], showSymbolLogo: false, isTransparent: false, colorTheme: "dark", locale: "br"});
+    symbols: g.simbolos.map(x => ({name: x.s, displayName: x.rotulo}))}], showSymbolLogo: false, isTransparent: false, colorTheme: temaSistema(), locale: "br"});
   rotularIframe(cont, `Cotações do TradingView: ${g.titulo}`);
   let fim = false;
   const olho = setInterval(() => { if (cont.querySelector("iframe")) { aguarde.remove(); clearInterval(olho); } }, 400);
@@ -268,7 +278,7 @@ function desenharTira() {
   cont.setAttribute("role", "group"); cont.setAttribute("aria-label", "Widget do TradingView: faixa de cotações");
   cont.innerHTML = `<div class="tradingview-widget-container__widget"></div>` + atribuicao("Cotações", "https://www.tradingview.com/");
   caixa.appendChild(cont); host.appendChild(caixa);
-  montarScript(cont, "embed-widget-ticker-tape.js", {symbols: t.simbolos, showSymbolLogo: false, isTransparent: false, displayMode: "adaptive", colorTheme: "dark", locale: "br"});
+  montarScript(cont, "embed-widget-ticker-tape.js", {symbols: t.simbolos, showSymbolLogo: false, isTransparent: false, displayMode: "adaptive", colorTheme: temaSistema(), locale: "br"});
   rotularIframe(cont, "Faixa de cotações do TradingView");
   const timer = setTimeout(() => { if (!cont.querySelector("iframe")) { host.replaceChildren(); nota.textContent = "A faixa de cotações não carregou (bloqueador de conteúdo ou rede). Os cartões abaixo não dependem dela."; } }, ESPERA_TV_MS);
   limpezas.push(() => clearTimeout(timer));
@@ -349,6 +359,11 @@ document.addEventListener("click", (e) => {
 document.addEventListener("keydown", (e) => { if (e.key === "Escape" && popBtn) { const b = popBtn; fecharPop(); b.focus(); } });
 addEventListener("scroll", () => { if (Date.now() - popEm > 400) fecharPop(); }, {passive: true});
 $("sel-conj").addEventListener("change", (e) => irPara(e.target.value, null));
+try {
+  const mq = window.matchMedia("(prefers-color-scheme: dark)");
+  const aoTrocar = () => { if (estado.cfg) { desenharTira(); desenharPainel(); } };
+  if (mq.addEventListener) mq.addEventListener("change", aoTrocar); else if (mq.addListener) mq.addListener(aoTrocar);
+} catch (e) { /* sem matchMedia: segue o tema inicial */ }
 $("tabs").addEventListener("keydown", (e) => {
   if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(e.key) || !estado.cfg) return;
   const ids = conjuntosDoModo(estado.modo).map(c => c.id); let i = ids.indexOf(estado.conjunto);
