@@ -29,4 +29,16 @@ Mudar a regra é decisão do dono.
 - Símbolos testados em 19/11/2026 no navegador embutido do app Claude: 105 de 107 abriram com valor; OIBR3 e OIBR4 ficaram sem valor (reprovados). Conferir de novo no Chrome do dono quando possível.
 - Consulta formal ao TradingView: **dispensada pelo dono em 20/11/2026**, por já existir a opção de ligar e desligar o carregamento dos widgets (padrão: desligado, só por clique).
 - Medir o peso real no navegador e registrar aqui.
-- Origem e licença dos preços (Yahoo Finance, via Monitor BESST) a registrar.
+- Origem e licença dos preços: registrada abaixo (leitura de 20/11/2026). Falta decisão do dono sobre o risco.
+
+## Origem dos preços e termos do Yahoo (leitura de 20/11/2026)
+
+Os preços do Monitor BESST vêm do Yahoo Finance (cerca de 15 min de atraso). Esta página não exibe esses preços em tabela de cotação: mostra preço-teto, margem e faixa calculados a partir deles; as cotações visíveis são do widget do TradingView.
+
+O que os textos oficiais dizem (lidos em legal.yahoo.com, 20/11/2026; nível B, documento da própria empresa; paráfrase, sem valor jurídico):
+
+- **Termos de Serviço do Yahoo** (`legal.yahoo.com/us/en/yahoo/terms/otos/`): proíbem coletar dados dos serviços por meios automatizados sem permissão prévia (§2(d)(ix)); proíbem reproduzir, distribuir ou transmitir o conteúdo sem autorização escrita (§2(h)); proíbem uso comercial dos serviços (§2(e)); a licença de software e APIs é pessoal, revogável e não transferível (§2(i)). Não há cláusula que cite dados financeiros ou cotações. Lido o texto até o caractere 100.000 de 127.483 (o restante é regional/EMEA e não trata de cotações).
+- **Termos da API para desenvolvedores** (`legal.yahoo.com/us/en/yahoo/terms/product-atos/apiforydn/`): o Yahoo pode encerrar a licença a qualquer momento (§1(a)), impor limites de uso (preâmbulo) e mudar ou suspender APIs (§§4–5). A página não menciona os dados de cotações do Yahoo Finance, então não dá para afirmar que se aplica a eles.
+- Não foi encontrada API pública oficial de cotações do Yahoo Finance **[referência não verificada: apontada só por fontes secundárias]**.
+
+Leitura prática (análise, não decisão): a coleta automatizada feita pelo Monitor BESST e a exibição dos números derivados em página pública são o ponto sensível. A dispensa do TradingView não cobre isso. Se o dono quiser reduzir o risco: (a) buscar licença ou fonte oficial (B3, provedor autorizado); (b) manter só o derivado (teto, margem, faixa) e nunca o preço bruto do Yahoo; (c) pedir parecer de advogado. A decisão e a avaliação jurídica são do dono.
