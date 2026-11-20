@@ -128,3 +128,7 @@ python3 -m http.server                        # abrir http://localhost:8000/moni
 Em `localhost` a página lê a amostra sintética e mostra a faixa "DADOS SINTÉTICOS DE TESTE". A pasta `_amostra/` não vai para o repositório.
 
 Material educativo. Não é recomendação de investimento. Rentabilidade passada não garante resultado futuro.
+
+## Tema claro e escuro
+
+A página segue a aparência do sistema (`prefers-color-scheme`): claro por padrão, escuro quando o sistema está escuro. Os gráficos próprios (canvas) leem as cores das variáveis CSS (`--s1` a `--s4`, `--grid`, `--eixo`) a cada desenho, e os widgets do TradingView usam o mesmo tema. Se o tema mudar com a página aberta, o painel é redesenhado. Os testes (`TemaTests`) impedem cores fixas no CSS e no JavaScript.

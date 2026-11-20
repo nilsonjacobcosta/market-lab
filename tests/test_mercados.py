@@ -696,5 +696,29 @@ class RazaoEMediaMovelTests(unittest.TestCase):
         self.assertEqual(fontes.calcular_derivada("razao", [num, den]), [("2026-01-02", 2.0)])
 
 
+class TemaTests(unittest.TestCase):
+    """Teste TEXTUAL do index.html: o tema segue o sistema e as cores só vivem nas variáveis."""
+    HTML = (Path(__file__).resolve().parents[1] / "monitor" / "mercados" / "index.html").read_text(encoding="utf-8")
+
+    def test_segue_o_sistema(self):
+        self.assertIn("prefers-color-scheme: dark", self.HTML)
+        self.assertNotIn('colorTheme: "dark"', self.HTML)
+        self.assertNotIn('theme: "dark"', self.HTML)
+        self.assertEqual(self.HTML.count("temaSistema()"), 2)
+
+    def test_cores_so_nas_variaveis(self):
+        import re
+        css = self.HTML[self.HTML.index("<style>"):self.HTML.index("</style>")]
+        fora = re.sub(r":root\{[^}]*\}", "", css)
+        fora = re.sub(r"@media \(prefers-color-scheme: dark\)\{\}", "", fora)
+        self.assertEqual(re.findall(r"#[0-9a-fA-F]{3,8}\b|rgba?\([^)]*\)", fora), [])
+
+    def test_grafico_le_as_cores_das_variaveis(self):
+        import re
+        js = self.HTML[self.HTML.index("<script>"):]
+        self.assertEqual(re.findall(r'"#[0-9a-fA-F]{6}"', js), [])
+        self.assertIn('corVar("--s" + (i + 1))', self.HTML)
+
+
 if __name__ == "__main__":
     unittest.main()
