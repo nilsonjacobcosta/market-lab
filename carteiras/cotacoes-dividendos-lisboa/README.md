@@ -33,7 +33,7 @@ Procedimento: abrir `teste-simbolos.html`, carregar cada grupo, marcar "abriu" o
 
 ## Pendências
 - Símbolos: os 30 `EURONEXT:` abriram com valor no Chrome do dono em 20/11/2026 (registro em `conjuntos.json › matriz_teste`). Foi conferido que abriram, não o valor de cada um contra o painel.
-- Idioma: o widget foi configurado com `locale: "pt"`, mas no teste os cabeçalhos das colunas saíram em inglês. Decidir se fica assim ou se se usa outro código de idioma.
+- Idioma: o widget usa `locale: "br"` (português, testado em 20/11/2026: cabeçalhos "Nome", "Valor", "Variação"). O código `pt` não traduzia os cabeçalhos.
 - Parecer jurídico (MAR art. 20.º; Reg. CMVM 2/2007) registrado como pendência do Monitor Portugal; a publicação desta página segue a decisão do dono de 20/11/2026.
 - Juízes (J1 dados, J2 regulatório/comunicação, J3 engenharia) antes do merge, como nos outros painéis.
 - Origem dos preços (Yahoo Finance) segue a decisão de 20/11/2026 do dono, a mesma do Monitor BESST.
