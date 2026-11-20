@@ -109,3 +109,8 @@ Reconferência J1 em 19/11/2026 (nota 7, um bloqueante corrigido: ETH/BTC tem s�
 - `controlo.json` passa a ter os 30 emitentes, cada um com fonte e data de referência; novo campo opcional `free_float_pct` e alerta informativo `free_float_baixo` (< 15%): SNC 6,58% (página da empresa), ESON ~9%, SCT ~3,2%, MAR ~14,2% (os três últimos calculados por subtração).
 - Pontos fracos: FCP e SCP vêm de prospetos de obrigações de 2024; ESON por imprensa que cita comunicado à CMVM; MAR por imprensa; GLINT pelo relatório de 2023 da Farminveste (76,4%); IPR por comunicado da MFE; SLBEN com venda de 16,38% por concluir (AG até fim de julho) sem desfecho confirmado.
 - Critério de dividendos do perfil: ano só reprova se ficar abaixo de 75% da média dos anos pagos anteriores, com pagamento em pelo menos 4 de 5 anos (antes: queda > 10%).
+
+## 20/11/2026 — Glintt cadastrada; revisão após conferência
+- GLINT: 4 dividendos (2023–2026) com estado "coincide" (agregador + imprensa), todos confirmados pelo total pago no ESEF (1,5; 3,0; 3,75 M€ ÷ ~87 M ações) e, em 2026, pelo total de 5,8 M€ da imprensa; sem aviso oficial localizado.
+- ESON segue pendente: o agregador mostra só 0,168 em 06/2024 e nada em 2025–2026, mas o ESEF regista 9,85 M€ pagos em 2025 (pode incluir minoritários de subsidiárias); contradição por resolver em fonte oficial.
+- Free float agora aplicado por igual às 14 (marca "calculado" quando por subtração); alerta `controlo_fonte_antiga` por data_ref > 12 meses; critério de dividendos renomeado "sem cortes relevantes" e linha informativa de evolução (primeiro → último ano pago).

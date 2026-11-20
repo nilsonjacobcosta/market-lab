@@ -3281,57 +3281,98 @@
    "setor": "Software e serviços de TI",
    "isin": "PTPAD0AM0007",
    "grupo": "observacao",
-   "cadastro_proventos": "pendente",
+   "cadastro_proventos": "completo",
    "faixa_liquidez": "baixa",
-   "cadastro_completo": false,
+   "cadastro_completo": true,
    "preco": 1.17,
    "data_preco": "2026-11-20",
    "variacao_12m_pct": -24.5,
    "proventos_por_ano": {
     "2021": 0,
     "2022": 0,
-    "2023": 0,
-    "2024": 0,
-    "2025": 0
+    "2023": 0.0172,
+    "2024": 0.0344,
+    "2025": 0.0431
    },
    "estado_por_ano": {
     "2021": [],
     "2022": [],
-    "2023": [],
-    "2024": [],
-    "2025": []
+    "2023": [
+     "coincide"
+    ],
+    "2024": [
+     "coincide"
+    ],
+    "2025": [
+     "coincide"
+    ]
    },
-   "proventos_12m": 0,
-   "dpa_medio": 0.0,
-   "dpa_aparado": 0.0,
-   "dy_12m_pct": 0.0,
-   "dy_medio_pct": 0.0,
-   "teto": null,
-   "teto_robusto": null,
-   "faixa_teto": null,
-   "margem_pct": null,
-   "status": "em_cadastro",
-   "status_rotulo": "Em cadastro: proventos por conferir",
+   "proventos_12m": 0.0667,
+   "dpa_medio": 0.01894,
+   "dpa_aparado": 0.0172,
+   "dy_12m_pct": 5.7,
+   "dy_medio_pct": 1.62,
+   "teto": 0.2961,
+   "teto_robusto": 0.2689,
+   "faixa_teto": [
+    0.256,
+    0.3509
+   ],
+   "margem_pct": -74.7,
+   "status": "acima",
+   "status_rotulo": "Acima do teto calculado",
    "liquidez_mediana_12m_eur": 10562,
    "pct_dias_sem_negocio_12m": 1.6,
-   "pct_eventos_oficiais": null,
+   "pct_eventos_oficiais": 0,
    "tem_scrip": false,
-   "eventos": [],
+   "eventos": [
+    {
+     "data_pagamento": "2026-06-26",
+     "valor_bruto": 0.0667,
+     "tipo": "dinheiro",
+     "exercicio": "2025",
+     "estado": "coincide",
+     "fonte_url": "https://www.jornaldenegocios.pt/mercados/bolsa/dividendos/detalhe/tecnologica-glintt-prepara-se-para-entregar-5-8-milhoes-de-euros-em-dividendos",
+     "nota": "imprensa (total de 5,8 M€; 0,067 no agregador, ex 24/06/2026); sem ESEF de 2026 para confirmar; aviso oficial não localizado; data de pagamento inferida"
+    },
+    {
+     "data_pagamento": "2025-06-27",
+     "valor_bruto": 0.0431,
+     "tipo": "dinheiro",
+     "exercicio": "2024",
+     "estado": "coincide",
+     "fonte_url": "https://simplywall.st/stocks/pt/software/eli-glint/glintt-global-shares/news/glintt-global-eliglint-has-announced-that-it-will-be-increas",
+     "nota": "agregador (ex 25/06/2025) e imprensa coincidem; confere com o ESEF (3,75 M€); aviso oficial não localizado; data de pagamento inferida"
+    },
+    {
+     "data_pagamento": "2024-06-27",
+     "valor_bruto": 0.0344,
+     "tipo": "dinheiro",
+     "exercicio": "2023",
+     "estado": "coincide",
+     "fonte_url": "https://rendementbourse.com/glint-glintt/dividendes",
+     "nota": "agregador (ex 25/06/2024) e imprensa coincidem; confere com o ESEF (3,0 M€); aviso oficial não localizado; data de pagamento inferida"
+    },
+    {
+     "data_pagamento": "2023-06-27",
+     "valor_bruto": 0.0172,
+     "tipo": "dinheiro",
+     "exercicio": "2022",
+     "estado": "coincide",
+     "fonte_url": "https://rendementbourse.com/glint-glintt/dividendes",
+     "nota": "agregador (ex 23/06/2023) e imprensa coincidem; confere com o total pago no ESEF (1,5 M€ ≈ 0,0172 × ~87 M ações, 87 M = 66.443.564 ações da ANF ÷ 76,4%); aviso oficial não localizado; data de pagamento inferida (ex + 2 dias úteis)"
+    }
+   ],
    "alertas": [
+    {
+     "nivel": "atencao",
+     "codigo": "anos_sem_proventos",
+     "texto": "Sem proventos em 2021, 2022: a média de 5 anos fica mais baixa e o teto também."
+    },
     {
      "nivel": "info",
      "codigo": "fora_nucleo",
      "texto": "Em observação: fora do núcleo de alta liquidez (faixa baixa)."
-    },
-    {
-     "nivel": "info",
-     "codigo": "cadastro_pendente",
-     "texto": "Proventos ainda não conferidos no cadastro oficial: sem preço-teto até estarem conferidos."
-    },
-    {
-     "nivel": "atencao",
-     "codigo": "evento_nao_cadastrado",
-     "texto": "A fonte de cotações mostra provento sem registo oficial no cadastro: 2023-06-23 (0.0172); 2024-06-25 (0.034497); 2025-06-25 (0.043121); 2026-06-24 (0.066695)."
     },
     {
      "nivel": "info",
@@ -3440,8 +3481,14 @@
      {
       "id": "dividendos",
       "rotulo": "Dividendos sem cortes relevantes",
-      "estado": "nd",
-      "detalhe": "cadastro de proventos ainda pendente"
+      "estado": "nao",
+      "detalhe": "pagou em 3 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0,0172 → 0,0431 €"
+     },
+     {
+      "id": "evolucao",
+      "rotulo": "Evolução do dividendo (informativo)",
+      "estado": "info",
+      "detalhe": "0,0172 → 0,0431 € do primeiro ao último ano pago (+151%)"
      },
      {
       "id": "divida",
@@ -3463,7 +3510,7 @@
      }
     ],
     "atendidos": 2,
-    "avaliaveis": 3,
+    "avaliaveis": 4,
     "anos": [
      {
       "ano": 2020,
@@ -8914,6 +8961,13 @@
     "rotulo": "Em cadastro: proventos por conferir",
     "preco": 1.22,
     "teto": null
+   },
+   {
+    "data": "2026-11-20",
+    "status": "acima",
+    "rotulo": "Acima do teto calculado",
+    "preco": 1.17,
+    "teto": 0.2961
    }
   ],
   "IPR": [

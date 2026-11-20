@@ -275,6 +275,13 @@
    "rotulo": "Em cadastro: proventos por conferir",
    "preco": 1.22,
    "teto": null
+  },
+  {
+   "data": "2026-11-20",
+   "status": "acima",
+   "rotulo": "Acima do teto calculado",
+   "preco": 1.17,
+   "teto": 0.2961
   }
  ],
  "IPR": [
