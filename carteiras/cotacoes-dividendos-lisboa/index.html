@@ -309,7 +309,7 @@ function htmlFora(fora) {
   if (!fora.length) return "";
   const M = estado.cfg.motivos_fora;
   const li = fora.map(it => `<li><a href="${esc(urlSimbolo(it.l.papel))}" rel="noopener noreferrer nofollow" target="_blank">${esc(it.l.papel)}</a> ${esc(it.l.nome || "")} — ${esc(M[it.motivo] || M.outro)}</li>`).join("");
-  return `<details class="fora"><summary>Fora dos critérios (${fora.length} papéis)</summary><p class="nota">Lista só de texto, sem widget. O motivo vem do Monitor Portugal.</p><ul>${li}</ul></details>`;
+  return `<details class="fora"><summary>Fora dos critérios (${fora.length} ${fora.length === 1 ? "papel" : "papéis"})</summary><p class="nota">Lista só de texto, sem widget. O motivo vem do Monitor Portugal.</p><ul>${li}</ul></details>`;
 }
 function desenharPainel() {
   limpezas.forEach(f => { try { f(); } catch (e) {} }); limpezas = [];
