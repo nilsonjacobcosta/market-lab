@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-11-20T23:07+00:00",
+ "gerado_em": "2026-11-20T23:11+00:00",
  "precos_coletados_em": "2026-11-20T23:07+00:00",
  "autor": "market-lab — projeto pessoal de estudo de nilsonjacobcosta (GitHub)",
  "aviso": "Material educativo, não é recomendação de investimento.",
@@ -354,7 +354,8 @@
     "nota": "Promendo Investimentos 17,78%, Caderno Azul 16,67%, Vieira de Matos – VDM Capital 16,60%, Actium Capital 15,22% e 1 Thing, Investments 10,01% dos direitos de voto. A página não indica data de referência.",
     "fonte": "https://altri.pt/pt/investidores/informacao-acionista",
     "data_ref": "sem data na fonte",
-    "confianca": "media"
+    "confianca": "media",
+    "free_float_pct": null
    }
   },
   {
@@ -620,7 +621,8 @@
     "nota": "A Sonangol vendeu ações em outubro de 2026 para ficar abaixo de 20% (acima disso precisaria de autorização do BCE). Notícias de outubro de 2026 referem que o Estado português pondera comprar até 5% se a Fosun sair — ainda sem decisão. A página de estrutura acionista do banco está desatualizada (2016).",
     "fonte": "https://eco.sapo.pt/2026/10/21/sonangol-abre-a-porta-a-reforcar-no-bcp-se-fosun-sair/",
     "data_ref": "2026-10-21",
-    "confianca": "media"
+    "confianca": "media",
+    "free_float_pct": null
    }
   },
   {
@@ -941,7 +943,8 @@
     "nota": "Entidades da família Amorim somam cerca de 71% (Amorim Investimentos e Participações 51,0%, Amorim SGPS 10,1%, A Porta da Lua 6,2%, outras). Free float 28,6%.",
     "fonte": "https://www.amorim.com/xms/files/Investidores/Outros_Relatorios/RC_PT_1S2025_Corticeira_Amorim.pdf",
     "data_ref": "2025-07-28",
-    "confianca": "alta"
+    "confianca": "alta",
+    "free_float_pct": null
    }
   },
   {
@@ -1226,7 +1229,8 @@
     "nota": "Manuel Champalimaud SGPS 14,76%, Global Portfolio Investments (Indumenta Pueri) 14,29%, GreenWood Builders Fund I 6,38%; ações próprias 3,91%. Privatizados em 2013–2014.",
     "fonte": "https://www.ctt.pt/grupo-ctt/investidores/estrutura-acionista",
     "data_ref": "2026-10-28",
-    "confianca": "alta"
+    "confianca": "alta",
+    "free_float_pct": null
    }
   },
   {
@@ -1512,7 +1516,8 @@
     "nota": "Outros: BlackRock 8,35% do capital (8,76% dos votos), Oppidum Capital/família Masaveu 6,82% (6,93% imputados). Os estatutos não contam votos acima de 25% do capital.",
     "fonte": "https://edp.com/sites/default/files/document/2026-05/RAI_2025_Relat%C3%B3riodeGovernodaSociedade.pdf",
     "data_ref": "2025-12-31",
-    "confianca": "alta"
+    "confianca": "alta",
+    "free_float_pct": null
    }
   },
   {
@@ -1802,7 +1807,8 @@
     "nota": "Controlada pela EDP; indiretamente, a China Three Gorges (estatal chinesa) é a maior acionista da EDP com 22,2%. GIC 4,4%, BlackRock 3,4%. Sociedade espanhola cotada em Lisboa.",
     "fonte": "https://www.edpr-investors.com/en/share/shareholder-structure",
     "data_ref": "2026-06-30",
-    "confianca": "alta"
+    "confianca": "alta",
+    "free_float_pct": null
    }
   },
   {
@@ -2092,7 +2098,8 @@
     "nota": "Mota Gestão e Participações 40,32%; Epoch Capital Investments (China Communications Construction Company, estatal chinesa) 32,41%. Free float 25,4%.",
     "fonte": "https://www.mota-engil.com/en/investors/mota-engil-share/",
     "data_ref": "2025-12-31",
-    "confianca": "alta"
+    "confianca": "alta",
+    "free_float_pct": null
    }
   },
   {
@@ -2157,6 +2164,11 @@
      "nivel": "atencao",
      "codigo": "evento_nao_cadastrado",
      "texto": "A fonte de cotações mostra provento sem registo oficial no cadastro: 2024-06-18 (0.1676)."
+    },
+    {
+     "nivel": "info",
+     "codigo": "free_float_baixo",
+     "texto": "Free float de cerca de 9.0% (abaixo de 15%): pouca oferta de ações em bolsa, o que agrava a liquidez e o risco de OPA de exclusão. Ver a nota do controlo acionista."
     }
    ],
    "historico_preco_mensal": {
@@ -2324,6 +2336,16 @@
       "dl_ebitda": -9.53
      }
     ]
+   },
+   "controlo": {
+    "categoria": "privada",
+    "estrutura": "controlo_maioritario",
+    "controlador": "Finansol – Sociedade de Controlo, 57,79% do capital e 58,09% dos votos",
+    "nota": "Comunicado da Estoril-Sol à CMVM de setembro de 2026, tal como noticiado pelo Executive Digest/Lusa (15/09/2026): Finansol 6.930.604 ações, 57,79% do capital e 58,09% dos votos; Fozpatrimónio 3.917.793 ações, 32,67% e 32,84%; ações próprias 62.565. O controlador final da Finansol não foi identificado. Não foi lido o comunicado original nem o relatório de governo. Free float calculado: cerca de 9%.",
+    "fonte": "https://executivedigest.sapo.pt/?p=813716",
+    "data_ref": "2026-09-15",
+    "confianca": "media",
+    "free_float_pct": 9.0
    }
   },
   {
@@ -2538,6 +2560,16 @@
       "dl_ebitda": null
      }
     ]
+   },
+   "controlo": {
+    "categoria": "privada",
+    "estrutura": "controlo_maioritario",
+    "controlador": "Futebol Clube do Porto (clube), 74,83% imputável",
+    "nota": "Prospeto das obrigações FC Porto SAD 2024-2027 (16/11/2024): FC Porto 74,59% direta e 74,832% com votos imputáveis; António Luís Alves Oliveira 7,341% do capital; Francisco Alves Ferreira de Oliveira (Olivedesportos) 6,676% do capital. Documento com cerca de um ano; não foi lido relatório de governo mais recente.",
+    "fonte": "https://creditoagricola.pt/-/media/475a933ec430459b933945c289a30ae2.pdf",
+    "data_ref": "2024-11-16",
+    "confianca": "media",
+    "free_float_pct": null
    }
   },
   {
@@ -2812,6 +2844,16 @@
       "dl_ebitda": -3.43
      }
     ]
+   },
+   "controlo": {
+    "categoria": "privada",
+    "estrutura": "controlo_maioritario",
+    "controlador": "Flexdeal Participações (gestão; Alberto Amaral e cônjuge com 50,41% desta), 81,23%",
+    "nota": "Relatório integrado 2024/2025, referência 31/12/2025: Flexdeal Participações 3.019.219 ações, 81,23% do capital e 81,36% dos votos; ações próprias 0,16%. Free float calculado (100% − 81,23% − 0,16%): cerca de 18,6%; outros qualificados não confirmados.",
+    "fonte": "https://admin.flexdeal.pt/uploads/investorAgenda-202.pdf",
+    "data_ref": "2025-12-31",
+    "confianca": "alta",
+    "free_float_pct": 18.6
    }
   },
   {
@@ -3148,7 +3190,8 @@
     "nota": "A Amorim Energia é detida em 45% pela Esperaza (controlada pela Sonangol, estatal angolana) e em 55% por sociedades da família Amorim. Parpública 8,42% dos votos. Free float 54,1%.",
     "fonte": "https://galp.com/corp/en/investors/information-to-shareholders/shareholding-structure",
     "data_ref": "sem data na fonte (consultado em 2026-11-04)",
-    "confianca": "alta"
+    "confianca": "alta",
+    "free_float_pct": null
    }
   },
   {
@@ -3373,6 +3416,16 @@
       "dl_ebitda": 1.38
      }
     ]
+   },
+   "controlo": {
+    "categoria": "privada",
+    "estrutura": "controlo_maioritario",
+    "controlador": "Farminveste (grupo da Associação Nacional das Farmácias), cerca de 76,4% indireta",
+    "nota": "Relatório e contas 2023 da Farminveste (Euronext, 09/05/2024): participação maioritária indireta de 76,4% na Glintt, sem separar capital e votos nem indicar outros acionistas. Um agregador (Simply Wall St) atribui ainda 2,99% a José Gomes. Não foi lido o relatório de governo da Glintt (site bloqueia robots) nem comunicado de participação qualificada recente.",
+    "fonte": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2024/05/09/Connect_relatorio-e-contasfv-sgps2023.pdf",
+    "data_ref": "2023-12-31",
+    "confianca": "media",
+    "free_float_pct": null
    }
   },
   {
@@ -3653,7 +3706,8 @@
     "nota": "Há acordo parassocial entre os dois sobre os votos da ATPS. Fergie – Serviços e Gestão (sociedade dos filhos dos fundadores) 10,96%.",
     "fonte": "https://www.ibersol.pt/investidores/relatorio-contas/2025/3_Relatorio_Governo_30_4_2025.pdf",
     "data_ref": "2024-12-31",
-    "confianca": "alta"
+    "confianca": "alta",
+    "free_float_pct": null
    }
   },
   {
@@ -3868,6 +3922,16 @@
       "dl_ebitda": -0.66
      }
     ]
+   },
+   "controlo": {
+    "categoria": "privada",
+    "estrutura": "acionistas_de_referencia",
+    "controlador": "Impreger (família Balsemão) mantém o controlo, com 33,74%; MFE-MediaForEurope tem 32,93%",
+    "nota": "Após o aumento de capital (comunicado da MFE de 10/03/2026): Impreger 33,738%, MFE 32,934%, free float 33,328%. Existe acordo parassocial entre as duas e a CMVM confirmou que não atuam em concertação para controlo (sem OPA obrigatória). Documento emitido pela MFE; não foi lida a página de participações qualificadas da Impresa.",
+    "fonte": "https://www.emarketstorage.it/sites/default/files/comunicati/2026-03/20260310_178563.pdf",
+    "data_ref": "2026-03-10",
+    "confianca": "media",
+    "free_float_pct": 33.328
    }
   },
   {
@@ -4156,7 +4220,8 @@
     "nota": "Participação detida através da Sociedade Francisco Manuel dos Santos, B.V.",
     "fonte": "https://reports.jeronimomartins.com/annual-report/2025/corporate-governance/part-i/section-a/subsection-ii/point-7.html",
     "data_ref": "2025-12-31",
-    "confianca": "alta"
+    "confianca": "alta",
+    "free_float_pct": null
    }
   },
   {
@@ -4235,6 +4300,11 @@
      "nivel": "info",
      "codigo": "fora_nucleo",
      "texto": "Em observação: fora do núcleo de alta liquidez (faixa baixa)."
+    },
+    {
+     "nivel": "info",
+     "codigo": "free_float_baixo",
+     "texto": "Free float de cerca de 14.2% (abaixo de 15%): pouca oferta de ações em bolsa, o que agrava a liquidez e o risco de OPA de exclusão. Ver a nota do controlo acionista."
     }
    ],
    "historico_preco_mensal": {
@@ -4398,6 +4468,16 @@
       "dl_ebitda": 2.82
      }
     ]
+   },
+   "controlo": {
+    "categoria": "privada",
+    "estrutura": "controlo_maioritario",
+    "controlador": "Bloco concertado Mota-Engil, Visabeira e I'M (irmãos Martins), 85,8% por acordo parassocial",
+    "nota": "ECO 27/04/2026 (com base em comunicado à CMVM): acordo parassocial em vigor desde 29/01/2026 imputa 85,59% do capital ao bloco; Mota-Engil 37,5%, Visabeira 23% (após comprar 18% aos irmãos Martins a 24/04/2026), I'M 25,09% diretos. RTP 05/06/2026: a OPA da Visabeira só comprou 0,24%, levando o bloco a 85,83%; sem 90% não há exclusão de bolsa automática. Free float calculado (100% − 85,83%): cerca de 14,2%. Não foi lido o documento oficial da CMVM.",
+    "fonte": "https://eco.sapo.pt/2026/04/27/irmaos-martins-concretizam-venda-de-18-da-martifer-a-visabeira/",
+    "data_ref": "2026-06-05",
+    "confianca": "media",
+    "free_float_pct": 14.17
    }
   },
   {
@@ -4687,6 +4767,16 @@
       "dl_ebitda": 2.02
      }
     ]
+   },
+   "controlo": {
+    "categoria": "privada",
+    "estrutura": "acionistas_de_referencia",
+    "controlador": "Sem controlo maioritário: Pluris Investments (Mário Ferreira) 37,05%, com Triun, BIZ Partners, CIN e Zenithodissey",
+    "nota": "Relatório de gestão do 1.º semestre de 2025, referência 30/06/2025: Pluris Investments 37,05%; Triun SGPS 23%; BIZ Partners 11,97%; CIN 11,20%; Zenithodissey 10%; soma 93,22%. Não foi achado o relatório de governo de 2025 nem alterações posteriores; não há indício de OPA ou exclusão de bolsa.",
+    "fonte": "https://mediacapital.pt/wp-content/uploads/2025/11/relatorio-de-gestao_MEDIA-CAPITAL-RESULTADOS-1s25_v2.pdf",
+    "data_ref": "2025-06-30",
+    "confianca": "media",
+    "free_float_pct": null
    }
   },
   {
@@ -4990,6 +5080,16 @@
       "dl_ebitda": -0.99
      }
     ]
+   },
+   "controlo": {
+    "categoria": "privada",
+    "estrutura": "acionista_de_referencia",
+    "controlador": "HNB – SGPS (Salvado, Ferreira e Ferreira de Sousa), 47,68%",
+    "nota": "Relatório e contas 2025 (versão de junho de 2026), referência 30/06/2026: HNB – SGPS 18.318.655 ações, 47,68%; Pedro Miguel Quinteiro Marques de Carvalho 2.736.653 ações, 7,12% (última posição notificada); ações próprias 1,94%. A HNB é controlada por três gestores com acordo de acionistas. A tabela vem dos anexos sobre titulares de órgãos sociais, não de uma secção de participações qualificadas.",
+    "fonte": "https://content.novabase.com/storage/uploads/2026-06-report-and-accounts.pdf",
+    "data_ref": "2026-06-30",
+    "confianca": "media",
+    "free_float_pct": null
    }
   },
   {
@@ -5274,7 +5374,8 @@
     "nota": "Sonaecom 37,37% (imputável a Sonae e à Efanor, que não tem acionista de controlo desde 2017); ZOPT 26,07% (imputável a sociedades de Isabel dos Santos); outros 36,56%. A página foi atualizada a 29/04/2025.",
     "fonte": "https://www.nos.pt/pt/institucional/investidores/mercado-de-capitais/estrutura-acionista",
     "data_ref": "2025-04-29",
-    "confianca": "media"
+    "confianca": "media",
+    "free_float_pct": null
    }
   },
   {
@@ -5590,7 +5691,8 @@
     "nota": "Semapa detém 69,97% do capital da Navigator (relatório anual de 2023 da Semapa; percentagem a reconfirmar no relatório mais recente).",
     "fonte": "https://www.semapa.pt/wp-content/uploads/2024/04/SEMAPA-RA-2023-versao-nao-ESEF.pdf",
     "data_ref": "2023-12-31",
-    "confianca": "media"
+    "confianca": "media",
+    "free_float_pct": null
    }
   },
   {
@@ -5813,6 +5915,16 @@
       "dl_ebitda": -13.49
      }
     ]
+   },
+   "controlo": {
+    "categoria": "privada",
+    "estrutura": "acionistas_de_referencia",
+    "controlador": "Sem controlador: Tavrion PT04 19,56% e Dualis Capital 5,40%",
+    "nota": "Tavrion PT04, Unipessoal 175.316.330 ações, 19,56% (reporte de 26/06/2026); Dualis Capital – SIC de Valores Mobiliários Fechada 48.404.173 ações, 5,40% (reporte de 08/07/2026). Imprensa de 2025 refere que a Burlington Loan Management (Davidson Kempner) tinha cerca de 19,95%; a relação com a Tavrion PT04 não foi confirmada em fonte oficial.",
+    "fonte": "https://pharol.pt/pagina/a-empresa/principais-acionistas/",
+    "data_ref": "2026-07-08",
+    "confianca": "alta",
+    "free_float_pct": null
    }
   },
   {
@@ -6114,6 +6226,16 @@
       "dl_ebitda": null
      }
     ]
+   },
+   "controlo": {
+    "categoria": "privada",
+    "estrutura": "disperso_familiar",
+    "controlador": "Sem controlador único: cinco acionistas entre 10% e 21%",
+    "nota": "Relatório de governo 2025, referência 31/12/2025 (25.641.459 ações, um voto cada): Caderno Azul (João Borges de Oliveira) 20,67%; Promendo Investimentos (Ana Menéres de Mendonça) 18,90%; Actium Capital (Paulo Fernandes) 15,64%; Vieira de Matos – VDM Capital (Domingos Vieira de Matos) 12,16%; 1 Thing, Investments 10,00%. O relatório diz que nenhum acionista ultrapassa 25% e não indica controlador.",
+    "fonte": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2026/03/05/Connect_governance2025pt.pdf",
+    "data_ref": "2025-12-31",
+    "confianca": "alta",
+    "free_float_pct": null
    }
   },
   {
@@ -6434,7 +6556,8 @@
     "nota": "O Estado comprou 13,7% à Pontegadea (concluído a 7/9/2026) e 5,3% à Fidelidade (anunciado a 9/10/2026, sujeito a visto do Tribunal de Contas).",
     "fonte": "https://www.dn.pt/economia/estado-fecha-regresso-ren-nos-19-aps-comprar-posio-da-fidelidade",
     "data_ref": "2026-10-09",
-    "confianca": "media"
+    "confianca": "media",
+    "free_float_pct": null
    }
   },
   {
@@ -6624,6 +6747,16 @@
     "atendidos": 0,
     "avaliaveis": 0,
     "anos": []
+   },
+   "controlo": {
+    "categoria": "privada",
+    "estrutura": "controlo_maioritario",
+    "controlador": "Sporting Clube de Portugal (clube), 87,99% dos votos",
+    "nota": "Prospeto das obrigações Sporting SAD 2024-2028 (15/10/2024), % dos direitos de voto: Sporting Clube de Portugal 75,635% direta e 87,994% com 12,358% imputáveis (entidades em grupo ou concertação); Holdimo – Participações e Investimentos 9,901% (imputável a Álvaro Sobrinho). Documento com cerca de um ano; não foi lido relatório de governo mais recente.",
+    "fonte": "https://creditoagricola.pt/-/media/97a0790016334142b2ffa18fe3ddb44f.pdf",
+    "data_ref": "2024-10-15",
+    "confianca": "media",
+    "free_float_pct": null
    }
   },
   {
@@ -6751,6 +6884,11 @@
      "nivel": "atencao",
      "codigo": "negociacao_intermitente",
      "texto": "Negociação intermitente: 40.6% dos dias sem negócio em 12 meses; o último preço pode não corresponder a um negócio real."
+    },
+    {
+     "nivel": "info",
+     "codigo": "free_float_baixo",
+     "texto": "Free float de cerca de 3.2% (abaixo de 15%): pouca oferta de ações em bolsa, o que agrava a liquidez e o risco de OPA de exclusão. Ver a nota do controlo acionista."
     }
    ],
    "historico_preco_mensal": {
@@ -6916,6 +7054,16 @@
       "dl_ebitda": 0.4
      }
     ]
+   },
+   "controlo": {
+    "categoria": "privada",
+    "estrutura": "controlo_maioritario",
+    "controlador": "Salvador Caetano Auto SGPS, 69,80%; Toyota Motor Europe tem 27,00%",
+    "nota": "Relatório intercalar a 30/06/2025, nota 17 (pessoas coletivas com mais de 20% do capital): Salvador Caetano Auto SGPS 69,80%; Toyota Motor Europe NV/SA 27,00% (35.000.000 ações). Percentagem de votos não indicada. Free float calculado (100% − 96,80%): cerca de 3,2%.",
+    "fonte": "https://toyotacaetano.pt/wp-content/uploads/sites/24/2025/09/V_2025_09_19-2025_06_30-RC-Interim-VF.pdf",
+    "data_ref": "2025-06-30",
+    "confianca": "media",
+    "free_float_pct": 3.2
    }
   },
   {
@@ -7213,7 +7361,8 @@
     "nota": "Sodim 33,85% e Cimo (100% Sodim) 47,94% do capital; acordo parassocial entre as três irmãs.",
     "fonte": "https://www.semapa.pt/wp-content/uploads/2026/04/SEMAPA_RGS2025_PT_20260417.pdf",
     "data_ref": "2025-12-31",
-    "confianca": "alta"
+    "confianca": "alta",
+    "free_float_pct": null
    }
   },
   {
@@ -7423,6 +7572,16 @@
       "dl_ebitda": null
      }
     ]
+   },
+   "controlo": {
+    "categoria": "privada",
+    "estrutura": "controlo_maioritario",
+    "controlador": "Sport Lisboa e Benfica (clube), 63,70% imputável",
+    "nota": "Relatório 2024/25, referência 30/06/2025 (23.000.000 ações): Sport Lisboa e Benfica 63,70% (40,00% direta + 23,65% via SGPS + administradores); José António dos Santos e Grupo Valouro 16,38%; Lenore Sports Partners (LSP Lisbon) 5,24%, dos quais 3,28% em disputa judicial com o clube. O ECO de 27/04/2026 refere o clube com 66,98% e a venda dos 16,38% da Valouro a um fundo norte-americano (Entrepreneur Equity Partners SPV V), dependente de aprovação em AG, esperada até ao fim de julho; o desfecho não foi confirmado.",
+    "fonte": "https://media.slbenfica.pt/-/media/BenficaDP/Images/Instituicao/SAD/prestacao-de-contas/anuais/Relatorio_Benfica_SAD_24_25",
+    "data_ref": "2025-06-30",
+    "confianca": "media",
+    "free_float_pct": null
    }
   },
   {
@@ -7545,6 +7704,11 @@
      "nivel": "atencao",
      "codigo": "queda_proventos",
      "texto": "Proventos de 2025 caíram mais de 30% face a 2024."
+    },
+    {
+     "nivel": "info",
+     "codigo": "free_float_baixo",
+     "texto": "Free float de cerca de 6.6% (abaixo de 15%): pouca oferta de ações em bolsa, o que agrava a liquidez e o risco de OPA de exclusão. Ver a nota do controlo acionista."
     }
    ],
    "historico_preco_mensal": {
@@ -7711,6 +7875,16 @@
       "dl_ebitda": -5.07
      }
     ]
+   },
+   "controlo": {
+    "categoria": "privada",
+    "estrutura": "controlo_maioritario",
+    "controlador": "Efanor Investimentos (Sonae), 88,84% do capital, por Sontel BV e Sonae SGPS",
+    "nota": "Página de estrutura acionista da Sonaecom: Efanor 88,84% do capital e 90,46% dos votos exercíveis (62,33% via Sontel B.V. e 26,51% via Sonae SGPS), comunicação de 06/01/2023; Discerene Group 2,79% (comunicação de 16/07/2019); ações próprias 1,79%; free float 6,58% segundo a própria página. A OPA da Sonae de 2022/23 para exclusão de bolsa não atingiu o objetivo.",
+    "fonte": "https://sonaecom.pt/investidores/informacao-sobre-accao/estrutura-acionista/?lang=en",
+    "data_ref": "2023-01-06",
+    "confianca": "alta",
+    "free_float_pct": 6.58
    }
   },
   {
@@ -7995,7 +8169,8 @@
     "nota": "Efanor 53,03% (direta e via Pareuro); Criteria Caixa 5,00%. A Efanor declara não ter acionista de controlo desde 29/11/2017.",
     "fonte": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2026/04/01/Connect_sonaecgr2025pt.pdf",
     "data_ref": "2025-12-31",
-    "confianca": "alta"
+    "confianca": "alta",
+    "free_float_pct": null
    }
   },
   {
@@ -8218,7 +8393,8 @@
     "nota": "Dualis Capital 9,35%; Midinvest 7,53%.",
     "fonte": "https://www.teixeiraduarte.pt/wp-content/uploads/2025/08/TDSA-1-semestre-2025.pdf",
     "data_ref": "2025-06-30",
-    "confianca": "alta"
+    "confianca": "alta",
+    "free_float_pct": null
    }
   }
  ],
@@ -8706,7 +8882,7 @@
   ]
  },
  "controlo_meta": {
-  "atualizado": "2026-11-04",
+  "atualizado": "2026-11-20",
   "proxima_revisao": "2027-01-04",
   "criterio": "Participações qualificadas (art. 16.º e 20.º do Código dos Valores Mobiliários) segundo a página de investidores ou o relatório de governo societário mais recente da empresa; imprensa reconhecida só para mudanças posteriores ao último documento oficial. 'estatal' = o Estado português controla; 'estatal_estrangeira' = estatal de outro país controla; 'participacao_estatal_relevante' = um Estado (português ou estrangeiro) tem 5% ou mais sem controlar; 'privada' = restantes. 'estrutura' descreve se há maioria (controlo), um acionista de referência sem maioria, ou capital disperso."
  },

@@ -454,7 +454,10 @@ def main():
     for l in res["linhas"]:
         c = cmap.get(l["papel"])
         if c:
-            l["controlo"] = {k: c.get(k) for k in ("categoria", "estrutura", "controlador", "nota", "fonte", "data_ref", "confianca")}
+            l["controlo"] = {k: c.get(k) for k in ("categoria", "estrutura", "controlador", "nota", "fonte", "data_ref", "confianca", "free_float_pct")}
+            if c.get("free_float_pct") is not None and c["free_float_pct"] < 15:
+                l["alertas"].append({"nivel": "info", "codigo": "free_float_baixo",
+                                     "texto": f"Free float de cerca de {c['free_float_pct']:.1f}% (abaixo de 15%): pouca oferta de ações em bolsa, o que agrava a liquidez e o risco de OPA de exclusão. Ver a nota do controlo acionista."})
         if idade_ctrl is not None and idade_ctrl > 90:
             l["alertas"].append({"nivel": "info", "codigo": "controlo_antigo",
                                  "texto": f"A classificação do controlo acionista tem {idade_ctrl} dias; pode estar desatualizada."})

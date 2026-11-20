@@ -252,8 +252,7 @@ class Fundamentos(unittest.TestCase):
 class Controlo(unittest.TestCase):
     def test_cadastro_completo_e_com_fonte(self):
         c = json.loads((RAIZ / "dados/portugal/controlo.json").read_text(encoding="utf-8"))
-        # Controlo das 14 empresas em observação ainda não foi classificado (passo 5 do plano): só o núcleo é exigido.
-        papeis = {p["papel"] for p in UNIVERSO["papeis"] if p.get("grupo", "nucleo") == "nucleo"}
+        papeis = {p["papel"] for p in UNIVERSO["papeis"]}
         self.assertEqual({e["papel"] for e in c["empresas"]}, papeis)
         for e in c["empresas"]:
             with self.subTest(p=e["papel"]):
