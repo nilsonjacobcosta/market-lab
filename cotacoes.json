@@ -1,6 +1,6 @@
 {
- "gerado_utc": "2026-11-19T21:55+00:00",
- "gerado_brt": "19/11/2026 18:55",
+ "gerado_utc": "2026-11-20T02:44+00:00",
+ "gerado_brt": "19/11/2026 23:44",
  "fonte": "Yahoo Finance (endpoint chart), atraso variável; captura de 10/11/2026 onde não há fonte",
  "cotacoes_ok": 79,
  "destaques": [
@@ -17,27 +17,27 @@
    "nome": "Índice DX (dólar)",
    "ticker": "DX-Y.NYB",
    "detalhe": "EUA · índice do dólar contra uma cesta de 6 moedas (euro, iene, libra, dólar canadense, coroa sueca, franco suíço). Sobe quando o dólar se valoriza.",
-   "valor": 103.939,
-   "var": 0.3756639304683729,
-   "hora": "2026-11-19T21:45:09+00:00",
+   "valor": 103.874,
+   "var": 0.31289232254949617,
+   "hora": "2026-11-20T02:34:45+00:00",
    "status": "ok"
   },
   {
    "nome": "S&P 500 Futuro",
    "ticker": "ES=F",
    "detalhe": "EUA · contrato futuro do S&P 500, negocia quase 24 horas.",
-   "valor": 7176.0,
-   "var": -3.5354214276112406,
-   "hora": "2026-11-19T21:45:05+00:00",
+   "valor": 7170.75,
+   "var": -3.605995429493214,
+   "hora": "2026-11-20T02:34:42+00:00",
    "status": "ok"
   },
   {
    "nome": "Petróleo WTI (US$)",
    "ticker": "CL=F",
    "detalhe": "EUA · petróleo West Texas Intermediate, referência americana. Unidade: US$ por barril.",
-   "valor": 83.2,
-   "var": -2.9398040130657943,
-   "hora": "2026-11-19T21:45:03+00:00",
+   "valor": 82.94,
+   "var": -3.2431171255249636,
+   "hora": "2026-11-20T02:34:35+00:00",
    "status": "ok"
   },
   {
@@ -87,7 +87,7 @@
      "detalhe": "EUA · índice de 30 grandes empresas americanas (Dow Jones Industrial Average), pontos.",
      "valor": 49097.06,
      "var": -6.1189446678581945,
-     "hora": "2026-11-19T21:20:01+00:00",
+     "hora": "2026-11-19T21:59:13+00:00",
      "status": "ok"
     },
     {
@@ -96,7 +96,7 @@
      "detalhe": "EUA · índice de quase todas as ações da Nasdaq, com peso forte em tecnologia.",
      "valor": 23879.2,
      "var": -5.8617232691360766,
-     "hora": "2026-11-19T21:55:08+00:00",
+     "hora": "2026-11-19T22:15:59+00:00",
      "status": "ok"
     },
     {
@@ -114,7 +114,7 @@
      "detalhe": "EUA · índice das 500 maiores empresas listadas nos EUA, pontos.",
      "valor": 7175.83,
      "var": -5.4866708814077185,
-     "hora": "2026-11-19T21:20:01+00:00",
+     "hora": "2026-11-19T21:59:18+00:00",
      "status": "ok"
     },
     {
@@ -248,45 +248,45 @@
      "nome": "S&P/ASX 200",
      "ticker": "^AXJO",
      "detalhe": "Austrália · índice das 200 maiores empresas da Bolsa de Sydney (ASX).",
-     "valor": 8730.4,
-     "var": -4.552411772423137,
-     "hora": "2026-11-19T06:00:15+00:00",
+     "valor": 8592.4,
+     "var": -5.392966461870485,
+     "hora": "2026-11-20T02:24:45+00:00",
      "status": "ok"
     },
     {
      "nome": "Shanghai",
      "ticker": "000001.SS",
      "detalhe": "China · índice composto da Bolsa de Xangai.",
-     "valor": 3577.617,
-     "var": -1.5611031729719116,
-     "hora": "2026-11-19T07:00:34+00:00",
+     "valor": 3512.718,
+     "var": -2.494108372633985,
+     "hora": "2026-11-20T02:29:45+00:00",
      "status": "ok"
     },
     {
      "nome": "SZSE Component",
      "ticker": "399001.SZ",
      "detalhe": "China · índice de empresas da Bolsa de Shenzhen.",
-     "valor": 10583.204,
-     "var": -3.515301140782179,
-     "hora": "2026-11-19T08:29:43+00:00",
+     "valor": 10360.452,
+     "var": -3.08984003038133,
+     "hora": "2026-11-20T02:29:49+00:00",
      "status": "ok"
     },
     {
      "nome": "KOSPI",
      "ticker": "^KS11",
      "detalhe": "Coreia do Sul · índice da Bolsa de Seul.",
-     "valor": 5137.89,
-     "var": -3.833994980094435,
-     "hora": "2026-11-19T11:05:40+00:00",
+     "valor": 4912.86,
+     "var": -7.138604260820747,
+     "hora": "2026-11-20T02:24:50+00:00",
      "status": "ok"
     },
     {
      "nome": "Hang Seng",
      "ticker": "^HSI",
      "detalhe": "Hong Kong · índice das maiores empresas da Bolsa de Hong Kong.",
-     "valor": 22841.62,
-     "var": -4.860476788477442,
-     "hora": "2026-11-19T08:08:30+00:00",
+     "valor": 22395.34,
+     "var": -5.255440484651563,
+     "hora": "2026-11-20T02:29:50+00:00",
      "status": "ok"
     },
     {
@@ -302,9 +302,9 @@
      "nome": "Nikkei 225",
      "ticker": "^N225",
      "detalhe": "Japão · índice de 225 empresas da Bolsa de Tóquio.",
-     "valor": 59444.21,
-     "var": -2.777354812171917,
-     "hora": "2026-11-19T06:45:03+00:00",
+     "valor": 56793.34,
+     "var": -4.808218025470811,
+     "hora": "2026-11-20T02:29:50+00:00",
      "status": "ok"
     },
     {
@@ -325,9 +325,9 @@
      "nome": "DX",
      "ticker": "DX-Y.NYB",
      "detalhe": "EUA · índice do dólar contra uma cesta de 6 moedas. Sobe quando o dólar se valoriza.",
-     "valor": 103.938,
-     "var": 0.3746982134234633,
-     "hora": "2026-11-19T21:45:16+00:00",
+     "valor": 103.874,
+     "var": 0.31289232254949617,
+     "hora": "2026-11-20T02:34:51+00:00",
      "status": "ok"
     },
     {
@@ -335,53 +335,53 @@
      "ticker": "EURUSD=X",
      "detalhe": "Zona do euro · quantos euros valem 1 dólar americano.",
      "valor": 0.9114108640174992,
-     "var": 0.7109004739336511,
-     "hora": "2026-11-19T21:54:44+00:00",
+     "var": 0.4830477579292891,
+     "hora": "2026-11-20T02:44:45+00:00",
      "status": "ok"
     },
     {
      "nome": "USD/JPY",
      "ticker": "JPY=X",
      "detalhe": "Japão · quantos ienes valem 1 dólar americano.",
-     "valor": 159.649,
-     "var": -0.1413604378420641,
-     "hora": "2026-11-19T21:55:17+00:00",
+     "valor": 159.224,
+     "var": -0.34797847039680363,
+     "hora": "2026-11-20T02:44:52+00:00",
      "status": "ok"
     },
     {
      "nome": "USD/GBP",
      "ticker": "GBPUSD=X",
      "detalhe": "Reino Unido · quantas libras valem 1 dólar americano.",
-     "valor": 0.7640586797066015,
-     "var": 1.0926039119804498,
-     "hora": "2026-11-19T21:54:44+00:00",
+     "valor": 0.7640003056001222,
+     "var": 0.9702803881121547,
+     "hora": "2026-11-20T02:44:45+00:00",
      "status": "ok"
     },
     {
      "nome": "USD/CAD",
      "ticker": "CAD=X",
      "detalhe": "Canadá · quantos dólares canadenses valem 1 dólar americano.",
-     "valor": 1.434,
-     "var": 0.5539583479419408,
-     "hora": "2026-11-19T21:55:17+00:00",
+     "valor": 1.4336,
+     "var": 0.4695493727661315,
+     "hora": "2026-11-20T02:44:54+00:00",
      "status": "ok"
     },
     {
      "nome": "USD/SEK",
      "ticker": "SEK=X",
      "detalhe": "Suécia · quantas coroas suecas valem 1 dólar americano.",
-     "valor": 10.194,
-     "var": 1.6219233798211663,
-     "hora": "2026-11-19T21:55:19+00:00",
+     "valor": 10.1962,
+     "var": 1.2401576757717248,
+     "hora": "2026-11-20T02:44:53+00:00",
      "status": "ok"
     },
     {
      "nome": "USD/CHF",
      "ticker": "CHF=X",
      "detalhe": "Suíça · quantos francos suíços valem 1 dólar americano.",
-     "valor": 0.8441,
-     "var": 0.98097858595525,
-     "hora": "2026-11-19T21:55:19+00:00",
+     "valor": 0.8432,
+     "var": 0.48861875819330436,
+     "hora": "2026-11-20T02:44:54+00:00",
      "status": "ok"
     }
    ]
@@ -402,45 +402,45 @@
      "nome": "Cobre",
      "ticker": "HG=F",
      "detalhe": "Metal industrial, referência da bolsa de Nova York (COMEX). Unidade: US$ por libra-peso.",
-     "valor": 5.596,
-     "var": -6.694456023343054,
-     "hora": "2026-11-19T21:45:14+00:00",
+     "valor": 5.5165,
+     "var": -8.020008336807006,
+     "hora": "2026-11-20T02:34:54+00:00",
      "status": "ok"
     },
     {
      "nome": "Prata",
      "ticker": "SI=F",
      "detalhe": "Metal precioso, referência da COMEX. Unidade: US$ por onça troy.",
-     "valor": 42.985,
-     "var": -8.122261408571118,
-     "hora": "2026-11-19T21:45:12+00:00",
+     "valor": 41.595,
+     "var": -11.093299134337919,
+     "hora": "2026-11-20T02:34:54+00:00",
      "status": "ok"
     },
     {
      "nome": "Ouro",
      "ticker": "GC=F",
      "detalhe": "Metal precioso, referência da COMEX. Unidade: US$ por onça troy.",
-     "valor": 3628.3,
-     "var": -5.831819361536461,
-     "hora": "2026-11-19T21:45:15+00:00",
+     "valor": 3535.3,
+     "var": -8.24552296911497,
+     "hora": "2026-11-20T02:34:47+00:00",
      "status": "ok"
     },
     {
      "nome": "Petróleo Brent",
      "ticker": "BZ=F",
      "detalhe": "Referência internacional de petróleo, do Mar do Norte. Unidade: US$ por barril.",
-     "valor": 90.16,
-     "var": -2.466464733881435,
-     "hora": "2026-11-19T21:44:14+00:00",
+     "valor": 89.89,
+     "var": -2.758546083946345,
+     "hora": "2026-11-20T02:33:56+00:00",
      "status": "ok"
     },
     {
      "nome": "Petróleo WTI",
      "ticker": "CL=F",
      "detalhe": "Referência americana de petróleo. Unidade: US$ por barril.",
-     "valor": 83.18,
-     "var": -2.9631357909472578,
-     "hora": "2026-11-19T21:45:12+00:00",
+     "valor": 82.92,
+     "var": -3.266448903406438,
+     "hora": "2026-11-20T02:34:46+00:00",
      "status": "ok"
     }
    ]
@@ -452,36 +452,36 @@
      "nome": "S&P 500 Futuro",
      "ticker": "ES=F",
      "detalhe": "EUA · contrato futuro do S&P 500, negocia quase 24 horas.",
-     "valor": 7175.5,
-     "var": -3.542142761123812,
-     "hora": "2026-11-19T21:45:18+00:00",
+     "valor": 7169.5,
+     "var": -3.6227987632746372,
+     "hora": "2026-11-20T02:34:54+00:00",
      "status": "ok"
     },
     {
      "nome": "Nasdaq 100 Futuro",
      "ticker": "NQ=F",
      "detalhe": "EUA · contrato futuro do Nasdaq-100 (100 maiores empresas não financeiras da Nasdaq). Costuma ter valor diferente do Nasdaq Composto.",
-     "valor": 26467.25,
-     "var": -2.994401532019386,
-     "hora": "2026-11-19T21:45:20+00:00",
+     "valor": 26371.5,
+     "var": -3.345336595288495,
+     "hora": "2026-11-20T02:34:54+00:00",
      "status": "ok"
     },
     {
      "nome": "Dow Futuro",
      "ticker": "YM=F",
      "detalhe": "EUA · contrato futuro do Dow Jones (30 grandes empresas).",
-     "valor": 49086.0,
-     "var": -5.000967679504553,
-     "hora": "2026-11-19T21:45:19+00:00",
+     "valor": 49115.0,
+     "var": -4.944842268240757,
+     "hora": "2026-11-20T02:34:41+00:00",
      "status": "ok"
     },
     {
      "nome": "Russell 2000 Futuro",
      "ticker": "RTY=F",
      "detalhe": "EUA · contrato futuro do Russell 2000 (empresas de porte pequeno).",
-     "valor": 2656.1,
-     "var": -3.4636912117467555,
-     "hora": "2026-11-19T21:45:20+00:00",
+     "valor": 2653.5,
+     "var": -3.558188558552011,
+     "hora": "2026-11-20T02:34:55+00:00",
      "status": "ok"
     },
     {
@@ -560,9 +560,9 @@
      "nome": "Bitcoin",
      "ticker": "BTC-USD",
      "detalhe": "Criptomoeda descentralizada. Preço em dólares americanos por unidade.",
-     "valor": 61449.99,
-     "var": -5.903174856491223,
-     "hora": "2026-11-19T21:55:17+00:00",
+     "valor": 61586.67,
+     "var": -5.040677598768117,
+     "hora": "2026-11-20T02:44:46+00:00",
      "status": "ok"
     }
    ]
@@ -575,17 +575,17 @@
      "ticker": "USDNIO=X",
      "detalhe": "Nicarágua · córdoba nicaraguense (NIO). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 36.6243,
-     "var": 2.734688381852135,
-     "hora": "2026-11-19T21:00:13+00:00",
+     "var": 2.4949066403976206,
+     "hora": "2026-11-20T02:00:13+00:00",
      "status": "ok"
     },
     {
      "nome": "DOP",
      "ticker": "USDDOP=X",
      "detalhe": "República Dominicana · peso dominicano (DOP). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 59.83,
-     "var": -0.9928843289756739,
-     "hora": "2026-11-19T20:40:06+00:00",
+     "valor": 59.8,
+     "var": 1.1361752936838831,
+     "hora": "2026-11-20T02:00:18+00:00",
      "status": "ok"
     },
     {
@@ -593,8 +593,8 @@
      "ticker": "USDUYU=X",
      "detalhe": "Uruguai · peso uruguaio (UYU). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 40.609,
-     "var": 3.3731375958089727,
-     "hora": "2026-11-19T17:37:08+00:00",
+     "var": 3.3981423013464296,
+     "hora": "2026-11-20T00:20:52+00:00",
      "status": "ok"
     },
     {
@@ -602,26 +602,26 @@
      "ticker": "USDCRC=X",
      "detalhe": "Costa Rica · colón costarriquenho (CRC). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 441.73,
-     "var": 1.0135196167189386,
-     "hora": "2026-11-19T17:37:08+00:00",
+     "var": 1.5730217197901686,
+     "hora": "2026-11-20T00:20:52+00:00",
      "status": "ok"
     },
     {
      "nome": "PEN",
      "ticker": "USDPEN=X",
      "detalhe": "Peru · sol peruano (PEN). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 3.4459,
-     "var": 4.266392326545443,
-     "hora": "2026-11-19T21:54:31+00:00",
+     "valor": 3.4377,
+     "var": 4.008834563717767,
+     "hora": "2026-11-20T02:37:19+00:00",
      "status": "ok"
     },
     {
      "nome": "JMD",
      "ticker": "USDJMD=X",
      "detalhe": "Jamaica · dólar jamaicano (JMD). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 157.63,
-     "var": 2.7109621129931316,
-     "hora": "2026-11-19T21:00:07+00:00",
+     "valor": 157.49,
+     "var": 2.660476661673461,
+     "hora": "2026-11-20T00:20:52+00:00",
      "status": "ok"
     },
     {
@@ -629,107 +629,107 @@
      "ticker": "USDPYG=X",
      "detalhe": "Paraguai · guarani paraguaio (PYG). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 6211.73,
-     "var": 3.3284794117539374,
-     "hora": "2026-11-19T17:37:08+00:00",
+     "var": 3.221671444532248,
+     "hora": "2026-11-20T00:20:52+00:00",
      "status": "ok"
     },
     {
      "nome": "CZK",
      "ticker": "USDCZK=X",
      "detalhe": "República Tcheca · coroa tcheca (CZK). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 22.271,
-     "var": 1.0490113340411389,
-     "hora": "2026-11-19T21:55:24+00:00",
+     "valor": 22.272,
+     "var": 0.6621319292219319,
+     "hora": "2026-11-20T02:44:59+00:00",
      "status": "ok"
     },
     {
      "nome": "DKK",
      "ticker": "USDDKK=X",
      "detalhe": "Dinamarca · coroa dinamarquesa (DKK). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 6.8125,
-     "var": 0.7110756312459277,
-     "hora": "2026-11-19T21:55:25+00:00",
+     "valor": 6.8132,
+     "var": 0.4837472715474078,
+     "hora": "2026-11-20T02:44:59+00:00",
      "status": "ok"
     },
     {
      "nome": "HUF",
      "ticker": "USDHUF=X",
      "detalhe": "Hungria · florim húngaro (HUF). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 340.009,
-     "var": 2.9827871856457966,
-     "hora": "2026-11-19T21:55:25+00:00",
+     "valor": 340.343,
+     "var": 3.0736476132213086,
+     "hora": "2026-11-20T02:44:59+00:00",
      "status": "ok"
     },
     {
      "nome": "NOK",
      "ticker": "USDNOK=X",
      "detalhe": "Noruega · coroa norueguesa (NOK). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 9.7701,
-     "var": 2.1570923691419663,
-     "hora": "2026-11-19T21:55:25+00:00",
+     "valor": 9.7731,
+     "var": 2.1980779888945756,
+     "hora": "2026-11-20T02:44:59+00:00",
      "status": "ok"
     },
     {
      "nome": "NGN",
      "ticker": "USDNGN=X",
      "detalhe": "Nigéria · naira (NGN). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 1351.32,
-     "var": 0.5259438348521384,
-     "hora": "2026-11-19T21:33:14+00:00",
+     "valor": 1351.04,
+     "var": 0.5934165754577281,
+     "hora": "2026-11-20T00:52:09+00:00",
      "status": "ok"
     },
     {
      "nome": "EGP",
      "ticker": "USDEGP=X",
      "detalhe": "Egito · libra egípcia (EGP). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 53.75,
-     "var": 0.6444992865943355,
-     "hora": "2026-11-19T20:43:57+00:00",
+     "valor": 53.77,
+     "var": 0.554856348869448,
+     "hora": "2026-11-20T00:20:52+00:00",
      "status": "ok"
     },
     {
      "nome": "PHP",
      "ticker": "USDPHP=X",
      "detalhe": "Filipinas · peso filipino (PHP). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 63.68,
-     "var": 1.127521041765922,
-     "hora": "2026-11-19T21:25:05+00:00",
+     "valor": 63.873,
+     "var": 0.02035703100531361,
+     "hora": "2026-11-20T02:44:43+00:00",
      "status": "ok"
     },
     {
      "nome": "ILS",
      "ticker": "USDILS=X",
      "detalhe": "Israel · novo shekel israelense (ILS). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 3.3111,
-     "var": 3.737702863587944,
-     "hora": "2026-11-19T21:55:02+00:00",
+     "valor": 3.3161,
+     "var": 3.1157685251407052,
+     "hora": "2026-11-20T02:44:01+00:00",
      "status": "ok"
     },
     {
      "nome": "TWD",
      "ticker": "USDTWD=X",
      "detalhe": "Taiwan · novo dólar taiwanês (TWD). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 33.024,
-     "var": 0.2580527642005004,
-     "hora": "2026-11-19T21:55:26+00:00",
+     "valor": 32.983,
+     "var": 0.3242447469917531,
+     "hora": "2026-11-20T02:45:00+00:00",
      "status": "ok"
     },
     {
      "nome": "HKD",
      "ticker": "USDHKD=X",
      "detalhe": "Hong Kong · dólar de Hong Kong (HKD). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 7.8424,
-     "var": -0.024221409176095055,
-     "hora": "2026-11-19T21:55:22+00:00",
+     "valor": 7.8414,
+     "var": -0.048437261000355836,
+     "hora": "2026-11-20T02:45:01+00:00",
      "status": "ok"
     },
     {
      "nome": "NZD",
      "ticker": "USDNZD=X",
      "detalhe": "Nova Zelândia · dólar neozelandês (NZD). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 1.8232,
-     "var": 1.0923204879401016,
-     "hora": "2026-11-19T21:53:44+00:00",
+     "valor": 1.8221,
+     "var": 0.7297252473879245,
+     "hora": "2026-11-20T02:43:45+00:00",
      "status": "ok"
     }
    ]
@@ -742,17 +742,17 @@
      "ticker": "USDARS=X",
      "detalhe": "Argentina · peso argentino (ARS). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 1564.5,
-     "var": 1.2455631049131277,
-     "hora": "2026-11-19T19:37:12+00:00",
+     "var": 1.2007015288259648,
+     "hora": "2026-11-20T00:20:52+00:00",
      "status": "ok"
     },
     {
      "nome": "AUD",
      "ticker": "USDAUD=X",
      "detalhe": "Austrália · dólar australiano (AUD). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 1.5013,
-     "var": 2.191818119937383,
-     "hora": "2026-11-19T21:53:44+00:00",
+     "valor": 1.5026,
+     "var": 1.8642803877703118,
+     "hora": "2026-11-20T02:43:45+00:00",
      "status": "ok"
     },
     {
@@ -760,35 +760,35 @@
      "ticker": "USDBRL=X",
      "detalhe": "Brasil · real (BRL). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 5.9346,
-     "var": 5.210346233623486,
-     "hora": "2026-11-19T21:08:01+00:00",
+     "var": 4.762745374947053,
+     "hora": "2026-11-20T00:20:52+00:00",
      "status": "ok"
     },
     {
      "nome": "CLP",
      "ticker": "USDCLP=X",
      "detalhe": "Chile · peso chileno (CLP). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 1016.03,
-     "var": 2.194707355588843,
-     "hora": "2026-11-19T21:26:01+00:00",
+     "valor": 1015.45,
+     "var": 4.141091616470338,
+     "hora": "2026-11-19T23:00:13+00:00",
      "status": "ok"
     },
     {
      "nome": "CNY",
      "ticker": "USDCNY=X",
      "detalhe": "China · yuan chinês (CNY). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 6.6665,
-     "var": -0.05846725833532629,
-     "hora": "2026-11-19T20:27:47+00:00",
+     "valor": 6.6708,
+     "var": -0.002998051266678292,
+     "hora": "2026-11-20T02:45:02+00:00",
      "status": "ok"
     },
     {
      "nome": "COP",
      "ticker": "USDCOP=X",
      "detalhe": "Colômbia · peso colombiano (COP). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 3417.49,
-     "var": 3.096058355405651,
-     "hora": "2026-11-19T21:28:24+00:00",
+     "valor": 3426.74,
+     "var": 3.2704281211010766,
+     "hora": "2026-11-20T00:20:52+00:00",
      "status": "ok"
     },
     {
@@ -796,35 +796,35 @@
      "ticker": "USDINR=X",
      "detalhe": "Índia · rúpia indiana (INR). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 93.28,
-     "var": -0.8016266491410518,
-     "hora": "2026-11-19T21:37:34+00:00",
+     "var": -1.0165750546488606,
+     "hora": "2026-11-20T00:20:52+00:00",
      "status": "ok"
     },
     {
      "nome": "KRW",
      "ticker": "USDKRW=X",
      "detalhe": "Coreia do Sul · won sul-coreano (KRW). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 1334.72,
-     "var": 0.07047639040922427,
-     "hora": "2026-11-19T21:55:28+00:00",
+     "valor": 1339.08,
+     "var": 0.43727732983311896,
+     "hora": "2026-11-20T02:45:00+00:00",
      "status": "ok"
     },
     {
      "nome": "MXN",
      "ticker": "USDMXN=X",
      "detalhe": "México · peso mexicano (MXN). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 19.08,
-     "var": 2.6303049862836714,
-     "hora": "2026-11-19T21:55:30+00:00",
+     "valor": 19.117,
+     "var": 3.191225210247328,
+     "hora": "2026-11-20T02:45:04+00:00",
      "status": "ok"
     },
     {
      "nome": "RUB",
      "ticker": "USDRUB=X",
      "detalhe": "Rússia · rublo russo (RUB). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 82.17,
-     "var": -0.7596710105194582,
-     "hora": "2026-11-19T21:34:40+00:00",
+     "valor": 82.035,
+     "var": -0.9434133135626688,
+     "hora": "2026-11-20T00:20:52+00:00",
      "status": "ok"
     },
     {
@@ -832,26 +832,26 @@
      "ticker": "USDSAR=X",
      "detalhe": "Arábia Saudita · riyal saudita (SAR). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 3.751,
-     "var": 1.9820015769011157,
-     "hora": "2026-11-19T21:35:09+00:00",
+     "var": -0.03198123767390593,
+     "hora": "2026-11-20T00:20:52+00:00",
      "status": "ok"
     },
     {
      "nome": "TRY",
      "ticker": "USDTRY=X",
      "detalhe": "Turquia · lira turca (TRY). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 50.477,
-     "var": 0.3880123861667917,
-     "hora": "2026-11-19T21:55:30+00:00",
+     "valor": 50.5164,
+     "var": 0.3498191309944554,
+     "hora": "2026-11-20T02:45:05+00:00",
      "status": "ok"
     },
     {
      "nome": "ZAR",
      "ticker": "USDZAR=X",
      "detalhe": "África do Sul · rand sul-africano (ZAR). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 17.4943,
-     "var": 4.391230666412049,
-     "hora": "2026-11-19T21:55:30+00:00",
+     "valor": 17.5314,
+     "var": 3.577969726689445,
+     "hora": "2026-11-20T02:45:04+00:00",
      "status": "ok"
     }
    ]
