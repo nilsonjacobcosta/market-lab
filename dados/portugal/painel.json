@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-11-20T23:24+00:00",
+ "gerado_em": "2026-11-20T23:28+00:00",
  "precos_coletados_em": "2026-11-20T23:24+00:00",
  "autor": "market-lab — projeto pessoal de estudo de nilsonjacobcosta (GitHub)",
  "aviso": "Material educativo, não é recomendação de investimento.",
@@ -2163,9 +2163,9 @@
    "setor": "Turismo e imobiliário",
    "isin": "PTESO0AM0000",
    "grupo": "observacao",
-   "cadastro_proventos": "pendente",
+   "cadastro_proventos": "completo",
    "faixa_liquidez": "baixa",
-   "cadastro_completo": false,
+   "cadastro_completo": true,
    "preco": 2.7,
    "data_preco": "2026-11-20",
    "variacao_12m_pct": -32.5,
@@ -2173,33 +2173,53 @@
     "2021": 0,
     "2022": 0,
     "2023": 0,
-    "2024": 0,
+    "2024": 0.1676,
     "2025": 0
    },
    "estado_por_ano": {
     "2021": [],
     "2022": [],
     "2023": [],
-    "2024": [],
+    "2024": [
+     "coincide"
+    ],
     "2025": []
    },
    "proventos_12m": 0,
-   "dpa_medio": 0.0,
+   "dpa_medio": 0.03352,
    "dpa_aparado": 0.0,
    "dy_12m_pct": 0.0,
-   "dy_medio_pct": 0.0,
-   "teto": null,
+   "dy_medio_pct": 1.24,
+   "teto": 0.524,
    "teto_robusto": null,
-   "faixa_teto": null,
-   "margem_pct": null,
-   "status": "em_cadastro",
-   "status_rotulo": "Em cadastro: proventos por conferir",
+   "faixa_teto": [
+    0.4532,
+    0.6211
+   ],
+   "margem_pct": -80.6,
+   "status": "acima",
+   "status_rotulo": "Acima do teto calculado",
    "liquidez_mediana_12m_eur": 0,
    "pct_dias_sem_negocio_12m": 62.0,
-   "pct_eventos_oficiais": null,
+   "pct_eventos_oficiais": 0,
    "tem_scrip": false,
-   "eventos": [],
+   "eventos": [
+    {
+     "data_pagamento": "2024-06-18",
+     "valor_bruto": 0.1676,
+     "tipo": "dinheiro",
+     "exercicio": "2023",
+     "estado": "coincide",
+     "fonte_url": "https://rendementbourse.com/eson-estoril-sol-n/dividendes",
+     "nota": "valor por ação do relatório ESEF de 2025 (DividendsRecognisedAsDistributionsToOwnersPerShare = 0,1676 em 2024; 0,168 arredondado na proposta de 2023, total 2,0 M€) e data de pagamento de agregador (18/06/2024); aviso de pagamento não localizado; sem dividendos por ação nos relatórios de 2021 a 2023 e 2025"
+    }
+   ],
    "alertas": [
+    {
+     "nivel": "atencao",
+     "codigo": "anos_sem_proventos",
+     "texto": "Sem proventos em 2021, 2022, 2023, 2025: a média de 5 anos fica mais baixa e o teto também."
+    },
     {
      "nivel": "info",
      "codigo": "fora_nucleo",
@@ -2209,16 +2229,6 @@
      "nivel": "atencao",
      "codigo": "negociacao_intermitente",
      "texto": "Negociação intermitente: 62.0% dos dias sem negócio em 12 meses; o último preço pode não corresponder a um negócio real."
-    },
-    {
-     "nivel": "info",
-     "codigo": "cadastro_pendente",
-     "texto": "Proventos ainda não conferidos no cadastro oficial: sem preço-teto até estarem conferidos."
-    },
-    {
-     "nivel": "atencao",
-     "codigo": "evento_nao_cadastrado",
-     "texto": "A fonte de cotações mostra provento sem registo oficial no cadastro: 2024-06-18 (0.1676)."
     },
     {
      "nivel": "info",
@@ -2329,8 +2339,8 @@
      {
       "id": "dividendos",
       "rotulo": "Dividendos sem cortes relevantes",
-      "estado": "nd",
-      "detalhe": "cadastro de proventos ainda pendente"
+      "estado": "nao",
+      "detalhe": "pagou em 1 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0,168 → 0,168 €"
      },
      {
       "id": "divida",
@@ -2352,7 +2362,7 @@
      }
     ],
     "atendidos": 2,
-    "avaliaveis": 3,
+    "avaliaveis": 4,
     "anos": [
      {
       "ano": 2020,
@@ -8906,6 +8916,13 @@
     "rotulo": "Em cadastro: proventos por conferir",
     "preco": 2.7,
     "teto": null
+   },
+   {
+    "data": "2026-11-20",
+    "status": "acima",
+    "rotulo": "Acima do teto calculado",
+    "preco": 2.7,
+    "teto": 0.524
    }
   ],
   "FCP": [

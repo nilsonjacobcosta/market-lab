@@ -220,6 +220,13 @@
    "rotulo": "Em cadastro: proventos por conferir",
    "preco": 2.7,
    "teto": null
+  },
+  {
+   "data": "2026-11-20",
+   "status": "acima",
+   "rotulo": "Acima do teto calculado",
+   "preco": 2.7,
+   "teto": 0.524
   }
  ],
  "FCP": [
