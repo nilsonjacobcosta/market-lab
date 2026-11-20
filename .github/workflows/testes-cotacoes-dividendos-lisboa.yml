@@ -1,0 +1,25 @@
+name: Testes da página Cotações Dividendos Lisboa
+
+on:
+  pull_request:
+    paths:
+      - "carteiras/cotacoes-dividendos-lisboa/**"
+      - "dados/portugal/painel.json"
+      - "tests/ordem_lisboa.test.js"
+      - ".github/workflows/testes-cotacoes-dividendos-lisboa.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  testar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Testes da ordem e dos dados (node)
+        run: node --test tests/ordem_lisboa.test.js

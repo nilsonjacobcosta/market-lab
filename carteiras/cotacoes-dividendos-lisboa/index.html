@@ -322,7 +322,8 @@ function desenharPainel() {
   const ref8 = dbr(ref);
   let resumo = `<b>${abaixo} de ${total}</b> papéis do grupo ${esc(g.nome)} estão abaixo do preço-teto robusto no preço de ${esc(ref8)}.`;
   if (abaixo === 0) resumo += " Nenhum papel deste grupo passa pelos critérios abaixo do teto; a lista traz os demais, por liquidez.";
-  if (conferir) resumo += ` Outros ${conferir} marcados "conferir" aparecem depois, com dado a verificar.`;
+  if (conferir) resumo += ` ${conferir} ${conferir === 1 ? "papel marcado" : "papéis marcados"} "conferir" ${conferir === 1 ? "aparece" : "aparecem"} depois, com dado a verificar.`;
+  if (d.todos.fora.length) resumo += ` ${d.todos.fora.length} ${d.todos.fora.length === 1 ? "papel ficou" : "papéis ficaram"} fora dos critérios (veja "Fora dos critérios").`;
   if (estado.modo === "iniciante" && itens.length < total) resumo += ` O modo Iniciante mostra ${itens.length} de ${total} papéis (os primeiros na ordem de leitura); não aparecer aqui não significa pior nem melhor. O modo Avançado traz todos.`;
   if (estado.modo === "iniciante" && estado.ordem === "alfabetica") resumo += " A ordem alfabética muda só a ordem dos papéis mostrados, não quais aparecem.";
   if (!total) resumo = `Nenhum papel de ${esc(g.nome)} passa pelos critérios no preço de ${esc(ref8)}; veja "Fora dos critérios".`;
