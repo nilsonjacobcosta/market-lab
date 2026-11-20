@@ -27,3 +27,7 @@ Quatro conjuntos no modo Iniciante (Câmbio; Ações, com EUA e Brasil em cartõ
 
 ## Testes
 `python3 -m unittest tests/test_tempo_real.py` (JSON e HTML, sem rede; workflow `testes-tempo-real.yml`, no PR e uma vez por mês). Playwright não foi adotado: os widgets são iframes de terceiros, então um teste simulado só validaria o nosso código de montagem, já coberto pelo teste manual com `teste-simbolos.html`.
+
+## Tema claro e escuro
+
+A página segue a aparência do sistema (`prefers-color-scheme`), como a página inicial: claro por padrão, escuro quando o sistema está escuro. Os widgets do TradingView usam o mesmo tema e são montados de novo se o tema mudar. Paleta e contraste iguais aos da página Cotações do BESST (todas as razões ≥ 4,5:1). Os testes impedem cores fixas fora das variáveis.
