@@ -101,21 +101,32 @@ def coletar(tickers):
         if not res or not res.get("timestamp"):
             continue
         ts, q = res["timestamp"], res["indicators"]["quote"][0]
+        # Datas no fuso da B3 (correção de 20/11/2026): converter o horário UTC do Yahoo pelo gmtoffset do pregão
+        # (-10800 s = UTC-3). Em UTC, negócios/leilões após 21h de Brasília caíam no dia seguinte.
+        meta = res.get("meta") or {}
+        off = int(meta.get("gmtoffset", -10800) or -10800)
         cl, vol = q["close"], q["volume"]
         soma, n, last, last_d = {}, {}, None, None
         for x, c in zip(ts, cl):
             if c is None:
                 continue
-            d = datetime.fromtimestamp(x, timezone.utc)
+            d = datetime.fromtimestamp(x + off, timezone.utc)
             y = str(d.year)
             soma[y] = soma.get(y, 0) + c
             n[y] = n.get(y, 0) + 1
             last, last_d = c, d.strftime("%Y-%m-%d")
+        # O Yahoo às vezes tira da série diária o pregão mais recente durante a madrugada (consolidação) e o
+        # mantém só em meta.regularMarketPrice/Time; usamos o meta quando ele é mais novo que a última barra.
+        rmp, rmt = meta.get("regularMarketPrice"), meta.get("regularMarketTime")
+        if rmp and rmt:
+            dm = datetime.fromtimestamp(int(rmt) + off, timezone.utc).strftime("%Y-%m-%d")
+            if last_d is None or dm > last_d:
+                last, last_d = rmp, dm
         pm = {y: round(soma[y] / n[y], 2) for y in soma}
         ev = res.get("events", {}) or {}
         dy, d12 = {}, 0.0
         for e in (ev.get("dividends") or {}).values():
-            d = datetime.fromtimestamp(e["date"], timezone.utc).strftime("%Y-%m-%d")
+            d = datetime.fromtimestamp(e["date"] + off, timezone.utc).strftime("%Y-%m-%d")
             dy[d[:4]] = round(dy.get(d[:4], 0) + e["amount"], 6)
             if d > corte:
                 d12 += e["amount"]
@@ -127,6 +138,27 @@ def coletar(tickers):
                   round(sum(fin) / len(fin) / 1000) if fin else 0]
         time.sleep(0.4)
     return out
+
+
+def sem_regressao(novos, arq_anterior):
+    """Nunca voltar no tempo (correção de 20/11/2026): se a coleta trouxer, para um papel, preço de data anterior
+    à que já estava publicada (falha temporária da fonte), mantém o preço e a data anteriores."""
+    try:
+        ant = json.loads(Path(arq_anterior).read_text())
+    except Exception:
+        return novos
+    mantidos = []
+    for t, r in novos.items():
+        a = ant.get(t)
+        if a and a[1] and r and (r[1] is None or a[1] > r[1]):
+            r[0], r[1] = a[0], a[1]
+            mantidos.append(t)
+    for t, a in ant.items():
+        if t not in novos and a:
+            novos[t] = a
+    if mantidos:
+        print(f"sem_regressao: {len(mantidos)} papéis mantiveram o preço anterior (fonte devolveu data mais antiga)")
+    return novos
 
 
 def calcular(univ, brutos, estatais, ano_ref):
@@ -403,6 +435,7 @@ def main():
         brutos = coletar(tickers)
         if len(brutos) < 50:
             sys.exit(f"Coleta incompleta ({len(brutos)} papéis); painel mantido.")
+        brutos = sem_regressao(brutos, BRUTOS / "ultimo.json")
         BRUTOS.mkdir(parents=True, exist_ok=True)
         (BRUTOS / "ultimo.json").write_text(json.dumps(brutos, ensure_ascii=False))
     else:
@@ -415,7 +448,9 @@ def main():
     situacoes = json.loads(arq_sit.read_text()) if arq_sit.exists() else {}
     agora = datetime.now(timezone(timedelta(hours=-3)))
     datas = [r[1] for r in brutos.values() if r and r[1]]
-    ref = max(datas) if datas else agora.strftime("%Y-%m-%d")
+    hoje_brt = agora.strftime("%Y-%m-%d")
+    datas = [d for d in datas if d <= hoje_brt]  # nenhuma data "do futuro" no fuso da B3
+    ref = max(datas) if datas else hoje_brt
     linhas = calcular(univ, brutos, estatais, int(ref[:4]))
     linhas = qualidade(linhas, brutos, int(ref[:4]), situacoes)
     # fase do preço (juízes do 1º pregão): durante o pregão (10h-18h, mais 15 min de atraso da fonte) é intradiário

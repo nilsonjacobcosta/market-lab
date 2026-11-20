@@ -26,6 +26,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Testes da coleta (bloqueiam a publicação)
+        run: python3 -m unittest tests/test_coleta.py -v
       - name: Coletar preços e proventos e recalcular
         run: python3 scripts/besst_painel.py --coletar
       - name: Publicar se houve mudança
