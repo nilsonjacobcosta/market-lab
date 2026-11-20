@@ -204,10 +204,12 @@ def montar_perfil(l, serie):
         pa = l.get("proventos_por_ano") or {}
         v = [pa[a] for a in sorted(pa)]
         pagos = [x for x in v if x > 0]
-        quedas = sum(1 for x, y in zip(pagos, pagos[1:]) if y < 0.9 * x)
-        ok = len(pagos) >= 4 and quedas == 0 and pagos[-1] >= pagos[0]
+        # um ano só falha se ficar abaixo de 75% da média dos anos pagos anteriores (tolera picos extraordinários)
+        fracos = [(i, y) for i, y in enumerate(pagos) if i > 0 and y < 0.75 * (sum(pagos[:i]) / i)]
+        ok = len(pagos) >= 4 and not fracos
+        var = f"; do primeiro ao último ano pago {pagos[0]:.3g} → {pagos[-1]:.3g} €" if pagos else ""
         c.append(("dividendos", "Dividendos estáveis ou crescentes", "sim" if ok else "nao",
-                  f"pagou em {len(pagos)} de {len(v)} anos; {quedas} queda(s) superior(es) a 10%; último {'≥' if pagos and pagos[-1] >= pagos[0] else '<'} primeiro" if pagos else "sem proventos nos anos analisados"))
+                  f"pagou em {len(pagos)} de {len(v)} anos; {len(fracos)} ano(s) abaixo de 75% da média dos anteriores{var}" if pagos else "sem proventos nos anos analisados"))
     else:
         c.append(("dividendos", "Dividendos estáveis ou crescentes", "nd", "cadastro de proventos ainda pendente"))
     if banco:

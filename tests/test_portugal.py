@@ -284,6 +284,14 @@ class Perfil(unittest.TestCase):
         est = {c["id"]: c["estado"] for c in r["criterios"]}
         self.assertEqual((est["lucros"], est["dividendos"], est["roic"]), ("nao", "nao", "nao"))
 
+    def test_pico_extraordinario_nao_reprova_mas_corte_sim(self):
+        pico = {"2021": .29, "2022": .79, "2023": .55, "2024": .65, "2025": .59}
+        est = {c["id"]: c["estado"] for c in pt.montar_perfil(self.l(proventos_por_ano=pico), self.anos(5.0, 12.0))["criterios"]}
+        self.assertEqual(est["dividendos"], "sim")
+        corte = {"2021": .2, "2022": .2, "2023": .2, "2024": .1, "2025": .1}
+        est = {c["id"]: c["estado"] for c in pt.montar_perfil(self.l(proventos_por_ano=corte), self.anos(5.0, 12.0))["criterios"]}
+        self.assertEqual(est["dividendos"], "nao")
+
     def test_sem_cadastro_ou_banco_nao_inventa(self):
         r = pt.montar_perfil(self.l(cadastro_completo=False, qualidade={"regra": "Bancos"}), self.anos(5.0, None))
         est = {c["id"]: c["estado"] for c in r["criterios"]}
