@@ -7,13 +7,23 @@
 <meta name="description" content="Painel educativo com onze conjuntos de gráficos: ações, juros, inflação, liquidez, risco, câmbio, commodities e Bitcoin. Material educativo, não é recomendação de investimento.">
 <style>
 :root{
-  --bg:#0b0d10; --card:#14181d; --card-2:#1a2027; --line:#28313b; --txt:#e6edf3; --txt-2:#b6c2cf; --mut:#93a1af;
-  --acc:#4fd1c5; --warn:#f0b429; --warn-bg:#2b2210; --grid:#222a33; --eixo:#9aa7b4;
-  --s1:#56B4E9; --s2:#E69F00; --s3:#CC79A7; --s4:#F0E442;
+  --bg:#f2f4f7; --card:#ffffff; --card-2:#e9edf2; --line:#cbd5e0; --txt:#152131; --txt-2:#3d4b5c; --mut:#566577;
+  --acc:#0b6e66; --on-acc:#ffffff; --warn:#7a4f00; --on-warn:#ffffff; --warn-bg:#fff3d6; --warn-bd:#d9bb70; --lnk:#1a56b8;
+  --pop-bg:#ffffff; --pop-bd:#aab8c6; --sombra:rgba(21,33,49,.20);
+  --am-bg:#7a1f1f; --am-tx:#ffffff; --am-bd:#ffb4b4;
+  --grid:#d9e0e8; --eixo:#566577;
+  --s1:#0072B2; --s2:#B35900; --s3:#A33E7E; --s4:#8A7B00;
   --f:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   --f-mono:ui-monospace,Menlo,Consolas,monospace;
-  color-scheme:dark;
+  color-scheme:light;
 }
+@media (prefers-color-scheme: dark){:root{
+  --bg:#0b0d10; --card:#14181d; --card-2:#1a2027; --line:#28313b; --txt:#e6edf3; --txt-2:#b6c2cf; --mut:#93a1af;
+  --acc:#4fd1c5; --on-acc:#04201d; --warn:#f0b429; --on-warn:#1b1400; --warn-bg:#2b2210; --warn-bd:#5a4514; --lnk:#7fb0ff;
+  --pop-bg:#202833; --pop-bd:#3a4654; --sombra:rgba(0,0,0,.55);
+  --grid:#222a33; --eixo:#9aa7b4;
+  --s1:#56B4E9; --s2:#E69F00; --s3:#CC79A7; --s4:#F0E442;
+  color-scheme:dark}}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.5 var(--f)}
@@ -26,9 +36,9 @@ p{margin:0;color:var(--txt-2)}
 .eyebrow{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--mut)}
 .eyebrow a{color:inherit}
 .status{font-size:.84rem;color:var(--mut);margin-top:8px}
-.status.alerta{color:var(--warn);background:var(--warn-bg);border:1px solid #5a4514;border-radius:6px;padding:8px 10px}
+.status.alerta{color:var(--warn);background:var(--warn-bg);border:1px solid var(--warn-bd);border-radius:6px;padding:8px 10px}
 .aviso{margin-top:10px;border-left:3px solid var(--warn);background:var(--card);padding:8px 12px;font-size:.88rem;color:var(--txt);border-radius:0 6px 6px 0}
-.amostra{background:#7a1f1f;color:#fff;font-weight:700;letter-spacing:.06em;text-align:center;padding:10px 12px;border-radius:6px;border:2px dashed #ffb4b4;font-size:.95rem}
+.amostra{background:var(--am-bg);color:var(--am-tx);font-weight:700;letter-spacing:.06em;text-align:center;padding:10px 12px;border-radius:6px;border:2px dashed var(--am-bd);font-size:.95rem}
 .painel{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
 .controles{display:flex;flex-direction:column;gap:12px}
 .lbl{font-size:.78rem;color:var(--mut);display:block;margin-bottom:4px}
@@ -40,7 +50,7 @@ p{margin:0;color:var(--txt-2)}
 button:focus-visible,select:focus-visible,summary:focus-visible,a:focus-visible,.plot:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
 .tabs{display:flex;gap:6px;overflow-x:auto;padding:3px 3px 8px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
 .tabs button{flex:none;font:inherit;font-size:.86rem;color:var(--txt-2);background:var(--card-2);border:1px solid var(--line);border-radius:999px;padding:7px 13px;cursor:pointer;min-height:38px;white-space:nowrap}
-.tabs button[aria-selected="true"]{background:var(--acc);border-color:var(--acc);color:#04201d;font-weight:700}
+.tabs button[aria-selected="true"]{background:var(--acc);border-color:var(--acc);color:var(--on-acc);font-weight:700}
 .tabs button .n{font-family:var(--f-mono);font-size:.72rem;opacity:.8;margin-right:5px}
 .sel{display:none}
 .sel select{font:inherit;width:100%;background:var(--card-2);color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:9px 10px;min-height:42px}
@@ -69,7 +79,7 @@ button.termo[aria-expanded="true"] .qm{color:var(--bg);border-color:var(--bg)}
 .leitura{font-size:.8rem;color:var(--txt);background:var(--card-2);border-radius:6px;padding:6px 9px;min-height:2.4em;font-variant-numeric:tabular-nums}
 .leitura.vazia{color:var(--mut)}
 .fontes{font-size:.76rem;color:var(--mut);margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:2px}
-.tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#1b1400;background:var(--warn);border-radius:4px;padding:0 6px;margin-left:6px}
+.tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--on-warn);background:var(--warn);border-radius:4px;padding:0 6px;margin-left:6px}
 .nota{font-size:.78rem;color:var(--mut)}
 .nota.alerta{color:var(--warn)}
 .txt{display:flex;flex-direction:column;gap:8px;font-size:.88rem}
@@ -90,7 +100,7 @@ caption{text-align:left;color:var(--mut);font-size:.76rem;padding-bottom:4px}
 .tradingview-widget-container__widget{height:calc(100% - 32px);width:100%}
 .tradingview-widget-copyright{font-size:13px;line-height:32px;text-align:center;color:var(--txt-2);height:32px;overflow:hidden}
 .tradingview-widget-copyright a{text-decoration:none}
-.tradingview-widget-copyright .blue-text{color:#7fb0ff}
+.tradingview-widget-copyright .blue-text{color:var(--lnk)}
 .tradingview-widget-copyright .trademark{color:var(--txt-2)}
 .carregando{position:absolute;left:0;right:0;top:40%;text-align:center;font-size:.82rem;color:var(--mut);pointer-events:none}
 .reserva{border:1px dashed var(--warn);background:var(--warn-bg);border-radius:8px;padding:10px 12px;font-size:.86rem;color:var(--txt)}
@@ -101,7 +111,7 @@ caption{text-align:left;color:var(--mut);font-size:.76rem;padding-bottom:4px}
 .gloss dt{font-weight:600}
 .gloss dd{margin:2px 0 0;font-size:.86rem;color:var(--txt-2)}
 @media(max-width:699px){.gloss dl{grid-template-columns:minmax(0,1fr)}}
-#pop{position:fixed;z-index:60;max-width:min(320px,calc(100vw - 16px));background:#202833;color:var(--txt);border:1px solid #3a4654;border-radius:8px;padding:10px 12px;font-size:.84rem;line-height:1.45;box-shadow:0 10px 26px rgba(0,0,0,.55)}
+#pop{position:fixed;z-index:60;max-width:min(320px,calc(100vw - 16px));background:var(--pop-bg);color:var(--txt);border:1px solid var(--pop-bd);border-radius:8px;padding:10px 12px;font-size:.84rem;line-height:1.45;box-shadow:0 10px 26px var(--sombra)}
 #pop b{display:block;margin-bottom:3px}
 #pop .fechar{display:block;margin-top:6px;font-size:.72rem;color:var(--mut)}
 footer{font-size:.8rem;color:var(--mut);display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--line);padding-top:14px}
@@ -166,11 +176,12 @@ const DADOS_URL = LOCAL ? "./_amostra/mercados.json"
 const CONJ_URL = "./conjuntos.json";
 const MODOS = ["iniciante", "avancado"];
 const JANELAS = [["1a", "1 ano", 1], ["5a", "5 anos", 5], ["10a", "10 anos", 10], ["tudo", "Tudo", null]];
-const CORES = ["#56B4E9", "#E69F00", "#CC79A7", "#F0E442"];
+const corVar = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const temaSistema = () => { try { return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; } catch (e) { return "dark"; } };
 const TRACOS = [[], [7, 4], [2, 3], [9, 3, 2, 3]];
 const TRACO_NOME = ["linha contínua", "linha tracejada", "linha pontilhada", "traço e ponto"];
-const MM = [{n: 10, rot: "Média móvel de 10 semanas (aprox. 50 dias)", cor: "#F0E442", traco: [2, 3], nome: "linha pontilhada"},
-            {n: 40, rot: "Média móvel de 40 semanas (aprox. 200 dias)", cor: "#CC79A7", traco: [7, 4], nome: "linha tracejada"}];
+const MM = [{n: 10, rot: "Média móvel de 10 semanas (aprox. 50 dias)", cv: "--s4", traco: [2, 3], nome: "linha pontilhada"},
+            {n: 40, rot: "Média móvel de 40 semanas (aprox. 200 dias)", cv: "--s3", traco: [7, 4], nome: "linha tracejada"}];
 const MESES = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
 const TV_BASE = "https://s3.tradingview.com/external-embedding/";
 const LIM_INICIANTE = 4, LIM_TOTAL = 6, LIM_SERIES = 4, ESPERA_TV_MS = 8000;
@@ -339,7 +350,7 @@ function criarGrafico(host, g, ids) {
   const vis = series.filter(cabe), fora = series.filter(x => !cabe(x));
   const unidades = [...new Set(vis.map(x => x.s.unidade || ""))];
   const unidade = unidades.length > 1 ? `${g.unidade_eixo} (${unidades.join("; ")})` : u0;
-  vis.forEach((x, i) => { x.casas = casasSerie(x.p); x.cor = CORES[i]; x.traco = TRACOS[i]; x.tracoNome = TRACO_NOME[i]; });
+  vis.forEach((x, i) => { x.casas = casasSerie(x.p); x.cor = corVar("--s" + (i + 1)); x.traco = TRACOS[i]; x.tracoNome = TRACO_NOME[i]; });
   const precoUnico = !!g.preco && vis.length === 1;
   const podeMM = avanc && precoUnico && vis[0].s.periodicidade === "semanal";
   let janela = avanc ? (estado.janela[g.id] || g.janela_padrao || "10a") : (g.janela_padrao || "10a");
@@ -372,7 +383,7 @@ function criarGrafico(host, g, ids) {
     const anos = (JANELAS.find(j => j[0] === janela) || JANELAS[2])[2];
     const tIni = anos ? Math.max(tIniTudo, tFim - anos * 365.25 * 864e5) : tIniTudo;
     const linhas = vis.map(x => ({...x, q: recorte(x.p, tIni, tFim), nome: x.s.nome || x.id, larg: 1.8}));
-    if (comMM) MM.forEach(m => linhas.push({id: "mm" + m.n, nome: m.rot, cor: m.cor, traco: m.traco, tracoNome: m.nome, larg: 1.2, mm: true, casas: vis[0].casas,
+    if (comMM) MM.forEach(m => linhas.push({id: "mm" + m.n, nome: m.rot, cor: corVar(m.cv), traco: m.traco, tracoNome: m.nome, larg: 1.2, mm: true, casas: vis[0].casas,
       q: recorte(mediaMovel(vis[0].p, m.n), tIni, tFim)}));
     let min = Infinity, max = -Infinity;
     linhas.forEach(l => l.q.forEach(([, v]) => { if (v < min) min = v; if (v > max) max = v; }));
@@ -387,7 +398,7 @@ function criarGrafico(host, g, ids) {
     const dpr = Math.max(1, window.devicePixelRatio || 1);
     if (canvas.width !== Math.round(cssW * dpr) || canvas.height !== Math.round(cssH * dpr)) { canvas.width = Math.round(cssW * dpr); canvas.height = Math.round(cssH * dpr); }
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, cssW, cssH);
-    const cs = getComputedStyle(document.documentElement), cGrade = cs.getPropertyValue("--grid").trim(), cEixo = cs.getPropertyValue("--eixo").trim(), cTxt = cs.getPropertyValue("--txt").trim();
+    const cs = getComputedStyle(document.documentElement), cGrade = cs.getPropertyValue("--grid").trim(), cEixo = cs.getPropertyValue("--eixo").trim(), cTxt = cs.getPropertyValue("--txt").trim(), cFundo = cs.getPropertyValue("--bg").trim();
     ctx.font = `11px ${cs.getPropertyValue("--f").trim()}`;
     // domínio vertical com folga
     let lo, hi;
@@ -452,7 +463,7 @@ function criarGrafico(host, g, ids) {
       const x = X(cursor);
       ctx.strokeStyle = cTxt; ctx.globalAlpha = 0.6; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(x, mTopo); ctx.lineTo(x, mTopo + ph); ctx.stroke(); ctx.globalAlpha = 1;
       V.linhas.forEach(l => { const pt = maisProximo(l.q, cursor); if (!pt) return;
-        ctx.fillStyle = l.cor; ctx.strokeStyle = "#0b0d10"; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(X(pt[0]), Y(pt[1]), 3.6, 0, 6.2832); ctx.fill(); ctx.stroke(); });
+        ctx.fillStyle = l.cor; ctx.strokeStyle = cFundo; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(X(pt[0]), Y(pt[1]), 3.6, 0, 6.2832); ctx.fill(); ctx.stroke(); });
     }
   }
   function halvNaVista() {
@@ -555,10 +566,10 @@ function montarTV(host, g, aoFalhar) {
     <div class="tradingview-widget-copyright"><a href="${esc(urlSimbolo(g.simbolo_tv))}" rel="noopener nofollow" target="_blank"><span class="blue-text">Cotação de ${esc(codigo)}</span></a><span class="trademark"> by TradingView</span></div>`;
   const aguarde = document.createElement("div"); aguarde.className = "carregando"; aguarde.textContent = "Carregando widget do TradingView…";
   const cfg = avanc
-    ? {autosize: true, symbol: g.simbolo_tv, interval: "D", timezone: "America/Sao_Paulo", theme: "dark", style: "1", locale: "br",
+    ? {autosize: true, symbol: g.simbolo_tv, interval: "D", timezone: "America/Sao_Paulo", theme: temaSistema(), style: "1", locale: "br",
        allow_symbol_change: false, hide_side_toolbar: true, save_image: false, calendar: false,
        studies: ["MASimple@tv-basicstudies", "RSI@tv-basicstudies"], support_host: "https://www.tradingview.com"}
-    : {symbol: g.simbolo_tv, width: "100%", height: "100%", locale: "br", dateRange: "12M", colorTheme: "dark", isTransparent: true,
+    : {symbol: g.simbolo_tv, width: "100%", height: "100%", locale: "br", dateRange: "12M", colorTheme: temaSistema(), isTransparent: true,
        autosize: true, largeChartUrl: "", chartOnly: false, noTimeScale: false};
   const s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
   s.src = TV_BASE + (avanc ? "embed-widget-advanced-chart.js" : "embed-widget-mini-symbol-overview.js");
@@ -687,6 +698,11 @@ document.addEventListener("click", (e) => {
 document.addEventListener("keydown", (e) => { if (e.key === "Escape" && popBtn) { const b = popBtn; fecharPop(); b.focus(); } });
 addEventListener("scroll", () => { if (Date.now() - popEm > 400) fecharPop(); }, {passive: true});
 $("sel-conj").addEventListener("change", (e) => irPara(e.target.value, null));
+try {
+  const mqTema = window.matchMedia("(prefers-color-scheme: dark)");
+  const aoTrocarTema = () => { if (estado.cfg && estado.dados) desenharPainel(); };
+  if (mqTema.addEventListener) mqTema.addEventListener("change", aoTrocarTema); else if (mqTema.addListener) mqTema.addListener(aoTrocarTema);
+} catch (e) { /* sem matchMedia: segue o tema inicial */ }
 $("tabs").addEventListener("keydown", (e) => {
   if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(e.key) || !estado.cfg) return;
   const ids = estado.cfg.conjuntos.map(c => c.id); let i = ids.indexOf(estado.conjunto);
