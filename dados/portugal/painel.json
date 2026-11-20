@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-11-20T23:11+00:00",
+ "gerado_em": "2026-11-20T23:23+00:00",
  "precos_coletados_em": "2026-11-20T23:11+00:00",
  "autor": "market-lab — projeto pessoal de estudo de nilsonjacobcosta (GitHub)",
  "aviso": "Material educativo, não é recomendação de investimento.",
@@ -283,15 +283,21 @@
      },
      {
       "id": "dividendos",
-      "rotulo": "Dividendos estáveis ou crescentes",
+      "rotulo": "Dividendos sem cortes relevantes",
       "estado": "sim",
-      "detalhe": "pagou em 5 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0.25 → 0.3 €"
+      "detalhe": "pagou em 5 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0,25 → 0,3 €"
+     },
+     {
+      "id": "evolucao",
+      "rotulo": "Evolução do dividendo (informativo)",
+      "estado": "info",
+      "detalhe": "0,25 → 0,3 € do primeiro ao último ano pago (+20%)"
      },
      {
       "id": "divida",
       "rotulo": "Baixo endividamento",
       "estado": "nao",
-      "detalhe": "dívida líquida/EBITDA 4.4x em 2025 (limite de estudo: 2x)"
+      "detalhe": "dívida líquida/EBITDA 4,4x em 2025 (limite de estudo: 2x)"
      },
      {
       "id": "roic",
@@ -355,7 +361,8 @@
     "fonte": "https://altri.pt/pt/investidores/informacao-acionista",
     "data_ref": "sem data na fonte",
     "confianca": "media",
-    "free_float_pct": null
+    "free_float_pct": null,
+    "free_float_origem": null
    }
   },
   {
@@ -550,9 +557,15 @@
      },
      {
       "id": "dividendos",
-      "rotulo": "Dividendos estáveis ou crescentes",
+      "rotulo": "Dividendos sem cortes relevantes",
       "estado": "nao",
-      "detalhe": "pagou em 3 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0.0009 → 0.03 €"
+      "detalhe": "pagou em 3 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0,0009 → 0,03 €"
+     },
+     {
+      "id": "evolucao",
+      "rotulo": "Evolução do dividendo (informativo)",
+      "estado": "info",
+      "detalhe": "0,0009 → 0,03 € do primeiro ao último ano pago (+3233%)"
      },
      {
       "id": "divida",
@@ -622,7 +635,8 @@
     "fonte": "https://eco.sapo.pt/2026/10/21/sonangol-abre-a-porta-a-reforcar-no-bcp-se-fosun-sair/",
     "data_ref": "2026-10-21",
     "confianca": "media",
-    "free_float_pct": null
+    "free_float_pct": null,
+    "free_float_origem": null
    }
   },
   {
@@ -771,7 +785,13 @@
      "nota": "1.ª parcela do ano; dia aproximado"
     }
    ],
-   "alertas": [],
+   "alertas": [
+    {
+     "nivel": "info",
+     "codigo": "controlo_fonte_antiga",
+     "texto": "A fonte do controlo acionista tem data de referência de 2025-07-28 (mais de 12 meses); confirmar com o relatório de governo mais recente."
+    }
+   ],
    "historico_preco_mensal": {
     "2021-12": 10.9991,
     "2022-01": 10.6057,
@@ -872,21 +892,27 @@
      },
      {
       "id": "dividendos",
-      "rotulo": "Dividendos estáveis ou crescentes",
+      "rotulo": "Dividendos sem cortes relevantes",
       "estado": "sim",
-      "detalhe": "pagou em 5 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0.27 → 0.32 €"
+      "detalhe": "pagou em 5 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0,27 → 0,32 €"
+     },
+     {
+      "id": "evolucao",
+      "rotulo": "Evolução do dividendo (informativo)",
+      "estado": "info",
+      "detalhe": "0,27 → 0,32 € do primeiro ao último ano pago (+19%)"
      },
      {
       "id": "divida",
       "rotulo": "Baixo endividamento",
       "estado": "sim",
-      "detalhe": "dívida líquida/EBITDA 0.5x em 2025 (limite de estudo: 2x)"
+      "detalhe": "dívida líquida/EBITDA 0,5x em 2025 (limite de estudo: 2x)"
      },
      {
       "id": "roic",
       "rotulo": "ROIC alto (média ≥ 10%)",
       "estado": "nao",
-      "detalhe": "média de 6 anos: 9.9% (de 7.1% a 12.5%); ROIC aproximado"
+      "detalhe": "média de 6 anos: 9,9% (de 7,1% a 12,5%); ROIC aproximado"
      },
      {
       "id": "vantagem",
@@ -944,7 +970,8 @@
     "fonte": "https://www.amorim.com/xms/files/Investidores/Outros_Relatorios/RC_PT_1S2025_Corticeira_Amorim.pdf",
     "data_ref": "2025-07-28",
     "confianca": "alta",
-    "free_float_pct": null
+    "free_float_pct": null,
+    "free_float_origem": null
    }
   },
   {
@@ -1158,9 +1185,15 @@
      },
      {
       "id": "dividendos",
-      "rotulo": "Dividendos estáveis ou crescentes",
+      "rotulo": "Dividendos sem cortes relevantes",
       "estado": "sim",
-      "detalhe": "pagou em 5 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0.085 → 0.17 €"
+      "detalhe": "pagou em 5 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0,085 → 0,17 €"
+     },
+     {
+      "id": "evolucao",
+      "rotulo": "Evolução do dividendo (informativo)",
+      "estado": "info",
+      "detalhe": "0,085 → 0,17 € do primeiro ao último ano pago (+100%)"
      },
      {
       "id": "divida",
@@ -1172,7 +1205,7 @@
       "id": "roic",
       "rotulo": "ROIC alto (média ≥ 10%)",
       "estado": "sim",
-      "detalhe": "média de 3 anos: 31.6% (de 21.7% a 44.8%); ROIC aproximado"
+      "detalhe": "média de 3 anos: 31,6% (de 21,7% a 44,8%); ROIC aproximado"
      },
      {
       "id": "vantagem",
@@ -1230,7 +1263,8 @@
     "fonte": "https://www.ctt.pt/grupo-ctt/investidores/estrutura-acionista",
     "data_ref": "2026-10-28",
     "confianca": "alta",
-    "free_float_pct": null
+    "free_float_pct": null,
+    "free_float_origem": null
    }
   },
   {
@@ -1445,9 +1479,15 @@
      },
      {
       "id": "dividendos",
-      "rotulo": "Dividendos estáveis ou crescentes",
+      "rotulo": "Dividendos sem cortes relevantes",
       "estado": "sim",
-      "detalhe": "pagou em 5 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0.19 → 0.2 €"
+      "detalhe": "pagou em 5 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0,19 → 0,2 €"
+     },
+     {
+      "id": "evolucao",
+      "rotulo": "Evolução do dividendo (informativo)",
+      "estado": "info",
+      "detalhe": "0,19 → 0,2 € do primeiro ao último ano pago (+5%)"
      },
      {
       "id": "divida",
@@ -1517,7 +1557,8 @@
     "fonte": "https://edp.com/sites/default/files/document/2026-05/RAI_2025_Relat%C3%B3riodeGovernodaSociedade.pdf",
     "data_ref": "2025-12-31",
     "confianca": "alta",
-    "free_float_pct": null
+    "free_float_pct": null,
+    "free_float_origem": null
    }
   },
   {
@@ -1742,21 +1783,27 @@
      },
      {
       "id": "dividendos",
-      "rotulo": "Dividendos estáveis ou crescentes",
+      "rotulo": "Dividendos sem cortes relevantes",
       "estado": "nao",
-      "detalhe": "pagou em 5 de 5 anos; 1 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0.08 → 0.084 €"
+      "detalhe": "pagou em 5 de 5 anos; 1 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0,08 → 0,084 €"
+     },
+     {
+      "id": "evolucao",
+      "rotulo": "Evolução do dividendo (informativo)",
+      "estado": "info",
+      "detalhe": "0,08 → 0,084 € do primeiro ao último ano pago (+5%)"
      },
      {
       "id": "divida",
       "rotulo": "Baixo endividamento",
       "estado": "nao",
-      "detalhe": "dívida líquida/EBITDA 4.2x em 2025 (limite de estudo: 2x)"
+      "detalhe": "dívida líquida/EBITDA 4,2x em 2025 (limite de estudo: 2x)"
      },
      {
       "id": "roic",
       "rotulo": "ROIC alto (média ≥ 10%)",
       "estado": "nao",
-      "detalhe": "média de 3 anos: 5.5% (de 3.5% a 6.5%); ROIC aproximado"
+      "detalhe": "média de 3 anos: 5,5% (de 3,5% a 6,5%); ROIC aproximado"
      },
      {
       "id": "vantagem",
@@ -1808,7 +1855,8 @@
     "fonte": "https://www.edpr-investors.com/en/share/shareholder-structure",
     "data_ref": "2026-06-30",
     "confianca": "alta",
-    "free_float_pct": null
+    "free_float_pct": null,
+    "free_float_origem": null
    }
   },
   {
@@ -2027,9 +2075,15 @@
      },
      {
       "id": "dividendos",
-      "rotulo": "Dividendos estáveis ou crescentes",
+      "rotulo": "Dividendos sem cortes relevantes",
       "estado": "sim",
-      "detalhe": "pagou em 4 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0.069 → 0.15 €"
+      "detalhe": "pagou em 4 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0,069 → 0,15 €"
+     },
+     {
+      "id": "evolucao",
+      "rotulo": "Evolução do dividendo (informativo)",
+      "estado": "info",
+      "detalhe": "0,069 → 0,15 € do primeiro ao último ano pago (+117%)"
      },
      {
       "id": "divida",
@@ -2041,7 +2095,7 @@
       "id": "roic",
       "rotulo": "ROIC alto (média ≥ 10%)",
       "estado": "sim",
-      "detalhe": "média de 3 anos: 68.2% (de 59.1% a 74.0%); ROIC aproximado"
+      "detalhe": "média de 3 anos: 68,2% (de 59,1% a 74,0%); ROIC aproximado"
      },
      {
       "id": "vantagem",
@@ -2099,7 +2153,8 @@
     "fonte": "https://www.mota-engil.com/en/investors/mota-engil-share/",
     "data_ref": "2025-12-31",
     "confianca": "alta",
-    "free_float_pct": null
+    "free_float_pct": null,
+    "free_float_origem": null
    }
   },
   {
@@ -2168,7 +2223,7 @@
     {
      "nivel": "info",
      "codigo": "free_float_baixo",
-     "texto": "Free float de cerca de 9.0% (abaixo de 15%): pouca oferta de ações em bolsa, o que agrava a liquidez e o risco de OPA de exclusão. Ver a nota do controlo acionista."
+     "texto": "Free float de cerca de 9,0% (calculado por subtração das participações qualificadas), abaixo de 15%: pouca oferta de ações em bolsa, o que agrava a liquidez e o risco de OPA de exclusão. Ver a nota do controlo acionista."
     }
    ],
    "historico_preco_mensal": {
@@ -2273,7 +2328,7 @@
      },
      {
       "id": "dividendos",
-      "rotulo": "Dividendos estáveis ou crescentes",
+      "rotulo": "Dividendos sem cortes relevantes",
       "estado": "nd",
       "detalhe": "cadastro de proventos ainda pendente"
      },
@@ -2287,7 +2342,7 @@
       "id": "roic",
       "rotulo": "ROIC alto (média ≥ 10%)",
       "estado": "sim",
-      "detalhe": "média de 6 anos: 34.1% (de -84.0% a 192.5%); ROIC aproximado"
+      "detalhe": "média de 6 anos: 34,1% (de -84,0% a 192,5%); ROIC aproximado"
      },
      {
       "id": "vantagem",
@@ -2345,7 +2400,8 @@
     "fonte": "https://executivedigest.sapo.pt/?p=813716",
     "data_ref": "2026-09-15",
     "confianca": "media",
-    "free_float_pct": 9.0
+    "free_float_pct": 9.0,
+    "free_float_origem": "calculado"
    }
   },
   {
@@ -2405,6 +2461,16 @@
      "nivel": "info",
      "codigo": "cadastro_pendente",
      "texto": "Proventos ainda não conferidos no cadastro oficial: sem preço-teto até estarem conferidos."
+    },
+    {
+     "nivel": "info",
+     "codigo": "free_float_baixo",
+     "texto": "Free float de cerca de 11,1% (calculado por subtração das participações qualificadas), abaixo de 15%: pouca oferta de ações em bolsa, o que agrava a liquidez e o risco de OPA de exclusão. Ver a nota do controlo acionista."
+    },
+    {
+     "nivel": "info",
+     "codigo": "controlo_fonte_antiga",
+     "texto": "A fonte do controlo acionista tem data de referência de 2024-11-16 (mais de 12 meses); confirmar com o relatório de governo mais recente."
     }
    ],
    "historico_preco_mensal": {
@@ -2509,7 +2575,7 @@
      },
      {
       "id": "dividendos",
-      "rotulo": "Dividendos estáveis ou crescentes",
+      "rotulo": "Dividendos sem cortes relevantes",
       "estado": "nd",
       "detalhe": "cadastro de proventos ainda pendente"
      },
@@ -2565,11 +2631,12 @@
     "categoria": "privada",
     "estrutura": "controlo_maioritario",
     "controlador": "Futebol Clube do Porto (clube), 74,83% imputável",
-    "nota": "Prospeto das obrigações FC Porto SAD 2024-2027 (16/11/2024): FC Porto 74,59% direta e 74,832% com votos imputáveis; António Luís Alves Oliveira 7,341% do capital; Francisco Alves Ferreira de Oliveira (Olivedesportos) 6,676% do capital. Documento com cerca de um ano; não foi lido relatório de governo mais recente.",
+    "nota": "Prospeto das obrigações FC Porto SAD 2024-2027 (16/11/2024): FC Porto 74,59% direta e 74,832% com votos imputáveis; António Luís Alves Oliveira 7,341% do capital; Francisco Alves Ferreira de Oliveira (Olivedesportos) 6,676% do capital. Documento com cerca de um ano; não foi lido relatório de governo mais recente. Free float calculado: 100% − 74,832% − 7,341% − 6,676% (mistura votos e capital).",
     "fonte": "https://creditoagricola.pt/-/media/475a933ec430459b933945c289a30ae2.pdf",
     "data_ref": "2024-11-16",
     "confianca": "media",
-    "free_float_pct": null
+    "free_float_pct": 11.1,
+    "free_float_origem": "calculado"
    }
   },
   {
@@ -2799,9 +2866,15 @@
      },
      {
       "id": "dividendos",
-      "rotulo": "Dividendos estáveis ou crescentes",
+      "rotulo": "Dividendos sem cortes relevantes",
       "estado": "sim",
-      "detalhe": "pagou em 5 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0.0332 → 0.176 €"
+      "detalhe": "pagou em 5 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0,0332 → 0,176 €"
+     },
+     {
+      "id": "evolucao",
+      "rotulo": "Evolução do dividendo (informativo)",
+      "estado": "info",
+      "detalhe": "0,0332 → 0,176 € do primeiro ao último ano pago (+429%)"
      },
      {
       "id": "divida",
@@ -2853,7 +2926,8 @@
     "fonte": "https://admin.flexdeal.pt/uploads/investorAgenda-202.pdf",
     "data_ref": "2025-12-31",
     "confianca": "alta",
-    "free_float_pct": 18.6
+    "free_float_pct": 18.6,
+    "free_float_origem": "calculado"
    }
   },
   {
@@ -3119,9 +3193,15 @@
      },
      {
       "id": "dividendos",
-      "rotulo": "Dividendos estáveis ou crescentes",
+      "rotulo": "Dividendos sem cortes relevantes",
       "estado": "sim",
-      "detalhe": "pagou em 5 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0.6 → 0.65 €"
+      "detalhe": "pagou em 5 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0,6 → 0,65 €"
+     },
+     {
+      "id": "evolucao",
+      "rotulo": "Evolução do dividendo (informativo)",
+      "estado": "info",
+      "detalhe": "0,6 → 0,65 € do primeiro ao último ano pago (+8%)"
      },
      {
       "id": "divida",
@@ -3191,7 +3271,8 @@
     "fonte": "https://galp.com/corp/en/investors/information-to-shareholders/shareholding-structure",
     "data_ref": "sem data na fonte (consultado em 2026-11-04)",
     "confianca": "alta",
-    "free_float_pct": null
+    "free_float_pct": null,
+    "free_float_origem": null
    }
   },
   {
@@ -3251,6 +3332,11 @@
      "nivel": "atencao",
      "codigo": "evento_nao_cadastrado",
      "texto": "A fonte de cotações mostra provento sem registo oficial no cadastro: 2023-06-23 (0.0172); 2024-06-25 (0.034497); 2025-06-25 (0.043121); 2026-06-24 (0.066695)."
+    },
+    {
+     "nivel": "info",
+     "codigo": "controlo_fonte_antiga",
+     "texto": "A fonte do controlo acionista tem data de referência de 2023-12-31 (mais de 12 meses); confirmar com o relatório de governo mais recente."
     }
    ],
    "historico_preco_mensal": {
@@ -3353,7 +3439,7 @@
      },
      {
       "id": "dividendos",
-      "rotulo": "Dividendos estáveis ou crescentes",
+      "rotulo": "Dividendos sem cortes relevantes",
       "estado": "nd",
       "detalhe": "cadastro de proventos ainda pendente"
      },
@@ -3361,13 +3447,13 @@
       "id": "divida",
       "rotulo": "Baixo endividamento",
       "estado": "sim",
-      "detalhe": "dívida líquida/EBITDA 1.4x em 2025 (limite de estudo: 2x)"
+      "detalhe": "dívida líquida/EBITDA 1,4x em 2025 (limite de estudo: 2x)"
      },
      {
       "id": "roic",
       "rotulo": "ROIC alto (média ≥ 10%)",
       "estado": "nao",
-      "detalhe": "média de 6 anos: 6.2% (de 3.5% a 8.8%); ROIC aproximado"
+      "detalhe": "média de 6 anos: 6,2% (de 3,5% a 8,8%); ROIC aproximado"
      },
      {
       "id": "vantagem",
@@ -3425,7 +3511,8 @@
     "fonte": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2024/05/09/Connect_relatorio-e-contasfv-sgps2023.pdf",
     "data_ref": "2023-12-31",
     "confianca": "media",
-    "free_float_pct": null
+    "free_float_pct": null,
+    "free_float_origem": null
    }
   },
   {
@@ -3532,6 +3619,11 @@
      "nivel": "atencao",
      "codigo": "anos_sem_proventos",
      "texto": "Sem proventos em 2021: a média de 5 anos fica mais baixa e o teto também."
+    },
+    {
+     "nivel": "info",
+     "codigo": "controlo_fonte_antiga",
+     "texto": "A fonte do controlo acionista tem data de referência de 2024-12-31 (mais de 12 meses); confirmar com o relatório de governo mais recente."
     }
    ],
    "historico_preco_mensal": {
@@ -3635,21 +3727,27 @@
      },
      {
       "id": "dividendos",
-      "rotulo": "Dividendos estáveis ou crescentes",
+      "rotulo": "Dividendos sem cortes relevantes",
       "estado": "sim",
-      "detalhe": "pagou em 4 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0.135 → 0.7 €"
+      "detalhe": "pagou em 4 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0,135 → 0,7 €"
+     },
+     {
+      "id": "evolucao",
+      "rotulo": "Evolução do dividendo (informativo)",
+      "estado": "info",
+      "detalhe": "0,135 → 0,7 € do primeiro ao último ano pago (+419%)"
      },
      {
       "id": "divida",
       "rotulo": "Baixo endividamento",
       "estado": "sim",
-      "detalhe": "dívida líquida/EBITDA 1.3x em 2025 (limite de estudo: 2x)"
+      "detalhe": "dívida líquida/EBITDA 1,3x em 2025 (limite de estudo: 2x)"
      },
      {
       "id": "roic",
       "rotulo": "ROIC alto (média ≥ 10%)",
       "estado": "nao",
-      "detalhe": "média de 6 anos: 3.7% (de -6.4% a 10.5%); ROIC aproximado"
+      "detalhe": "média de 6 anos: 3,7% (de -6,4% a 10,5%); ROIC aproximado"
      },
      {
       "id": "vantagem",
@@ -3707,7 +3805,8 @@
     "fonte": "https://www.ibersol.pt/investidores/relatorio-contas/2025/3_Relatorio_Governo_30_4_2025.pdf",
     "data_ref": "2024-12-31",
     "confianca": "alta",
-    "free_float_pct": null
+    "free_float_pct": null,
+    "free_float_origem": null
    }
   },
   {
@@ -3865,7 +3964,7 @@
      },
      {
       "id": "dividendos",
-      "rotulo": "Dividendos estáveis ou crescentes",
+      "rotulo": "Dividendos sem cortes relevantes",
       "estado": "nd",
       "detalhe": "cadastro de proventos ainda pendente"
      },
@@ -3879,7 +3978,7 @@
       "id": "roic",
       "rotulo": "ROIC alto (média ≥ 10%)",
       "estado": "sim",
-      "detalhe": "média de 5 anos: 10.5% (de 5.7% a 14.1%); ROIC aproximado"
+      "detalhe": "média de 5 anos: 10,5% (de 5,7% a 14,1%); ROIC aproximado"
      },
      {
       "id": "vantagem",
@@ -3931,7 +4030,8 @@
     "fonte": "https://www.emarketstorage.it/sites/default/files/comunicati/2026-03/20260310_178563.pdf",
     "data_ref": "2026-03-10",
     "confianca": "media",
-    "free_float_pct": 33.328
+    "free_float_pct": 33.328,
+    "free_float_origem": "fonte"
    }
   },
   {
@@ -4149,21 +4249,27 @@
      },
      {
       "id": "dividendos",
-      "rotulo": "Dividendos estáveis ou crescentes",
+      "rotulo": "Dividendos sem cortes relevantes",
       "estado": "sim",
-      "detalhe": "pagou em 5 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0.288 → 0.59 €"
+      "detalhe": "pagou em 5 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0,288 → 0,59 €"
+     },
+     {
+      "id": "evolucao",
+      "rotulo": "Evolução do dividendo (informativo)",
+      "estado": "info",
+      "detalhe": "0,288 → 0,59 € do primeiro ao último ano pago (+105%)"
      },
      {
       "id": "divida",
       "rotulo": "Baixo endividamento",
       "estado": "sim",
-      "detalhe": "dívida líquida/EBITDA 1.4x em 2025 (limite de estudo: 2x)"
+      "detalhe": "dívida líquida/EBITDA 1,4x em 2025 (limite de estudo: 2x)"
      },
      {
       "id": "roic",
       "rotulo": "ROIC alto (média ≥ 10%)",
       "estado": "sim",
-      "detalhe": "média de 6 anos: 14.7% (de 11.2% a 18.4%); ROIC aproximado"
+      "detalhe": "média de 6 anos: 14,7% (de 11,2% a 18,4%); ROIC aproximado"
      },
      {
       "id": "vantagem",
@@ -4221,7 +4327,8 @@
     "fonte": "https://reports.jeronimomartins.com/annual-report/2025/corporate-governance/part-i/section-a/subsection-ii/point-7.html",
     "data_ref": "2025-12-31",
     "confianca": "alta",
-    "free_float_pct": null
+    "free_float_pct": null,
+    "free_float_origem": null
    }
   },
   {
@@ -4304,7 +4411,7 @@
     {
      "nivel": "info",
      "codigo": "free_float_baixo",
-     "texto": "Free float de cerca de 14.2% (abaixo de 15%): pouca oferta de ações em bolsa, o que agrava a liquidez e o risco de OPA de exclusão. Ver a nota do controlo acionista."
+     "texto": "Free float de cerca de 14,2% (calculado por subtração das participações qualificadas), abaixo de 15%: pouca oferta de ações em bolsa, o que agrava a liquidez e o risco de OPA de exclusão. Ver a nota do controlo acionista."
     }
    ],
    "historico_preco_mensal": {
@@ -4405,21 +4512,21 @@
      },
      {
       "id": "dividendos",
-      "rotulo": "Dividendos estáveis ou crescentes",
+      "rotulo": "Dividendos sem cortes relevantes",
       "estado": "nao",
-      "detalhe": "pagou em 1 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0.12 → 0.12 €"
+      "detalhe": "pagou em 1 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0,12 → 0,12 €"
      },
      {
       "id": "divida",
       "rotulo": "Baixo endividamento",
       "estado": "nao",
-      "detalhe": "dívida líquida/EBITDA 2.8x em 2025 (limite de estudo: 2x)"
+      "detalhe": "dívida líquida/EBITDA 2,8x em 2025 (limite de estudo: 2x)"
      },
      {
       "id": "roic",
       "rotulo": "ROIC alto (média ≥ 10%)",
       "estado": "sim",
-      "detalhe": "média de 6 anos: 22.4% (de 10.1% a 34.2%); ROIC aproximado"
+      "detalhe": "média de 6 anos: 22,4% (de 10,1% a 34,2%); ROIC aproximado"
      },
      {
       "id": "vantagem",
@@ -4477,7 +4584,8 @@
     "fonte": "https://eco.sapo.pt/2026/04/27/irmaos-martins-concretizam-venda-de-18-da-martifer-a-visabeira/",
     "data_ref": "2026-06-05",
     "confianca": "media",
-    "free_float_pct": 14.17
+    "free_float_pct": 14.17,
+    "free_float_origem": "calculado"
    }
   },
   {
@@ -4602,6 +4710,16 @@
      "nivel": "atencao",
      "codigo": "queda_proventos",
      "texto": "Proventos de 2025 caíram mais de 30% face a 2024."
+    },
+    {
+     "nivel": "info",
+     "codigo": "free_float_baixo",
+     "texto": "Free float de cerca de 6,8% (calculado por subtração das participações qualificadas), abaixo de 15%: pouca oferta de ações em bolsa, o que agrava a liquidez e o risco de OPA de exclusão. Ver a nota do controlo acionista."
+    },
+    {
+     "nivel": "info",
+     "codigo": "controlo_fonte_antiga",
+     "texto": "A fonte do controlo acionista tem data de referência de 2025-06-30 (mais de 12 meses); confirmar com o relatório de governo mais recente."
     }
    ],
    "historico_preco_mensal": {
@@ -4704,21 +4822,27 @@
      },
      {
       "id": "dividendos",
-      "rotulo": "Dividendos estáveis ou crescentes",
+      "rotulo": "Dividendos sem cortes relevantes",
       "estado": "nao",
-      "detalhe": "pagou em 3 de 5 anos; 1 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0.118 → 0.042 €"
+      "detalhe": "pagou em 3 de 5 anos; 1 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0,118 → 0,042 €"
+     },
+     {
+      "id": "evolucao",
+      "rotulo": "Evolução do dividendo (informativo)",
+      "estado": "info",
+      "detalhe": "0,118 → 0,042 € do primeiro ao último ano pago (-64%)"
      },
      {
       "id": "divida",
       "rotulo": "Baixo endividamento",
       "estado": "nao",
-      "detalhe": "dívida líquida/EBITDA 2.0x em 2025 (limite de estudo: 2x)"
+      "detalhe": "dívida líquida/EBITDA 2,0x em 2025 (limite de estudo: 2x)"
      },
      {
       "id": "roic",
       "rotulo": "ROIC alto (média ≥ 10%)",
       "estado": "nao",
-      "detalhe": "média de 6 anos: -0.3% (de -6.7% a 8.9%); ROIC aproximado"
+      "detalhe": "média de 6 anos: -0,3% (de -6,7% a 8,9%); ROIC aproximado"
      },
      {
       "id": "vantagem",
@@ -4772,11 +4896,12 @@
     "categoria": "privada",
     "estrutura": "acionistas_de_referencia",
     "controlador": "Sem controlo maioritário: Pluris Investments (Mário Ferreira) 37,05%, com Triun, BIZ Partners, CIN e Zenithodissey",
-    "nota": "Relatório de gestão do 1.º semestre de 2025, referência 30/06/2025: Pluris Investments 37,05%; Triun SGPS 23%; BIZ Partners 11,97%; CIN 11,20%; Zenithodissey 10%; soma 93,22%. Não foi achado o relatório de governo de 2025 nem alterações posteriores; não há indício de OPA ou exclusão de bolsa.",
+    "nota": "Relatório de gestão do 1.º semestre de 2025, referência 30/06/2025: Pluris Investments 37,05%; Triun SGPS 23%; BIZ Partners 11,97%; CIN 11,20%; Zenithodissey 10%; soma 93,22%. Não foi achado o relatório de governo de 2025 nem alterações posteriores; não há indício de OPA ou exclusão de bolsa. Free float calculado: 100% − 93,22% de qualificados (no máximo; ações próprias não descontadas).",
     "fonte": "https://mediacapital.pt/wp-content/uploads/2025/11/relatorio-de-gestao_MEDIA-CAPITAL-RESULTADOS-1s25_v2.pdf",
     "data_ref": "2025-06-30",
     "confianca": "media",
-    "free_float_pct": null
+    "free_float_pct": 6.8,
+    "free_float_origem": "calculado"
    }
   },
   {
@@ -5017,9 +5142,15 @@
      },
      {
       "id": "dividendos",
-      "rotulo": "Dividendos estáveis ou crescentes",
+      "rotulo": "Dividendos sem cortes relevantes",
       "estado": "nao",
-      "detalhe": "pagou em 3 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0.42 → 1.35 €"
+      "detalhe": "pagou em 3 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0,42 → 1,35 €"
+     },
+     {
+      "id": "evolucao",
+      "rotulo": "Evolução do dividendo (informativo)",
+      "estado": "info",
+      "detalhe": "0,42 → 1,35 € do primeiro ao último ano pago (+221%)"
      },
      {
       "id": "divida",
@@ -5031,7 +5162,7 @@
       "id": "roic",
       "rotulo": "ROIC alto (média ≥ 10%)",
       "estado": "sim",
-      "detalhe": "média de 6 anos: 19.7% (de 13.2% a 30.0%); ROIC aproximado"
+      "detalhe": "média de 6 anos: 19,7% (de 13,2% a 30,0%); ROIC aproximado"
      },
      {
       "id": "vantagem",
@@ -5089,7 +5220,8 @@
     "fonte": "https://content.novabase.com/storage/uploads/2026-06-report-and-accounts.pdf",
     "data_ref": "2026-06-30",
     "confianca": "media",
-    "free_float_pct": null
+    "free_float_pct": null,
+    "free_float_origem": null
    }
   },
   {
@@ -5202,7 +5334,13 @@
      "nota": "dia aproximado"
     }
    ],
-   "alertas": [],
+   "alertas": [
+    {
+     "nivel": "info",
+     "codigo": "controlo_fonte_antiga",
+     "texto": "A fonte do controlo acionista tem data de referência de 2025-04-29 (mais de 12 meses); confirmar com o relatório de governo mais recente."
+    }
+   ],
    "historico_preco_mensal": {
     "2021-12": 3.3865,
     "2022-01": 3.4493,
@@ -5303,21 +5441,27 @@
      },
      {
       "id": "dividendos",
-      "rotulo": "Dividendos estáveis ou crescentes",
+      "rotulo": "Dividendos sem cortes relevantes",
       "estado": "sim",
-      "detalhe": "pagou em 5 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0.278 → 0.4 €"
+      "detalhe": "pagou em 5 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0,278 → 0,4 €"
+     },
+     {
+      "id": "evolucao",
+      "rotulo": "Evolução do dividendo (informativo)",
+      "estado": "info",
+      "detalhe": "0,278 → 0,4 € do primeiro ao último ano pago (+44%)"
      },
      {
       "id": "divida",
       "rotulo": "Baixo endividamento",
       "estado": "nao",
-      "detalhe": "dívida líquida/EBITDA 2.1x em 2025 (limite de estudo: 2x)"
+      "detalhe": "dívida líquida/EBITDA 2,1x em 2025 (limite de estudo: 2x)"
      },
      {
       "id": "roic",
       "rotulo": "ROIC alto (média ≥ 10%)",
       "estado": "nao",
-      "detalhe": "média de 6 anos: 8.7% (de 4.9% a 12.5%); ROIC aproximado"
+      "detalhe": "média de 6 anos: 8,7% (de 4,9% a 12,5%); ROIC aproximado"
      },
      {
       "id": "vantagem",
@@ -5375,7 +5519,8 @@
     "fonte": "https://www.nos.pt/pt/institucional/investidores/mercado-de-capitais/estrutura-acionista",
     "data_ref": "2025-04-29",
     "confianca": "media",
-    "free_float_pct": null
+    "free_float_pct": null,
+    "free_float_origem": null
    }
   },
   {
@@ -5520,6 +5665,11 @@
      "nivel": "atencao",
      "codigo": "proventos_a_conferir",
      "texto": "Proventos de 2026 ainda sem documento oficial no cadastro."
+    },
+    {
+     "nivel": "info",
+     "codigo": "controlo_fonte_antiga",
+     "texto": "A fonte do controlo acionista tem data de referência de 2023-12-31 (mais de 12 meses); confirmar com o relatório de governo mais recente."
     }
    ],
    "historico_preco_mensal": {
@@ -5620,21 +5770,27 @@
      },
      {
       "id": "dividendos",
-      "rotulo": "Dividendos estáveis ou crescentes",
+      "rotulo": "Dividendos sem cortes relevantes",
       "estado": "sim",
-      "detalhe": "pagou em 5 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0.21 → 0.246 €"
+      "detalhe": "pagou em 5 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0,21 → 0,246 €"
+     },
+     {
+      "id": "evolucao",
+      "rotulo": "Evolução do dividendo (informativo)",
+      "estado": "info",
+      "detalhe": "0,21 → 0,246 € do primeiro ao último ano pago (+17%)"
      },
      {
       "id": "divida",
       "rotulo": "Baixo endividamento",
       "estado": "nao",
-      "detalhe": "dívida líquida/EBITDA 2.2x em 2025 (limite de estudo: 2x)"
+      "detalhe": "dívida líquida/EBITDA 2,2x em 2025 (limite de estudo: 2x)"
      },
      {
       "id": "roic",
       "rotulo": "ROIC alto (média ≥ 10%)",
       "estado": "sim",
-      "detalhe": "média de 6 anos: 13.6% (de 6.9% a 25.6%); ROIC aproximado"
+      "detalhe": "média de 6 anos: 13,6% (de 6,9% a 25,6%); ROIC aproximado"
      },
      {
       "id": "vantagem",
@@ -5692,7 +5848,8 @@
     "fonte": "https://www.semapa.pt/wp-content/uploads/2024/04/SEMAPA-RA-2023-versao-nao-ESEF.pdf",
     "data_ref": "2023-12-31",
     "confianca": "media",
-    "free_float_pct": null
+    "free_float_pct": null,
+    "free_float_origem": null
    }
   },
   {
@@ -5852,7 +6009,7 @@
      },
      {
       "id": "dividendos",
-      "rotulo": "Dividendos estáveis ou crescentes",
+      "rotulo": "Dividendos sem cortes relevantes",
       "estado": "nd",
       "detalhe": "cadastro de proventos ainda pendente"
      },
@@ -5866,7 +6023,7 @@
       "id": "roic",
       "rotulo": "ROIC alto (média ≥ 10%)",
       "estado": "nao",
-      "detalhe": "média de 6 anos: 3.4% (de -3.5% a 29.6%); ROIC aproximado"
+      "detalhe": "média de 6 anos: 3,4% (de -3,5% a 29,6%); ROIC aproximado"
      },
      {
       "id": "vantagem",
@@ -5924,7 +6081,8 @@
     "fonte": "https://pharol.pt/pagina/a-empresa/principais-acionistas/",
     "data_ref": "2026-07-08",
     "confianca": "alta",
-    "free_float_pct": null
+    "free_float_pct": null,
+    "free_float_origem": null
    }
   },
   {
@@ -6163,9 +6321,15 @@
      },
      {
       "id": "dividendos",
-      "rotulo": "Dividendos estáveis ou crescentes",
+      "rotulo": "Dividendos sem cortes relevantes",
       "estado": "sim",
-      "detalhe": "pagou em 5 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0.6 → 1.05 €"
+      "detalhe": "pagou em 5 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0,6 → 1,05 €"
+     },
+     {
+      "id": "evolucao",
+      "rotulo": "Evolução do dividendo (informativo)",
+      "estado": "info",
+      "detalhe": "0,6 → 1,05 € do primeiro ao último ano pago (+75%)"
      },
      {
       "id": "divida",
@@ -6177,7 +6341,7 @@
       "id": "roic",
       "rotulo": "ROIC alto (média ≥ 10%)",
       "estado": "nao",
-      "detalhe": "média de 4 anos: 9.5% (de 5.6% a 13.1%); ROIC aproximado"
+      "detalhe": "média de 4 anos: 9,5% (de 5,6% a 13,1%); ROIC aproximado"
      },
      {
       "id": "vantagem",
@@ -6235,7 +6399,8 @@
     "fonte": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2026/03/05/Connect_governance2025pt.pdf",
     "data_ref": "2025-12-31",
     "confianca": "alta",
-    "free_float_pct": null
+    "free_float_pct": null,
+    "free_float_origem": null
    }
   },
   {
@@ -6485,21 +6650,27 @@
      },
      {
       "id": "dividendos",
-      "rotulo": "Dividendos estáveis ou crescentes",
+      "rotulo": "Dividendos sem cortes relevantes",
       "estado": "sim",
-      "detalhe": "pagou em 5 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0.171 → 0.157 €"
+      "detalhe": "pagou em 5 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0,171 → 0,157 €"
+     },
+     {
+      "id": "evolucao",
+      "rotulo": "Evolução do dividendo (informativo)",
+      "estado": "info",
+      "detalhe": "0,171 → 0,157 € do primeiro ao último ano pago (-8%)"
      },
      {
       "id": "divida",
       "rotulo": "Baixo endividamento",
       "estado": "nao",
-      "detalhe": "dívida líquida/EBITDA 4.8x em 2025 (limite de estudo: 2x)"
+      "detalhe": "dívida líquida/EBITDA 4,8x em 2025 (limite de estudo: 2x)"
      },
      {
       "id": "roic",
       "rotulo": "ROIC alto (média ≥ 10%)",
       "estado": "nao",
-      "detalhe": "média de 6 anos: 4.6% (de 4.1% a 5.2%); ROIC aproximado"
+      "detalhe": "média de 6 anos: 4,6% (de 4,1% a 5,2%); ROIC aproximado"
      },
      {
       "id": "vantagem",
@@ -6557,7 +6728,8 @@
     "fonte": "https://www.dn.pt/economia/estado-fecha-regresso-ren-nos-19-aps-comprar-posio-da-fidelidade",
     "data_ref": "2026-10-09",
     "confianca": "media",
-    "free_float_pct": null
+    "free_float_pct": null,
+    "free_float_origem": null
    }
   },
   {
@@ -6617,6 +6789,16 @@
      "nivel": "info",
      "codigo": "cadastro_pendente",
      "texto": "Proventos ainda não conferidos no cadastro oficial: sem preço-teto até estarem conferidos."
+    },
+    {
+     "nivel": "info",
+     "codigo": "free_float_baixo",
+     "texto": "Free float de cerca de 2,1% (calculado por subtração das participações qualificadas), abaixo de 15%: pouca oferta de ações em bolsa, o que agrava a liquidez e o risco de OPA de exclusão. Ver a nota do controlo acionista."
+    },
+    {
+     "nivel": "info",
+     "codigo": "controlo_fonte_antiga",
+     "texto": "A fonte do controlo acionista tem data de referência de 2024-10-15 (mais de 12 meses); confirmar com o relatório de governo mais recente."
     }
    ],
    "historico_preco_mensal": {
@@ -6721,7 +6903,7 @@
      },
      {
       "id": "dividendos",
-      "rotulo": "Dividendos estáveis ou crescentes",
+      "rotulo": "Dividendos sem cortes relevantes",
       "estado": "nd",
       "detalhe": "cadastro de proventos ainda pendente"
      },
@@ -6752,11 +6934,12 @@
     "categoria": "privada",
     "estrutura": "controlo_maioritario",
     "controlador": "Sporting Clube de Portugal (clube), 87,99% dos votos",
-    "nota": "Prospeto das obrigações Sporting SAD 2024-2028 (15/10/2024), % dos direitos de voto: Sporting Clube de Portugal 75,635% direta e 87,994% com 12,358% imputáveis (entidades em grupo ou concertação); Holdimo – Participações e Investimentos 9,901% (imputável a Álvaro Sobrinho). Documento com cerca de um ano; não foi lido relatório de governo mais recente.",
+    "nota": "Prospeto das obrigações Sporting SAD 2024-2028 (15/10/2024), % dos direitos de voto: Sporting Clube de Portugal 75,635% direta e 87,994% com 12,358% imputáveis (entidades em grupo ou concertação); Holdimo – Participações e Investimentos 9,901% (imputável a Álvaro Sobrinho). Documento com cerca de um ano; não foi lido relatório de governo mais recente. Free float calculado em direitos de voto: 100% − 87,994% − 9,901%.",
     "fonte": "https://creditoagricola.pt/-/media/97a0790016334142b2ffa18fe3ddb44f.pdf",
     "data_ref": "2024-10-15",
     "confianca": "media",
-    "free_float_pct": null
+    "free_float_pct": 2.1,
+    "free_float_origem": "calculado"
    }
   },
   {
@@ -6888,7 +7071,12 @@
     {
      "nivel": "info",
      "codigo": "free_float_baixo",
-     "texto": "Free float de cerca de 3.2% (abaixo de 15%): pouca oferta de ações em bolsa, o que agrava a liquidez e o risco de OPA de exclusão. Ver a nota do controlo acionista."
+     "texto": "Free float de cerca de 3,2% (calculado por subtração das participações qualificadas), abaixo de 15%: pouca oferta de ações em bolsa, o que agrava a liquidez e o risco de OPA de exclusão. Ver a nota do controlo acionista."
+    },
+    {
+     "nivel": "info",
+     "codigo": "controlo_fonte_antiga",
+     "texto": "A fonte do controlo acionista tem data de referência de 2025-06-30 (mais de 12 meses); confirmar com o relatório de governo mais recente."
     }
    ],
    "historico_preco_mensal": {
@@ -6991,21 +7179,27 @@
      },
      {
       "id": "dividendos",
-      "rotulo": "Dividendos estáveis ou crescentes",
+      "rotulo": "Dividendos sem cortes relevantes",
       "estado": "nao",
-      "detalhe": "pagou em 5 de 5 anos; 1 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0.3 → 0.35 €"
+      "detalhe": "pagou em 5 de 5 anos; 1 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0,3 → 0,35 €"
+     },
+     {
+      "id": "evolucao",
+      "rotulo": "Evolução do dividendo (informativo)",
+      "estado": "info",
+      "detalhe": "0,3 → 0,35 € do primeiro ao último ano pago (+17%)"
      },
      {
       "id": "divida",
       "rotulo": "Baixo endividamento",
       "estado": "sim",
-      "detalhe": "dívida líquida/EBITDA 0.4x em 2025 (limite de estudo: 2x)"
+      "detalhe": "dívida líquida/EBITDA 0,4x em 2025 (limite de estudo: 2x)"
      },
      {
       "id": "roic",
       "rotulo": "ROIC alto (média ≥ 10%)",
       "estado": "nao",
-      "detalhe": "média de 5 anos: 10.0% (de 3.4% a 15.5%); ROIC aproximado"
+      "detalhe": "média de 5 anos: 10,0% (de 3,4% a 15,5%); ROIC aproximado"
      },
      {
       "id": "vantagem",
@@ -7063,7 +7257,8 @@
     "fonte": "https://toyotacaetano.pt/wp-content/uploads/sites/24/2025/09/V_2025_09_19-2025_06_30-RC-Interim-VF.pdf",
     "data_ref": "2025-06-30",
     "confianca": "media",
-    "free_float_pct": 3.2
+    "free_float_pct": 3.2,
+    "free_float_origem": "calculado"
    }
   },
   {
@@ -7290,21 +7485,27 @@
      },
      {
       "id": "dividendos",
-      "rotulo": "Dividendos estáveis ou crescentes",
+      "rotulo": "Dividendos sem cortes relevantes",
       "estado": "nao",
-      "detalhe": "pagou em 5 de 5 anos; 2 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0.512 → 0.626 €"
+      "detalhe": "pagou em 5 de 5 anos; 2 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0,512 → 0,626 €"
+     },
+     {
+      "id": "evolucao",
+      "rotulo": "Evolução do dividendo (informativo)",
+      "estado": "info",
+      "detalhe": "0,512 → 0,626 € do primeiro ao último ano pago (+22%)"
      },
      {
       "id": "divida",
       "rotulo": "Baixo endividamento",
       "estado": "nao",
-      "detalhe": "dívida líquida/EBITDA 3.0x em 2025 (limite de estudo: 2x)"
+      "detalhe": "dívida líquida/EBITDA 3,0x em 2025 (limite de estudo: 2x)"
      },
      {
       "id": "roic",
       "rotulo": "ROIC alto (média ≥ 10%)",
       "estado": "sim",
-      "detalhe": "média de 6 anos: 10.9% (de 3.5% a 19.2%); ROIC aproximado"
+      "detalhe": "média de 6 anos: 10,9% (de 3,5% a 19,2%); ROIC aproximado"
      },
      {
       "id": "vantagem",
@@ -7362,7 +7563,8 @@
     "fonte": "https://www.semapa.pt/wp-content/uploads/2026/04/SEMAPA_RGS2025_PT_20260417.pdf",
     "data_ref": "2025-12-31",
     "confianca": "alta",
-    "free_float_pct": null
+    "free_float_pct": null,
+    "free_float_origem": null
    }
   },
   {
@@ -7417,6 +7619,16 @@
      "nivel": "info",
      "codigo": "cadastro_pendente",
      "texto": "Proventos ainda não conferidos no cadastro oficial: sem preço-teto até estarem conferidos."
+    },
+    {
+     "nivel": "info",
+     "codigo": "free_float_baixo",
+     "texto": "Free float de cerca de 14,7% (calculado por subtração das participações qualificadas), abaixo de 15%: pouca oferta de ações em bolsa, o que agrava a liquidez e o risco de OPA de exclusão. Ver a nota do controlo acionista."
+    },
+    {
+     "nivel": "info",
+     "codigo": "controlo_fonte_antiga",
+     "texto": "A fonte do controlo acionista tem data de referência de 2025-06-30 (mais de 12 meses); confirmar com o relatório de governo mais recente."
     }
    ],
    "historico_preco_mensal": {
@@ -7521,7 +7733,7 @@
      },
      {
       "id": "dividendos",
-      "rotulo": "Dividendos estáveis ou crescentes",
+      "rotulo": "Dividendos sem cortes relevantes",
       "estado": "nd",
       "detalhe": "cadastro de proventos ainda pendente"
      },
@@ -7577,11 +7789,12 @@
     "categoria": "privada",
     "estrutura": "controlo_maioritario",
     "controlador": "Sport Lisboa e Benfica (clube), 63,70% imputável",
-    "nota": "Relatório 2024/25, referência 30/06/2025 (23.000.000 ações): Sport Lisboa e Benfica 63,70% (40,00% direta + 23,65% via SGPS + administradores); José António dos Santos e Grupo Valouro 16,38%; Lenore Sports Partners (LSP Lisbon) 5,24%, dos quais 3,28% em disputa judicial com o clube. O ECO de 27/04/2026 refere o clube com 66,98% e a venda dos 16,38% da Valouro a um fundo norte-americano (Entrepreneur Equity Partners SPV V), dependente de aprovação em AG, esperada até ao fim de julho; o desfecho não foi confirmado.",
+    "nota": "Relatório 2024/25, referência 30/06/2025 (23.000.000 ações): Sport Lisboa e Benfica 63,70% (40,00% direta + 23,65% via SGPS + administradores); José António dos Santos e Grupo Valouro 16,38%; Lenore Sports Partners (LSP Lisbon) 5,24%, dos quais 3,28% em disputa judicial com o clube. O ECO de 27/04/2026 refere o clube com 66,98% e a venda dos 16,38% da Valouro a um fundo norte-americano (Entrepreneur Equity Partners SPV V), dependente de aprovação em AG, esperada até ao fim de julho; o desfecho não foi confirmado. Free float calculado: 100% − 63,70% − 16,38% − 5,24%.",
     "fonte": "https://media.slbenfica.pt/-/media/BenficaDP/Images/Instituicao/SAD/prestacao-de-contas/anuais/Relatorio_Benfica_SAD_24_25",
     "data_ref": "2025-06-30",
     "confianca": "media",
-    "free_float_pct": null
+    "free_float_pct": 14.7,
+    "free_float_origem": "calculado"
    }
   },
   {
@@ -7708,7 +7921,12 @@
     {
      "nivel": "info",
      "codigo": "free_float_baixo",
-     "texto": "Free float de cerca de 6.6% (abaixo de 15%): pouca oferta de ações em bolsa, o que agrava a liquidez e o risco de OPA de exclusão. Ver a nota do controlo acionista."
+     "texto": "Free float de cerca de 6,6%, abaixo de 15%: pouca oferta de ações em bolsa, o que agrava a liquidez e o risco de OPA de exclusão. Ver a nota do controlo acionista."
+    },
+    {
+     "nivel": "info",
+     "codigo": "controlo_fonte_antiga",
+     "texto": "A fonte do controlo acionista tem data de referência de 2023-01-06 (mais de 12 meses); confirmar com o relatório de governo mais recente."
     }
    ],
    "historico_preco_mensal": {
@@ -7812,9 +8030,15 @@
      },
      {
       "id": "dividendos",
-      "rotulo": "Dividendos estáveis ou crescentes",
+      "rotulo": "Dividendos sem cortes relevantes",
       "estado": "nao",
-      "detalhe": "pagou em 5 de 5 anos; 3 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0.097 → 0.028 €"
+      "detalhe": "pagou em 5 de 5 anos; 3 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0,097 → 0,028 €"
+     },
+     {
+      "id": "evolucao",
+      "rotulo": "Evolução do dividendo (informativo)",
+      "estado": "info",
+      "detalhe": "0,097 → 0,028 € do primeiro ao último ano pago (-71%)"
      },
      {
       "id": "divida",
@@ -7826,7 +8050,7 @@
       "id": "roic",
       "rotulo": "ROIC alto (média ≥ 10%)",
       "estado": "nao",
-      "detalhe": "média de 6 anos: 5.0% (de 0.3% a 12.2%); ROIC aproximado"
+      "detalhe": "média de 6 anos: 5,0% (de 0,3% a 12,2%); ROIC aproximado"
      },
      {
       "id": "vantagem",
@@ -7884,7 +8108,8 @@
     "fonte": "https://sonaecom.pt/investidores/informacao-sobre-accao/estrutura-acionista/?lang=en",
     "data_ref": "2023-01-06",
     "confianca": "alta",
-    "free_float_pct": 6.58
+    "free_float_pct": 6.58,
+    "free_float_origem": "fonte"
    }
   },
   {
@@ -8098,21 +8323,27 @@
      },
      {
       "id": "dividendos",
-      "rotulo": "Dividendos estáveis ou crescentes",
+      "rotulo": "Dividendos sem cortes relevantes",
       "estado": "sim",
-      "detalhe": "pagou em 5 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0.0486 → 0.0592 €"
+      "detalhe": "pagou em 5 de 5 anos; 0 ano(s) abaixo de 75% da média dos anteriores; do primeiro ao último ano pago 0,0486 → 0,0592 €"
+     },
+     {
+      "id": "evolucao",
+      "rotulo": "Evolução do dividendo (informativo)",
+      "estado": "info",
+      "detalhe": "0,0486 → 0,0592 € do primeiro ao último ano pago (+22%)"
      },
      {
       "id": "divida",
       "rotulo": "Baixo endividamento",
       "estado": "nao",
-      "detalhe": "dívida líquida/EBITDA 2.8x em 2025 (limite de estudo: 2x)"
+      "detalhe": "dívida líquida/EBITDA 2,8x em 2025 (limite de estudo: 2x)"
      },
      {
       "id": "roic",
       "rotulo": "ROIC alto (média ≥ 10%)",
       "estado": "nao",
-      "detalhe": "média de 6 anos: 7.1% (de 3.0% a 10.3%); ROIC aproximado"
+      "detalhe": "média de 6 anos: 7,1% (de 3,0% a 10,3%); ROIC aproximado"
      },
      {
       "id": "vantagem",
@@ -8170,7 +8401,8 @@
     "fonte": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2026/04/01/Connect_sonaecgr2025pt.pdf",
     "data_ref": "2025-12-31",
     "confianca": "alta",
-    "free_float_pct": null
+    "free_float_pct": null,
+    "free_float_origem": null
    }
   },
   {
@@ -8220,6 +8452,11 @@
      "nivel": "atencao",
      "codigo": "anos_sem_proventos",
      "texto": "Sem proventos em 2021, 2022, 2023, 2024, 2025: a média de 5 anos fica mais baixa e o teto também."
+    },
+    {
+     "nivel": "info",
+     "codigo": "controlo_fonte_antiga",
+     "texto": "A fonte do controlo acionista tem data de referência de 2025-06-30 (mais de 12 meses); confirmar com o relatório de governo mais recente."
     }
    ],
    "historico_preco_mensal": {
@@ -8322,7 +8559,7 @@
      },
      {
       "id": "dividendos",
-      "rotulo": "Dividendos estáveis ou crescentes",
+      "rotulo": "Dividendos sem cortes relevantes",
       "estado": "nao",
       "detalhe": "sem proventos nos anos analisados"
      },
@@ -8330,13 +8567,13 @@
       "id": "divida",
       "rotulo": "Baixo endividamento",
       "estado": "nao",
-      "detalhe": "dívida líquida/EBITDA 5.7x em 2025 (limite de estudo: 2x)"
+      "detalhe": "dívida líquida/EBITDA 5,7x em 2025 (limite de estudo: 2x)"
      },
      {
       "id": "roic",
       "rotulo": "ROIC alto (média ≥ 10%)",
       "estado": "nao",
-      "detalhe": "média de 6 anos: 2.0% (de -8.5% a 6.1%); ROIC aproximado"
+      "detalhe": "média de 6 anos: 2,0% (de -8,5% a 6,1%); ROIC aproximado"
      },
      {
       "id": "vantagem",
@@ -8394,7 +8631,8 @@
     "fonte": "https://www.teixeiraduarte.pt/wp-content/uploads/2025/08/TDSA-1-semestre-2025.pdf",
     "data_ref": "2025-06-30",
     "confianca": "alta",
-    "free_float_pct": null
+    "free_float_pct": null,
+    "free_float_origem": null
    }
   }
  ],
@@ -8884,7 +9122,7 @@
  "controlo_meta": {
   "atualizado": "2026-11-20",
   "proxima_revisao": "2027-01-04",
-  "criterio": "Participações qualificadas (art. 16.º e 20.º do Código dos Valores Mobiliários) segundo a página de investidores ou o relatório de governo societário mais recente da empresa; imprensa reconhecida só para mudanças posteriores ao último documento oficial. 'estatal' = o Estado português controla; 'estatal_estrangeira' = estatal de outro país controla; 'participacao_estatal_relevante' = um Estado (português ou estrangeiro) tem 5% ou mais sem controlar; 'privada' = restantes. 'estrutura' descreve se há maioria (controlo), um acionista de referência sem maioria, ou capital disperso."
+  "criterio": "Participações qualificadas (art. 16.º e 20.º do Código dos Valores Mobiliários) segundo a página de investidores ou o relatório de governo societário mais recente da empresa; imprensa reconhecida só para mudanças posteriores ao último documento oficial. 'estatal' = o Estado português controla; 'estatal_estrangeira' = estatal de outro país controla; 'participacao_estatal_relevante' = um Estado (português ou estrangeiro) tem 5% ou mais sem controlar; 'privada' = restantes. 'estrutura' descreve se há maioria (controlo), um acionista de referência sem maioria, ou capital disperso. Free float: só nas 14 em observação (valor da fonte quando existe; senão calculado por subtração das participações qualificadas e marcado como tal); o núcleo não tem free float registado."
  },
  "qualidade_meta": {
   "gerado_em": "2026-11-16 16:26",

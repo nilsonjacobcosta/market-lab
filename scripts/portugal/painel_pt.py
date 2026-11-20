@@ -187,6 +187,11 @@ def regra_grupo(grupo, liq, liq_revisao_anterior, universo):
     return grupo
 
 
+def _v(x, f=".3g"):
+    """Número com vírgula decimal, para os textos mostrados na página."""
+    return format(x, f).replace(".", ",")
+
+
 def montar_perfil(l, serie):
     """Quadro de perfil (critérios de estudo do dono). Informativo: não é nota nem recomendação.
     Lucros e ROIC vêm das séries ESEF 2020–2025; dividendos do cadastro oficial; vantagem competitiva é qualitativa."""
@@ -207,11 +212,14 @@ def montar_perfil(l, serie):
         # um ano só falha se ficar abaixo de 75% da média dos anos pagos anteriores (tolera picos extraordinários)
         fracos = [(i, y) for i, y in enumerate(pagos) if i > 0 and y < 0.75 * (sum(pagos[:i]) / i)]
         ok = len(pagos) >= 4 and not fracos
-        var = f"; do primeiro ao último ano pago {pagos[0]:.3g} → {pagos[-1]:.3g} €" if pagos else ""
-        c.append(("dividendos", "Dividendos estáveis ou crescentes", "sim" if ok else "nao",
+        var = f"; do primeiro ao último ano pago {_v(pagos[0])} → {_v(pagos[-1])} €" if pagos else ""
+        c.append(("dividendos", "Dividendos sem cortes relevantes", "sim" if ok else "nao",
                   f"pagou em {len(pagos)} de {len(v)} anos; {len(fracos)} ano(s) abaixo de 75% da média dos anteriores{var}" if pagos else "sem proventos nos anos analisados"))
+        if len(pagos) >= 2:
+            c.append(("evolucao", "Evolução do dividendo (informativo)", "info",
+                      f"{_v(pagos[0])} → {_v(pagos[-1])} € do primeiro ao último ano pago ({_v(100 * (pagos[-1] / pagos[0] - 1), '+.0f')}%)"))
     else:
-        c.append(("dividendos", "Dividendos estáveis ou crescentes", "nd", "cadastro de proventos ainda pendente"))
+        c.append(("dividendos", "Dividendos sem cortes relevantes", "nd", "cadastro de proventos ainda pendente"))
     if banco:
         c.append(("divida", "Baixo endividamento", "nd", "não se aplica a bancos"))
         c.append(("roic", "ROIC alto (média ≥ 10%)", "nd", "não se aplica a bancos"))
@@ -221,20 +229,20 @@ def montar_perfil(l, serie):
         if dl is not None and dl <= 0:
             c.append(("divida", "Baixo endividamento", "sim", f"caixa líquida em {ult['ano']}"))
         elif de is not None:
-            c.append(("divida", "Baixo endividamento", "sim" if de <= 2 else "nao", f"dívida líquida/EBITDA {de:.1f}x em {ult['ano']} (limite de estudo: 2x)"))
+            c.append(("divida", "Baixo endividamento", "sim" if de <= 2 else "nao", f"dívida líquida/EBITDA {_v(de, '.1f')}x em {ult['ano']} (limite de estudo: 2x)"))
         else:
             c.append(("divida", "Baixo endividamento", "nd", "dívida líquida não calculável"))
         r = [a["roic"] for a in anos if a.get("roic") is not None]
         if len(r) >= 3:
             m = sum(r) / len(r)
             c.append(("roic", "ROIC alto (média ≥ 10%)", "sim" if m >= 10 else "nao",
-                      f"média de {len(r)} anos: {m:.1f}% (de {min(r):.1f}% a {max(r):.1f}%); ROIC aproximado"))
+                      f"média de {len(r)} anos: {_v(m, '.1f')}% (de {_v(min(r), '.1f')}% a {_v(max(r), '.1f')}%); ROIC aproximado"))
         else:
             c.append(("roic", "ROIC alto (média ≥ 10%)", "nd", "menos de 3 anos calculáveis"))
     c.append(("vantagem", "Vantagem competitiva", "nd", "avaliação qualitativa, fora do cálculo automático"))
     crit = [{"id": i, "rotulo": r, "estado": e, "detalhe": d} for i, r, e, d in c]
     return {"criterios": crit, "atendidos": sum(1 for x in crit if x["estado"] == "sim"),
-            "avaliaveis": sum(1 for x in crit if x["estado"] != "nd"),
+            "avaliaveis": sum(1 for x in crit if x["estado"] not in ("nd", "info")),
             "anos": [{k: a.get(k) for k in ("ano", "lucro", "roic", "dl_ebitda")} for a in anos]}
 
 
@@ -454,10 +462,17 @@ def main():
     for l in res["linhas"]:
         c = cmap.get(l["papel"])
         if c:
-            l["controlo"] = {k: c.get(k) for k in ("categoria", "estrutura", "controlador", "nota", "fonte", "data_ref", "confianca", "free_float_pct")}
+            l["controlo"] = {k: c.get(k) for k in ("categoria", "estrutura", "controlador", "nota", "fonte", "data_ref", "confianca", "free_float_pct", "free_float_origem")}
             if c.get("free_float_pct") is not None and c["free_float_pct"] < 15:
                 l["alertas"].append({"nivel": "info", "codigo": "free_float_baixo",
-                                     "texto": f"Free float de cerca de {c['free_float_pct']:.1f}% (abaixo de 15%): pouca oferta de ações em bolsa, o que agrava a liquidez e o risco de OPA de exclusão. Ver a nota do controlo acionista."})
+                                     "texto": f"Free float de cerca de {_v(c['free_float_pct'], '.1f')}%{' (calculado por subtração das participações qualificadas)' if c.get('free_float_origem') == 'calculado' else ''}, abaixo de 15%: pouca oferta de ações em bolsa, o que agrava a liquidez e o risco de OPA de exclusão. Ver a nota do controlo acionista."})
+            try:
+                dr = datetime.strptime(c["data_ref"], "%Y-%m-%d").date()
+                if (agora.date() - dr).days > 365:
+                    l["alertas"].append({"nivel": "info", "codigo": "controlo_fonte_antiga",
+                                         "texto": f"A fonte do controlo acionista tem data de referência de {c['data_ref']} (mais de 12 meses); confirmar com o relatório de governo mais recente."})
+            except (KeyError, ValueError, TypeError):
+                pass
         if idade_ctrl is not None and idade_ctrl > 90:
             l["alertas"].append({"nivel": "info", "codigo": "controlo_antigo",
                                  "texto": f"A classificação do controlo acionista tem {idade_ctrl} dias; pode estar desatualizada."})

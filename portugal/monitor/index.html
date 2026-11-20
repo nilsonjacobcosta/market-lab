@@ -458,10 +458,10 @@ function ctrlBox(l){
 }
 function perfilBox(l){
   const f=l.perfil;if(!f)return"";
-  const IC={sim:"✔",nao:"✖",nd:"–"},TX={sim:"Atende",nao:"Não atende",nd:"Sem dado"};
+  const IC={sim:"✔",nao:"✖",nd:"–",info:"ℹ"},TX={sim:"Atende",nao:"Não atende",nd:"Sem dado",info:"Informativo"};
   const li=f.criterios.map(c=>`<li><b><span aria-hidden="true">${IC[c.estado]}</span> ${esc(c.rotulo)}</b> <span class="c">${TX[c.estado]} · ${esc(c.detalhe)}</span></li>`).join("");
   const sr=f.anos.filter(a=>a.lucro!=null||a.roic!=null).map(a=>`${a.ano}: ${a.lucro==null?"–":fmt(a.lucro/1e6,1)+" M€"}${a.roic==null?"":" · ROIC "+fmt(a.roic,1)+"%"}`).join(" · ");
-  return `<div class="box qual"><h4>Quadro de perfil <span class="beta">BETA</span></h4><p>Atende ${f.atendidos} de ${f.avaliaveis} critérios avaliáveis. Quadro de estudo, não é nota nem recomendação.</p><ul style="list-style:none;padding:0">${li}</ul>${sr?`<p style="font-size:.8rem">${esc(sr)}</p>`:""}<p style="font-size:.8rem">ROIC aproximado = resultado operacional após imposto ÷ (capital próprio + dívida líquida), do relatório anual eletrónico. Limites (ROIC ≥ 10%, dívida líquida/EBITDA ≤ 2x, nenhum ano de dividendo abaixo de 75% da média dos anos pagos anteriores, com pagamento em pelo menos 4 de 5 anos) são convenções do painel. Só o lucro de 2025 foi conferido com a imprensa; os anos anteriores vêm do relatório eletrónico e podem ter lacunas.</p></div>`
+  return `<div class="box qual"><h4>Quadro de perfil <span class="beta">BETA</span></h4><p>${f.avaliaveis?`Atende ${f.atendidos} de ${f.avaliaveis} critérios avaliáveis.`:"Sem critérios avaliáveis por falta de dados nos relatórios eletrónicos."} Quadro de estudo, não é nota nem recomendação.</p><ul style="list-style:none;padding:0">${li}</ul>${sr?`<p style="font-size:.8rem">${esc(sr)}</p>`:""}<p style="font-size:.8rem">ROIC aproximado = resultado operacional após imposto ÷ (capital próprio + dívida líquida), do relatório anual eletrónico. Limites (ROIC ≥ 10%, dívida líquida/EBITDA ≤ 2x, nenhum ano de dividendo abaixo de 75% da média dos anos pagos anteriores, com pagamento em pelo menos 4 de 5 anos) são convenções do painel. Só o lucro de 2025 foi conferido com a imprensa; os anos anteriores vêm do relatório eletrónico e podem ter lacunas.</p></div>`
 }
 function qualBox(l){
   const f=l.qualidade,head=`<h4>Qualidade financeira <span class="beta">BETA</span></h4>`;
@@ -495,7 +495,7 @@ function spark(h){const v=Object.values(h||{});if(v.length<2)return"";const mn=M
 
 function detail(l){
   const A=P.anos,t=P.taxa;
-  const frase=l.preco==null?"Sem cotação disponível.":`Pagou em média <b>${fmt(l.dpa_medio,3)} €</b> por ação por ano entre ${A[0]} e ${A.at(-1)}; ao preço de ${fmt(l.preco,3)} €, isso equivale a ${pct(l.dy_medio_pct)} ao ano (bruto). `+(l.teto?`Com a taxa exigida de ${pct(t.taxa_exigida_pct,2)}, o preço-teto calculado é <b>${fmt(l.teto,3)} €</b>.`:"Sem proventos suficientes para calcular o teto.");
+  const frase=l.preco==null?"Sem cotação disponível.":l.status==="em_cadastro"?`Cotação de ${fmt(l.preco,3)} €. O cadastro oficial de proventos desta empresa ainda não está concluído, por isso não há média de dividendos nem preço-teto.`:`Pagou em média <b>${fmt(l.dpa_medio,3)} €</b> por ação por ano entre ${A[0]} e ${A.at(-1)}; ao preço de ${fmt(l.preco,3)} €, isso equivale a ${pct(l.dy_medio_pct)} ao ano (bruto). `+(l.teto?`Com a taxa exigida de ${pct(t.taxa_exigida_pct,2)}, o preço-teto calculado é <b>${fmt(l.teto,3)} €</b>.`:"Sem proventos suficientes para calcular o teto.");
   const al=(l.alertas||[]);
   const hist=((P.historico_status||{})[l.papel]||[]).slice(-6).reverse();
   return `<div class="detail-grid"><div class="dcol">

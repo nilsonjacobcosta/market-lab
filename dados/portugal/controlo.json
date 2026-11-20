@@ -1,7 +1,7 @@
 {
  "atualizado": "2026-11-20",
  "proxima_revisao": "2027-01-04",
- "criterio": "Participações qualificadas (art. 16.º e 20.º do Código dos Valores Mobiliários) segundo a página de investidores ou o relatório de governo societário mais recente da empresa; imprensa reconhecida só para mudanças posteriores ao último documento oficial. 'estatal' = o Estado português controla; 'estatal_estrangeira' = estatal de outro país controla; 'participacao_estatal_relevante' = um Estado (português ou estrangeiro) tem 5% ou mais sem controlar; 'privada' = restantes. 'estrutura' descreve se há maioria (controlo), um acionista de referência sem maioria, ou capital disperso.",
+ "criterio": "Participações qualificadas (art. 16.º e 20.º do Código dos Valores Mobiliários) segundo a página de investidores ou o relatório de governo societário mais recente da empresa; imprensa reconhecida só para mudanças posteriores ao último documento oficial. 'estatal' = o Estado português controla; 'estatal_estrangeira' = estatal de outro país controla; 'participacao_estatal_relevante' = um Estado (português ou estrangeiro) tem 5% ou mais sem controlar; 'privada' = restantes. 'estrutura' descreve se há maioria (controlo), um acionista de referência sem maioria, ou capital disperso. Free float: só nas 14 em observação (valor da fonte quando existe; senão calculado por subtração das participações qualificadas e marcado como tal); o núcleo não tem free float registado.",
  "empresas": [
   {
    "papel": "ALTR",
@@ -182,7 +182,8 @@
    "fonte": "https://www.emarketstorage.it/sites/default/files/comunicati/2026-03/20260310_178563.pdf",
    "data_ref": "2026-03-10",
    "confianca": "media",
-   "free_float_pct": 33.328
+   "free_float_pct": 33.328,
+   "free_float_origem": "fonte"
   },
   {
    "papel": "NBA",
@@ -219,10 +220,12 @@
    "categoria": "privada",
    "estrutura": "controlo_maioritario",
    "controlador": "Sport Lisboa e Benfica (clube), 63,70% imputável",
-   "nota": "Relatório 2024/25, referência 30/06/2025 (23.000.000 ações): Sport Lisboa e Benfica 63,70% (40,00% direta + 23,65% via SGPS + administradores); José António dos Santos e Grupo Valouro 16,38%; Lenore Sports Partners (LSP Lisbon) 5,24%, dos quais 3,28% em disputa judicial com o clube. O ECO de 27/04/2026 refere o clube com 66,98% e a venda dos 16,38% da Valouro a um fundo norte-americano (Entrepreneur Equity Partners SPV V), dependente de aprovação em AG, esperada até ao fim de julho; o desfecho não foi confirmado.",
+   "nota": "Relatório 2024/25, referência 30/06/2025 (23.000.000 ações): Sport Lisboa e Benfica 63,70% (40,00% direta + 23,65% via SGPS + administradores); José António dos Santos e Grupo Valouro 16,38%; Lenore Sports Partners (LSP Lisbon) 5,24%, dos quais 3,28% em disputa judicial com o clube. O ECO de 27/04/2026 refere o clube com 66,98% e a venda dos 16,38% da Valouro a um fundo norte-americano (Entrepreneur Equity Partners SPV V), dependente de aprovação em AG, esperada até ao fim de julho; o desfecho não foi confirmado. Free float calculado: 100% − 63,70% − 16,38% − 5,24%.",
    "fonte": "https://media.slbenfica.pt/-/media/BenficaDP/Images/Instituicao/SAD/prestacao-de-contas/anuais/Relatorio_Benfica_SAD_24_25",
    "data_ref": "2025-06-30",
-   "confianca": "media"
+   "confianca": "media",
+   "free_float_pct": 14.7,
+   "free_float_origem": "calculado"
   },
   {
    "papel": "MAR",
@@ -233,7 +236,8 @@
    "fonte": "https://eco.sapo.pt/2026/04/27/irmaos-martins-concretizam-venda-de-18-da-martifer-a-visabeira/",
    "data_ref": "2026-06-05",
    "confianca": "media",
-   "free_float_pct": 14.17
+   "free_float_pct": 14.17,
+   "free_float_origem": "calculado"
   },
   {
    "papel": "SNC",
@@ -244,7 +248,8 @@
    "fonte": "https://sonaecom.pt/investidores/informacao-sobre-accao/estrutura-acionista/?lang=en",
    "data_ref": "2023-01-06",
    "confianca": "alta",
-   "free_float_pct": 6.58
+   "free_float_pct": 6.58,
+   "free_float_origem": "fonte"
   },
   {
    "papel": "SCT",
@@ -255,7 +260,8 @@
    "fonte": "https://toyotacaetano.pt/wp-content/uploads/sites/24/2025/09/V_2025_09_19-2025_06_30-RC-Interim-VF.pdf",
    "data_ref": "2025-06-30",
    "confianca": "media",
-   "free_float_pct": 3.2
+   "free_float_pct": 3.2,
+   "free_float_origem": "calculado"
   },
   {
    "papel": "ESON",
@@ -266,27 +272,32 @@
    "fonte": "https://executivedigest.sapo.pt/?p=813716",
    "data_ref": "2026-09-15",
    "confianca": "media",
-   "free_float_pct": 9.0
+   "free_float_pct": 9.0,
+   "free_float_origem": "calculado"
   },
   {
    "papel": "FCP",
    "categoria": "privada",
    "estrutura": "controlo_maioritario",
    "controlador": "Futebol Clube do Porto (clube), 74,83% imputável",
-   "nota": "Prospeto das obrigações FC Porto SAD 2024-2027 (16/11/2024): FC Porto 74,59% direta e 74,832% com votos imputáveis; António Luís Alves Oliveira 7,341% do capital; Francisco Alves Ferreira de Oliveira (Olivedesportos) 6,676% do capital. Documento com cerca de um ano; não foi lido relatório de governo mais recente.",
+   "nota": "Prospeto das obrigações FC Porto SAD 2024-2027 (16/11/2024): FC Porto 74,59% direta e 74,832% com votos imputáveis; António Luís Alves Oliveira 7,341% do capital; Francisco Alves Ferreira de Oliveira (Olivedesportos) 6,676% do capital. Documento com cerca de um ano; não foi lido relatório de governo mais recente. Free float calculado: 100% − 74,832% − 7,341% − 6,676% (mistura votos e capital).",
    "fonte": "https://creditoagricola.pt/-/media/475a933ec430459b933945c289a30ae2.pdf",
    "data_ref": "2024-11-16",
-   "confianca": "media"
+   "confianca": "media",
+   "free_float_pct": 11.1,
+   "free_float_origem": "calculado"
   },
   {
    "papel": "SCP",
    "categoria": "privada",
    "estrutura": "controlo_maioritario",
    "controlador": "Sporting Clube de Portugal (clube), 87,99% dos votos",
-   "nota": "Prospeto das obrigações Sporting SAD 2024-2028 (15/10/2024), % dos direitos de voto: Sporting Clube de Portugal 75,635% direta e 87,994% com 12,358% imputáveis (entidades em grupo ou concertação); Holdimo – Participações e Investimentos 9,901% (imputável a Álvaro Sobrinho). Documento com cerca de um ano; não foi lido relatório de governo mais recente.",
+   "nota": "Prospeto das obrigações Sporting SAD 2024-2028 (15/10/2024), % dos direitos de voto: Sporting Clube de Portugal 75,635% direta e 87,994% com 12,358% imputáveis (entidades em grupo ou concertação); Holdimo – Participações e Investimentos 9,901% (imputável a Álvaro Sobrinho). Documento com cerca de um ano; não foi lido relatório de governo mais recente. Free float calculado em direitos de voto: 100% − 87,994% − 9,901%.",
    "fonte": "https://creditoagricola.pt/-/media/97a0790016334142b2ffa18fe3ddb44f.pdf",
    "data_ref": "2024-10-15",
-   "confianca": "media"
+   "confianca": "media",
+   "free_float_pct": 2.1,
+   "free_float_origem": "calculado"
   },
   {
    "papel": "FLEXD",
@@ -297,17 +308,20 @@
    "fonte": "https://admin.flexdeal.pt/uploads/investorAgenda-202.pdf",
    "data_ref": "2025-12-31",
    "confianca": "alta",
-   "free_float_pct": 18.6
+   "free_float_pct": 18.6,
+   "free_float_origem": "calculado"
   },
   {
    "papel": "MCP",
    "categoria": "privada",
    "estrutura": "acionistas_de_referencia",
    "controlador": "Sem controlo maioritário: Pluris Investments (Mário Ferreira) 37,05%, com Triun, BIZ Partners, CIN e Zenithodissey",
-   "nota": "Relatório de gestão do 1.º semestre de 2025, referência 30/06/2025: Pluris Investments 37,05%; Triun SGPS 23%; BIZ Partners 11,97%; CIN 11,20%; Zenithodissey 10%; soma 93,22%. Não foi achado o relatório de governo de 2025 nem alterações posteriores; não há indício de OPA ou exclusão de bolsa.",
+   "nota": "Relatório de gestão do 1.º semestre de 2025, referência 30/06/2025: Pluris Investments 37,05%; Triun SGPS 23%; BIZ Partners 11,97%; CIN 11,20%; Zenithodissey 10%; soma 93,22%. Não foi achado o relatório de governo de 2025 nem alterações posteriores; não há indício de OPA ou exclusão de bolsa. Free float calculado: 100% − 93,22% de qualificados (no máximo; ações próprias não descontadas).",
    "fonte": "https://mediacapital.pt/wp-content/uploads/2025/11/relatorio-de-gestao_MEDIA-CAPITAL-RESULTADOS-1s25_v2.pdf",
    "data_ref": "2025-06-30",
-   "confianca": "media"
+   "confianca": "media",
+   "free_float_pct": 6.8,
+   "free_float_origem": "calculado"
   }
  ]
 }
