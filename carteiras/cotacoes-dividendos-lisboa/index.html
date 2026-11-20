@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cotações Dividendos Lisboa · market-lab</title>
+<meta name="description" content="Página didática com cotações atrasadas (widgets do TradingView) das cotadas portuguesas do Monitor Portugal, por grupo, em ordem de leitura explicada. Não é recomendação de investimento.">
+<style>
+
+:root{
+  --bg:#f2f4f7; --card:#ffffff; --card-2:#e9edf2; --line:#cbd5e0; --txt:#152131; --txt-2:#3d4b5c; --mut:#566577;
+  --acc:#0b6e66; --on-acc:#ffffff; --warn:#7a4f00; --warn-bg:#fff3d6; --warn-bd:#d9bb70; --lnk:#1a56b8;
+  --pop-bg:#ffffff; --pop-bd:#aab8c6; --sombra:rgba(21,33,49,.20);
+  --grid:#d9e0e8; --eixo:#566577;
+  --s1:#0072B2; --s2:#B35900; --s3:#A33E7E; --s4:#8A7B00;
+  --f:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --f-mono:ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#0b0d10; --card:#14181d; --card-2:#1a2027; --line:#28313b; --txt:#e6edf3; --txt-2:#b6c2cf; --mut:#93a1af;
+  --acc:#4fd1c5; --on-acc:#04201d; --warn:#f0b429; --warn-bg:#2b2210; --warn-bd:#5a4514; --lnk:#7fb0ff;
+  --pop-bg:#202833; --pop-bd:#3a4654; --sombra:rgba(0,0,0,.55);
+  --grid:#222a33; --eixo:#9aa7b4;
+  --s1:#56B4E9; --s2:#E69F00; --s3:#CC79A7; --s4:#F0E442;
+  color-scheme:dark}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.5 var(--f)}
+.wrap{max-width:1180px;margin:0 auto;padding:20px max(16px,env(safe-area-inset-right,0px)) 56px max(16px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;gap:18px}
+a{color:var(--acc)}
+h1{font-size:clamp(1.45rem,4.4vw,2rem);margin:4px 0 6px;line-height:1.15;letter-spacing:-.01em}
+h2{font-size:1.2rem;margin:0 0 4px}
+h3{font-size:1rem;margin:0;line-height:1.3}
+p{margin:0;color:var(--txt-2)}
+.eyebrow{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--mut)}
+.eyebrow a{color:inherit}
+.status{font-size:.84rem;color:var(--mut);margin-top:8px}
+.status.alerta{color:var(--warn);background:var(--warn-bg);border:1px solid var(--warn-bd);border-radius:6px;padding:8px 10px}
+.aviso{margin-top:10px;border-left:3px solid var(--warn);background:var(--card);padding:8px 12px;font-size:.88rem;color:var(--txt);border-radius:0 6px 6px 0}
+.painel{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.controles{display:flex;flex-direction:column;gap:12px}
+.lbl{font-size:.78rem;color:var(--mut);display:block;margin-bottom:4px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card-2);max-width:100%}
+.seg button{font:inherit;font-size:.84rem;color:var(--txt-2);background:transparent;border:0;border-right:1px solid var(--line);padding:6px 12px;cursor:pointer;min-height:36px}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:var(--txt);color:var(--bg);font-weight:600}
+button:focus-visible,select:focus-visible,summary:focus-visible,a:focus-visible,.plot:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:3px 3px 8px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.tabs button{flex:none;font:inherit;font-size:.86rem;color:var(--txt-2);background:var(--card-2);border:1px solid var(--line);border-radius:999px;padding:7px 13px;cursor:pointer;min-height:38px;white-space:nowrap}
+.tabs button[aria-selected="true"]{background:var(--acc);border-color:var(--acc);color:var(--on-acc);font-weight:700}
+.tabs button .n{font-family:var(--f-mono);font-size:.72rem;opacity:.8;margin-right:5px}
+.sel{display:none}
+.sel select{font:inherit;width:100%;background:var(--card-2);color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:9px 10px;min-height:42px}
+@media(max-width:599px){.tabs{display:none}.sel{display:block}}
+.cab-conj{display:flex;flex-direction:column;gap:10px}
+.naodiz{background:var(--card-2);border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:0 8px 8px 0;padding:10px 14px;font-size:.9rem;color:var(--txt-2)}
+.naodiz b{color:var(--txt);display:block;margin-bottom:2px}
+.grade{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
+@media(max-width:699px){.grade{grid-template-columns:minmax(0,1fr)}}
+.cartao{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.termos{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+button.termo{font:inherit;font-size:.76rem;color:var(--txt-2);background:var(--card-2);border:1px solid var(--line);border-radius:999px;padding:3px 5px 3px 10px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;min-height:30px}
+button.termo .qm{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;border:1px solid var(--mut);font-weight:700;font-size:.72rem;color:var(--txt)}
+button.termo[aria-expanded="true"]{background:var(--txt);color:var(--bg)}
+button.termo[aria-expanded="true"] .qm{color:var(--bg);border-color:var(--bg)}
+.nota{font-size:.78rem;color:var(--mut)}
+.nota.alerta{color:var(--warn)}
+.txt{display:flex;flex-direction:column;gap:8px;font-size:.88rem}
+.txt p b{color:var(--txt)}
+details{border-top:1px solid var(--line);padding-top:8px}
+summary{cursor:pointer;font-weight:600;font-size:.86rem;color:var(--txt)}
+details > *:not(summary){margin-top:8px}
+.tradingview-widget-container{height:100%;width:100%}
+.tradingview-widget-container__widget{height:calc(100% - 32px);width:100%}
+.tradingview-widget-copyright{font-size:13px;line-height:32px;text-align:center;color:var(--txt-2);height:32px;overflow:hidden}
+.tradingview-widget-copyright a{text-decoration:none}
+.tradingview-widget-copyright .blue-text{color:var(--lnk)}
+.tradingview-widget-copyright .trademark{color:var(--txt-2)}
+.carregando{position:absolute;left:0;right:0;top:40%;text-align:center;font-size:.82rem;color:var(--mut);pointer-events:none}
+.reserva{border:1px dashed var(--warn);background:var(--warn-bg);border-radius:8px;padding:10px 12px;font-size:.86rem;color:var(--txt)}
+.reserva a{font-weight:600}
+.vazio{border:1px dashed var(--line);border-radius:8px;padding:18px 12px;text-align:center;color:var(--mut);font-size:.88rem}
+.gloss dl{margin:10px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.gloss dl > div{background:var(--card-2);border:1px solid var(--line);border-radius:8px;padding:10px 12px;min-width:0}
+.gloss dt{font-weight:600}
+.gloss dd{margin:2px 0 0;font-size:.86rem;color:var(--txt-2)}
+@media(max-width:699px){.gloss dl{grid-template-columns:minmax(0,1fr)}}
+#pop{position:fixed;z-index:60;max-width:min(320px,calc(100vw - 16px));background:var(--pop-bg);color:var(--txt);border:1px solid var(--pop-bd);border-radius:8px;padding:10px 12px;font-size:.84rem;line-height:1.45;box-shadow:0 10px 26px var(--sombra)}
+#pop b{display:block;margin-bottom:3px}
+#pop .fechar{display:block;margin-top:6px;font-size:.72rem;color:var(--mut)}
+footer{font-size:.8rem;color:var(--mut);display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--line);padding-top:14px}
+footer p{color:var(--mut);max-width:90ch}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+[hidden]{display:none!important}
+
+.faixa{background:var(--warn-bg);border:1px solid var(--warn-bd);border-left:3px solid var(--warn);border-radius:6px;padding:8px 12px;font-size:.9rem;color:var(--txt)}
+.privac{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font-size:.84rem;color:var(--txt-2)}
+.privac b{color:var(--txt)}
+.tira{display:flex;flex-direction:column;gap:6px}
+.tira .linha{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.tvtira{height:78px;width:100%;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card-2)}
+.tvbox{width:100%;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card-2);position:relative}
+.alt{font-size:.8rem;color:var(--txt-2)}
+.alt ul{margin:4px 0 0;padding-left:18px}
+.alt li{margin:2px 0}
+.pular{font-size:.85rem}
+.btn{font:inherit;font-size:.84rem;color:var(--txt);background:var(--card-2);border:1px solid var(--line);border-radius:8px;padding:6px 12px;min-height:36px;cursor:pointer}
+.btn[aria-pressed="true"]{background:var(--acc);border-color:var(--acc);color:var(--on-acc);font-weight:700}
+.grade{grid-template-columns:minmax(0,1fr)!important}
+
+.tabwrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-size:.86rem}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--mut);font-weight:600;font-size:.76rem;background:var(--card-2);white-space:nowrap}
+td.n{text-align:right;font-family:var(--f-mono);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.resumo{font-size:.92rem;color:var(--txt)}
+.pager{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.pager .nota{margin:0}
+.carga{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.carga #host{align-self:stretch;width:100%;min-width:0}
+.fora ul{margin:6px 0 0;padding-left:18px;font-size:.84rem;color:var(--txt-2)}
+.sem-teste{color:var(--warn);font-size:.76rem}
+.lbl-grupo{font-family:var(--f-mono);font-size:.7rem;color:var(--mut)}
+.seg.ordem button{min-height:34px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow"><a href="../../">market-lab</a> · carteiras de dividendos · <a href="../../portugal/monitor/">Monitor Portugal</a></div>
+    <h1>Cotações Dividendos Lisboa</h1>
+    <p>Página didática: cotações atrasadas, em widgets do TradingView, das cotadas portuguesas do <a href="../../portugal/monitor/">Monitor Portugal</a>, numa ordem de leitura explicada. O objetivo é aprender a ler cotação, liquidez e preço-teto juntos.</p>
+    <div class="faixa" id="faixa" role="note">Para estudo. Não use para operar. Cotações atrasadas podem diferir das de um intermediário financeiro.</div>
+    <div class="aviso" id="aviso-fixo"><b>Material educativo.</b> Lista organizada por critério matemático sobre dividendos passados. Não é recomendação de investimento. O preço-teto depende de proventos passados, que podem não se repetir.</div>
+  </header>
+
+  <section class="privac" aria-labelledby="h-priv">
+    <h2 id="h-priv" style="font-size:1rem">Privacidade</h2>
+    <p>Os widgets do TradingView (tradingview.com) <b>só carregam depois que você clicar</b> em "Carregar cotações" (ou se você ligar o carregamento automático). Quando carregam, o TradingView recebe dados técnicos da visita, como o endereço da página, os símbolos exibidos e o endereço IP, e pode usar cookies conforme a política dele: <a href="https://www.tradingview.com/privacy-policy/" rel="noopener noreferrer nofollow" target="_blank">tradingview.com/privacy-policy</a>. Esta página não lê nem guarda os valores exibidos. Ela guarda no seu navegador apenas suas escolhas de grupo, modo, ordem e carregamento automático. O servidor que hospeda a página também recebe a visita. O TradingView é uma empresa sediada fora de Portugal, por isso esses dados podem ser tratados no estrangeiro.</p>
+  </section>
+
+  <section class="painel" aria-labelledby="h-como">
+    <h2 id="h-como" style="font-size:1rem">Como usar esta página</h2>
+    <div class="txt">
+      <p id="txt-ordem"></p>
+      <p id="txt-formula"></p>
+      <div class="naodiz"><b>O que esta página não diz</b><span id="txt-nao-diz"></span></div>
+    </div>
+  </section>
+
+  <section class="painel controles" aria-label="Controles da página">
+    <div class="status" id="status" role="status"></div>
+    <div>
+      <span class="lbl" id="lbl-modo">Modo</span>
+      <div class="seg" role="group" aria-labelledby="lbl-modo">
+        <button type="button" data-modo="iniciante" aria-pressed="true">Iniciante</button>
+        <button type="button" data-modo="avancado" aria-pressed="false">Avançado</button>
+      </div>
+    </div>
+    <div>
+      <span class="lbl" id="lbl-ordem">Ordem de leitura</span>
+      <div class="seg ordem" role="group" aria-labelledby="lbl-ordem">
+        <button type="button" data-ordem="criterio" aria-pressed="true">Por critério</button>
+        <button type="button" data-ordem="alfabetica" aria-pressed="false">Alfabética</button>
+      </div>
+    </div>
+    <div>
+      <span class="lbl" id="lbl-carga">Carregamento dos widgets</span>
+      <button type="button" class="btn" id="btn-auto" aria-pressed="false">Carregar ao trocar de grupo: desligado</button>
+      <p class="nota" id="nota-auto" style="margin-top:4px"></p>
+    </div>
+    <div>
+      <span class="lbl" id="lbl-grupo">Grupo</span>
+      <div class="tabs" id="tabs" role="tablist" aria-labelledby="lbl-grupo"></div>
+      <div class="sel"><label class="sr" for="sel-grupo">Grupo</label><select id="sel-grupo"></select></div>
+    </div>
+  </section>
+
+  <main><noscript><div class="vazio">Esta página precisa de JavaScript para montar as listas e os widgets do TradingView.</div></noscript><div id="painel" role="tabpanel" tabindex="-1" aria-live="off"><div class="vazio">Carregando dados do Monitor Portugal…</div></div></main>
+
+  <section class="painel gloss" aria-labelledby="h-gloss">
+    <h2 id="h-gloss">Glossário</h2>
+    <dl id="gloss"></dl>
+  </section>
+
+  <footer>
+    <p><b>Widgets do TradingView.</b> As cotações dos widgets vêm do TradingView; esta página não as coleta nem as republica. Cada widget traz a atribuição do TradingView. As cotações da Euronext Lisboa aparecem com atraso.</p>
+    <p id="txt-fonte"></p>
+    <p><b>Limites.</b> Se um quadro ficar vazio ou mostrar erro dentro do widget, a página não consegue detectar: confira o símbolo pelo link na tabela. Cotação do widget e fecho usado na ordem podem diferir.</p>
+    <p>Metodologia, símbolos e manutenção: <a href="README.md">README desta página</a> · código no <a href="https://github.com/nilsonjacobcosta/market-lab">GitHub</a>.</p>
+    <p>Material educativo. Não é recomendação de investimento. Rentabilidade passada não garante resultado futuro.</p>
+  </footer>
+</div>
+<div id="pop" role="tooltip" hidden></div>
+<script src="ordem.js"></script>
+<script>
+"use strict";
+const O = window.OrdemLisboa;
+const CONJ_URL = "./conjuntos.json", PAINEL_URL = "../../dados/portugal/painel.json";
+const MODOS = ["iniciante", "avancado"], ORDENS = ["criterio", "alfabetica"];
+const TV_BASE = "https://s3.tradingview.com/external-embedding/";
+const WIDGET = "embed-widget-market-quotes.js";
+const CONTROLE = {privada: "privada", estatal_federal: "estatal federal", estatal_estadual: "estatal estadual", estatal_estrangeira: "estatal estrangeira", participacao_estatal_relevante: "participação estatal relevante"};
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
+const guardar = (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} };
+const ler = (k) => { try { return localStorage.getItem(k); } catch (e) { return null; } };
+const estado = {grupo: null, modo: "iniciante", ordem: "criterio", pagina: 0, auto: false, cfg: null, painel: null, linhas: [], dataPreco: null, defasados: 0, carregadoEm: "", remontar: false};
+let limpezas = [];
+const ehData = (s) => typeof s === "string" && /^\d{4}-\d{2}-\d{2}/.test(s);
+const dcurta = (s) => (ehData(s) ? `${s.slice(8, 10)}/${s.slice(5, 7)}` : "—");
+const dbr = (s) => (ehData(s) ? `${s.slice(8, 10)}/${s.slice(5, 7)}/${s.slice(0, 4)}` : "—");
+const lista = (x) => (Array.isArray(x) ? x : []);
+const fmt1 = (x) => (typeof x === "number" ? x.toFixed(1).replace(".", ",") : "—");
+const fmtInt = (x) => (typeof x === "number" ? Math.round(x / 1000).toLocaleString("pt-PT") : "—");
+
+function urlSimbolo(papel) { return `https://www.tradingview.com/symbols/EURONEXT-${encodeURIComponent(papel)}/`; }
+const aprovado = (t) => (estado.cfg.matriz_teste.simbolos_aprovados || []).includes(t) && !(estado.cfg.matriz_teste.reprovados || []).includes(t);
+const grupoAtual = () => estado.cfg.grupos.find(g => g.id === estado.grupo);
+
+/* ---------- dados e ordem ---------- */
+function listaDoGrupo() {
+  const g = grupoAtual(), r = O.ordenar(estado.linhas, g.id);
+  let lista = r.principal;
+  if (estado.modo === "iniciante") lista = O.iniciante(lista, estado.cfg.limites.iniciante_max);
+  if (estado.ordem === "alfabetica") lista = O.alfabetica(lista);
+  return {todos: r, lista, paginas: estado.modo === "avancado" ? O.paginas(lista, estado.cfg.limites.pagina) : [lista]};
+}
+
+/* ---------- URL ---------- */
+function lerURL() { const p = new URLSearchParams(location.search); return {grupo: p.get("grupo"), modo: p.get("modo"), ordem: p.get("ordem")}; }
+function normalizar(g, m, o) {
+  const ids = estado.cfg.grupos.map(x => x.id);
+  return {grupo: ids.includes(g) ? g : ids[0], modo: MODOS.includes(m) ? m : "iniciante", ordem: ORDENS.includes(o) ? o : "criterio"};
+}
+function gravarURL(empilhar) {
+  const p = new URLSearchParams(location.search);
+  p.set("grupo", estado.grupo); p.set("modo", estado.modo); p.set("ordem", estado.ordem);
+  const url = location.pathname + "?" + p.toString();
+  if (empilhar) history.pushState(null, "", url); else history.replaceState(null, "", url);
+  guardar("lisboa-cotacoes-grupo", estado.grupo); guardar("lisboa-cotacoes-modo", estado.modo); guardar("lisboa-cotacoes-ordem", estado.ordem);
+}
+function irPara(grupo, modo, ordem) {
+  const n = normalizar(grupo ?? estado.grupo, modo ?? estado.modo, ordem ?? estado.ordem);
+  if (n.grupo === estado.grupo && n.modo === estado.modo && n.ordem === estado.ordem) return;
+  estado.grupo = n.grupo; estado.modo = n.modo; estado.ordem = n.ordem; estado.pagina = 0;
+  gravarURL(true); desenharTudo();
+}
+
+/* ---------- widget (só após clique ou com carregamento automático ligado) ---------- */
+function montarScript(cont, cfg) {
+  const s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+  s.src = TV_BASE + WIDGET; s.text = JSON.stringify(cfg); cont.appendChild(s);
+}
+function rotularIframe(cont, titulo) {
+  let n = 0; const t = setInterval(() => { const f = cont.querySelector("iframe"); if (f) { f.title = titulo; clearInterval(t); } else if (++n > 50) clearInterval(t); }, 400);
+  limpezas.push(() => clearInterval(t));
+}
+function atribuicao(texto, href) {
+  return `<div class="tradingview-widget-copyright"><a href="${esc(href)}" rel="noopener noreferrer nofollow" target="_blank"><span class="blue-text">${esc(texto)}</span></a><span class="trademark"> by TradingView</span></div>`;
+}
+function listaAlternativa(itens) {
+  return `<ul>${itens.map(it => `<li><a href="${esc(urlSimbolo(it.l.papel))}" rel="noopener noreferrer nofollow" target="_blank">${esc(it.l.papel)}</a> — ${esc(estado.cfg.tradingview.atraso)}</li>`).join("")}</ul>`;
+}
+function temaSistema() { try { return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; } catch (e) { return "dark"; } }
+function montarWidget(host, reserva, itens, titulo) {
+  if (document.querySelectorAll("#painel iframe").length >= O.LIM_IFRAMES) return;
+  const n = itens.length, altura = 92 + 54 * n, lim = estado.cfg.limites;
+  const caixa = document.createElement("div"); caixa.className = "tvbox"; caixa.style.height = altura + "px";
+  const cont = document.createElement("div"); cont.className = "tradingview-widget-container";
+  cont.setAttribute("role", "group"); cont.setAttribute("aria-label", `Widget do TradingView: ${titulo}`);
+  cont.innerHTML = `<div class="tradingview-widget-container__widget"></div>` + atribuicao("Cotações", urlSimbolo(itens[0].l.papel));
+  const aguarde = document.createElement("div"); aguarde.className = "carregando"; aguarde.textContent = "Carregando widget do TradingView…";
+  caixa.append(cont, aguarde); host.replaceChildren(caixa);
+  montarScript(cont, {width: "100%", height: altura - 34, symbolsGroups: [{name: titulo, originalName: titulo,
+    symbols: itens.map(it => ({name: estado.cfg.tradingview.prefixo + it.l.papel, displayName: it.l.papel}))}], showSymbolLogo: false, isTransparent: false, colorTheme: temaSistema(), locale: "pt"});
+  rotularIframe(cont, `Cotações do TradingView: ${titulo}`);
+  let fim = false;
+  const olho = setInterval(() => { if (cont.querySelector("iframe")) { aguarde.remove(); clearInterval(olho); } }, 400);
+  const timer = setTimeout(() => { if (fim || cont.querySelector("iframe")) return; fim = true; clearInterval(olho);
+    host.replaceChildren(); reserva.hidden = false;
+    reserva.innerHTML = `<b>O widget do TradingView não carregou.</b> Causas possíveis: bloqueador de conteúdo ou rede. Abra cada símbolo no TradingView:` + listaAlternativa(itens); }, lim.espera_widget_ms);
+  limpezas.push(() => { fim = true; clearTimeout(timer); clearInterval(olho); });
+}
+
+/* ---------- tabela e painel ---------- */
+function htmlAlerta(l) {
+  const nivel = {ok: "sem alerta", atencao: "atenção", grave: "grave"}[O.nivelAlerta(l)] || "—";
+  const I = estado.cfg.alertas_iniciante || {};
+  const avisos = lista(l.alertas).filter(a => a && (a.nivel === "atencao" || a.nivel === "grave"));
+  const t = estado.modo === "iniciante"
+    ? avisos.map(a => (Object.hasOwn(I, a.codigo) ? I[a.codigo] : "Alerta de dados; veja o Monitor Portugal.")).join(" ")
+    : avisos.map(a => String(a.texto || "")).join(" ");
+  return `<b>${esc(nivel)}</b>${t ? ": " + esc(t) : ""}`;
+}
+function htmlTabela(itens, ref) {
+  const av = estado.modo === "avancado", F = {acima: "Acima do teto", ate10: "Até 10% abaixo do teto", "10a30": "10% a 30% abaixo do teto", mais30: "Mais de 30% abaixo do teto", conferir: "Abaixo do teto · conferir dados", sem_margem: "—"};
+  const cab = `<th scope="col">Papel</th><th scope="col">Empresa</th><th scope="col">Faixa de margem (preço de ${esc(dcurta(ref))})</th>${av ? `<th scope="col">Margem (+ abaixo do teto, − acima) em ${esc(dcurta(ref))}</th><th scope="col">Liquidez (mil € por dia)</th><th scope="col">Data do preço</th><th scope="col">Controlo</th>` : ""}<th scope="col">Alerta</th>`;
+  const linhas = itens.map(it => {
+    const l = it.l, sem = aprovado(l.papel) ? "" : ` <span class="sem-teste">· ${estado.cfg.matriz_teste.reprovados.includes(l.papel) ? "não abre no widget" : "sem teste no widget"}</span>`;
+    const ctrl = l.controlo || {}, cat = CONTROLE[ctrl.categoria] || ctrl.categoria || "—";
+    return `<tr><th scope="row"><a href="${esc(urlSimbolo(l.papel))}" rel="noopener noreferrer nofollow" target="_blank">${esc(l.papel)}</a>${sem}</th><td>${esc(l.nome)}</td><td>${esc(F[it.faixa] || "")}</td>${av ? `<td class="n">${fmt1(O.margemRobusta(l))}%</td><td class="n">${fmtInt(l.liquidez_mediana_12m_eur)}</td><td class="n">${esc(dcurta(l.data_preco))}</td><td>${esc(cat)}${ctrl.confianca === "baixa" ? ` (${esc(estado.cfg.controle_a_confirmar)})` : ""}</td>` : ""}<td>${htmlAlerta(l)}</td></tr>`;
+  }).join("");
+  return `<div class="tabwrap" tabindex="0" role="region" aria-label="Tabela dos papéis exibidos"><table><caption class="sr">Papéis desta página, na ordem de leitura</caption><thead><tr>${cab}</tr></thead><tbody>${linhas}</tbody></table></div>`;
+}
+function htmlFora(fora) {
+  if (!fora.length) return "";
+  const M = estado.cfg.motivos_fora;
+  const li = fora.map(it => `<li><a href="${esc(urlSimbolo(it.l.papel))}" rel="noopener noreferrer nofollow" target="_blank">${esc(it.l.papel)}</a> ${esc(it.l.nome || "")} — ${esc(M[it.motivo] || M.outro)}</li>`).join("");
+  return `<details class="fora"><summary>Fora dos critérios (${fora.length} papéis)</summary><p class="nota">Lista só de texto, sem widget. O motivo vem do Monitor Portugal.</p><ul>${li}</ul></details>`;
+}
+function desenharPainel() {
+  limpezas.forEach(f => { try { f(); } catch (e) {} }); limpezas = [];
+  fecharPop();
+  const painel = $("painel"), g = grupoAtual(), ref = estado.dataPreco;
+  const d = listaDoGrupo(), nPag = d.paginas.length, pg = Math.min(estado.pagina, Math.max(0, nPag - 1)); estado.pagina = pg;
+  const itens = d.paginas[pg] || [];
+  const abaixo = d.todos.principal.filter(i => i.grupo === "abaixo").length, total = d.todos.principal.length;
+  const conferir = d.todos.principal.filter(i => i.faixa === "conferir").length;
+  const ref8 = dbr(ref);
+  let resumo = `<b>${abaixo} de ${total}</b> papéis do grupo ${esc(g.nome)} estão abaixo do preço-teto robusto no preço de ${esc(ref8)}.`;
+  if (abaixo === 0) resumo += " Nenhum papel deste grupo passa pelos critérios abaixo do teto; a lista traz os demais, por liquidez.";
+  if (conferir) resumo += ` ${conferir} ${conferir === 1 ? "papel marcado" : "papéis marcados"} "conferir" ${conferir === 1 ? "aparece" : "aparecem"} depois, com dado a verificar.`;
+  if (d.todos.fora.length) resumo += ` ${d.todos.fora.length} ${d.todos.fora.length === 1 ? "papel ficou" : "papéis ficaram"} fora dos critérios (veja "Fora dos critérios").`;
+  if (estado.modo === "iniciante" && itens.length < total) resumo += ` O modo Iniciante mostra ${itens.length} de ${total} papéis (os primeiros na ordem de leitura); não aparecer aqui não significa pior nem melhor. O modo Avançado traz todos.`;
+  if (estado.modo === "iniciante" && estado.ordem === "alfabetica") resumo += " A ordem alfabética muda só a ordem dos papéis mostrados, não quais aparecem.";
+  if (!total) resumo = `Nenhum papel de ${esc(g.nome)} passa pelos critérios no preço de ${esc(ref8)}; veja "Fora dos critérios".`;
+  const pager = estado.modo === "avancado" && nPag > 1 ? `<div class="pager" role="group" aria-label="Páginas de papéis"><button type="button" class="btn" id="btn-ant"${pg === 0 ? " disabled" : ""}>Anterior</button><button type="button" class="btn" id="btn-prox"${pg >= nPag - 1 ? " disabled" : ""}>Próximos ${estado.cfg.limites.pagina}</button><span class="nota">${pg * estado.cfg.limites.pagina + 1}–${pg * estado.cfg.limites.pagina + itens.length} de ${total}</span></div>` : "";
+  const comTeste = itens.filter(it => aprovado(it.l.papel));
+  painel.innerHTML = `<div class="cab-conj" style="margin-bottom:14px">
+    <div><h2 id="h-conj" tabindex="-1">${esc(g.nome)}</h2><p>${esc(g.o_que_e)}</p></div>
+    <div class="aviso" style="margin:0">${esc(estado.cfg.aviso_fixo)}</div>
+    <div class="naodiz"><b>O que este grupo não diz</b>${esc(g.nao_diz)}</div>
+    <p class="resumo">${resumo}</p>
+    <p class="nota"><b>Como ler.</b> ${esc(g.como_ler)}</p></div>
+    ${pager}
+    <div class="carga" id="carga"><div class="reserva" id="reserva" role="status" hidden></div><div id="host"></div></div>
+    <div style="margin-top:12px">${itens.length ? `<p class="nota">${esc(estado.cfg.aviso_ordem_tabela)}</p>` + htmlTabela(itens, ref) : '<div class="vazio">Nenhum papel para mostrar nesta página.</div>'}</div>
+    <div style="margin-top:12px">${htmlFora(d.todos.fora)}</div>`;
+  const carga = $("carga"), host = $("host"), reserva = $("reserva");
+  const titulo = `${g.nome}: ${itens.length ? itens[0].l.papel + " a " + itens[itens.length - 1].l.papel : ""}`;
+  if (!comTeste.length) {
+    if (itens.length) carga.insertAdjacentHTML("afterbegin", `<p class="nota">Nenhum papel desta página tem teste registrado no widget do TradingView. Use os links da tabela.</p>`);
+  } else if (estado.auto || estado.remontar) {
+    estado.remontar = false;
+    montarWidget(host, reserva, comTeste, titulo);
+  } else {
+    const b = document.createElement("button"); b.type = "button"; b.className = "btn"; b.id = "btn-carregar";
+    b.textContent = `Carregar cotações do TradingView (${comTeste.length} papéis)`;
+    b.addEventListener("click", () => { b.remove(); montarWidget(host, reserva, comTeste, titulo); });
+    carga.insertBefore(b, host);
+    carga.insertAdjacentHTML("afterbegin", `<p class="nota">Ao clicar, seu navegador carrega um widget do TradingView (veja Privacidade). A cotação do widget é atrasada e pode diferir do fecho usado na ordem.</p>`);
+  }
+  document.title = `${g.nome} · Cotações Dividendos Lisboa · market-lab`;
+}
+
+function focarPainel() { const b = document.querySelector("#painel .pager .btn:not([disabled])") || $("h-conj"); if (b) b.focus(); }
+
+/* ---------- seletores e estado ---------- */
+function desenharSeletores() {
+  const gs = estado.cfg.grupos;
+  $("tabs").innerHTML = gs.map((c, i) => { const sel = c.id === estado.grupo;
+    return `<button type="button" role="tab" id="tab-${esc(c.id)}" data-grupo="${esc(c.id)}" aria-selected="${sel}" aria-controls="painel" tabindex="${sel ? 0 : -1}"><span class="n" aria-hidden="true">${i + 1}</span>${esc(c.nome)}</button>`; }).join("");
+  $("sel-grupo").innerHTML = gs.map((c, i) => `<option value="${esc(c.id)}"${c.id === estado.grupo ? " selected" : ""}>${i + 1}. ${esc(c.nome)}</option>`).join("");
+  document.querySelectorAll("[data-modo]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.modo === estado.modo)));
+  document.querySelectorAll("[data-ordem]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.ordem === estado.ordem)));
+  $("painel").setAttribute("aria-labelledby", "tab-" + estado.grupo);
+  desenharAuto();
+}
+function desenharAuto() {
+  const b = $("btn-auto"); b.setAttribute("aria-pressed", String(estado.auto));
+  b.textContent = `Carregar ao trocar de grupo: ${estado.auto ? "ligado" : "desligado"}`;
+  $("nota-auto").textContent = estado.auto ? "Os widgets carregam sozinhos ao abrir cada grupo ou página. Desligue para voltar ao carregamento por clique."
+    : "Os widgets só carregam depois do clique em \"Carregar cotações\". Ligue para carregar sozinho ao trocar de grupo.";
+}
+function desenharStatus() {
+  const p = estado.painel;
+  const gerado = ehData(p.gerado_em) ? dcurta(p.gerado_em) + " às " + p.gerado_em.slice(11, 16) : "—";
+  let t = `Dados do Monitor Portugal: fecho de ${dbr(estado.dataPreco)} (data do preço da maioria dos papéis; fecho esperado ${dbr(p.fecho_esperado)}) · gerados em ${gerado} · carregados nesta página às ${estado.carregadoEm}. A data do preço de cada papel aparece na tabela do modo Avançado.`;
+  const el = $("status"); el.className = "status";
+  if (estado.defasados > 0) { t += ` Atenção: ${estado.defasados} papel(éis) com preço de data anterior ao fecho esperado.`; el.classList.add("alerta"); }
+  el.textContent = t;
+}
+function desenharTudo() { desenharSeletores(); desenharPainel(); }
+
+/* ---------- glossário ---------- */
+let popBtn = null;
+function fecharPop() { const p = $("pop"); p.hidden = true; if (popBtn) { popBtn.setAttribute("aria-expanded", "false"); popBtn = null; } }
+function desenharGlossario() {
+  const itens = Object.values(estado.cfg.glossario || {}).sort((a, b) => (a.termo < b.termo ? -1 : a.termo > b.termo ? 1 : 0));
+  $("gloss").innerHTML = itens.map(d => `<div><dt>${esc(d.termo)}</dt><dd>${esc(d.definicao)}</dd></div>`).join("");
+}
+
+/* ---------- eventos ---------- */
+document.addEventListener("click", (e) => {
+  if (!estado.cfg || !estado.linhas.length) return;
+  if (e.target.closest("#btn-auto")) { estado.auto = !estado.auto; guardar("lisboa-cotacoes-auto", estado.auto ? "ligado" : "desligado"); desenharAuto(); desenharPainel(); return; }
+  if (e.target.closest("#btn-prox")) { estado.pagina++; desenharPainel(); focarPainel(); return; }
+  if (e.target.closest("#btn-ant")) { estado.pagina = Math.max(0, estado.pagina - 1); desenharPainel(); focarPainel(); return; }
+  const m = e.target.closest("[data-modo]"), o = e.target.closest("[data-ordem]"), c = e.target.closest("[data-grupo]");
+  if (m) irPara(null, m.dataset.modo, null);
+  else if (o) irPara(null, null, o.dataset.ordem);
+  else if (c) { irPara(c.dataset.grupo, null, null); const b = $("tab-" + estado.grupo); if (b) b.focus(); }
+});
+$("sel-grupo").addEventListener("change", (e) => irPara(e.target.value, null, null));
+try {
+  const mq = window.matchMedia("(prefers-color-scheme: dark)");
+  const aoTrocar = () => { if (document.querySelector("#painel iframe")) { estado.remontar = true; desenharPainel(); } };
+  if (mq.addEventListener) mq.addEventListener("change", aoTrocar); else if (mq.addListener) mq.addListener(aoTrocar);
+} catch (e) { /* sem matchMedia: segue o tema inicial */ }
+$("tabs").addEventListener("keydown", (e) => {
+  if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(e.key) || !estado.cfg) return;
+  const ids = estado.cfg.grupos.map(c => c.id); let i = ids.indexOf(estado.grupo);
+  i = e.key === "Home" ? 0 : e.key === "End" ? ids.length - 1 : (i + (e.key === "ArrowRight" ? 1 : -1) + ids.length) % ids.length;
+  e.preventDefault(); irPara(ids[i], null, null); const b = $("tab-" + ids[i]); if (b) b.focus();
+});
+addEventListener("popstate", () => { if (!estado.cfg || !estado.linhas.length) return; const u = lerURL(), n = normalizar(u.grupo, u.modo, u.ordem);
+  if (n.grupo === estado.grupo && n.modo === estado.modo && n.ordem === estado.ordem) return;
+  estado.grupo = n.grupo; estado.modo = n.modo; estado.ordem = n.ordem; estado.pagina = 0; desenharTudo(); });
+
+/* ---------- carga ---------- */
+const buscar = (url) => fetch(url + "?t=" + Date.now(), {cache: "no-store"}).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); });
+Promise.all([buscar(CONJ_URL), buscar(PAINEL_URL)]).catch(() => null).then(res => {
+  if (!res) { $("painel").innerHTML = '<div class="vazio">Não foi possível carregar os dados do Monitor Portugal (rede ou arquivo). Tente mais tarde ou abra o <a href="../../portugal/monitor/">Monitor Portugal</a>.</div>'; return; }
+  try {
+    const [cfg, painel] = res, v = O.validar(painel);
+    if (!v.ok) { $("painel").innerHTML = '<div class="vazio">Os dados do Monitor Portugal vieram em formato inesperado. Abra o <a href="../../portugal/monitor/">Monitor Portugal</a>.</div>'; return; }
+    estado.cfg = cfg; estado.painel = painel; estado.linhas = v.linhas;
+    estado.dataPreco = O.dataPredominante(v.linhas) || (ehData(painel.fecho_esperado) ? painel.fecho_esperado : null);
+    estado.defasados = O.defasados(v.linhas, painel.fecho_esperado);
+    estado.carregadoEm = new Date().toLocaleTimeString("pt-PT", {hour: "2-digit", minute: "2-digit"});
+    estado.auto = ler("lisboa-cotacoes-auto") === "ligado";
+    $("faixa").textContent = cfg.faixa.texto; $("txt-fonte").innerHTML = cfg.fonte_texto; $("txt-ordem").textContent = cfg.ordem_texto; $("txt-formula").textContent = cfg.formula; $("txt-nao-diz").textContent = cfg.nao_diz_geral;
+    const u = lerURL(), n = normalizar(u.grupo || ler("lisboa-cotacoes-grupo"), u.modo || ler("lisboa-cotacoes-modo"), u.ordem || ler("lisboa-cotacoes-ordem"));
+    estado.grupo = n.grupo; estado.modo = n.modo; estado.ordem = n.ordem; gravarURL(false);
+    desenharStatus(); desenharGlossario(); desenharTudo();
+  } catch (e) {
+    console.error(e);
+    $("painel").innerHTML = '<div class="vazio">Erro ao montar a página (detalhes no console do navegador). Os dados foram carregados, mas a página falhou ao desenhá-los.</div>';
+  }
+});
+</script>
+</body>
+</html>

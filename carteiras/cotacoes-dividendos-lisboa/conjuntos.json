@@ -1,0 +1,117 @@
+{
+ "faixa": {
+  "texto": "Para estudo. Não use para operar. Cotações atrasadas podem diferir das de um intermediário financeiro."
+ },
+ "aviso_fixo": "Lista organizada por critério matemático sobre dividendos passados. Não é recomendação de investimento. O preço-teto depende de proventos passados, que podem não se repetir.",
+ "formula": "Preço-teto robusto (método de Bazin, adaptado ao juro em euro): proventos médios por ação dos últimos 5 anos civis ÷ taxa exigida. A taxa exigida é a obrigação do Tesouro português a 10 anos (média de 12 meses, BCE) + 3 pontos percentuais, com mínimo de 5%. O teto robusto usa a média aparada ou a mediana, conforme o número de anos válidos. A margem é a diferença entre o teto robusto e o preço de fecho do Monitor Portugal, em % do preço.",
+ "ordem_texto": "A ordem de leitura é sempre a mesma regra para todos: primeiro os papéis com preço abaixo do preço-teto robusto, depois os demais; dentro de cada grupo, do que mais negoceia para o que menos negoceia (liquidez mediana de 12 meses, em euros por dia). Quem preferir pode trocar para ordem alfabética. A ordem não indica qualidade, risco nem preço justo.",
+ "nao_diz_geral": "Esta página não diz se um papel é bom, arriscado ou se vale a pena comprar. O preço-teto depende de dividendos passados, que podem não se repetir. A ordem vem do fecho do último pregão indicado; o widget do TradingView mostra uma cotação atrasada, que pode estar noutro nível. Papéis sem cotação, sem proventos ou com cadastro de proventos ainda por conferir ficam fora da lista de critérios (veja \"Fora dos critérios\"). O grupo \"Em observação\" reúne cotadas com pouca negociação: o risco de negociação é real e está indicado em cada linha.",
+ "tradingview": {
+  "prefixo": "EURONEXT:",
+  "atraso": "cotação atrasada (Euronext Lisboa via TradingView)"
+ },
+ "limites": {
+  "iniciante_max": 6,
+  "pagina": 8,
+  "iframes_max": 2,
+  "espera_widget_ms": 10000
+ },
+ "matriz_teste": {
+  "regra": "Só entra em widget o papel com teste registrado no Market Quotes. Os demais aparecem na tabela com link para o TradingView e o aviso 'sem teste no widget'.",
+  "data_teste": "2026-11-20",
+  "simbolos_aprovados": [
+   "ALTR",
+   "BCP",
+   "COR",
+   "CTT",
+   "EDP",
+   "EDPR",
+   "EGL",
+   "ESON",
+   "FCP",
+   "FLEXD",
+   "GALP",
+   "GLINT",
+   "IBS",
+   "IPR",
+   "JMT",
+   "MAR",
+   "MCP",
+   "NBA",
+   "NOS",
+   "NVG",
+   "PHR",
+   "RAM",
+   "RENE",
+   "SCP",
+   "SCT",
+   "SEM",
+   "SLBEN",
+   "SNC",
+   "SON",
+   "TDSA"
+  ],
+  "reprovados": [],
+  "nota": "Teste visual no Chrome do dono (20/11/2026): os 30 papéis abriram com valor no Market Quotes (EURONEXT:), em 5 widgets de até 8. Não foi conferido valor a valor contra o painel."
+ },
+ "grupos": [
+  {
+   "id": "nucleo",
+   "nome": "Núcleo",
+   "o_que_e": "Cotadas portuguesas com liquidez mediana de pelo menos 100 mil euros por dia nos últimos 12 meses.",
+   "nao_diz": "Liquidez alta não é sinal de qualidade nem de preço certo.",
+   "como_ler": "Compare o preço com o teto robusto e veja a margem; o teto usa só proventos passados."
+  },
+  {
+   "id": "observacao",
+   "nome": "Em observação",
+   "o_que_e": "Cotadas portuguesas com liquidez média ou baixa. Estar em observação não é uma avaliação da empresa.",
+   "nao_diz": "Pouca negociação pode significar preços difíceis de executar, diferença grande entre compra e venda e dificuldade em vender numa crise.",
+   "como_ler": "Antes de qualquer conta, leia os avisos de negociação e de cadastro de cada linha; sem cadastro conferido, a linha aparece sem teto."
+  }
+ ],
+ "motivos_fora": {
+  "sem_cotacao": "sem cotação no painel",
+  "em_cadastro": "em cadastro: proventos ainda por conferir no cadastro oficial, sem teto",
+  "sem_proventos": "sem proventos nos últimos anos; sem teto",
+  "sem_teto": "sem preço-teto calculado",
+  "outro": "fora dos critérios"
+ },
+ "alertas_iniciante": {
+  "anos_sem_proventos": "Há anos sem proventos: a média de 5 anos fica mais baixa e o teto também.",
+  "fora_nucleo": "Fora do núcleo de alta liquidez: negociação mais difícil."
+ },
+ "controle_a_confirmar": "controlo a confirmar",
+ "aviso_ordem_tabela": "A tabela segue a ordem de leitura. Cada linha traz a faixa de margem, a liquidez e os alertas de dados.",
+ "fonte_texto": "<b>Dados do Monitor Portugal.</b> Proventos do cadastro oficial (relatórios ESEF e comunicados); cotações de fonte pública com atraso, usadas só para cálculo e alerta. O painel é público e de estudo.",
+ "glossario": {
+  "teto": {
+   "termo": "Preço-teto",
+   "definicao": "Preço em que os proventos médios de 5 anos renderiam a taxa exigida. Estar abaixo é um primeiro filtro, não um sinal de compra."
+  },
+  "taxa": {
+   "termo": "Taxa exigida",
+   "definicao": "Obrigação do Tesouro a 10 anos (média de 12 meses, BCE) mais 3 pontos, com mínimo de 5%."
+  },
+  "liquidez": {
+   "termo": "Liquidez",
+   "definicao": "Mediana do volume negociado por dia nos últimos 12 meses, em euros. Quanto menor, mais difícil comprar ou vender ao preço mostrado."
+  },
+  "margem": {
+   "termo": "Margem",
+   "definicao": "Quanto o teto está acima (+) ou abaixo (−) do preço, em % do preço. Margens enormes costumam indicar problema nos dados, não pechincha."
+  },
+  "scrip": {
+   "termo": "Scrip",
+   "definicao": "Provento pago em ações novas. Conta-se o valor de referência por ação indicado pela empresa."
+  },
+  "devolucao": {
+   "termo": "Devolução de capital",
+   "definicao": "Retorno de capital aos acionistas, que não entra nos proventos da página."
+  },
+  "cadastro": {
+   "termo": "Cadastro de proventos",
+   "definicao": "Lista de proventos conferida com documento oficial. Sem cadastro conferido, a empresa aparece sem teto."
+  }
+ }
+}
