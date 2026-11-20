@@ -52,7 +52,7 @@ Página nova em "Carteiras de dividendos" com cotações atrasadas (widgets do T
 - **D3 Faixas de margem** descritivas, sem cortar a lista; `abaixo_teto_conferir` não vem à frente: aprovado.
 - **D4 Carregamento:** só após o clique.
 - **D5 Empregador:** não será feita consulta; o dono entende que, por ser conteúdo de estudo e sem consultoria, não é necessária, e a página explicita isso. (Os especialistas de Regulatório recomendaram a consulta como pré-condição; fica registrado que a decisão é do dono.)
-- **D6 TradingView:** carregamento com opção de ligar (botão "Carregar ao trocar de setor", desligado por padrão, guardado em `besst-cotacoes-auto`). A consulta formal segue autorizada e não enviada.
+- **D6 TradingView:** carregamento com opção de ligar (botão "Carregar ao trocar de setor", desligado por padrão, guardado em `besst-cotacoes-auto`). Em 20/11/2026 o dono dispensou a consulta formal ao TradingView, por já existir a opção de ligar e desligar o carregamento dos widgets.
 - **D7 Conflito de interesse:** a página não faz declaração pessoal sobre o autor; reforça que é didática (teste automático impede declaração pessoal).
 - **Construção e publicação autorizadas** pelo dono (19/11/2026), com a rodada de juízes antes do merge.
 
