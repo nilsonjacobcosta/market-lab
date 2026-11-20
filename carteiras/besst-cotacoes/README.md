@@ -29,6 +29,7 @@ Mudar a regra é decisão do dono.
 - Símbolos testados em 19/11/2026 no navegador embutido do app Claude: 105 de 107 abriram com valor; OIBR3 e OIBR4 ficaram sem valor (reprovados). Conferir de novo no Chrome do dono quando possível.
 - Consulta formal ao TradingView: **dispensada pelo dono em 20/11/2026**, por já existir a opção de ligar e desligar o carregamento dos widgets (padrão: desligado, só por clique).
 - Peso medido em 20/11/2026 no Chrome do dono (aba Bancos, modo Iniciante): cerca de 42 KB transferidos do próprio site (HTML, `ordem.js`, `conjuntos.json`, `painel.json`), antes de qualquer widget. O peso do widget do TradingView não é medível pela página (conteúdo de outro domínio, sem tamanho exposto) e não foi medido.
+- Reteste dos símbolos em 20/11/2026 (Chrome do dono, 17 grupos, conferência visual do valor no widget): 105 abriram e 2 não (OIBR3, OIBR4), idêntico ao registro de 19/11 em `conjuntos.json`; nada a alterar.
 - Conferido no ar em 20/11/2026: aviso de atraso aparece ("faltam 1 pregão(ões)", dados de 18/11, feriado de 20/11), frase de créditos visível e widget com 6 papéis carregou após o clique.
 - Origem e licença dos preços: registrada abaixo (leitura de 20/11/2026). Decisão do dono (20/11/2026): seguir como está, sem mudar a fonte nem pedir parecer por ora.
 
