@@ -1,6 +1,6 @@
 {
- "gerado_utc": "2026-11-22T08:26+00:00",
- "gerado_brt": "22/11/2026 05:26",
+ "gerado_utc": "2026-11-22T16:30+00:00",
+ "gerado_brt": "22/11/2026 13:30",
  "fonte": "Yahoo Finance (endpoint chart), atraso variável; captura de 10/11/2026 onde não há fonte",
  "cotacoes_ok": 79,
  "destaques": [
@@ -239,9 +239,9 @@
      "nome": "Tadawul All Share",
      "ticker": "^TASI.SR",
      "detalhe": "Arábia Saudita · índice de todas as ações da Bolsa de Riad (Tadawul).",
-     "valor": 9986.23,
-     "var": -1.6996918957761231,
-     "hora": "2026-11-22T08:11:10+00:00",
+     "valor": 9960.44,
+     "var": -1.953557963952779,
+     "hora": "2026-11-22T12:20:00+00:00",
      "status": "ok"
     },
     {
@@ -361,9 +361,9 @@
      "nome": "USD/CAD",
      "ticker": "CAD=X",
      "detalhe": "Canadá · quantos dólares canadenses valem 1 dólar americano.",
-     "valor": 1.434,
-     "var": 0.49758217114022063,
-     "hora": "2026-11-21T22:00:31+00:00",
+     "valor": 1.4339,
+     "var": 0.4905739715467039,
+     "hora": "2026-11-22T14:25:50+00:00",
      "status": "ok"
     },
     {
@@ -560,9 +560,9 @@
      "nome": "Bitcoin",
      "ticker": "BTC-USD",
      "detalhe": "Criptomoeda descentralizada. Preço em dólares americanos por unidade.",
-     "valor": 59649.3,
-     "var": -5.299429887939578,
-     "hora": "2026-11-22T08:26:12+00:00",
+     "valor": 61129.96,
+     "var": -2.948700773899293,
+     "hora": "2026-11-22T16:30:22+00:00",
      "status": "ok"
     }
    ]
@@ -576,7 +576,7 @@
      "detalhe": "Nicarágua · córdoba nicaraguense (NIO). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 36.6243,
      "var": 2.4949066403976206,
-     "hora": "2026-11-22T08:00:07+00:00",
+     "hora": "2026-11-22T16:00:07+00:00",
      "status": "ok"
     },
     {
@@ -585,7 +585,7 @@
      "detalhe": "República Dominicana · peso dominicano (DOP). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 59.52,
      "var": 0.6626279846164929,
-     "hora": "2026-11-20T22:36:29+00:00",
+     "hora": "2026-11-22T14:25:50+00:00",
      "status": "ok"
     },
     {
@@ -594,7 +594,7 @@
      "detalhe": "Uruguai · peso uruguaio (UYU). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 40.609,
      "var": 3.3981423013464296,
-     "hora": "2026-11-20T22:36:29+00:00",
+     "hora": "2026-11-22T14:25:50+00:00",
      "status": "ok"
     },
     {
@@ -603,7 +603,7 @@
      "detalhe": "Costa Rica · colón costarriquenho (CRC). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 441.73,
      "var": 1.5730217197901686,
-     "hora": "2026-11-20T22:36:29+00:00",
+     "hora": "2026-11-22T14:25:50+00:00",
      "status": "ok"
     },
     {
@@ -612,7 +612,7 @@
      "detalhe": "Peru · sol peruano (PEN). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 3.4543,
      "var": 4.511073460002413,
-     "hora": "2026-11-20T22:36:29+00:00",
+     "hora": "2026-11-22T14:25:50+00:00",
      "status": "ok"
     },
     {
@@ -621,7 +621,7 @@
      "detalhe": "Jamaica · dólar jamaicano (JMD). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 157.59,
      "var": 2.725662055451905,
-     "hora": "2026-11-20T22:36:29+00:00",
+     "hora": "2026-11-22T14:25:50+00:00",
      "status": "ok"
     },
     {
@@ -630,7 +630,7 @@
      "detalhe": "Paraguai · guarani paraguaio (PYG). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 6211.73,
      "var": 3.221671444532248,
-     "hora": "2026-11-20T22:36:29+00:00",
+     "hora": "2026-11-22T14:25:50+00:00",
      "status": "ok"
     },
     {
@@ -639,7 +639,7 @@
      "detalhe": "República Tcheca · coroa tcheca (CZK). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 22.274,
      "var": 0.6711712729655872,
-     "hora": "2026-11-20T22:36:31+00:00",
+     "hora": "2026-11-22T14:25:50+00:00",
      "status": "ok"
     },
     {
@@ -657,7 +657,7 @@
      "detalhe": "Hungria · florim húngaro (HUF). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 340.03,
      "var": 2.978854855024604,
-     "hora": "2026-11-20T22:36:29+00:00",
+     "hora": "2026-11-22T14:25:50+00:00",
      "status": "ok"
     },
     {
@@ -675,25 +675,25 @@
      "detalhe": "Nigéria · naira (NGN). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 1382.93,
      "var": 2.9678274401185423,
-     "hora": "2026-11-20T22:36:29+00:00",
+     "hora": "2026-11-22T14:25:50+00:00",
      "status": "ok"
     },
     {
      "nome": "EGP",
      "ticker": "USDEGP=X",
      "detalhe": "Egito · libra egípcia (EGP). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 53.76,
-     "var": 0.5361554271009927,
-     "hora": "2026-11-20T22:36:29+00:00",
+     "valor": 54.37,
+     "var": 1.6769116549754548,
+     "hora": "2026-11-22T14:25:50+00:00",
      "status": "ok"
     },
     {
      "nome": "PHP",
      "ticker": "USDPHP=X",
      "detalhe": "Filipinas · peso filipino (PHP). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 63.8,
-     "var": -0.09395552771688243,
-     "hora": "2026-11-22T03:30:31+00:00",
+     "valor": 63.81,
+     "var": -0.07829627309740017,
+     "hora": "2026-11-22T14:25:50+00:00",
      "status": "ok"
     },
     {
@@ -702,7 +702,7 @@
      "detalhe": "Israel · novo shekel israelense (ILS). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 3.355,
      "var": 4.325383251966786,
-     "hora": "2026-11-20T22:36:29+00:00",
+     "hora": "2026-11-22T14:25:50+00:00",
      "status": "ok"
     },
     {
@@ -711,16 +711,16 @@
      "detalhe": "Taiwan · novo dólar taiwanês (TWD). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 32.958,
      "var": 0.2482023579224002,
-     "hora": "2026-11-20T22:36:29+00:00",
+     "hora": "2026-11-22T14:25:50+00:00",
      "status": "ok"
     },
     {
      "nome": "HKD",
      "ticker": "USDHKD=X",
      "detalhe": "Hong Kong · dólar de Hong Kong (HKD). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 7.8389,
-     "var": -0.08030388007954636,
-     "hora": "2026-11-21T22:00:31+00:00",
+     "valor": 7.8386,
+     "var": -0.08412787436904434,
+     "hora": "2026-11-22T14:25:50+00:00",
      "status": "ok"
     },
     {
@@ -743,7 +743,7 @@
      "detalhe": "Argentina · peso argentino (ARS). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 1579.5,
      "var": 2.17098629899688,
-     "hora": "2026-11-20T22:36:29+00:00",
+     "hora": "2026-11-22T14:25:50+00:00",
      "status": "ok"
     },
     {
@@ -759,9 +759,9 @@
      "nome": "BRL",
      "ticker": "USDBRL=X",
      "detalhe": "Brasil · real (BRL). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 5.9074,
-     "var": 4.282587205197008,
-     "hora": "2026-11-21T10:58:14+00:00",
+     "valor": 5.9488,
+     "var": 5.013416184154784,
+     "hora": "2026-11-22T14:25:50+00:00",
      "status": "ok"
     },
     {
@@ -777,9 +777,9 @@
      "nome": "CNY",
      "ticker": "USDCNY=X",
      "detalhe": "China · yuan chinês (CNY). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 6.6772,
-     "var": 0.09293958926697155,
-     "hora": "2026-11-22T03:30:31+00:00",
+     "valor": 6.6623,
+     "var": -0.13041523010043354,
+     "hora": "2026-11-22T16:04:38+00:00",
      "status": "ok"
     },
     {
@@ -788,25 +788,25 @@
      "detalhe": "Colômbia · peso colombiano (COP). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 3483.34,
      "var": 4.976161918136834,
-     "hora": "2026-11-20T22:36:29+00:00",
+     "hora": "2026-11-22T14:25:50+00:00",
      "status": "ok"
     },
     {
      "nome": "INR",
      "ticker": "USDINR=X",
      "detalhe": "Índia · rúpia indiana (INR). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 92.67,
-     "var": -1.6638723232666242,
-     "hora": "2026-11-22T03:30:05+00:00",
+     "valor": 92.66,
+     "var": -1.6744837538997026,
+     "hora": "2026-11-22T14:25:50+00:00",
      "status": "ok"
     },
     {
      "nome": "KRW",
      "ticker": "USDKRW=X",
      "detalhe": "Coreia do Sul · won sul-coreano (KRW). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 1337.8,
-     "var": 0.3412713294580927,
-     "hora": "2026-11-22T03:30:31+00:00",
+     "valor": 1346.13,
+     "var": 0.9660603787736921,
+     "hora": "2026-11-22T14:25:50+00:00",
      "status": "ok"
     },
     {
@@ -815,7 +815,7 @@
      "detalhe": "México · peso mexicano (MXN). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 19.143,
      "var": 3.331570026665509,
-     "hora": "2026-11-20T22:36:29+00:00",
+     "hora": "2026-11-22T14:25:50+00:00",
      "status": "ok"
     },
     {
@@ -824,16 +824,16 @@
      "detalhe": "Rússia · rublo russo (RUB). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 81.811,
      "var": -1.2138914682254476,
-     "hora": "2026-11-20T22:36:29+00:00",
+     "hora": "2026-11-22T14:25:50+00:00",
      "status": "ok"
     },
     {
      "nome": "SAR",
      "ticker": "USDSAR=X",
      "detalhe": "Arábia Saudita · riyal saudita (SAR). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 3.7515,
-     "var": -0.01865572197644605,
-     "hora": "2026-11-20T22:36:29+00:00",
+     "valor": 3.7516,
+     "var": -0.015990618836958514,
+     "hora": "2026-11-22T14:25:50+00:00",
      "status": "ok"
     },
     {
@@ -842,16 +842,16 @@
      "detalhe": "Turquia · lira turca (TRY). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 50.5142,
      "var": 0.3454488749570439,
-     "hora": "2026-11-20T22:36:29+00:00",
+     "hora": "2026-11-22T14:25:50+00:00",
      "status": "ok"
     },
     {
      "nome": "ZAR",
      "ticker": "USDZAR=X",
      "detalhe": "África do Sul · rand sul-africano (ZAR). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 17.5858,
-     "var": 3.899372555506986,
-     "hora": "2026-11-21T22:00:31+00:00",
+     "valor": 17.5856,
+     "var": 3.898190927459866,
+     "hora": "2026-11-22T14:25:50+00:00",
      "status": "ok"
     }
    ]
