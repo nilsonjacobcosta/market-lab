@@ -1,6 +1,6 @@
 {
- "gerado_utc": "2026-11-22T01:27+00:00",
- "gerado_brt": "21/11/2026 22:27",
+ "gerado_utc": "2026-11-22T08:26+00:00",
+ "gerado_brt": "22/11/2026 05:26",
  "fonte": "Yahoo Finance (endpoint chart), atraso variável; captura de 10/11/2026 onde não há fonte",
  "cotacoes_ok": 79,
  "destaques": [
@@ -18,7 +18,7 @@
    "ticker": "DX-Y.NYB",
    "detalhe": "EUA · índice do dólar contra uma cesta de 6 moedas (euro, iene, libra, dólar canadense, coroa sueca, franco suíço). Sobe quando o dólar se valoriza.",
    "valor": 103.84,
-   "var": 0.2800579430227046,
+   "var": 0.3381969272393537,
    "hora": "2026-11-20T21:59:59+00:00",
    "status": "ok"
   },
@@ -27,7 +27,7 @@
    "ticker": "ES=F",
    "detalhe": "EUA · contrato futuro do S&P 500, negocia quase 24 horas.",
    "valor": 6935.0,
-   "var": -6.7751041806694445,
+   "var": -5.7616523984237,
    "hora": "2026-11-20T21:59:58+00:00",
    "status": "ok"
   },
@@ -36,7 +36,7 @@
    "ticker": "CL=F",
    "detalhe": "EUA · petróleo West Texas Intermediate, referência americana. Unidade: US$ por barril.",
    "valor": 83.41,
-   "var": -2.6948203453103114,
+   "var": -3.022904313451935,
    "hora": "2026-11-20T21:59:59+00:00",
    "status": "ok"
   },
@@ -239,9 +239,9 @@
      "nome": "Tadawul All Share",
      "ticker": "^TASI.SR",
      "detalhe": "Arábia Saudita · índice de todas as ações da Bolsa de Riad (Tadawul).",
-     "valor": 10158.9,
-     "var": -0.4048940216858643,
-     "hora": "2026-11-19T12:19:59+00:00",
+     "valor": 9986.23,
+     "var": -1.6996918957761231,
+     "hora": "2026-11-22T08:11:10+00:00",
      "status": "ok"
     },
     {
@@ -326,7 +326,7 @@
      "ticker": "DX-Y.NYB",
      "detalhe": "EUA · índice do dólar contra uma cesta de 6 moedas. Sobe quando o dólar se valoriza.",
      "valor": 103.84,
-     "var": 0.2800579430227046,
+     "var": 0.3381969272393537,
      "hora": "2026-11-20T21:59:59+00:00",
      "status": "ok"
     },
@@ -403,7 +403,7 @@
      "ticker": "HG=F",
      "detalhe": "Metal industrial, referência da bolsa de Nova York (COMEX). Unidade: US$ por libra-peso.",
      "valor": 5.485,
-     "var": -8.54522717799082,
+     "var": -8.216198125836671,
      "hora": "2026-11-20T21:59:55+00:00",
      "status": "ok"
     },
@@ -412,7 +412,7 @@
      "ticker": "SI=F",
      "detalhe": "Metal precioso, referência da COMEX. Unidade: US$ por onça troy.",
      "valor": 41.07,
-     "var": -12.215453671048405,
+     "var": -13.149213331077647,
      "hora": "2026-11-20T21:59:58+00:00",
      "status": "ok"
     },
@@ -421,7 +421,7 @@
      "ticker": "GC=F",
      "detalhe": "Metal precioso, referência da COMEX. Unidade: US$ por onça troy.",
      "valor": 3515.4,
-     "var": -8.762003633532311,
+     "var": -9.026447906423051,
      "hora": "2026-11-20T21:59:57+00:00",
      "status": "ok"
     },
@@ -430,7 +430,7 @@
      "ticker": "BZ=F",
      "detalhe": "Referência internacional de petróleo, do Mar do Norte. Unidade: US$ por barril.",
      "valor": 89.95,
-     "var": -2.693639117265245,
+     "var": -3.4249516856345252,
      "hora": "2026-11-20T21:59:18+00:00",
      "status": "ok"
     },
@@ -439,7 +439,7 @@
      "ticker": "CL=F",
      "detalhe": "Referência americana de petróleo. Unidade: US$ por barril.",
      "valor": 83.41,
-     "var": -2.6948203453103114,
+     "var": -3.022904313451935,
      "hora": "2026-11-20T21:59:59+00:00",
      "status": "ok"
     }
@@ -453,7 +453,7 @@
      "ticker": "ES=F",
      "detalhe": "EUA · contrato futuro do S&P 500, negocia quase 24 horas.",
      "valor": 6935.0,
-     "var": -6.7751041806694445,
+     "var": -5.7616523984237,
      "hora": "2026-11-20T21:59:58+00:00",
      "status": "ok"
     },
@@ -462,7 +462,7 @@
      "ticker": "NQ=F",
      "detalhe": "EUA · contrato futuro do Nasdaq-100 (100 maiores empresas não financeiras da Nasdaq). Costuma ter valor diferente do Nasdaq Composto.",
      "valor": 25126.5,
-     "var": -7.908408697325376,
+     "var": -7.198389688094398,
      "hora": "2026-11-20T21:59:59+00:00",
      "status": "ok"
     },
@@ -471,7 +471,7 @@
      "ticker": "YM=F",
      "detalhe": "EUA · contrato futuro do Dow Jones (30 grandes empresas).",
      "valor": 48216.0,
-     "var": -6.684730017418228,
+     "var": -5.114631506444944,
      "hora": "2026-11-20T21:59:56+00:00",
      "status": "ok"
     },
@@ -480,7 +480,7 @@
      "ticker": "RTY=F",
      "detalhe": "EUA · contrato futuro do Russell 2000 (empresas de porte pequeno).",
      "valor": 2587.4,
-     "var": -5.960601875408877,
+     "var": -4.56624372971377,
      "hora": "2026-11-20T21:59:58+00:00",
      "status": "ok"
     },
@@ -560,9 +560,9 @@
      "nome": "Bitcoin",
      "ticker": "BTC-USD",
      "detalhe": "Criptomoeda descentralizada. Preço em dólares americanos por unidade.",
-     "valor": 60052.37,
-     "var": -4.659506891440568,
-     "hora": "2026-11-22T01:27:17+00:00",
+     "valor": 59649.3,
+     "var": -5.299429887939578,
+     "hora": "2026-11-22T08:26:12+00:00",
      "status": "ok"
     }
    ]
@@ -576,7 +576,7 @@
      "detalhe": "Nicarágua · córdoba nicaraguense (NIO). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 36.6243,
      "var": 2.4949066403976206,
-     "hora": "2026-11-22T01:00:07+00:00",
+     "hora": "2026-11-22T08:00:07+00:00",
      "status": "ok"
     },
     {
@@ -693,7 +693,7 @@
      "detalhe": "Filipinas · peso filipino (PHP). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 63.8,
      "var": -0.09395552771688243,
-     "hora": "2026-11-21T03:30:56+00:00",
+     "hora": "2026-11-22T03:30:31+00:00",
      "status": "ok"
     },
     {
@@ -777,9 +777,9 @@
      "nome": "CNY",
      "ticker": "USDCNY=X",
      "detalhe": "China · yuan chinês (CNY). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 6.6623,
-     "var": -0.13041523010043354,
-     "hora": "2026-11-21T21:32:33+00:00",
+     "valor": 6.6772,
+     "var": 0.09293958926697155,
+     "hora": "2026-11-22T03:30:31+00:00",
      "status": "ok"
     },
     {
@@ -797,16 +797,16 @@
      "detalhe": "Índia · rúpia indiana (INR). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 92.67,
      "var": -1.6638723232666242,
-     "hora": "2026-11-21T03:30:21+00:00",
+     "hora": "2026-11-22T03:30:05+00:00",
      "status": "ok"
     },
     {
      "nome": "KRW",
      "ticker": "USDKRW=X",
      "detalhe": "Coreia do Sul · won sul-coreano (KRW). Quantas unidades da moeda valem 1 dólar americano.",
-     "valor": 1346.13,
-     "var": 0.9660603787736921,
-     "hora": "2026-11-20T22:36:29+00:00",
+     "valor": 1337.8,
+     "var": 0.3412713294580927,
+     "hora": "2026-11-22T03:30:31+00:00",
      "status": "ok"
     },
     {
