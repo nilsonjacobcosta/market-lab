@@ -1,6 +1,6 @@
 {
  "beta": true,
- "gerado_em": "2026-11-16 16:26",
+ "gerado_em": "2026-11-23 18:45",
  "fonte": "Relatórios anuais ESEF (iXBRL) via filings.xbrl.org; LEI via GLEIF",
  "aviso": "Material educativo, não é recomendação de investimento. Faixas são convenções do painel.",
  "papeis": {
@@ -750,7 +750,7 @@
    "ll": 7729335.0,
    "roe": 9.1,
    "roe_medio_2a": 7.6,
-   "dpa_exercicio": 0.0,
+   "dpa_exercicio": 0.0667,
    "lpa": null,
    "payout_caixa": 48.5,
    "ebitda": 19667519.0,
@@ -763,9 +763,7 @@
    },
    "nota": 2,
    "nota_provisoria": false,
-   "flags": [
-    "info:sem_dividendo_cadastrado_para_o_exercicio"
-   ],
+   "flags": [],
    "lei": "9598003URM2KB8KRKA46",
    "relatorio": "9598003URM2KB8KRKA46-2025-12-31-ESEF-PT-0",
    "relatorio_url": "https://filings.xbrl.org/9598003URM2KB8KRKA46/2025-12-31/ESEF/PT/0/9598003URM2KB8KRKA46-2025-12-31-1-pt/reports/ixbrlviewer.html",
