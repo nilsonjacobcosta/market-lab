@@ -27,6 +27,13 @@
    "rotulo": "Abaixo do teto · conferir dados",
    "preco": 4.02,
    "teto": 4.0331
+  },
+  {
+   "data": "2026-11-28",
+   "status": "acima",
+   "rotulo": "Acima do teto calculado",
+   "preco": 4.09,
+   "teto": 4.0331
   }
  ],
  "BCP": [
