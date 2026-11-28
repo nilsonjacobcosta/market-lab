@@ -1,6 +1,6 @@
 {
- "gerado_utc": "2026-11-28T03:38+00:00",
- "gerado_brt": "28/11/2026 00:38",
+ "gerado_utc": "2026-11-28T12:33+00:00",
+ "gerado_brt": "28/11/2026 09:33",
  "fonte": "Yahoo Finance (endpoint chart), atraso variável; captura de 10/11/2026 onde não há fonte",
  "cotacoes_ok": 79,
  "destaques": [
@@ -257,8 +257,8 @@
      "nome": "Shanghai",
      "ticker": "000001.SS",
      "detalhe": "China · índice composto da Bolsa de Xangai.",
-     "valor": 3606.4868,
-     "var": 1.9084428479876125,
+     "valor": 3606.487,
+     "var": 1.908448499384563,
      "hora": "2026-11-27T07:00:29+00:00",
      "status": "ok"
     },
@@ -345,7 +345,7 @@
      "detalhe": "Japão · quantos ienes valem 1 dólar americano.",
      "valor": 159.515,
      "var": 0.36745505911368603,
-     "hora": "2026-11-27T22:00:18+00:00",
+     "hora": "2026-11-28T05:20:22+00:00",
      "status": "ok"
     },
     {
@@ -363,7 +363,7 @@
      "detalhe": "Canadá · quantos dólares canadenses valem 1 dólar americano.",
      "valor": 1.4248,
      "var": -0.6346328195829476,
-     "hora": "2026-11-28T00:00:01+00:00",
+     "hora": "2026-11-28T05:20:22+00:00",
      "status": "ok"
     },
     {
@@ -372,7 +372,7 @@
      "detalhe": "Suécia · quantas coroas suecas valem 1 dólar americano.",
      "valor": 10.2618,
      "var": 0.3648100151596445,
-     "hora": "2026-11-28T00:00:01+00:00",
+     "hora": "2026-11-28T05:20:22+00:00",
      "status": "ok"
     },
     {
@@ -381,7 +381,7 @@
      "detalhe": "Suíça · quantos francos suíços valem 1 dólar americano.",
      "valor": 0.8357,
      "var": -0.6183850636223065,
-     "hora": "2026-11-27T22:00:18+00:00",
+     "hora": "2026-11-28T05:20:22+00:00",
      "status": "ok"
     }
    ]
@@ -560,9 +560,9 @@
      "nome": "Bitcoin",
      "ticker": "BTC-USD",
      "detalhe": "Criptomoeda descentralizada. Preço em dólares americanos por unidade.",
-     "valor": 59911.18,
-     "var": 0.2735064604758586,
-     "hora": "2026-11-28T03:38:10+00:00",
+     "valor": 59226.07,
+     "var": -0.8731640275889241,
+     "hora": "2026-11-28T12:33:39+00:00",
      "status": "ok"
     }
    ]
@@ -576,7 +576,7 @@
      "detalhe": "Nicarágua · córdoba nicaraguense (NIO). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 36.6243,
      "var": 2.972988930719289,
-     "hora": "2026-11-28T03:00:13+00:00",
+     "hora": "2026-11-28T12:00:05+00:00",
      "status": "ok"
     },
     {
@@ -648,7 +648,7 @@
      "detalhe": "Dinamarca · coroa dinamarquesa (DKK). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 6.8341,
      "var": 0.32590026277543593,
-     "hora": "2026-11-28T00:00:01+00:00",
+     "hora": "2026-11-28T05:20:22+00:00",
      "status": "ok"
     },
     {
@@ -666,7 +666,7 @@
      "detalhe": "Noruega · coroa norueguesa (NOK). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 9.809,
      "var": 0.6030645525219924,
-     "hora": "2026-11-28T00:00:01+00:00",
+     "hora": "2026-11-28T05:20:22+00:00",
      "status": "ok"
     },
     {
@@ -720,7 +720,7 @@
      "detalhe": "Hong Kong · dólar de Hong Kong (HKD). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 7.8297,
      "var": -0.13137755102040627,
-     "hora": "2026-11-28T00:00:04+00:00",
+     "hora": "2026-11-28T05:20:22+00:00",
      "status": "ok"
     },
     {
@@ -729,7 +729,7 @@
      "detalhe": "Nova Zelândia · dólar neozelandês (NZD). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 1.8303,
      "var": 0.2299983571545816,
-     "hora": "2026-11-28T00:29:43+00:00",
+     "hora": "2026-11-28T05:49:43+00:00",
      "status": "ok"
     }
    ]
@@ -752,7 +752,7 @@
      "detalhe": "Austrália · dólar australiano (AUD). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 1.5036,
      "var": -0.14610173993889752,
-     "hora": "2026-11-28T00:29:43+00:00",
+     "hora": "2026-11-28T05:49:43+00:00",
      "status": "ok"
     },
     {
@@ -770,7 +770,7 @@
      "detalhe": "Chile · peso chileno (CLP). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 1029.6,
      "var": 3.9764215084558963,
-     "hora": "2026-11-27T22:10:02+00:00",
+     "hora": "2026-11-28T10:58:14+00:00",
      "status": "ok"
     },
     {
@@ -851,7 +851,7 @@
      "detalhe": "África do Sul · rand sul-africano (ZAR). Quantas unidades da moeda valem 1 dólar americano.",
      "valor": 17.3695,
      "var": -0.7116725734537588,
-     "hora": "2026-11-28T00:00:01+00:00",
+     "hora": "2026-11-28T05:20:22+00:00",
      "status": "ok"
     }
    ]
